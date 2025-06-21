@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for September, 2020</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Sat, 10 Oct 2020 08:48:24 +0200" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for September, 2020</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for September, 2020
+</span>
+<span class="date">2020-10-10</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Releases</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Code</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Hot topics on our help desk</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Outreach</a>
+	</li>
+	<li class="L1"><a href="#index5h1">On-going discussions</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Translations</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Metrics</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Releases</h1>
+
+<ul>
+<li><p><a href="./version_4.11.en.html">Tails 4.11 was released on September 22</a>.</p></li>
+<li><p>Tails 4.12 is <a href="../contribute/calendar.html">scheduled for October 20</a>.</p></li>
+</ul>
+
+
+<p>The following changes were introduced in Tails 4.11:</p>
+
+<ul>
+<li><p>We added a new feature of the Persistent Storage to save the settings
+from the Welcome Screen: language, keyboard, and additional settings.</p></li>
+<li><p>Configure <em>KeePassXC</em> to use the new default location <em>Passwords.kdbx</em>. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17286">#17286</a>)</p></li>
+<li><p>Update <span class="code">python3-trezor</span> to 0.12.2 to add
+compatibility with the new Trezor Model T.</p></li>
+<li><p>Disable the feature to <strong>Turn on Wi-Fi Hotspot</strong> in the Wi-Fi settings
+because it doesn&#39;t work in Tails. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17887">#17887</a>)</p></li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Code</h1>
+
+<ul>
+<li><p>Completed the last steps of an effort started 14 months ago to import our
+custom software into our main Git repository (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/7036">#7036</a>), in
+order to streamline Tails development work:</p>
+
+<ul>
+<li>Tails Installer (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17917">#17917</a>)</li>
+<li>WhisperBack (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16936">#16936</a>)</li>
+</ul>
+</li>
+<li><p>Ported all our Perl code to a translatable strings format supported by <em>GNU
+gettext</em> (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17928">#17928</a>), which will then allow us to benefit from
+<a href="https://github.com/jwilk/i18nspector/issues/6">brand new <code>i18nspector</code>
+checks</a>, avoiding some classes
+of Tails bugs caused by buggy translations</p></li>
+<li><p>Upgraded to tor 0.4.4 (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17932">#17932</a>)</p></li>
+<li><p>Settled on a new policy for kernel updates, that balances rapid hardware
+enablement with lower risk of regressions (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17911">#17911</a>)</p></li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Hot topics on our help desk</h1>
+
+<ol>
+<li><p>A lot of people reached the helpdesk complaining about JavaScript not being disabled by Tor Browser&#39;s safest mode anymore (<a href="https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40082">NoScript is doing that job now</a> <a href="https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/33613">as it should</a>; to be documented in <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17963">#17963</a>).</p></li>
+<li><p>People are still affected (and will be until the <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17896">Linux kernel is upgraded to 5.8</a>) by a <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17953">regression with some Intel GPU</a>.</p></li>
+<li><p>Another regression <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17955">affecting some Acer and Asus laptops</a> was reported since the release of Tails 4.11.</p></li>
+<li><p>People are still regularly complaining about <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17183">Seahorse failing to import public keys</a>.</p></li>
+</ol>
+
+
+<p>Also, it seemed important to the Help Desk team to remind Tails users that we are not responsible for the cosmetic changes made upstream (e.g. the handling of JavaScript in Tor Browser, or the new Firefox URL bar that received a lot of comments from users on our helpdesk as well as Tor project&#39;s). Any thoughts on those changes should be done directly to the people working on them.</p>
+
+<h1><a name="index4h1"></a>Outreach</h1>
+
+<ul>
+<li><a href="https://www.hackmeeting.org/hackit20/">Roma hackmeeting</a>: see
+the <a href="https://lists.autistici.org/message/20200914.110251.d63943a8.en.html">report</a></li>
+</ul>
+
+
+<h1><a name="index5h1"></a>On-going discussions</h1>
+
+<ul>
+<li><a href="https://lists.autistici.org/message/20200904.103800.01272559.en.html">Merge tails-dev, tails-ux, and tails-project mailing lists</a></li>
+</ul>
+
+
+<h1><a name="index6h1"></a>Translations</h1>
+
+<h2><a name="index1h2"></a>All programs</h2>
+
+<ul>
+<li>ar: 22 translated messages, 316 untranslated messages.</li>
+<li>ca: 48 translated messages, 290 untranslated messages.</li>
+<li>cs: 112 translated messages, 226 untranslated messages.</li>
+<li>da: 338 translated messages.</li>
+<li>de: 55 translated messages, 283 untranslated messages.</li>
+<li>el: 58 translated messages, 280 untranslated messages.</li>
+<li>es: 335 translated messages, 3 untranslated messages.</li>
+<li>es_AR: 336 translated messages, 2 untranslated messages.</li>
+<li>fi: 45 translated messages, 293 untranslated messages.</li>
+<li>fr: 338 translated messages.</li>
+<li>ga: 335 translated messages, 3 untranslated messages.</li>
+<li>he: 65 translated messages, 273 untranslated messages.</li>
+<li>hr: 338 translated messages.</li>
+<li>hu: 338 translated messages.</li>
+<li>id: 6 translated messages, 332 untranslated messages.</li>
+<li>it: 162 translated messages, 176 untranslated messages.</li>
+<li>km: 38 translated messages, 300 untranslated messages.</li>
+<li>ko: 1 translated message, 337 untranslated messages.</li>
+<li>lt: 87 translated messages, 251 untranslated messages.</li>
+<li>mk: 335 translated messages, 3 untranslated messages.</li>
+<li>nl: 17 translated messages, 321 untranslated messages.</li>
+<li>pl: 2 translated messages, 336 untranslated messages.</li>
+<li>pt_BR: 94 translated messages, 244 untranslated messages.</li>
+<li>pt_PT: 44 translated messages, 294 untranslated messages.</li>
+<li>ro: 135 translated messages, 203 untranslated messages.</li>
+<li>sv: 134 translated messages, 204 untranslated messages.</li>
+<li>tr: 337 translated messages, 1 untranslated message.</li>
+<li>zh_CN: 337 translated messages, 1 untranslated message.</li>
+</ul>
+
+
+<h2><a name="index2h2"></a>All the website</h2>
+
+<ul>
+<li>de: 28% (1899) strings translated, 14% strings fuzzy</li>
+<li>es: 49% (3300) strings translated, 6% strings fuzzy</li>
+<li>fa: 21% (1396) strings translated, 13% strings fuzzy</li>
+<li>fr: 78% (5159) strings translated, 9% strings fuzzy</li>
+<li>it: 28% (1863) strings translated, 10% strings fuzzy</li>
+<li>pt: 19% (1299) strings translated, 9% strings fuzzy</li>
+</ul>
+
+
+<h2><a name="index3h2"></a><a href="../contribute/l10n_tricks/core_po_files.txt">Core pages of the website</a></h2>
+
+<ul>
+<li>de: 45% (972) strings translated, 23% strings fuzzy</li>
+<li>es: 83% (1791) strings translated, 6% strings fuzzy</li>
+<li>fa: 19% (425) strings translated, 15% strings fuzzy</li>
+<li>fr: 75% (1603) strings translated, 13% strings fuzzy</li>
+<li>it: 49% (1059) strings translated, 21% strings fuzzy</li>
+<li>pt: 38% (821) strings translated, 15% strings fuzzy</li>
+</ul>
+
+
+<h2><a name="index4h2"></a>Core pages of the website for languages not activated on the website yet</h2>
+
+<ul>
+<li>ar: 7% (164) strings translated, 8% strings fuzzy</li>
+<li>ca: 8% (174) strings translated, 7% strings fuzzy</li>
+<li>id: 6% (139) strings translated, 5% strings fuzzy</li>
+<li>pl: 7% (165) strings translated, 7% strings fuzzy</li>
+<li>ru: 8% (181) strings translated, 7% strings fuzzy</li>
+<li>sr_Latn: 5% (114) strings translated, 4% strings fuzzy</li>
+<li>tr: 7% (171) strings translated, 7% strings fuzzy</li>
+<li>zh: 10% (222) strings translated, 8% strings fuzzy</li>
+<li>zh_TW: 21% (461) strings translated, 13% strings fuzzy</li>
+</ul>
+
+
+<h1><a name="index7h1"></a>Metrics</h1>
+
+<ul>
+<li>Tails has been started more than 906&#x202F;004 times this month. This makes 30&#x202F;200 boots a day on average.</li>
+</ul>
+
+
+<p><a href="../support/faq.en.html#boot-statistics">How do we know this?</a></p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2020_09">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

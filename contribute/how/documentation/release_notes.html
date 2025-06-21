@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Checklist for release notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../how.html">how</a></li>
+
+
+
+
+
+<li><a href="../documentation.html">documentation</a></li>
+
+
+
+
+<li>Checklist for release notes</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Checklist for release notes
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<ul>
+<li>Fetch and checkout the <code>web/release-x.y</code> branch that was pushed
+by the Release Manager
+
+<ul>
+<li>Copy template from <code>contribute/how/documentation/release_notes/template.mdwn</code> to <code>news/version_x.y.mdwn</code></li>
+<li>Replace placeholders in template</li>
+</ul>
+</li>
+<li>Gather information about changes
+
+<ul>
+<li>Tails changelog
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/stable/debian/changelog">tails/tails/-/blob/stable/debian/changelog</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/testing/debian/changelog">tails/tails/-/blob/testing/debian/changelog</a></li>
+<li><p>If the changelog of the final release has not been written
+yet, either book some time to update the release notes on the
+day of the release, or generate the changelog entry yourself:</p>
+
+<ol>
+<li><p><code>sudo apt install python3-debian python3-gitlab python3-jinja2</code></p></li>
+<li><p>Ensure <code>~/.python-gitlab.cfg</code> has at least this content:</p>
+
+<pre><code>[global]
+ssl_verify = true
+
+[Tails]
+url = https://gitlab.tails.boum.org
+per_page = 100
+private_token = XXX
+</code></pre></li>
+<li><p>Set the value of the <code>private_token</code> option to a GitLab API token for
+your own user.</p></li>
+<li><p>Finally, to generate the changelog entry, in a checkout of the main
+Git repository, run:<br />
+<code>./bin/generate-changelog --version $VERSION</code></p></li>
+</ol>
+</li>
+</ul>
+</li>
+<li>If a release candidate was announced, read the call for testing</li>
+<li>Analyze the diff of packages
+
+<ul>
+<li>in testing for a major release: <code>wget https://nightly.tails.boum.org/build_Tails_ISO_testing/lastSuccessful/archive/latest.packages</code></li>
+<li>in stable for a bugfix release: <code>wget https://nightly.tails.boum.org/build_Tails_ISO_stable/lastSuccessful/archive/latest.packages</code></li>
+<li><code>diff -u ~/Persistent/master/wiki/src/torrents/files/tails-amd64-*.packages latest.packages | wdiff --diff-input --terminal --auto-pager</code></li>
+</ul>
+</li>
+<li>If an important application was updated to a new upstream release, read its Changelog to find relevant highlights:
+
+<ul>
+<li>Tor: <a href="https://blog.torproject.org/">https://blog.torproject.org/</a></li>
+<li>Tor: <a href="https://gitweb.torproject.org/tor.git/tree/ChangeLog">https://gitweb.torproject.org/tor.git/tree/ChangeLog</a></li>
+<li>Tor Browser: <a href="https://gitweb.torproject.org/builders/tor-browser-build.git/tree/projects/tor-browser/Bundle-Data/Docs/ChangeLog.txt?h=maint-10.0-desktop">https://gitweb.torproject.org/builders/tor-browser-build.git/tree/projects/tor-browser/Bundle-Data/Docs/ChangeLog.txt?h=maint-10.0-desktop</a></li>
+<li>Firefox: <a href="https://www.mozilla.org/en-US/firefox/52.0/releasenotes/">https://www.mozilla.org/en-US/firefox/52.0/releasenotes/</a></li>
+<li>Thunderbird: <a href="https://www.mozilla.org/en-US/thunderbird/notes/">https://www.mozilla.org/en-US/thunderbird/notes/</a></li>
+<li>Electrum: <a href="https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES">https://github.com/spesmilo/electrum/blob/master/RELEASE-NOTES</a></li>
+<li>obfs4proxy: <a href="https://salsa.debian.org/pkg-privacy-team/obfs4proxy/-/blob/master/ChangeLog">https://salsa.debian.org/pkg-privacy-team/obfs4proxy/-/blob/master/ChangeLog</a></li>
+<li>VirtualBox: <a href="https://www.virtualbox.org/wiki/Changelog">https://www.virtualbox.org/wiki/Changelog</a></li>
+<li>KeePassXC: <a href="https://github.com/keepassxreboot/keepassxc/blob/master/CHANGELOG.md#262-2020-10-21">https://github.com/keepassxreboot/keepassxc/blob/master/CHANGELOG.md#262-2020-10-21</a></li>
+<li>OnionShare: <a href="https://github.com/micahflee/onionshare/blob/develop/CHANGELOG.md">https://github.com/micahflee/onionshare/blob/develop/CHANGELOG.md</a></li>
+</ul>
+</li>
+<li>Add <a href="./style_guide.html#screenshot">screenshots</a> of
+
+<ul>
+<li>Cool stuff, to show off!</li>
+<li>Known issues, if that makes them easier to understand.</li>
+</ul>
+</li>
+<li>Add HTML anchors <code>&lt;a id=&quot;$anchor&quot;&gt;&lt;/a&gt;</code> where our help desk might
+need to point people to, for example:
+
+<ul>
+<li>Known issues</li>
+<li>Major changes that might confuse users</li>
+</ul>
+</li>
+<li>Document manual steps that users with a Persistent Storage may need to go
+through, taking into account that we support automatic updates (not mentioning manual updates).
+It may imply to refer to, or copy from, such instructions that
+were documented in the <em>previous</em> release notes.</li>
+</ul>
+</li>
+<li>Write the draft
+
+<ul>
+<li>As a rule of thumb, get inspiration from all these data sources
+but write new sentences yourself. Changelog and release notes are
+written for different audiences and for different purposes.</li>
+<li>Focus on what is the benefit for the user (if any, if relevant,
+and not to wordy).
+
+<ul>
+<li><em>For example:</em> Automatically save the database of <em>KeePassX</em> after
+every change to prevent data loss when shutting down.</li>
+</ul>
+</li>
+<li>Our release notes should satisfy a diverse audience of both very
+technical and less technical users. As such, it&#39;s all-right to include
+more technical language, for example for security benefits that are not
+visible, as long as:
+
+<ul>
+<li>Changes that are noticable by less technical users are still
+understandable by them.</li>
+<li>What we are describing in non-technical language is
+understandable by more technical users.</li>
+<li>We point to more technical sources like issues and design
+documents.</li>
+<li>Technical items are less proheminent.</li>
+<li><em>For example:</em> Harden our firewall by rejecting <code>RELATED</code> packets
+and restricting Tor to only send <code>NEW TCP</code> syn packets. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/11391">#11391</a>)</li>
+</ul>
+</li>
+<li>Use full sentences for major changes (&quot;<em>We installed</em>&quot;, &quot;<em>You can</em>&quot;)</li>
+<li>Use present tense without subject for minor changes (&quot;<em>Upgrade</em>&quot;, &quot;<em>Fix</em>&quot;)</li>
+<li>Mention updates as &quot;Update <em>Xyz</em> to [1.2.4].&quot;
+
+<ul>
+<li>Mention previous version if we skipped some &quot;Update <em>Xyz</em> from 1.0.0 to [1.2.3].&quot;</li>
+<li>Link to release notes if any, or changelog</li>
+</ul>
+</li>
+<li>Order items to put the most visible, less technical, and most popular
+items first while not being afraid of putting more technical items as
+well down the list.</li>
+<li>Document known issues</li>
+<li>Update the <code>meta title</code> directive.</li>
+<li>Update the <code>meta date</code> directive.</li>
+</ul>
+</li>
+<li>Update the <a href="../../../support/known_issues.en.html">known issues</a> page:
+
+<ul>
+<li>Add regressions brought by the new release.</li>
+<li>Remove older known issues that are fixed by the new release.</li>
+</ul>
+</li>
+<li>Format
+
+<ul>
+<li>Link to issue for fixed problems and changes that are well justified in GitLab</li>
+<li>Put the period before issue number
+
+<ul>
+<li>&quot;Bla bla. ([!tails_ticket 1234])&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Create a merge request in GitLab that targets the <code>web/release-x.y</code> branch
+and assign the Release Manager as the reviewer</li>
+<li>Prepare a tweet with highlights:
+
+<ul>
+<li><p>Tails x.y is out: https://tails.boum.org/news/version_x.y/</p>
+
+<p>It bla bla bla, and more.</p></li>
+<li>Add it as a comment to the issue for the release notes.</li>
+</ul>
+</li>
+<li>If we release new major features (&quot;New features&quot; section),
+schedule tweets in the future to let the world know about it, even
+months after we release them.
+
+<ul>
+<li>Write a Tweet, for example:
+
+<ul>
+<li>Did you know?
+You can xxx in Tails, since $MON (Tails $VERSION).</li>
+<li>Link to our documentation about the feature.</li>
+<li>Add a picture, for example a screenshot from the release notes
+or the documentation.</li>
+</ul>
+</li>
+<li>Schedule tweets using <a href="https://tweetdeck.twitter.com/">TweetDeck</a>.
+
+<ul>
+<li>For example, 3 tweets across 6 months for new cool stuff, and
+even a few more tweets for very important features.</li>
+<li>Spread tweets across 12:00 and 18:00 UTC to have a good coverage in
+Europe, the US (East and West coast), and a bit of South-East Asia.</li>
+<li>TweetDeck displays the time as it is on
+your computer, so UTC if you are in Tails.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../documentation.html">documentation</a>
+
+<a href="../../release_process.html">release process</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/how/documentation/release_notes">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

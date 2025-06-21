@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Recording usability testing</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../how.html">how</a></li>
+
+
+
+
+
+<li><a href="../user_experience.html">user experience</a></li>
+
+
+
+
+<li>Recording usability testing</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Recording usability testing
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Recording with a camera using VLC</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Recording a screencast</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Using Kazam</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Using GNOME Shell</a>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+<p><a id="camera"></a></p>
+
+<h1><a name="index1h1"></a>Recording with a camera using <span class="application">VLC</span></h1>
+
+<p>Recording the screen with an external camera has the following
+advantages over recording with a screencast:</p>
+
+<ul>
+<li>Recording a whole session, even if the user restarts Tails.</li>
+<li>Saving the video directly to your computer and not relying on the
+computer used for the tests.</li>
+</ul>
+
+
+<p>You can use a document camera. The <a href="https://www.ipevo.com/">Ziggi-HD Plus by
+IPEVO</a> works fine from Tails.</p>
+
+<ol>
+<li><p>Move the <span class="guilabel">AF</span> switch of the camera to <span class="guilabel">C</span> to have continuous autofocus.</p></li>
+<li><p>Install <span class="application">VLC</span>:</p>
+
+<p class="pre command">apt install vlc</p>
+</li>
+</ol>
+
+
+<h3><a name="index1h3"></a>Prepare the camera for recording</h3>
+
+<ol>
+<li><p>In <span class="application">VLC</span>, choose
+<span class="menuchoice">
+  <span class="guimenu">Media</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Open Capture Device...</span></span>.</p></li>
+<li><p>In the <span class="guilabel">Capture Device</span> tab, select:</p>
+
+<ul>
+<li><span class="guilabel">Video device name</span>: /dev/video2</li>
+<li><span class="guilabel">Audio device name</span>: hw:2,0</li>
+</ul>
+</li>
+<li><p>Click the <strong>Play</strong> button.</p></li>
+<li><p>Make sure that the microphone of the camera is captured as well.</p></li>
+<li><p>Adjust the orientation of the camera to capture as much of the screen as
+possible while not obfuscating the light of sight of the participant.</p></li>
+</ol>
+
+
+<h3><a name="index2h3"></a>Start recording</h3>
+
+<ol>
+<li><p>In <span class="application">VLC</span>, choose
+<span class="menuchoice">
+  <span class="guimenu">Media</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Convert / Save...</span></span>.</p></li>
+<li><p>In the <span class="guilabel">Capture Device</span> tab, select:</p>
+
+<ul>
+<li><span class="guilabel">Video device name</span>: /dev/video2</li>
+<li><span class="guilabel">Audio device name</span>: hw:2,0</li>
+</ul>
+</li>
+<li><p>Click the <strong>Convert / Save</strong> button.</p></li>
+<li><p>In the <span class="guilabel">Convert</span> dialog:</p>
+
+<ul>
+<li><p>Select the
+<span class="guilabel">Video - H.264 + MP3 (MP4)</span> profile.</p></li>
+<li><p>Specify a destination file under
+<span class="filename">~/Persistent/</span>.</p></li>
+</ul>
+</li>
+</ol>
+
+
+<p><a id="screencast"></a></p>
+
+<h1><a name="index2h1"></a>Recording a screencast</h1>
+
+<p>Recording the screen with a screencast has the following advantages over
+recording with an external camera:</p>
+
+<ul>
+<li>Better image quality</li>
+<li>Lighter setup</li>
+</ul>
+
+
+<h2><a name="index1h2"></a>Using <span class="application">Kazam</span></h2>
+
+<p>You can use <a href="http://recordmydesktop.sourceforge.net/"><em>Kazam</em></a> from Tails:</p>
+
+<ol>
+<li><p>Install <em>Kazam</em>:</p>
+
+<p></p><p class="pre command">apt install kazam</p></li>
+<li><p>Start <em>Kazam</em> and edit the <em>Kazam</em> preferences:</p>
+
+<ul>
+<li><p>In the <strong>General</strong> tab:</p>
+
+<ul>
+<li>Adjust the capture microphone</li>
+</ul>
+</li>
+<li><p>In the <strong>Screencast</strong> tag:</p>
+
+<ul>
+<li><p>Lower the framerate to 10 to avoid data loss.</p></li>
+<li><p>Change the file format to WEBM.</p></li>
+<li><p>Enable <strong>Automatic file saving</strong>.</p></li>
+</ul>
+
+
+<div class="bug">
+<p>The directory preferences is reset to <em>~/Videos</em> every time by <em>Kazam</em>.</p>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<h3><a name="index3h3"></a>To autosave the recordings in the Persistent Storage</h3>
+
+<ol>
+<li><p>Create a <em>Persistent/Videos</em> directory.</p></li>
+<li><p>Then, either:</p>
+
+<ul>
+<li><p>Temporarily, mount the <em>Videos</em> directory on <em>Persistent/Videos</em>.</p>
+
+<p>To do so, execute the following command:</p>
+
+<p class="pre command">sudo mount --bind ~/Persistent/Videos ~/Videos</p>
+</li>
+<li><p>Permanently, map the <em>Videos</em> directory to <em>Persistent/Videos</em> in
+the configuration of your Persistent Storage.</p>
+
+<p>To do so, add the following line to your <em>/live/persistence/TailsData_unlocked/persistence.conf</em>:</p>
+
+<p class="pre">/home/amnesia/Videos        source=Persistent/Videos</p>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<h2><a name="index2h2"></a>Using GNOME Shell</h2>
+
+<p>Press <span class="keycap">Ctrl+Alt+Shift+R</span> in GNOME to start or stop
+capturing a screencast.</p>
+
+<p>The video is saved to <span class="filename">~/Videos/</span>.</p>
+
+<div class="bug">
+
+<p>The screencast stops after 30 seconds. See <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/12723">#12723</a>.</p>
+
+<p>The screencast has no sound.</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../news/report_2019_03.html">news/report 2019 03</a>
+
+<a href="../user_experience.html">user experience</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/how/user_experience/recording">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

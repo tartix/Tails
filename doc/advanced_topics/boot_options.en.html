@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Modifying the boot options using the Boot Loader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="up" href="../advanced_topics.index.html" title="advanced topics.index" />
+
+<link rel="next" href="./internal_hard_disk.en.html" title="Accessing the internal hard disk" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../advanced_topics.en.html">advanced topics</a></li>
+
+
+
+
+<li>Modifying the boot options using the Boot Loader</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./boot_options.de.html">de</a></span>
+   <span class="hidden"><a href="./boot_options.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./boot_options.es.html">es</a></span>
+   <span class="hidden"><a href="./boot_options.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./boot_options.fr.html">fr</a></span>
+   <span class="hidden"><a href="./boot_options.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./boot_options.it.html">it</a></span>
+   <span class="hidden"><a href="./boot_options.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./boot_options.pt.html">pt</a></span>
+   <span class="hidden"><a href="./boot_options.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./boot_options.ru.html">ru</a></span>
+   <span class="hidden"><a href="./boot_options.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Modifying the boot options using the Boot Loader
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailup">
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./internal_hard_disk.en.html">Accessing the internal hard disk</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>The Boot Loader is the first screen that appears
+when Tails starts.</p>
+
+<p>You can use the Boot Loader to modify the <em>boot options</em>. Boot options are
+special parameters used to troubleshoot or work around hardware support problems.
+For example, our <a href="../../support/known_issues/graphics.en.html">list of known issues with graphics cards</a>
+document boot options for different graphics cards.</p>
+
+<div class="tip">
+
+<p>The <span class="guilabel">Troubleshooting Mode</span> of the Boot Loader disables some features of the
+Linux kernel and might work better on some computers. You can try this option if you
+think you are experiencing hardware compatibility errors while
+starting Tails.</p>
+
+</div>
+
+
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Using SYSLINUX</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Using GRUB</a>
+	</li>
+</ol>
+</div>
+
+
+<p>Depending on the computer, the Boot Loader might be either <em>GRUB</em> or
+<em>SYSLINUX</em>.</p>
+
+<p><a id="syslinux"></a></p>
+
+<h1><a name="index1h1"></a>Using <em>SYSLINUX</em></h1>
+
+<p>This is what <em>SYSLINUX</em> looks like:</p>
+
+<p><img alt="Black screen (&#39;SYSLINUX&#39;) with Tails
+logo and 2 options: &#39;Tails&#39; and &#39;Tails (Troubleshooting Mode)&#39;." class="img" height="480" src="../../install/inc/screenshots/syslinux.png" width="640" /></p>
+
+<div class="note">
+
+<p>If your Boot Loader looks different, refer to our instructions below on
+modifying the boot options <a href="./boot_options.en.html#grub">using GRUB</a>.</p>
+
+</div>
+
+
+<p>To modify the boot options in <em>SYSLINUX</em>:</p>
+
+
+
+
+<ol>
+<li><p>Press <strong>Tab</strong> when <em>SYSLINUX</em> appears.</p>
+
+<p>A command line with a list
+of boot options appears at the bottom of the screen.</p>
+
+<p><img alt="SYSLINUX with
+a list of options starting with &#39;/live/vmlinuz&#39; at the bottom" class="img" height="480" src="./boot_options/syslinux-with-options.png" width="640" /></p></li>
+<li><p>Modify the boot options as needed.</p>
+
+<p>To add a boot option, press <span class="keycap">Space</span> and type the boot option that you
+want to add.</p>
+
+<p>If you want to add more than one boot option, type them one after the
+other and separate them with a <span class="keycap">Space</span>.</p></li>
+<li><p>Press <span class="keycap">Enter</span> to start Tails.</p></li>
+</ol>
+
+
+<p><a id="grub"></a></p>
+
+<h1><a name="index2h1"></a>Using <em>GRUB</em></h1>
+
+<p>This is what <em>GRUB</em> looks like:</p>
+
+<p><img alt="Black screen (&#39;GNU GRUB&#39;) with Tails
+logo and 2 options: &#39;Tails&#39; and &#39;Tails (Troubleshooting Mode)&#39;." class="img" height="480" src="../../install/inc/screenshots/grub.png" width="640" /></p>
+
+<div class="note">
+
+<p>If your Boot Loader looks different, refer to our instructions on
+modifying the boot options <a href="./boot_options.en.html#syslinux">using SYSLINUX</a> above.</p>
+
+</div>
+
+
+<p>To modify the boot options in <em>GRUB</em>:</p>
+
+
+
+
+<ol>
+<li><p>Press <strong>e</strong> when GRUB appears.</p>
+
+<p>A new screen appears with more options.</p>
+
+<p><img alt="GRUB with a list of
+options starting with &#39;setparams Tails&#39;" class="img" height="480" src="./boot_options/grub-with-options.png" width="640" /></p></li>
+<li><p>Modify the boot options as needed.</p>
+
+<p>To add a boot option, navigate with the arrows of the keyboard to the end of the line that
+starts with <span class="code">linux</span>.
+Type the boot option that you want to add. The line is most likely
+wrapped and displayed on several lines but it is a single configuration line.</p>
+
+<p>If you want to add more than one boot option, type them one after the
+other and separate them with a <span class="keycap">Space</span>.</p></li>
+<li><p>Press <strong>Ctrl+X</strong>, <strong>F10</strong>, or <strong>Fn+F10</strong> to start Tails.</p></li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailup">
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./internal_hard_disk.en.html">Accessing the internal hard disk</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+
+<a href="../../contribute/how/documentation/style_guide.html">contribute/how/documentation/style guide</a>
+
+<a href="./external_hard_disk.en.html">external hard disk</a>
+
+<a href="../../news/report_2020_04.html">news/report 2020 04</a>
+
+<a href="../../news/test_3.0-beta4.html">news/test 3.0-beta4</a>
+
+<a href="../../news/test_3.0-rc1.html">news/test 3.0-rc1</a>
+
+<a href="../../news/version_3.11.en.html">news/version 3.11</a>
+
+<a href="../../news/version_4.8.en.html">news/version 4.8</a>
+
+<a href="../reset/linux.en.html">reset/linux</a>
+
+<a href="../../support/known_issues.en.html">support/known issues</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="../../support/known_issues/graphics.en.html">support/known issues/graphics</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/boot_options">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

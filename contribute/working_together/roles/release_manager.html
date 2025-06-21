@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Release Manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../working_together.html">working together</a></li>
+
+
+
+
+
+<li><a href="../roles.html">roles</a></li>
+
+
+
+
+<li>Release Manager</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Release Manager
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Duties</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Shift</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Emergency release</a>
+	</li>
+</ol>
+</div>
+
+
+<p><a id="duties"></a></p>
+
+<h1><a name="index1h1"></a>Duties</h1>
+
+<p>The Tails Release Managers are primarily responsible for:</p>
+
+<ul>
+<li><p>publishing new Tails versions in a timely fashion, according to the
+schedule submitted by the <a href="./foundations_team.html">Foundations Team</a>;</p></li>
+<li><p>reaching a consensus regarding documenting, delaying, or releasing,
+when emergency releases might be warranted (usually prompted by
+unplanned Tor Browser releases for security issues that require
+urgent care);</p></li>
+<li><p>making sure automatic and manual testers are covered during each
+release process;</p></li>
+<li><p>being in the loop when major changes land in release branches, so
+that they can propose extra manual tests if those changes feel
+risky (e.g. changes in the upgrader code).</p></li>
+</ul>
+
+
+<p>To ensure releasing is achievable in a timely manner, historically,
+they have also been responsible for:</p>
+
+<ul>
+<li>making sure the various Git branches get successful builds and test
+suite runs in Jenkins, filing issues for the Foundations Team as
+needed.</li>
+</ul>
+
+
+<p>This responsibility might get shifted to the Foundations Team in the
+near future though.</p>
+
+<p>Also historically, the Release Manager for a given Tails release deals
+with integrating the target Tor Browser version, even if that&#39;s one of
+the Foundations Team&#39;s duties.</p>
+
+<p><a id="shift"></a></p>
+
+<h1><a name="index2h1"></a>Shift</h1>
+
+<h2><a name="index1h2"></a>In the beginning of your shift</h2>
+
+<ul>
+<li>Check the <a href="https://gitlab.torproject.org/tpo/applications/tor-browser/-/wikis/Release_Schedule">Tor Browser release
+schedule</a>. <code>[skip-if-emergency-release]</code></li>
+<li>Check the Mozilla release calendars: <code>[skip-if-emergency-release]</code>
+
+<ul>
+<li><a href="https://www.google.com/calendar/embed?src=mozilla.com_2d37383433353432352d3939%40resource.calendar.google.com">Google calendar</a></li>
+<li><a href="https://wiki.mozilla.org/Release_Management/Calendar">Release schedule</a></li>
+</ul>
+</li>
+<li>Reply to the email sent to <a href="mailto:tails-dev@boum.org">tails-dev@boum.org</a> and
+<a href="mailto:tails-l10n@boum.org">tails-l10n@boum.org</a> by the RM for the previous release,
+to provide any information they could not, such as: <code>[skip-if-emergency-release]</code>
+
+<ul>
+<li>Code freeze date</li>
+<li>If this will be a major release: the release schedule for its RC.</li>
+</ul>
+</li>
+<li><p>Ask for a <em>Trusted Reproducer</em>:</p>
+
+<pre><code>  ./bin/generate-call-for-trusted-reproducer \
+     --version VERSION_YOU_WILL_RELEASE
+</code></pre></li>
+<li><p>Update <a href="../../calendar.html">calendar</a> accordingly.</p></li>
+<li>Check if there&#39;s a
+<a href="https://gitlab.tails.boum.org/groups/tails/-/milestones">GitLab milestone</a>
+with the correct due date. If it is not, create a merge request against
+<a href="https://gitlab.tails.boum.org/tails/gitlab-config">tails/gitlab-config</a> to fix it.</li>
+<li>Ensure there&#39;s an issue with the <code>Core Work: Technical Writing</code> label, about
+writing the release notes. This also applies to betas and release
+candidates, so you might create multiple such issues during one
+shift.</li>
+<li><p>The ISO images for <em>every</em> previous beta, RC, and final release
+based on the version of Debian that will be used for the release
+you&#39;ll be preparing.</p>
+
+<p>To get the list of images you&#39;ll need, run:</p>
+
+<pre><code>  ./bin/iuk-source-versions VERSION_YOU_WILL_RELEASE
+</code></pre>
+
+<p>For example, if you&#39;re preparing 4.4, you need the ISO images
+for 4.0~beta1, 4.0~beta2, 4.0~rc1, 4.0, 4.1, 4.1.1, 4.2, 4.2.2, and 4.3.</p></li>
+<li><p>Ensure the next steps are tracked in your preferred personal
+organization tool.</p></li>
+</ul>
+
+
+<h2><a name="index2h2"></a>Two weeks after the beginning of your shift</h2>
+
+<ul>
+<li>Ensure you have found a <em>Trusted Reproducer</em> and write who this is
+in the <a href="../../calendar.html">calendar</a>.</li>
+<li>Create an issue with the <code>Core Work: Foundations Team</code> label,
+about upgrading Tor Browser in the release your shift is about.</li>
+<li>Check if you have enough manual testers registered.
+If not, ping the usual testers.</li>
+</ul>
+
+
+<h2><a name="index3h2"></a>The Friday before the release date</h2>
+
+<p>Ask the Tor Browser developers when they expect they&#39;ll have
+tarballs ready.</p>
+
+<p>Rationale: we need to coordinate our Tails release with the Tor Browser
+developers to make sure that the Tor Browser we plan to include in our
+release is ready in time for when we build the release image. The
+Friday prior to the release is a good candidate, since it&#39;s
+around this time they usually release tarballs for testing, and it
+will still give some time for us to improvise according to their
+&quot;delayed&quot; schedule and arrange a contingency plan (e.g. possibly
+delaying our release a day or two). Asking for a status report a day
+or two earlier than Friday <em>in addition</em> won&#39;t hurt, too.</p>
+
+<div class="note">
+
+Note: the Tor Browser team Cc&#39;s tails-dev@boum.org when sending QA
+requests to tor-qa@lists.torproject.org which makes this easier.
+We are also often notified of any last last-minute rebuilds, better
+ask explicitly the Tor Browser team what their plans are.
+
+</div>
+
+
+<p>As soon as the new <em>Tor Browser</em> tarballs are ready, you may import
+them in a topic branch and trigger CI runs, which will save you
+some precious time on pre-release Monday. See the
+<a href="../../release_process/tor-browser.html">Upgrading the Tor Browser</a>
+page for details.</p>
+
+<h2><a name="index4h2"></a>Make the release happen</h2>
+
+<p>No kidding. See <a href="../../release_process.html">release process</a>.</p>
+
+<p><a id="emergency-release"></a></p>
+
+<h1><a name="index3h1"></a>Emergency release</h1>
+
+<p>This section documents what differs, when preparing an emergency release,
+from publishing a scheduled release.</p>
+
+<h3><a name="index1h3"></a>Making decisions</h3>
+
+<p>When an event prompts us to wonder whether we shall prepare an emergency
+release, we have to make 2 decisions:</p>
+
+<ul>
+<li><p>Will we publish an emergency release?</p>
+
+<p>First, create an issue about this question. <strong>Do not</strong> leak
+any information that was shared with us privately.</p>
+
+<p>These stakeholders must be part of the decision-making process:</p>
+
+<ul>
+<li><p>release managers: determine whether we have the capacity to prepare an
+emergency release, and when; privately share confidential information that
+other stakeholders need to do their job</p></li>
+<li><p>developers i.e. Foundations Team: assess the risk that the emergency
+release would cancel or mitigate; propose mitigation measures that
+we could recommend to users</p></li>
+<li><p>UX: evaluate the acceptability of mitigation measures proposed by
+developers; remind everyone else that any extra upgrade has a UX cost</p></li>
+<li><p>technical writers: determine whether we have the capacity
+to document mitigation measures, and when</p></li>
+</ul>
+
+
+<p>If we decide to publish an emergency release, say so on the aforementioned
+issue, then read on. Else, explain why on the aforementioned issue,
+and close it with the <em>Rejected</em> label.</p></li>
+<li><p>When will we prepare and publish it? (if we decided to go ahead)</p>
+
+<p>This mostly depends on the availability of release managers and manual
+testers. Privately reach out to them, asking when they could do their part of
+the work. Then, release managers make this decision.</p></li>
+</ul>
+
+
+<h3><a name="index2h3"></a>Additional steps</h3>
+
+<ol>
+<li>Announce to <a href="mailto:tails-dev@boum.org">tails-dev@boum.org</a>:
+
+<ul>
+<li>There&#39;s an upcoming emergency release. Don&#39;t say why if it&#39;s a secret.</li>
+<li>Announce the code freeze.</li>
+</ul>
+</li>
+<li>Announce to manual testers: when you expect the tests to happen</li>
+</ol>
+
+
+<h3><a name="index3h3"></a>Irrelevant steps</h3>
+
+<p>Steps that are not relevant for emergency releases are tagged
+<code>[skip-if-emergency-release]</code>.</p>
+
+<h3><a name="index4h3"></a>Timing</h3>
+
+<p>By definition, an emergency release happens under timing constraints that are
+different from a scheduled release. To account for this, ignore timing
+indications below such as &quot;Two weeks after&quot; or &quot;The Friday&quot;: assume everything
+is relevant shall happen as soon as reasonably possible.</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../contribute.en.html">contribute</a>
+
+<a href="../../../contribute.de.html">contribute.de</a>
+
+<a href="../../../contribute.es.html">contribute.es</a>
+
+<a href="../../../contribute.fr.html">contribute.fr</a>
+
+<a href="../../../contribute.it.html">contribute.it</a>
+
+<a href="../../../contribute.pt.html">contribute.pt</a>
+
+<a href="../../../contribute.ru.html">contribute.ru</a>
+
+<a href="./foundations_team.html">foundations team</a>
+
+<a href="../../glossary.html">glossary</a>
+
+<a href="../interfaces/developers_and_release_managers.html">interfaces/developers and release managers</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="../../release_process.html">release process</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/working_together/roles/release_manager">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

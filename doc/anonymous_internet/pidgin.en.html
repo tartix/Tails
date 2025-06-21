@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Chatting with Pidgin and OTR</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./Tor_Browser.en.html" title="Browsing the web with Tor Browser" />
+
+<link rel="up" href="../anonymous_internet.index.html" title="anonymous internet.index" />
+
+<link rel="next" href="./thunderbird.en.html" title="Emailing and reading news with Thunderbird" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../anonymous_internet.en.html">anonymous internet</a></li>
+
+
+
+
+<li>Chatting with Pidgin and OTR</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./pidgin.de.html">de</a></span>
+   <span class="hidden"><a href="./pidgin.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./pidgin.es.html">es</a></span>
+   <span class="hidden"><a href="./pidgin.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./pidgin.fr.html">fr</a></span>
+   <span class="hidden"><a href="./pidgin.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./pidgin.it.html">it</a></span>
+   <span class="hidden"><a href="./pidgin.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./pidgin.pt.html">pt</a></span>
+   <span class="hidden"><a href="./pidgin.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./pidgin.ru.html">ru</a></span>
+   <span class="hidden"><a href="./pidgin.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Chatting with Pidgin and OTR
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./Tor_Browser.en.html">Browsing the web with Tor Browser</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./thunderbird.en.html">Emailing and reading news with Thunderbird</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>For chatting and instant messaging, Tails includes the <span class="application"><a href="https://pidgin.im/">Pidgin Instant
+Messenger</a></span>.</p>
+
+<div class="note">
+
+<p><a href="https://dino.im/"><i>Dino</i></a> is
+being considered as an option to replace <i>Pidgin</i>
+in Tails.</p>
+
+<p>You can already try using <i>Dino</i> in Tails. See our
+documentation on <a href="../advanced_topics/dino.en.html">chatting with <i>Dino</i> and OMEMO</a>.</p>
+
+</div>
+
+
+<p>You can use it to connect to <a href="https://en.wikipedia.org/wiki/IRC">IRC</a> or <a href="https://en.wikipedia.org/wiki/XMPP">XMPP</a>
+(also known as Jabber) servers, and have several accounts connected at
+the same time.</p>
+
+<p>To start <span class="application">Pidgin</span> choose
+<span class="menuchoice">
+  <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guisubmenu">Internet</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Pidgin Instant Messenger</span>
+</span> or click on the <span class="application">Pidgin</span> icon in
+the <a href="../first_steps/introduction_to_gnome_and_the_tails_desktop.en.html#favorites"><span class="guilabel">Favorites</span> submenu</a>.</p>
+
+<p>For more detailed documentation refer to the <a href="https://developer.pidgin.im/wiki/Using%20Pidgin">official <span class="application">Pidgin</span> user
+guide</a>.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Off-the-record (OTR) encryption</a>
+	</li>
+	<li class="L1"><a href="#index2h1">IRC servers blocking Tor</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Adding support for another protocol</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a><span class="application">Off-the-record</span> (<span class="application">OTR</span>) encryption</h1>
+
+<p>As explained on its <a href="https://otr.cypherpunks.ca/">official page</a>,
+<span class="application">Off-the-Record</span> messaging allows you to
+have private conversations over instant messaging by providing:</p>
+
+<ul>
+<li><strong>Encryption</strong><br />
+  No one else can read your instant messages.</li>
+<li><strong>Authentication</strong><br />
+  You are assured the correspondent is who you think it is.</li>
+<li><strong>Deniability</strong><br />
+  The messages you send do not have digital signatures
+  that are checkable by a third party. Anyone can forge messages after
+  a conversation to make them look like they came from you.
+  However, during a conversation, your correspondent is assured
+  the messages are authentic and unmodified.</li>
+<li><strong>Perfect forward secrecy</strong><br />
+  If you lose control of your private keys, no previous conversation is compromised.</li>
+</ul>
+
+
+<div class="caution">
+
+<p><strong>OTR is deactivated by default</strong>, and your conversations are
+not private.</p>
+
+</div>
+
+
+
+
+<div class="caution">
+
+<p><strong>File transfers are not encrypted by OTR.</strong> OTR only encrypts conversations.</p>
+
+</div>
+
+
+
+
+<div class="tip">
+
+To store your OTR keys and preferences across separate working sessions,
+you can turn on the <a href="../first_steps/persistence/configure.en.html#pidgin">Pidgin</a>
+feature of the Persistent Storage.
+
+</div>
+
+
+
+
+<div class="bug">
+
+In a private OTR conversation over IRC, <strong>a message sent using the
+<code>/me</code> command is not encrypted</strong>. The person receiving
+the message is notified by a warning.
+
+</div>
+
+
+<h1><a name="index2h1"></a>IRC servers blocking Tor</h1>
+
+<p>Some IRC servers block connections from Tor because
+Tor is sometimes used to send spam.</p>
+
+<ul>
+<li><a href="https://freenode.net/kb/answer/chat#accessing-freenode-via-tor">Accessing freenode Via Tor</a>
+(the onion services mentioned on this page are sometimes unavailable)</li>
+<li><a href="https://www.oftc.net/Tor/">OFTC and Tor</a></li>
+<li><a href="https://trac.torproject.org/projects/tor/wiki/doc/BlockingIrc">List of IRC/chat networks that block or support Tor</a></li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Adding support for another protocol</h1>
+
+<p>For security reasons, it is only possible to use IRC and XMPP with
+<span class="application">Pidgin</span> in Tails. Here are the
+prerequisites to enable another protocol that is supported by <span class="application">Pidgin</span> otherwise:</p>
+
+<ul>
+<li><p>The support in <span class="application">Pidgin</span> for this protocol has been successfully tested
+in Tails.</p></li>
+<li><p>Someone volunteers to maintain the corresponding support in Tails
+on the long term.</p></li>
+<li><p>Someone has verified that the security record of the desired plugin
+(including open bugs) is good enough.</p></li>
+</ul>
+
+
+<p>If you want to work on this issue, see <a href="../../contribute/how/code.html">our contribute page</a>.</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./Tor_Browser.en.html">Browsing the web with Tor Browser</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./thunderbird.en.html">Emailing and reading news with Thunderbird</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../about/features.en.html">about/features</a>
+
+<a href="../advanced_topics/dino.en.html">advanced topics/dino</a>
+
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+
+<a href="../first_steps/introduction_to_gnome_and_the_tails_desktop.en.html">first steps/introduction to gnome and the tails desktop</a>
+
+<a href="../first_steps/persistence/configure.en.html">first steps/persistence/configure</a>
+
+<a href="../../news/report_2013_07.html">news/report 2013 07</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/anonymous_internet/pidgin">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

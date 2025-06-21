@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Releasing updates to the verification JavaScript</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../release_process.html">release process</a></li>
+
+
+
+
+<li>Releasing updates to the verification JavaScript</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Releasing updates to the verification JavaScript
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>We run this release process before releasing a new version of Forge or a change
+in the <a href="../../install/inc/js/download.js">verification JavaScript</a> that is used on
+our download pages.</p>
+
+<div class="caution">
+
+<p>During the release process, you will download several pieces of software over
+TLS only which is not trustworthy enough to be compliant with the &quot;third-party
+software&quot; requirement of the security policy of some of our internal teams.</p>
+
+<p>You should isolate these pieces of software, for example by only running them
+in a dedicated Tails.</p>
+
+</div>
+
+
+<h2>Updating Forge</h2>
+
+<p>Website: <a href="https://github.com/digitalbazaar/forge/">https://github.com/digitalbazaar/forge/</a></p>
+
+<p>Release feed: <a href="https://github.com/digitalbazaar/forge/releases.atom">https://github.com/digitalbazaar/forge/releases.atom</a></p>
+
+<ol>
+<li><p>Check which is the current version:</p>
+
+<pre><code>head -n 1 wiki/src/install/inc/js/forge.sha256.js
+</code></pre></li>
+<li><p>Check the upstream Changelog for new versions:</p>
+
+<p><a href="https://github.com/digitalbazaar/forge/blob/master/CHANGELOG.md">https://github.com/digitalbazaar/forge/blob/master/CHANGELOG.md</a></p></li>
+<li><p>Clone the upstream repository:</p>
+
+<pre><code>git clone https://github.com/digitalbazaar/forge.git
+</code></pre></li>
+<li><p>Install the build dependencies:</p>
+
+<pre><code>apt install -t unstable npm webpack
+</code></pre></li>
+<li><p>Build Forge:</p>
+
+<pre><code>export FORGE_VERSION=
+wget -O forge/webpack.config.js https://tails.boum.org/contribute/release_process/verification_javascript/forge.webpack.config.js
+cd forge
+git reset --hard $FORGE_VERSION
+rm dist/*
+torsocks npm install
+npm run build
+cd ..
+</code></pre></li>
+<li><p>Copy into our repo:</p>
+
+<pre><code>cp forge/dist/forge.sha256.js wiki/src/install/inc/js/forge.sha256.js
+</code></pre></li>
+<li><p>Add copyright information:</p>
+
+<pre><code>sed -i &quot;1s/^/\/*! Forge v$FORGE_VERSION | (c) Digital Bazaar, Inc. *\/\n/&quot; wiki/src/install/inc/js/forge.sha256.js
+</code></pre></li>
+</ol>
+
+
+<h2>Which browsers to test</h2>
+
+<p>Perform the following steps for each of:</p>
+
+<ul>
+<li><p>Tor Browser in the latest Tails, in a non-English locale of your choice:</p>
+
+<pre><code>LANG=pt_BR.UTF-8 tor-browser
+</code></pre></li>
+<li><p>The version of Firefox available in Debian stable:</p>
+
+<pre><code>sudo apt install firefox-esr
+firefox-esr
+</code></pre></li>
+<li><p>The version of Chromium available in Debian stable:</p>
+
+<pre><code>sudo apt install chromium
+chromium --no-sandbox
+</code></pre></li>
+</ul>
+
+
+<h2>Steps</h2>
+
+<ol>
+<li><p>In Tails, configure a system proxy:</p>
+
+<p>Settings &rarr; Network &rarr; Network proxy &rarr; Manual</p>
+
+<p>Socks Host:  127.0.0.1   9050</p></li>
+<li><p>Check that verifying the USB image of the last Tails version works in all browsers.</p></li>
+<li><p>Check that verifying a truncated USB image fails in all browsers:</p>
+
+<pre><code>dd if=tails-amd64-3.14.img of=tails-amd64-3.14-truncated.img bs=1M count=100
+</code></pre></li>
+<li><p>Check that verifying a rogue USB image fails in all browser:</p>
+
+<pre><code>sed &#39;s/\x54\x61\x69\x6c\x73/\x46\x61\x69\x6c\x73/&#39; tails-amd64-3.14.img &gt; tails-amd64-3.14-rogue.img
+</code></pre></li>
+<li><p>To detect backward incompatible changes,
+if any changes were made to the HTML or CSS, verify that the new
+download page works with the previous version of the
+<code>wiki/src/install/inc/js/download.js</code>.</p>
+
+<p>Otherwise, fix the incompatibility or rename the new JavaScript file
+as <code>wiki/src/install/inc/js/download-2.js</code>.</p>
+
+<p>See our discussion about <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16091#note_159623">deploying backward incompatible
+changes</a>
+on GitLab.</p></li>
+</ol>
+
+
+<h2>Checklist</h2>
+
+<pre><code>- [ ] Tor Browser
+  - [ ] Good
+  - [ ] Truncated
+  - [ ] Rogue
+- [ ] Firefox ESR
+  - [ ] Good
+  - [ ] Truncated
+  - [ ] Rogue
+- [ ] Chromium
+  - [ ] Good
+  - [ ] Truncated
+  - [ ] Rogue
+- [ ] Backward incompatibility
+</code></pre>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../contribute.en.html">contribute</a>
+
+<a href="../../contribute.de.html">contribute.de</a>
+
+<a href="../../contribute.es.html">contribute.es</a>
+
+<a href="../../contribute.fr.html">contribute.fr</a>
+
+<a href="../../contribute.it.html">contribute.it</a>
+
+<a href="../../contribute.pt.html">contribute.pt</a>
+
+<a href="../../contribute.ru.html">contribute.ru</a>
+
+<a href="../working_together/roles/foundations_team.html">working together/roles/foundations team</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/release_process/verification_javascript">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+
+<html lang="fr" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - virt-manager</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./boxes.fr.html" title="GNOME Boxes" />
+
+<link rel="up" href="../../advanced_topics.index.fr.html" title="advanced topics.index.fr" />
+
+<link rel="next" href="../external_hard_disk.fr.html" title="Démarrer Tails depuis un disque dur externe" />
+
+
+
+
+</head>
+
+
+<body class="fr">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.fr.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.fr.html">Accueil</a></li>
+  <li><a href="../../../about.fr.html">Fonctionnement de Tails</a></li>
+  <li><a href="../../../install.fr.html">Obtenir Tails</a></li>
+  <li><a href="../../../doc.fr.html">Documentation</a></li>
+  <li><a href="../../../support.fr.html">Assistance</a></li>
+  <li><a href="../../../contribute.fr.html">Participer</a></li>
+  <li><a href="../../../news.fr.html">Nouvelles</a></li>
+  <li><a href="../../../jobs.html">Postes &agrave; pourvoir</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.fr.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.fr.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../advanced_topics.fr.html">advanced topics</a></li>
+
+
+
+
+
+<li><a href="../virtualization.fr.html">virtualization</a></li>
+
+
+
+
+<li>virt-manager</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Français
+   </span>
+   <span class="hidden">Français
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./virt-manager.en.html">en</a></span>
+   <span class="hidden"><a href="./virt-manager.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virt-manager.de.html">de</a></span>
+   <span class="hidden"><a href="./virt-manager.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virt-manager.es.html">es</a></span>
+   <span class="hidden"><a href="./virt-manager.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virt-manager.it.html">it</a></span>
+   <span class="hidden"><a href="./virt-manager.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virt-manager.pt.html">pt</a></span>
+   <span class="hidden"><a href="./virt-manager.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virt-manager.ru.html">ru</a></span>
+   <span class="hidden"><a href="./virt-manager.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+virt-manager
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./boxes.fr.html">GNOME Boxes</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="../external_hard_disk.fr.html">Démarrer Tails depuis un disque dur externe</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p><a href="http://virt-manager.org/"><em>virt-manager</em></a> est un logiciel libre de
+virtualisation pour Linux. <em>virt-manager</em> a une interface plus complexe que
+<em>VirtualBox</em> ou que <em>GNOME Boxes</em> mais poss&egrave;de aussi un ensemble plus
+complet de fonctionnalit&eacute;s.</p>
+
+<div class="caution">
+
+Utiliser Tails dans une machine virtuelle a <a href="../virtualization.fr.html#security">de nombreuses cons&eacute;quences en
+terme de s&eacute;curit&eacute;</a>. En fonction du syst&egrave;me
+d&rsquo;exploitation h&ocirc;te et de vos besoins en terme de s&eacute;curit&eacute;, faire tourner
+Tails dans une machine virtuelle peut &ecirc;tre dangereux.
+
+</div>
+
+
+
+
+<div class="tip">
+
+<p><em>virt-manager</em> est la seule solution de
+virtualisation que nous pr&eacute;sentons qui permet l&#39;utilisation d&#39;un stockage
+persistant. Voir <a href="./virt-manager.fr.html#usb_image">Utiliser Tails depuis une image
+USB</a>.</p>
+
+</div>
+
+
+
+
+<div class="note">
+
+<p>Les instructions suivantes ont &eacute;t&eacute; test&eacute;es avec Debian 10 (Buster).</p>
+
+<p>S&#39;il vous pla&icirc;t, <a href="../../../about/contact.fr.html#tails-dev">faites-nous savoir</a> si cela ne s&#39;applique pas
+&agrave; Debian 10 (Buster).</p>
+
+</div>
+
+
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Terminologie</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Installation</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Utiliser Tails depuis une image ISO</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Utiliser Tails depuis une image USB</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Lancer Tails depuis une clé USB</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Résolution des problèmes</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Terminologie</h1>
+
+<p><em>virt-manager</em> est bas&eacute; sur un ensemble d&#39;outils de virtualisation bas niveau,
+allant de l&#39;interface utilisateur aux interactions mat&eacute;rielles avec le processeur.
+Cette terminologie est plut&ocirc;t d&eacute;routante et d&#39;autres documentations
+peuvent mentionner les outils suivants&nbsp;:</p>
+
+<ul>
+<li><em>KVM</em> est le module du noyau Linux qui interagit avec les
+fonctionnalit&eacute;s de virtualisation du processeur.</li>
+<li><em>QEMU</em> est le logiciel de virtualisation bas&eacute; sur <em>KVM</em> qui &eacute;mule les
+processeurs virtuels et les p&eacute;riph&eacute;riques et qui lance et &eacute;teint les
+machines virtuelles.</li>
+<li><em>libvirt</em> est la biblioth&egrave;que qui permet &agrave; <em>virt-manager</em> d&#39;interagir
+avec les capacit&eacute;s de virtualisation fournies par <em>QEMU</em>.</li>
+<li><em>SPICE</em> est un protocole qui permet de visualiser le bureau des machines
+virtuelles.</li>
+<li><em>virt-manager</em> est l&#39;interface graphique qui permet de cr&eacute;er,
+configurer, et faire tourner les machines virtuelles.</li>
+</ul>
+
+
+<p><a id="iso"></a></p>
+
+<h1><a name="index2h1"></a>Installation</h1>
+
+<p>Pour installer <em>virt-manager</em> dans Debian, ex&eacute;cuter la commande suivante&nbsp;:</p>
+
+<pre><code>sudo apt install virt-manager libvirt-daemon-system
+</code></pre>
+
+<p>Pour installer <em>virt-manager</em> dans Ubuntu, ex&eacute;cuter la commande suivante&nbsp;:</p>
+
+<pre><code>sudo apt install virt-manager libvirt-bin qemu-kvm
+</code></pre>
+
+<h1><a name="index3h1"></a>Utiliser Tails depuis une image ISO</h1>
+
+<ol>
+<li><p>D&eacute;marrer <em>virt-manager</em>.</p></li>
+<li><p>Double-cliquer sur <strong>localhost (QEMU)</strong> pour se connecter au syst&egrave;me
+<em>QEMU</em> de votre h&ocirc;te.</p></li>
+<li><p>Pour cr&eacute;er une nouvelle machine virtuelle, choisissez <span class="menuchoice"> <span class="guimenu">Fichier</span>&nbsp;&#x25B8; <span class="guimenuitem">Nouvelle machine virtuelle</span></span>.</p></li>
+<li><p>&Agrave; <em>l&#39;&eacute;tape 1</em>, choisissez <strong>Support d&#39;installation locale (image ISO ou
+CDROM)</strong>.</p></li>
+<li><p>&Agrave; l&#39;<em>&eacute;tape 2</em>, choisir :</p>
+
+<ul>
+<li><strong>Utiliser image ISO</strong>, puis <strong>Parcourir...</strong>, et <strong>Parcourir en
+local</strong> pour naviguer jusqu&#39;&agrave; l&#39;image ISO depuis laquelle vous
+souhaitez d&eacute;marrer</li>
+<li><strong>Type OS</strong> : <strong>Linux</strong></li>
+<li><strong>Version</strong> : <strong>Debian Buster</strong></li>
+</ul>
+</li>
+<li><p>&Agrave; l&#39;<em>&eacute;tape 3</em>, allouer au moins 2048Mo de RAM.</p></li>
+<li><p>&Agrave; l&#39;<em>&eacute;tape 4</em>, d&eacute;sactiver le stockage pour cette machine virtuelle.</p></li>
+<li><p>&Agrave; l&#39;<em>&eacute;tape 5</em> :</p>
+
+<ul>
+<li>Entrez un nom pour la nouvelle machine virtuelle.</li>
+<li>Cliquez sur <strong>Terminer</strong> pour d&eacute;marrer la machine virtuelle.</li>
+</ul>
+</li>
+</ol>
+
+
+<div class="tip">
+
+Si vous obtenez le message d&#39;erreur &quot;<span class="guilabel">Error starting
+domain: Requested operation is not valid: network &#39;default&#39; is not
+active</span>&quot;, essayez alors de d&eacute;marrer le r&eacute;seau virtuel par d&eacute;faut :
+
+<ol>
+<li>Cliquer sur <span class="guilabel">localhost (QEMU)</span>.</li>
+<li>Choisir <span class="menuchoice">
+    <span class="guimenu">&Eacute;dition</span>&nbsp;&#x25B8;
+    <span class="guimenuitem">D&eacute;tails de la connexion</span></span> pour
+    administrer la connexion &agrave; votre syst&egrave;me
+    <span class="application">QEMU</span> local.</li>
+<li>Cliquer sur l&#39;onglet <span class="guilabel">R&eacute;seaux virtuels</span>, puis
+    s&eacute;lectionner le r&eacute;seau virtuel <span class="guilabel">default</span> dans la
+    partie de gauche.</li>
+<li>Cliquer sur l&#39;ic&ocirc;ne <span class="createlink">media-playback-start.png</span> en bas de la partie gauche de la fen&ecirc;tre pour
+    d&eacute;marrer le r&eacute;seau virtuel par d&eacute;faut.</li>
+</ol>
+
+</div>
+
+
+<p><a id="usb_image"></a></p>
+
+<h1><a name="index4h1"></a>Utiliser Tails depuis une image USB</h1>
+
+<p>Utiliser Tails depuis une image USB est la seule solution de virtualisation
+qui vous permet d&#39;utiliser un stockage persistant dans une machine
+virtuelle.</p>
+
+<ol>
+<li><p><a href="../../../install/download.fr.html">T&eacute;l&eacute;charger une image USB</a> au lieu d&#39;une image ISO.</p></li>
+<li><p>Augmentez la taille de l&#39;image USB &agrave; au moins 8 Go. Cela cr&eacute;e un espace
+pour les mises &agrave; jour automatiques et le stockage persistant.</p>
+
+<p class="pre command">truncate -s
+<span class="command-placeholder">size</span>
+<span class="command-placeholder">tails.img</span></p>
+
+
+<ul>
+<li><span class="command-placeholder">taille</span> doit &ecirc;tre au moins de
+<span class="command">7200M</span>.</li>
+<li><span class="command-placeholder">tails.img</span> est le nom du
+fichier de l&#39;image USB que vous voulez redimensionner.</li>
+</ul>
+</li>
+<li><p>D&eacute;marrer <em>virt-manager</em>.</p></li>
+<li><p>Double-cliquer sur <strong>localhost (QEMU)</strong> pour se connecter au syst&egrave;me
+<em>QEMU</em> de votre h&ocirc;te.</p></li>
+<li><p>Pour cr&eacute;er une nouvelle machine virtuelle, choisissez <span class="menuchoice"> <span class="guimenu">Fichier</span>&nbsp;&#x25B8; <span class="guimenuitem">Nouvelle machine virtuelle</span></span>.</p></li>
+<li><p>&Agrave; l&#39;<em>&eacute;tape 1</em>, choisir <strong>Importer une image disque existante</strong>.</p></li>
+<li><p>&Agrave; l&#39;<em>&eacute;tape 2</em>, choisir <strong>Parcourir...</strong>, et <strong>Parcourir en local</strong> pour
+naviguer jusqu&#39;&agrave; l&#39;image USB depuis laquelle vous souhaitez d&eacute;marrer.</p>
+
+<p>Comme syst&egrave;me d&#39;exploitation, choisir <strong>Debian Buster</strong>.</p></li>
+<li><p>&Agrave; l&#39;<em>&eacute;tape 3</em>, allouer au moins 2048Mo de RAM.</p></li>
+<li><p>&Agrave; l&#39;<em>&eacute;tape 4</em> :</p>
+
+<ul>
+<li>Entrez un nom pour la nouvelle machine virtuelle.</li>
+<li>Choisir <strong>Personnaliser la configuration avant l&#39;installation</strong>.</li>
+<li>Cliquer <strong>Terminer</strong> pour ouvrir la vue configuration.</li>
+</ul>
+</li>
+<li><p>Dans la <strong>vue configuration</strong>, choisir <strong>VirtIO Disk 1</strong> ou <strong>IDE Disk
+1</strong></p>
+
+<ul>
+<li>D&eacute;velopper les <strong>options avanc&eacute;es</strong> et positionner <strong>Disk bus* &agrave;
+</strong>USB**.</li>
+<li>Cliquez sur <strong>Appliquer</strong>.</li>
+<li>V&eacute;rifier la case &agrave; cocher <strong>Amovible</strong> qui doit appara&icirc;tre dans la m&ecirc;me
+vue.</li>
+<li>Cliquer &agrave; nouveau sur <strong>Appliquer</strong>.</li>
+<li>Cliquer <strong>D&eacute;marrer l&#39;installation</strong> dans le coin en haut &agrave; gauche pour
+d&eacute;marrer la machine virtuelle.</li>
+</ul>
+</li>
+</ol>
+
+
+<p>Apr&egrave;s avoir d&eacute;marr&eacute; sur l&#39;image USB, vous pouvez <a href="../../first_steps/persistence/configure.fr.html">cr&eacute;er un stockage
+persistant</a> sur celle-ci.</p>
+
+<p><a id="usb"></a></p>
+
+<h1><a name="index5h1"></a>Lancer Tails depuis une clé USB</h1>
+
+<p>Pour lancer Tails depuis une cl&eacute; USB en utilisant <em>virt-manager</em>, commencer
+par cr&eacute;er une machine virtuelle depuis une image ISO comme d&eacute;crit
+<a href="./virt-manager.fr.html#iso">ci-dessus</a>.</p>
+
+<p>Puis faire ce qui suit :</p>
+
+<ol>
+<li>Dans la fen&ecirc;tre de la machine virtuelle, choisir <span class="menuchoice"> <span class="guimenu">Machine
+ virtuelle</span>&nbsp;&#x25B8; <span class="guisubmenuitem">&Eacute;teindre</span>&nbsp;&#x25B8; <span class="guimenuitem">Forcer l&#39;extinction</span></span> pour &eacute;teindre la
+ machine virtuelle.</li>
+<li>Brancher la cl&eacute; USB depuis laquelle vous voulez d&eacute;marrer Tails.</li>
+<li>Choisir <span class="menuchoice"> <span class="guimenu">Afficher</span>&nbsp;&#x25B8; <span class="guimenuitem">D&eacute;tails</span></span> pour modifier la
+ configuration de la machine virtuelle.</li>
+<li>Cliquer sur le bouton <strong>Ajouter un mat&eacute;riel</strong> en bas de la partie
+ gauche de la fen&ecirc;tre.</li>
+<li>S&eacute;lectionner <strong>USB Host Device</strong> dans la partie gauche.</li>
+<li>Dans la partie droite, cliquer sur le p&eacute;riph&eacute;rique depuis lequel vous
+ voulez lancer Tails, et cliquer sur <strong>Terminer</strong>.</li>
+</ol>
+
+
+<p>Vous pouvez garder l&#39;image ISO originale connect&eacute;e en tant que DVD virtuel
+pour installer Tails sur la cl&eacute; USB si n&eacute;cessaire.</p>
+
+<p><a id="disconnect"></a></p>
+
+<p>Vous pouvez &eacute;galement d&eacute;connecter l&#39;image ISO originale et d&eacute;marrer
+directement depuis la cl&eacute; USB si Tails y est d&eacute;j&agrave; install&eacute;. Pour cela :</p>
+
+<ol>
+<li>&Eacute;teindre la machine virtuelle.</li>
+<li>Dans la configuration de la machine virtuelle, cliquer sur <strong>IDE CDROM
+ 1</strong> dans la partie gauche de la fen&ecirc;tre.</li>
+<li>Cliquer sur le bouton <strong>D&eacute;connecter</strong> dans la partie droite.</li>
+<li>Pour activer la cl&eacute; USB comme option de d&eacute;marrage :
+
+<ol>
+<li>Cliquer sur <strong>Boot Options</strong> dans la partie gauche.</li>
+<li>S&eacute;lectionner l&#39;option de d&eacute;marrage <strong>USB</strong> correspondant &agrave; votre p&eacute;riph&eacute;rique USB.</li>
+<li>Cliquer sur <strong>Appliquer</strong>.</li>
+</ol>
+</li>
+<li>Pour lancer la machine virtuelle choisir
+ <span class="menuchoice">
+ <span class="guimenu">Afficher</span>&nbsp;&#x25B8;
+ <span class="guimenuitem">Console</span></span> puis
+ <span class="menuchoice">
+ <span class="guimenu">Machine virtuelle</span>&nbsp;&#x25B8;
+ <span class="guimenuitem">D&eacute;marrer</span></span>.</li>
+</ol>
+
+
+<p>Apr&egrave;s avoir d&eacute;marr&eacute; sur l&#39;image USB, vous pouvez <a href="../../first_steps/persistence/configure.fr.html">cr&eacute;er un stockage
+persistant</a> sur celle-ci.</p>
+
+<h1><a name="index6h1"></a>Résolution des problèmes</h1>
+
+<p><a id="graphics-issues"></a></p>
+
+<h2><a name="index1h2"></a>Probl&egrave;mes graphiques</h2>
+
+<p>Il y a souvent des probl&egrave;mes avec le support graphique dans Tails tournant &agrave;
+l&#39;int&eacute;rieur d&#39;une machine virtuelle avec <em>virt-manager</em>. La meilleure
+solution peut varier suivant la version de votre solution de virtualisation
+et suivant la configuration de la machine virtuelle. Par exemple :</p>
+
+<ul>
+<li>La fonctionnalit&eacute; <em>Ajustement automatique de la machine virtuelle &agrave; la
+fen&ecirc;tre</em> ne marche pas avec toutes les configurations.</li>
+<li>Le p&eacute;riph&eacute;rique vid&eacute;o qui fournit des performances graphiques optimales
+peut-&ecirc;tre diff&eacute;rent suivant la version du syst&egrave;me d&#39;exploitation h&ocirc;te.</li>
+</ul>
+
+
+<p>Pour r&eacute;soudre ces probl&egrave;mes :</p>
+
+<ol>
+<li><p>Assurez-vous que la machine virtuelle a un affichage <em>Spice</em> et un canal
+<em>Spice</em> configur&eacute;s, et non pas des <em>VNC</em>.</p></li>
+<li><p>Essayez diff&eacute;rents mod&egrave;les de p&eacute;riph&eacute;rique vid&eacute;o virtuel.</p>
+
+<p>D&eacute;marrez avec les p&eacute;riph&eacute;riques vid&eacute;o <em>Virtio</em> et <em>QXL</em> : ils donnent g&eacute;n&eacute;ralement
+les meilleurs r&eacute;sultats. Si ils ne marchent pas bien pour vous, essayez tous les
+autres mod&egrave;les de p&eacute;riph&eacute;rique vid&eacute;o.</p></li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./boxes.fr.html">GNOME Boxes</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="../external_hard_disk.fr.html">Démarrer Tails depuis un disque dur externe</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+
+<a href="../../../news/report_2015_01-02.html">news/report 2015 01-02</a>
+
+<a href="../../../news/report_2019_03.html">news/report 2019 03</a>
+
+<a href="../../../news/version_2.5.html">news/version 2.5</a>
+
+<a href="../../../support/known_issues/graphics.fr.html">support/known issues/graphics.fr</a>
+
+<a href="../virtualization.fr.html">virtualization.fr</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/virtualization/virt-manager.fr">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

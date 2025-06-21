@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Call for testing: 1.0~rc1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Mon, 18 Apr 2014 12:00:00 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Call for testing: 1.0~rc1</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Call for testing: 1.0~rc1
+</span>
+<span class="date">2014-04-18</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>You can help Tails! The first release candidate for the upcoming version
+1.0 is out. Please test it and see if it works for you.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">How to test Tails 1.0~rc1?</a>
+	</li>
+	<li class="L1"><a href="#index2h1">How to automatically upgrade from 0.23?</a>
+	</li>
+	<li class="L1"><a href="#index3h1">What's new since 0.23?</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>How to test Tails 1.0~rc1?</h1>
+
+<ol>
+<li><p><strong>Keep in mind that this is a test image.</strong> We have made sure
+that it is not broken in an obvious way, but it might still contain
+undiscovered issues.</p></li>
+<li><p>Either try the <a href="#automatic_upgrade">automatic upgrade</a>, or
+download the ISO image and its signature:</p>
+
+<p><a class="download-file" href="">Tails 1.0~rc1 ISO image</a></p>
+
+<p><a class="download-signature" href="https://tails.boum.org/torrents/files/tails-i386-1.0~rc1.iso.sig">Tails 1.0~rc1 signature</a></p></li>
+<li><p>Verify the ISO image.</p></li>
+<li><p>Have a look at the list of <a href="../support/known_issues.en.html">longstanding known
+issues</a>.</p></li>
+<li><p>Test wildly!</p></li>
+</ol>
+
+
+<p>If you find anything that is not working as it should, please <a href="../doc/first_steps/bug_reporting.en.html">report to
+us</a>! Bonus points if you check if it is a
+<a href="../support/known_issues.en.html">longstanding known issue</a>.</p>
+
+<p></p><div id="automatic_upgrade">
+
+<h1><a name="index2h1"></a>How to automatically upgrade from 0.23?</h1>
+
+<p>These steps allow you to automatically upgrade a device installed with <span class="application">Tails Installer</span> from Tails 0.23 to Tails 1.0~rc1.</p>
+
+<ol>
+<li><p>Start Tails 0.23 and <a href="../doc/first_steps/welcome_screen/administration_password.en.html">set an administration
+password</a>.</p></li>
+<li><p>Run this command in a <span class="application">Root
+Terminal</span> to select the &quot;alpha&quot; upgrade channel
+and start the upgrade:</p>
+
+<pre><code>echo TAILS_CHANNEL=\&quot;alpha\&quot; &gt;&gt; /etc/os-release &amp;&amp; \
+     tails-upgrade-frontend-wrapper
+</code></pre></li>
+<li><p>Once the upgrade has been installed, restart Tails and choose
+<span class="menuchoice">
+  <span class="guimenu">System</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">About Tails</span>
+</span>
+to confirm that the running system is Tails 1.0~rc1.</p></li>
+</ol>
+
+
+<h1><a name="index3h1"></a>What's new since 0.23?</h1>
+
+<ul>
+<li><p>Bugfixes</p>
+
+<ul>
+<li>Disable inbound I2P connections. Tails already restricts incoming
+connections, but this change tells I2P about it.</li>
+<li>Fix link to the system requirements documentation page in the Tails
+Upgrader error shown when too little RAM is available.</li>
+</ul>
+</li>
+<li><p>Minor improvements</p>
+
+<ul>
+<li>Upgrade I2P to 0.9.12-2~deb6u+1.</li>
+<li>Import TorBrowser profile. This was forgotten in Tails 0.23 and even
+though we didn&#39;t explicitly set those preferences in that release
+they defaulted to the same values. This future-proofs us in case the
+defaults would ever change.</li>
+<li>Import new custom version of Tor Launcher:
+
+<ul>
+<li>Based on upstream Tor Launcher 0.2.5.3.</li>
+<li>Improve how Tor Launcher handles incomplete translation.  (Tor
+bug <a href="https://bugs.torproject.org/11483">bug #11483 on Tor Project&#39;s Trac</a>; more future-proof fix for Tails bug
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6885">#6885</a>)</li>
+<li>Remove the bridge settings prompt. (Tor bug <a href="https://bugs.torproject.org/11482">bug #11482 on Tor Project&#39;s Trac</a>;
+closes Tails bug <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6934">#6934</a>)</li>
+<li>Always show bridge help button. (Tor bug <a href="https://bugs.torproject.org/11484">bug #11484 on Tor Project&#39;s Trac</a>)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p>See the <a href="https://git-tails.immerda.ch/tails/plain/debian/changelog?h=stable">online
+Changelog</a> for technical details.</p>
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/test_1.0-rc1">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

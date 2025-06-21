@@ -1,0 +1,1290 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Install from macOS</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+<link href="../../bootstrap.min.css" rel="stylesheet" title="" type="text/css" />
+<link href="../inc/stylesheets/assistant.css" rel="stylesheet" title="" type="text/css" />
+<link href="../inc/stylesheets/steps.css" rel="stylesheet" title="" type="text/css" />
+<link href="../inc/stylesheets/mac.css" rel="stylesheet" title="" type="text/css" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../install.en.html">install</a></li>
+
+
+
+
+
+<li><a href="../mac.en.html">mac</a></li>
+
+
+
+
+<li>Install from macOS</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./usb.de.html">de</a></span>
+   <span class="hidden"><a href="./usb.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./usb.es.html">es</a></span>
+   <span class="hidden"><a href="./usb.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./usb.fr.html">fr</a></span>
+   <span class="hidden"><a href="./usb.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./usb.it.html">it</a></span>
+   <span class="hidden"><a href="./usb.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./usb.pt.html">pt</a></span>
+   <span class="hidden"><a href="./usb.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./usb.ru.html">ru</a></span>
+   <span class="hidden"><a href="./usb.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Install from macOS
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="hidden-step-1"></div>
+
+
+<p>These instructions require:</p>
+
+<ul>
+<li>macOS 10.10 (Yosemite) or later</li>
+</ul>
+
+
+<div class="step-image"><img alt="" class="img" height="200" src="../inc/infography/os-mac.png" width="200" /></div>
+
+
+
+
+<p class="start">Start in macOS.</p>
+
+
+
+
+<h1 class="step usb">Install Tails using <span class="application">Etcher</span></h1>
+
+
+<h1 class="step upgrade">Install an intermediary Tails using <span class="application">Etcher</span></h1>
+
+
+
+
+<p class="upgrade">In this step, you will install an intermediary Tails using the Tails USB
+image that you downloaded earlier.</p>
+
+
+<h2>Install Etcher</h2>
+
+<ol>
+<li><p>Click on the following link to download <span class="application">Etcher</span>:</p>
+
+<p><a href="https://tails.boum.org/etcher/Etcher.dmg">Download Etcher for macOS</a></p></li>
+<li><p>Open the <span class="application">Etcher</span> download (DMG disk image).</p>
+
+<p><img alt="" class="img" height="351" src="../inc/screenshots/install_etcher_in_mac.png" width="374" /></p></li>
+<li><p>To install <span class="application">Etcher</span>, drag the
+<span class="application">Etcher</span> icon onto the
+<span class="guilabel">Applications</span> icon.</p></li>
+<li><p>Close the installation window of
+<span class="application">Etcher</span>.</p>
+
+<p>Optionally, eject the <span class="application">Etcher</span> disk image
+from the desktop.</p>
+
+<p><img alt="" class="img" height="279" src="../inc/screenshots/eject_etcher_dmg.png" width="306" /></p></li>
+</ol>
+
+
+<p>Instead of installing <span class="application">Etcher</span>, you can
+also <a class="toggle" href="#install-inc-steps-install-etcher-in-mac.inline.dd">install Tails using <code>dd</code> on the command
+line</a>.</p>
+
+<div class="toggleable" id="install-inc-steps-install-etcher-in-mac.inline.dd">
+
+
+<ol>
+<li><p>Make sure that your USB stick is unplugged.</p></li>
+<li><p>Open <span class="application">Terminal</span> from
+<span class="menuchoice">
+  <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guisubmenu">Utilities</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Terminal.app</span></span>.</p></li>
+<li><p>Execute the following command:</p>
+
+<p class="pre command">diskutil list</p>
+
+
+<p>It returns a list of the storage devices on the system. For example:</p>
+
+<p class="pre command-output">/dev/disk0
+ #:                     TYPE NAME         SIZE      IDENTIFIER
+ 0:    GUID_partition_scheme             *500.1 GB  disk0
+ 1:                      EFI              209.7 MB  disk0s1
+ 2:                Apple_HFS MacDrive     250.0 GB  disk0s2
+ 3:                      EFI              134.1 GB  disk0s3
+ 4:     Microsoft Basic Data BOOTCAMP     115.5 GB  disk0s4</p>
+</li>
+<li><p>Plug your USB stick in the computer.</p></li>
+<li><p>Execute again the same command:</p>
+
+<p class="pre command">diskutil list</p>
+
+
+<p>Your USB stick appears as a new device in the list. Check
+that its size corresponds to the size of your USB stick.</p>
+
+<p class="pre command-output">/dev/disk0
+ #:                     TYPE NAME         SIZE      IDENTIFIER
+ 0:    GUID_partition_scheme             &lowast;500.1 GB  disk0
+ 1:                      EFI              209.7 MB  disk0s1
+ 2:                Apple_HFS MacDrive     250.0 GB  disk0s2
+ 3:                      EFI              134.1 GB  disk0s3
+ 4:     Microsoft Basic Data BOOTCAMP     115.5 GB  disk0s4
+/dev/disk1
+ #:                     TYPE NAME         SIZE      IDENTIFIER
+ 0:   FDisk_partition_scheme             *8.0 GB    disk1
+ 1:                Apple_HFS Untitled 1   8.0 GB    disk1s1</p>
+</li>
+<li><p>Take note of the <em>device name</em> of your USB stick.
+In this example, the USB stick is 8.0 GB and its device name is <span class="code">/dev/disk1</span>.
+Yours might be different.</p>
+
+<div class="caution">
+<p>If you are unsure about the device name, you should stop proceeding or
+<strong>you risk overwriting any hard disk on the system</strong>.</p>
+</div>
+</li>
+<li><p>Execute the following commands to copy the USB image that you
+downloaded earlier to the USB stick.</p>
+
+<p>Replace:</p>
+
+<ul>
+<li><p><span class="command-placeholder">tails.img</span> with the path to the USB image</p>
+
+<div class="tip">
+<p>If you are unsure about the path to the USB image, you can insert the
+correct path by dragging and dropping the icon of the USB image from
+<span class="application">Finder</span> onto <span class="application">
+Terminal</span>.</p>
+</div>
+</li>
+<li><p><span class="command-placeholder">device</span> with the device name found in step 6</p>
+
+<div class="tip">
+<p>You can try adding <span class="code">r</span> before <span class="code">disk</span> to make the installation faster.</p>
+</div>
+</li>
+</ul>
+
+
+<p class="pre command">diskutil unmountDisk <span class="command-placeholder">device</span></p>
+
+
+<p class="pre command">dd if=<span class="command-placeholder">tails.img</span> of=<span class="command-placeholder">device</span> bs=16m &amp;&amp; sync</p>
+
+
+<p>You should get something like this:</p>
+
+<p class="pre command-example">dd if=/Users/me/tails-amd64-3.12.img of=/dev/rdisk9 bs=16m &amp;&amp; sync</p>
+
+
+<p>If no error message is returned, Tails is being copied on the USB
+stick. The copy takes some time, generally a few minutes.</p>
+
+<div class="note">
+<p>If you get a <span class="guilabel">Permission denied</span> error, try
+adding <code>sudo</code> at the beginning of the command:</p>
+
+<p class="pre command">sudo dd if=<span class="command-placeholder">tails.img</span> of=<span class="command-placeholder">device</span> bs=16m &amp;&amp; sync</p>
+
+<p>If you get an <span class="guilabel">invalid number &lsquo;16m&rsquo;</span> error, try
+using <code>16M</code> instead:</p>
+
+<p class="pre command">dd if=<span class="command-placeholder">tails.img</span> of=<span class="command-placeholder">device</span> bs=16M &amp;&amp; sync</p>
+
+</div>
+
+
+<p>The installation is complete once the command prompt reappeared.</p></li>
+</ol>
+
+
+</div>
+
+
+<h2>Install <span class="upgrade"> the intermediary</span> Tails</h2>
+
+<p>   </p><div class="step-image usb"><img alt="USB stick plugged in the computer" class="img" height="200" src="../inc/infography/plug-usb.png" width="200" /></div>
+   <div class="step-image upgrade"><img alt="USB stick plugged on the left" class="img" height="200" src="../inc/infography/plug-upgrade-usb-only.png" width="200" /></div>
+
+<ol>
+<li><p>Plug in the USB stick on which you want to install
+<span class="usb">Tails.</span>
+<span class="upgrade">the intermediary Tails.</span></p>
+
+<div class="caution"><p>All the data on this USB stick will be lost.</p></div>
+
+
+<div class="note upgrade"><p>The Persistent Storage of your Tails USB stick will not be
+copied to the temporary Tails.</p></div>
+</li>
+<li><p class="mac upgrade-mac">
+Open <span class="application">Finder</span> and choose
+<span class="application">Etcher</span> in
+<span class="guilabel">Applications</span>.
+</p>
+
+
+<p class="windows upgrade-windows">
+Open the <span class="application">Etcher</span> download.
+</p>
+
+
+<p>At the security warning, confirm that you want to open
+<span class="application">Etcher</span>.</p>
+
+<p><span class="application">Etcher</span> starts.</p>
+
+<p><img alt="" class="mac upgrade-mac" height="333" src="../inc/screenshots/etcher_in_mac.png" width="550" />
+<img alt="" class="windows upgrade-windows" height="372" src="../inc/screenshots/etcher_in_windows.png" width="563" /></p></li>
+<li><p>Click the <strong>Flash from file</strong> button.</p>
+
+<p>Choose the USB image that you downloaded earlier.</p>
+
+<div class="note">
+<p>Make sure that the USB image has an
+<span class="filename">.img</span> file extension.</p>
+
+<p>If the image has an <span class="filename">.iso</span> file
+extension, it is not the correct image. Please go back to the
+<span class="windows"><a href="../win/usb-download.en.html">download step for installing from Windows</a>.</span>
+<span class="mac"><a href="./usb-download.en.html">download step for installing from macOS</a>.</span>
+<span class="upgrade-windows"><a href="../../upgrade/win-download.en.html">download step for upgrading from Windows</a>.</span>
+<span class="upgrade-mac"><a href="../../upgrade/mac-download.en.html">download step for upgrading from macOS</a>.</span></p>
+</div>
+</li>
+<li><p>Click the <strong>Select target</strong> button to select your USB stick.</p>
+
+<div class="step-image usb"><img alt="USB image installed on USB stick" class="img" height="200" src="../inc/infography/install-tails.png" width="200" /></div>
+
+
+<div class="step-image upgrade"><img alt="USB image installed on USB stick on the left" class="img" height="200" src="../inc/infography/install-upgrade-usb-only.png" width="200" /></div>
+</li>
+<li><p>Click <span class="bold">Flash</span>.</p>
+
+<p>Enter your password if you are asked for it.</p>
+
+<p>The installation takes a few minutes.</p>
+
+<p>After installing Tails, <span class="application">Etcher</span> verifies the
+installation.</p>
+
+<div class="bug">
+<p>If the verification of <span class="application">Etcher</span>
+fails, try to install again or try using a different USB
+stick.</p>
+</div>
+</li>
+<li><p>Close <span class="application">Etcher</span>.</p>
+
+<p class="mac upgrade-mac">
+If a notification about the USB stick not being readable appears,
+click <span class="bold">Eject</span> to eject the USB stick.
+</p>
+</li>
+</ol>
+
+
+<div class="trophy windows linux mac expert">
+
+<div class="state-image"><img alt="Tails USB stick" class="img" height="200" src="../inc/infography/tails-usb.png" width="200" /></div>
+
+<p>Congratulations, you have installed Tails on your USB stick!</p>
+
+<p>You will now restart your computer on this USB stick.
+<span class="windows linux expert">It can be a bit complicated, so good luck!</span>
+<span class="mac">But it might not work on your Mac model, so good luck!</span>
+</p>
+
+</div>
+
+
+
+
+<div class="clone">
+
+<p>If you are already in Tails, go directly to step 3:
+<a href="#verify-other">Verify that the other Tails is up-to-date</a>.</p>
+
+</div>
+
+
+
+
+<h1 class="step" id="back">Open these instructions on another device</h1>
+
+
+
+
+<div class="step-image"><img alt="" class="img" height="200" src="../inc/infography/switch-context.png" width="200" /></div>
+
+
+<p>In the next step, you will shut down the computer. To be able to follow
+the rest of the instructions afterwards, we recommend you either:</p>
+
+<p>   <img alt="" class="install-clone qrcode" height="185" src="../inc/qrcodes/tails_boum_org_install_clone_back_1.png" width="185" />
+   <img alt="" class="windows qrcode" height="185" src="../inc/qrcodes/tails_boum_org_install_win_usb_back_1.png" width="185" />
+   <img alt="" class="mac qrcode" height="185" src="../inc/qrcodes/tails_boum_org_install_mac_usb_back_1.png" width="185" />
+   <img alt="" class="mac-clone qrcode" height="185" src="../inc/qrcodes/tails_boum_org_install_mac_clone_back_1.png" width="185" />
+   <img alt="" class="expert qrcode" height="185" src="../inc/qrcodes/tails_boum_org_install_expert_usb_back_1.png" width="185" />
+   <img alt="" class="linux qrcode" height="185" src="../inc/qrcodes/tails_boum_org_install_linux_usb_back_1.png" width="185" />
+   <img alt="" class="upgrade-clone qrcode" height="185" src="../inc/qrcodes/tails_boum_org_upgrade_clone_back_1.png" width="185" />
+   <img alt="" class="upgrade-tails qrcode" height="185" src="../inc/qrcodes/tails_boum_org_upgrade_tails_back_1.png" width="185" />
+   <img alt="" class="upgrade-windows qrcode" height="185" src="../inc/qrcodes/tails_boum_org_upgrade_win_back_1.png" width="185" />
+   <img alt="" class="upgrade-mac qrcode" height="185" src="../inc/qrcodes/tails_boum_org_upgrade_mac_back_1.png" width="185" />
+   <img alt="" class="upgrade-linux qrcode" height="185" src="../inc/qrcodes/tails_boum_org_upgrade_linux_back_1.png" width="185" /></p>
+
+<ul>
+<li><p> Open this page on your smartphone, tablet, or another computer (recommended).</p></li>
+<li><p> Print the rest of the instructions on paper.</p></li>
+<li><p> Take note of the URL of this page to be able to come back later:</p>
+
+<p> <span class="install-clone"><code>https://tails.boum.org/install/clone?back=1</code></span>
+ <span class="windows"><code>https://tails.boum.org/install/win/usb?back=1</code></span>
+ <span class="mac"><code>https://tails.boum.org/install/mac/usb?back=1</code></span>
+ <span class="mac-clone"><code>https://tails.boum.org/install/mac/clone?back=1</code></span>
+ <span class="expert"><code>https://tails.boum.org/install/expert/usb?back=1</code></span>
+ <span class="linux"><code>https://tails.boum.org/install/linux/usb?back=1</code></span>
+ <span class="upgrade-clone"><code>https://tails.boum.org/upgrade/clone?back=1</code></span>
+ <span class="upgrade-tails"><code>https://tails.boum.org/upgrade/tails?back=1</code></span>
+ <span class="upgrade-windows"><code>https://tails.boum.org/upgrade/win?back=1</code></span>
+ <span class="upgrade-mac"><code>https://tails.boum.org/upgrade/mac?back=1</code></span>
+ <span class="upgrade-linux"><code>https://tails.boum.org/upgrade/linux?back=1</code></span></p></li>
+</ul>
+
+
+<h1 class="step upgrade-tails upgrade-os" id="start-intermediary">Restart on the intermediary Tails</h1>
+
+
+<h1 class="step clone" id="start-other">Restart on the other Tails</h1>
+
+
+<h1 class="step windows linux mac expert" id="start-tails">Restart on Tails</h1>
+
+
+
+
+<div class="step-image">
+<img alt="USB stick plugged on the left" class="clone" height="200" src="../inc/infography/plug-other-tails.png" width="200" />
+<img alt="Computer restarted on USB stick" class="windows linux mac" height="200" src="../inc/infography/restart-on-tails.png" width="200" />
+<img alt="Computer restarted on USB stick on the left" class="clone upgrade-os" height="200" src="../inc/infography/restart-on-other-tails.png" width="200" />
+<img alt="USB stick unplugged on the right and computer restarted on USB stick on the left" class="upgrade-tails" height="200" src="../inc/infography/restart-on-upgrade-usb.png" width="200" />
+</div>
+
+
+
+
+<h2>Make the computer start on the USB stick</h2>
+
+
+
+
+<div class="windows upgrade-windows">
+
+
+
+<ol>
+
+<li><p>Click on the <span class="guimenu">Start <img alt="" class="img" height="16" src="../../lib/start.png" width="16" /></span>
+    button.</p></li>
+
+<li><p>Press and hold the <strong>Shift</strong> key while you choose
+    <strong>Power</strong>&nbsp;&#x25B8; <strong>Restart</strong>.</p></li>
+
+<li><p>In the <strong>Choose an option</strong> screen, choose <strong>Use
+    a device</strong>.</p>
+
+    <img alt="" class="img" height="327" src="../inc/screenshots/choose_an_option.png" width="581" />
+
+    <div class="bug">
+    <p>If the <strong>Choose an
+    option</strong> screen does not appear, refer to the <a href="../../doc/first_steps/start/pc.en.html#boot-menu-key">instructions on
+    starting Tails using the Boot Menu key</a>.</p>
+    </div>
+</li>
+
+<li><p>In the <strong>Use a device</strong> screen, choose <strong>Boot
+    Menu</strong>.</p>
+
+    <div class="windows upgrade-windows">
+
+    <p>Windows shuts down, the computer restarts, and a Boot Menu appears.</p>
+
+    </div>
+
+    <div class="standalone">
+
+    <p>Plug in your Tails USB stick shortly after choosing <strong>Boot
+    Menu</strong> and while Windows is shutting down.</p>
+
+    </div>
+
+    <div class="caution">
+
+    <p>
+      <span class="windows upgrade-windows">In the future, we</span>
+      <span class="standalone">We</span>
+    recommend that you only plug in your Tails USB stick while Windows is shutting
+    down. Otherwise, a virus in Windows could infect your Tails USB stick and
+    break its security.</p>
+
+    <p>Such an attack is possible in theory but very unlikely in
+    practice. We don&#39;t know of any virus capable of infecting Tails.
+    <span class="standalone">See our <a href="../../doc/about/warnings/computer.en.html#software">warning on plugging Tails in
+    untrusted systems</a></span>.</p>
+
+    </div>
+
+    <p>The Boot Menu is a list of possible devices to start from. The following
+    screenshot is an example of a Boot Menu:</p>
+
+    <p><img alt="" class="img" height="245" src="../inc/screenshots/boot_menu.png" width="382" /></p>
+</li>
+
+<li><p>In the Boot Menu, select your USB stick and press
+    <strong>Enter</strong>.</p></li>
+
+<li><p>If the computer starts on Tails, the Boot Loader appears and Tails
+    starts automatically after 4 seconds.</p>
+
+    <p><img alt="Black screen (&#39;GNU GRUB&#39;) with Tails logo and 2 options: &#39;Tails&#39; and &#39;Tails (Troubleshooting Mode)&#39;." class="img" height="480" src="../inc/screenshots/grub.png" width="640" /></p></li>
+
+</ol>
+
+</div>
+
+
+
+
+<div class="linux expert install-clone upgrade-clone upgrade-tails upgrade-linux">
+
+
+
+<p>Most computers do not start on the Tails USB stick automatically but you can
+press a Boot Menu key to display a list of possible devices to start from.</p>
+
+<div class="tip">
+
+<p>If Windows 8 or 10 is
+<span class="linux upgrade-linux">also</span>
+installed on the computer, you can refer instead to the <a href="../../doc/first_steps/start/pc.en.html#windows-restart">instructions
+on starting Tails from Windows 8 or 10</a>.
+Starting Tails from Windows is easier than using the Boot Menu key.</p>
+
+</div>
+
+<p>The following screenshot is an example of a Boot Menu:</p>
+
+<p><img alt="" class="img" height="245" src="../inc/screenshots/boot_menu.png" width="382" /></p>
+
+<p id="animation">This animation summarizes how to use the Boot Menu key to
+start on the USB stick:</p>
+
+<p>
+  <video controls="true" height="360" poster="https://tails.boum.org/install/inc/videos/boot-menu-key.png" width="640">
+    <source src="https://tails.boum.org/install/inc/videos/boot-menu-key.webm" type="video/webm">
+    <source src="https://tails.boum.org/install/inc/videos/boot-menu-key.mp4" type="video/mp4">
+  </source></source></video>
+</p>
+
+<p>The following instructions explain in detail how to use the Boot Menu key
+to start on the USB stick:</p>
+
+<ol>
+
+<li>
+  <p class="usb upgrade-linux">Shut down the computer while leaving the USB stick plugged in.</p>
+  <p class="standalone">Shut down the computer and plug in the Tails USB stick.</p>
+  <p class="clone upgrade-tails">Shut down the computer.</p>
+  <p class="clone">Plug in the other Tails USB stick that you want to
+  <span class="install-clone">install</span>
+  <span class="upgrade">upgrade</span>
+  from.</p>
+  <p class="upgrade-tails">Unplug your Tails USB stick while leaving the intermediary USB stick plugged in.</p>
+</li>
+
+<li>
+  <p>Identify the possible Boot Menu keys for the computer depending on
+  the computer manufacturer in the following list:</p>
+
+  <table>
+    <tr><th>Manufacturer</th><th>Key</th></tr>
+    <tr><td>Acer</td><td>F12, F9, F2, Esc</td></tr>
+    <tr><td>Apple</td><td>Option</td></tr>
+    <tr><td>Asus</td><td>Esc</td></tr>
+    <tr><td>Clevo</td><td>F7</td></tr>
+    <tr><td>Dell</td><td>F12</td></tr>
+    <tr><td>Fujitsu</td><td>F12, Esc</td></tr>
+    <tr><td>HP</td><td>F9</td></tr>
+    <tr><td>Huawei</td><td>F12</td></tr>
+    <tr><td>Intel</td><td>F10</td></tr>
+    <tr><td>Lenovo</td><td>F12</td></tr>
+    <tr><td>MSI</td><td>F11</td></tr>
+    <tr><td>Samsung</td><td>Esc, F12, F2</td></tr>
+    <tr><td>Sony</td><td>F11, Esc, F10</td></tr>
+    <tr><td>Toshiba</td><td>F12</td></tr>
+    <tr><td>others&hellip;</td><td>F12, Esc</td></tr>
+  </table>
+
+  <div class="tip">
+  <p>On many computers, a message is displayed very briefly when switching on
+  that also explains how to get to the Boot Menu or edit the BIOS settings.</p>
+  </div>
+</li>
+
+<li>
+  <p>Switch on the computer and immediately press several times the first
+  possible Boot Menu key identified in step 2.</p>
+</li>
+
+<li>
+  <p>If the computer starts on another operating system or returns an
+  error message, shut down the computer again and repeat step
+  3 for all the possible Boot Menu keys identified in step 2.</p>
+
+  <p>If a Boot Menu with a list of devices appears, select your USB stick
+  and press <span class="keycap">Enter</span>.</p>
+</li>
+
+<li><p>If the computer starts on Tails, the Boot Loader appears and Tails
+    starts automatically after 4 seconds.</p>
+
+    <p><img alt="Black screen (&#39;GNU GRUB&#39;) with Tails logo and 2 options: &#39;Tails&#39; and &#39;Tails (Troubleshooting Mode)&#39;." class="img" height="480" src="../inc/screenshots/grub.png" width="640" /></p></li>
+
+</ol>
+
+</div>
+
+
+
+
+<div class="mac mac-clone upgrade-mac">
+
+
+
+<ol>
+
+<li>
+   <p class="usb upgrade">Shut down the computer while leaving the USB stick plugged in.</p>
+   <p class="mac-clone">Plug in the other Tails USB stick that you want to install from.</p>
+</li>
+
+<li>
+   <p>Switch on the computer and immediately press-and-hold the
+   <span class="keycap">Option</span> key (<span class="keycap">Alt</span> key) until a list of possible startup
+   disks appears.</p>
+
+   <p><img alt="&#39;Option&#39; or &#39;alt&#39; key in the bottom left of Mac keyboard" class="img" height="270" src="../inc/screenshots/mac_option_key.png" width="640" /></p>
+</li>
+
+<li>
+   <p>Choose the USB stick and press
+   <span class="keycap">Enter</span>. The USB stick appears as an external hard
+   disk and might be labeled <span class="guilabel">EFI Boot</span> or
+   <span class="guilabel">Windows</span> like in the following screenshot:</p>
+
+   <p><img alt="Screen with the logo of an internal hard disk labeled &#39;Macintosh HD&#39; and an external hard disk labelled &#39;Windows&#39; (selected)" class="img" height="280" src="../inc/screenshots/mac_startup_usb.png" width="413" /></p>
+
+   <div class="bug">
+   <p>If the USB stick does not appear in the list of startup
+      disks:</p>
+
+   
+
+
+<ol>
+  <li>Make sure that you have <a href="../download.en.html">verified your download of Tails</a>.</li>
+  <li>Try installing again on the same USB stick.</li>
+  <li>Try installing on a different USB stick.</li>
+  <li>Try using the same USB stick to start on a different computer.</li>
+</ol>
+
+
+   <p>If your computer still does not display the Boot
+   Loader, it might currently be impossible to start Tails
+   on your computer.</p>
+
+   </div>
+
+</li>
+
+<li id="startup security">
+
+   <p>If your Mac displays the following error:</p>
+
+   <pre>Security settings do not allow this Mac to use an external startup disk.</pre>
+
+   <p>Then you have to change the settings of the <em>Startup
+   Security Utility</em> of your Mac to authorize starting from Tails.</p>
+
+   <p>To open <em>Startup Security Utility</em>:</p>
+
+   <ol>
+
+     
+
+     <li><p>Turn on your Mac, then press and hold <strong>Command(&#x2318;)+R</strong>
+     immediately after you see the Apple logo. Your Mac starts up from
+     <a href="https://support.apple.com/kb/HT201314">macOS Recovery</a>.</p></li>
+
+     <li><p>When you see the macOS <em>Utilities</em> window, choose
+     <strong>Utilities&nbsp;&#x25B8; Startup Security Utility</strong> from the menu
+     bar.</p></li>
+
+     <li><p>When you are asked to authenticate, click <strong>Enter macOS
+     Password</strong>, then choose an administrator account and enter its
+     password.</p></li>
+
+   </ol>
+
+   <p><img alt="Startup Security Utility" class="img" height="435" src="../inc/screenshots/startup-security-utility.png" width="497" /></p>
+
+   <p>In the <em>Startup Security Utility</em>:</p>
+
+   <ul>
+
+     <li><p>Choose <strong>No Security</strong> in the <strong>Secure
+     Boot</strong> section.</p></li>
+
+     <li><p>Choose <strong>Allow booting from external media</strong> in the
+     <strong>External Boot</strong>.</p></li>
+
+   </ul>
+
+   <div class="tip">
+
+   <p>To still protect your Mac from starting on untrusted external media, you
+   can set a firmware password, available on macOS Mountain Lion or later. A
+   firmware password prevents users who do not have the password from starting
+   up from any media other than the designated startup disk.</p>
+
+   <p><strong>If you forget your firmware password you will require an in-person
+   service appointment with an Apple Store or Apple Authorized Service
+   Provider.</strong></p>
+
+   </div>
+
+   <p>Read more on Apple Support about:</p>
+
+   <ul>
+
+     <li><a href="https://support.apple.com/en-us/HT208198">Startup Security Utility</a></li>
+     <li><a href="https://support.apple.com/en-us/HT204455">How to set a firmware password on your Mac</a></li>
+
+   </ul>
+
+</li>
+
+<li><p>If the computer starts on Tails, the Boot Loader appears and Tails
+    starts automatically after 4 seconds.</p>
+
+    <p><img alt="Black screen (&#39;GNU GRUB&#39;) with Tails logo and 2 options: &#39;Tails&#39; and &#39;Tails (Troubleshooting Mode)&#39;." class="img" height="480" src="../inc/screenshots/grub.png" width="640" /></p></li>
+
+</ol>
+
+</div>
+
+
+
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+
+
+
+<ul>
+
+<li class="windows upgrade-windows">
+<p>If no Boot Menu appears, or if your USB stick is not listed in the Boot
+Menu, refer to the <a href="../../doc/first_steps/start/pc.en.html#boot-menu-key">instructions on starting Tails using the Boot Menu
+key</a>.</p>
+</li>
+
+<li class="linux expert install-clone upgrade-clone upgrade-tails upgrade-linux">
+<p>If none of the possible Boot Menu keys from the previous technique work, or
+if your USB stick is not listed in the Boot Menu, refer to the
+<a href="../../doc/first_steps/start/pc.en.html#not-at-all">troubleshooting instructions about Tails not starting at
+all</a>.</p>
+</li>
+
+<li>
+<p class="windows upgrade-windows linux expert install-clone upgrade-clone upgrade-tails upgrade-linux">If your USB stick is listed in the Boot Menu but the Boot Loader does not appear, or if Tails fails to start after the Boot Loader:</p>
+<p class="mac mac-clone upgrade-mac">If your USB stick appears in the list of startup disks but the Boot Loader does not appear, or if Tails fails to start after the Boot Loader:</p>
+
+
+
+<ol>
+  <li>Make sure that you have <a href="../download.en.html">verified your download of Tails</a>.</li>
+  <li>Try installing again on the same USB stick.</li>
+  <li>Try installing on a different USB stick.</li>
+  <li>Try using the same USB stick to start on a different computer.</li>
+</ol>
+
+<p>If your computer still does not display the Boot Loader, it might currently be impossible to start Tails on your computer.</p>
+</li>
+
+<li>
+<p>If the computer stops responding or displays other error messages before
+getting to the Welcome Screen, refer to
+<span class="windows upgrade-windows linux expert install-clone upgrade-clone upgrade-tails upgrade-linux"><a href="../../doc/first_steps/start/pc.en.html#not-entirely">the troubleshooting section about Tails not starting after the Boot Loader</a>.</span>
+<span class="mac mac-clone upgrade-mac"><a href="../../doc/first_steps/start/mac.en.html#not-entirely">the troubleshooting section about Tails not starting after the Boot Loader</a>.</span></p>
+</li>
+
+<li>
+<p>If the computer displays the error message
+<span class="guilabel">Error starting GDM with your graphics
+card</span>, refer to our <a href="../../support/known_issues/graphics.en.html">list of known issues with graphics
+cards</a>.</p>
+</li>
+
+</ul>
+
+
+
+
+<div class="tip windows upgrade-windows">
+<p>Starting the computer using a Boot Menu key can be faster than
+starting the computer on Windows first and then on Tails. We
+recommend you learn how to <a href="../../doc/first_steps/start/pc.en.html#boot-menu-key">start Tails using the Boot Menu
+key</a> if you use Tails
+regularly.</p>
+</div>
+
+
+<p><a id="greeter"></a></p>
+
+<h2 id="welcome-screen">Welcome Screen</h2>
+
+
+<ol>
+<li><p>One to two minutes after the Boot Loader, the Welcome Screen appears.</p>
+
+<p><img alt="Welcome to Tails!" class="img" height="400" src="../../doc/first_steps/welcome_screen/welcome-screen.png" width="533" /></p></li>
+<li><p>In the Welcome Screen, select your language and
+keyboard layout in the <span class="guilabel">Language &amp; Region</span> section.
+Click <span class="bold">Start Tails</span>.</p></li>
+<li><p>After 15&ndash;30 seconds, the Tails desktop appears.</p>
+
+<p><img alt="Tails desktop" class="img" height="512" src="../inc/screenshots/desktop.png" width="683" /></p></li>
+</ol>
+
+
+<h2 id="wi-fi">Test your Wi-Fi</h2>
+
+
+<p>Problems with Wi-Fi are unfortunately quite common in Tails and Linux in
+general. To test if your Wi-Fi interface works in Tails:</p>
+
+<ol>
+<li><p>Open the system menu in the top-right corner:</p>
+
+<p><img class="img" height="217" src="../../doc/first_steps/introduction_to_gnome_and_the_tails_desktop/system.png" width="249" /></p></li>
+<li><p>Choose <span class="guilabel">Wi-Fi Not Connected</span> and then
+<span class="guilabel">Select Network</span>.</p></li>
+<li><p>After establishing a connection to a local network, the <em>Tor Connection</em>
+assistant appears to help you <a href="../../doc/anonymous_internet/tor.en.html">connect to the Tor
+network</a>.</p>
+
+<p><img class="img" height="421" src="../../doc/anonymous_internet/tor/tor-connection.png" width="648" /></p></li>
+</ol>
+
+
+<p>If your Wi-Fi interface is not working, either:</p>
+
+<ul>
+<li><p>There is no Wi-Fi option in the system menu:</p>
+
+<p><img alt="" class="img" height="217" src="../../doc/anonymous_internet/no-wifi/system-without-wifi.png" width="249" /></p></li>
+<li><p>The interface is disabled when starting Tails or when plugging in your USB
+Wi-Fi adapter:</p>
+
+<p><img alt="Notification about network card being disabled" class="img" height="81" src="../../doc/anonymous_internet/no-wifi/mac-spoofing-disabled.png" width="382" /></p>
+
+<p>In this case, you can disable MAC address anonymization to get your Wi-Fi interface
+to work in Tails. Disabling MAC address anonymization has security implications, so read
+carefully our <a href="../../doc/first_steps/welcome_screen/mac_spoofing.en.html">documentation about MAC
+address anonymization</a> before doing so.</p></li>
+</ul>
+
+
+<p>To connect to the Internet, you can try to:</p>
+
+<ul>
+<li><p>Use an Ethernet cable instead of Wi-Fi if possible. Wired interfaces work
+much more reliably than Wi-Fi in Tails.</p></li>
+<li><p>Share the Wi-Fi or mobile data connection of your phone using a
+USB cable. Sharing a connection this way is called <em>USB tethering</em>.</p>
+
+<p><img alt="" class="img" height="95" src="../../doc/anonymous_internet/no-wifi/usb-tethering.png" width="375" /></p>
+
+<p>See instructions for:</p>
+
+<ul>
+<li><p><a href="https://support.google.com/android/answer/9059108?hl=en">Android</a></p></li>
+<li><p><a href="https://support.apple.com/en-us/HT204023">iPhones or iPads</a><br />
+Only sharing mobile data works on iPhones and iPads; sharing Wi-Fi does not work.</p></li>
+</ul>
+
+
+<div class="caution">
+<p>Tails cannot hide the information that identifies your phone on the local network.
+If you connect your phone to:</p>
+<ul>
+<li><p>A Wi-Fi network, then the network will know the MAC
+address of your phone. This has security implications that are discussed in
+our <a href="../../doc/first_steps/welcome_screen/mac_spoofing.en.html">documentation on MAC address anonymization</a>.
+Some phones have a feature to hide the real MAC address of the phone.</p></li>
+<li><p>A mobile data network, then
+the network will be able to know the identifier of your SIM card (IMSI)
+and also the serial number of your phone (IMEI).</p></li>
+</ul>
+</div>
+</li>
+</ul>
+
+
+<p><a id="wi-fi-adapters"></a></p>
+
+<ul>
+<li><p>Buy a USB Wi-Fi adapter that works in Tails:</p>
+
+
+
+
+<table>
+<tr><th>Vendor</th><th>Model</th><th>Size</th><th>Speed</th><th>Price</th><th>Buy offline</th><th>Buy online</th></tr>
+<tr><td>Panda Wireless</td><td>Ultra</td><td>Nano</td><td>150 Mbit/s</td><td>$12</td><td>No</td><td><a href="https://www.amazon.com/d/B00762YNMG">Amazon</a></td></tr> 
+<tr><td>Panda Wireless</td><td>PAU05</td><td>Small</td><td>300 Mbit/s</td><td>$14</td><td>No</td><td><a href="https://www.amazon.com/d/B00EQT0YK2">Amazon</a></td></tr> 
+</table>
+
+
+
+
+
+<div class="note">
+<p>If you find another USB Wi-Fi adapter that works in Tails, please let us
+know. You can write to <a href="mailto:sajolida@pimienta.org">sajolida@pimienta.org</a> (private email).</p>
+</div>
+</li>
+</ul>
+
+
+<div class="trophy">
+
+<p>Yay, you managed to start <span class="install-clone mac-clone">your new</span> Tails on your computer!</p>
+
+<p>If you want to save some of your documents
+and configuration in an encrypted storage on your <span class="clone">new</span> Tails USB stick, follow
+our instructions until the end. Otherwise, have a look at our
+<span class="install-clone"><a href="../clone.en.html#recommendations">final recommendations</a>.</span>
+<span class="expert"><a href="../expert/usb.en.html#recommendations">final recommendations</a>.</span>
+<span class="windows"><a href="../win/usb.en.html#recommendations">final recommendations</a>.</span>
+<span class="mac"><a href="./usb.en.html#recommendations">final recommendations</a>.</span>
+<span class="mac-clone"><a href="./clone.en.html#recommendations">final recommendations</a>.</span>
+<span class="linux"><a href="../linux/usb.en.html#recommendations">final recommendations</a>.</span>
+</p>
+
+</div>
+
+
+
+
+<h1 class="step" id="create-persistence">Create a Persistent Storage (optional)</h1>
+
+
+
+
+<div class="step-image"><img alt="" class="img" height="200" src="../inc/infography/create-persistence.png" width="200" /></div>
+
+
+<p>You can optionally create an encrypted Persistent Storage in the
+remaining free space on your
+<span class="clone">new</span>
+Tails USB stick to store any of the following:</p>
+
+<ul>
+<li>Personal files</li>
+<li>Some settings</li>
+<li>Additional software</li>
+<li>Encryption keys</li>
+</ul>
+
+
+<p>The data in the Persistent Storage:</p>
+
+<ul>
+<li>Remains available across separate working sessions.</li>
+<li>Is encrypted using a passphrase of your choice.</li>
+</ul>
+
+
+<div class="caution">
+
+<p>The Persistent Storage is not hidden. An attacker in possession of
+your USB stick can know that there is a Persistent Storage on it. Take into consideration
+that you can be forced or tricked to give out its passphrase.</p>
+
+</div>
+
+
+
+
+<div class="caution">
+
+<p>It is possible to
+unlock the Persistent Storage from other operating systems. But, doing
+so might compromise the security provided by Tails.</p>
+
+<p>For example, image thumbnails might be created and saved by the other operating
+system. Or, the contents of files might be indexed by the other operating
+system.</p>
+
+<p>Other operating systems should probably not be trusted to handle
+sensitive information or leave no trace.</p>
+
+</div>
+
+
+<h2>Create the Persistent Storage</h2>
+
+<ol>
+<li><p>Choose
+<span class="menuchoice">
+  <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guisubmenu">Tails</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Configure persistent volume</span></span>.</p></li>
+<li><p>Specify a passphrase of your choice in both the
+<span class="guilabel">Passphrase</span> and <span class="guilabel">Verify
+Passphrase</span> text boxes.</p>
+
+<p> </p><div class="tip">
+ <p>We recommend choosing a long passphrase made of five to seven random words.
+ <a href="https://theintercept.com/2015/03/26/passphrases-can-memorize-attackers-cant-guess/">Learn more.</a></p>
+ </div></li>
+<li><p>Click on the <span class="guilabel">Create</span> button.</p></li>
+<li><p>Wait for the creation to finish.</p></li>
+<li><p>The list of features of the Persistent Storage appears. Each
+feature corresponds to a set of files or settings that can be saved in the
+Persistent Storage.</p>
+
+<p>We recommend you to only turn on the Personal
+Data feature for the time being. You
+can turn on more features later on according to your needs.</p></li>
+<li><p>Click <span class="bold">Save</span>.</p>
+
+<div class="step-image"><img alt="" class="img" height="200" src="../inc/infography/restart-on-tails.png" width="200" /></div>
+</li>
+</ol>
+
+
+<h2>Restart and unlock the Persistent Storage</h2>
+
+<ol>
+<li><p>Shut down the computer and restart on your
+<span class="clone">new</span>
+Tails USB stick.</p></li>
+<li><p>In the Welcome Screen:</p>
+
+<p><img alt="Welcome to Tails!" class="img" height="512" src="../inc/screenshots/welcome_screen_with_persistence.png" width="683" /></p>
+
+<ul>
+<li><p>Select your language and keyboard layout in the
+<span class="guilabel">Language &amp; Region</span> section.</p></li>
+<li><p>In the <strong>Encrypted Persistent Storage</strong> section,
+enter your passphrase and click <strong>Unlock</strong> to unlock the
+Persistent Storage for the current working session.</p></li>
+<li><p>Click <span class="bold">Start Tails</span>.</p></li>
+</ul>
+</li>
+<li><p>After 15&ndash;30 seconds, the Tails desktop appears.</p></li>
+<li><p>You can now save your personal files and working documents in the
+<span class="guilabel">Persistent</span> folder. To open the
+<span class="guilabel">Persistent</span> folder choose
+<span class="menuchoice">
+<span class="guimenu">Places</span>&nbsp;&#x25B8;
+<span class="guimenuitem">Persistent</span></span>.</p></li>
+</ol>
+
+
+<div class="trophy" id="recommendations">
+
+<div class="state-image"><img alt="Tails USB stick with Persistent Storage" class="img" height="200" src="../inc/infography/tails-usb-with-persistence.png" width="200" /></div>
+
+<p>You now have a complete Tails, congrats!</p>
+
+<h3>Final recommendations</h3>
+
+<div class="row">
+
+  <div class="col-md-6">
+
+    <img alt="" class="float-left" height="48" src="../../lib/dialog-warning.png" width="48" />
+
+    <p>Tails does not protect you from everything! Have a look at our
+    <a href="../../doc/about/warnings.en.html">warnings</a>.</p>
+
+  </div>
+
+  <div class="col-md-6">
+
+    <img alt="" class="float-left" height="48" src="../../lib/apps/help-browser.png" width="48" />
+
+    <p>You should regularly
+    <a href="../../doc/first_steps/persistence/backup.en.html">make a backup of your Persistent Storage</a>
+    in case your Tails USB stick becomes lost or damaged.</p>
+
+  </div>
+
+</div>
+
+<p>We hope you enjoy using Tails :)</p>
+
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../contribute/design/installation_assistant.html">contribute/design/installation assistant</a>
+
+<a href="../../doc/first_steps/bug_reporting.en.html">doc/first steps/bug reporting</a>
+
+<a href="../../doc/first_steps/start/mac.en.html">doc/first steps/start/mac</a>
+
+<a href="../inc/steps/create_persistence.inline.en.html">inc/steps/create persistence.inline</a>
+
+<a href="../inc/steps/download.inline.en.html">inc/steps/download.inline</a>
+
+<a href="../../news/achievements_in_2019.en.html">news/achievements in 2019</a>
+
+<a href="../../news/report_2018_05.html">news/report 2018 05</a>
+
+<a href="../../news/report_2019_01.html">news/report 2019 01</a>
+
+<a href="../../news/report_2019_08.html">news/report 2019 08</a>
+
+<a href="../../news/report_2020_04.html">news/report 2020 04</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="../../news/test_4.0-beta1.html">news/test 4.0-beta1</a>
+
+<a href="../../news/test_4.0-beta2.html">news/test 4.0-beta2</a>
+
+<a href="../../news/test_4.0-rc1.html">news/test 4.0-rc1</a>
+
+<a href="../../news/test_4.11-rc1.html">news/test 4.11-rc1</a>
+
+<a href="../../news/test_4.5-rc1.html">news/test 4.5-rc1</a>
+
+<a href="../../news/version_4.5.en.html">news/version 4.5</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=install/mac/usb">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+<script src="../../ikiwiki/ikiwiki.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../ikiwiki/toggle.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

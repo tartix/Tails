@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Report for July 2012</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Mon, 06 Aug 2012 14:08:45 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Report for July 2012</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Report for July 2012
+</span>
+<span class="date">2012-08-06</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Here is the report of what happened around Tails in July, 2012.</p>
+
+<h1>People</h1>
+
+<p>One of us went to DebConf12 in Nicaragua.</p>
+
+<p>The final steps towards a usable AppArmor in the next Debian release
+(codename: Wheezy) were completed. Also, Vidalia 0.2.20-1 was granted a
+freeze exception and will therefore be part of Wheezy.</p>
+
+<p>It was also an opportunity to meet some unexpected users of Tails within
+the Debian community.</p>
+
+<p>We have received 43 private bug reports sent using WhisperBack.</p>
+
+<p>656 messages were exchanged on the Tails web forum, with at least 104
+answers signed as &#39;Tails&#39;.</p>
+
+<p>We had to work around a last minute change of plans for our annual
+developer summit happening in August.</p>
+
+<h1>Code</h1>
+
+<p>We did <a href="./version_0.12.1.html">release Tails 0.12.1</a>.</p>
+
+<p>The whole ride to 0.12.1 was pretty painful. 0.12 contained nasty user
+visible issues. Some last minute changes in package repositories used by
+Tails had to be worked around. All this is convincing us that we need
+to be able to provide pre-release ISO images to be tested by supporting
+users. We also need automated tests and a more reliable system to deal
+with upstream and Tails packages.</p>
+
+<p>The data collection mechanism for WhisperBack is more flexible. It will
+now send more logs from tails-greeter. Hopefully that would help to fix
+a bug like one we had in 0.12 quicker.</p>
+
+<p>The default mailbox path of Claws Mail has been fixed to lie in the
+persistent directory.</p>
+
+<p><a href="https://mailman.boum.org/pipermail/tails-dev/2012-July/001342.html">Using precompiled locales is
+ready</a>.</p>
+
+<p>Work has been done to stay compatible with recent changes in
+live-boot 3.x. Work has been done to move to live-build 3.x.</p>
+
+<p><a href="https://mailman.boum.org/pipermail/tails-dev/2012-July/001395.html">Incremental updates are nearly
+done</a>.</p>
+
+<p>A little more progress was made to port Tails to the next Debian release
+(codename Wheezy).</p>
+
+<p>We have updated our (VM based) build system to use the latest version of
+Ikiwiki, as our &#39;mirrorlist&#39; patch has finally been merged upstream.</p>
+
+<h1>On-going discussions</h1>
+
+<p>Feedback on a proof-of-concept for automated tests: see the
+<a href="https://mailman.boum.org/pipermail/tails-dev/2012-June/001285.html">announcement</a>
+and the <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6090">automated builds and tests</a> page.</p>
+
+<p><a href="https://mailman.boum.org/pipermail/tails-dev/2012-July/001376.html">Using tlsdate?</a></p>
+
+<p><a href="https://mailman.boum.org/pipermail/tails-dev/2012-July/001394.html">htpdate and
+fingerprints</a></p>
+
+<h1>Documentation and website</h1>
+
+<p>The new &#39;trail&#39; ikiwiki plugin should help to have links from one page
+of the documentation to the other. <a href="https://mailman.boum.org/pipermail/tails-dev/2012-July/001393.html">Preview
+available</a>.</p>
+
+<p>Some pages of the website has been locked for security, but their
+translations are still open.</p>
+
+<h1>Funding</h1>
+
+<p>Karen from the Tor project worked with some of us to answer the call for
+proposals made by the European Instrument for Democracy &amp; Human Rights
+(EIDHR). The call was directed toward projects that helps human rights
+defenders to defeat cyber-censorship.  Our proposal mostly revolves
+around several improvements to Tails: automated builds and tests to be
+able to release more often, safer versions of Tails; better support for
+bridge and pluggable transports; better support for recent and upcoming
+computers; and translations improvements. We still don&#39;t have answers
+for first selection round, we will see how it goes.</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2012_07">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

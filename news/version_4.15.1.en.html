@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails 4.15.1 is out</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Wed, 28 Jan 2021 12:34:56 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails 4.15.1 is out</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.15.1.de.html">de</a></span>
+   <span class="hidden"><a href="./version_4.15.1.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.15.1.es.html">es</a></span>
+   <span class="hidden"><a href="./version_4.15.1.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.15.1.fr.html">fr</a></span>
+   <span class="hidden"><a href="./version_4.15.1.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.15.1.it.html">it</a></span>
+   <span class="hidden"><a href="./version_4.15.1.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.15.1.pt.html">pt</a></span>
+   <span class="hidden"><a href="./version_4.15.1.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.15.1.ru.html">ru</a></span>
+   <span class="hidden"><a href="./version_4.15.1.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Tails 4.15.1 is out
+</span>
+<span class="date">2021-01-28</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>This release is an emergency release to fix a security vulnerability in
+<em>sudo</em>.</p>
+
+<p>You should upgrade as soon as possible.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#changes">Changes and updates</a>
+	</li>
+	<li class="L1"><a href="#issues">Known issues</a>
+	</li>
+	<li class="L1"><a href="#get">Get Tails 4.15.1</a>
+	</li>
+	<li class="L1"><a href="#next">What's coming up?</a>
+	</li>
+</ol>
+</div>
+
+
+
+
+<h1 id="changes"><a name="index1h1"></a>Changes and updates</h1>
+
+
+<h2><a name="index1h2"></a>Included software</h2>
+
+<ul>
+<li>Update <em>sudo</em> to 1.8.27-1+deb10u3, which fixes CVE-2021-3156, a major
+vulnerability that allows normal users to gain root privileges.</li>
+</ul>
+
+
+<h1 id="issues"><a name="index2h1"></a>Known issues</h1>
+
+
+<p><a id="broken-upgrades"></a></p>
+
+<ul>
+<li><p>Automatic upgrades are broken from Tails 4.14 and earlier.</p>
+
+<p>To upgrade from Tails 4.14 or earlier, you can either:</p>
+
+<ul>
+<li><p>Do a <a href="../doc/upgrade.en.html#manual">manual upgrade</a>.</p></li>
+<li><p>Fix the automatic upgrade from a terminal. To do so:</p>
+
+<ol>
+<li><p>Start Tails and set up an
+<a href="../doc/first_steps/welcome_screen/administration_password.en.html">administration password</a>.</p></li>
+<li><p>In a terminal, execute the following command:</p>
+
+<pre><code>torsocks curl --silent https://tails.boum.org/isrg-root-x1-cross-signed.pem \
+| sudo tee --append /usr/local/etc/ssl/certs/tails.boum.org-CA.pem \
+&amp;&amp; systemctl --user restart tails-upgrade-frontend
+</code></pre>
+
+<div class="note">
+
+<p>This command is a single command that wraps across several lines.
+Copy and paste the entire block at once and make sure that it executes
+as a single command.</p>
+
+</div>
+</li>
+<li><p>Approximately 30 seconds later, you should be prompted to upgrade to the latest
+version of Tails. If no prompt appears, you might already be running the
+latest version of Tails.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p>See the list of <a href="../support/known_issues.en.html">long-standing issues</a>.</p>
+
+<h1 id="get"><a name="index3h1"></a>Get Tails 4.15.1</h1>
+
+
+<h2><a name="index2h2"></a>To upgrade your Tails USB stick and keep your persistent storage</h2>
+
+<ul>
+<li><p>Automatic upgrades are broken from Tails 4.14 and earlier. See the
+<a href="#broken-upgrades">known issue above</a>.</p></li>
+<li><p>Automatic upgrades are available from Tails 4.15 to 4.15.1.</p></li>
+<li><p>If you cannot do an automatic upgrade or if Tails fails to start after an
+automatic upgrade, please try to do a <a href="../doc/upgrade.en.html#manual">manual upgrade</a>.</p></li>
+</ul>
+
+
+<h2><a name="index3h2"></a>To install Tails on a new USB stick</h2>
+
+<p>Follow our installation instructions:</p>
+
+<ul>
+<li><a href="../install/win.en.html">Install from Windows</a></li>
+<li><a href="../install/mac.en.html">Install from macOS</a></li>
+<li><a href="../install/linux.en.html">Install from Linux</a></li>
+</ul>
+
+
+<div class="caution"><p>The Persistent Storage on the USB stick will be lost if
+you install instead of upgrading.</p></div>
+
+
+<h2><a name="index4h2"></a>To download only</h2>
+
+<p>If you don&#39;t need installation or upgrade instructions, you can download
+Tails 4.15.1 directly:</p>
+
+<ul>
+<li><a href="../install/download.en.html">For USB sticks (USB image)</a></li>
+<li><a href="../install/download-iso.en.html">For DVDs and virtual machines (ISO image)</a></li>
+</ul>
+
+
+<h1 id="next"><a name="index4h1"></a>What's coming up?</h1>
+
+
+<p>Tails 4.16 is <a href="../contribute/calendar.html">scheduled</a> for February 23.</p>
+
+<p>Have a look at our <a href="https://tails.boum.org/contribute/roadmap">roadmap</a> to see where we are heading to.</p>
+
+<p>We need your help and there are many ways to <a href="../contribute.en.html">contribute to
+Tails</a> (<a href="https://tails.boum.org/donate/?r=4.15.1">donating</a> is only one of
+them). Come <a href="../about/contact.en.html#tails-dev">talk to us</a>!</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+<div class="tags">
+Tags:
+
+<a href="../tags/announce.html" rel="tag">announce</a>
+
+</div>
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./report_2021_01.html">report 2021 01</a>
+
+<a href="../security/known_security_vulnerabilities_in_4.15.en.html">security/known security vulnerabilities in 4.15</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/version_4.15.1">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

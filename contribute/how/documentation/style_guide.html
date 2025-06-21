@@ -1,0 +1,1260 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Documentation style guide</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../how.html">how</a></li>
+
+
+
+
+
+<li><a href="../documentation.html">documentation</a></li>
+
+
+
+
+<li>Documentation style guide</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Documentation style guide
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<h1>Introduction</h1>
+
+<p>We use this style guide to keep our documentation clear, consistent, and
+accessible to a global audience. Apply this style guide when writing new
+documentation or when updating existing documentation.</p>
+
+<h1>Reference hierarchy</h1>
+
+<p>Use references in the following order:</p>
+
+<ol>
+<li><p>This style guide.</p></li>
+<li><p>The <a href="https://developer-old.gnome.org/gdp-style-guide/">GNOME Documentation Style Guide</a>.</p>
+
+<p>Read at least <a href="http://developer-old.gnome.org/gdp-style-guide/2.32/gdp-style-guide.html#fundamentals">Section 1 &#x2015; Fundamental Concepts of Technical
+Documentation</a>.</p>
+
+<p>The following sections are also of particular interest or have been
+debated within Tails before:</p>
+
+<ul>
+<li><a href="http://developer-old.gnome.org/gdp-style-guide/2.32/gdp-style-guide.html#locale">4.&nbsp;Writing documentation for an International
+Audience</a>
+includes specific rules about how to write documentation that is
+easier to translate, with practical examples.</li>
+<li><a href="http://developer-old.gnome.org/gdp-style-guide/2.32/gdp-style-guide.html#improving-6">5.2.&nbsp;Checks You Can Do
+Yourself</a>
+lists the top ten topics that you need to watch out for when you
+review your work.</li>
+<li><a href="http://developer-old.gnome.org/gdp-style-guide/2.32/gdp-style-guide.html#wordlist">A.&nbsp;Recommended
+Terminology</a>
+contains a glossary of terms for use when writing documentation.</li>
+</ul>
+</li>
+<li><p>Other style guides:</p>
+
+<ul>
+<li><a href="https://developers.google.com/style">Google developer documentation style guide</a></li>
+<li><a href="https://docs.microsoft.com/en-us/style-guide/welcome/">Microsoft Writing Style Guide</a>.</li>
+<li><a href="https://help.apple.com/applestyleguide/">Apple Style Guide</a></li>
+</ul>
+</li>
+</ol>
+
+
+<p>For spelling of words, we use the
+<a href="https://www.merriam-webster.com/">Merriam-Webster</a> dictionary.</p>
+
+<p>The following resources can also be helpful when writing documentation for
+Tails:</p>
+
+<h2>Related online resources</h2>
+
+<ul>
+<li><p>Jakob Nielsen&#39;s
+<a href="http://www.nngroup.com/articles/how-users-read-on-the-web/">How Users Read on the Web</a>
+and <a href="http://www.nngroup.com/articles/be-succinct-writing-for-the-web/">Be Succinct - Writing for the Web</a>.
+However do not use bold for scanning in instruction steps. Steps
+should be short enough and bold mixes up with other GUI formatting.</p></li>
+<li><p><a href="https://en.wikipedia.org/">Wikipedia.org</a>,
+<a href="http://www.webopedia.com">Webopedia.com</a>,
+<a href="http://whatis.com">Whatis.com</a> can be used as terminology websites
+for technical terms.</p></li>
+</ul>
+
+
+<h1>Style and usage</h1>
+
+<p><a id="administration-password"></a></p>
+
+<ul>
+<li><p><strong>administration password</strong> vs <strong>root password</strong></p>
+
+<p>Use <em>administration password</em>. Avoid <em>root password</em> even though many
+Linux users would use it.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li><p><a href="../../../doc/first_steps/welcome_screen/administration_password.en.html">Set up an administration password
+</a> when
+you start Tails.</p></li>
+<li><p>Start Tails and <a href="../../../doc/first_steps/welcome_screen/administration_password.en.html">set up an administration
+password</a>.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="alt"></a></p>
+
+<ul>
+<li><p><strong><code>alt</code> attributes for images</strong></p>
+
+<p>The <code>alt</code> attribute of an image is, for example, read by screen readers
+in place of images allowing the <em>content</em> and <em>function</em> of the image to
+be accessible to those with visual or certain cognitive disabilities.</p>
+
+<p>Every image must have an <code>alt</code> attribute but it can be empty (<code>alt=&quot;&quot;</code>).</p>
+
+<p>In the case of our documentation:</p>
+
+<ul>
+<li><p>Often screenshots require no additional information to clarify their
+<em>content</em>. They often provide visual context that is useful for people
+who see them but not necessary to people who don&#39;t see them.</p></li>
+<li><p>For graphical buttons or icons, use as <code>alt</code> attribute the text that
+is read by the GNOME Screen Reader (or that you think should be read
+if none is read). For example:</p>
+
+<pre>1. Click on the &lt;span class=&quot;guimenu&quot;&gt;
+[[!img  lib/unlock.png alt=&quot;Unlock&quot; class=&quot;symbolic&quot; link=&quot;no&quot;]]
+&lt;/span&gt; button.</pre>
+</li>
+</ul>
+
+
+<p>For more guidelines and examples about writing good <code>alt</code> attributes,
+read the article on <a href="https://webaim.org/techniques/alttext/">alternative text by
+WebAIM</a>.</p></li>
+</ul>
+
+
+<p><a id="anchor"></a></p>
+
+<ul>
+<li><p><strong>anchor</strong> (HTML anchor)</p>
+
+<p>Use HTML anchors to provide shortcuts when pointing people to sections
+inside a page.</p>
+
+<p>Keep them as short as possible as they appear in the URL.</p>
+
+<p>Use lowercase and hyphens instead of underscores to separate words.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li><code>&lt;a id=&quot;2014&quot;&gt;</code> in <code>doc/about/finances</code> to be able to point to
+<code>https://tails.boum.org/finances#2014</code>.</li>
+</ul>
+
+
+<p>When adding an anchor to a section on a page that has a table of
+content, add the <span class="code">id</span> attribute directly to
+the HTML heading. ikiwiki will automatically reference it in the table
+of content instead of the default value that might change over time.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li><pre>
+[[!toc]]
+&lt;h1 id=&quot;my-section&quot;&gt;My section&lt;/h1&gt;
+</pre>
+
+
+<p>Creates a hyperlink to <span class="code">#my-section</span> in the
+table of content instead of a hyperlink to
+<span class="code">#index1h1</span> that might change with the
+structure of the page.</p></li>
+</ul>
+
+
+<p>To reduce translation work, avoid adding anchors to translated pages when we
+are not using them anywhere on the website.</p></li>
+</ul>
+
+
+<p><a id="boot"></a></p>
+
+<ul>
+<li><p><strong>boot</strong> vs <strong>start</strong></p>
+
+<p>Use <em>start</em> and <em>restart</em> as much as possible to refer to starting a
+computer on Tails; <em>boot</em> is almost always unnecessary jargon.</p>
+
+<p>You might use <em>boot</em> when the word is displayed to the user by the
+computer or when writing for a technical audience, like in our
+design documentation.</p>
+
+<p>Use <em>boot</em> when referring to <em>boot options</em>, which are only
+documented for workarounds or a technical audience.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li><p>When starting Tails, add the <span class="command">toram</span>
+boot option. See our instructions on <a href="../../../doc/advanced_topics/boot_options.en.html">modifying the boot options using
+the Boot Loader</a>.</p></li>
+<li><p>To make the display work properly, <a href="../../../doc/advanced_topics/boot_options.en.html">add the following boot option using the
+Boot Loader</a> when starting Tails:</p>
+
+<pre><code>nouveau.noaccel=1
+</code></pre></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="boot-menu"></a></p>
+
+<ul>
+<li><p><strong>Boot Menu</strong> and <strong>Boot Loader</strong></p>
+
+<p>Use <em>Boot Loader</em> when referring to either <em>GRUB</em> or <em>SYSLINUX</em>.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>The Boot Loader is the first screen that appears when starting Tails.</li>
+</ul>
+
+
+<p>Use <em>Boot Menu</em> and <em>Boot Menu key</em> when referring to the BIOS
+screen that allows choosing from which device to start from.</p>
+
+<p><img alt="" class="img" height="245" src="../../../install/inc/screenshots/boot_menu.png" width="382" /></p></li>
+</ul>
+
+
+<p><a id="bulleted-lists"></a></p>
+
+<ul>
+<li><p><strong>bulleted lists</strong></p>
+
+<p>Refer to this article from NN/g on <a href="https://www.nngroup.com/articles/presenting-bulleted-lists/">presenting bulleted
+lists</a>.</p>
+
+<p>Always add empty lines between list items to:</p>
+
+<ul>
+<li><p>Make them easier to read.</p></li>
+<li><p>Make them easier to translate. Each item from the list will be put
+in a separate PO string in PO files by the PO plugin when building
+the website.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="capitalization"></a></p>
+
+<ul>
+<li><p><strong>capitalization</strong></p>
+
+<ul>
+<li><p><strong>Use sentence case for titles and headings</strong></p>
+
+<p>Do not capitalize the second or subsequent words,
+unless they are proper nouns. Sentence case
+looks less formal and is easier to read for a global audience.</p>
+
+<p>See the <a href="https://en.wikipedia.org/wiki/Wikipedia:Naming_conventions_%28capitalization%29">capitalization rules from Wikipedia</a>.</p></li>
+<li><p><strong>Use title case for GUI items</strong></p>
+
+<p>Buttons, dialogs, applications, menus, etc.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="css"></a></p>
+
+<ul>
+<li><p><strong>CSS formatting for documentation</strong></p>
+
+<p>Use the following Markdown and HTML
+to style your documentation using CSS.</p>
+
+<ul>
+<li><p>Features</p>
+
+<p>Capitalize the name of major features of Tails.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>Welcome Screen</li>
+<li>Persistent Storage</li>
+</ul>
+</li>
+<li><p>Application and file names</p>
+
+<p>Write in italic the names of files and applications other than Tails.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>Markdown: <span class="code">*Thunderbird*</span></li>
+<li>HTML: <span class="code">&lt;i&gt;Thunderbird&lt;/i&gt;</span></li>
+<li>Result: <em>Thunderbird</em></li>
+</ul>
+
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>Markdown: <span class="code">*~/.gnupg/gpg.conf*</span></li>
+<li>HTML: <span class="code">&lt;i&gt;~/.gnupg/gpg.conf&lt;/i&gt;</span></li>
+<li>Result: <em>~/.gnupg/gpg.conf</em></li>
+</ul>
+</li>
+<li><p>Button names, GUI labels, key caps, and menu items</p>
+
+<p>Write in bold button names, GUI labels, key caps, and menu items, especially
+in procedures.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>Markdown: <span class="code">Click **Save**</span></li>
+<li>HTML: <span class="code">Click &lt;b&gt;Save&lt;/b&gt;</span></li>
+<li>Result: Click <strong>Save</strong></li>
+</ul>
+
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>Markdown: <span class="code">Choose **Applications**&amp;nbsp;&#x25B8; **Tor Browser**</span></li>
+<li>HTML: <span class="code">Choose &lt;b&gt;Applications&lt;/b&gt;&amp;nbsp;&#x25B8; &lt;b&gt;Tor Browser&lt;/b&gt;</span></li>
+<li>Result: Choose <strong>Applications</strong>&nbsp;&#x25B8; <strong>Tor Browser</strong></li>
+</ul>
+</li>
+<li><p>Commands and code excerpts:</p>
+
+<p>Write in full HTML with the <span class="code">code</span> class commands and
+code excerpts.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>Markdown and HTML: <span class="code">&lt;span class=&quot;code&quot;&gt;live-media=removable&lt;/span&gt;</span></li>
+<li>Result: <span class="code">live-media=removable</span></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="debian-versions"></a></p>
+
+<ul>
+<li><p><strong>Debian and Ubuntu versions</strong></p>
+
+<p>Refer to Debian and Ubuntu versions primarily by their number, and additionally
+by their codenames.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li><p>Tails 3.0 is based on Debian 9 (Stretch)</p></li>
+<li><p><em>Tails Installer</em> is available on Ubuntu 15.10 (Wily Werewolf) or later.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="earlier"></a></p>
+
+<ul>
+<li><p><strong>earlier</strong> and <strong>later</strong></p>
+
+<p>Use to refer to versions of software.</p>
+
+<p>Don&#39;t use <em>lower</em> and <em>higher</em> or <em>newer</em> and <em>older</em>.</p>
+
+<p>Don&#39;t use &quot;regular expressions&quot; like <em>Tails 2.1.*</em>.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>If you are running macOS 10.10 (Yosemite) or earlier</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="future-tense"></a></p>
+
+<ul>
+<li><p><strong>future tense</strong></p>
+
+<p>Whenever possible, use present, not future, tense. Don&#39;t switch
+unnecessarily from present to future tense when present tense is
+sufficient to express a sequence of steps or events.</p>
+
+<p>Present tense is easier to read than past or future tense. Simple verbs
+are easier to read and understand than complex verbs, such as verbs in
+the progressive or perfect tense.</p></li>
+</ul>
+
+
+<p><a id="digit-grouping"></a></p>
+
+<ul>
+<li><p><strong>digit grouping</strong></p>
+
+<p>Use a non-breaking thin space (HTML entity: <code>&amp;#8239;</code>) or a space to separate
+groups of three digits.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li>$50&#x202F;000</li>
+</ul>
+
+
+<p>See <a href="https://en.wikipedia.org/wiki/Decimal%5Fseparator%23Digit%5Fgrouping">Decimal separator#Digit grouping</a> and <a href="https://en.wikipedia.org/wiki/ISO%5F31%2D0%23Numbers">ISO 31-0#Numbers</a>.</p></li>
+</ul>
+
+
+<p><a id="gnome-application"></a></p>
+
+<ul>
+<li><p><strong>GNOME applications: <i>Files</i>, <i>Disks</i>, etc.</strong></p>
+
+<p>GNOME applications that have a common noun as their name (like
+<i>Files</i> or
+<i>Disks</i>) can be confusing when referred
+to in the documentation.</p>
+
+<p>Make sure to clarify that you are referring to an application (and
+not, for example, a set of files or disks):</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li><p>In the title of sections</p></li>
+<li><p>When first referring to the application in a section</p></li>
+</ul>
+
+
+<p><em>Use</em>:</p>
+
+<ul>
+<li><p>The <i>Files</i> browser</p></li>
+<li><p>The <i>Disks</i> utility</p></li>
+</ul>
+
+
+<p>Otherwise, use the short name of the application as it appears in the menus when giving
+instructions to be executed inside Tails.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li>Open <em>/live/persistence/TailsData_unlocked/dotfiles</em> in <em>Files</em>.</li>
+</ul>
+
+
+<p>Prepend &quot;<em>GNOME</em>&quot; when giving instructions to be executed outside of
+Tails.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li>Install <i>GNOME Disks</i> in Debian.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="graphics-card"></a></p>
+
+<ul>
+<li><p><strong>graphics card</strong></p>
+
+<p>And not <em>graphics adapters</em>, <em>graphics</em>, <em>graphical hardware</em>, or
+<em>video card</em>.</p></li>
+</ul>
+
+
+<p><a id="compress-image"></a></p>
+
+<ul>
+<li><p><strong>Image compression</strong></p>
+
+<ul>
+<li>Images on our website are compressed and cleaned using the
+<a href="./compress-image.sh">compress-image.sh</a> script. To run this script you need the
+<code>trimage</code> and <code>mat2</code> packages.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="internet"></a></p>
+
+<ul>
+<li><p><strong>Internet</strong></p>
+
+<p>Capitalize. When used as a noun, always preceded by <em>the</em>.</p></li>
+</ul>
+
+
+<p><a id="shortcuts"></a></p>
+
+<ul>
+<li><p><strong>Ikiwiki shortcuts</strong></p>
+
+<p>The <code>[[!tails_ticket  ..]]</code> and <code>[[!wikipedia  ..]]</code> strings you can find in some files are ikiwiki <a href="../../../shortcuts.html">shortcuts</a>.
+You might also need to understand <a href="../../../ikiwiki/directive.html">ikiwiki directives</a>.</p></li>
+</ul>
+
+
+<p><a id="mac-address"></a></p>
+
+<ul>
+<li><p><strong>MAC address anonymization</strong></p>
+
+<p>And not <em>MAC address spoofing</em>, or <em>MAC spoofing</em>.</p>
+
+<p>We&#39;re still using <em>MAC spoofing</em> in internal and design documentation because
+it&#39;s common tech jargon.</p></li>
+</ul>
+
+
+<p><a id="media"></a></p>
+
+<ul>
+<li><p><strong>media</strong> and <strong>installation media</strong></p>
+
+<p>Use only in rare occasions where it is especially relevant to mention
+both USB sticks and DVDs.</p>
+
+<p>Tails is now primarily advertised for USB sticks. We prefer making our
+text easy to read for the majority of people using USB sticks than to
+be exhaustive and always mention DVDs, implicitly or explicitly.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li><p>Tails runs on a USB stick that you can plug in and use on almost
+any computer.</p></li>
+<li><p>It is not possible to install Tails on a hard disk. Tails is
+designed to be a live system running from a removable media: USB
+stick or DVD.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="network-interface"></a></p>
+
+<ul>
+<li><p><strong>network interface</strong>, <strong>Wi-Fi interface</strong></p>
+
+<p>And not <em>card</em>, <em>device</em>, or <em>adapter</em>.</p>
+
+<p>Still, <strong>USB Wi-Fi adapters</strong> are USB dongles that provide a Wi-Fi interface.</p></li>
+</ul>
+
+
+<p><a id="numbers"></a></p>
+
+<ul>
+<li><p><strong>numbers</strong></p>
+
+<p>Show numbers as numerals, and not letters.</p>
+
+<p>See <a href="https://www.nngroup.com/articles/web-writing-show-numbers-as-numerals/">NN/g: Show Numbers as Numerals When Writing for Online Readers</a>.</p></li>
+</ul>
+
+
+<p><a id="persistent-storage"></a></p>
+
+<ul>
+<li><p><strong>Persistent Storage</strong></p>
+
+<p>And not <em>persistence</em> or <em>persistent volume</em>. Capitalize. Can be
+introduced by <em>your</em>, <em>the</em>, <em>a</em> or no article depending on the
+context.</p>
+
+<p>The Persistent Storage refers to both the feature and the encrypted
+volume on the USB stick.</p>
+
+<p>In rare occasions, we write <em>encrypted Persistent Storage</em>, for
+example when introducing the concept. Otherwise, we rely on the
+interface of the Welcome Screen to remind people that it is encrypted.</p>
+
+<p>The Persistent Storage is <em>created</em> using the Persistent Storage settings and
+<em>unlocked</em> in the Welcome Screen.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li><p>Create a Persistent Storage on your Tails USB stick.</p></li>
+<li><p>Enter your passphrase to unlock your Persistent Storage.</p></li>
+<li><p>Everything in the Persistent Storage is encrypted automatically.</p></li>
+<li><p>Add To Persistent Storage (button)</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="persistent-folder"></a></p>
+
+<ul>
+<li><p><strong><em>Persistent</em> folder</strong></p>
+
+<p>The folder <em>/home/amnesia/Persistent/</em>.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li>Save the database as <code>keepassx.kdbx</code> in the <em>Persistent</em> folder.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="persistence-feature"></a></p>
+
+<ul>
+<li><p><strong>feature of the Persistent Storage</strong></p>
+
+<p>And not <em>Persistent Storage feature</em>.</p>
+
+<p>To refer to the features available in the configuration of the
+<em>Persistent Storage</em>.</p>
+
+<p>The construction <em>of the Persistent Storage</em> can be omitted if
+redundant in the context, for example on
+<a href="../../../doc/first_steps/persistence/configure.en.html">Create &amp; configure the Persistent Storage</a>.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li>To install additional software automatically when starting Tails, turn on
+the <a href="../../../doc/first_steps/persistence/configure.en.html#additional_software">Additional Software</a>
+feature of the Persistent Storage.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="persistent"></a></p>
+
+<ul>
+<li><p><strong>persistent</strong> and <strong>persist</strong></p>
+
+<p>The property of something saved in the Persistent Storage and the act
+of making something persistent. Use rarely.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li>The Persistent Storage is optional and you always decide what is
+persistent. Everything else is amnesic.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="please"></a></p>
+
+<ul>
+<li><p><strong>please</strong></p>
+
+<p>Avoid please except in situations where the user is asked to do
+something inconvenient or the software is to blame for the situation.</p></li>
+</ul>
+
+
+<p><a id="procedures"></a></p>
+
+<ul>
+<li><p><strong>procedures</strong> (a series of steps)</p>
+
+<p>Keep the number of steps low within a procedure (for example, below
+10, ideally 7). For longer procedures, split them and give each
+section a title.</p>
+
+<p>Add a blank line between each step.</p>
+
+<p>Rely on the automatic numbered of Markdown and number all the steps
+with <code>1.</code></p>
+
+<p>See also the <em>Microsoft Manual of Style: Procedures and technical
+content</em>.</p>
+
+<p><em>For example</em>:</p>
+
+<pre>
+1. Make sure that you are connected to the Internet.
+
+1. Start <i>Software Sources</i>.
+
+1. Click on the <b>PPAs</b> button and then choose to <b>Add a new PPA&hellip;</b>.
+</pre>
+</li>
+</ul>
+
+
+<p><a id="qr"></a></p>
+
+<ul>
+<li><p><strong>QR codes</strong></p>
+
+<ul>
+<li><p>To encode and decode QR codes, you can use the <a href="./qrcode-encode.sh">qrcode-encode.sh</a>
+and <a href="./qrcode-decode.sh">qrcode-decode.sh</a> scripts. To run these scripts
+you need to install the <code>qrencode</code> and <code>zbar-tools</code> packages.</p>
+
+<p>For example (run from Tails&#39; source root):</p>
+
+<pre><code>wiki/src/contribute/how/documentation/qrcode-encode.sh https://tails.boum.org/
+</code></pre>
+
+<p>Creates a QR code in tails_boum_org.png. And:</p>
+
+<pre><code>wiki/src/contribute/how/documentation/qrcode-decode.sh tails_boum_org.png
+</code></pre>
+
+<p>Outputs:</p>
+
+<pre><code>QR-Code:https://tails.boum.org/
+</code></pre></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="right-click"></a></p>
+
+<ul>
+<li><p><strong>right-click</strong></p>
+
+<p>Trackpads on Mac have a single button. Control-click, the usual way of
+doing right-click on Mac, does something different in Tails (and
+Windows): it is used to select multiple items.</p>
+
+<p>Always clarify how to do right-click on Mac:</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>Right-click (on Mac, click with two fingers) on the file and
+choose <b>Share via OnionShare</b>.</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="screenshot"></a></p>
+
+<ul>
+<li><p><strong>Screenshots</strong></p>
+
+<p>Use screenshots only when they provide useful additional information to
+complete the text. The text should be enough to follow our documentation but
+screenshots might help provide context, engage the reader, or support a
+complex procedure.</p>
+
+<p>We limit the number of screenshots to the minimum
+because they take time to produce, they need frequent update, are harder to
+translate, and are not accessible.</p>
+
+<p>When using screenshots of full windows, we include the window decoration
+and a border of blue background to clarify the context and the nature of
+the image. To take such a screenshot:</p>
+
+<ol>
+<li>In <em>Gimp</em> choose <strong>File</strong>&nbsp;&#x25B8; <strong>Create</strong>&nbsp;&#x25B8; <strong>Screenshot&hellip;</strong>.</li>
+<li>Select <strong>Include windows decoration</strong>.</li>
+<li>Make sure the blue border (<code>0x204a87</code>) on each side of the screenshot is at least 18px.</li>
+</ol>
+
+
+<p>We also most of the time resize the screenshots to 66%, either when they are
+too big or when they can be confused for the actual application (see
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/11527">#11527</a>). Use the <em>NoHalo</em> interpolation in <em>GIMP</em>.</p>
+
+<p>We always compress screenshots using <a href="../documentation.html#compress-image">compress-image</a>.</p>
+
+<p>Good:</p>
+
+<p><img class="img" height="123" src="./screenshot-blue.png" width="459" /></p>
+
+<p>Bad:</p>
+
+<p><img class="img" height="117" src="./screenshot-transparent.png" width="454" /></p>
+
+<p><img class="img" height="88" src="./screenshot-cut.png" width="425" /></p>
+
+<p>When an element of a screenshot needs to be highlighted, for example
+because the element is small, has no label or is in a place that is hard
+to describe, highlight it in red using <em>Inkscape</em>:</p>
+
+<ol>
+<li>Create the base screenshot, resized at 66%.</li>
+<li>Open it in Inkspace.</li>
+<li>Create a red circle or rectangle with a width of 2 px.</li>
+<li>Export the screenshot to PNG, respecting it&#39;s original size.</li>
+</ol>
+</li>
+</ul>
+
+
+<p><a id="secure-boot"></a></p>
+
+<ul>
+<li><p><strong>Secure Boot</strong></p>
+
+<p>Capitalize as a brand or feature. Writing <em>secure boot</em> would make it
+sound more like a magic security feature (which it is not).</p></li>
+</ul>
+
+
+<p><a id="serial-comma"></a></p>
+
+<ul>
+<li><p><strong>serial comma</strong></p>
+
+<p>Place a <a href="https://en.wikipedia.org/wiki/serial%20comma">serial comma</a> immediately before the
+coordinating conjunction (usually <em>and</em> or <em>or</em>) in a series of three
+or more terms.</p></li>
+</ul>
+
+
+<p><a id="tails"></a></p>
+
+<ul>
+<li><p><strong>your Tails</strong></p>
+
+<p>Use to refer to the installation of the operating system of the user.</p>
+
+<p>Use <em>your Tails USB stick</em> when it&#39;s useful to refer to the physical medium more explicitly.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li><p>A virus in Windows could corrupt your Tails.</p></li>
+<li><p>Plug your Tails USB stick into your computer.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="session"></a></p>
+
+<ul>
+<li><p><strong>Tails session</strong></p>
+
+<p>The time between starting Tails and shutting it down.</p></li>
+</ul>
+
+
+<p><a id="tails-versions"></a></p>
+
+<ul>
+<li><p><strong>Tails versions</strong></p>
+
+<p>Refer to Tails versions by their number. Optionally mention the month
+and year of the release when it might help users evaluate the
+relevance of an information, for example when mentioning important
+changes in a past version.</p>
+
+<p><em>For example</em>:</p>
+
+<ul>
+<li><p>Tails 1.1 does not start in some virtualization environments.</p></li>
+<li><p>Tails does not work on 32-bit computers since Tails 3.0 (June 2017).</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="tips"></a></p>
+
+<ul>
+<li><p><strong>Tips, notes, cautions, bugs, and next</strong></p>
+
+<p>Use tips, notes, and cautions to highlight important information.</p>
+
+<ul>
+<li><p>Tip:</p>
+
+<pre>
+&lt;div class=&quot;tip&quot;&gt;
+
+&lt;p&gt;This tip could be useful to some readers.&lt;/p&gt;
+
+&lt;/div&gt;
+</pre>
+
+
+<div class="tip">
+
+<p>This tip could be useful to some readers.</p>
+
+</div>
+</li>
+<li><p>Note:</p>
+
+<pre>
+&lt;div class=&quot;note&quot;&gt;
+
+&lt;p&gt;This note attracts attention.&lt;/p&gt;
+
+&lt;/div&gt;
+</pre>
+
+
+<div class="note">
+
+<p>This note attracts attention.</p>
+
+</div>
+</li>
+<li><p>Caution:</p>
+
+<pre>
+&lt;div class=&quot;caution&quot;&gt;
+
+&lt;p&gt;This warning describes something dangerous.&lt;/p&gt;
+
+&lt;/div&gt;
+</pre>
+
+
+<div class="caution">
+
+<p>This warning describes something dangerous.</p>
+
+</div>
+</li>
+<li><p>Bug:</p>
+
+<pre>
+&lt;div class=&quot;bug&quot;&gt;
+
+&lt;p&gt;This bug describes an important flaw of the software.&lt;/p&gt;
+
+&lt;/div&gt;
+</pre>
+
+
+<div class="bug">
+
+<p>This bug describes an important flaw of the software.</p>
+
+</div>
+</li>
+<li><p>Next:</p>
+
+<pre>
+&lt;div class=&quot;next&quot;&gt;
+
+&lt;p&gt;This note helps to know what to read next.&lt;/p&gt;
+
+&lt;/div&gt;
+</pre>
+
+
+<div class="next">
+
+<p>This note helps to know what to read next.</p>
+
+</div>
+</li>
+<li><p>Trophy:</p>
+
+<pre>
+&lt;div class=&quot;trophy&quot;&gt;
+
+&lt;p&gt;This trophy celebrates a user achievement.&lt;/p&gt;
+
+&lt;/div&gt;
+</pre>
+
+
+<div class="trophy">
+
+<p>This trophy celebrates a user achievement.</p>
+
+</div>
+</li>
+<li><p>Attack:</p>
+
+<pre>
+&lt;div class=&quot;attack&quot;&gt;
+
+&lt;p&gt;This note decribes a security attack and its likelihood.&lt;/p&gt;
+
+&lt;/div&gt;
+</pre>
+
+
+<div class="attack">
+
+<p>This note decribes a security attack and its likelihood.</p>
+
+</div>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="update"></a></p>
+
+<ul>
+<li><p><strong>update</strong> vs <strong>upgrade</strong></p>
+
+<p>Use <strong>upgrade</strong> to refer to the replacement of a previous version of
+Tails by another.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li>If you know someone you trust who already did the upgrade, you can
+upgrade your Tails by cloning from their Tails.</li>
+</ul>
+
+
+<p>You might use <strong>update</strong> to refer to other operations that update
+some data or software outside of Tails releases.</p>
+
+<p><em>For example:</em></p>
+
+<ul>
+<li><p>Make sure to update your <em>dotfiles</em> each time you use the <strong>init</strong>
+command of <em>keyringer</em>.</p></li>
+<li><p>The packages from your list of additional software will be updated
+automatically when you connect to the Internet.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="usb-stick"></a></p>
+
+<ul>
+<li><p><strong>USB stick</strong></p>
+
+<p>And not <em>USB drive</em>, <em>USB</em>, <em>thumb drive</em>, or <em>flash drive</em>.</p></li>
+</ul>
+
+
+<p><a id="vulnerability"></a></p>
+
+<ul>
+<li><p><strong>vulnerability</strong> or <strong>security vulnerability</strong></p>
+
+<p>And not <em>hole</em>, <em>bug</em>, <em>issue</em>, or <em>exploit</em>.</p></li>
+</ul>
+
+
+<p><a id="welcome-screen"></a></p>
+
+<ul>
+<li><p><strong>Welcome Screen</strong></p>
+
+<p>With an article. Not <em>Tails Greeter</em> or <em>the Greeter</em>.</p></li>
+</ul>
+
+
+<p><a id="wrap"></a></p>
+
+<ul>
+<li><p><strong>Wrap to 80 characters but only when needed</strong></p>
+
+<p>New documentation should be wrapped to 80 characters. However, please do
+not submit patches that merely re-wrap existing text, as this makes it
+harder to read the Git history.</p></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../documentation.html">documentation</a>
+
+<a href="../../merge_policy/common_rules.html">merge policy/common rules</a>
+
+<a href="../../../news/report_2012_12.html">news/report 2012 12</a>
+
+<a href="../../../news/report_2018_05.html">news/report 2018 05</a>
+
+<a href="../../../news/report_2019_01.html">news/report 2019 01</a>
+
+<a href="../../../news/report_2020_04.html">news/report 2020 04</a>
+
+<a href="./release_notes.html">release notes</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/how/documentation/style_guide">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

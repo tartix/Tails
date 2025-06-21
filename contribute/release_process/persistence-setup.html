@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Testing persistence-setup</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../release_process.html">release process</a></li>
+
+
+
+
+<li>Testing persistence-setup</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Testing persistence-setup
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Pre-requisites</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Install test dependencies</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Run the test suite</a>
+	</li>
+</ol>
+</div>
+
+
+<p>Persistence-setup is not currently integrated with <code>run_test_suite</code>.</p>
+
+<p>To run it, follow these instructions, making sure that you are in the
+<code>config/chroot_local-includes/usr/src/persistence-setup</code> directory.</p>
+
+<h1><a name="index1h1"></a>Pre-requisites</h1>
+
+<ul>
+<li>a Debian Stretch (or newer) system</li>
+<li><a href="./perl5lib.html#build-deps">Install perl5lib&#39;s dependencies</a></li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Install test dependencies</h1>
+
+<pre><code>cd &quot;$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/persistence-setup&quot; &amp;&amp; \
+cat &quot;$(git rev-parse --show-toplevel)/config/chroot_local-packageslists/tails-persistence-setup.list&quot; \
+   | grep -E -v &#39;^#&#39; \
+   | xargs sudo apt --yes install &amp;&amp; \
+sudo apt install \
+   libmodule-build-perl \
+   libdist-zilla-plugin-test-notabs-perl \
+   libdist-zilla-plugin-test-perl-critic-perl \
+   libdist-zilla-app-command-authordebs-perl \
+   libtest-most-perl \
+   libtest-spec-perl \
+   libtest-bdd-cucumber-perl \
+   liblwp-online-perl \
+   libdata-dumper-concise-perl \
+   libtest-fatal-perl \
+   libsys-statistics-linux-perl \
+&amp;&amp; dzil authordebs --install
+</code></pre>
+
+<h1><a name="index3h1"></a>Run the test suite</h1>
+
+<pre><code>cd &quot;$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/persistence-setup&quot; &amp;&amp; \
+PERL5LIB=&quot;$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/perl5lib/lib&quot; \
+   TAILS_GIT_CHECKOUT=&quot;$(git rev-parse --show-toplevel)&quot; \
+   LC_ALL=C.UTF-8 \
+   fakeroot dzil test --all
+</code></pre>
+
+<p>It has happened in the past that this code base required
+adjustments to work with newer versions of the libraries it depends
+on, so if tests fail on testing/sid, retry on Debian stable before
+going amok.</p>
+
+<p>To run only BDD tests (ala Cucumber) defined under
+<code>config/chroot_local-includes/usr/src/persistence-setup/features</code>, use
+<code>pherkin</code>. For example:</p>
+
+<pre><code>cd &quot;$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/persistence-setup&quot; &amp;&amp; \
+PERL5LIB=&quot;$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/perl5lib/lib&quot; \
+   TAILS_GIT_CHECKOUT=&quot;$(git rev-parse --show-toplevel)&quot; \
+   LC_ALL=C.UTF-8 \
+   pherkin
+</code></pre>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/release_process/persistence-setup">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

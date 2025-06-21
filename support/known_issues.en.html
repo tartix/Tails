@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Known issues</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../support.en.html">support</a></li>
+
+
+
+
+<li>Known issues</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./known_issues.de.html">de</a></span>
+   <span class="hidden"><a href="./known_issues.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./known_issues.es.html">es</a></span>
+   <span class="hidden"><a href="./known_issues.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./known_issues.fr.html">fr</a></span>
+   <span class="hidden"><a href="./known_issues.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./known_issues.it.html">it</a></span>
+   <span class="hidden"><a href="./known_issues.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./known_issues.pt.html">pt</a></span>
+   <span class="hidden"><a href="./known_issues.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./known_issues.ru.html">ru</a></span>
+   <span class="hidden"><a href="./known_issues.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Known issues
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<ul>
+<li>For issues with graphics cards, see our <a href="./known_issues/graphics.en.html">known issues with graphics cards</a>.</li>
+<li>To learn what you can do with Tails, refer to our <a href="../doc.en.html">documentation</a>.</li>
+<li>For more general questions about Tails, refer to our <a href="./faq.en.html">FAQ</a>.</li>
+</ul>
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#problems-starting-tails">Problems starting Tails</a>
+	<ol>
+		<li class="L2"><a href="#problematic-usb-sticks">Problematic USB sticks</a>
+		<ol>
+			<li class="L3"><a href="#pny">PNY</a>
+			</li>
+			<li class="L3"><a href="#aegis">Aegis Secure Key 3.0</a>
+			</li>
+			<li class="L3"><a href="#datatraveler-2000">Kingston DataTraveler 2000, Kingston DataTraveler 100 G3</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#mac">Mac</a>
+		</li>
+		<li class="L2"><a href="#pc">PC</a>
+		<ol>
+			<li class="L3"><a href="#lockup">"Soft lockup" error</a>
+			</li>
+			<li class="L3"><a href="#sg-black-screen">Acer Travelmate 8573T-254G50M</a>
+			</li>
+			<li class="L3"><a href="#aspire-5315-icl50">Acer Aspire 5315-ICL50</a>
+			</li>
+			<li class="L3"><a href="#acer-chromebook-c720p">Acer Chromebook C720P</a>
+			</li>
+			<li class="L3"><a href="#amd-ryzen-vega-graphics">AMD Ryzen with Vega graphics cards</a>
+			</li>
+			<li class="L3"><a href="#asus-vivobook-x202e">ASUS VivoBook X202E</a>
+			</li>
+			<li class="L3"><a href="#dell-chromebook-lulu">Dell Chromebook LULU</a>
+			</li>
+			<li class="L3"><a href="#dell-latitude-e5250">Dell Latitude E5250</a>
+			</li>
+			<li class="L3"><a href="#dell-latitude-e6430">Dell Latitude E6430 and E6230</a>
+			</li>
+			<li class="L3"><a href="#dell-xps-l702x">Dell XPS L702X/03RG89, Samsung RV520, Samsung Series 7 Chronos</a>
+			</li>
+			<li class="L3"><a href="#hp-compaq-dc5750">HP Compaq dc5750 Microtower</a>
+			</li>
+			<li class="L3"><a href="#hp-compaq-615">HP Compaq 615</a>
+			</li>
+			<li class="L3"><a href="#hp-compaq-cq60-214dx">HP Compaq CQ60-214DX</a>
+			</li>
+			<li class="L3"><a href="#hp-notebook-BCM943142HM">HP Notebook BCM943142HM</a>
+			</li>
+			<li class="L3"><a href="#hp-pavilion-15-ab277ca">HP Pavilion 15-ab277ca</a>
+			</li>
+			<li class="L3"><a href="#hp-probook">HP ProBook</a>
+			</li>
+			<li class="L3"><a href="#lenovo-ideapad-y410p">Lenovo IdeaPad Y410p</a>
+			</li>
+			<li class="L3"><a href="#lenovo-ideapad-z585">Lenovo IdeaPad z585</a>
+			</li>
+			<li class="L3"><a href="#microsoft-surface-laptop-3">Microsoft Surface Laptop 3</a>
+			</li>
+			<li class="L3"><a href="#clevo-w258cu">Clevo W258CU, ThinkPad X121e, T420i, T410, T520, W520, W540, T530, T60, E325, and E530</a>
+			</li>
+			<li class="L3"><a href="#system76-oryx-pro">System76 Oryx Pro</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#wi-fi">Wi-Fi issues</a>
+	<ol>
+		<li class="L2"><a href="#no-wifi">Wi-Fi not working</a>
+		</li>
+		<li class="L2"><a href="#wi-fi-workarounds">Knowing the model of your Wi-Fi interface</a>
+		</li>
+		<li class="L2"><a href="#88w8897">88W8897 [AVASTAR] 802.11ac Wireless</a>
+		</li>
+		<li class="L2"><a href="#rtl8723be">RTL8723BE PCIe Wireless Network Adapter</a>
+		</li>
+		<li class="L2"><a href="#broadcom-sta-dkms">Broadcom Wi-Fi network interface needing broadcom-sta-dkms</a>
+		</li>
+		<li class="L2"><a href="#lenovo-legion-y530">Lenovo Legion Y530</a>
+		</li>
+		<li class="L2"><a href="#rtl8821ce">RTL8821CE</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#security-issues">Security issues</a>
+	<ol>
+		<li class="L2"><a href="#video-memory">Tails does not erase video memory</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#other-issues">Other issues</a>
+	<ol>
+		<li class="L2"><a href="#openpgp-import">Importing OpenPGP public keys using the Passwords and Keys utility does nothing</a>
+		</li>
+		<li class="L2"><a href="#boot-loader-display-issues">Boot Loader has display issues</a>
+		</li>
+		<li class="L2"><a href="#touchpad-configurations">Touchpad configurations</a>
+		<ol>
+			<li class="L3"><a href="#acer-travelmate-b113">Acer TravelMate B113 - ETPS/2 Elantech Touchpad</a>
+			</li>
+			<li class="L3"><a href="#acer-c720">Acer C720 - Cypress APA Touchpad</a>
+			</li>
+			<li class="L3"><a href="#lenovo-ideapad-3-touchpad">Lenovo IdeaPad 3 Touchpad</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#bluetooth-devices-dont-work">Bluetooth devices don't work</a>
+		</li>
+		<li class="L2"><a href="#automatic-upgrade-fails">Tails fails to start or behaves weirdly after an automatic upgrade</a>
+		</li>
+		<li class="L2"><a href="#persistence-disappears">Persistent folder disappears and data of the Persistent Storage is unavailable</a>
+		</li>
+		<li class="L2"><a href="#languages-incorrect-keyboard-layout">Some languages do not have the correct keyboard layout set by default</a>
+		</li>
+		<li class="L2"><a href="#openpgp-prompt-steals-focus">The OpenPGP passphrase prompt steals the keyboard and mouse focus</a>
+		</li>
+		<li class="L2"><a href="#lenovo-thinkpad-11e">Lenovo ThinkPad 11e</a>
+		</li>
+		<li class="L2"><a href="#usb-gigabyte">USB devices are not working on some GIGABYTE motherboards</a>
+		</li>
+		<li class="L2"><a href="#graphics-corruption-tor-browser">Graphics corruption in Tor Browser and Thunderbird</a>
+		<ol>
+			<li class="L3"><a href="#acer-swift-3">Acer Swift 3</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+
+
+<h1 id="problems-starting-tails"><a name="index1h1"></a>Problems starting Tails</h1>
+
+
+<p>This section lists known problems with specific hardware. To report a problem
+with different hardware see our <a href="../doc/first_steps/bug_reporting.en.html#does_not_start">report guidelines when Tails does not
+start</a>.</p>
+
+<h2 id="problematic-usb-sticks"><a name="index1h2"></a>Problematic USB sticks</h2>
+
+
+
+
+<h3 id="pny"><a name="index1h3"></a>PNY</h3>
+
+
+
+
+
+
+
+<p>When installing Tails, PNY USB sticks have problems with the constant write load
+and are prone to failure.</p>
+
+<h3 id="aegis"><a name="index2h3"></a>Aegis Secure Key 3.0</h3>
+
+
+
+
+
+
+
+<p>To start Tails, remove the
+<span class="command">live-media=removable</span> boot option.
+See our instructions on <a href="../doc/advanced_topics/boot_options.en.html">modifying the boot options using
+the Boot Loader</a>.</p>
+
+<h3 id="datatraveler-2000"><a name="index3h3"></a>Kingston DataTraveler 2000, Kingston DataTraveler 100 G3</h3>
+
+
+
+
+
+
+
+<p>Starting Tails from a Kingston DataTraveler 2000 or DataTraveler 100G3 may
+not work.</p>
+
+<h2 id="mac"><a name="index2h2"></a>Mac</h2>
+
+
+
+
+
+
+
+<ul>
+<li><p>Any Mac with 32-bit EFI might not start on Tails.
+You can check if a given Mac is 32-bit
+or 64-bit EFI on that list:
+<a href="https://www.everymac.com/mac-answers/snow-leopard-mac-os-x-faq/mac-os-x-snow-leopard-64-bit-macs-64-bit-efi-boot-in-64-bit-mode.html">https://www.everymac.com/mac-answers/snow-leopard-mac-os-x-faq/mac-os-x-snow-leopard-64-bit-macs-64-bit-efi-boot-in-64-bit-mode.html</a></p></li>
+<li><p>MacBook Air Retina 2018 and 2019</p>
+
+<p>To start Tails successfully, <a href="../doc/advanced_topics/boot_options.en.html">add the following boot option when
+starting Tails</a>:</p>
+
+<pre><code>modprobe.blacklist=thunderbolt
+</code></pre>
+
+<p>Still, the trackpad and keyboard may not work. You may use an external
+mouse and keyboard.</p></li>
+<li><p>MacBook Pro (recent models): the keyboard, trackpad, and Touch Bar might
+not work. But, you can use an external keyboard and mouse.</p>
+
+<p>If the keyboard, trackpad, and Touch Bar do work on your recent MacBook Pro
+model, please let us know so that we can update this page accordingly.</p></li>
+<li><p>MacBook Pro 8,3 17&quot; (AMD Radeon HD6770M and Intel HD Graphics 3000)</p>
+
+<p>If Tails fails to start, <a href="../doc/advanced_topics/boot_options.en.html">add the following boot option when
+starting Tails</a>:</p>
+
+<pre><code>radeon.modeset=0
+</code></pre></li>
+<li><p>MacBook Pro 5,1 17&quot; (Nvidia GeForce 9400M)</p>
+
+<p>To make the display work properly, <a href="../doc/advanced_topics/boot_options.en.html">add the following boot option when
+starting Tails</a>:</p>
+
+<pre><code>nouveau.noaccel=1
+</code></pre></li>
+<li><p>MacBook Pro 16,1 (A2141)</p>
+
+<p>The computer freezes then automatically restarts. An error message
+appears saying that the computer was restarted because of a problem.</p>
+
+<p>To prevent this from occurring, <a href="../doc/advanced_topics/boot_options.en.html">add the following boot option when
+starting Tails</a>:</p>
+
+<pre><code>amdgpu.dpm=0
+</code></pre></li>
+<li><p>MacBook Air 3,2 (A1369 EMC 2392) freezes when booting Tails in
+UEFI mode.</p></li>
+<li><p>Mac Pro Tower and MacBook Pro 4,1 (both from early 2008)
+fail to start on Tails.</p></li>
+</ul>
+
+
+<h2 id="pc"><a name="index3h2"></a>PC</h2>
+
+
+
+
+<h3 id="lockup"><a name="index4h3"></a>"Soft lockup" error</h3>
+
+
+
+
+
+
+
+<p>On some laptops, Tails starts with the following error:</p>
+
+<p class="pre">soft lockup - CPU#<span class="command-placeholder">N</span> stuck for <span class="command-placeholder">N</span>s</p>
+
+
+<p>To start Tails successfully, <a href="../doc/advanced_topics/boot_options.en.html">add the following boot option when starting
+Tails</a>:</p>
+
+<pre><code>acpi_rev_override=1 nouveau.modeset=0
+</code></pre>
+
+<h3 id="sg-black-screen"><a name="index5h3"></a>Acer Travelmate 8573T-254G50M</h3>
+
+
+
+
+
+
+
+<p>Booting from DVD works fine, but does not start from USB sticks.</p>
+
+<p>This problem might be corrected in Tails 1.1 and newer: please report
+your test results back to us.</p>
+
+<h3 id="aspire-5315-icl50"><a name="index6h3"></a>Acer Aspire 5315-ICL50</h3>
+
+
+
+
+
+
+
+<p>Does not start on USB sticks.</p>
+
+<h3 id="acer-chromebook-c720p"><a name="index7h3"></a>Acer Chromebook C720P</h3>
+
+
+<p>Does not start Tails 4.13.</p>
+
+<h3 id="amd-ryzen-vega-graphics"><a name="index8h3"></a>AMD Ryzen with Vega graphics cards</h3>
+
+
+<p>See <a href="./known_issues/graphics.en.html#amd-vega">graphics</a>.</p>
+
+<h3 id="asus-vivobook-x202e"><a name="index9h3"></a>ASUS VivoBook X202E</h3>
+
+
+
+
+
+
+
+<p>Legacy support needs to be enabled in order to start Tails. To enable
+legacy boot support, enable &#39;Launch CSM&#39; under boot (menu).</p>
+
+<p>This problem might be corrected in Tails 1.1 and newer: please report
+your test results back to us.</p>
+
+<h3 id="dell-chromebook-lulu"><a name="index10h3"></a>Dell Chromebook LULU</h3>
+
+
+
+
+
+
+
+<p>To start Tails successfully, <a href="../doc/advanced_topics/boot_options.en.html">add the following boot option when starting
+Tails</a>:</p>
+
+<pre><code>nomodeset
+</code></pre>
+
+<h3 id="dell-latitude-e5250"><a name="index11h3"></a>Dell Latitude E5250</h3>
+
+
+
+
+
+
+
+<p>Does not start on Tails USB sticks.</p>
+
+<h3 id="dell-latitude-e6430"><a name="index12h3"></a>Dell Latitude E6430 and E6230</h3>
+
+
+
+
+
+
+
+<p>Does not start on USB sticks.</p>
+
+<p>With BIOS versions A03 06/03/2012 (and A09, A11, and A12)</p>
+
+<p>Error message: <code>Invalid partition table!</code></p>
+
+<p>Workaround (at least with BIOS versions A09, A11, and A12): just hit enter
+and it will continue with the boot.</p>
+
+<h3 id="dell-xps-l702x"><a name="index13h3"></a>Dell XPS L702X/03RG89, Samsung RV520, Samsung Series 7 Chronos</h3>
+
+
+
+
+
+
+
+<p>Does not start on USB sticks.</p>
+
+<p>We were reported that the legacy BIOS shipped on these systems doesn&#39;t
+know how to deal with the GPT partition scheme used in Tails.</p>
+
+<p>This problem might be corrected in Tails 1.1 and newer: please report
+your test results back to us.</p>
+
+<p><a href="https://www.dell.com/community/Laptops-General-Read-Only/GPT-Bootable-Bios-Optimus-Switch-Are-Necessary-For-L502x-L702x/m-p/3699920">https://www.dell.com/community/Laptops-General-Read-Only/GPT-Bootable-Bios-Optimus-Switch-Are-Necessary-For-L502x-L702x/m-p/3699920</a></p>
+
+<h3 id="hp-compaq-dc5750"><a name="index14h3"></a>HP Compaq dc5750 Microtower</h3>
+
+
+
+
+
+
+
+<p>Does not start Tails 1.2.3.</p>
+
+<h3 id="hp-compaq-615"><a name="index15h3"></a>HP Compaq 615</h3>
+
+
+
+
+
+
+
+<p>You need to update the firmware to its latest version in order to start from a
+USB stick.</p>
+
+<h3 id="hp-compaq-cq60-214dx"><a name="index16h3"></a>HP Compaq CQ60-214DX</h3>
+
+
+
+
+
+
+
+<p>Tails 3.3 does not start.</p>
+
+<h3 id="hp-notebook-BCM943142HM"><a name="index17h3"></a>HP Notebook BCM943142HM</h3>
+
+
+
+
+
+
+
+<p>Does not start Tails 4.13.</p>
+
+<h3 id="hp-pavilion-15-ab277ca"><a name="index18h3"></a>HP Pavilion 15-ab277ca</h3>
+
+
+
+
+
+
+
+<p>Tails 3.3 restarts during startup and never starts successfully.</p>
+
+<h3 id="hp-probook"><a name="index19h3"></a>HP ProBook</h3>
+
+
+
+
+
+
+
+<p>With UEFI enabled, when choosing a boot device, select <code>Boot From EFI File</code> and
+then <code>Filesystem Tails</code> and <code>EFI/BOOT/BOOTX64.EFI</code>.</p>
+
+<p>That workaround applied to, at least, the following HP ProBook:</p>
+
+<ul>
+<li>5330m</li>
+<li>4330s</li>
+<li>6560b</li>
+</ul>
+
+
+<h3 id="lenovo-ideapad-y410p"><a name="index20h3"></a>Lenovo IdeaPad Y410p</h3>
+
+
+
+
+
+
+
+<p>Does not start Tails 1.1 from USB installed manually in Linux.</p>
+
+<h3 id="lenovo-ideapad-z585"><a name="index21h3"></a>Lenovo IdeaPad z585</h3>
+
+
+
+
+
+
+
+<p>Goes back continuously to Boot Loader on Tails installed on DVD.</p>
+
+<h3 id="microsoft-surface-laptop-3"><a name="index22h3"></a>Microsoft Surface Laptop 3</h3>
+
+
+
+
+
+
+
+<p>The keyboard and mouse do not work on this laptop.
+If you find a workaround, please let us know.</p>
+
+<h3 id="clevo-w258cu"><a name="index23h3"></a>Clevo W258CU, ThinkPad X121e, T420i, T410, T520, W520, W540, T530, T60, E325, and E530</h3>
+
+
+
+
+
+
+
+<p>These machines do not start on USB sticks
+due to a firmware limitation.</p>
+
+<p>This problem might be corrected in Tails 1.1 and newer: please report
+your test results back to us.</p>
+
+<h3 id="system76-oryx-pro"><a name="index24h3"></a>System76 Oryx Pro</h3>
+
+
+
+
+
+
+
+<p>This machine does not start from a Tails USB stick: the Linux kernel
+included in at least Tails 3.11 to 3.13.1, inclusive, does not support
+the hardware USB controller.</p>
+
+<h1 id="wi-fi"><a name="index2h1"></a>Wi-Fi issues</h1>
+
+
+
+
+<h2 id="no-wifi"><a name="index4h2"></a>Wi-Fi not working</h2>
+
+
+<p>If your Wi-Fi interface is not working, either:</p>
+
+<ul>
+<li><p>There is no Wi-Fi option in the system menu:</p>
+
+<p><img alt="" class="img" height="217" src="../doc/anonymous_internet/no-wifi/system-without-wifi.png" width="249" /></p></li>
+<li><p>The interface is disabled when starting Tails or when plugging in your USB
+Wi-Fi adapter:</p>
+
+<p><img alt="Notification about network card being disabled" class="img" height="81" src="../doc/anonymous_internet/no-wifi/mac-spoofing-disabled.png" width="382" /></p>
+
+<p>In this case, you can disable MAC address anonymization to get your Wi-Fi interface
+to work in Tails. Disabling MAC address anonymization has security implications, so read
+carefully our <a href="../doc/first_steps/welcome_screen/mac_spoofing.en.html">documentation about MAC
+address anonymization</a> before doing so.</p></li>
+</ul>
+
+
+<p>To connect to the Internet, you can try to:</p>
+
+<ul>
+<li><p>Use an Ethernet cable instead of Wi-Fi if possible. Wired interfaces work
+much more reliably than Wi-Fi in Tails.</p></li>
+<li><p>Share the Wi-Fi or mobile data connection of your phone using a
+USB cable. Sharing a connection this way is called <em>USB tethering</em>.</p>
+
+<p><img alt="" class="img" height="95" src="../doc/anonymous_internet/no-wifi/usb-tethering.png" width="375" /></p>
+
+<p>See instructions for:</p>
+
+<ul>
+<li><p><a href="https://support.google.com/android/answer/9059108?hl=en">Android</a></p></li>
+<li><p><a href="https://support.apple.com/en-us/HT204023">iPhones or iPads</a><br />
+Only sharing mobile data works on iPhones and iPads; sharing Wi-Fi does not work.</p></li>
+</ul>
+
+
+<div class="caution">
+<p>Tails cannot hide the information that identifies your phone on the local network.
+If you connect your phone to:</p>
+<ul>
+<li><p>A Wi-Fi network, then the network will know the MAC
+address of your phone. This has security implications that are discussed in
+our <a href="../doc/first_steps/welcome_screen/mac_spoofing.en.html">documentation on MAC address anonymization</a>.
+Some phones have a feature to hide the real MAC address of the phone.</p></li>
+<li><p>A mobile data network, then
+the network will be able to know the identifier of your SIM card (IMSI)
+and also the serial number of your phone (IMEI).</p></li>
+</ul>
+</div>
+</li>
+</ul>
+
+
+<p><a id="wi-fi-adapters"></a></p>
+
+<ul>
+<li><p>Buy a USB Wi-Fi adapter that works in Tails:</p>
+
+
+
+
+<table>
+<tr><th>Vendor</th><th>Model</th><th>Size</th><th>Speed</th><th>Price</th><th>Buy offline</th><th>Buy online</th></tr>
+<tr><td>Panda Wireless</td><td>Ultra</td><td>Nano</td><td>150 Mbit/s</td><td>$12</td><td>No</td><td><a href="https://www.amazon.com/d/B00762YNMG">Amazon</a></td></tr> 
+<tr><td>Panda Wireless</td><td>PAU05</td><td>Small</td><td>300 Mbit/s</td><td>$14</td><td>No</td><td><a href="https://www.amazon.com/d/B00EQT0YK2">Amazon</a></td></tr> 
+</table>
+
+
+
+
+
+<div class="note">
+<p>If you find another USB Wi-Fi adapter that works in Tails, please let us
+know. You can write to <a href="mailto:sajolida@pimienta.org">sajolida@pimienta.org</a> (private email).</p>
+</div>
+</li>
+<li><p>Check in the following sections
+if there is a workaround to get your Wi-Fi interface work in Tails.</p></li>
+</ul>
+
+
+<h2 id="wi-fi-workarounds"><a name="index5h2"></a>Knowing the model of your Wi-Fi interface</h2>
+
+
+<ol>
+<li><p>Open <span class="application">Terminal</span> and execute the following command:</p>
+
+<pre><code>lspci -v | grep &quot;Network controller&quot;
+</code></pre></li>
+</ol>
+
+
+<h2 id="88w8897"><a name="index6h2"></a>88W8897 [AVASTAR] 802.11ac Wireless</h2>
+
+
+
+
+
+
+
+<p>On some computers with a Marvell Avastar 88W8897 Wi-Fi adapter, such
+as some Microsoft Surface Pro models, Tails fails to connect to
+Wi-Fi networks.</p>
+
+<p>If you experience this problem, you can try to <a href="../doc/first_steps/welcome_screen/mac_spoofing.en.html">disable MAC address
+anonymization</a> that sometimes
+fixes it.</p>
+
+<h2 id="rtl8723be"><a name="index7h2"></a>RTL8723BE PCIe Wireless Network Adapter</h2>
+
+
+
+
+
+
+
+<p>On some computers with a RTL8723be Wi-Fi adapter, Tails might fail to discover
+Wi-Fi networks, provide unreliable Wi-Fi connections, or have poor Wi-Fi
+performance.</p>
+
+<p>You can try to <a href="../doc/advanced_topics/boot_options.en.html">add the following boot options when starting
+Tails</a> until you find a
+combination that works for you. The exact combination of options that works
+depends on the computer:</p>
+
+<ul>
+<li><p><span class="command">rtl8723be.fwlps=0 rtl8723be.ips=0</span></p></li>
+<li><p><span class="command">rtl8723be.ant_sel=1</span></p></li>
+<li><p><span class="command">rtl8723be.ant_sel=2</span></p></li>
+<li><p><span class="command">rtl8723be.ant_sel=1 rtl8723be.fwlps=0 rtl8723be.ips=0</span></p></li>
+<li><p><span class="command">rtl8723be.ant_sel=2 rtl8723be.fwlps=0 rtl8723be.ips=0</span></p></li>
+</ul>
+
+
+<h2 id="broadcom-sta-dkms"><a name="index8h2"></a>Broadcom Wi-Fi network interface needing <code>broadcom-sta-dkms</code></h2>
+
+
+
+
+
+
+
+<p>Some Broadcom Wi-Fi interfaces require the
+<a href="https://wiki.debian.org/wl"><code>wl</code></a> driver, provided by the
+<code>broadcom-sta-dkms</code> Debian package, to work in Tails.</p>
+
+<p>The <code>wl</code> driver is not included in Tails because it is proprietary.</p>
+
+<p>Your device requires the <code>wl</code> driver if it is in the list of devices
+supported by the <code>broadcom-sta-dkms</code> package on the corresponding
+<a href="https://wiki.debian.org/wl">Debian wiki page</a>. If you find your device
+in the list of supported devices, then it is impossible to use your
+Wi-Fi card in Tails.</p>
+
+<h2 id="lenovo-legion-y530"><a name="index9h2"></a>Lenovo Legion Y530</h2>
+
+
+
+
+
+
+
+<p>Wi-Fi adapter does not work.</p>
+
+<p>To fix this issue, <a href="../doc/advanced_topics/boot_options.en.html">add the following boot option when
+starting Tails</a>:</p>
+
+<pre><code>modprobe.blacklist=ideapad_laptop
+</code></pre>
+
+<h2 id="rtl8821ce"><a name="index10h2"></a>RTL8821CE</h2>
+
+
+
+
+
+
+
+<p>The Realtek RTL8821CE Wi-Fi adapter is not supported in Linux yet.</p>
+
+<p>This problem is tracked by <a href="https://bugs.debian.org/917941">Debian bug #917941</a>.</p>
+
+<h1 id="security-issues"><a name="index3h1"></a>Security issues</h1>
+
+
+
+
+<h2 id="video-memory"><a name="index11h2"></a>Tails does not erase video memory</h2>
+
+
+<p>Tails doesn&#39;t erase the <a href="https://en.wikipedia.org/wiki/Video%5FRAM%5F%28dual%2Dported%5FDRAM%29">video memory</a> yet.
+When one uses Tails, then restarts the computer into another operating
+system, that other operating system might, for a moment, display the last
+screen that was displayed in Tails.</p>
+
+<p>Shutting down the computer completely, instead of restarting it,
+might allow the video memory to empty itself.</p>
+
+<p>See <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5356">Erase video memory on shutdown</a>.</p>
+
+
+
+
+
+
+<h1 id="other-issues"><a name="index4h1"></a>Other issues</h1>
+
+
+
+
+<h2 id="openpgp-import"><a name="index12h2"></a>Importing OpenPGP public keys using the <span class="application">Passwords and Keys</span> utility does nothing</h2>
+
+
+<p>Importing OpenPGP public keys using the <em>Passwords and Keys</em> utility is broken
+since Tails 4.0 (October 2019). (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17183">#17183</a>)</p>
+
+<p>Do so from the <em>Files</em> browser instead:</p>
+
+<ol>
+<li><p>Choose <strong>Applications</strong>&nbsp;&#x25B8; <strong>Files</strong> to open the <em>Files</em> browser.</p></li>
+<li><p>Double-click on the OpenPGP public
+key that you downloaded. The key must be in the <em>armored</em> format,
+usually with a <code>.asc</code> extension.</p></li>
+<li><p>Choose <strong>Open With Import Key</strong>.</p></li>
+<li><p>The imported OpenPGP public key does not appear in the <em>Passwords and Keys</em>
+utility. But, the key should appear in the list of keys available for encryption when
+<a href="../doc/encryption_and_privacy/gpgapplet/public-key_cryptography.en.html">encrypting text with a public key</a>
+using <em>OpenPGP Applet</em>.</p></li>
+</ol>
+
+
+<h2 id="boot-loader-display-issues"><a name="index13h2"></a>Boot Loader has display issues</h2>
+
+
+
+
+
+
+
+<p>Since Tails 1.1, on some hardware (ThinkPad X230, MacBook Pro 8,1),
+the Boot Loader is not displayed properly. Tails starts fine, though.</p>
+
+<h2 id="touchpad-configurations"><a name="index14h2"></a>Touchpad configurations</h2>
+
+
+
+
+<h3 id="acer-travelmate-b113"><a name="index25h3"></a>Acer TravelMate B113 - ETPS/2 Elantech Touchpad</h3>
+
+
+
+
+
+
+
+<pre><code>synclient FingerPress=256;
+synclient TapButton3=0;
+synclient Clickpad=1;
+synclient VertTwoFingerScroll=1;
+synclient FingerLow=1;
+synclient FingerHigh=1;
+</code></pre>
+
+<h3 id="acer-c720"><a name="index26h3"></a>Acer C720 - Cypress APA Touchpad</h3>
+
+
+
+
+
+
+
+<pre><code>synclient FingerLow=5;
+synclient FingerHigh=5;
+</code></pre>
+
+<h3 id="lenovo-ideapad-3-touchpad"><a name="index27h3"></a>Lenovo IdeaPad 3 Touchpad</h3>
+
+
+
+
+
+
+
+<p>This touchpad does not work by default. To fix this problem, <a href="../doc/advanced_topics/boot_options.en.html">add the
+following boot option when starting
+Tails</a>:</p>
+
+<pre><code>pci=nocrs
+</code></pre>
+
+<h2 id="bluetooth-devices-dont-work"><a name="index15h2"></a>Bluetooth devices don't work</h2>
+
+
+<p>Bluetooth is not enabled in Tails for security reasons.</p>
+
+<h2 id="automatic-upgrade-fails"><a name="index16h2"></a>Tails fails to start or behaves weirdly after an automatic upgrade</h2>
+
+
+
+
+
+
+
+<p>Sometimes, after an automatic upgrade, your Tails might either:</p>
+
+<ul>
+<li><p>Fail to start. Often after the message:</p>
+
+<pre>Loading, please wait...</pre>
+</li>
+<li><p>Behave weirdly. For example, your keyboard does not work or you cannot
+connect to a network.</p></li>
+</ul>
+
+
+<p>To fix this problem, you can <a href="../doc/upgrade.en.html#manual">update your Tails
+manually</a>.</p>
+
+<p>Note that your Persistent Storage will be safely preserved.</p>
+
+<h2 id="persistence-disappears"><a name="index17h2"></a><em>Persistent</em> folder disappears and data of the Persistent Storage is unavailable</h2>
+
+
+
+
+
+
+
+<p>Sometimes, the <em>Persistent</em> folder is missing and
+all the data of the Persistent Storage is unavailable.</p>
+
+<p>Most likely this means that the <em>persistence.conf</em>
+file has disappeared. However, the files in the
+<em>Persistent</em> folder and all the other data in the Persistent Storage
+should still exist.</p>
+
+<p>If you encounter this problem, you can either:</p>
+
+<ul>
+<li><p>Turn on again the feature of the Persistent Storage that you need:</p>
+
+<ol>
+<li><p>Unlock the Persistent Storage in
+the Welcome Screen when starting Tails.</p></li>
+<li><p>Choose
+<span class="menuchoice">
+  <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guisubmenu">Tails</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Configure persistent volume</span></span>.</p></li>
+<li><p>If you are asked to enter a passphrase, enter the same passphrase that you
+use to unlock your Persistent Storage.</p></li>
+<li><p>Turn on the features of the Persistent Storage that you had turned on previously.</p></li>
+<li><p>Click <span class="bold">Save</span>, then restart Tails.</p></li>
+</ol>
+
+
+<p>Your <em>Persistent</em> folder and all the data of the Persistent Storage
+should be restored.</p></li>
+<li><p>Restore the <em>persistence.conf</em> file from its backup:</p>
+
+<ol>
+<li><p>Unlock the Persistent Storage and <a href="../doc/first_steps/welcome_screen/administration_password.en.html">set up an administration password
+</a> when
+starting Tails.</p></li>
+<li><p>Execute the following command in a <em>Terminal</em>:</p>
+
+<pre><code>sudo cp -a /live/persistence/TailsData_unlocked/persistence.conf{.bak,}
+</code></pre></li>
+</ol>
+</li>
+</ul>
+
+
+<p>If neither of the above instructions fixes the problem, you might need to fix the
+ownership of <code>TailsData_unlocked</code>.</p>
+
+<p>To fix the ownership of TailsData_unlocked, set an administration password and
+execute the following command in a terminal:</p>
+
+<pre><code>sudo chown root:root /live/persistence/TailsData_unlocked
+</code></pre>
+
+<h2 id="languages-incorrect-keyboard-layout"><a name="index18h2"></a>Some languages do not have the correct keyboard layout set by default</h2>
+
+
+
+
+
+
+
+<p>When selecting some languages in the Welcome Screen, the default associated
+keyboard layout fallbacks to US.</p>
+
+<p>To use the right keyboard layout during a session, set it in the Welcome
+Screen after having set the language. When the desktop has started, apply
+the keyboard layout by clicking on the <code>en</code> systray icon.</p>
+
+<p>Affected language codes are <code>AYC</code>, <code>BHB</code>, <code>BRX</code>, <code>CMN</code>, <code>HAK</code>, <code>HNE</code>, <code>LIJ</code>,
+<code>LZH</code>, <code>MHR</code>, <code>NAN</code>, <code>NHN</code>, <code>QUZ</code>, <code>SGS</code>, <code>SHS</code>, <code>TCY</code>, <code>THE</code>, <code>UNM</code>, <code>WAE</code> and
+<code>YUE</code>.</p>
+
+<h2 id="openpgp-prompt-steals-focus"><a name="index19h2"></a>The OpenPGP passphrase prompt steals the keyboard and mouse focus</h2>
+
+
+
+
+
+
+
+<p>This happens when the GnuPG feature of the Persistent Storage was turned on before
+Tails 2.3. To fix this problem, execute the following command in
+a
+<a href="../doc/first_steps/introduction_to_gnome_and_the_tails_desktop.en.html#terminal">terminal</a>:</p>
+
+<pre><code>echo &quot;no-grab&quot; &gt;&gt; ~/.gnupg/gpg-agent.conf
+</code></pre>
+
+<h2 id="lenovo-thinkpad-11e"><a name="index20h2"></a>Lenovo ThinkPad 11e</h2>
+
+
+
+
+
+
+
+<p>Tails may be unstable and stop working regularly on some Lenovo
+ThinkPad 11e laptops, such as the 2015 model.</p>
+
+<p>To fix this problem, <a href="../doc/advanced_topics/boot_options.en.html">add the following boot option when
+starting Tails</a>:</p>
+
+<pre><code>intel_idle.max_cstate=1
+</code></pre>
+
+<h2 id="usb-gigabyte"><a name="index21h2"></a>USB devices are not working on some <a href="https://www.gigabyte.com/">GIGABYTE</a> motherboards</h2>
+
+
+
+
+
+
+
+<p>To workaround this issue, you can try to:</p>
+
+<ul>
+<li><p>Use other USB ports. For example, use USB 2 ports instead of USB 3
+ports and vice versa.</p></li>
+<li><p>Enable these 3 options in the BIOS</p>
+
+<ul>
+<li>xHCI handoff</li>
+<li>EHCI handoff</li>
+<li>IOMMU controller</li>
+</ul>
+</li>
+<li><p><a href="../doc/advanced_topics/boot_options.en.html">Add the following boot option when
+starting Tails</a>:</p>
+
+<pre><code>amd_iommu=on iommu=pt
+</code></pre></li>
+<li><p>Disable IOMMU in the BIOS then enable it again.</p></li>
+</ul>
+
+
+<p>Some of these workarounds may disable some of the USB ports.</p>
+
+<h2 id="graphics-corruption-tor-browser"><a name="index22h2"></a>Graphics corruption in Tor Browser and Thunderbird</h2>
+
+
+
+
+
+
+
+<p>On some computers, <em>Tor Browser</em> and <em>Thunderbird</em> are displayed incorrectly:</p>
+
+<ul>
+<li>The application window is initially empty and white.</li>
+<li>The icons and menus only appear when hovered by the mouse.</li>
+<li>The contents of the window is only displayed in stripes when scrolling.</li>
+</ul>
+
+
+<p>To workaround this issue, <a href="../doc/advanced_topics/boot_options.en.html">add the following boot option when
+starting Tails</a>:</p>
+
+<pre><code>intel_iommu=off
+</code></pre>
+
+<p>This problem affects at least the following computers:</p>
+
+<ul>
+<li>MacBookPro11,5</li>
+<li>other MacBooks with a Radeon R9 graphics adapter</li>
+</ul>
+
+
+<h3 id="acer-swift-3"><a name="index28h3"></a>Acer Swift 3</h3>
+
+
+<p>In order to allow Tails to use all available memory,
+start Tails from the <em>F2 EFI setup</em> firmware entry.</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../contribute/design.html">contribute/design</a>
+
+<a href="../contribute/glossary.html">contribute/glossary</a>
+
+<a href="../contribute/how/documentation/release_notes.html">contribute/how/documentation/release notes</a>
+
+<a href="../contribute/how/documentation/release_notes/template.html">contribute/how/documentation/release notes/template</a>
+
+<a href="../contribute/release_process/test.html">contribute/release process/test</a>
+
+<a href="../contribute/working_together/roles/technical_writer.html">contribute/working together/roles/technical writer</a>
+
+<a href="../doc/about/requirements.en.html">doc/about/requirements</a>
+
+<a href="../doc/advanced_topics/external_hard_disk.en.html">doc/advanced topics/external hard disk</a>
+
+<a href="../doc/anonymous_internet/Tor_Browser.en.html">doc/anonymous internet/Tor Browser</a>
+
+<a href="../doc/anonymous_internet/no-wifi.en.html">doc/anonymous internet/no-wifi</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="../doc/first_steps/bug_reporting.en.html">doc/first steps/bug reporting</a>
+
+<a href="../doc/first_steps/start/mac.en.html">doc/first steps/start/mac</a>
+
+<a href="../doc/first_steps/start/pc.en.html">doc/first steps/start/pc</a>
+
+<a href="./faq.en.html">faq</a>
+
+<a href="../install/mac.en.html">install/mac</a>
+
+<a href="./known_issues/graphics.en.html">known issues/graphics</a>
+
+<a href="../news/our_plans_for_2018.en.html">news/our plans for 2018</a>
+
+<a href="../news/report_2015_03.html">news/report 2015 03</a>
+
+<a href="../news/report_2015_05.html">news/report 2015 05</a>
+
+<a href="../news/report_2015_08.html">news/report 2015 08</a>
+
+<a href="../news/report_2016_03.html">news/report 2016 03</a>
+
+<a href="../news/report_2017_07.html">news/report 2017 07</a>
+
+<a href="../news/report_2017_09.html">news/report 2017 09</a>
+
+<a href="../news/report_2018_08.html">news/report 2018 08</a>
+
+<a href="../news/report_2021_02.html">news/report 2021 02</a>
+
+<a href="../news/test_0.13-rc1.html">news/test 0.13-rc1</a>
+
+<a href="../news/test_0.14-rc1.html">news/test 0.14-rc1</a>
+
+<a href="../news/test_0.14-rc2.html">news/test 0.14-rc2</a>
+
+<a href="../news/test_0.15-rc1.html">news/test 0.15-rc1</a>
+
+<a href="../news/test_0.16-rc1.html">news/test 0.16-rc1</a>
+
+<a href="../news/test_0.17-rc1.html">news/test 0.17-rc1</a>
+
+<a href="../news/test_0.17.2-rc1.html">news/test 0.17.2-rc1</a>
+
+<a href="../news/test_0.18-rc1.html">news/test 0.18-rc1</a>
+
+<a href="../news/test_0.19-rc1.html">news/test 0.19-rc1</a>
+
+<a href="../news/test_0.20-rc1.html">news/test 0.20-rc1</a>
+
+<a href="../news/test_0.21-rc1.html">news/test 0.21-rc1</a>
+
+<a href="../news/test_0.22-rc1.html">news/test 0.22-rc1</a>
+
+<a href="../news/test_0.22.1-rc1.html">news/test 0.22.1-rc1</a>
+
+<a href="../news/test_0.23-rc1.html">news/test 0.23-rc1</a>
+
+<a href="../news/test_1.0-rc1.html">news/test 1.0-rc1</a>
+
+<a href="../news/test_1.1-beta1.html">news/test 1.1-beta1</a>
+
+<a href="../news/test_1.1-rc1.html">news/test 1.1-rc1</a>
+
+<a href="../news/test_1.2-rc1.html">news/test 1.2-rc1</a>
+
+<a href="../news/test_1.3-rc1.html">news/test 1.3-rc1</a>
+
+<a href="../news/test_1.4-rc1.html">news/test 1.4-rc1</a>
+
+<a href="../news/test_1.5-rc1.html">news/test 1.5-rc1</a>
+
+<a href="../news/test_1.7-rc1.html">news/test 1.7-rc1</a>
+
+<a href="../news/test_2.0-beta1.html">news/test 2.0-beta1</a>
+
+<a href="../news/test_2.0-rc1.html">news/test 2.0-rc1</a>
+
+<a href="../news/test_2.10-rc1.html">news/test 2.10-rc1</a>
+
+<a href="../news/test_2.12-rc1.html">news/test 2.12-rc1</a>
+
+<a href="../news/test_2.2-rc1.html">news/test 2.2-rc1</a>
+
+<a href="../news/test_2.4-rc1.html">news/test 2.4-rc1</a>
+
+<a href="../news/test_2.6-rc1.html">news/test 2.6-rc1</a>
+
+<a href="../news/test_3.0-alpha1.html">news/test 3.0-alpha1</a>
+
+<a href="../news/test_3.0-beta1.html">news/test 3.0-beta1</a>
+
+<a href="../news/test_3.0-beta2.html">news/test 3.0-beta2</a>
+
+<a href="../news/test_3.0-beta3.html">news/test 3.0-beta3</a>
+
+<a href="../news/test_3.0-beta4.html">news/test 3.0-beta4</a>
+
+<a href="../news/test_3.0-rc1.html">news/test 3.0-rc1</a>
+
+<a href="../news/test_3.12-rc1.html">news/test 3.12-rc1</a>
+
+<a href="../news/test_3.2-rc1.html">news/test 3.2-rc1</a>
+
+<a href="../news/test_3.6~rc1.html">news/test 3.6~rc1</a>
+
+<a href="../news/test_3.9-rc1.html">news/test 3.9-rc1</a>
+
+<a href="../news/test_4.0-beta1.html">news/test 4.0-beta1</a>
+
+<a href="../news/test_4.0-beta2.html">news/test 4.0-beta2</a>
+
+<a href="../news/test_4.0-rc1.html">news/test 4.0-rc1</a>
+
+<a href="../news/test_4.11-rc1.html">news/test 4.11-rc1</a>
+
+<a href="../news/test_4.5-rc1.html">news/test 4.5-rc1</a>
+
+<a href="../news/test_incremental_upgrades.html">news/test incremental upgrades</a>
+
+<a href="../news/version_0.13.html">news/version 0.13</a>
+
+<a href="../news/version_0.14.html">news/version 0.14</a>
+
+<a href="../news/version_0.15.html">news/version 0.15</a>
+
+<a href="../news/version_0.16.html">news/version 0.16</a>
+
+<a href="../news/version_0.17.html">news/version 0.17</a>
+
+<a href="../news/version_0.17.1.html">news/version 0.17.1</a>
+
+<a href="../news/version_0.17.2.html">news/version 0.17.2</a>
+
+<a href="../news/version_0.18.html">news/version 0.18</a>
+
+<a href="../news/version_0.19.html">news/version 0.19</a>
+
+<a href="../news/version_0.20.html">news/version 0.20</a>
+
+<a href="../news/version_0.20.1.html">news/version 0.20.1</a>
+
+<a href="../news/version_0.21.html">news/version 0.21</a>
+
+<a href="../news/version_0.22.html">news/version 0.22</a>
+
+<a href="../news/version_0.22.1.html">news/version 0.22.1</a>
+
+<a href="../news/version_0.23.html">news/version 0.23</a>
+
+<a href="../news/version_1.0.html">news/version 1.0</a>
+
+<a href="../news/version_1.0.1.html">news/version 1.0.1</a>
+
+<a href="../news/version_1.1.html">news/version 1.1</a>
+
+<a href="../news/version_1.1.1.html">news/version 1.1.1</a>
+
+<a href="../news/version_1.1.2.html">news/version 1.1.2</a>
+
+<a href="../news/version_1.2.html">news/version 1.2</a>
+
+<a href="../news/version_1.2.1.html">news/version 1.2.1</a>
+
+<a href="../news/version_1.2.2.html">news/version 1.2.2</a>
+
+<a href="../news/version_1.2.3.html">news/version 1.2.3</a>
+
+<a href="../news/version_1.3.html">news/version 1.3</a>
+
+<a href="../news/version_1.3.1.html">news/version 1.3.1</a>
+
+<a href="../news/version_1.3.2.html">news/version 1.3.2</a>
+
+<a href="../news/version_1.4.html">news/version 1.4</a>
+
+<a href="../news/version_1.4.1.html">news/version 1.4.1</a>
+
+<a href="../news/version_1.5.html">news/version 1.5</a>
+
+<a href="../news/version_1.5.1.html">news/version 1.5.1</a>
+
+<a href="../news/version_1.6.html">news/version 1.6</a>
+
+<a href="../news/version_1.7.html">news/version 1.7</a>
+
+<a href="../news/version_1.8.html">news/version 1.8</a>
+
+<a href="../news/version_1.8.1.html">news/version 1.8.1</a>
+
+<a href="../news/version_1.8.2.html">news/version 1.8.2</a>
+
+<a href="../news/version_2.0.html">news/version 2.0</a>
+
+<a href="../news/version_2.0.1.html">news/version 2.0.1</a>
+
+<a href="../news/version_2.10.html">news/version 2.10</a>
+
+<a href="../news/version_2.11.html">news/version 2.11</a>
+
+<a href="../news/version_2.12.html">news/version 2.12</a>
+
+<a href="../news/version_2.2.html">news/version 2.2</a>
+
+<a href="../news/version_2.2.1.html">news/version 2.2.1</a>
+
+<a href="../news/version_2.3.html">news/version 2.3</a>
+
+<a href="../news/version_2.4.html">news/version 2.4</a>
+
+<a href="../news/version_2.5.html">news/version 2.5</a>
+
+<a href="../news/version_2.6.html">news/version 2.6</a>
+
+<a href="../news/version_2.7.html">news/version 2.7</a>
+
+<a href="../news/version_2.7.1.html">news/version 2.7.1</a>
+
+<a href="../news/version_2.9.1.html">news/version 2.9.1</a>
+
+<a href="../news/version_3.0.en.html">news/version 3.0</a>
+
+<a href="../news/version_3.0.1.en.html">news/version 3.0.1</a>
+
+<a href="../news/version_3.1.en.html">news/version 3.1</a>
+
+<a href="../news/version_3.10.1.en.html">news/version 3.10.1</a>
+
+<a href="../news/version_3.11.en.html">news/version 3.11</a>
+
+<a href="../news/version_3.12.en.html">news/version 3.12</a>
+
+<a href="../news/version_3.12.1.en.html">news/version 3.12.1</a>
+
+<a href="../news/version_3.13.en.html">news/version 3.13</a>
+
+<a href="../news/version_3.13.1.en.html">news/version 3.13.1</a>
+
+<a href="../news/version_3.13.2.en.html">news/version 3.13.2</a>
+
+<a href="../news/version_3.14.en.html">news/version 3.14</a>
+
+<a href="../news/version_3.14.1.en.html">news/version 3.14.1</a>
+
+<a href="../news/version_3.14.2.en.html">news/version 3.14.2</a>
+
+<a href="../news/version_3.15.en.html">news/version 3.15</a>
+
+<a href="../news/version_3.16.en.html">news/version 3.16</a>
+
+<a href="../news/version_3.2.en.html">news/version 3.2</a>
+
+<a href="../news/version_3.3.en.html">news/version 3.3</a>
+
+<a href="../news/version_3.4.en.html">news/version 3.4</a>
+
+<a href="../news/version_3.5.en.html">news/version 3.5</a>
+
+<a href="../news/version_3.6.en.html">news/version 3.6</a>
+
+<a href="../news/version_3.6.1.en.html">news/version 3.6.1</a>
+
+<a href="../news/version_3.6.2.en.html">news/version 3.6.2</a>
+
+<a href="../news/version_3.7.en.html">news/version 3.7</a>
+
+<a href="../news/version_3.7.1.en.html">news/version 3.7.1</a>
+
+<a href="../news/version_3.8.en.html">news/version 3.8</a>
+
+<a href="../news/version_3.9.en.html">news/version 3.9</a>
+
+<a href="../news/version_3.9.1.en.html">news/version 3.9.1</a>
+
+<a href="../news/version_4.0.en.html">news/version 4.0</a>
+
+<a href="../news/version_4.1.en.html">news/version 4.1</a>
+
+<a href="../news/version_4.1.1.en.html">news/version 4.1.1</a>
+
+<a href="../news/version_4.10.en.html">news/version 4.10</a>
+
+<a href="../news/version_4.11.en.html">news/version 4.11</a>
+
+<a href="../news/version_4.12.en.html">news/version 4.12</a>
+
+<a href="../news/version_4.13.en.html">news/version 4.13</a>
+
+<a href="../news/version_4.14.en.html">news/version 4.14</a>
+
+<a href="../news/version_4.15.en.html">news/version 4.15</a>
+
+<a href="../news/version_4.15.1.en.html">news/version 4.15.1</a>
+
+<a href="../news/version_4.16.en.html">news/version 4.16</a>
+
+<a href="../news/version_4.17.en.html">news/version 4.17</a>
+
+<a href="../news/version_4.18.en.html">news/version 4.18</a>
+
+<a href="../news/version_4.19.en.html">news/version 4.19</a>
+
+<a href="../news/version_4.2.en.html">news/version 4.2</a>
+
+<a href="../news/version_4.2.2.en.html">news/version 4.2.2</a>
+
+<a href="../news/version_4.20.en.html">news/version 4.20</a>
+
+<a href="../news/version_4.21.en.html">news/version 4.21</a>
+
+<a href="../news/version_4.22.en.html">news/version 4.22</a>
+
+<a href="../news/version_4.3.en.html">news/version 4.3</a>
+
+<a href="../news/version_4.4.en.html">news/version 4.4</a>
+
+<a href="../news/version_4.4.1.en.html">news/version 4.4.1</a>
+
+<a href="../news/version_4.5.en.html">news/version 4.5</a>
+
+<a href="../news/version_4.6.en.html">news/version 4.6</a>
+
+<a href="../news/version_4.7.en.html">news/version 4.7</a>
+
+<a href="../news/version_4.8.en.html">news/version 4.8</a>
+
+<a href="../news/version_4.9.en.html">news/version 4.9</a>
+
+<a href="../support.en.html">support</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=support/known_issues">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

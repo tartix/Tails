@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tor network configuration</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../design.html">design</a></li>
+
+
+
+
+<li>Tor network configuration</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tor network configuration
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Rationale</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Circumventing Tor censorship</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Trying to hide the fact one is using Tor</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index2h1">Implementation</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Rationale</h1>
+
+<h2><a name="index1h2"></a>Circumventing Tor censorship</h2>
+
+<p>Certain networks are restricted in ways that prevent Tor from
+connecting properly without further configuration. Examples are:</p>
+
+<ul>
+<li><p>Egress port filtering (solved with <code>ReachableAddresses</code>).</p></li>
+<li><p>The Internet is only reachable via a proxy (solved with the <code>*Proxy</code>
+options).</p></li>
+<li><p>Tor is explicitly blocked (the Tor people like the term &quot;censored&quot;),
+which can be circumvented by using Tor bridges (solved with
+<code>UseBridges</code>, <code>Bridge</code>, and possibly <code>ClientTransportPlugin</code>).</p></li>
+</ul>
+
+
+<h2><a name="index2h2"></a>Trying to hide the fact one is using Tor</h2>
+
+<p>On the one hand, hiding the fact one is using Tor is often a side effect of
+anti-censorship tools, such as Pluggable Transports: a censor who could detect
+Tor usage could also block it. On the other hand, this is <em>not</em> the threat model
+for which anti-censorship tools such as Pluggable Transports are developed, so
+understandably, Tor Browser decided not to advertize this property to its
+users, and offers no guarantee in this respect.</p>
+
+<p>Tails takes a different stance than Tor Browser on this topic: while Tor Browser
+focuses on censorship circumvention, Tails <em>also</em> aims to support other use
+cases, in which the user needs to be aware that using Tor might be risky for
+them. We want to help Tails users take this into account and choose a safer
+option whenever possible. For example:</p>
+
+<ul>
+<li><p>surveillance at home, at work, or at school, that alerts the user&#39;s
+adversaries about suspicious network activity</p>
+
+<p>This applies for example to one of our personas,
+<a href="../personas/kim.html">Kim</a>, and to domestic violence situations.</p></li>
+<li><p>regions where very few people use Tor, and the mere fact they&#39;re using Tor
+might be used to single them out as persons of interest and to locate them</p></li>
+</ul>
+
+
+<p>Here&#39;s why we choose a different approach than Tor:</p>
+
+<ul>
+<li><p>Generally speaking, Tails and Tor Browser complement each other by addressing
+different use cases and threat models. This is one of these cases: we believe
+Tails is making a greater difference by trying to better support users that
+Tor Browser won&#39;t.</p></li>
+<li><p>When the user chooses not to try to hide the fact they&#39;re using Tor, we try
+our best to connect to Tor automatically. The way we do it may make it easier
+for an adversary to tell that the user is using Tails. For details, see our
+design documentation about <a href="contribute/design/Tor_enforcement">non-Tor
+traffic</a>. Since there are much fewer Tails
+users than Tor Browser users, this risk of detection matters even more in our
+case: identified Tails users may look more suspicious and would be easier to
+track down.</p></li>
+<li><p>While we support Tor Browser&#39;s goal to fight against the narrative of Tor
+being for criminals or suspicious to use,
+we prioritize being pragmatic regarding the threats
+actually faced by our users in the world as it is today.</p>
+
+<p>Regardless of what the pervasive narrative around Tor becomes,
+abusive husbands might keep finding it suspicious that their partner or child is
+using Tor.</p>
+
+<p>We are confident this different stance of ours won&#39;t sabotage the Tor
+Project&#39;s efforts in this respect, because our impact on public discourse is
+so much smaller than theirs.</p></li>
+<li><p>Even if we can&#39;t offer perfect protection against all possible adversaries, we
+are confident that we make our users safer against this threat at least
+against some adversaries that matter, such as abusive husbands who use less
+sophisticated, out-of-the-box network monitoring solutions such as
+parental control.</p></li>
+</ul>
+
+
+<p>To achieve these goals, without over-promising the benefits of anti-censorship
+tools, we&#39;re doing our best to keep ourselves up-to-date regarding the current
+state of detection risks associated with the various ways to connect to Tor.
+Accordingly, we are prepared to adjust the implementations offered to our users
+when they choose to hide the fact they&#39;re using Tor. We are conscious that at
+some point, we may have to temporarily or permanently disable this option,
+because none of the available ways to connect to Tor offers a safety level
+adequate to the situations we have in mind.</p>
+
+<h1><a name="index2h1"></a>Implementation</h1>
+
+<p>TODO: this is outdated (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18360">#18360</a>).</p>
+
+<p>In the Welcome Screen the &quot;Network Configuration&quot; section contains a
+non-default option called &quot;My Internet Connection is
+censored...&quot;. When activated, the following deviations from normal
+Tails behaviour occur, in order:</p>
+
+<ol>
+<li><p>Tails sessions begin with <code>DisableNetwork 1</code> in torrc so Tor will not
+connect to the network without user intervention.</p></li>
+<li><p>The <code>tor</code> process is configured to not use the system resolver
+(which is <code>tor</code> itself &rArr; catch-22) but the DNS server obtained by
+NetworkManager instead. This enables the use of hostnames for
+proxies and pluggable transports (which is required for e.g. Meek).</p></li>
+<li><p>When we connect to the network, a NetworkManager hook starts Tor
+Launcher in the background, i.e. non-blocking.</p></li>
+<li><p><a href="./Time_syncing.html">Time syncing</a> waits until the user has committed their
+configuration via Tor Launcher and then does its usual magic to
+ensure that Tor bootstraps even if the clock was incorrect. That is
+the reason why we have to take the more complex approach of
+starting Tor Launcher in parallel.</p></li>
+</ol>
+
+
+<p>We install Tor Launcher by extracting it from the Tor Browser tarball,
+when building the ISO image.</p>
+
+<p>Scripts:</p>
+
+<ul>
+<li><p><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_local-hooks/10-tbb">config/chroot local-hooks/10-tbb</a> (installs Tor Launcher)</p></li>
+<li><p><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_local-includes/usr/local/sbin/tails-tor-launcher">config/chroot local-includes/usr/local/sbin/tails-tor-launcher</a>
+(Wrapper for Tor Launcher)</p></li>
+<li><p><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_local-includes/etc/NetworkManager/dispatcher.d/10-tor.sh">config/chroot local-includes/etc/NetworkManager/dispatcher.d/10-tor.sh</a>
+(Tor Launcher is started here)</p></li>
+<li><p><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_local-includes/etc/NetworkManager/dispatcher.d/20-time.sh">config/chroot local-includes/etc/NetworkManager/dispatcher.d/20-time.sh</a>
+(Time syncing)</p></li>
+<li><p><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_local-includes/lib/systemd/system/tor@default.service.d/writable-etc-tor.conf">config/chroot local-includes/lib/systemd/system/tor@default.service.d/writable-etc-tor.conf</a>
+and <a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_local-patches/apparmor-adjust-tor-profile.diff">config/chroot local-patches/apparmor-adjust-tor-profile.diff</a>
+(allow Tor to modify its configuration)</p></li>
+</ul>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/design/Tor_network_configuration">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

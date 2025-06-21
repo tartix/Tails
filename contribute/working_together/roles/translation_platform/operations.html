@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Translation platform: operations documentation</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../../index.html">Home</a></li>
+  <li><a href="../../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../../support.en.html">Support</a></li>
+  <li><a href="../../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../../news.en.html">News</a></li>
+  <li><a href="../../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../../index.html"><img alt="home" src="../../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../../working_together.html">working together</a></li>
+
+
+
+
+
+<li><a href="../../roles.html">roles</a></li>
+
+
+
+
+
+<li><a href="../translation_platform.html">translation platform</a></li>
+
+
+
+
+<li>Translation platform: operations documentation</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Translation platform: operations documentation
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p><strong>Note</strong>: there is more such documentation in <code>translate-server.git</code>;
+it might be moved somewhere else in the future (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17063">#17063</a>).</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Enable a new language on Weblate</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Add a new language to the Tails website and the bundled offline documentation</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Manually fix issues</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Reload translations from Git and cleanup orphaned checks and suggestions</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Cronjobs</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Post-upgrade</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Fix broken commit_pending</a>
+	</li>
+	<li class="L1"><a href="#index8h1">Maintenance mode</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Enable a new language on Weblate</h1>
+
+<p>If the language you&#39;re planning to enable is part of our <a href="../../../how/translate.html#tier-1-languages">(Tier-1)
+languages</a>, you may proceed.
+Else, propose this on the <a href="../../../../about/contact.en.html#tails-l10n">tails-l10n mailing list</a>.</p>
+
+<ol>
+<li>Add the new language code to the <code>exclude</code> setting in
+<a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/ikiwiki.setup">ikiwiki.setup</a>
+and have this change reviewed and merged into our <code>master</code> branch.</li>
+<li>Add the new language to <code>$weblate_additional_languages</code> in
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/website/params.pp">manifests/website/params.pp</a>
+and have a sysadmin review your changes and deploy them to production.</li>
+<li><p>To create PO files for the new language and commit them to Git,
+run this command on the system that runs our translation platform,
+as the <code>weblate</code> user:</p>
+
+<pre><code>~/scripts/weblate_status.py
+</code></pre>
+
+<p>Once satisfied, run this command again with the <code>--modify</code>
+argument, so it actually performs the desired changes:</p>
+
+<pre><code>~/scripts/weblate_status.py --modify
+</code></pre>
+
+<p>Note that this script must not be run concurrently with
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/cron.sh"><code>cron.sh</code></a>.
+Hence, they both use a shared lock file.</p></li>
+<li><p>Finally, to update the Weblate components, run this command as the
+<code>weblate</code> user:</p>
+
+<pre><code>python3 /usr/local/share/weblate/manage.py \
+           loadpo --all --lang &lt;LANG&gt;
+</code></pre>
+
+<p>&hellip; where <code>&lt;LANG&gt;</code> is the newly added 2-letter language code.</p></li>
+</ol>
+
+
+<h1><a name="index2h1"></a>Add a new language to the Tails website and the bundled offline documentation</h1>
+
+<p>When a new language is sufficiently translated (especially the core pages),
+this are the steps needed to make it available on our website and ship it with
+new versions of Tails:</p>
+
+<ul>
+<li>Browse the translation on our staging site and make sure that it has no big
+issues.</li>
+<li>Checkout and build locally the weblate repository, and see that there are no
+errors.</li>
+<li>Edit the <code>./ikiwiki.setup</code> file (<a href="https://gitlab.tails.boum.org/tails/tails/-/commit/db7a64d89a5ecd062cfaf2545e03c048351aa19f">example for Russian locale</a>):
+
+<ul>
+<li>Remove the locale from the regexp exclude line.</li>
+<li>Add locale to <code>po_slave_languages</code> list (in alphabetical order).</li>
+</ul>
+</li>
+<li>Edit ikiwiki template files:
+
+<ul>
+<li><code>wiki/src/templates/news.tmpl</code> and <code>wiki/src/templates/page.tmpl</code> may need
+ some strings as &#39;Donate&#39; that can be learned from the translation
+ platform.</li>
+</ul>
+</li>
+<li>Add .donate and locale bits to wiki/src/local.css</li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Manually fix issues</h1>
+
+<p>Our Weblate codebase is stored in <code>/usr/local/share/weblate</code>.</p>
+
+<p>If commands have to be run, they should be run as the <code>weblate</code> user;
+for example, with <code>sudo -u weblate COMMAND</code>.</p>
+
+<p>However, this VM is supposed to run smoothly without human
+intervention, so be careful with what you do and please document
+modifications you make so that they can be fed back to a more
+appropriate place, such as our Puppet code or this document.</p>
+
+<h1><a name="index4h1"></a>Reload translations from Git and cleanup orphaned checks and suggestions</h1>
+
+<p>If something went wrong, we may need to ask Weblate to reload all
+translations from Git, using the following command:</p>
+
+<pre><code>sudo -u weblate ./manage.py loadpo --all
+</code></pre>
+
+<h1><a name="index5h1"></a>Cronjobs</h1>
+
+<p>Make sure that cronjobs are enabled:</p>
+
+<pre><code>sudo -u weblate crontab -l
+</code></pre>
+
+<h1><a name="index6h1"></a>Post-upgrade</h1>
+
+<p>So, after - lets say - pulling a new Weblate version, from the directory
+/usr/local/share/weblate you need run, the
+<a href="https://docs.weblate.org/en/latest/admin/upgrade.html#generic-upgrade-instructions">Generic Upgrade Instructions</a>
+as weblate user:</p>
+
+<p>In oder to update all checks after an upgrade:</p>
+
+<pre><code>sudo -u weblate python3 manage.py updatechecks --all
+</code></pre>
+
+<p>see <a href="https://docs.weblate.org/en/weblate-3.5.1/admin/management.html#updatechecks">documentation</a>:
+&quot;This could be useful only on upgrades which do major changes to checks.&quot;</p>
+
+<h1><a name="index7h1"></a>Fix broken <code>commit_pending</code></h1>
+
+<p>Occasionally, Weblate&#39;s <code>manage.py commit_pending</code>, that&#39;s run by cron,
+will get stuck on a specific file.</p>
+
+<p>To fix that, one can delete the translation change that breaks stuff.</p>
+
+<ol>
+<li><p>Run the <code>commit_pending</code> thing by hand. If it gets stuck on
+&quot;committing $FILE&quot;, then read on. Otherwise you&#39;re probably
+experiencing a different problem.</p></li>
+<li><p>Find the ID of the affected subproject (i.e. translation file)
+in the <code>trans_subprojet</code> table. For example:</p>
+
+<pre><code> select id from trans_subproject where name = &#39;wiki/src/install/mac/usb.*.po&#39;;
+</code></pre></li>
+<li><p>Find the ID of the broken translation, for example:</p>
+
+<pre><code> select id from trans_translation where subproject_id = 1889 and language_code = &#39;fr&#39;;
+</code></pre></li>
+<li><p>List recent changes on this translation, for example:</p>
+
+<pre><code> select * from trans_change where translation_id = 9734;
+</code></pre></li>
+<li><p>Delete the last translation change, for example:</p>
+
+<pre><code> delete from trans_change where id = XYZ;
+</code></pre></li>
+<li><p>Run the <code>commit_pending</code> thing by hand. This time it should
+complete rather quickly.</p></li>
+<li><p>If <code>commit_pending</code> still does not complete, or if you can&#39;t make
+change in the Weblate web interface to the component that was
+broken, then you need to do more than this (#16995) &rArr; read on.
+Else, you can stop here.</p></li>
+<li><p>Delete all translation history for the broken resource (<code>translation_id</code>);
+for example:</p>
+
+<pre><code> delete from trans_change where translation_id = 9734;
+</code></pre></li>
+<li><p>Make Weblate forget the broken component, then re-add it.
+To do so:</p>
+
+<ol>
+<li>Log in as the <code>weblate</code> user.</li>
+<li><code>cd ~/scripts/</code>.</li>
+<li>Start <code>ipython3</code>.</li>
+<li><p>Run code based on this example, line by line:</p>
+
+<pre><code>import tailsWeblate
+fpath = &#39;wiki/src/install/mac/usb.es.po&#39;
+sp = tailsWeblate.subProject(fpath)
+sp.delete()
+sp = tailsWeblate.addComponent(fpath)
+</code></pre></li>
+</ol>
+</li>
+</ol>
+
+
+<p><a id="maintenance-mode"></a></p>
+
+<h1><a name="index8h1"></a>Maintenance mode</h1>
+
+<p>To disable <code>cron.sh</code> temporarily, run:</p>
+
+<pre><code>touch /var/lib/weblate/config/.maintenance
+</code></pre>
+
+<p>To re-enable <code>cron.sh</code>, run:</p>
+
+<pre><code>rm /var/lib/weblate/config/.maintenance
+</code></pre>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../design/translation_platform.html">design/translation platform</a>
+
+<a href="../translation_platform.html">translation platform</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/working_together/roles/translation_platform/operations">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+
+<html lang="fr" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Transition vers la nouvelle cl&#xE9; de signature OpenPGP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Mon, 16 Mar 2015 12:34:56 +0000" />
+
+
+
+</head>
+
+
+<body class="fr">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.fr.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.fr.html">Accueil</a></li>
+  <li><a href="../about.fr.html">Fonctionnement de Tails</a></li>
+  <li><a href="../install.fr.html">Obtenir Tails</a></li>
+  <li><a href="../doc.fr.html">Documentation</a></li>
+  <li><a href="../support.fr.html">Assistance</a></li>
+  <li><a href="../contribute.fr.html">Participer</a></li>
+  <li><a href="../news.fr.html">Nouvelles</a></li>
+  <li><a href="../jobs.html">Postes &agrave; pourvoir</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.fr.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.fr.html">news</a></li>
+
+
+
+
+<li>Transition vers la nouvelle cl&#xE9; de signature OpenPGP</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Français
+   </span>
+   <span class="hidden">Français
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./signing_key_transition.en.html">en</a></span>
+   <span class="hidden"><a href="./signing_key_transition.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_transition.de.html">de</a></span>
+   <span class="hidden"><a href="./signing_key_transition.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_transition.es.html">es</a></span>
+   <span class="hidden"><a href="./signing_key_transition.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_transition.it.html">it</a></span>
+   <span class="hidden"><a href="./signing_key_transition.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_transition.pt.html">pt</a></span>
+   <span class="hidden"><a href="./signing_key_transition.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_transition.ru.html">ru</a></span>
+   <span class="hidden"><a href="./signing_key_transition.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Transition vers la nouvelle cl&#xE9; de signature OpenPGP
+</span>
+<span class="date">2015-03-16</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Tails est en transition vers une nouvelle cl&eacute; de signature OpenPGP.</p>
+
+<p>La cl&eacute; de signature est la cl&eacute; utilis&eacute;e pour :</p>
+
+<ul>
+<li>Signer nos images ISO officielles.</li>
+<li>Certifier les autres <a href="../doc/about/openpgp_keys.fr.html">cl&eacute;s OpenPGP</a> utilis&eacute;es
+par le projet.</li>
+</ul>
+
+
+<div class="note">
+
+<p>La pr&eacute;c&eacute;dente cl&eacute; de signature est s&ucirc;re et, de ce que l&#39;on en sait, n&#39;a
+jamais &eacute;t&eacute; compromise.</p>
+
+<p>Nous avons fait ce changement pour am&eacute;liorer nos pratiques de s&eacute;curit&eacute; lorsque
+nous manipulons des donn&eacute;es aussi cruciales.</p>
+
+</div>
+
+
+
+
+<div class="tip">
+
+<ul>
+  <li>L&#39;ancienne cl&eacute; peut encore &ecirc;tre utilis&eacute;e pour v&eacute;rifier les images ISO de Tails 1.3.</li>
+  <li>La nouvelle cl&eacute; sera utilis&eacute;e pour signer les images ISO &agrave; partir de Tails 1.3.1.</li>
+</ul>
+
+</div>
+
+
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Importer et vérifier la nouvelle clé de signature</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Stratégie de sécurité pour la nouvelle clé de signature</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Web de confiance avec le trousseau Debian</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Importer et vérifier la nouvelle clé de signature</h1>
+
+<p>Cliquez sur le bouton suivant pour t&eacute;l&eacute;charger et importer la nouvelle cl&eacute;
+de signature :</p>
+
+<p><a class="download-key" href="https://tails.boum.org/tails-signing.key">Nouvelle cl&eacute; de signature de Tails</a></p>
+
+<p>La nouvelle cl&eacute; de signature est elle-m&ecirc;me sign&eacute;e par l&#39;ancienne cl&eacute; de
+signature. Donc vous pouvez transitivement faire confiance &agrave; la nouvelle cl&eacute;
+si vous aviez accord&eacute; votre confiance &agrave; l&#39;ancienne cl&eacute; de signature.</p>
+
+<p>Pour v&eacute;rifier que la nouvelle cl&eacute; est correctement sign&eacute;e par l&#39;ancienne
+cl&eacute;, vous pouvez ex&eacute;cuter la commande suivante :</p>
+
+<pre><code>gpg --check-sigs A490D0F4D311A4153E2BB7CADBB802B258ACD84F
+</code></pre>
+
+<p>Le r&eacute;sultat doit inclure la signature de nouvelle cl&eacute; par l&#39;ancienne cl&eacute;,
+tel que :</p>
+
+<pre><code>sig!         0x1202821CBE2CD9C1 2015-01-19  Tails developers (signing key) &lt;tails@boum.org&gt;
+</code></pre>
+
+<p>Dans ce r&eacute;sultat, le statut de la v&eacute;rification est indiqu&eacute; par un drapeau
+qui suit directement l&#39;&eacute;tiquette &quot;<code>sig</code>&quot;. Un &quot;<code>!</code>&quot; indique que la signature
+a &eacute;t&eacute; v&eacute;rifi&eacute;e avec succ&egrave;s.</p>
+
+<h1><a name="index2h1"></a>Stratégie de sécurité pour la nouvelle clé de signature</h1>
+
+<p>Voici la description compl&egrave;te de la nouvelle cl&eacute; de signature :</p>
+
+<pre>
+    pub   4096R/0xDBB802B258ACD84F 2015-01-18 [expires: 2017-01-11]
+          Key fingerprint = A490 D0F4 D311 A415 3E2B  B7CA DBB8 02B2 58AC D84F
+    uid                 [ unknown] Tails developers (offline long-term identity key) 
+    uid                 [ unknown] Tails developers 
+    sub   4096R/0x98FEC6BC752A3DB6 2015-01-18 [expires: 2017-01-11]
+    sub   4096R/0x3C83DCB52F699C56 2015-01-18 [expires: 2017-01-11]
+</pre>
+
+
+<p>Vous pouvez voir cela comme &eacute;tant :</p>
+
+<ul>
+<li><p>Une cl&eacute; primaire (marqu&eacute; comme <code>pub</code>) avec l&#39;ID
+<code>0xDBB802B258ACD84F</code>. Cette cl&eacute; primaire :</p>
+
+<ul>
+<li>N&#39;est pas con&ccedil;ue pour &ecirc;tre dans un format utilisable par un individu
+seul. Elle est d&eacute;coup&eacute;e de mani&egrave;re chiffr&eacute;e en utilisant
+<a href="http://www.digital-scurf.org/software/libgfshare">gfshare</a>.</li>
+<li>Elle est utilis&eacute;e uniquement hors-ligne, dans un Tails non connect&eacute; au
+r&eacute;seau (&quot;air-gapped&quot; en anglais).</li>
+<li>Expire dans moins d&#39;un an. Nous &eacute;tendrons sa validit&eacute; autant de fois
+que nous le trouverons raisonnable.</li>
+</ul>
+</li>
+<li><p>Deux sous-cl&eacute;s (marqu&eacute;es comme <code>sub</code>) avec les IDs <code>0x98FEC6BC752A3DB6</code>
+et <code>0x3C83DCB52F699C56</code> qui sont stock&eacute;es dans les cartes &agrave; puce OpenPGP
+et d&eacute;tenues par nos d&eacute;veloppeurs s&#39;occupant de publier les nouvelles
+versions (les &quot;release managers&quot; en anglais). Les cartes &agrave; puce
+garantissent que les op&eacute;rations de chiffrement sont faites dans les
+cartes &agrave; puces elles-m&ecirc;mes et que les cl&eacute;s de chiffrement secr&egrave;tes ne
+sont pas directement accessibles par le syst&egrave;me d&#39;exploitation utilis&eacute;.</p></li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Web de confiance avec le trousseau Debian</h1>
+
+<p>Cette nouvelle cl&eacute; de signature a d&eacute;j&agrave; &eacute;t&eacute; sign&eacute;e par diff&eacute;rent d&eacute;veloppeurs
+Debian, &agrave; savoir :</p>
+
+<ul>
+<li> gregor herrmann <a href="mailto:gregoa@debian.org">gregoa@debian.org</a>, avec la cl&eacute; <code>0xBB3A68018649AA06</code></li>
+<li> Holger Levsen <a href="mailto:holger@debian.org">holger@debian.org</a>, avec la cl&eacute; <code>0x091AB856069AAA1C</code></li>
+<li> Stefano Zacchiroli <a href="mailto:zack@debian.org">zack@debian.org</a>, avec la cl&eacute; <code>0x9C31503C6D866396</code></li>
+</ul>
+
+
+<p>Vous pouvez donc utiliser la technique d&eacute;crite dans notre documentation pour
+<a href="../install/expert/usb.fr.html#verify-key">v&eacute;rifier davantage la cl&eacute; de signature Tails avec le trousseau
+Debian</a> en utilisant n&#39;importe laquelle de
+ces trois cl&eacute;s.</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+<div class="tags">
+Tags:
+
+<a href="../tags/announce.html" rel="tag">announce</a>
+
+</div>
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./report_2015_03.html">report 2015 03</a>
+
+<a href="./version_1.3.1.html">version 1.3.1</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/signing_key_transition.fr">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+
+<html lang="pt" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails 4.18 is out</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Tue, 20 Apr 2021 12:34:56 +0000" />
+
+
+
+</head>
+
+
+<body class="pt">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.pt.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.pt.html">P&aacute;gina inicial</a></li>
+  <li><a href="../about.pt.html">Como Tails funciona</a></li>
+  <li><a href="../install.pt.html">Baixe Tails</a></li>
+  <li><a href="../doc.pt.html">Documenta&ccedil;&atilde;o</a></li>
+  <li><a href="../support.pt.html">Suporte</a></li>
+  <li><a href="../contribute.pt.html">Contribua</a></li>
+  <li><a href="../news.pt.html">Not&iacute;cias</a></li>
+  <li><a href="../jobs.html">Trabalhos</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.pt.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.pt.html">news</a></li>
+
+
+
+
+<li>Tails 4.18 is out</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Português
+   </span>
+   <span class="hidden">Português
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./version_4.18.en.html">en</a></span>
+   <span class="hidden"><a href="./version_4.18.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.18.de.html">de</a></span>
+   <span class="hidden"><a href="./version_4.18.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.18.es.html">es</a></span>
+   <span class="hidden"><a href="./version_4.18.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.18.fr.html">fr</a></span>
+   <span class="hidden"><a href="./version_4.18.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.18.it.html">it</a></span>
+   <span class="hidden"><a href="./version_4.18.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./version_4.18.ru.html">ru</a></span>
+   <span class="hidden"><a href="./version_4.18.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Tails 4.18 is out
+</span>
+<span class="date">2021-04-20</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>This release fixes known security vulnerabilities.  You should upgrade as
+soon as possible.</p>
+
+<h1 id="changes">Changes and updates</h1>
+
+
+<ul>
+<li><p>Remove &quot;Synchronizing the system&#39;s clock&quot; notification when connecting to
+Tor network</p>
+
+<p>We removed this notification because it didn&#39;t recommend a specific action for
+users to take and it was unclear. It might have given users the impression
+that they should alter their UTC clock settings. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/7439">#7439</a>)</p>
+
+<p><img class="img" height="85" src="./version_4.18/time-sync.png" width="382" /></p></li>
+<li><p>Remove Poedit</p>
+
+<p>We now use Weblate to provide translated text for Tails and the Tails website,
+so Poedit isn&#39;t as necessary. To install Poedit in Tails, see our guide on
+<a href="../doc/first_steps/additional_software.pt.html">Additional Software</a> (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18236">#18236</a>)</p></li>
+<li><p>Update <em>Tor Browser</em> to
+<a href="https://blog.torproject.org/new-release-tor-browser-10016">10.0.16</a>.</p></li>
+<li><p>Update <em>Thunderbird</em> to
+<a href="https://www.thunderbird.net/en-US/thunderbird/78.9.1/releasenotes/">78.9.0-1</a>.</p></li>
+<li><p>Update some Intel and Linux firmware packages. This should improve support
+for newer hardware (graphics, Wi-Fi, and so on).</p></li>
+</ul>
+
+
+<h1 id="upgrades">Fixed problems</h1>
+
+
+<ul>
+<li><p>Use more reliable Debian repositories</p>
+
+<p>Tails now connects to the APT repositories of Debian using their HTTPS address instead of their .onion address, for increased reliability with
+the <a href="../doc/first_steps/additional_software.pt.html">Additional Software</a> feature.
+We left other Tails and Tor Project APT onion sources as is. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17993">#17993</a>)</p></li>
+<li><p>Display an error message when the Upgrader fails to download the signing
+key.  This has been a silent error since 4.14. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18238">#18238</a>)</p></li>
+</ul>
+
+
+<p>For more details, read our <a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/debian/changelog">changelog</a>.</p>
+
+<h1 id="issues">Known issues</h1>
+
+
+<p><a id="broken-upgrades"></a></p>
+
+<ul>
+<li><p>Automatic upgrades are broken from Tails 4.14 and earlier.</p>
+
+<p>To upgrade from Tails 4.14 or earlier, you can either:</p>
+
+<ul>
+<li><p>Do a <a href="../doc/upgrade.en.html#manual">manual upgrade</a>.</p></li>
+<li><p>Fix the automatic upgrade from a terminal. To do so:</p>
+
+<ol>
+<li><p>Start Tails and set up an
+<a href="../doc/first_steps/welcome_screen/administration_password.en.html">administration password</a>.</p></li>
+<li><p>In a terminal, execute the following command:</p>
+
+<pre><code>torsocks curl --silent https://tails.boum.org/isrg-root-x1-cross-signed.pem \
+| sudo tee --append /usr/local/etc/ssl/certs/tails.boum.org-CA.pem \
+&amp;&amp; systemctl --user restart tails-upgrade-frontend
+</code></pre>
+
+<div class="note">
+
+<p>This command is a single command that wraps across several lines.
+Copy and paste the entire block at once and make sure that it executes
+as a single command.</p>
+
+</div>
+</li>
+<li><p>Approximately 30 seconds later, you should be prompted to upgrade to the latest
+version of Tails. If no prompt appears, you might already be running the
+latest version of Tails.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<p>See the list of <a href="../support/known_issues.pt.html">long-standing issues</a>.</p>
+
+<h1 id="get">Get Tails 4.18</h1>
+
+
+<h2>To upgrade your Tails USB stick and keep your persistent storage</h2>
+
+<ul>
+<li><p>Automatic upgrades are broken from Tails 4.14 and earlier. See the <a href="#broken-upgrades">known issue above</a>.</p></li>
+<li><p>Automatic upgrades are available from Tails 4.14 or later to 4.18.</p></li>
+<li><p>If you cannot do an automatic upgrade or if Tails fails to start after an
+automatic upgrade, please try to do a <a href="../doc/upgrade.pt.html#manual">manual
+upgrade</a>.</p></li>
+</ul>
+
+
+<h2>To install Tails on a new USB stick</h2>
+
+<p>Follow our installation instructions:</p>
+
+<ul>
+<li><a href="../install/win.pt.html">Install from Windows</a></li>
+<li><a href="../install/mac.pt.html">Install from macOS</a></li>
+<li><a href="../install/linux.pt.html">Install from Linux</a></li>
+</ul>
+
+
+<div class="caution"><p>The Persistent Storage on the USB stick will be lost if
+you install instead of upgrading.</p></div>
+
+
+<h2>To download only</h2>
+
+<p>If you don&#39;t need installation or upgrade instructions, you can download
+Tails 4.18 directly:</p>
+
+<ul>
+<li><a href="../install/download.pt.html">For USB sticks (USB image)</a></li>
+<li><a href="../install/download-iso.pt.html">For DVDs and virtual machines (ISO image)</a></li>
+</ul>
+
+
+<h1 id="next">What&#39;s coming up?</h1>
+
+
+<p>Tails 4.19 is <a href="../contribute/calendar.html">scheduled</a> for June 1.</p>
+
+<p>Have a look at our <a href="https://tails.boum.org/contribute/roadmap">roadmap</a> to see where we are heading to.</p>
+
+<p>We need your help and there are many ways to <a href="../contribute.pt.html">contribute to
+Tails</a> (<a href="https://tails.boum.org/donate/?r=4.17">donating</a> is only one of
+them). Come <a href="../about/contact.pt.html#tails-dev">talk to us</a>!</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+<div class="tags">
+Tags:
+
+<a href="../tags/announce.html" rel="tag">announce</a>
+
+</div>
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../security/known_security_vulnerabilities_in_4.17.pt.html">security/known security vulnerabilities in 4.17.pt</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/version_4.18.pt">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

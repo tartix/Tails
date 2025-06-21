@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+
+<html lang="fr" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Modifier la phrase de passe du stockage persistant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="../external_hard_disk.fr.html" title="Démarrer Tails depuis un disque dur externe" />
+
+<link rel="up" href="../../advanced_topics.index.fr.html" title="advanced topics.index.fr" />
+
+<link rel="next" href="./check_file_system.fr.html" title="Vérifier le système de fichiers du stockage persistant" />
+
+
+
+
+</head>
+
+
+<body class="fr">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.fr.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.fr.html">Accueil</a></li>
+  <li><a href="../../../about.fr.html">Fonctionnement de Tails</a></li>
+  <li><a href="../../../install.fr.html">Obtenir Tails</a></li>
+  <li><a href="../../../doc.fr.html">Documentation</a></li>
+  <li><a href="../../../support.fr.html">Assistance</a></li>
+  <li><a href="../../../contribute.fr.html">Participer</a></li>
+  <li><a href="../../../news.fr.html">Nouvelles</a></li>
+  <li><a href="../../../jobs.html">Postes &agrave; pourvoir</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.fr.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.fr.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../advanced_topics.fr.html">advanced topics</a></li>
+
+
+
+
+
+<li><a href="../../../index.fr.html">persistence</a></li>
+
+
+
+
+<li>Modifier la phrase de passe du stockage persistant</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Français
+   </span>
+   <span class="hidden">Français
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./change_passphrase.en.html">en</a></span>
+   <span class="hidden"><a href="./change_passphrase.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.de.html">de</a></span>
+   <span class="hidden"><a href="./change_passphrase.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.es.html">es</a></span>
+   <span class="hidden"><a href="./change_passphrase.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.it.html">it</a></span>
+   <span class="hidden"><a href="./change_passphrase.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.pt.html">pt</a></span>
+   <span class="hidden"><a href="./change_passphrase.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.ru.html">ru</a></span>
+   <span class="hidden"><a href="./change_passphrase.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Modifier la phrase de passe du stockage persistant
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="../external_hard_disk.fr.html">Démarrer Tails depuis un disque dur externe</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./check_file_system.fr.html">Vérifier le système de fichiers du stockage persistant</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<ol>
+<li><p>D&eacute;marrez Tails et <a href="../../first_steps/welcome_screen/administration_password.fr.html">d&eacute;finissez un mot de passe
+ d&#39;administration</a>.</p>
+
+<p> Dans l&#39;&eacute;cran de bienvenue, maintenir le stockage persistant verrouill&eacute;.</p></li>
+<li><p>Ouvrez <span class="application">Disques</span> depuis le menu
+ <span class="menuchoice">
+   <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+   <span class="guisubmenu">Utilitaires</span>&nbsp;&#x25B8;
+   <span class="guimenuitem">Disques</span></span>.</p>
+
+<p> <span class="application">Disques</span> liste tous les p&eacute;riph&eacute;riques
+ de stockage dans la partie gauche de la fen&ecirc;tre. Lorsque vous choisissez l&#39;un de ces
+ p&eacute;riph&eacute;riques, des informations d&eacute;taill&eacute;es &agrave; son propos sont affich&eacute;es dans la partie
+ droite : ses partitions, sa marque, sa taille, etc.</p></li>
+<li><p>Trouvez quel p&eacute;riph&eacute;rique correspond &agrave; votre cl&eacute; USB Tails. Il devrait
+ contenir deux partitions, une appel&eacute;e <strong>Tails</strong> et une autre appel&eacute;e
+ <strong>TailsData</strong> qui correspond au stockage persistant.</p></li>
+<li><p>Dans la partie droite, cliquez sur la partition du stockage persistant,
+ appel&eacute;e <span class="guilabel">TailsData</span>.</p></li>
+<li><p>Cliquez sur <span class="guimenu"><img alt="Menu
+ contextuel disques" class="symbolic" height="16" src="../../../lib/system-run.png" width="16" /></span> et choisissez
+ <span class="guilabel">Modifier la phrase de passe&hellip;</span>.</p></li>
+<li><p>Tapez votre phrase de passe actuelle et tapez ensuite deux fois la
+ nouvelle phrase de passe.</p></li>
+<li><p>Confirmez enfin en cliquant sur <span class="guilabel">Modifier</span>.</p></li>
+<li><p>Dans la fen&ecirc;tre de confirmation, entrez votre mot de passe
+ d&#39;administration et cliquez sur <span class="guilabel">S&#39;authentifier</span>.</p></li>
+<li><p>Vous pouvez d&eacute;sormais red&eacute;marrer Tails et essayer de d&eacute;verrouiller le
+ stockage persistant avec sa nouvelle phrase de passe.</p></li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="../external_hard_disk.fr.html">Démarrer Tails depuis un disque dur externe</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./check_file_system.fr.html">Vérifier le système de fichiers du stockage persistant</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/persistence/change_passphrase.fr">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for February, 2014</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Wed, 05 Mar 2014 23:27:29 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for February, 2014</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for February, 2014
+</span>
+<span class="date">2014-03-05</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<h1>Releases</h1>
+
+<p>Tails 0.22.1 was released on February 4.</p>
+
+<h1>Metrics</h1>
+
+<ul>
+<li>Tails has been started more than 222&nbsp;134 times in February.
+This make 7&nbsp;933 boots a day in average.</li>
+<li>453&nbsp;082 downloads of the OpenPGP signature of Tails ISO. Weird.</li>
+<li>92 reports were received through WhisperBack.</li>
+</ul>
+
+
+<h1>Code</h1>
+
+<p>New features:</p>
+
+<ul>
+<li>Great progress was made towards better integrated, and more usable,
+support for using
+Tor bridge (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5479">#5479</a>). This implied working with
+the TBB team to improve Tor Launcher, so that we can start it as
+a standalone XUL application, instead of as a browser add-on.</li>
+<li><a href="../contribute/design/MAC_address.html">MAC spoofing support</a> was
+completed and
+merged (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5421">#5421</a>).</li>
+<li>Phase four of incremental upgrades was completed
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6508">#6508</a>), and given it was enabled by default in
+Tails 0.22.1, most users will see it in action when 0.23 is out.</li>
+<li>One may now
+start IBus manually in locales
+environment where it is disabled by default (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6656">#6656</a>).</li>
+<li>Ship a 64-bit
+kernel in replacement for the 686-pae one (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5456">#5456</a>).</li>
+<li>The branch to
+stop creating auto-login text consoles was merged
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5588">#5588</a>).</li>
+<li>Support for persistence of I2P state was
+drafted (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5544">#5544</a>).</li>
+<li>The website
+lock down was merged and deployed.</li>
+<li>A branch to
+stop installing Cookie
+Monster was prepared (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6790">#6790</a>).</li>
+<li>Some initial work to improve the Greeter&#39;s administration password
+interface was done (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5594">#5594</a>).</li>
+</ul>
+
+
+<p>Software updates:</p>
+
+<ul>
+<li>I2P has been updated to 0.9.11 (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6696">#6696</a>).</li>
+<li>We have uploaded Pidgin 2.10.9 to squeeze-backports, and we now
+install it from there (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6661">#6661</a>).</li>
+<li>Install
+Poedit from squeeze-backports-sloppy, where we have
+uploaded it some time ago (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6456">#6456</a>).</li>
+<li>The fact that Linux 3.12 is not in Debian unstable anymore
+was taken into account.</li>
+<li>The branch that
+installs Linux 3.13 was updated.</li>
+</ul>
+
+
+<p>Bug and regression fixes:</p>
+
+<ul>
+<li>The Intel Management Engine Interface driver
+was disabled. This fixes memory wiping
+at shutdown (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6460">#6460</a>) on some, if not all, hardware.</li>
+<li>The possibility to switch identities in the Tor Browser
+was added back (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6383">#6383</a>).</li>
+<li>An issue that lead to releasing needlessly big ISO images
+was
+resolved (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6390">#6390</a>).</li>
+<li>feature/create-additional-software-config
+was merged.</li>
+</ul>
+
+
+<p>Towards Tails based on Debian Wheezy:</p>
+
+<ul>
+<li>I2P packages compatible with Debian Wheezy were prepared, and are
+now installed in the feature/wheezy branch.</li>
+<li>Application launchers were added to the GNOME panel.</li>
+<li>A launcher to start the documentation viewer was added to the
+applications menu.</li>
+<li>A more standard icon is used for the shutdown button.</li>
+</ul>
+
+
+<h1>Documentation, website and localization</h1>
+
+<ul>
+<li>Icons for the different roles on the Contribute section were
+finalized and <a href="../contribute.en.html">deployed live</a>.</li>
+<li>The <a href="../support/faq.en.html">FAQ</a> was greatly expanded, and is now almost ready
+for prime-time.</li>
+<li>We have made good progress on specifying how the Tails logo should
+look like (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5797">#5797</a>).</li>
+<li>It was documented how to <a href="../contribute/how/debian.html">improve Tails by working on
+Debian</a>. We have received positive feedback
+from Debian contributors about it.</li>
+<li>Many small improvements to the documentation and its translations
+were done, including:
+
+<ul>
+<li>quite a few clarifications in the documentation for new
+contributors;</li>
+<li>updated system requirements documentation;</li>
+<li>documented how to change the passphrase for the
+persistent volume (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5621">#5621</a>).</li>
+</ul>
+</li>
+<li>Links to the I2P website were
+updated.</li>
+<li>Documentation for the new MAC address spoofing feature was drafted.</li>
+<li>Work is in progress on documentation about contributing to Tails in
+the infrastructure (systems administration, automation) area.</li>
+</ul>
+
+
+<h1>Infrastructure</h1>
+
+<ul>
+<li>Our Puppet modules were <a href="https://git-tails.immerda.ch/">published</a>.
+This was a first blocker before we can welcome contributions to
+our infrastructure.</li>
+<li>The system that hosts our Redmine
+was re-installed from scratch on a new machine, upgraded to Debian
+Wheezy and to Redmine 1.4.4.</li>
+<li>Some improvements to our automated test suite were merged:
+test/fix-persistence-checks,
+test/keep-volumes-tag, and
+test/5959-antitest-memory-erasure.
+Thanks to this and the robustness improvements brought by the move
+to RJB, we were finally able to remove two of the most painful sets
+of tests from our manual test suite.</li>
+<li>A mailing list for early testers was created and is being set up.</li>
+</ul>
+
+
+<h1>On-going discussions</h1>
+
+<ul>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/004804.html">Usecases for the Cookie Monster browser
+extension?</a></li>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/004841.html">Tails
+logo</a></li>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/004984.html">How to remove identifying information in bug
+reports?</a></li>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/004986.html">Numlock on by
+default?</a></li>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/004923.html">Various</a> <a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/005042.html">issues</a> with Vagrant.</li>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/004885.html">Interactions between Tails and TBB
+developers</a></li>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/004850.html">Adding BitMessage and Bitcoin-QT to
+Tails</a></li>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/004842.html">MAC address &#39;spoofing&#39; and
+randomization</a></li>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2014-February/004819.html">Adapting Tor Launcher for
+Tails</a></li>
+<li>We were contacted by a few people who want to use Tails as
+a flexible framework, and build customized derivatives on top of it.</li>
+<li>We are discussing who we will invite to the 2014 Tails contributors
+summit, that should be a bit more crowded than usual.</li>
+</ul>
+
+
+<h1>Funding</h1>
+
+<ul>
+<li>We have discussed with GNOME how they could use the money they have
+raised for privacy and anonymity improvements.</li>
+</ul>
+
+
+<h1>Outreach</h1>
+
+<ul>
+<li>We have been working with people who want to build bridges between
+the graphics designers and usability experts community on the one
+hand, and Free Software developers on the other hand. Thanks to this
+collaboration, it is likely that Tails will go through a usability
+study in a few months, followed by a hackfest that will put at work
+designers and usability experts for finding solutions to (some of)
+the identified issues. The Tails sprint in July might host
+this hackfest.</li>
+<li>One of us attended FOSDEM, and got a chance to talk with many
+interesting people in person there.</li>
+<li>We got in touch with the people behind
+<a href="https://www.freepto.mx/">Freepto</a>, and are looking how our two
+projects could collaborate more.</li>
+<li>We are participating in two new Debian teams: the <a href="https://wiki.debian.org/Teams/OTR">Debian OTR
+Team</a> and the <a href="https://wiki.debian.org/AppArmor/Contribute">Debian AppArmor
+Profiles Team</a>.</li>
+</ul>
+
+
+<h1>Press and testimonials</h1>
+
+<ul>
+<li>2014-02-27: In his article &quot;<a href="https://pressfreedomfoundation.org/blog/2014/02/why-its-vital-public-fund-open-source-encryption-tools">Why It&rsquo;s Vital For Users to Fund Open-Source
+Encryption
+Tools</a>&quot;
+Trevor Timm from Freedom of the Press Foundation explains that Tails &laquo; has
+been vital for most, if not all, of the NSA journalists. [...] Its prime use
+case is journalists trying to communicate or work in environments in which
+they may normally be at risk or compromised. The NSA stories have been the
+biggest story in journalism in the past decade, yet the tool the reporters
+rely on is incredibly underfunded, is maintained by only a handful of
+developers, and operates on a shoestring budget. &raquo;</li>
+<li>2014-02-07: In his review of <a href="http://uvirtus.org">uVirtus</a>, Kheops, from
+Telecomix concludes that &laquo;&nbsp;Users should prefer Tails and other mature secure
+live distributions (such as IprediaOS, Libert&eacute; Linux, Privatix and Whonix)
+over uVirtus since they provide a real safety improvement to the user. For any
+activity that does not entail transferring large quantities of data (such as
+video files), there is no strong reason to prefer uVirtus over any of these. &raquo;</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2014_02">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

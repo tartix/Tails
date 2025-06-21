@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+
+<html lang="es" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - sandbox escape.inline.es</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+
+
+
+</head>
+
+
+<body class="es">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.es.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.es.html">Inicio</a></li>
+  <li><a href="../../about.es.html">C&oacute;mo funciona Tails</a></li>
+  <li><a href="../../install.es.html">Obtener Tails</a></li>
+  <li><a href="../../doc.es.html">Documentaci&oacute;n</a></li>
+  <li><a href="../../support.es.html">Soporte</a></li>
+  <li><a href="../../contribute.es.html">Colabora</a></li>
+  <li><a href="../../news.es.html">Noticias</a></li>
+  <li><a href="../../jobs.html">Trabajos</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.es.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../news.es.html">news</a></li>
+
+
+
+
+
+<li><a href="../version_3.14.1.es.html">version 3.14.1</a></li>
+
+
+
+
+<li>sandbox escape.inline.es</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Español
+   </span>
+   <span class="hidden">Español
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./sandbox_escape.inline.en.html">en</a></span>
+   <span class="hidden"><a href="./sandbox_escape.inline.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./sandbox_escape.inline.de.html">de</a></span>
+   <span class="hidden"><a href="./sandbox_escape.inline.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./sandbox_escape.inline.fr.html">fr</a></span>
+   <span class="hidden"><a href="./sandbox_escape.inline.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./sandbox_escape.inline.it.html">it</a></span>
+   <span class="hidden"><a href="./sandbox_escape.inline.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./sandbox_escape.inline.pt.html">pt</a></span>
+   <span class="hidden"><a href="./sandbox_escape.inline.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./sandbox_escape.inline.ru.html">ru</a></span>
+   <span class="hidden"><a href="./sandbox_escape.inline.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+sandbox escape.inline.es
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>A security vulnerability was discovered in the sandboxing mechanism of
+<em>Firefox</em> and <em>Tor Browser</em>. This vulnerability allows a malicious website
+to bypass some of the confinement built in <em>Firefox</em>, which means possibly
+spying on the content of other tabs and steal the passwords of other
+websites.</p>
+
+<p>After <em>Tor Browser</em> has been compromised, the only reliable solution is to
+restart Tails.</p>
+
+<p>Because <em>Tor Browser</em> in Tails is <a href="../../doc/anonymous_internet/Tor_Browser.es.html#confinement">confined using
+<em>AppArmor</em></a>, only the data
+accessible to <em>Tor Browser</em> might be compromised but not the other
+applications or your other files. For example, a compromised <em>Tor Browser</em>
+might access your files in the <em>Tor Browser</em> and <em>Persistent/Tor Browser</em>
+folders but not anywhere else.</p>
+
+<p>For example, without restarting Tails:</p>
+
+<ul>
+<li><p>It is unsafe to:</p>
+
+<ul>
+<li><p>Log in to a website and also visit an untrusted website.  Your password
+on the first website might be stolen by the untrusted website.</p></li>
+<li><p>Visit an untrusted website if you have sensitive information stored in
+your <em>Persistent/Tor Browser</em> folder. The untrusted website might access
+these files.</p></li>
+</ul>
+</li>
+<li><p>It is safe to:</p>
+
+<ul>
+<li><p>Visit untrusted websites, without logging in, if you have no sensitive
+information stored in your <em>Tor Browser</em> and <em>Persistent/Tor Browser</em>
+folders.</p></li>
+<li><p>Log in to several trusted websites without visiting any untrusted
+websites.</p></li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/version_3.14.1/sandbox_escape.inline.es">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

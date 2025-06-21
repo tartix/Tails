@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Download verification</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../design.html">design</a></li>
+
+
+
+
+<li>Download verification</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Download verification
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Software verification is a critical step in the use of secure
+applications but it has traditionally been hard to provide, especially
+from a user experience perspective.</p>
+
+<p>Usual solutions are:</p>
+
+<ul>
+<li><p>HTTPS</p>
+
+<p>All our download mirrors use HTTPS, which is a good starting point.</p>
+
+<p>But HTTPS is not enough because we rely on <a href="./mirrors.html">mirrors
+hosted by third parties</a>. They could serve
+malicious downloads to our users.</p>
+
+<p>HTTPS also doesn&#39;t protect from interrupted downloads that can lead to
+broken Tails installations.</p></li>
+<li><p>OpenPGP signatures</p>
+
+<p>Unless the user knows how to verify the signing key through the
+OpenPGP Web of Trust, this technique ultimately relies on a correct
+download of the signing key and signature, and thus on HTTPS.</p></li>
+</ul>
+
+
+<p>Tails provides 3 mechanisms for users to verify the image downloaded
+through a third party mirror, while relying on cryptographic information
+fetched from our website through HTTPS.</p>
+
+<ol>
+<li><p>JavaScript verification</p>
+
+<p>The main verification mechanism relies on JavaScript code on the
+download page. See below for more details.</p></li>
+<li><p>BitTorrent download</p>
+
+<p>The Torrent file downloaded through HTTPS from our website includes a
+checksum of the image. BitTorrent clients automatically verify this
+checksum when the download finishes.</p></li>
+<li><p>OpenPGP signature</p>
+
+<p>We provide an OpenPGP signature of our downloads.</p></li>
+</ol>
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Related documents</a>
+	</li>
+	<li class="L1"><a href="#index2h1">OpenPGP verification instructions</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Scope of the JavaScript verification</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Goals</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Non goals</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index4h1">Threat model</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Functioning</a>
+	<ol>
+		<li class="L2"><a href="#index3h2">Image description file</a>
+		</li>
+		<li class="L2"><a href="#index4h2">Forge library</a>
+		</li>
+		<li class="L2"><a href="#index5h2">Browser compatibility</a>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Related documents</h1>
+
+<ul>
+<li><a href="./installation_assistant.html">Design document of the installation assistant, including the download page</a></li>
+</ul>
+
+
+<h1><a name="index2h1"></a>OpenPGP verification instructions</h1>
+
+<p>We removed the instructions to verify downloads with OpenPGP because:</p>
+
+<ul>
+<li><p>Without advanced knowledge of OpenPGP, verifying with OpenPGP provides the
+same level of security as the JavaScript verification on the download page,
+while being much more complicated and error-prone.</p></li>
+<li><p>None of our <a href="../personas.html">personas</a> would have enough knowledge of
+OpenPGP to use the OpenPGP Web of Trust with confidence.</p></li>
+<li><p>Providing basic (and never exhaustive) instructions has proven to be very
+time consuming to our help desk and technical writers. See <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17900">#17900</a>.</p></li>
+</ul>
+
+
+<p>We still explain how to verify our signing key using the OpenPGP Web of Trust
+in the <a href="../../install/expert/usb.en.html">installation instructions from Debian, Ubuntu, or Mint using the
+command line and GnuPG</a> because Debian derivatives come
+with trusted OpenPGP keys that can be used to create a path to our signing key.</p>
+
+<h1><a name="index3h1"></a>Scope of the JavaScript verification</h1>
+
+<h2><a name="index1h2"></a>Goals</h2>
+
+<ul>
+<li><p>Provide a simple, automated, and cross-platform technique to verify
+USB and ISO images of the current version of Tails.</p></li>
+<li><p>Allow verifying any current Tails image: downloaded over BitTorrent,
+copied from a friend, downloaded from one of our mirrors.</p></li>
+</ul>
+
+
+<h2><a name="index2h2"></a>Non goals</h2>
+
+<ul>
+<li><p>Verify deprecated Tails images.</p></li>
+<li><p>Verify Tails images downloaded from nightly.tails.boum.org.</p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>Threat model</h1>
+
+<p>We are considering here an attacker who can:</p>
+
+<ul>
+<li><p>[A] Provide a malicious Tails image to the user for example by
+operating a rogue Tails mirror.</p></li>
+<li><p>[H] Operate a website that is loaded in a different tab in the same
+browser. This threat is taken care of by the internals of the
+browser and the proper coding of the JavaScript.</p></li>
+</ul>
+
+
+<p>We are not considering an attacker who can:</p>
+
+<ul>
+<li><p>[B] Do a man-in-the-middle attack by providing a rogue HTTPS certificate
+for https://tails.boum.org/ signed by a certificate authority
+trusted by the browser but under the control of the attacker.</p>
+
+<p>Since the JavaScript verification is targeted at new users, a MitM or exploit on
+our website could defeat any verification technique by providing
+simplified instructions or by faking the verification.</p>
+
+<p>Note that our website is already in the <a href="https://hstspreload.org/?domain=tails.boum.org">HSTS preload list of major
+browsers</a>, which forces HTTPS connections to our website, even for
+first time visitors.</p></li>
+<li><p>[C] Insert malicious content on https://tails.boum.org/ through an
+exploit on our website as this could trick new users to skip the Tails
+image verification all the way. To prevent this kind of attack we
+should instead:</p>
+
+<ul>
+<li>Monitor externally the most relevant parts of our website.</li>
+<li>Work on integrating full upgrades in Tails Upgrader to limit the
+number of times people have to rely on our website to upgrade. See
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/7499">#7499</a>.</li>
+</ul>
+</li>
+<li><p>[D] Insert malicious information in our main Git repository as such
+an attacker could do attack [C] as well.</p></li>
+<li><p>[E] Insert targeted malware in the user&#39;s computer or web browser as this could
+defeat any possible verification mechanism that such JavaScript
+can do.</p>
+
+<p>For example, we cannot protect from a malicious extension installed
+in the web browser.</p></li>
+<li><p>[G] Insert malicious content on https://tails.boum.org/ after taking
+control of the web server, or entire system, behind it. Such an
+attacker could do attack [C] as well but in such a way that could be
+much harder to detect (for example by serving malicious content only to
+some users).</p></li>
+<li><p>[J] Provide a malicious copy of our website on a similar looking URL
+that could pretend that verification has succeeded without actually
+verifying anything.</p></li>
+</ul>
+
+
+<h1><a name="index5h1"></a>Functioning</h1>
+
+<h2><a name="index3h2"></a>Image description file</h2>
+
+<p>When verifying a Tails image, the JavaScript:</p>
+
+<ol>
+<li><p>Downloads an image description file (IDF) from:</p>
+
+<p><a href="https://tails.boum.org/install/v2/Tails/amd64/stable/latest.json">https://tails.boum.org/install/v2/Tails/amd64/stable/latest.json</a></p>
+
+<p>The IDF is served with the HTTP headers <span class="code"><code>Access-Control-Allow-Origin: *</code></span> to allow
+developers to test the verification locally from a <code>file:///</code> URL.</p></li>
+<li><p>Verifies that the checksum of the image is present in the IDF.</p></li>
+</ol>
+
+
+<h2><a name="index4h2"></a><em>Forge</em> library</h2>
+
+<p>The JavaScript uses the
+<a href="https://github.com/digitalbazaar/forge/"><em>Forge</em></a> library to calculate
+the checksum.</p>
+
+<p>We chose <em>Forge</em> because it was <a href="https://github.com/brillout/test-javascript-hash-implementations">the fastest in this benchmark of
+JavaScript checksum
+implementations</a>.</p>
+
+<p>We cannot use the native <a href="https://developer.mozilla.org/en-US/docs/Web/API/SubtleCrypto/digest">SubtleCrypto.digest()
+API</a>
+because it <a href="https://github.com/w3c/webcrypto/issues/73">cannot read files as
+streams</a> and would require
+loading the entire image in memory before computing its checksum.</p>
+
+<p>We also rely on reading the image as a stream to display the progress
+bar, which is really important since the whole verification takes close
+to 1 minute.</p>
+
+<h2><a name="index5h2"></a>Browser compatibility</h2>
+
+<ul>
+<li><p>Internet Explorer is not supported because our JavaScript uses the
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/FileReader/readAsBinaryString">readAsBinaryString
+API</a>.</p></li>
+<li><p>Browsers without JavaScript are instructed to either enable JavaScript
+or calculate the checksum using
+<a href="../../doc/encryption_and_privacy/checksums.en.html">GtkHash</a>.</p></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../install/inc/steps/download.inline.en.html">install/inc/steps/download.inline</a>
+
+<a href="../../install/inc/steps/download.inline.de.html">install/inc/steps/download.inline.de</a>
+
+<a href="../../install/inc/steps/download.inline.es.html">install/inc/steps/download.inline.es</a>
+
+<a href="../../install/inc/steps/download.inline.fr.html">install/inc/steps/download.inline.fr</a>
+
+<a href="../../install/inc/steps/download.inline.it.html">install/inc/steps/download.inline.it</a>
+
+<a href="../../install/inc/steps/download.inline.pt.html">install/inc/steps/download.inline.pt</a>
+
+<a href="../../install/inc/steps/download.inline.ru.html">install/inc/steps/download.inline.ru</a>
+
+<a href="./installation_assistant.html">installation assistant</a>
+
+<a href="../../news/verification_extension_deprecation.en.html">news/verification extension deprecation</a>
+
+<a href="../../news/verification_extension_deprecation.de.html">news/verification extension deprecation.de</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="../../news/verification_extension_deprecation.es.html">news/verification extension deprecation.es</a>
+
+<a href="../../news/verification_extension_deprecation.fr.html">news/verification extension deprecation.fr</a>
+
+<a href="../../news/verification_extension_deprecation.it.html">news/verification extension deprecation.it</a>
+
+<a href="../../news/verification_extension_deprecation.pt.html">news/verification extension deprecation.pt</a>
+
+<a href="../../news/verification_extension_deprecation.ru.html">news/verification extension deprecation.ru</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/design/download_verification">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

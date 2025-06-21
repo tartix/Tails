@@ -1,0 +1,2549 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Release process</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../contribute.en.html">contribute</a></li>
+
+
+
+
+<li>Release process</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Release process
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Context</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Release types</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index2h1">Prepare your checklist</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Requirements</a>
+	<ol>
+		<li class="L2"><a href="#index2h2">Packages</a>
+		</li>
+		<li class="L2"><a href="#index3h2">System configuration</a>
+		</li>
+		<li class="L2"><a href="#index4h2">Configuration files</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index4h1">Environment</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Pre-freeze</a>
+	<ol>
+		<li class="L2"><a href="#index5h2">Check the Release Manager role</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Coordinate with Debian security updates</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index6h1">Sanity check</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Freeze</a>
+	<ol>
+		<li class="L2"><a href="#index7h2">Only for Major release</a>
+		</li>
+		<li class="L2"><a href="#index8h2">Only for Bugfix release</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index8h1">Set base branch</a>
+	</li>
+	<li class="L1"><a href="#index9h1">Manual testing coordination</a>
+	</li>
+	<li class="L1"><a href="#index10h1">Update included files</a>
+	<ol>
+		<li class="L2"><a href="#index9h2">Upgrade Tor Browser</a>
+		</li>
+		<li class="L2"><a href="#index10h2">Update PO files</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index11h1">If preparing a final release</a>
+	<ol>
+		<li class="L2"><a href="#index11h2">Only for Major release</a>
+		</li>
+		<li class="L2"><a href="#index12h2">Only for Bugfix release</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index12h1">Update other base branches</a>
+	</li>
+	<li class="L1"><a href="#index13h1">Update more included files</a>
+	<ol>
+		<li class="L2"><a href="#index13h2">Changelog</a>
+		</li>
+		<li class="L2"><a href="#index14h2">Included website</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index14h1">Enable OpenPGP signing</a>
+	</li>
+	<li class="L1"><a href="#index15h1">Build the almost-final images</a>
+	</li>
+	<li class="L1"><a href="#index16h1">Tag the release in Git</a>
+	</li>
+	<li class="L1"><a href="#index17h1">Prepare the versioned APT suites</a>
+	<ol>
+		<li class="L2"><a href="#index15h2">Versioned APT suite in our custom APT repository</a>
+		</li>
+		<li class="L2"><a href="#index16h2">Tagged snapshots of upstream APT repositories</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index18h1">Build images</a>
+	<ol>
+		<li class="L2"><a href="#index17h2">Sanity check</a>
+		</li>
+		<li class="L2"><a href="#index18h2">SquashFS file order</a>
+		</li>
+		<li class="L2"><a href="#index19h2">Build the final images</a>
+		</li>
+		<li class="L2"><a href="#index20h2">Verify that Jenkins reproduced your images</a>
+		</li>
+		<li class="L2"><a href="#index21h2">Initialize the website release branch</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index19h1">Generate the OpenPGP signatures and Torrents</a>
+	</li>
+	<li class="L1"><a href="#index20h1">Get the internal manual testing started</a>
+	</li>
+	<li class="L1"><a href="#index21h1">Prepare incremental upgrades</a>
+	<ol>
+		<li class="L2"><a href="#index22h2">Sanity checks</a>
+		</li>
+		<li class="L2"><a href="#index23h2">Build the Incremental Upgrade Kits locally</a>
+		</li>
+		<li class="L2"><a href="#index24h2">ISO history</a>
+		</li>
+		<li class="L2"><a href="#index25h2">Build the Incremental Upgrade Kits on Jenkins</a>
+		</li>
+		<li class="L2"><a href="#index26h2">Verify that Jenkins reproduced your IUKs</a>
+		</li>
+		<li class="L2"><a href="#index27h2">Prepare upgrade-description files</a>
+		</li>
+		<li class="L2"><a href="#index28h2">Prepare the image description file for the download verification</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index22h1">Done with OpenPGP signing</a>
+	</li>
+	<li class="L1"><a href="#index23h1">Upload images</a>
+	<ol>
+		<li class="L2"><a href="#index29h2">Sanity check</a>
+		</li>
+		<li class="L2"><a href="#index30h2">Delete obsolete IUKs</a>
+		</li>
+		<li class="L2"><a href="#index31h2">Publish the ISO, IMG, and IUKs over HTTP</a>
+		</li>
+		<li class="L2"><a href="#index32h2">Announce, seed and test the Torrents</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index24h1">Public testing</a>
+	</li>
+	<li class="L1"><a href="#index25h1">Lead the internal manual testing to conclusion</a>
+	</li>
+	<li class="L1"><a href="#index26h1">Prepare announcements and blog posts</a>
+	<ol>
+		<li class="L2"><a href="#index33h2">If preparing a major or a bugfix release</a>
+		</li>
+		<li class="L2"><a href="#index34h2">If preparing a release candidate</a>
+		</li>
+		<li class="L2"><a href="#index35h2">In any case</a>
+		</li>
+		<li class="L2"><a href="#index36h2">Draft the Tor blog post</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index27h1">Go wild!</a>
+	<ol>
+		<li class="L2"><a href="#index37h2">Wait for the HTTP mirrors to catch up</a>
+		</li>
+		<li class="L2"><a href="#index38h2">Sanity checks</a>
+		</li>
+		<li class="L2"><a href="#index39h2">Push</a>
+		</li>
+		<li class="L2"><a href="#index40h2">Bug tracker</a>
+		</li>
+		<li class="L2"><a href="#index41h2">Twitter</a>
+		</li>
+		<li class="L2"><a href="#index42h2">Publish the Tor blog post</a>
+		</li>
+		<li class="L2"><a href="#index43h2">Amnesia news</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index28h1">Prepare for the next development cycle</a>
+	<ol>
+		<li class="L2"><a href="#index44h2">If you just released a final release</a>
+		</li>
+		<li class="L2"><a href="#index45h2">If you just released an RC</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index29h1">Related pages</a>
+	</li>
+</ol>
+</div>
+
+
+<p>See the <a href="./release_schedule.html">release schedule</a>.</p>
+
+<h1><a name="index1h1"></a>Context</h1>
+
+<h2><a name="index1h2"></a>Release types</h2>
+
+<p>There are exactly 3 types of releases:</p>
+
+<ul>
+<li>A bugfix release</li>
+<li>A major release</li>
+<li>A release candidate. A release candidate can only be made for a major release</li>
+</ul>
+
+
+<p>We will not cover beta release in this document.</p>
+
+<p>Both a bugfix release and a major release are called &quot;final&quot;. A release candidate is not a final release.</p>
+
+<p>Sections that only apply to some of those types of release, we&#39;ll have it written clearly in the title.</p>
+
+<p>If you want to know whether the release you are doing is a major or not, you need to check
+<a href="./calendar.html">calendar</a>, and use these criteria:</p>
+
+<ul>
+<li>if nothing is specified about being a major, then it&#39;s most probably a bugfix release</li>
+<li>if it is a major, there has to be a release candidate before the final</li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Prepare your checklist</h1>
+
+<ol>
+<li>Merge the current <code>master</code> branch into the branch used to prepare the release
+(<code>stable</code> for a bugfix release, <code>testing</code> for a major release, <code>devel</code> for a RC).</li>
+<li>Copy this very file from the branch used to prepare the release
+to some place outside of Git.</li>
+<li>Close the version of this file that&#39;s in Git.</li>
+<li>From now on, follow the instructions in your own local copy, using it as
+a checklist: delete steps once you&#39;ve successfully completed them.
+This ensures you won&#39;t mistakenly skip a step, without relying on memory, so
+&quot;oops, I forgot X&quot; cannot happen.</li>
+</ol>
+
+
+<h1><a name="index3h1"></a>Requirements</h1>
+
+<h2><a name="index2h2"></a>Packages</h2>
+
+<p>To release Tails you&#39;ll need some packages installed:</p>
+
+<ul>
+<li><code>gitlab-cli jq tidy mktorrent podman python3-bs4 python3-debian python3-gitlab python3-jinja2 python3-voluptuous transmission-cli</code>
+
+<ul>
+<li>Note: if the Debian version you are running does not include all required
+Go packages, such as <a href="https://tracker.debian.org/pkg/podman">podman</a>, you should be able to install
+them from a more recent Debian release with APT pinning.</li>
+</ul>
+</li>
+<li><code>perl5lib</code> <a href="./release_process/perl5lib.html#build-deps">dependencies</a></li>
+<li><code>iuk</code> <a href="./release_process/tails-iuk.html#build-deps">dependencies</a></li>
+<li><a href="https://tracker.debian.org/pkg/squashfs%2Dtools">squashfs-tools</a> 1:4.4-1+0.tails1
+from our custom <code>iukbuilder-stretch</code> APT suite.</li>
+<li><code>po4a</code> 0.55:
+
+<ul>
+<li>Different versions extract Markdown headings in a different way, which
+makes tons of strings fuzzy.</li>
+<li>Different versions emit different sets of message flags, some of which
+are not supported by <em>i18nspector</em> yet.</li>
+</ul>
+</li>
+<li><code>i18nspector</code> 0.26 or newer</li>
+<li>packages to <a href="./build/website.html">build a local version of the website</a></li>
+</ul>
+
+
+<h2><a name="index3h2"></a>System configuration</h2>
+
+<ul>
+<li><p>Enable unprivileged user namespaces</p>
+
+<p>If you&#39;re running a Debian kernel older than 5.10.1-1~exp1,
+set the <code>kernel.unprivileged_userns_clone</code> sysctl to 1:</p>
+
+<pre><code>  echo &#39;kernel.unprivileged_userns_clone=1&#39; \
+     | sudo tee /etc/sysctl.d/unprivileged-user-namespaces.conf &amp;&amp; \
+  sudo sysctl --system
+</code></pre></li>
+</ul>
+
+
+<h2><a name="index4h2"></a>Configuration files</h2>
+
+<p>To release Tails you need:</p>
+
+<ul>
+<li><p>The <a href="./working_together/GitLab.html#api">correct version</a> of <code>python3-gitlab</code>.</p></li>
+<li><p><code>~/.python-gitlab.cfg</code></p>
+
+<p>You need at least this content:</p>
+
+<pre><code>  [global]
+  ssl_verify = true
+
+  [TailsRM]
+  url = https://gitlab.tails.boum.org
+  per_page = 100
+  private_token = XXX
+
+  [Tails]
+  url = https://gitlab.tails.boum.org
+  per_page = 100
+  private_token = XXX
+</code></pre>
+
+<p> Then:</p>
+
+<ul>
+<li><p>In the <code>TailsRM</code> section, set the value of the <code>private_token</code> option to
+the <code>role-release-automation</code> GitLab user&#39;s API token, which you&#39;ll find in
+<code>rm.git</code>&#39;s keyringer.</p></li>
+<li><p>In the <code>Tails</code> section, set the value of the <code>private_token</code> option to a
+GitLab API token for your own user.</p></li>
+</ul>
+</li>
+<li><p><code>~/.config/tails/release_management/local.yml</code></p>
+
+<p>If you have no such file yet, copy
+<code>config/release_management/examples/local.yml</code> there and adjust to your
+local environment.</p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>Environment</h1>
+
+<p>To be able to copy&#39;n&#39;paste the code snippets found on this page,
+you need to set a bunch of environment variables.</p>
+
+<h3><a name="index1h3"></a>Generate the base environment</h3>
+
+<ol>
+<li><p>To generate the <code>~/.config/tails/release_management/current.yml</code> template,
+run:</p>
+
+<pre><code> ./bin/rm-config generate-boilerplate
+</code></pre></li>
+<li><p>Edit <code>~/.config/tails/release_management/current.yml</code> and replace
+<code>FIXME</code>:s:</p>
+
+<pre><code>  &quot;${EDITOR:?}&quot; ~/.config/tails/release_management/current.yml
+</code></pre></li>
+<li><p>Ensure there&#39;s a <code>iuks/v2</code> directory under the directory you specified for
+<code>isos</code> in <code>~/.config/tails/release_management/local.yml</code>.</p></li>
+<li><p>Generate the resulting environment variables and export them into your
+environment:</p>
+
+<pre><code> . $(./bin/rm-config generate-environment)
+</code></pre></li>
+</ol>
+
+
+<h3><a name="index2h3"></a>Notes</h3>
+
+<ul>
+<li>Unless the release process explicitly instructs you to change the
+value of one such variable, treat it as a constant: else,
+inconsistency will surely arise, which can cause trouble later on.</li>
+<li>Regarding version numbers, what follows supports just fine the case
+when we do something else than alternating bugfix and major releases
+consistently. For example, if the next two releases are bugfix ones,
+do not set <code>$NEXT_PLANNED_MAJOR_VERSION</code> to one of these
+bugfix releases. Instead, set it to the version number of the next
+major release.</li>
+<li>The <code>$NEXT*VERSION</code> constants are used only for two types of
+operations: preparing upgrade-description files and adding changelog
+entries. This two types of operations have to be consistent with
+each other: for example, if one adds a dummy entry for version X in
+a changelog, an UDF must exist for version X as well&hellip; hence the use
+of shared constants to encode the values that must be the same on
+both sides :)</li>
+</ul>
+
+
+<h1><a name="index5h1"></a>Pre-freeze</h1>
+
+<h2><a name="index5h2"></a>Check the Release Manager role</h2>
+
+<p>Check the <a href="./working_together/roles/release_manager.html">release manager</a> role
+documentation: it has more tasks that should be done early enough.</p>
+
+<h2><a name="index6h2"></a>Coordinate with Debian security updates</h2>
+
+<p>Look at the <a href="https://salsa.debian.org/security-tracker-team/security-tracker/blob/master/data/dsa-needed.txt">list of upcoming Debian Security Advisories (DSA)</a>
+found in the Debian <a href="http://security-tracker.debian.org/tracker/">security tracker</a>&#39;s <a href="https://salsa.debian.org/security-tracker-team/security-tracker">Git repository</a>.</p>
+
+<p>Rationale: we don&#39;t want to release Tails and learn 2 days later about
+important security issues fixed by Debian security updates. In some cases, it
+may be worth delaying a Tails release a bit, while waiting for a DSA to happen.</p>
+
+<h1><a name="index6h1"></a>Sanity check</h1>
+
+<p>Visit the <a href="https://jenkins.tails.boum.org/view/RM/">Jenkins RM view</a>
+and check that the jobs for the release branch have good enough results:</p>
+
+<ul>
+<li>the last build and reproducibility testing builds have succeeded for:
+
+<ul>
+<li>if you&#39;re preparing a final release: the release branch</li>
+<li>else, if you&#39;re preparing a release candidate: the <code>devel</code> branch</li>
+</ul>
+</li>
+<li>look at the last build of the corresponding <code>test_Tails_ISO_*</code> job;
+if anything looks unusual or fishy, check the few previous builds
+to see if it&#39;s a one-off robustness issue, a serious regression,
+or what not.</li>
+</ul>
+
+
+<h1><a name="index7h1"></a>Freeze</h1>
+
+<p>This section ensures freezing is done. Freezing is relevant for Release Candidates and for bugfix releases.
+You can skip this if you&#39;re releasing a final major version.</p>
+
+<h2><a name="index7h2"></a>Only for Major release</h2>
+
+<p>Follow this part ONLY if you are preparing the release candidate for a major release.</p>
+
+<ol>
+<li><p>Merge the <code>master</code> Git branch into <code>devel</code>:</p>
+
+<pre><code> git checkout devel &amp;&amp; git fetch origin &amp;&amp; git merge origin/devel &amp;&amp; git merge --no-ff origin/master
+</code></pre></li>
+<li><p>Merge each APT overlay suite listed in the <code>devel</code> branch&#39;s
+<code>config/APT_overlays.d/</code> into the <code>devel</code> APT suite:</p>
+
+<pre><code> ./bin/merge-APT-overlays devel
+</code></pre></li>
+<li><p>Merge the <code>devel</code> Git branch into the <code>testing</code> one:</p>
+
+<pre><code> git checkout testing &amp;&amp; git merge origin/testing &amp;&amp; git merge devel
+</code></pre>
+
+<p>... and check that the resulting <code>config/APT_overlays.d/</code> in the
+<code>testing</code> branch is empty.</p></li>
+<li><p>Hard reset the <code>testing</code> custom APT suite to the current state of the
+<code>devel</code> one:</p>
+
+<pre><code> ./bin/reset-custom-APT-suite testing devel
+</code></pre></li>
+<li><p>Freeze the <a href="./APT_repository/time-based_snapshots.html">time-based APT repository
+snapshots</a> that shall be used
+during the code freeze, and those used by our builder VM:</p>
+
+<pre><code> ./bin/freeze-all-APT-snapshots
+</code></pre></li>
+<li><p>Make it so the time-based APT repository snapshots are kept around
+long enough, by bumping their <code>Valid-Until</code> half a year from now:</p>
+
+<pre><code> git checkout &quot;$RELEASE_BRANCH&quot; &amp;&amp; \
+ ./bin/bump-APT-snapshots-expiration-date 183
+</code></pre></li>
+</ol>
+
+
+<h2><a name="index8h2"></a>Only for Bugfix release</h2>
+
+<p>Follow this part ONLY if you are preparing a bugfix release.</p>
+
+<ol>
+<li><p>Merge the <code>master</code> Git branch into <code>stable</code>:</p>
+
+<pre><code> git checkout stable &amp;&amp; git fetch &amp;&amp; git merge origin/stable &amp;&amp; git merge --no-ff origin/master
+</code></pre></li>
+<li><p>Merge each APT overlay suite listed in the <code>stable</code> branch&#39;s
+<code>config/APT_overlays.d/</code> into the <code>stable</code> APT suite:</p>
+
+<pre><code> ./bin/merge-APT-overlays stable
+</code></pre></li>
+</ol>
+
+
+<h1><a name="index8h1"></a>Set base branch</h1>
+
+<p>Reset the release branch&#39;s <code>config/base_branch</code>:</p>
+
+<pre><code>    echo &quot;${RELEASE_BRANCH:?}&quot; &gt; config/base_branch &amp;&amp; \
+       git commit config/base_branch \
+           -m &quot;Restore ${RELEASE_BRANCH:?}&#39;s base branch.&quot;
+</code></pre>
+
+<h1><a name="index9h1"></a>Manual testing coordination</h1>
+
+<p>Bootstrap internal manual testing coordination:</p>
+
+<ol>
+<li>Create a pad.</li>
+<li>Set the <code>PAD</code> environment variable to the URL of this pad.</li>
+<li>Copy the <a href="./release_process/test.html">manual test suite</a>
+into this pad.</li>
+<li><p>Generate boilerplate for the call for manual testing:</p>
+
+<pre><code> ./bin/generate-call-for-manual-testers \
+    --dist &quot;${DIST:?}&quot; \
+    --pad &quot;${PAD:?}&quot; \
+    --version &quot;${VERSION:?}&quot;
+</code></pre></li>
+<li><p>Send the call for manual testing:</p>
+
+<ul>
+<li>encrypt and sign your email</li>
+<li>use the headers and body generated above</li>
+<li>adjust the body as needed</li>
+</ul>
+</li>
+</ol>
+
+
+<h1><a name="index10h1"></a>Update included files</h1>
+
+<h2><a name="index9h2"></a>Upgrade Tor Browser</h2>
+
+<p>If you did not import the new Tor Browser yet, <a href="./release_process/tor-browser.html">do so now</a>.</p>
+
+<h2><a name="index10h2"></a>Update PO files</h2>
+
+<p>Pull updated translations for languages translated in Transifex,
+refresh the code PO files,
+and commit the result, including new PO files:</p>
+
+<pre><code>cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+./import-translations  &amp;&amp; \
+./refresh-translations &amp;&amp; \
+./submodules/jenkins-tools/slaves/lint_po &amp;&amp; \
+git add po &amp;&amp; git commit -m &#39;Update PO files.&#39;
+</code></pre>
+
+<p>If <code>lint_po</code> complains:</p>
+
+<ul>
+<li>rollback the offending PO files and retry; worst case, delete it</li>
+<li>send a note to <a href="mailto:tails-l10n@boum.org">tails-l10n@boum.org</a> [public] so that they get in touch with
+whoever can fix them.</li>
+</ul>
+
+
+<h1><a name="index11h1"></a>If preparing a final release</h1>
+
+<p>If we&#39;re about to prepare the images for a final (non-RC) release, then
+follow these instructions:</p>
+
+<h2><a name="index11h2"></a>Only for Major release</h2>
+
+<p>Merge each APT overlay suite listed in the <code>testing</code> branch&#39;s
+<code>config/APT_overlays.d/</code> into the <code>testing</code> custom APT suite:</p>
+
+<pre><code>    ./bin/merge-APT-overlays testing
+</code></pre>
+
+<h2><a name="index12h2"></a>Only for Bugfix release</h2>
+
+<div class="note">
+For bugfix releases, we generally do not put any RC out, so freeze time
+is the same as preparing the actual release. Hence, the following
+steps have already been done above, and this section is a noop in the
+general case.
+</div>
+
+
+<p>Merge each APT overlay suite listed in the <code>stable</code> branch&#39;s
+<code>config/APT_overlays.d/</code> into the <code>stable</code> custom APT suite:</p>
+
+<pre><code>    ./bin/merge-APT-overlays stable
+</code></pre>
+
+<h1><a name="index12h1"></a>Update other base branches</h1>
+
+<ol>
+<li><p>Merge the release branch into <code>devel</code>:</p>
+
+<pre><code> ./bin/merge-main-branch &quot;${RELEASE_BRANCH:?}&quot; devel
+</code></pre></li>
+<li><p><a href="./APT_repository/time-based_snapshots.html#thaw">Thaw</a>, on the devel
+branch, the time-based APT repository snapshots being used
+during the freeze:</p>
+
+<pre><code> git checkout devel &amp;&amp; \
+ ./auto/scripts/apt-snapshots-serials thaw &amp;&amp; \
+ git commit \
+     -m &quot;Thaw APT snapshots.&quot; \
+     config/APT_snapshots.d/*/serial || :
+</code></pre>
+
+<p>It&#39;s fine if that results in a no-op (it depends on how exactly previous
+operations were performed).</p></li>
+<li><p>Try to merge the <code>devel</code> Git branch into <code>feature/bullseye</code> (if it exists),
+<em>without</em> merging the corresponding APT suite (for now <code>feature/bullseye</code> is
+handled as any other topic branch forked off <code>devel</code>: its base branch is set
+to <code>devel</code>):</p>
+
+<pre><code> if git describe feature/bullseye &gt;/dev/null 2&gt;&amp;1; then
+    git checkout feature/bullseye &amp;&amp; \
+    git pull &amp;&amp; \
+    git merge devel
+ fi
+</code></pre>
+
+<p>If the merge conflicts don&#39;t look like something you feel confident
+resolving properly, abort this merge and let the Foundations
+Team know.</p></li>
+<li><p>Ensure that the <code>$RELEASE_BRANCH</code>, <code>devel</code> and <code>feature/bullseye</code> (if it exists) branches
+have the expected content in <code>config/APT_overlays.d/</code>: e.g. it must
+not list any overlay APT suite that has been merged already.</p></li>
+<li><p>Push the modified branches to Git:</p>
+
+<pre><code> git push origin                          \
+    &quot;${RELEASE_BRANCH:?}:${RELEASE_BRANCH:?}&quot; \
+    $(if git describe feature/bullseye &gt;/dev/null 2&gt;&amp;1; then echo feature/bullseye:feature/bullseye ; fi) \
+    devel:devel
+</code></pre></li>
+</ol>
+
+
+<h1><a name="index13h1"></a>Update more included files</h1>
+
+<h2><a name="index13h2"></a>Changelog</h2>
+
+<p>Update the Changelog entry for the release you&#39;re preparing:</p>
+
+<pre><code>git checkout &quot;${RELEASE_BRANCH:?}&quot; &amp;&amp; \
+./bin/update-changelog --version &quot;${MILESTONE:?}&quot;
+</code></pre>
+
+<p>If you&#39;re preparing a release candidate, set the version for the new entry in
+<code>debian/changelog</code> to <code>$VERSION</code>: the above code has incorrectly set it to
+<code>$MILESTONE</code>.</p>
+
+<p>Then, gather other useful information from the diff between the previous
+version&#39;s <code>.packages</code> file and the one from the to-be-released images:</p>
+
+<ol>
+<li><p>Generate the diff.</p>
+
+<p>If you&#39;re preparing a final release:</p>
+
+<pre><code>NEW_BRANCH=&quot;$RELEASE_BRANCH&quot;
+</code></pre>
+
+<p>Else, if you&#39;re preparing a release candidate:</p>
+
+<pre><code>NEW_BRANCH=devel
+</code></pre>
+
+<p>Then, in any case:</p>
+
+<pre><code> diff --color=never -u \
+    &quot;wiki/src/torrents/files/tails-amd64-${PREVIOUS_STABLE_VERSION}.packages&quot; \
+    &lt;(curl --silent &quot;https://nightly.tails.boum.org/build_Tails_ISO_${NEW_BRANCH}/lastSuccessful/archive/latest.packages&quot;) \
+ | wdiff --diff-input  --terminal
+</code></pre></li>
+<li><p>In the diff, look for:</p></li>
+<li><p>new upstream releases of applications mentioned in <a href="../doc/about/features.en.html">features</a></p></li>
+<li>new upstream releases of other important components such as the
+Linux kernel</li>
+</ol>
+
+
+<p>  And mention those changes in <code>debian/changelog</code></p>
+
+<p>Finally, sanity check the version, commit, and push:</p>
+
+<pre><code>if [ &quot;$(dpkg-parsechangelog -SVersion)&quot; = &quot;${VERSION:?}&quot; ]; then
+    git commit debian/changelog -m &quot;Update changelog for ${VERSION:?}.&quot;
+else
+    echo &#39;Error: version mismatch: please compare ${VERSION:?} with the last entry in debian/changelog&#39;
+fi &amp;&amp; \
+git push origin &quot;${RELEASE_BRANCH:?}&quot;
+</code></pre>
+
+<p>Notify <code>@technical-writers</code> on the GitLab issue about the release notes
+that the changelog is ready.</p>
+
+<h2><a name="index14h2"></a>Included website</h2>
+
+<pre><code>./bin/prepare-included-website-for-release
+</code></pre>
+
+<p>Expect this to take 10-15 minutes.
+While the website is building, if this is not a good time for taking a break,
+you can follow the &quot;Enable OpenPGP signing&quot; instructions.</p>
+
+<h1><a name="index14h1"></a>Enable OpenPGP signing</h1>
+
+<h3><a name="index3h3"></a>If you have an OpenPGP smart card</h3>
+
+<p>If you have an OpenPGP smart card with a Tails signing subkey,
+go fetch it.</p>
+
+<p>Only plug it when <code>gpg</code> asks you to.</p>
+
+<h3><a name="index4h3"></a>Otherwise: importing the signing key</h3>
+
+<p>This is only relevant when the master key has been reassembled,
+e.g. for signing a Tails emergency release where none of the usual
+release managers are available.</p>
+
+<p>You should never import the Tails signing key into your own keyring,
+and a good practice is to import it to a tmpfs to limit the risks that
+the private key material is written to disk:</p>
+
+<pre><code>export GNUPGHOME=$(mktemp -d)
+sudo mount -t ramfs ramfs &quot;${GNUPGHOME:?}&quot;
+sudo chown $(id -u):$(id -g) &quot;${GNUPGHOME:?}&quot;
+sudo chmod 0700 &quot;${GNUPGHOME:?}&quot;
+gpg --homedir ${HOME:?}/.gnupg --export ${TAILS_SIGNATURE_KEY:?} | gpg --import
+gpg --import path/to/private-key
+</code></pre>
+
+<p>Let&#39;s also ensure that strong digest algorithms are used for our
+signatures, like the defaults we set in Tails:</p>
+
+<pre><code>cp config/chroot_local-includes/etc/skel/.gnupg/gpg.conf &quot;${GNUPGHOME:?}&quot;
+</code></pre>
+
+<h1><a name="index15h1"></a>Build the almost-final images</h1>
+
+<ol>
+<li><p><a href="./build.html">Build ISO and USB images</a> from the release branch,
+with <code>$TAILS_BUILD_OPTIONS</code> set like this:</p>
+
+<ul>
+<li>Set <code>defaultcomp</code>, so we can more accurately optimize our
+SquashFS file ordering.</li>
+<li>Do <em>not</em> set <code>keeprunning</code>, nor <code>ignorechanges</code>, nor <code>rescue</code>.</li>
+</ul>
+</li>
+<li><p>Keep the resulting build artifacts until the end of this release process.</p></li>
+<li><p>Record where the manifest of needed packages is stored:</p>
+
+<ol>
+<li><p>To update the <code>~/.config/tails/release_management/current.yml</code> template
+with newly required variables, run:</p>
+
+<p>  ./bin/rm-config generate-boilerplate --stage built-almost-final</p></li>
+<li><p>Edit <code>~/.config/tails/release_management/current.yml</code> and replace
+<code>FIXME</code>:s:</p>
+
+<p>  &quot;${EDITOR:?}&quot; ~/.config/tails/release_management/current.yml</p></li>
+<li><p>Generate the resulting environment variables and export them
+into your environment:</p>
+
+<p>  . $(./bin/rm-config generate-environment --stage built-almost-final)</p></li>
+</ol>
+</li>
+</ol>
+
+
+<h1><a name="index16h1"></a>Tag the release in Git</h1>
+
+<pre><code>git tag -u &quot;${TAILS_SIGNATURE_KEY:?}&quot; \
+  -m &quot;tagging version ${VERSION:?}&quot; &quot;${TAG:?}&quot; &amp;&amp; \
+git push origin &quot;${TAG:?}&quot; &quot;${RELEASE_BRANCH:?}&quot;
+</code></pre>
+
+<p>Known limitations:</p>
+
+<ul>
+<li><p>Pushing the tag is needed so that the APT repository is updated, and the Tails
+APT configuration works at build and boot time. It might be premature, as
+testing might reveal critical issues, but this is a signed tag, so it can be
+overridden later.</p></li>
+<li><p>From this push of a tag, the release branch will fail to build because the
+last changelog entry is unreleased but corresponds to an existing tag.
+Don&#39;t worry about it, this will be fixed shortly.</p></li>
+</ul>
+
+
+<h1><a name="index17h1"></a>Prepare the versioned APT suites</h1>
+
+<h2><a name="index15h2"></a>Versioned APT suite in our custom APT repository</h2>
+
+<p>Within a few minutes after pushing the new release&#39;s Git tag, a cronjob
+creates a new APT suite in our custom APT repository. This new APT suite is
+called <code>$TAG</code> and is initially empty.</p>
+
+<p>Wait for this APT suite to be created and initialize it with the packages
+currently found in the APT suite corresponding to the branch used to prepare
+the release:</p>
+
+<pre><code>  while ! ssh reprepro@incoming.deb.tails.boum.org reprepro list &quot;${TAG:?}&quot; &gt;/dev/null 2&gt;&amp;1; do
+     sleep 5
+  done &amp;&amp; \
+  ssh reprepro@incoming.deb.tails.boum.org \
+     tails-merge-suite &quot;${RELEASE_BRANCH:?}&quot; &quot;${TAG:?}&quot;
+</code></pre>
+
+<h2><a name="index16h2"></a>Tagged snapshots of upstream APT repositories</h2>
+
+<p>Create tagged snapshots of upstream APT repositories:</p>
+
+<pre><code>  ./bin/tag-apt-snapshots &quot;${ALMOST_FINAL_BUILD_MANIFEST:?}&quot; &quot;${TAG:?}&quot;
+</code></pre>
+
+<p>Note:</p>
+
+<ul>
+<li>This command takes a while (about a dozen minutes).
+While it&#39;s running, if you don&#39;t feel the need to take a break,
+you can proceed with the &quot;SquashFS file order&quot; section below.</li>
+<li>It&#39;s expected that the packages that were pulled from our
+<a href="./APT_repository/custom.html">custom APT repository</a> are
+listed under &quot;some packages were not found anywhere&quot; (because we
+are currently not using time-based snapshots for our custom APT
+repository). However, <em>no other package should be on that list</em>.
+Now, we have a &quot;safety&quot; net, in case you don&#39;t notice such a problem: if
+other packages are missing, the next build (that will use the
+newly created partial, tagged APT repository) will fail.</li>
+</ul>
+
+
+<h1><a name="index18h1"></a>Build images</h1>
+
+<h2><a name="index17h2"></a>Sanity check</h2>
+
+<p>Verify that the Tor Browser release used in Tails still is the most
+recent. Also look if there&#39;s a new <code>-buildX</code> tag (e.g.
+<code>tor-browser-60.3.0esr-8.0-1-build1</code>) for the Firefox version the Tor
+Browser we want to ship is based on in these Git repositories:</p>
+
+<ul>
+<li><a href="https://gitweb.torproject.org/builders/tor-browser-build.git">https://gitweb.torproject.org/builders/tor-browser-build.git</a>
+(<code>maint-X.Y-desktop</code> branch)</li>
+<li><a href="https://gitweb.torproject.org/tor-browser.git">https://gitweb.torproject.org/tor-browser.git</a></li>
+</ul>
+
+
+<p>A new tag may indicate that a new Tor Browser release or rebuild is imminent.</p>
+
+<p>Better catch this before people spend time doing manual tests.</p>
+
+<h2><a name="index18h2"></a>SquashFS file order</h2>
+
+<p>Feel free to skip this section when preparing an emergency release.</p>
+
+<ol>
+<li>Install the almost-final USB image to a USB stick.</li>
+<li>Boot this USB stick a first time to trigger re-partitioning.</li>
+<li>Shut down this Tails.</li>
+<li>If possible, set up a wired connection to avoid having to deal
+with wireless settings.</li>
+<li>Boot this USB stick <strong>on bare metal</strong> again.</li>
+<li>Add <code>profile</code> to the kernel command-line.</li>
+<li>Login with the default settings in the Welcome Screen (e.g. do not configure
+an <em>Administration Password</em>).</li>
+<li>Unless you&#39;ve set up a wired connection, connect to Wi-Fi.</li>
+<li>Automatically connect to Tor with <em>Tor Connection</em>.</li>
+<li>Wait for <em>Tor Connection</em> to report success.</li>
+<li>Start <em>Tor Browser</em>.</li>
+<li>A few minutes later, once the <code>boot-profile</code> process has been
+killed, retrieve the new sort file from <code>/var/log/boot-profile</code>.</li>
+<li>Backup the old sort file: <code>cp config/binary_rootfs/squashfs.sort{,.old}</code></li>
+<li>Copy the new sort file to <code>config/binary_rootfs/squashfs.sort</code>.</li>
+<li><p>To remove:</p>
+
+<ul>
+<li>runtime-generated files that don&#39;t exist in the rootfs,
+in order to avoid confusing noise in the build output</li>
+<li>the bits about <code>kill-boot-profile</code> at the end: they&#39;re
+only useful when profiling the boot</li>
+<li>some hardware-dependent files</li>
+</ul>
+
+
+<p>Run this command:</p>
+
+<pre><code>    ./bin/clean-squashfs-sort-file config/binary_rootfs/squashfs.sort
+</code></pre></li>
+<li><p>Inspect the Git diff (including diff stat), apply common sense:</p>
+
+<pre><code> diff -NaurB \
+     &lt;( cut -d&#39; &#39; -f1 config/binary_rootfs/squashfs.sort.old | sort ) \
+     &lt;( cut -d&#39; &#39; -f1 config/binary_rootfs/squashfs.sort     | sort ) \
+     | less
+</code></pre></li>
+<li><p><code>git commit -m &#39;Updating SquashFS sort file&#39; config/binary_rootfs/squashfs.sort</code></p></li>
+<li>Clean up: <code>rm -f config/binary_rootfs/squashfs.sort.old</code></li>
+</ol>
+
+
+<h2><a name="index19h2"></a>Build the final images</h2>
+
+<p>Then all included files should be up-to-date and the versioned APT
+suite should be ready, so it is time to:</p>
+
+<ol>
+<li><p>Mark the version as &quot;released&quot; in the changelog:</p>
+
+<pre><code> dch --release --no-force-save-on-release --maintmaint &amp;&amp; \
+ git commit -m &quot;Mark Tails ${VERSION:?} as released.&quot; debian/changelog
+</code></pre></li>
+<li><p>Export <code>SOURCE_DATE_EPOCH</code>:</p>
+
+<pre><code> export SOURCE_DATE_EPOCH=$(date --utc --date=&quot;$(dpkg-parsechangelog --show-field=Date)&quot; &#39;+%s&#39;)
+</code></pre></li>
+<li><p>Take note of the value of <code>$SOURCE_DATE_EPOCH</code>: you&#39;ll need it to &quot;Build the
+Incremental Upgrade Kits on Jenkins&quot; until <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18318">#18318</a> is solved.</p></li>
+<li><p>tag the release <em>again</em>, with all included files in:</p>
+
+<pre><code> git tag -f -u &quot;${TAILS_SIGNATURE_KEY:?}&quot; \
+         -m &quot;tagging version ${VERSION:?}&quot; &quot;${TAG:?}&quot; &amp;&amp; \
+ git push --force origin &quot;${TAG:?}&quot; &amp;&amp; \
+ git push origin &quot;${RELEASE_BRANCH:?}&quot;
+</code></pre></li>
+<li><p>build the final images!
+Do <em>not</em> set <code>keeprunning</code> nor <code>rescue</code> in <code>$TAILS_BUILD_OPTIONS</code>.
+Our build system will apply the correct compression settings automatically
+so don&#39;t bother setting it yourself.</p></li>
+<li><p>Make sure the Jenkins build starts as soon as possible. If needed, remove
+other builds from the <em>Build Queue</em> or cancel other running builds.</p>
+
+<p>This could be a good time for break, because it takes quite a long time; but ensure Jenkins build actually
+started, and it is about the right tag: you can recognize this is the case, when you see Jenkins starts
+building the website.</p></li>
+<li><p>Compare the new build manifest with the one from the previous,
+almost-final build:</p>
+
+<pre><code> diff -Naur \
+    &quot;${ALMOST_FINAL_BUILD_MANIFEST:?}&quot; \
+    &quot;${ARTIFACTS:?}/tails-amd64-${VERSION:?}.build-manifest&quot;
+</code></pre>
+
+<p>They should be identical, except that the <code>debian-security</code> serial might be higher.</p></li>
+</ol>
+
+
+<p><a id="reproducibility-sanity-check-iso"></a></p>
+
+<h2><a name="index20h2"></a>Verify that Jenkins reproduced your images</h2>
+
+<p>To verify that Jenkins reproduced your images:</p>
+
+<ol>
+<li><p>Visit the URL printed by this command:</p>
+
+<pre><code>echo &quot;https://jenkins.tails.boum.org/job/build_Tails_ISO_${RELEASE_BRANCH}/&quot;
+</code></pre></li>
+<li><p>Find the relevant build (probably the last one)
+and compare the SHA512 hashes of the ISO and USB images built by Jenkins
+(in the <code>tails-build-artifacts.shasum</code> build artifact) with the ones
+of the images you built.</p></li>
+<li><p>Then:</p>
+
+<ul>
+<li><p>If the ISO and USB images hashes match: yay, we&#39;re good to go!
+The <code>.build-manifest</code> may differ &mdash; that&#39;s OK.
+Then:</p>
+
+<ol>
+<li><p>To update the <code>~/.config/tails/release_management/current.yml</code> template
+with newly required variables, run:</p>
+
+<pre><code>./bin/rm-config generate-boilerplate --stage reproduced-images
+</code></pre></li>
+<li><p>Edit <code>~/.config/tails/release_management/current.yml</code>
+and set the <code>matching_jenkins_images_build_id</code> value
+to the ID of this job (an integer):</p>
+
+<pre><code>&quot;${EDITOR:?}&quot; ~/.config/tails/release_management/current.yml
+</code></pre></li>
+<li><p>Generate the resulting environment variables and export them
+into your environment:</p>
+
+<pre><code>. $(./bin/rm-config generate-environment --stage reproduced-images)
+</code></pre></li>
+</ol>
+</li>
+<li><p>Else, if there is a hash mismatch for one of the images: ouch!</p>
+
+<p>Now we are in a
+tricky situation: on the one hand it seems like a poor idea to
+block users from benefiting from this release&#39;s security updates,
+but on the other hand the failure might imply that something
+nefarious is going on. At this stage, no matter what, immediately
+fetch Jenkins&#39; image, compare it with your, and try to rule out
+build system compromise:</p>
+
+<pre><code> sudo diffoscope \
+     --text diffoscope.txt \
+     --html diffoscope.html \
+     --max-report-size 262144000 \
+     --max-diff-block-lines 10000 \
+     --max-diff-input-lines 10000000 \
+         path/to/your/tails-amd64-${VERSION:?}.iso \
+         path/to/jenkins/tails-amd64-${VERSION:?}.iso
+</code></pre>
+
+<p>Do the same for the USB image as well.</p>
+
+<p>Then carefully investigate the <code>diffoscope</code> report:</p>
+
+<ul>
+<li><p>If you cannot rule out that the difference is harmful: let&#39;s take
+a step back; we might be compromised, so we are in no position to
+release. Halt the release, involve the rest of <a href="mailto:tails@boum.org">tails@boum.org</a>, and then
+try to re-establish trust in all build machines and infra
+involved, etc. Have fun!</p></li>
+<li><p>Otherwise, if the change is definitely harmless:</p>
+
+<ul>
+<li><p>If the source of non-determinism is identified quickly and
+is easy and fast to fix, <em>and</em> the QA of the current images
+has not gone very far (so at least that time is not wasted),
+then you should consider abandoning the current version, and
+immediately start preparing an emergency release with:</p>
+
+<ul>
+<li>the reproducibility fix,</li>
+<li>a new changelog entry,</li>
+<li>adjustments to the release notes so they are re-purposed for
+this emergency release (the abandoned release gets none, since
+it effectively never will be released publicly).</li>
+</ul>
+</li>
+<li><p>Otherwise, if the fix looks time-consuming or difficult,
+let&#39;s release anyway. But let&#39;s add a known issue about
+&quot;This Tails release does not build reproducibility&quot; to the
+release notes, linking to the issue where
+the nature of the reproducibility failure is clearly
+described.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+
+
+<h2><a name="index21h2"></a>Initialize the website release branch</h2>
+
+<p>From now on, we don&#39;t want to push new commits on <code>$RELEASE_BRANCH</code>
+until the new release is out. Otherwise, this would break its build
+and the build of every branch based on it, which would effectively
+block other development work. So the final steps towards publishing
+the release will be done in a new, dedicated branch.</p>
+
+<p>If preparing anything but a final release (e.g. an alpha, beta
+or RC):</p>
+
+<pre><code>    git checkout -b &quot;${WEBSITE_RELEASE_BRANCH:?}&quot; origin/master &amp;&amp; \
+    git push -u origin &quot;${WEBSITE_RELEASE_BRANCH:?}&quot;
+</code></pre>
+
+<p>Else, if preparing a final release:</p>
+
+<pre><code>    git checkout -b &quot;${WEBSITE_RELEASE_BRANCH:?}&quot; &quot;${TAG:?}&quot; &amp;&amp; \
+    git push -u origin &quot;${WEBSITE_RELEASE_BRANCH:?}&quot;
+</code></pre>
+
+<h1><a name="index19h1"></a>Generate the OpenPGP signatures and Torrents</h1>
+
+<p>Run the following command
+to create a directory with a suitable name, go there, move the built
+images to this brand new directory, generate detached OpenPGP
+signatures for the images to be published (in the same directory as the
+images and with a <code>.sig</code> extension), then go up to the parent
+directory, create a <code>.torrent</code> file and check the generated <code>.torrent</code>
+files metadata:</p>
+
+<pre><code>./bin/generate-images-signatures-and-torrents
+</code></pre>
+
+<h1><a name="index20h1"></a>Get the internal manual testing started</h1>
+
+<p>Email <a href="mailto:tails@boum.org">tails@boum.org</a> and <a href="mailto:tails-manual-testers@boum.org">tails-manual-testers@boum.org</a> that tests
+may start:</p>
+
+<ul>
+<li><p>reply to the email you&#39;ve sent them earlier</p></li>
+<li><p>encrypt and sign your email</p></li>
+<li><p>point them to the images that Jenkins has built:</p>
+
+<pre><code> echo &quot;https://nightly.tails.boum.org/build_Tails_ISO_${RELEASE_BRANCH:?}/builds/${MATCHING_JENKINS_IMAGES_BUILD_ID:?}/archive/build-artifacts/&quot;
+</code></pre>
+
+<ul>
+<li><p>if any of the expectations set in your initial email are outdated,
+update them now</p></li>
+<li><p>make it clear that the Torrents don&#39;t work yet</p></li>
+<li><p>attach the Torrents</p></li>
+<li><p>attach the <code>.packages</code> file</p></li>
+<li><p>attach the <code>.iso.sig</code> and <code>.img.sig</code> files</p></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="prepare-iuk"></a></p>
+
+<h1><a name="index21h1"></a>Prepare incremental upgrades</h1>
+
+<p>Reference: <a href="./design/incremental_upgrades.html">design documentation</a></p>
+
+<h2><a name="index22h2"></a>Sanity checks</h2>
+
+<p>Check that you have the correct version of <code>squashfs-tools</code> installed:</p>
+
+<pre><code>[ &quot;$(dpkg-query --showformat &#39;${Version}\n&#39; --show squashfs-tools)&quot; \
+  = &#39;1:4.4-1+0.tails1&#39; \
+] || echo &#39;ERROR! Your squashfs-tools is not the required version, so any generated IUKs will *not* be reproducible!&#39;
+</code></pre>
+
+<p>Check that you have the password for <a href="https://iso-history.tails.boum.org">https://iso-history.tails.boum.org</a> (it
+will be used by <code>wrap_tails_create_iuks</code> below, in order to download any ISO
+that is not present locally yet):</p>
+
+<pre><code>if ! grep -F --line-regexp -qs &#39;machine iso-history.tails.boum.org&#39; ~/.netrc; then
+    echo &quot;ERROR! Add a section for iso-history.tails.boum.org&#39; to your ~/.netrc&quot;
+    echo &quot;The corresponding login and password are in the RMs&#39; keyringer.&quot;
+fi
+</code></pre>
+
+<p>Add to <code>$IGNORED_TAGS</code>, in <code>./bin/iuk-source-versions</code>, any recent alpha or beta
+release that gets no security support, and as such, shall not get automatic
+upgrades. Here is a useful heuristics: if we did not do our manual test suite on
+a release, it does not get security support.</p>
+
+<h2><a name="index23h2"></a>Build the Incremental Upgrade Kits locally</h2>
+
+<p>Verify there&#39;s enough free disk space in <code>$IUKS_DIR</code>:</p>
+
+<pre><code>MIN_DISK_SPACE=30000
+FREE_DISK_SPACE=$(/bin/df --block-size=M --output=avail &quot;${IUKS_DIR:?}&quot; \
+   | tail -n1 | sed --regexp-extended &#39;s,M$,,&#39;)
+if [ &quot;$FREE_DISK_SPACE&quot; -lt &quot;$MIN_DISK_SPACE&quot; ]; then
+   echo &quot;ERROR! Not enough free space in ${IUKS_DIR:?}&quot;
+fi
+</code></pre>
+
+<p>To build the IUKS, run this command:</p>
+
+<pre><code>(
+   set -eu
+   WORK_DIR=$(mktemp -d)
+   TAILS_REMOTE=&quot;$(git -C &quot;${RELEASE_CHECKOUT?:}&quot; remote get-url origin)&quot;
+   PUPPET_TAILS_REMOTE=$(echo -n &quot;${TAILS_REMOTE?:}&quot; | perl -p -E &#39;s,:tails/tails(?:[.]git)?\z,:tails/puppet-tails,&#39;)
+   cd &quot;${WORK_DIR?:}&quot;
+   git clone &quot;$PUPPET_TAILS_REMOTE&quot;
+   time                                                                   \
+   sudo                                                                   \
+   ./puppet-tails/files/jenkins/slaves/isobuilders/wrap_tails_create_iuks \
+       --tails-git-remote &quot;file://${RELEASE_CHECKOUT?:}/.git&quot;             \
+       --tails-git-commit &quot;${TAG?:}&quot;                                      \
+       --source-date-epoch &quot;${SOURCE_DATE_EPOCH?:}&quot;                       \
+       --local-isos-dir &quot;${ISOS?:}&quot;                                       \
+       --tmp-dir &quot;${TMPDIR:-/tmp}&quot;                                        \
+       --output-dir &quot;${IUKS_DIR?:}&quot;                                       \
+       --source-versions &quot;${IUK_SOURCE_VERSIONS?:}&quot;                       \
+       --new-version &quot;${VERSION?:}&quot;                                       \
+       --verbose                                                          \
+       --jobs &quot;$(grep &#39;^core id&#39; /proc/cpuinfo | sort -u | wc -l)&quot;
+) &amp;&amp; \
+ cd &quot;${IUKS_DIR?:}&quot; &amp;&amp; \
+ sha256sum Tails_amd64_*_to_${VERSION?:}.iuk &gt; &quot;${IUKS_HASHES?:}&quot;
+</code></pre>
+
+<p>Take note of the <code>time</code> output above and add it to the table in
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17750">#17750</a>.</p>
+
+<p>This command takes a long time. In parallel, while it is running,
+you can follow the next steps:</p>
+
+<ul>
+<li>ISO history</li>
+<li>Build the Incremental Upgrade Kits on Jenkins</li>
+</ul>
+
+
+<h2><a name="index24h2"></a>ISO history</h2>
+
+<p>In this section, you will push the released ISO and USB images and their artifacts (<code>.buildlog</code>,
+<code>.build-manifest</code>, and <code>.packages</code> files) to our Tails ISO history git-annex
+repo, so that:</p>
+
+<ul>
+<li>The Jenkins <code>build_IUKs</code> job can fetch them.</li>
+<li>Our isotesters can fetch them from there for their testing.</li>
+</ul>
+
+
+<p>Make sure that Jenkins has finished building the images so you have set
+<code>MATCHING_JENKINS_IMAGES_BUILD_ID</code> (see above), then run:</p>
+
+<pre><code>cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+./bin/add-release-to-iso-history \
+    --version &quot;${VERSION:?}&quot; \
+    --isos &quot;${ISOS:?}&quot; \
+    --release-branch &quot;${RELEASE_BRANCH:?}&quot; \
+    --matching-jenkins-images-build-id &quot;${MATCHING_JENKINS_IMAGES_BUILD_ID:?}&quot;
+</code></pre>
+
+<p>Then, wait (a few minutes, <code>*/15</code> crontab) until the images appear
+on <a href="https://iso-history.tails.boum.org/?C=M&amp;O=D">https://iso-history.tails.boum.org/?C=M&amp;O=D</a>.</p>
+
+<p><a id="build-iuks-on-jenkins"></a></p>
+
+<h2><a name="index25h2"></a>Build the Incremental Upgrade Kits on Jenkins</h2>
+
+<ol>
+<li><p>Make sure the push to ISO history (started in the previous section)
+has finished, and that images have appeared on the web server:
+<a href="https://iso-history.tails.boum.org/">https://iso-history.tails.boum.org/</a></p></li>
+<li><p>On <a href="https://jenkins.tails.boum.org/job/build_IUKs/configure">https://jenkins.tails.boum.org/job/build_IUKs/configure</a>, adjust
+the <code>SOURCE_VERSION</code> axis to list all versions in <code>$IUK_SOURCE_VERSIONS</code>,
+and save the updated configuration.</p></li>
+<li><p>On <a href="https://jenkins.tails.boum.org/job/build_IUKs/configure">https://jenkins.tails.boum.org/job/build_IUKs/configure</a>,
+in the <em>Configuration Matrix</em> section,
+set the value of <code>label_exp</code> to an expression that matches the isobuilders
+that use a CPU of the same brand as yours, and only those:</p>
+
+<ul>
+<li>Intel: <code>isobuilder1.lizard || isobuilder2.lizard || isobuilder3.lizard || isobuilder4.lizard</code></li>
+<li>AMD: <code>isobuilder5.iguana</code></li>
+</ul>
+
+
+<p>Then save the updated configuration.</p>
+
+<p>Rationale: workaround <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18536">#18536</a></p></li>
+<li><p>On <a href="https://jenkins.tails.boum.org/job/build_IUKs/build?delay=0sec">https://jenkins.tails.boum.org/job/build_IUKs/build?delay=0sec</a>,
+fill the form with these values:</p>
+
+<ul>
+<li><code>TAILS_GIT_COMMIT</code>: the value of <code>$TAG</code> in your release environment</li>
+<li><code>SOURCE_DATE_EPOCH</code>: the value of <code>$SOURCE_DATE_EPOCH</code> in your
+release environment, i.e. the same value you are using to
+&quot;Build the Incremental Upgrade Kits locally&quot;</li>
+<li><code>NEW_VERSION</code>: the value of <code>$VERSION</code> in your release environment</li>
+<li><code>EXTRA_ARGS</code>: leave it blank</li>
+</ul>
+</li>
+<li><p>Click the <em>Build</em> button</p></li>
+<li><p>After a few seconds, a new build appears on top of the <em>Build
+History</em> sidebar. Click on the progress bar of this new build.</p></li>
+<li><p>Record the ID of the Jenkins <code>build_IUKs</code> build:</p>
+
+<ol>
+<li><p>To update the <code>~/.config/tails/release_management/current.yml</code> template
+with newly required variables, run:</p>
+
+<pre><code>./bin/rm-config generate-boilerplate --stage built-iuks
+</code></pre></li>
+<li><p>Edit <code>~/.config/tails/release_management/current.yml</code>
+and set the <code>candidate_jenkins_iuks_build_id</code> value
+to the ID of that <code>build_IUKs</code> build (an integer):</p>
+
+<pre><code>&quot;${EDITOR:?}&quot; ~/.config/tails/release_management/current.yml
+</code></pre></li>
+<li><p>Generate the resulting environment variables and export them
+into your environment:</p>
+
+<pre><code>. $(./bin/rm-config generate-environment --stage built-iuks)
+</code></pre></li>
+</ol>
+</li>
+<li><p>Wait until the <code>build_IUKs</code> build completes successfully.
+It should take about 10-15 minutes for each member of
+the <code>$IUK_SOURCE_VERSIONS</code> list, distributed across <code>isobuilderN</code> workers.</p></li>
+<li><p>Add the time it took for <code>build_IUKs</code> to the table of <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17750">#17750</a>.</p></li>
+</ol>
+
+
+<p><a id="reproducibility-sanity-check-iuk"></a></p>
+
+<h2><a name="index26h2"></a>Verify that Jenkins reproduced your IUKs</h2>
+
+<p>Run this command to verify that Jenkins reproduced your IUKs:</p>
+
+<pre><code>&quot;${RELEASE_CHECKOUT:?}&quot;/bin/copy-iuks-to-rsync-server-and-verify \
+   --hashes-file &quot;${IUKS_HASHES:?}&quot; \
+   --work-dir /srv/tmp \
+   --jenkins-build-id &quot;${CANDIDATE_JENKINS_IUKS_BUILD_ID:?}&quot;
+</code></pre>
+
+<p>The download step takes a few minutes.</p>
+
+<p>If this verification succeeds, move on to the next section.</p>
+
+<p>Else, if this verification fails, then:</p>
+
+<ol>
+<li><p>Visit this page: <code>https://jenkins.tails.boum.org/job/build_IUKs/lastBuild/parameters/</code></p>
+
+<p>It tells you which parameters you&#39;ve passed to the upstream Jenkins
+job, which spawned the many workers. Make sure to use the build
+history browser to find the right <code>build_IUKs</code> job in case
+there were several attempts; the URL above assumes the last build
+is what you&#39;re interested in (see <code>lastBuild</code> part).</p></li>
+<li><p>Double-check that you&#39;ve passed the correct parameters.</p>
+
+<p>If you notice you made a mistake, <a href="./release_process.html#build-iuks-on-jenkins">build the IUKs on Jenkins
+again</a>, and do the
+verification again.</p>
+
+<p>Else, if the parameters where correct, then follow the next steps.</p></li>
+<li><p>Leave the IUKs built by Jenkins where they already are
+(in <code>rsync.lizard:/srv/tmp</code>): at least in some
+cases, this will speed up uploading your own IUKs later by a 500+ factor,
+thanks to <code>rsync --partial --inplace</code>.</p></li>
+<li><p>File an issue about this problem.</p>
+
+<p>Specify:</p>
+
+<ul>
+<li>Which set of parameters you&#39;ve passed to the <em>build_IUKs</em>
+job, so that the person who&#39;ll investigate the problem
+can reproduce it.</li>
+<li>The ID of the build that failed to reproduce your
+locally-built IUKs.</li>
+</ul>
+
+
+<p>Set:</p>
+
+<ul>
+<li>labels: &quot;To Do&quot;, &quot;Core Work:Foundations Team&quot;, &quot;Continuous Integration&quot;, &quot;C:Upgrader&quot;,
+&quot;C:Release management&quot;</li>
+<li>milestone: the next release</li>
+</ul>
+</li>
+<li><p>Later on, after you&#39;re done with OpenPGP signing,
+you will upload the IUKs you&#39;ve built locally.</p></li>
+</ol>
+
+
+<p><a id="prepare-upgrade-description-files"></a></p>
+
+<h2><a name="index27h2"></a>Prepare upgrade-description files</h2>
+
+<ol>
+<li><p>Prepare upgrade-description files (see the <a href="./design/incremental_upgrades.html#upgrade-description-files">upgrade-description
+files
+specification</a>
+for details).</p>
+
+<div class="caution">
+In <emph>most</emph> cases the example command below is exactly the
+one you should run. But in order to tell whether you&#39;re in one of
+the exceptional cases when you have to adjust that command, it&#39;s
+important that you understand what follows.
+</div>
+
+
+<p>At this step, we use the
+<code>tails-iuk-generate-upgrade-description-files</code> tool in order to:</p>
+
+<ol>
+<li><p>Create a new upgrade-description for the version being released
+and for the next one, that expresses that <em>no</em> upgrade is
+available for these ones yet.</p>
+
+<p>This is what the <code>--version</code> and <code>--next_version</code> arguments
+in the example command below do. You do not need to modify them.</p></li>
+<li><p>For every recent previous release that&#39;s <em>not</em> listed in
+<code>$IUK_SOURCE_VERSIONS</code> (for example those based on an older Debian
+release): tell the users of that old version they need to
+manually upgrade to the version being released.</p>
+
+<p>To do so, pass this previous version to <code>--previous_version</code>.
+You need to do this manually as the example command below won&#39;t
+do it automatically.</p></li>
+</ol>
+
+
+<p>Run this command, after adjusting it if needed as explained above:</p>
+
+<pre><code> ${RELEASE_CHECKOUT:?}/config/chroot_local-includes/usr/src/iuk/bin/tails-iuk-generate-upgrade-description-files \
+     --version &quot;${VERSION:?}&quot; \
+     $( \
+         if [ &quot;${DIST:?}&quot; = stable ]; then
+             echo \
+                 --next_version &quot;${NEXT_PLANNED_MAJOR_VERSION:?}&quot; \
+                 --next_version &quot;${NEXT_PLANNED_MAJOR_VERSION:?}~rc1&quot; \
+                 --next_version &quot;${NEXT_PLANNED_BUGFIX_VERSION:?}&quot; \
+                 --next_version &quot;${NEXT_POTENTIAL_EMERGENCY_VERSION:?}&quot;
+         else
+             echo \
+                 --next_version &quot;${NEXT_PLANNED_MAJOR_VERSION:?}&quot; \
+                 --next_version &quot;${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}&quot;
+         fi
+     ) \
+     $( \
+         for version in $(echo ${IUK_SOURCE_VERSIONS:?}); do
+            echo &quot;--previous_version ${version:?}&quot;
+         done \
+     ) \
+     --iso &quot;${ISO_PATH:?}&quot; \
+     --iuks &quot;${IUKS_DIR:?}&quot; \
+     --release_checkout &quot;${RELEASE_CHECKOUT:?}&quot; \
+     --major_release &quot;${MAJOR_RELEASE:?}&quot; \
+     --channel &quot;${DIST:?}&quot;
+</code></pre></li>
+<li><p>Create an armoured detached signature for each created or modified
+upgrade-description file.</p>
+
+<pre><code> ./bin/sign-updated-udfs
+</code></pre></li>
+<li><p>Add and commit the upgrade-description files and their detached
+signatures to the Git branch used to prepare the release
+(<code>$WEBSITE_RELEASE_BRANCH</code>):</p>
+
+<pre><code> cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+ git add wiki/src/upgrade &amp;&amp; \
+ git commit -m &quot;Update upgrade-description files.&quot; &amp;&amp; \
+ git push origin ${WEBSITE_RELEASE_BRANCH:?}
+</code></pre></li>
+<li><p>Copy the generated UDF for the previous stable release to the <em>test</em>
+channel in <code>$MASTER_CHECKOUT</code>, modify their content accordingly,
+sign them, commit and push:</p>
+
+<pre><code> ./bin/publish-test-udfs
+</code></pre></li>
+</ol>
+
+
+<h2><a name="index28h2"></a>Prepare the image description file for the download verification</h2>
+
+<p>If preparing a RC, skip this part.</p>
+
+<p>Update the image description file (IDF) used by the verification JavaScript:</p>
+
+<pre><code>cd &quot;${RELEASE_CHECKOUT?:}&quot; &amp;&amp; \
+./bin/idf-content \
+   --version &quot;${VERSION:?}&quot; \
+   --iso &quot;${ISO_PATH:?}&quot; \
+   --img &quot;${IMG_PATH:?}&quot; \
+   &gt; wiki/src/install/v2/Tails/amd64/stable/latest.json &amp;&amp; \
+git add wiki/src/install/v2/Tails/amd64/stable/latest.json &amp;&amp; \
+git commit -m &quot;Update IDF for download verification&quot; &amp;&amp; \
+git push origin &quot;${WEBSITE_RELEASE_BRANCH:?}&quot;
+</code></pre>
+
+<h1><a name="index22h1"></a>Done with OpenPGP signing</h1>
+
+<p>Unplug your OpenPGP smartcard and store it away, so you don&#39;t plug it
+back semi-mechanically later on.</p>
+
+<p><strong>Beware!</strong> If your have to plug your OpenPGP smart card or reassemble the
+key again after this point it invalidates <em>everything</em> done for
+the <a href="./release_process/test.html#reproducibility-final-check">reproduction of this release</a>
+so it has to be started from the beginning:</p>
+
+<ul>
+<li>the original text is restored on the pad, and</li>
+<li>some tester follows it from scratch, and</li>
+<li>the Trusted Reproducer follows awaits the new input from said tester
+and then starts from scratch.</li>
+</ul>
+
+
+<p>So please try to avoid this!</p>
+
+<h1><a name="index23h1"></a>Upload images</h1>
+
+<h2><a name="index29h2"></a>Sanity check</h2>
+
+<p>Verify once more that the Tor Browser we ship is still the most recent (see
+above).</p>
+
+<h2><a name="index30h2"></a>Delete obsolete IUKs</h2>
+
+<p>Skip this section if you&#39;re preparing a non-final release (beta, RC).</p>
+
+<p>Delete the IUKs that upgrade to any beta or RC corresponding to the version you
+are preparing:</p>
+
+<ul>
+<li><p>first check that it&#39;s not going to remove anything we want to keep:</p>
+
+<pre><code> ssh rsync.lizard /bin/sh -c \
+     \&quot;find /srv/rsync/tails/tails/alpha/iuk/v2  \
+            /srv/rsync/tails/tails/stable/iuk/v2 \
+            -type f \
+            -name &quot;*_to_${VERSION:?}~*.iuk&quot; \
+            -not -name &#39;*~test_*~test.iuk&#39; \
+            -not -name &#39;*~testoverlayfs_*~testoverlayfs.iuk&#39; \
+            -ls \
+     \&quot;
+</code></pre></li>
+<li><p>then actually delete the files:</p>
+
+<pre><code> ssh rsync.lizard /bin/sh -c \
+     \&quot;find /srv/rsync/tails/tails/alpha/iuk/v2  \
+            /srv/rsync/tails/tails/stable/iuk/v2 \
+            -type f \
+            -name &quot;*_to_${VERSION:?}~*.iuk&quot; \
+            -not -name &#39;*~test_*~test.iuk&#39; \
+            -not -name &#39;*~testoverlayfs_*~testoverlayfs.iuk&#39; \
+            -print -delete \
+     \&quot;
+</code></pre></li>
+</ul>
+
+
+<p>Rationale: avoid the need for mirrors to store 3 concurrent sets of IUKs
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17944">#17944</a>). It&#39;s OK to delete them now, because we&#39;re past the
+deadline we&#39;ve announced in the call for testing.</p>
+
+<p><a id="publish-iuk"></a></p>
+
+<h2><a name="index31h2"></a>Publish the ISO, IMG, and IUKs over HTTP</h2>
+
+<p><strong>If</strong> the IUKs reproducibility check you did earlier has failed,
+then upload the IUKs you&#39;ve built to our rsync server
+(we trust your machine more than our Jenkins):</p>
+
+<pre><code>for source_version in $(echo ${IUK_SOURCE_VERSIONS:?}); do
+   rsync --partial --inplace --progress -v \
+      &quot;${IUKS_DIR:?}/Tails_amd64_${source_version:?}_to_${VERSION:?}.iuk&quot; \
+      rsync.lizard:/srv/tmp/
+done
+</code></pre>
+
+<p>While waiting for the IUKs to be uploaded, you can proceed with the next steps.</p>
+
+<p>Upload the ISO and USB image signatures to our rsync server:</p>
+
+<pre><code>scp &quot;${ISO_PATH:?}.sig&quot; &quot;${IMG_PATH:?}.sig&quot; rsync.lizard:
+</code></pre>
+
+<p>Copy the ISO and USB images to our rsync server, verify their signature,
+move them in place with proper ownership and permissions:</p>
+
+<pre><code>cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+./bin/copy-images-to-rsync-server-and-verify \
+    --version &quot;${VERSION:?}&quot; \
+    --dist &quot;${DIST:?}&quot; \
+    --release-branch &quot;${RELEASE_BRANCH:?}&quot; \
+    --matching-jenkins-images-build-id &quot;${MATCHING_JENKINS_IMAGES_BUILD_ID:?}&quot;
+</code></pre>
+
+<p>Update the time in <code>project/trace</code> file on our rsync server
+and on the live website (even for a release candidate):</p>
+
+<pre><code>./bin/update-trace-time \
+   &quot;Updating trace file after uploading the ISO and USB images for ${VERSION:?}.&quot;
+</code></pre>
+
+<p>At this stage, either IUKs were reproduced by Jenkins and left on the
+rsync server in a temporary location, or you must wait until the
+upload of the locally built IUKs (started in the first part of this
+section) is completed.</p>
+
+<p>Finally, move the IUKs in place with proper
+ownership and permissions and update the time in <code>project/trace</code> file
+on our rsync server and on the live website (even for a release
+candidate):</p>
+
+<pre><code>./bin/publish-iuks
+</code></pre>
+
+<h2><a name="index32h2"></a>Announce, seed and test the Torrents</h2>
+
+<p>Check if there&#39;s enough space on our Bittorrent seed to import the new
+ISO and USB images:</p>
+
+<pre><code>ssh bittorrent.lizard df -h /var/lib/transmission-daemon/downloads
+</code></pre>
+
+<p>If not, list already running Torrents:</p>
+
+<pre><code>ssh bittorrent.lizard transmission-remote --list
+</code></pre>
+
+<p>&hellip; set <code>$ID</code> to the oldest one and delete it (do this both for the ISO and USB images):</p>
+
+<pre><code>ssh bittorrent.lizard transmission-remote -t &quot;${ID:?}&quot; --remove-and-delete
+</code></pre>
+
+<p>&hellip; and finally check disk space again:</p>
+
+<pre><code>ssh bittorrent.lizard df -h /var/lib/transmission-daemon/downloads
+</code></pre>
+
+<p>Now you can announce and seed the Torrents for the release you&#39;re preparing:</p>
+
+<pre><code>./bin/announce-and-seed-torrents
+</code></pre>
+
+<p>Test that you can start downloading the ISO and USB images with a BitTorrent client.
+It can take a few dozen minutes before this works.</p>
+
+<h1><a name="index24h1"></a>Public testing</h1>
+
+<ol>
+<li><p>Using <a href="https://gitlab.tails.boum.org/tails/check-mirrors"><code>check-mirrors</code></a>,
+choose a fast mirror that already has the
+tentative ISO and USB images. E.g. <a href="https://mirrors.edge.kernel.org/tails/">https://mirrors.edge.kernel.org/tails/</a> or
+<a href="https://mirrors.wikimedia.org/tails/">https://mirrors.wikimedia.org/tails/</a> are reliable and have plenty
+of bandwidth:</p>
+
+<pre><code> ./check-mirrors.rb --allow-multiple --fast --channel ${DIST:?} \
+     --url-prefix https://mirrors.wikimedia.org/tails/ \
+     tails-amd64-${VERSION:?} \
+ || ./check-mirrors.rb --allow-multiple --fast --channel ${DIST:?} \
+     --url-prefix https://mirrors.edge.kernel.org/tails/ \
+     tails-amd64-${VERSION:?}
+</code></pre></li>
+<li><p>Email <a href="mailto:tails-testers@boum.org">tails-testers@boum.org</a> to ask them to test the tentative images:</p>
+
+<ul>
+<li>subject: &quot;Call for testing: $VERSION&quot;</li>
+<li>Point them to the up-to-date mirror you&#39;ve found previously.</li>
+<li>This is a public list, don&#39;t point to the pad.</li>
+<li>Make a deadline clear: until when is feedback useful?</li>
+</ul>
+</li>
+</ol>
+
+
+<h1><a name="index25h1"></a>Lead the internal manual testing to conclusion</h1>
+
+<ol>
+<li><p>Manual testers can now do the &quot;Reproducibility&quot; part of the manual test suite.</p>
+
+<p>To communicate this to them, delete &quot;&#x26A0; Wait until the Release Manager [&hellip;]&quot; in
+the &quot;Reproducibility&quot; section on the pad.</p></li>
+<li><p>Make sure someone is committed to run the automated test suite.</p></li>
+<li><p>Make sure that enough people are here to run the tests, that they
+report their results in due time, and that they make it clear when
+they&#39;re leaving for good.</p></li>
+<li><p>Ensure the &quot;Incremental upgrades&quot; part of the manual test suite
+is done:</p>
+
+<ol>
+<li><p>Wait until most mirrors in the pool have the new version:</p>
+
+<p>  ./check-mirrors.rb --channel ${DIST:?} \
+      --allow-multiple --fast --stats \
+      tails-amd64-${VERSION:?}</p></li>
+<li><p>Delete &quot;&#x26A0; Wait until the Release Manager [&hellip;]&quot; in the &quot;Incremental
+upgrades&quot; section on the pad.</p></li>
+</ol>
+</li>
+<li><p>Fill the holes and make sure that the automated and manual test
+suites are done in due time. Clock and report this work along with
+the rest of your RM&#39;ing work.</p></li>
+<li><p>Triage test results, reproduce bugs as needed, decide what the next
+step is and make sure it happens: add to known issues? file an issue?
+release blocker? improve the test description (steps, expected outcome)?</p></li>
+</ol>
+
+
+<h1><a name="index26h1"></a>Prepare announcements and blog posts</h1>
+
+<p>What follows in this section happens on the <code>$WEBSITE_RELEASE_BRANCH</code>
+branch in <code>${RELEASE_CHECKOUT:?}</code>, making sure we catch up with the
+technical writers who have likely prepared release notes:</p>
+
+<pre><code>cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+   git checkout &quot;${WEBSITE_RELEASE_BRANCH:?}&quot; &amp;&amp; \
+   git fetch &amp;&amp; \
+   git merge &quot;origin/${WEBSITE_RELEASE_BRANCH?:}&quot;
+</code></pre>
+
+<p>If no release notes where prepared, we add one with placeholders that
+the technical writes can update post-release:</p>
+
+<pre><code>cp wiki/src/news/version_${PREVIOUS_STABLE_VERSION:?}.mdwn \
+   wiki/src/news/version_${VERSION:?}.mdwn &amp;&amp;
+${EDITOR:?} wiki/src/news/version_${VERSION:?}.mdwn
+</code></pre>
+
+<p>Make sure to:</p>
+
+<ol>
+<li>adjust the <code>!meta date</code> at the top.</li>
+<li>adjust all version numbers everywhere appropriately.</li>
+<li>add placeholders to the &quot;Changes and updates&quot; and &quot;Fixed problems&quot;,
+e.g. &quot;This section will be updated soon. Sorry for the
+inconvenience!&quot;.</li>
+<li>add any known issues to the &quot;Known issues&quot; section.</li>
+</ol>
+
+
+<h2><a name="index33h2"></a>If preparing a major or a bugfix release</h2>
+
+<p>Skip this part if preparing a RC.</p>
+
+<p>Rename, copy, garbage collect and update various files:</p>
+
+<pre><code>./bin/add-release-files-to-website
+</code></pre>
+
+<p>Then, build the website and commit this last set of changes:</p>
+
+<pre><code>if [ &quot;$(./bin/po4a-version)&quot; = 0.55 ]; then
+    ./build-website &amp;&amp; \
+    git add wiki/src/{inc,torrents} &amp;&amp; \
+    git commit -m &quot;Update various website source files for ${VERSION:?}&quot;
+else
+    echo &quot;Wrong po4a version&quot;
+fi
+</code></pre>
+
+<p>Ensure our <a href="./working_together/roles/technical_writer.html">technical writer</a> has
+<a href="./how/documentation/release_notes.html">written</a> the
+announcement for the release in <code>wiki/src/news/version_${TAG:?}.mdwn</code>.</p>
+
+<p>Generate an announcement mentioning the security vulnerabilities affecting the previous version
+in <code>wiki/src/security/known_security_vulnerabilities_in_${PREVIOUS_STABLE_VERSION:?}.mdwn</code>, in
+order to let the users of the old versions know that they have to upgrade:</p>
+
+<pre><code>    ./bin/generate-security-advisory \
+       --previous-version &quot;${PREVIOUS_STABLE_VERSION:?}&quot; \
+       --version &quot;${VERSION:?}&quot; \
+       --tag &quot;${TAG:?}&quot; \
+    &gt; &quot;wiki/src/security/known_security_vulnerabilities_in_${PREVIOUS_STABLE_VERSION:?}.mdwn&quot;
+</code></pre>
+
+<p>Remove obsolete bits from <code>wiki/src/home/testing.html</code>. For example,
+remove any text that&#39;s specific to a release candidate we may have
+published for the version you are preparing.</p>
+
+<h2><a name="index34h2"></a>If preparing a release candidate</h2>
+
+<p>Skip this part if preparing a final release.</p>
+
+<p>Copy the signatures and the Torrents into the website repository:</p>
+
+<pre><code>cp &quot;${ISO_PATH:?}.sig&quot; \
+   &quot;${IMG_PATH:?}.sig&quot; \
+   &quot;${ISOS:?}/tails-amd64-${VERSION:?}&quot;.{iso,img}.torrent \
+   &quot;${RELEASE_CHECKOUT:?}/wiki/src/torrents/files/&quot;
+</code></pre>
+
+<p>Write the announcement for the release:</p>
+
+<ol>
+<li><p>Set this environment variable, in the format <code>YYYY-MM-DD</code>:</p>
+
+<ul>
+<li><code>FINAL_RELEASE_DATE</code>: the date when we plan to publish the final release
+you&#39;re preparing a RC for</li>
+</ul>
+</li>
+<li><p>Generate the boilerplate contents from the template:</p>
+
+<pre><code> ./bin/generate-call-for-testing \
+    --version &quot;${VERSION:?}&quot; \
+    --tag &quot;${TAG:?}&quot; \
+    --date &quot;${RELEASE_DATE:?}&quot; \
+    --final-version &quot;${NEXT_PLANNED_MAJOR_VERSION:?}&quot; \
+    --final-date &quot;${FINAL_RELEASE_DATE:?}&quot; \
+ &gt; ${RELEASE_CHECKOUT:?}/wiki/src/news/test_${TAG:?}.mdwn
+</code></pre></li>
+<li><p>Edit <code>${RELEASE_CHECKOUT:?}/wiki/src/news/test_${TAG:?}.mdwn</code>:</p>
+
+<ul>
+<li><p>Mention major user-visible improvements.</p></li>
+<li><p>Document important config changes that users of the Persistent Storage have to do
+themselves (e.g. the Pidgin proxy settings change in
+<a href="https://gitlab.tails.boum.org/tails/tails/-/commit/9925321">9925321</a> breaks all existing persistent
+profiles).</p></li>
+<li><p>Document known issues.</p></li>
+<li><p>Look for <em>FIXME</em>.</p></li>
+</ul>
+</li>
+</ol>
+
+
+<p>In <code>wiki/src/home/testing.html</code>, in the &quot;Current calls for testing&quot; section,
+add a bullet point with a pointer to
+the call for testing for this release candidate
+(<a href="https://tails.boum.org/news/test_$TAG/">https://tails.boum.org/news/test_$TAG/</a>, that you just wrote).</p>
+
+<h2><a name="index35h2"></a>In any case</h2>
+
+<p>Generate PO files for the pages added or updated earlier in this
+section, and publish them on the <code>$WEBSITE_RELEASE_BRANCH</code> branch:</p>
+
+<pre><code>if [ &quot;$(./bin/po4a-version)&quot; = 0.55 ]; then
+    ./build-website &amp;&amp; \
+    git add wiki/src &amp;&amp; \
+    git commit -m &quot;Releasing version ${VERSION:?}&quot; &amp;&amp; \
+    git push origin &quot;${WEBSITE_RELEASE_BRANCH:?}&quot;
+else
+    echo &quot;Wrong po4a version&quot;
+fi
+</code></pre>
+
+<h2><a name="index36h2"></a>Draft the Tor blog post</h2>
+
+<p>Skip this if you are preparing anything but a final, major release.</p>
+
+<ul>
+<li><p>Generate the draft blog post:</p>
+
+<pre><code>  ./bin/generate-Tor-blog-post &quot;${VERSION:?}&quot;
+</code></pre></li>
+<li><p>Proof-read the draft blog post</p></li>
+<li><a href="https://blog.torproject.org/user">login to the Tor blog</a>. The
+credentials are in keyringer in <code>rm.git</code>.</li>
+<li>click <em>Content</em> &rarr; <em>Add content</em> &rarr; <em>Blog Post</em></li>
+<li>add these tags, each in a separate text entry field (use <em>Add another item</em>):
+
+<ul>
+<li>tails</li>
+<li>anonymous operating system</li>
+<li>tails releases</li>
+</ul>
+</li>
+<li>set <em>Title</em> to &quot;New Release: Tails $VERSION&quot;</li>
+<li>set <em>URL alias</em> to &quot;/new-release-tails-XYZ&quot; (without dots)</li>
+<li>choose <em>Filtered HTML</em> as the <em>Text format</em> in the blog post editor</li>
+<li>copy the text you have prepared into the <em>Post Body</em> textarea of the
+blog post editor</li>
+<li>open <em>Comment Settings</em> and verify that comments are <em>Closed</em></li>
+<li>open <em>Promotion Options</em> and check <em>Promoted to front page</em></li>
+<li>click <em>Preview</em> and ensure everything is OK</li>
+<li>click <em>Back to content editing</em></li>
+<li>ensure the <em>Publish</em> checkbox is <em>not</em> checked</li>
+<li>click <em>Save</em> to save the draft</li>
+</ul>
+
+
+<h1><a name="index27h1"></a>Go wild!</h1>
+
+<h2><a name="index37h2"></a>Wait for the HTTP mirrors to catch up</h2>
+
+<p>Test downloading the ISO, USB image, and one of the new IUKs over HTTP.</p>
+
+<p>Check if every active mirror in the pool has the new version:</p>
+
+<pre><code>./check-mirrors.rb --channel ${DIST:?} \
+    --allow-multiple --fast --stats \
+    tails-amd64-${VERSION:?}
+</code></pre>
+
+<p>To disable mirrors that are lagging behind:</p>
+
+<ol>
+<li>Set their weight to 0 in the
+<a href="https://gitlab.tails.boum.org/tails/mirror-pool/-/blob/master/mirrors.json">mirrors pool</a>.</li>
+<li>Push to the <a href="https://gitlab.tails.boum.org/tails/mirror-pool">tails/mirror-pool</a> <code>master</code> branch.</li>
+<li>Verify that the CI pipeline passed on <a href="https://gitlab.tails.boum.org/tails/mirror-pool/-/pipelines">tails/mirror-pool/-/pipelines</a>.</li>
+<li>Notify <a href="mailto:tails-mirrors@boum.org">tails-mirrors@boum.org</a>, so they communicate with the operators of the
+outdated mirrors.</li>
+</ol>
+
+
+<h2><a name="index38h2"></a>Sanity checks</h2>
+
+<ul>
+<li>Check the outcome of the &quot;Testing&quot; section above.</li>
+<li>Verify once more that the Tor Browser we ship is still the most recent (see
+above).</li>
+</ul>
+
+
+<h2><a name="index39h2"></a>Push</h2>
+
+<p>Push the last commits to our Git repository and put <code>master</code> in the
+following state:</p>
+
+<pre><code>( cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+  git push origin \
+      &quot;${WEBSITE_RELEASE_BRANCH:?}:${WEBSITE_RELEASE_BRANCH:?}&quot; \
+      devel:devel \
+) &amp;&amp; \
+( cd &quot;${MASTER_CHECKOUT:?}&quot; &amp;&amp; \
+  git fetch &amp;&amp; \
+  git merge origin/master &amp;&amp; \
+  git merge --edit &quot;origin/${WEBSITE_RELEASE_BRANCH:?}&quot; &amp;&amp; \
+  echo &quot;stable&quot; &gt; config/base_branch &amp;&amp; \
+  git commit config/base_branch \
+      -m &quot;Restore master&#39;s base branch.&quot; \
+)
+</code></pre>
+
+<p>Close the &quot;Write release notes&quot; ticket <strong>manually</strong> since
+<code>Closes:</code> statements are not sufficient when updating <code>master</code>.</p>
+
+<p>Finally, push the <code>master</code> branch to make the changes go live on our
+website:</p>
+
+<pre><code>( cd &quot;${MASTER_CHECKOUT:?}&quot; &amp;&amp; \
+  git push origin master:master \
+)
+</code></pre>
+
+<p>Wait for the release to be fully published, that is for the website to have been
+fully refreshed. To do so:</p>
+
+<ul>
+<li><p>If you&#39;re publishing a final release: wait until our Weblate integration
+mechanisms have created <code>wiki/src/news/version_${VERSION:?}.*.po</code>, on the
+<code>master</code> branch, for the languages enabled on Weblate but not on our website.</p></li>
+<li><p>Else: wait until <a href="https://tails.boum.org/news/test_$TAG/">https://tails.boum.org/news/test_$TAG/</a> is live.</p></li>
+</ul>
+
+
+<h2><a name="index40h2"></a>Bug tracker</h2>
+
+<p>Skip this part if preparing a release candidate.</p>
+
+<ol>
+<li><p>Verify there&#39;s a <code>missed:$VERSION</code> label
+on <a href="https://gitlab.tails.boum.org/groups/tails/-/labels">groups/tails/-/labels</a>; if there&#39;s none,
+submit a MR against <a href="https://gitlab.tails.boum.org/tails/gitlab-config">tails/gitlab-config</a>
+to create one.</p></li>
+<li><p>Ensure you have an up-to-date <code>tails:gitlab-triage-stable</code> container image:</p>
+
+<pre><code> cd &quot;${MASTER_CHECKOUT:?}&quot; &amp;&amp; \
+ git checkout master &amp;&amp; \
+ ./config/gitlab-triage/bin/ensure-up-to-date-container-image
+</code></pre></li>
+<li><p>Postpone to the next scheduled release any remaining open issue and merge
+request whose milestone is the version you&#39;ve just released:</p>
+
+<pre><code> cd &quot;${MASTER_CHECKOUT:?}&quot; &amp;&amp; \
+ git checkout master &amp;&amp; \
+ ./bin/gitlab-triage-post-release \
+     --host-url &quot;$(bin/gitlab-url TailsRM)&quot; \
+     --token &quot;$(bin/gitlab-api-token TailsRM)&quot;
+</code></pre></li>
+<li><p>Finally, submit a MR against <a href="https://gitlab.tails.boum.org/tails/gitlab-config">tails/gitlab-config</a> to:
+close the just-released <a href="https://gitlab.tails.boum.org/groups/tails/-/milestones">milestone</a></p>
+
+<p>Assign the MR to the on-duty sysadmin (see link to &quot;Semi-public
+calendar&quot; in <a href="https://gitlab.tails.boum.org/tails/summit/-/wikis/Teams#sysadmins">https://gitlab.tails.boum.org/tails/summit/-/wikis/Teams#sysadmins</a>).</p></li>
+</ol>
+
+
+<h3><a name="index5h3"></a>Issues linked from the website</h3>
+
+<ol>
+<li><p>Go through the issues linked from the documentation and support sections of the
+website to identify the issues that might
+be resolved in this release.</p>
+
+<pre><code>cd &quot;${MASTER_CHECKOUT:?}&quot; &amp;&amp; \
+find wiki/src/{doc,support} ! -path wiki/src/support/known_issues/graphics.mdwn -name &quot;*.mdwn&quot; -o -name &quot;*.html&quot; | xargs cat | \
+    ruby -e &#39;puts STDIN.read.scan(/\[\[!tails_ticket\s+(\d+)[^\]]*\]\]/)&#39; | \
+    while read ticket; do
+        ticket_status=&quot;$(python-gitlab --gitlab TailsRM -o json --fields state project-issue get --project-id 2 --iid &quot;$ticket&quot; | jq --raw-output .state)&quot;
+        if [ -z &quot;${ticket_status:-}&quot; ]; then
+            echo &quot;Failed to find the status of #${ticket:?}&quot; &gt;&amp;2
+            continue
+        fi
+        if [ &quot;${ticket_status:?}&quot; = &quot;closed&quot; ]; then
+            echo &quot;It seems issue #${ticket:?} has been fixed. Please find all instances on the website and adjust them as needed. Ticket URL: https://gitlab.tails.boum.org/tails/tails/-/issues/${ticket:?}&quot;
+        fi
+    done
+</code></pre></li>
+<li><p>Create a GitLab issue to list them.</p>
+
+<p>Title: <em>Issues linked from the website for Tails $VERSION</em>
+Labels: <em>Core Work:Technical writing</em> and <em>To Do</em></p></li>
+</ol>
+
+
+<h2><a name="index41h2"></a>Twitter</h2>
+
+<p>Check in the comments of the issue for the release notes if the
+technical writers have prepared a tweet. Otherwise tweet a simple link
+to the release notes:</p>
+
+<pre><code>Tails x.y is out: https://tails.boum.org/news/version_x.y/
+</code></pre>
+
+<p>The credentials are in keyringer in <code>rm.git</code>.</p>
+
+<h2><a name="index42h2"></a>Publish the Tor blog post</h2>
+
+<p>If you prepared a draft Tor blog post earlier, then:</p>
+
+<ol>
+<li>Open the draft Tor blog post you have prepared earlier</li>
+<li>Adjust <em>Authoring Information</em> &rarr; <em>Authored on</em> to make the
+publication date correct</li>
+<li>Click <em>Save and publish</em></li>
+</ol>
+
+
+<h2><a name="index43h2"></a>Amnesia news</h2>
+
+<p><a href="https://www.autistici.org/mailman/admindb/amnesia-news">Log in</a>
+and accept the release announcement (it&#39;s been automatically sent
+to <code>amnesia-news@</code> every half hour and is stuck in the
+moderation queue).</p>
+
+<p>The password is in keyringer in <code>rm.git</code>.</p>
+
+<h1><a name="index28h1"></a>Prepare for the next development cycle</h1>
+
+<h2><a name="index44h2"></a>If you just released a final release</h2>
+
+<ol>
+<li><p>If you just released a new stable release, remove the previous
+stable release from:</p>
+
+<ul>
+<li>our rsync server:
+<code>ssh rsync.lizard sudo rm -rf /srv/rsync/tails/tails/stable/tails-amd64-${PREVIOUS_STABLE_VERSION:?}/</code></li>
+<li><p>our Bittorrent seed: get the previous release&#39;s <em>Transmission</em> IDs
+(ISO and USB image, use comma-separated values)
+with:</p>
+
+<pre><code>ssh bittorrent.lizard transmission-remote --list
+</code></pre>
+
+<p>Then delete them with:</p>
+
+<pre><code>ssh bittorrent.lizard transmission-remote \
+    -t &quot;${PREVIOUS_VERSION_TRANSMISSION_ID:?}&quot; --remove-and-delete
+</code></pre>
+
+<p>Finally, check that everything looks good:</p>
+
+<pre><code>ssh bittorrent.lizard transmission-remote --list
+</code></pre></li>
+</ul>
+</li>
+<li><p>Remove any remaining RC for the just-published release from
+<code>rsync.lizard:/srv/rsync/tails/tails/alpha/</code></p></li>
+<li><p>If you&#39;ve published a final release, remove IUKs that upgrade to an
+older version as they were superseded by this release:</p>
+
+<ul>
+<li><p>first check that it&#39;s not going to remove anything we want to keep:</p>
+
+<pre><code>ssh rsync.lizard /bin/sh -c \
+    \&quot;find /srv/rsync/tails/tails/alpha/iuk/v2  \
+           /srv/rsync/tails/tails/stable/iuk/v2 \
+           -type f -name &#39;*.iuk&#39; \
+           -not -name &quot;*_to_${VERSION:?}.iuk&quot; \
+           -not -name &#39;*~test_*~test.iuk&#39; \
+           -not -name &#39;*~testoverlayfs_*~testoverlayfs.iuk&#39; \
+           -ls \
+    \&quot;
+</code></pre></li>
+<li><p>then actually delete the files:</p>
+
+<pre><code>ssh rsync.lizard /bin/sh -c \
+    \&quot;find /srv/rsync/tails/tails/alpha/iuk/v2  \
+           /srv/rsync/tails/tails/stable/iuk/v2 \
+           -type f -name &#39;*.iuk&#39; \
+           -not -name &quot;*_to_${VERSION:?}.iuk&quot; \
+           -not -name &#39;*~test_*~test.iuk&#39; \
+           -not -name &#39;*~testoverlayfs_*~testoverlayfs.iuk&#39; \
+           -print -delete \
+    \&quot;
+</code></pre></li>
+</ul>
+</li>
+<li><p>Check how much space our mirrors need:</p>
+
+<pre><code> ssh rsync.lizard du -sh /srv/rsync/tails
+</code></pre>
+
+<p>Compare it to the minimum disk space we ask of our mirror operators
+(80 GiB) and determine if any further action is needed to either
+reduce our usage by deleting stuff, or asking them to give us more
+space.</p></li>
+<li><p>Delete Git branches that were merged:</p>
+
+<pre><code> cd &quot;${MASTER_CHECKOUT:?}&quot; &amp;&amp; \
+ git checkout master &amp;&amp; \
+ git fetch &amp;&amp; \
+ git merge origin/master &amp;&amp; \
+ git submodule update --init &amp;&amp; \
+ bare_repo=$(mktemp -d) &amp;&amp; \
+ git clone --bare --reference &quot;${MASTER_CHECKOUT:?}&quot; \
+    git@gitlab-ssh.tails.boum.org:tails/tails \
+    &quot;${bare_repo:?}&quot; &amp;&amp; \
+ PYTHONPATH=lib/python3 ./bin/delete-merged-git-branches \
+    --repo &quot;${bare_repo:?}&quot; &amp;&amp; \
+ rm -rf &quot;${bare_repo:?}&quot;
+</code></pre></li>
+<li><p>On the <code>stable</code> branch, remove all old versions
+that were never released from <code>wiki/src/upgrade/v2/Tails</code>:</p>
+
+<pre><code> cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+ git checkout stable &amp;&amp; \
+ ./bin/remove-unused-udfs --before-version &quot;${VERSION:?}&quot;
+</code></pre>
+
+<p>Explanation: the post-release APT repository steps from the previous stable
+release will usually have had us prepare for an emergency release that was
+never made.</p></li>
+<li><p>Pull <code>master</code> back and merge it into <code>stable</code>:</p>
+
+<pre><code> cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+ git fetch origin &amp;&amp; \
+ git checkout stable &amp;&amp; \
+ git merge origin/master
+</code></pre>
+
+<p>Note: After a final <em>major</em> release is published, it&#39;s normal to
+leave the <code>testing</code> branch alone: it will only become relevant
+again when the next freeze starts.</p></li>
+<li><p>Put the <code>stable</code> Git branch and the corresponding APT suite
+in the desired shape:</p>
+
+<pre><code> if [ &quot;${MAJOR_RELEASE:?}&quot; -eq 1 ]; then
+    ./bin/reset-custom-APT-suite stable testing &amp;&amp; \
+    git checkout stable &amp;&amp; \
+    if [ $(find config/APT_overlays.d -maxdepth 1 -type f | wc -l) -gt 1 ]; then
+       git rm config/APT_overlays.d/* &amp;&amp; \
+       git commit config/APT_overlays.d/ \
+          -m &quot;Empty the list of APT overlays: they were merged&quot;
+    fi
+ fi
+</code></pre></li>
+<li><p>Merge the release branch and its APT suite into <code>devel</code>:</p>
+
+<pre><code> ./bin/merge-main-branch &quot;${RELEASE_BRANCH:?}&quot; devel
+</code></pre>
+
+<p>When there&#39;s a merge conflict, the script aborts to let you resolve
+the conflict. Then:</p>
+
+<ol>
+<li>Resolve the conflict, <code>git add</code> and <code>git merge --continue</code>.</li>
+<li>Re-run the exact same <code>merge-main-branch</code> command.</li>
+</ol>
+</li>
+<li><p>Check if the version number of the last entry in <code>devel</code>&#39;s <code>debian/changelog</code> matches
+the next major release, so that
+next builds from the <code>devel</code> branch do not use the APT suite meant
+for the last release; if this is not the case yet, run:</p>
+
+<pre><code> cd &quot;${RELEASE_CHECKOUT}&quot; &amp;&amp; \
+ git checkout devel &amp;&amp; \
+ dch --newversion &quot;${NEXT_PLANNED_MAJOR_VERSION:?}&quot; \
+    &quot;Dummy entry for next release.&quot; &amp;&amp; \
+ git commit debian/changelog \
+    -m &quot;Add dummy changelog entry for ${NEXT_PLANNED_MAJOR_VERSION:?}.&quot;
+</code></pre></li>
+<li><p>If this command outputs anything:</p>
+
+<pre><code>  git show devel:config/chroot_apt/preferences \
+     | grep -E &#39;^Explanation: freeze exception&#39;
+</code></pre>
+
+<p>Then checkout the <code>devel</code> branch, and there
+<a href="./APT_repository/time-based_snapshots.html#freeze-exceptions-post-release">thaw the packages that were granted freeze exceptions</a>.</p></li>
+<li><p>Increment the version number in stable&#39;s <code>debian/changelog</code>, so that
+next builds from the <code>stable</code> branch do not use the APT suite meant
+for the last release:</p>
+
+<pre><code> cd &quot;${RELEASE_CHECKOUT}&quot; &amp;&amp; \
+ git checkout stable &amp;&amp; \
+ dch --newversion &quot;${NEXT_STABLE_CHANGELOG_VERSION:?}&quot; \
+    &quot;Dummy entry for next release.&quot; &amp;&amp; \
+ git commit debian/changelog \
+    -m &quot;Add dummy changelog entry for ${NEXT_STABLE_CHANGELOG_VERSION:?}.&quot;
+</code></pre></li>
+<li><p>Verify that the snapshots used in the release branch are ok,
+e.g. they use the correct snapshots, and they were bumped
+appropriately (they should expire after the next planned major release date).
+Look carefully at the output of this command:</p>
+
+<pre><code> cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+ git checkout &quot;${RELEASE_BRANCH:?}&quot; &amp;&amp; \
+ ./bin/apt-snapshots-expiry
+</code></pre></li>
+<li><p>Push the resulting branches:</p>
+
+<pre><code> git push origin stable testing devel
+</code></pre></li>
+<li><p>In <a href="./calendar.html">calendar</a> (<code>master</code> branch), remove the entries about the version that you&#39;ve
+just released.</p></li>
+<li><p>Check the Mozilla release calendars:</p>
+
+<ul>
+<li><a href="https://www.google.com/calendar/embed?src=mozilla.com_2d37383433353432352d3939%40resource.calendar.google.com">Google calendar</a></li>
+<li><a href="https://wiki.mozilla.org/Release_Management/Calendar">Release schedule</a></li>
+</ul>
+
+
+<p>If the upcoming release dates in the Mozilla calendar does not match
+what we have in <a href="./calendar.html">calendar</a>, then alert
+<a href="mailto:tails-dev@boum.org">tails-dev@boum.org</a>, <a href="mailto:tails-rm@boum.org">tails-rm@boum.org</a>, and explicitly Cc the
+designated RM for that upcoming release.</p></li>
+<li><p>Announce the date of the next release on <a href="mailto:tails-dev@boum.org">tails-dev@boum.org</a> and
+<a href="mailto:tails-l10n@boum.org">tails-l10n@boum.org</a>.</p>
+
+<ul>
+<li>Cc <a href="mailto:tails-manual-testers@boum.org">tails-manual-testers@boum.org</a>,
+asking them to privately tell the RM for that release
+<em>how much</em> manual testing they can do on release day.</li>
+<li>Subject: &quot;Release schedule for Tails NEXT_VERSION_NUMBER&quot;</li>
+<li>If a release candidate is planned, include it in the release schedule
+and the call for manual testers.</li>
+</ul>
+</li>
+<li><p>If you are the release manager for the next release too, look at the
+tasks that must be done at the beginning of your shift in the
+<a href="./working_together/roles/release_manager.html#shift">release manager role page</a>.</p>
+
+<p>Otherwise, kindly remind the next release manager about this :)</p>
+
+<ul>
+<li>Send an email to the next RM with:
+
+<ul>
+<li>subject &quot;RM for Tails NEXT_VERSION_NUMBER&quot;</li>
+<li>body: &quot;This is a reminder that you will be RM for Tails NEXT_VERSION_NUMBER. Please see https://tails.boum.org/contribute/working_together/roles/release_manager/#shift&quot;.</li>
+</ul>
+</li>
+<li>If there&#39;s a release candidate scheduled before our next release,
+do the same for the release manager of that release candidate.</li>
+</ul>
+</li>
+<li><p>Put aside the configuration file used for this release:</p>
+
+<pre><code> mkdir -p ~/.config/tails/release_management/old &amp;&amp; \
+ mv ~/.config/tails/release_management/current.yml \
+    ~/.config/tails/release_management/old/${VERSION:?}.yml.disabled
+</code></pre></li>
+<li><p>You&#39;re done for today! Suggestion: enjoy some time AFK :)</p></li>
+<li><p>Tomorrow, make sure Jenkins manages to build all updated major branches:
+<a href="https://jenkins.tails.boum.org/view/RM/">https://jenkins.tails.boum.org/view/RM/</a>.</p></li>
+</ol>
+
+
+<h2><a name="index45h2"></a>If you just released an RC</h2>
+
+<ol>
+<li><p>If this command outputs anything:</p>
+
+<pre><code> git show devel:config/chroot_apt/preferences \
+    | grep -E &#39;^Explanation: freeze exception&#39;
+</code></pre>
+
+<p>Then checkout the <code>devel</code> branch, and there
+<a href="./APT_repository/time-based_snapshots.html#freeze-exceptions-post-release">thaw</a>
+all packages (if any) that were granted freeze exceptions.</p></li>
+<li><p>On the devel branch,
+<a href="./APT_repository/time-based_snapshots.html#thaw">thaw</a> the time-based
+APT repository snapshots:</p>
+
+<pre><code> git checkout devel &amp;&amp; \
+ ./auto/scripts/apt-snapshots-serials thaw &amp;&amp; \
+ git commit \
+     -m &quot;Thaw APT snapshots.&quot; \
+     config/APT_snapshots.d/*/serial || :
+</code></pre>
+
+<p>This should generally be a no-op but if there was some hiccup earlier it
+could be needed.</p></li>
+<li><p>Increment the version number in <code>debian/changelog</code> on the branch
+used for the release, to match the upcoming non-RC release, so that
+the next builds from it do not use the APT suite meant for the RC:</p>
+
+<pre><code> cd &quot;${RELEASE_CHECKOUT}&quot; &amp;&amp; \
+ git checkout &quot;${RELEASE_BRANCH:?}&quot; &amp;&amp; \
+ dch --newversion &quot;${NEXT_PLANNED_MAJOR_VERSION:?}&quot; \
+    &quot;Dummy entry for next release.&quot; &amp;&amp; \
+ git commit debian/changelog \
+    -m &quot;Add dummy changelog entry for ${NEXT_PLANNED_MAJOR_VERSION:?}.&quot;
+</code></pre></li>
+<li><p>Increment the version number in <code>devel</code>&#39;s <code>debian/changelog</code> to
+match the second next major release, so that images built from there
+have the right version number:</p>
+
+<pre><code> cd &quot;${RELEASE_CHECKOUT}&quot; &amp;&amp; \
+ git checkout devel &amp;&amp; \
+ dch --newversion &quot;${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}&quot; \
+    &quot;Dummy entry for next release.&quot; &amp;&amp; \
+ git commit debian/changelog \
+    -m &quot;Add dummy changelog entry for ${SECOND_NEXT_PLANNED_MAJOR_VERSION:?}.&quot;
+</code></pre></li>
+<li><p>Merge testing into devel (keeping a single changelog entry, for the
+second next major release), and push them:</p>
+
+<pre><code> cd &quot;${RELEASE_CHECKOUT:?}&quot; &amp;&amp; \
+ git checkout devel &amp;&amp; \
+ git merge testing &amp;&amp; \
+ git push origin testing devel
+</code></pre></li>
+<li><p>Follow the &quot;Verify that the snapshots used in the release branch
+are ok&quot; step for final releases, above.</p></li>
+<li><p>In <a href="./calendar.html">calendar</a>, remove the entries about the version that you&#39;ve
+just released.</p></li>
+<li><p>Put aside the configuration file used for this release:</p>
+
+<pre><code> mkdir -p ~/.config/tails/release_management/old &amp;&amp; \
+ mv ~/.config/tails/release_management/current.yml \
+    ~/.config/tails/release_management/old/${VERSION:?}.yml.disabled
+</code></pre></li>
+<li><p>Delete your local copy of the IUKs [XXX:automate]</p></li>
+<li><p>You&#39;re done for today! Suggestion: enjoy some time AFK :)</p></li>
+<li><p>Tomorrow, on <a href="https://jenkins.tails.boum.org/view/RM/">https://jenkins.tails.boum.org/view/RM/</a>, make sure Jenkins
+successfully:</p>
+
+<ul>
+<li>builds all updated major branches</li>
+<li>builds the website</li>
+<li>checks PO files</li>
+</ul>
+</li>
+</ol>
+
+
+<h1><a name="index29h1"></a>Related pages</h1>
+
+<div class="map">
+<ul>
+<li>
+<a class="mapitem" href="./release_process/perl5lib.html">perl5lib</a>
+</li>
+<li>
+<a class="mapitem" href="./release_process/persistence-setup.html">persistence-setup</a>
+</li>
+<li>
+<a class="mapitem" href="./release_process/tails-iuk.html">tails-iuk</a>
+</li>
+<li>
+<a class="mapitem" href="./release_process/test.html">test</a>
+<ul>
+<li>
+<a class="mapitem" href="./release_process/test/automated_tests.html">automated tests</a>
+</li>
+<li>
+<a class="mapitem" href="./release_process/test/reproducibility.html">reproducibility</a>
+</li>
+<li>
+<a class="mapitem" href="./release_process/test/setup.html">setup</a>
+</li>
+<li>
+<a class="mapitem" href="./release_process/test/usage.html">usage</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="mapitem" href="./release_process/thunderbird.html">thunderbird</a>
+</li>
+<li>
+<a class="mapitem" href="./release_process/tor-browser.html">tor-browser</a>
+<ul>
+<li>
+<a class="mapitem" href="./release_process/tor-browser/AppArmor_policy.html">AppArmor policy</a>
+</li>
+</ul>
+</li>
+<li>
+<a class="mapitem" href="./release_process/veracrypt.html">veracrypt</a>
+</li>
+<li>
+<a class="mapitem" href="./release_process/verification_javascript.html">verification javascript</a>
+<ul>
+<li>
+<a class="mapitem" href="./release_process/verification_javascript/forge.webpack.config.js">forge.webpack.config.js</a>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./build/reproducible.html">build/reproducible</a>
+
+<a href="../contribute.en.html">contribute</a>
+
+<a href="../contribute.de.html">contribute.de</a>
+
+<a href="../contribute.es.html">contribute.es</a>
+
+<a href="../contribute.fr.html">contribute.fr</a>
+
+<a href="../contribute.it.html">contribute.it</a>
+
+<a href="../contribute.pt.html">contribute.pt</a>
+
+<a href="../contribute.ru.html">contribute.ru</a>
+
+<a href="./design/incremental_upgrades.html">design/incremental upgrades</a>
+
+<a href="./design/reproducibility.html">design/reproducibility</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="./git.html">git</a>
+
+<a href="../news/report_2012_08.html">news/report 2012 08</a>
+
+<a href="./release_process/test/reproducibility.html">release process/test/reproducibility</a>
+
+<a href="./working_together/roles/release_manager.html">working together/roles/release manager</a>
+
+<a href="./working_together/roles/sysadmins.html">working together/roles/sysadmins</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/release_process">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

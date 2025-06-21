@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for June, 2020</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Mon, 13 Jul 2020 21:34:33 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for June, 2020</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for June, 2020
+</span>
+<span class="date">2020-07-13</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Releases</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Code</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Documentation and website</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Hot topics on our help desk</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Infrastructure</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Funding</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Outreach</a>
+	</li>
+	<li class="L1"><a href="#index8h1">Press and testimonials</a>
+	</li>
+	<li class="L1"><a href="#index9h1">Translations</a>
+	</li>
+	<li class="L1"><a href="#index10h1">Metrics</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Releases</h1>
+
+<p><a href="./version_4.7.en.html">Tails 4.7 was released on June 2</a>:</p>
+
+<ul>
+<li><p>Make the installation of Additional Software more robust. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17278">#17278</a>)</p></li>
+<li><p>Clarify the error message when entering an incorrect password to unlock a
+VeraCrypt volume: <em>Wrong passphrase or parameters</em> instead of <em>Error
+unlocking volume</em>. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17668">#17668</a>)</p></li>
+<li><p>Clean up confusing comments in <code>/etc/tor/torrc</code>. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17706">#17706</a>)</p></li>
+</ul>
+
+
+<p><a href="./version_4.8.en.html">Tails 4.8 was released on June 30</a>:</p>
+
+<ul>
+<li><p>We disabled the <em>Unsafe Browser</em> by default and clarified that <a href="../doc/anonymous_internet/unsafe_browser.en.html#security">the
+<em>Unsafe Browser</em> can be used to deanonymize
+you</a>.</p></li>
+<li><p>We added a new feature of the Persistent Storage to save the settings
+from the Welcome Screen.</p>
+
+<p>This feature is beta and only the additional setting to enable the
+<em>Unsafe Browser</em> is made persistent. The other settings (language,
+keyboard, and other additional settings) will be made persistent in
+Tails 4.9 (July 28).</p></li>
+<li><p>Fix the <em>Find in page</em> feature of <em>Thunderbird</em>. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17328">#17328</a>)</p></li>
+<li><p>Fix shutting down automatically the laptop when resuming from suspend
+with the Tails USB stick removed. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16787">#16787</a>)</p></li>
+<li><p>Notify always when <a href="../doc/first_steps/welcome_screen/mac_spoofing.en.html">MAC address
+spoofing</a> fails and the
+network interface is disabled. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17779">#17779</a>)</p></li>
+<li><p>Fix the import of OpenPGP public keys in binary format (non armored)
+from the <em>Files</em> browser.</p></li>
+</ul>
+
+
+<p>Tails 4.9 is <a href="../contribute/calendar.html">scheduled for July 28</a>.</p>
+
+<h1><a name="index2h1"></a>Code</h1>
+
+<ul>
+<li><p>Adapted our test suite to our new homepage and to GitLab.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17718">#17718</a>, <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17719">#17719</a>)</p></li>
+<li><p>Upgraded to tor 0.4.3. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17741">#17741</a>)</p></li>
+<li><p>Automated post-release GitLab updates with
+<a href="https://gitlab.com/gitlab-org/gitlab-triage"><code>gitlab-triage</code></a>.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17589">#17589</a>, <a href="https://gitlab.tails.boum.org/tails/tails/-/merge_requests/36">!36</a>)</p></li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Documentation and website</h1>
+
+<ul>
+<li><p>@syster added a favicon to our website. (<a href="https://gitlab.tails.boum.org/tails/tails/-/merge_requests/37">!37</a>)</p></li>
+<li><p>Documented the
+<a href="../doc/anonymous_internet/Tor_Browser.en.html#letterboxing">letterboxing feature of <em>Tor Browser</em></a>.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17227">#17227</a>)</p></li>
+<li><p>Interviewed 4 more candidates to the
+<a href="../jobs/technical_writer.html">Technical Writer job offer</a>.</p></li>
+<li><p>Added a shortcut on top of the <a href="../install/clone.en.html">cloning instructions</a>
+for people who are already in Tails.</p></li>
+<li><p>Reported a <a href="https://github.com/balena-io/etcher/issues/3197">bug upstream to
+Etcher</a> about Windows manipulating the
+system partition, leading to a failed verification.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17634">#17634</a>)</p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>Hot topics on our help desk</h1>
+
+<ol>
+<li><p>A lot of people complained about having trouble starting Tails with
+[AMD/ATI] Renoir GPUs, but it seems that a kernel update <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17759#note_152260">fixed that problem in Tails 4.8</a>.</p></li>
+<li><p>Some MacBook users reported that <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17775">Tails
+fails to boot with some recent MacBooks</a>. A workaround was proposed
+but people were then affected by their <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17791">key
+combinations</a> or <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/13576">mouse and keyboard</a> not
+being supported by GRUB.</p></li>
+<li><p>There were still a couple of users reporting having problems to
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17183">import public PGP keys in Seahorse</a>.</p></li>
+</ol>
+
+
+<h1><a name="index5h1"></a>Infrastructure</h1>
+
+<ul>
+<li><p>Decommissioned the system that used to host our Redmine.</p></li>
+<li><p>Made it possible for core community members to propose changes to our GitLab
+configuration with a merge request. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17753">#17753</a>)</p></li>
+</ul>
+
+
+<h1><a name="index6h1"></a>Funding</h1>
+
+<ul>
+<li>Submitted a full proposal to the
+<a href="https://www.opentech.fund/funds/core-infrastructure-fund/">OTF Core Infrastructure Fund</a>
+to improve the user experience of
+<a href="https://gitlab.tails.boum.org/tails/blueprints/-/wikis/network_connection">connecting to Tor</a> and using Tails to
+circumvent censorship.</li>
+</ul>
+
+
+<h1><a name="index7h1"></a>Outreach</h1>
+
+<p>Published leaflets and their source on the website:</p>
+
+<p>  </p><div class="map">
+</div>
+
+<h2><a name="index1h2"></a>Past events</h2>
+
+<ul>
+<li>El Barracon Digital from El Progreso, Honduras, organized an
+international online webinar on Tails: <a href="https://barracondigital.org/webinar-internacional-privacidad-y-anonimato-con-tails/">Privacidad y Anonimato Con
+Tails</a>.</li>
+</ul>
+
+
+<h2><a name="index2h2"></a>Upcoming events</h2>
+
+<ul>
+<li>El Rancho Electronico is organizing <a href="https://ranchoelectronico.org/taller-tails-de-nuevo-pero-ahora-en-linea/">2 online workshops about
+Tails</a>
+on July 14 and July 21.</li>
+</ul>
+
+
+<h1><a name="index8h1"></a>Press and testimonials</h1>
+
+<ul>
+<li><p>2020-06-23: <a href="https://www.vice.com/en_us/article/dyz3jy/privacy-focused-os-tails-wants-to-know-how-facebook-and-the-fbi-hacked-it">Privacy-Focused OS Wants to Know How Facebook and the FBI Hacked
+it</a>
+by Lorenzo Franceschi-Bicchierai in Motherboard.</p></li>
+<li><p>2020-06-10: <a href="https://www.vice.com/en_us/article/v7gd9b/facebook-helped-fbi-hack-child-predator-buster-hernandez">Facebook Helped the FBI Hack a Child
+Predator</a>
+by Lorenzo Franceschi-Bicchierai in Motherboard.</p></li>
+</ul>
+
+
+<h1><a name="index9h1"></a>Translations</h1>
+
+<h2><a name="index3h2"></a>All the website</h2>
+
+<ul>
+<li>fr: 84% (5415) strings translated, 8% strings fuzzy</li>
+<li>es: 47% (3072) strings translated, 8% strings fuzzy</li>
+<li>de: 30% (1988) strings translated, 13% strings fuzzy</li>
+<li>it: 28% (1808) strings translated, 10% strings fuzzy</li>
+<li>fa: 22% (1474) strings translated, 13% strings fuzzy</li>
+<li>pt: 22% (1418) strings translated, 9% strings fuzzy</li>
+</ul>
+
+
+<h2><a name="index4h2"></a><a href="../contribute/l10n_tricks/core_po_files.txt">Core pages of the website</a></h2>
+
+<ul>
+<li>fr: 83% (1709) strings translated, 10% strings fuzzy</li>
+<li>es: 77% (1585) strings translated, 10% strings fuzzy</li>
+<li>it: 50% (1043) strings translated, 20% strings fuzzy</li>
+<li>de: 50% (1041) strings translated, 21% strings fuzzy</li>
+<li>pt: 39% (815) strings translated, 14% strings fuzzy</li>
+<li>fa: 20% (415) strings translated, 15% strings fuzzy</li>
+</ul>
+
+
+<h2><a name="index5h2"></a>Core pages of the website for languages not activated on the website yet</h2>
+
+<ul>
+<li>zh_TW: 25% (447) strings translated, 12% strings fuzzy</li>
+<li>zh: 12% (224) strings translated, 6% strings fuzzy</li>
+<li>ru: 8% (160) strings translated, 5% strings fuzzy</li>
+<li>pl: 8% (149) strings translated, 4% strings fuzzy</li>
+<li>tr: 8% (148) strings translated, 4% strings fuzzy</li>
+<li>ar: 7% (132) strings translated, 5% strings fuzzy</li>
+<li>ca: 7% (131) strings translated, 5% strings fuzzy</li>
+<li>id: 5% (99) strings translated, 3% strings fuzzy</li>
+<li>sr_Latn: 4% (80) strings translated, 2% strings fuzzy</li>
+</ul>
+
+
+<h1><a name="index10h1"></a>Metrics</h1>
+
+<ul>
+<li>Tails has been started more than 926&#x202F;605 times this month. This makes 30&#x202F;887 boots a day on average.</li>
+</ul>
+
+
+<p><a href="../support/faq.en.html#boot-statistics">How do we know this?</a></p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2020_06">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

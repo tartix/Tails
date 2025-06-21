@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+
+<html lang="de" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Changing the passphrase of the Persistent Storage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="../external_hard_disk.de.html" title="Starting Tails from an external hard disk" />
+
+<link rel="up" href="../../advanced_topics.index.de.html" title="advanced topics.index.de" />
+
+<link rel="next" href="./check_file_system.de.html" title="Checking the file system of the Persistent Storage" />
+
+
+
+
+</head>
+
+
+<body class="de">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.de.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.de.html">Home</a></li>
+  <li><a href="../../../about.de.html">How Tails works</a></li>
+  <li><a href="../../../install.de.html">Get Tails</a></li>
+  <li><a href="../../../doc.de.html">Documentation</a></li>
+  <li><a href="../../../support.de.html">Support</a></li>
+  <li><a href="../../../contribute.de.html">Contribute</a></li>
+  <li><a href="../../../news.de.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.de.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.de.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../advanced_topics.de.html">advanced topics</a></li>
+
+
+
+
+
+<li><a href="../../../index.de.html">persistence</a></li>
+
+
+
+
+<li>Changing the passphrase of the Persistent Storage</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Deutsch
+   </span>
+   <span class="hidden">Deutsch
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./change_passphrase.en.html">en</a></span>
+   <span class="hidden"><a href="./change_passphrase.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.es.html">es</a></span>
+   <span class="hidden"><a href="./change_passphrase.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.fr.html">fr</a></span>
+   <span class="hidden"><a href="./change_passphrase.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.it.html">it</a></span>
+   <span class="hidden"><a href="./change_passphrase.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.pt.html">pt</a></span>
+   <span class="hidden"><a href="./change_passphrase.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.ru.html">ru</a></span>
+   <span class="hidden"><a href="./change_passphrase.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Changing the passphrase of the Persistent Storage
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="../external_hard_disk.de.html">Starting Tails from an external hard disk</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.de.html">advanced topics.index.de</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./check_file_system.de.html">Checking the file system of the Persistent Storage</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<ol>
+<li><p>Starten Sie Tails und <a href="../../first_steps/welcome_screen/administration_password.de.html">stellen Sie ein Administrationspasswort
+ ein</a>.</p>
+
+<p> In the Welcome Screen, keep the Persistent Storage locked.</p></li>
+<li><p>&Ouml;ffnen Sie <span class="application">Laufwerke</span> aus dem Men&uuml;
+ <span class="menuchoice">
+   <span class="guimenu">Anwendungen</span>&nbsp;&#x25B8;
+   <span class="guisubmenu">Hilfsprogramme</span>&nbsp;&#x25B8;
+   <span class="guimenuitem">Laufwerke</span></span>.</p>
+
+<p> <span class="application">Laufwerke</span> f&uuml;hrt im linken Fensterbereich
+ alle derzeitigen Speichermedien auf. Wenn Sie eines dieser Medien ausw&auml;hlen, werden Ihnen
+ im rechten Fensterbereich detailliertere Informationen dazu angezeigt: die Partitionen,
+ der Hersteller, die Gr&ouml;&szlig;e, usw.</p></li>
+<li><p>Find which device is your Tails USB stick. It should have 2 partitions:
+ one labeled <strong>Tails</strong> and another one labeled <strong>TailsData</strong>, which
+ corresponds to the Persistent Storage.</p></li>
+<li><p>In the right pane, click on the Persistent Storage partition, labeled
+ <span class="guilabel">TailsData</span>.</p></li>
+<li><p>Klicken Sie auf <span class="guimenu"><img alt="Kontextmen&uuml; in Laufwerke" class="symbolic" height="16" src="../../../lib/system-run.png" width="16" /></span> und
+ w&auml;hlen Sie <span class="guilabel">Passphrase &auml;ndern&hellip;</span> aus.</p></li>
+<li><p>Geben Sie Ihre aktuelle Passphrase und anschlie&szlig;end zweimal eine neue
+ ein.</p></li>
+<li><p>Best&auml;tigen Sie letztendlich, indem Sie auf <span class="guilabel">&Auml;ndern</span> klicken.</p></li>
+<li><p>Geben Sie in dem Best&auml;tigungsdialog Ihr Administrationskennwort ein und
+ klicken Sie auf <span class="guilabel">Anmelden</span>.</p></li>
+<li><p>You now can restart Tails and try to unlock the Persistent Storage with
+ its new passphrase.</p></li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="../external_hard_disk.de.html">Starting Tails from an external hard disk</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.de.html">advanced topics.index.de</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./check_file_system.de.html">Checking the file system of the Persistent Storage</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../advanced_topics.index.de.html">advanced topics.index.de</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/persistence/change_passphrase.de">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

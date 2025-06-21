@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+
+<html lang="fr" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - R&#xE9;vocation de la cl&#xE9; de signature de Tails</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="fr">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.fr.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.fr.html">Accueil</a></li>
+  <li><a href="../../../about.fr.html">Fonctionnement de Tails</a></li>
+  <li><a href="../../../install.fr.html">Obtenir Tails</a></li>
+  <li><a href="../../../doc.fr.html">Documentation</a></li>
+  <li><a href="../../../support.fr.html">Assistance</a></li>
+  <li><a href="../../../contribute.fr.html">Participer</a></li>
+  <li><a href="../../../news.fr.html">Nouvelles</a></li>
+  <li><a href="../../../jobs.html">Postes &agrave; pourvoir</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.fr.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.fr.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../about.fr.html">about</a></li>
+
+
+
+
+
+<li><a href="../openpgp_keys.fr.html">openpgp keys</a></li>
+
+
+
+
+<li>R&#xE9;vocation de la cl&#xE9; de signature de Tails</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Français
+   </span>
+   <span class="hidden">Français
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./signing_key_revocation.en.html">en</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.de.html">de</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.es.html">es</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.it.html">it</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.pt.html">pt</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.ru.html">ru</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+R&#xE9;vocation de la cl&#xE9; de signature de Tails
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Ce document propose un m&eacute;canisme de distribution et d&#39;activation du
+certificat de r&eacute;vocation de la cl&eacute; de signature de Tails.</p>
+
+<h1>Objectifs</h1>
+
+<p>Couverts par la proposition actuelle :</p>
+
+<ul>
+<li><p>&Eacute;viter qu&#39;une seule personne puisse r&eacute;voquer notre cl&eacute; de signature.</p></li>
+<li><p>Permettre &agrave; un regroupement de personnes de tails@boum.org de r&eacute;voquer
+notre cl&eacute; de signature dans le cas o&ugrave; la plupart des personnes de
+tails@boum.org deviendraient indisponibles.</p></li>
+<li><p>Permettre &agrave; un regroupement de personnes, pas n&eacute;cessairement de
+tails@boum.org, de r&eacute;voquer notre cl&eacute; de signature dans le cas o&ugrave; tout le
+monde ou presque tout le monde de tails@boum.org deviendrait indisponible.</p></li>
+<li><p>Rendre difficile &agrave; un regroupement de personnes n&#39;&eacute;tant pas de tails@boum
+de r&eacute;voquer notre cl&eacute; de signature &agrave; moins que tout le monde ou presque
+tout le monde de tails@boum.org ne devienne indisponible.</p></li>
+<li><p>Les personnes n&#39;&eacute;tant pas de tails@boum.org ne doivent pas savoir comment
+les parts sont distribu&eacute;es et qui en a.</p></li>
+<li><p>Une personne en possession d&#39;une part du certificat de r&eacute;vocation de la
+cl&eacute; de signature doit avoir des instructions sur comment l&#39;utiliser en cas
+de besoin.</p></li>
+</ul>
+
+
+<h1>Groupes</h1>
+
+<p>Nous d&eacute;finissons quatre groupes compl&eacute;mentaires de personnes de confiance :</p>
+
+<ul>
+<li>Groupe A : les personnes de tails@boum.org</li>
+<li>Groupe B</li>
+<li>Groupe C</li>
+<li>Groupe D</li>
+</ul>
+
+
+<p>Toutes ces personnes doivent avoir une cl&eacute; OpenPGP et comprendre ce qu&#39;est
+un certificat de r&eacute;vocation.</p>
+
+<h1>Parts cryptographiques</h1>
+
+<p>Nous g&eacute;n&eacute;rons un certificat de r&eacute;vocation de la cl&eacute; de signature et le
+d&eacute;coupons en un certain nombre de parts cryptographiques, par exemple en
+utilisant la m&eacute;thode du partage de cl&eacute; secr&egrave;te de Shamir, impl&eacute;ment&eacute;e par
+<code>gfshare</code>.</p>
+
+<p>Les combinaisons suivantes de personnes pourraient se regrouper et
+r&eacute;assembler leurs parts pour reconstruire un certificat de r&eacute;vocation
+complet :</p>
+
+<ul>
+<li>Trois personnes de tails@boum.org : A{3}</li>
+<li>Deux personnes de tails@boum.org et une autre personne n&#39;appartenant pas
+&agrave; tails@boum.org : A{2}+(B|C|D)</li>
+<li>Une personne de tails@boum.org et deux personnes n&#39;appartenant pas &agrave;
+tails@boum.org mais de deux groupes diff&eacute;rents : A+(B|C|D){2}</li>
+<li>Trois personnes n&#39;appartenant pas &agrave; tails@boum.org mais de trois groupes
+diff&eacute;rents : (B+C+D){3}</li>
+</ul>
+
+
+<p>Nous g&eacute;n&eacute;rons ces parts :</p>
+
+<ul>
+<li>N parts, une pour chaque personne de tails@boum.org</li>
+<li>1 part pour les personnes du groupe B</li>
+<li>1 part pour les personnes du groupe C</li>
+<li>1 part pour les personnes du groupe D</li>
+</ul>
+
+
+<h1>Qui sait quoi</h1>
+
+<ul>
+<li>Les personnes de tails@boum.org connaissent la composition de chaque
+groupe</li>
+<li>Les personnes ext&eacute;rieures &agrave; tails@boum.org :
+
+<ul>
+<li>Sont inform&eacute;es des circonstances dans lesquelles elles devraient r&eacute;voquer la cl&eacute; de signature</li>
+<li>Sont invit&eacute;es &agrave; contacter une certaine adresse email si elles d&eacute;cident de r&eacute;voquer la cl&eacute; de signature</li>
+<li>Sont inform&eacute;es qu&#39;elles ont besoin de trois parts diff&eacute;rentes pour r&eacute;assembler le certificat de r&eacute;vocation</li>
+</ul>
+</li>
+</ul>
+
+
+<h1>Infrastructure</h1>
+
+<ul>
+<li>Toutes les personnes ayant une part sont inscrites &agrave; une liste de
+diffusion.</li>
+<li>Cette liste de diffusion est h&eacute;berg&eacute;e sur un serveur de confiance
+diff&eacute;rent de boum.org afin d&#39;&ecirc;tre plus r&eacute;silient que nos canaux
+habituels de communication.</li>
+<li>La personne h&eacute;bergeant la liste de diffusion fait partie du groupe B, C
+ou D, ainsi elle peut s&#39;assurer que la liste continue de fonctionner
+m&ecirc;me si elle n&#39;est jamais utilis&eacute;e.</li>
+</ul>
+
+
+<h1>Changer les membres des groupes B, C, ou D</h1>
+
+<p>Pour ajouter une personne &agrave; un groupe donn&eacute; :</p>
+
+<ul>
+<li>Demander &agrave; une personne de ce groupe d&#39;envoyer sa part &agrave; la nouvelle
+personne.</li>
+</ul>
+
+
+<p>Pour retirer une personne d&#39;un groupe :</p>
+
+<ul>
+<li>Envoyer de nouvelles parts &agrave; tout le monde sauf &agrave; la personne qui est
+retir&eacute;e.</li>
+<li>Demander &agrave; tout le monde de supprimer leur part pr&eacute;c&eacute;dente et garder une
+trace de ceci. Une fois que tous les membres de 2 groupes parmi les
+groupes B, C ou D ont supprim&eacute; leur part, il est impossible de
+reconstituer le certificat avec les anciennes parts.</li>
+<li>Esp&eacute;rons que cela n&#39;arrive pas souvent :)</li>
+</ul>
+
+
+<h1>Expiration</h1>
+
+<p>Les certificats de r&eacute;vocation n&#39;ont pas de date d&#39;expiration. Une mani&egrave;re
+d&#39;annuler le pouvoir de r&eacute;vocation est de d&eacute;truire toutes les copies des
+parts de deux groupes parmi les groupes B, C ou D.</p>
+
+<p><a id="invitation"></a></p>
+
+<h1>Email d&#39;invitation</h1>
+
+<p>Une personne qui a une relation de confiance personnelle avec la personne
+invit&eacute;e envoi cet email.</p>
+
+<pre>
+Sujet : distribution
+
+Salut,
+
+Nous voulons vous proposer de faire partie de notre m&eacute;canisme de
+distribution du certificat de r&eacute;vocation de la cl&eacute; de signature de Tails.
+
+L&#39;id&eacute;e est de distribuer des parts cryptographiques du certificat de
+r&eacute;vocation &agrave; des personnes en qui nous avons confiance. Ces parts
+cryptographiques peuvent &ecirc;tre mises ensemble pour r&eacute;assembler le certificat
+de r&eacute;vocation et r&eacute;voquer la cl&eacute; de signature de Tails. Cela peut &ecirc;tre
+n&eacute;cessaire dans le cas o&ugrave; quelque chose de vraiment mauvais nous arriverais
+et o&ugrave; nous ne serions pas capable de faire la r&eacute;vocation nous-m&ecirc;mes.
+
+Note : dans la totalit&eacute; de ce document, &#39;nous&#39; correspond au groupe de
+personnes inscrites &agrave; tails@boum.org, c&#39;est une liste de diffusion
+Schleuder.
+
+Vous pouvez lire la description compl&egrave;te du m&eacute;canisme de distribution sur :
+
+https://tails.boum.org/doc/about/openpgp_keys/signing_key_revocation/index.fr.html.
+
+La proc&eacute;dure est publique et le seul &eacute;l&eacute;ment secret est la liste des
+personnes en possession du mat&eacute;riel cryptographique.
+
+Nous vous proposons cela car nous vous faisons confiance &agrave; la fois pour vos
+capacit&eacute;s techniques &agrave; stocker votre part dans un lieu s&ucirc;r et &agrave; faire les
+manipulations n&eacute;cessaires. Mais &eacute;galement car nous vous faisons confiance en
+tant qu&#39;&ecirc;tre humain pour avoir un jugement &eacute;clair&eacute; sur quand utiliser cette
+part et pour agir uniquement dans l&#39;int&eacute;r&ecirc;t de Tails.
+
+Les pires choses qui pourraient arriver si le m&eacute;canisme &eacute;choue sont :
+
+A. La cl&eacute; de signature n&#39;est pas r&eacute;voqu&eacute;e lorsqu&#39;elle le devrait. Cela
+pourrait rendre possible &agrave; des attaquants de distribuer des images Tails
+malveillantes ou de publier des informations malveillantes en notre nom.
+
+B. La cl&eacute; de signature est r&eacute;voqu&eacute;e alors qu&#39;elle n&#39;aurait pas d&ucirc;. Cela
+pourrait emp&ecirc;cher des personnes de v&eacute;rifier nos images avec OpenPGP jusqu&#39;&agrave;
+ce que nous publions une nouvelle cl&eacute; de signature et construisions la
+confiance en elle.
+
+Distribution des parts
+======================
+
+Chaque personne de tails@boum.org, groupe A, a une part *diff&eacute;rente*, A1,
+A2, ..., An.
+
+En plus de &ccedil;a, nous d&eacute;finissons trois groupes compl&eacute;mentaires, B, C, et D de
+personnes de confiance qui sont proches de Tails mais avec des int&eacute;r&ecirc;ts
+diff&eacute;rents et des acc&egrave;s diff&eacute;rents aux informations nous concernant. Vous
+faites partie d&#39;un de ces groupes.
+
+Tout le monde dans le groupe B a une part B *identique*.
+
+Tout le monde dans le groupe C a une part C *identique*.
+
+Tout le monde dans le groupe D a une part D *identique*.
+
+Trois parts diff&eacute;rentes sont n&eacute;cessaires pour r&eacute;assembler le certificat de
+r&eacute;vocation. Par exemple, les parts A1, A2 et A3, ou les parts A1, B et C.
+
+Comment stocker vos parts
+=========================
+
+Veillez conserver votre part dans un stockage chiffr&eacute; et rendre aussi
+difficile que possible &agrave; une personne non-fiable d&#39;en faire une copie.
+
+Vous pouvez renommer le fichier tant que vous conservez le nombre dans le
+nom du fichier de votre part car il est n&eacute;cessaire pour utiliser la part.
+
+N&#39;h&eacute;sitez pas &agrave; faire une sauvegarde du fichier mais &agrave; un moment nous
+pourrions vous demander de le supprimer et vous devrez pouvoir &ecirc;tre en
+mesure de savoir si vous avez encore une copie ou non. Ce n&#39;est pas grave de
+perde votre part si vous nous pr&eacute;venez que vous l&#39;avez perdu. Il est
+actuellement pire de continuer &agrave; avoir une copie de votre part &quot;quelque
+part&quot; en pensant ne pas en avoir que de l&#39;avoir perdu par erreur.
+
+N&#39;h&eacute;sitez pas &agrave; nous demander si vous avez besoin de clarification sur les
+aspects techniques de cela.
+
+Quand utiliser votre part
+=========================
+
+Tout le monde en possession d&#39;une part est inscrit &agrave; une liste de diffusion.
+
+Si une personne en possession d&#39;une part apprenait qu&#39;un tr&egrave;s mauvais
+&eacute;v&eacute;nement &eacute;tait arriv&eacute; &agrave; un grand nombre d&#39;entre nous et pense vraiment que
+nous ne serons plus capable de r&eacute;voquer la cl&eacute; de signature de Tails
+nous-m&ecirc;mes, alors cette personne doit &eacute;crire &agrave; la liste de diffusion en
+expliquant pourquoi elle pense que la cl&eacute; de signature doit &ecirc;tre r&eacute;voqu&eacute;e.
+
+Oui, il y a un algorithme math&eacute;matiquement prouv&eacute; pour cela et c&#39;est ici que
+votre jugement en tant qu&#39;&ecirc;tre humain est n&eacute;cessaire. La description du tr&egrave;s
+mauvais &eacute;v&egrave;nement doit &ecirc;tre v&eacute;rifi&eacute; ou soutenu par suffisamment de personnes
+pour &ecirc;tre plausible.
+
+Les personnes de cette liste qui sont convaincues que la cl&eacute; de signature
+doit &ecirc;tre r&eacute;voqu&eacute;e partagent leurs parts jusqu&#39;&agrave; avoir 3 parts
+diff&eacute;rentes. Ensuite elles peuvent assembler le certificat de r&eacute;vocation et
+le publier pour r&eacute;voquer la cl&eacute; de signature.
+
+Gardez en t&ecirc;te que nous pouvons toujours r&eacute;voquer la cl&eacute; de signature
+nous-m&ecirc;mes si trois d&#39;entre nous sont capables de communiquer et d&#39;&eacute;changer
+leurs parts. Donc nous avons besoin de votre aide seulement si pas plus de
+deux d&#39;entre nous sont capables de communiquer.
+
+&Agrave; moins que n&rsquo;ayez r&eacute;ellement besoin de commencer le processus de r&eacute;vocation
+de la cl&eacute;, n&#39;&eacute;crivez pas &agrave; la liste de diffusion.
+
+Communications futures
+======================
+
+Dans le cas o&ugrave; nous aurions besoin &agrave; l&#39;avenir de communiquer avec vous &agrave;
+propos de ce m&eacute;canisme de r&eacute;vocation, nous le ferons toujours par la liste
+de diffusion tails@boum.org. Nous pourrions faire &ccedil;a pour par exemple :
+
+  - Vous demander d&#39;envoyer votre part &agrave; un nouveau membre de votre groupe.
+
+  - Vous demander de supprimer votre part. Cela peut-&ecirc;tre n&eacute;cessaire pour
+    annuler le fonctionnement de la part d&#39;une autre personne : d&egrave;s que
+    suffisamment d&#39;entre vous avez supprim&eacute; votre part, les quelques
+    personnes ne l&#39;ayant pas supprim&eacute; se retrouvent avec des parts
+    inutilisables.
+
+La liste de diffusion tails@boum.org a sa propre cl&eacute; OpenPGP, qui est sign&eacute;e
+par la cl&eacute; de signature de Tails elle-m&ecirc;me :
+
+    https://tails.boum.org/tails-email.key
+
+Donc, pouvons-nous compter sur vous ?
+
+Si vous r&eacute;pondez positivement, nous allons vous envoyer votre part et vous
+inscrire &agrave; la liste de diffusion.
+
+Merci et que la force soit avec vous !
+</pre>
+
+
+<h1>Garder les membres des groupes B, C et D &agrave; jour</h1>
+
+<p>Au moins tous les 2 ans, nous nous assurons que le m&eacute;canisme fonctionne
+toujours :</p>
+
+<ol>
+<li><p>Nous v&eacute;rifions en interne la liste des membres de chaque groupe et
+d&eacute;cidons de possibles ajouts ou retraits de chaque groupe.</p></li>
+<li><p>Nous &eacute;crivons individuellement &agrave; chaque membre de chaque groupe pour
+demander de v&eacute;rifier si il a toujours sa part et le num&eacute;ro dans le nom du
+fichier.</p></li>
+<li><p>Nous nous connectons &agrave; l&#39;interface d&#39;administration de la liste de
+diffusion pour s&#39;assurer qu&#39;elle existe toujours et qu&#39;elle est
+configur&eacute;e correctement.</p></li>
+</ol>
+
+
+<p><a id="update"></a></p>
+
+<h2>Email de mise &agrave; jour</h2>
+
+<p>Nous envoyons ces emails depuis tails@boum.org pour &eacute;viter d&#39;avoir besoin
+d&#39;une relation de confiance personnelle entre la personne envoyant l&#39;email
+et celle le recevant. Nous n&#39;envoyons pas les parts des groupes B, C ou D
+avec tails@boum.org de cette fa&ccedil;on.</p>
+
+<pre>
+Sujet : mise &agrave; jour
+
+Salut,
+
+Il y a plusieurs ann&eacute;es, vous avez accept&eacute; de faire partie de notre
+m&eacute;canisme de distribution du certificat de r&eacute;vocation de la cl&eacute; de signature
+de Tails et nous vous avions envoy&eacute; une part cryptographique du certificat
+de r&eacute;vocation.
+
+Aujourd&rsquo;hui, nous vous demandons de :
+
+1. V&eacute;rifier l&#39;authenticit&eacute; de cet email, au choix en v&eacute;rifiant qu&#39;il soit
+   sign&eacute; par tails@boum.org ou en discutant directement avec une personne de
+   tails@boum.org.
+
+   La liste de diffusion tails@boum.org a sa propre cl&eacute; OpenPGP, qui est
+   sign&eacute;e par la cl&eacute; de signature de Tails elle-m&ecirc;me :
+
+   https://tails.boum.org/tails-email.key
+
+2. Confirmer que vous avez toujours en votre possession :
+
+   - Votre part du certificat de r&eacute;vocation.
+
+   - Le num&eacute;ro NNN dans le nom de fichier de votre part.
+
+     Le fichier est nomm&eacute; tails-signing-key-revocation-cert.asc.NNN, o&ugrave;
+     NNN est un num&eacute;ro &agrave; 3 chiffres.
+
+Pour votre information, l&rsquo;adresse de la liste de diffusion o&ugrave; vous devez
+&eacute;crire dans le cas o&ugrave; vous voulez assembler le certificat de r&eacute;vocation est
+:
+
+    adresse@exemple.org
+
+N&#39;&eacute;crivez pas &agrave; cette liste de diffusion &agrave; moins que n&rsquo;ayez r&eacute;ellement
+besoin de commencer le processus de r&eacute;vocation de la cl&eacute;.
+
+Nous avons &eacute;galement copi&eacute; ci-dessous le r&eacute;sum&eacute; du m&eacute;canisme.
+
+XXX : Copier l&#39;email d&#39;invitation :
+XXX : - Inclure &quot;Vous pouvez lire la description compl&egrave;te du m&eacute;canisme de distribution sur :&quot;
+XXX : - Arr&ecirc;ter avant &quot;Donc, pouvons-nous compter sur vous ?&quot;
+</pre>
+
+
+<h2>Ajouter une nouvelle personne</h2>
+
+<ol>
+<li><p>Envoyer l&#39;<a href="./signing_key_revocation.fr.html#invitation">email d&#39;invitation</a> &agrave; la
+nouvelle personne.</p></li>
+<li><p>Si elle est d&#39;accord, demander &agrave; une autre personne du m&ecirc;me groupe de lui
+envoyer sa part de la cl&eacute;.</p>
+
+<p>Malheureusement, cela r&eacute;v&egrave;le certaines informations &agrave; ces deux
+personnes.</p></li>
+<li><p>Demander &agrave; la nouvelle personne de confirmer la r&eacute;ception de sa part.</p></li>
+</ol>
+
+
+<p><a id="sharing"></a></p>
+
+<h3>Email de partage</h3>
+
+<p>Nous envoyons ces emails depuis tails@boum.org pour &eacute;viter d&#39;avoir besoin
+d&#39;une relation de confiance personnelle entre la personne envoyant l&#39;email
+et celle le recevant. Nous n&#39;envoyons pas les parts des groupes B, C ou D
+avec tails@boum.org de cette fa&ccedil;on.</p>
+
+<pre>
+Sujet : partage
+
+Salut,
+
+Nous avons demand&eacute; &agrave; une autre personne de votre groupe de vous envoyer une
+copie de votre part.
+
+Veuillez nous pr&eacute;venir quand vous l&#39;aurez re&ccedil;u.
+
+L&rsquo;adresse de la liste de diffusion o&ugrave; vous devez &eacute;crire dans le cas o&ugrave; vous
+voulez assembler le certificat de r&eacute;vocation est :
+
+    adresse@exemple.org
+
+N&#39;&eacute;crivez pas &agrave; cette liste de diffusion &agrave; moins que n&rsquo;ayez r&eacute;ellement
+besoin de commencer le processus de r&eacute;vocation de la cl&eacute;.
+
+Merci et que la force soit avec vous !
+</pre>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../news/report_2016_10.html">news/report 2016 10</a>
+
+<a href="../../../news/report_2016_11.html">news/report 2016 11</a>
+
+<a href="../../../news/report_2017_04.html">news/report 2017 04</a>
+
+<a href="../../../news/report_2019_07.html">news/report 2019 07</a>
+
+<a href="../../../news/report_2019_11.html">news/report 2019 11</a>
+
+<a href="../openpgp_keys.fr.html">openpgp keys.fr</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/about/openpgp_keys/signing_key_revocation.fr">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

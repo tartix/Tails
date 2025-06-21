@@ -1,0 +1,1165 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Download and verify (for USB sticks)</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<link href="./inc/stylesheets/assistant.css" rel="stylesheet" title="" type="text/css" />
+<link href="./inc/stylesheets/download.css" rel="stylesheet" title="" type="text/css" />
+<link href="../doc/about/warnings.css" rel="stylesheet" title="" type="text/css" />
+<link href="./inc/stylesheets/steps.css" rel="stylesheet" title="" type="text/css" />
+<link href="./inc/stylesheets/download-only-img.css" rel="stylesheet" title="" type="text/css" />
+<script src="./inc/js/download.js" type="text/javascript"></script>
+<script src="./inc/js/forge.sha256.min.js" type="text/javascript"></script>
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../install.en.html">install</a></li>
+
+
+
+
+<li>Download and verify (for USB sticks)</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./download.de.html">de</a></span>
+   <span class="hidden"><a href="./download.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./download.es.html">es</a></span>
+   <span class="hidden"><a href="./download.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./download.fr.html">fr</a></span>
+   <span class="hidden"><a href="./download.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./download.it.html">it</a></span>
+   <span class="hidden"><a href="./download.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./download.pt.html">pt</a></span>
+   <span class="hidden"><a href="./download.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./download.ru.html">ru</a></span>
+   <span class="hidden"><a href="./download.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Download and verify (for USB sticks)
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div id="activate-tails-verification"></div>
+
+
+<div id="extension-version">2.4</div>
+
+
+
+
+<div id="tails-version">
+4.23
+</div>
+
+
+
+
+<h1 class="step usb upgrade dvd vm">Download Tails 
+4.23
+</h1>
+
+
+
+
+<div class="tip upgrade">
+
+<p>While you are downloading, we recommend you read the
+<a href="../doc/upgrade/release_notes.en.html">release notes</a> for Tails
+
+4.23
+<span class="remove-extra-space">.</span>&nbsp;
+They document all the changes in this new version: new features, problems that
+were solved, and known issues that have already been identified.</p>
+
+
+
+</div>
+
+
+
+
+<div id="step-download">
+  <h3><span class="step-number"><span class="usb upgrade">1.</span>1</span>Download Tails</h3>
+  <div class="usb upgrade download-only-img indent">
+    <a class="use-mirror-pool button inline-block" href="
+http://dl.amnesia.boum.org/tails/stable/tails-amd64-4.23/tails-amd64-4.23.img
+" id="download-img">Download Tails 
+4.23
+ USB image (<span class="remove-extra-space">
+1.2 GB
+</span>)</a>
+    <a class="use-mirror-pool-on-retry button inline-block" href="
+http://dl.amnesia.boum.org/tails/stable/tails-amd64-4.23/tails-amd64-4.23.img
+" id="download-img-retry">Download Tails 
+4.23
+ USB image (<span class="remove-extra-space">
+1.2 GB
+</span>)</a>
+  </div>
+  <div class="dvd vm download-only-iso indent">
+    <a class="use-mirror-pool button inline-block" href="
+http://dl.amnesia.boum.org/tails/stable/tails-amd64-4.23/tails-amd64-4.23.iso
+" id="download-iso">Download Tails 
+4.23
+ ISO image (<span class="remove-extra-space">
+1.1 GB
+</span>)</a>
+    <a class="use-mirror-pool-on-retry button inline-block" href="
+http://dl.amnesia.boum.org/tails/stable/tails-amd64-4.23/tails-amd64-4.23.iso
+" id="download-iso-retry">Download Tails 
+4.23
+ ISO image (<span class="remove-extra-space">
+1.1 GB
+</span>)</a>
+  </div>
+  <div class="indent" id="download-minor">
+    <p id="bittorrent">
+      or download using
+      <a class="usb upgrade download-only-img" href="
+https://tails.boum.org/torrents/files/tails-amd64-4.23.img.torrent
+" id="download-img-torrent">BitTorrent</a>
+      <a class="dvd vm download-only-iso" href="
+https://tails.boum.org/torrents/files/tails-amd64-4.23.iso.torrent
+" id="download-iso-torrent">BitTorrent</a>
+    </p>
+    <p id="try-another-mirror">If the download fails, try to
+      <a class="usb upgrade download-only-img" href="
+http://dl.amnesia.boum.org/tails/stable/tails-amd64-4.23/tails-amd64-4.23.img
+">download from another mirror.</a>
+      <a class="dvd vm download-only-iso" href="
+http://dl.amnesia.boum.org/tails/stable/tails-amd64-4.23/tails-amd64-4.23.iso
+">download from another mirror.</a>
+    </p>
+  </div>
+</div>
+
+
+
+
+<div id="step-verify">
+  <h3><span class="step-number"><span class="usb upgrade">1.</span>2</span>Verify your download</h3>
+  <div class="indent block" id="javascript-verification-tip">
+    <p>For your security, always verify your download.</p>
+    <p class="floating-toggleable-link why-verify-link"><a class="toggle" href="#install-inc-steps-download.inline.why-verify">Why?</a></p>
+    <div class="floating-toggleable" id="why-verify">
+    <div class="toggleable" id="install-inc-steps-download.inline.why-verify">
+
+    <a class="toggle" href="#install-inc-steps-download.inline.why-verify">X</a>
+    <p>With an unverified download, you might:</p>
+    <ul>
+      <li>Lose time if your download is incomplete or broken due to an error during the download.
+          This is quite frequent.</li>
+      <li>Get hacked while using Tails if one of our download mirrors has been compromised and is serving malicious downloads.
+          <a href="http://blog.linuxmint.com/?p=2994">This already happened to other operating systems.</a></li>
+    </ul>
+    <p><a href="../contribute/design/download_verification.html">How does the verification work?</a></p>
+    
+    </div>
+    </div>
+  </div>
+  <div class="indent block" id="bittorrent-verification-tip">
+    <p>Your BitTorrent client will automatically verify your download when it completes.</p>
+    <p>The verification below is optional for a BitTorrent download.</p>
+  </div>
+  <div class="indent block tip" id="extension">
+    <p><strong>You have our <em>Tails Verification</em> extension installed.</strong></p>
+    <p>Since December 2020, you can do the verification directly on the page.
+    You don&#39;t need the <em>Tails Verification</em> anymore and can safely remove it.</p>
+    <p>See our <a href="../news/verification_extension_deprecation.en.html">statement about the deprecation of the <em>Tails Verification</em> extension</a>.</p>
+  </div>
+  <div class="indent block" id="verification">
+    <div id="no-js">
+      <p>You seem to have JavaScript disabled. To verify your download,
+         you can either:</p>
+      <ul>
+        <li><p>Enable JavaScript and reload this page.</p></li>
+        <li><p>Compare manually the checksum of your download with <a href="./v2/Tails/amd64/stable/latest.json">the
+            checksum of our images</a>.<br />
+            See our documentation on <a href="../doc/encryption_and_privacy/checksums.en.html">calculating checksums using
+            GtkHash</a>.</p></li>
+        <li><p>Verify your download using our <a href="../tails-signing.key">OpenPGP signing key</a> and
+          <span class="usb upgrade download-only-img"><a href="
+https://tails.boum.org/torrents/files/tails-amd64-4.23.img.sig
+">OpenPGP signature</a>.</span>
+          <span class="dvd vm download-only-iso"><a href="
+https://tails.boum.org/torrents/files/tails-amd64-4.23.iso.sig
+">OpenPGP signature</a>.</span><br />
+          We don&#39;t provide instructions to verify downloads with OpenPGP anymore.
+        </p></li>
+      </ul>
+    </div>
+    <div id="ie">
+      <p>You seem to be using <em>Internet Explorer</em>. To verify your download,
+         please use a different browser.</p>
+    </div>
+    <div class="block" id="verify-button">
+      <label class="button">
+        Verify Tails <span class="remove-extra-space">&#x2060;
+4.23
+</span>&hellip;
+        <input id="verify-file" type="file" />
+      </label>
+      <p>or download the <a class="toggle" href="#install-inc-steps-download.inline.openpgp-verification">OpenPGP signature</a></p>
+      <div class="floating-toggleable" id="openpgp-verification">
+      <div class="toggleable" id="install-inc-steps-download.inline.openpgp-verification">
+
+      <a class="toggle" href="#install-inc-steps-download.inline.openpgp-verification">X</a>
+
+      <p><a href="../tails-signing.key">OpenPGP signing key</a></p>
+
+      <p>
+        <a class="usb upgrade download-only-img" href="
+https://tails.boum.org/torrents/files/tails-amd64-4.23.img.sig
+">OpenPGP signature </a>
+        <a class="dvd vm download-only-iso" href="
+https://tails.boum.org/torrents/files/tails-amd64-4.23.iso.sig
+">OpenPGP signature</a>
+      </p>
+
+      <p>We removed our instructions to verify downloads with OpenPGP.</p>
+
+      <p>Without advanced knowledge of OpenPGP, verifying with OpenPGP provides
+      the same level of security as the JavaScript verification on the page,
+      while being much more complicated and error-prone.</p>
+
+      <p>Both the JavaScript and the OpenPGP verification rely on the HTTPS
+      encryption of our website to provide either a correct OpenPGP signature
+      or a correct JavaScript verification. That is why both verification
+      techniques can protect you from a malicious download from one of our
+      mirrors but cannot protect you if our website gets compromised.</p>
+
+      <p>The only way to completely protect you in case our website gets
+      compromised would be for you to build a strong trust path to our OpenPGP
+      signing key using the OpenPGP Web of Trust.</p>
+
+      <p>Our <a href="./expert/usb.en.html">installation instructions from Debian, Ubuntu, or Mint using the
+      command line and GnuPG</a> still explain how to use the
+      OpenPGP Web of Trust. Our team thinks that it is not worth helping you do
+      so from other operating systems. You would have to learn these advanced
+      OpenPGP skills elsewhere.</p>
+
+      
+      </div>
+      </div>
+    </div>
+    <div class="block" id="verifying-download">
+      <p>Verifying <em><span class="verify-filename">$FILENAME</span></em>&hellip;</p>
+      <div class="progress">
+        <div aria-valuemax="100" aria-valuemin="0" aria-valuenow="0" class="progress-bar" id="progress-bar" role="progressbar" style="width: 0%"></div>
+      </div>
+    </div>
+    <div class="block" id="verification-successful">
+      <p><img alt="" class="icon" height="20" src="../lib/check.png" width="24" /><b>Verification successful!</b> (<em><span class="verify-filename">$FILENAME</span></em>)</p>
+    </div>
+    <div class="block" id="verification-failed">
+      <p><img alt="" class="icon" height="22" src="../lib/cross.png" width="23" /><b>Verification failed!</b> (<em><span class="verify-filename">$FILENAME</span></em>)</p>
+      <p class="floating-toggleable-link why-failed-link"><a class="toggle" href="#install-inc-steps-download.inline.why-failed">Why?</a></p>
+      <div class="floating-toggleable" id="why-failed">
+      <div class="toggleable" id="install-inc-steps-download.inline.why-failed">
+
+      <a class="toggle" href="#install-inc-steps-download.inline.why-failed">X</a>
+      <p>Most likely, the verification failed because of an error
+      or interruption during the download.</p>
+
+      <p>The verification also fails if you try to verify a different
+      download than the latest version, Tails 
+4.23
+.</p>
+
+      <p>Less likely, the verification might have failed because
+      of a malicious download from our download mirrors or due to
+      a network attack in your country or local network.</p>
+
+      <p>Downloading again is usually enough to fix this
+      problem. Otherwise, please try downloading from a different place or a
+      different computer.</p>
+
+      <p><a href="../contribute/design/download_verification.html">How does the verification work?</a></p>
+      
+      </div>
+      </div>
+      <p class="usb upgrade download-only-img"><a class="use-mirror-pool-on-retry" href="
+http://dl.amnesia.boum.org/tails/stable/tails-amd64-4.23/tails-amd64-4.23.img
+" id="download-img-again">Please try to download again&hellip;</a></p>
+      <p class="dvd vm download-only-iso"><a class="use-mirror-pool-on-retry" href="
+http://dl.amnesia.boum.org/tails/stable/tails-amd64-4.23/tails-amd64-4.23.iso
+" id="download-iso-again">Please try to download again&hellip;</a></p>
+    </div>
+    <div class="block" id="verification-error-file">
+      <p><img alt="" class="icon" height="22" src="../lib/cross.png" width="23" /><b>Error selecting image.</b></p>
+      <p class="usb upgrade download-only-img">Make sure that you select a USB image that is readable by your browser.</p>
+      <p class="dvd vm download-only-iso">Make sure that you select an ISO image that is readable by your browser.</p>
+      <p><a id="retry-json">Retry&hellip;</a></p>
+    </div>
+    <div class="block" id="verification-error-json">
+      <p><img alt="" class="icon" height="22" src="../lib/cross.png" width="23" /><b>Error downloading <a href="" id="checksum-file">checksum file</a> from our website.</b></p>
+      <p>Make sure that your browser is connected to the Internet.</p>
+      <p><a id="retry-json">Retry&hellip;</a></p>
+    </div>
+    <div class="block" id="verification-error-image">
+      <p><img alt="" class="icon" height="22" src="../lib/cross.png" width="23" /><b>Error reading image <em><span class="verify-filename">$FILENAME</span></em>.</b></p>
+      <p>Make sure that <em><span class="verify-filename">$FILENAME</span></em> is readable by your browser.</p>
+      <p><a id="retry-image">Retry&hellip;</a></p>
+    </div>
+  </div>
+</div>
+
+
+
+
+<div id="step-continue">
+  <h3><span class="step-number"><span class="usb upgrade">1.</span>3</span>Continue
+    <span class="usb">installing</span>
+    <span class="upgrade">upgrading</span>
+    <span class="download-only-img download-only-iso">installing or upgrading</span></h3>
+</div>
+
+
+
+
+<div class="indent" id="continue-link">
+  <div id="skip-download">
+    <span class="windows"><a href="./win/usb.en.html">Skip download</a></span>
+    <span class="linux"><a href="./linux/usb.en.html">Skip download</a></span>
+    <span class="mac"><a href="./mac/usb.en.html">Skip download</a></span>
+    <span class="dvd"><a href="./dvd.en.html">Skip download</a></span>
+    <span class="vm"><a href="../doc/advanced_topics/virtualization.en.html">Skip download</a></span>
+    <span class="upgrade-tails"><a href="../upgrade/tails.en.html">Skip download</a></span>
+    <span class="upgrade-windows"><a href="../upgrade/win.en.html">Skip download</a></span>
+    <span class="upgrade-mac"><a href="../upgrade/mac.en.html">Skip download</a></span>
+    <span class="upgrade-linux"><a href="../upgrade/linux.en.html">Skip download</a></span>
+    <span class="download-only-img download-only-iso"><a href="../doc.en.html#install">Skip download</a></span>
+  </div>
+  <div id="skip-verification">
+    <p><img alt="" class="icon" height="24" src="./inc/icons/dialog-warning-small.png" width="24" />
+      <span class="windows"><a href="./win/usb.en.html">Skip verification!</a></span>
+      <span class="linux"><a href="./linux/usb.en.html">Skip verification!</a></span>
+      <span class="mac"><a href="./mac/usb.en.html">Skip verification!</a></span>
+      <span class="dvd"><a href="./dvd.en.html">Skip verification!</a></span>
+      <span class="vm"><a href="../doc/advanced_topics/virtualization.en.html">Skip verification!</a></span>
+      <span class="upgrade-tails"><a href="../upgrade/tails.en.html">Skip verification!</a></span>
+      <span class="upgrade-windows"><a href="../upgrade/win.en.html">Skip verification!</a></span>
+      <span class="upgrade-mac"><a href="../upgrade/mac.en.html">Skip verification!</a></span>
+      <span class="upgrade-linux"><a href="../upgrade/linux.en.html">Skip verification!</a></span>
+      <span class="download-only-img download-only-iso"><a href="../doc.en.html#install">Skip verification</a></span>
+    </p>
+  </div>
+  <div class="inline-block" id="next">
+    <div class="windows"><a href="./win/usb.en.html"><div class="bold">Next: Install Tails (<span class="next-counter"></span>)</div></a></div>
+    <div class="linux"><a href="./linux/usb.en.html"><div class="bold">Next: Install Tails (<span class="next-counter"></span>)</div></a></div>
+    <div class="mac"><a href="./mac/usb.en.html"><div class="bold">Next: Install Tails (<span class="next-counter"></span>)</div></a></div>
+    <div class="upgrade-tails"><a href="../upgrade/tails.en.html"><div class="bold">Next: Install an intermediary Tails (<span class="next-counter"></span>)</div></a></div>
+    <div class="upgrade-windows"><a href="../upgrade/win.en.html"><div class="bold">Next: Install an intermediary Tails (<span class="next-counter"></span>)</div></a></div>
+    <div class="upgrade-mac"><a href="../upgrade/mac.en.html"><div class="bold">Next: Install an intermediary Tails (<span class="next-counter"></span>)</div></a></div>
+    <div class="upgrade-linux"><a href="../upgrade/linux.en.html"><div class="bold">Next: Install an intermediary Tails (<span class="next-counter"></span>)</div></a></div>
+    <div class="dvd"><a href="./dvd.en.html"><div class="bold">Next: Burning Tails on a DVD</div></a></div>
+    <div class="vm"><a href="../doc/advanced_topics/virtualization.en.html"><div class="bold">Next: Virtualization</div></a></div>
+    <div class="download-only-img">
+      <p>Upgrade your Tails USB stick and keep your Persistent Storage:</p>
+      <ul>
+        <li><a href="../upgrade/tails.en.html">Upgrade from your Tails</a></li>
+        <li><a href="../upgrade/win.en.html">Upgrade from Windows</a></li>
+        <li><a href="../upgrade/mac.en.html">Upgrade from macOS</a></li>
+        <li><a href="../upgrade/linux.en.html">Upgrade from Linux</a></li>
+      </ul>
+      <p>Install a new USB stick:</p>
+      <ul>
+        <li><a href="./win/usb.en.html">Install from Windows</a></li>
+        <li><a href="./mac/usb.en.html">Install from macOS</a></li>
+        <li><a href="./linux/usb.en.html">Install from Linux</a></li>
+      </ul>
+    </div>
+    <ul class="download-only-iso">
+      <li><a href="./dvd.en.html">Burn on a DVD</a></li>
+      <li><a href="../doc/advanced_topics/virtualization.en.html">Run in a virtual machine</a></li>
+    </ul>
+  </div>
+</div>
+
+
+
+
+<h1 id="warnings">Warnings: Tails is safe but not magic!</h1>
+
+
+
+
+<div class="caution">
+
+<p>Tails is safer than any regular operating system. But Tails, or any
+software or operating system, cannot protect you from everything&mdash;even if they
+pretend to.</p>
+
+<p>The recommendations below will keep you even safer,
+especially if you are at high risk.</p>
+
+</div>
+
+
+
+
+<div id="columns">
+
+<div id="identity">
+
+<div class="content">
+
+<h3>Protecting your identity when using Tails</h3>
+
+<img class="img" src="../doc/about/warnings/identity.svg" />
+
+
+<p>Tails is designed to hide your identity.</p>
+
+<p>But some of your activities could reveal
+your identity:</p>
+
+<ul>
+  <li>Sharing files with metadata, such as date, time, location, and device information</li>
+  <li>Using Tails for more than one purpose at a time</li>
+</ul>
+
+
+</div>
+
+<div class="button"><a class="toggle" href="#doc-about-warnings.identity">Protecting your identity</a></div>
+
+</div>
+
+<div id="tor">
+
+<div class="content">
+
+<h3>Limitations of the Tor network</h3>
+
+<img class="img" src="../doc/about/warnings/tor.svg" />
+
+
+<p>Tails uses the Tor network because it is the strongest and most popular
+network to protect from surveillance and censorship.</p>
+
+<p>But Tor has limitations if you are concerned about:</p>
+
+<ul>
+  <li>Hiding that you are using Tor and Tails</li>
+  <li>Protecting your online communications from determined, skilled attackers</li>
+</ul>
+
+
+</div>
+
+<div class="button"><a class="toggle" href="#doc-about-warnings.tor">Limitations of Tor</a></div>
+
+</div>
+
+<div id="computer">
+
+<div class="content">
+
+<h3>Reducing risks when using untrusted computers</h3>
+
+<img class="img" src="../doc/about/warnings/computer.svg" />
+
+
+<p>Tails can safely run on a computer that has a virus.</p>
+
+<p>But Tails cannot always protect you when:</p>
+
+<ul>
+  <li>Installing from an infected computer</li>
+  <li>Running Tails on a computer with a compromised BIOS, firmware, or hardware</li>
+</ul>
+
+
+</div>
+
+<div class="button"><a class="toggle" href="#doc-about-warnings.computer">Using untrusted computers</a></div>
+
+</div>
+
+</div>
+
+
+
+
+<div class="tip">
+
+<p>Because you always have to adapt your digital security practices to your specific needs and threats,
+we encourage you to learn more by reading the
+following guides:</p>
+
+<ul>
+  <li><a href="https://ssd.eff.org/">EFF: Surveillance Self-Defense</a></li>
+  <li><a href="https://securityinabox.org/">Front Line Defenders: Security-in-a-Box</a></li>
+</ul>
+
+</div>
+
+
+
+
+<div id="detailed-warning">
+
+<div class="toggleable" id="doc-about-warnings.identity">
+
+<span class="hide"><a class="toggle" href="#doc-about-warnings.identity"></a></span>
+
+
+
+
+<h1 class="embedded">Protecting your identity when using Tails</h1>
+
+<div class="standalone">
+
+
+
+
+
+</div>
+
+<h2 id="metadata">Clean metadata from files before sharing them</h2>
+
+<p>Many files contain hidden data, or metadata:</p>
+
+<ul>
+
+<li><p>JPEG and other image files often contain information about
+where a picture was taken and which camera was used.</p></li>
+
+<li><p>Office documents often contain information
+about their author, and the date and time the document was
+created.</p></li>
+
+</ul>
+
+<p>To help you clean metadata, Tails includes
+<a href="../doc/sensitive_documents/metadata.en.html"><i>mat2</i></a>, a tool to remove metadata
+in a wide range of file formats.</p>
+
+<div class="attack">
+
+<p>Metadata has been used in the past to locate people
+from pictures they took. For an example, see
+<a href="https://www.npr.org/sections/thetwo-way/2012/12/04/166487197/betrayed-by-metadata-john-mcafee-admits-hes-really-in-guatemala">NPR:
+Betrayed by metadata, John McAfee admits he&#39;s really in
+Guatemala</a>.</p>
+
+</div>
+
+<h2 id="contextual">Use Tails sessions for only one purpose at a time</h2>
+
+<p>If you use Tails sessions for more than one purpose at a time,
+an adversary could link your different
+activities together.</p>
+
+<p>For example, if you log into different accounts on the same website in a
+single Tails session, the website could determine that the accounts
+are used by the same person. This is because websites can tell when
+2 accounts are using the same Tor circuit.</p>
+
+<p>To prevent an adversary from linking your
+activities together while using Tails, restart Tails between
+different activities. For example, restart Tails between checking
+your work email and your whistleblowing email.</p>
+
+<div class="attack">
+
+<p>We are not aware of any such attacks to deanonymize people online who
+used Tails for different purposes at a time.</p>
+
+</div>
+
+<p>If you worry that the files in your Persistent
+Storage could be used to link your activities together,
+consider using a different Tails USB stick for each activity.
+For example, use one Tails USB stick for your activism work and another one
+for your journalism work.</p>
+
+</div>
+
+<div class="toggleable" id="doc-about-warnings.tor">
+
+<span class="hide"><a class="toggle" href="#doc-about-warnings.tor"></a></span>
+
+
+
+
+<h1 class="embedded">Limitations of the Tor network</h1>
+
+<div class="standalone">
+
+
+
+
+
+</div>
+
+<h2 id="fingerprint">Tails makes it clear that you are using Tor and probably Tails</h2>
+
+<p>Everything you do on the Internet from Tails goes through the Tor network.</p>
+
+<p>Tor and Tails don&#39;t protect you by making you look like any random Internet
+user, but by making all Tor and Tails users look the same. It becomes
+impossible to know who is who among them.</p>
+
+<ul>
+
+<li><p>Your Internet service provider (ISP) and local network can
+see that you connect to the Tor network. They still cannot know what sites you visit.
+To hide that you connect to Tor, you can use <span class="createlink">Tor bridges</span>.</p></li>
+
+<li><p>The sites that you visit can know that you are using Tor, because the
+<a href="https://metrics.torproject.org/exonerator.html">list of exit
+nodes of the Tor network</a> is public.</p></li>
+
+</ul>
+
+<div class="attack">
+
+<p>Parental controls, Internet service providers, and countries
+with heavy censorship can identify and block connections to the Tor
+network that don&#39;t use Tor bridges.</p>
+
+<p>Many websites ask you to solve a CAPTCHA or block access from the Tor
+network.</p>
+
+</div>
+
+<h2 id="exit">Exit nodes can intercept traffic to the destination server</h2>
+
+<p>Tor hides your location from destination servers, but it does not encrypt
+<i>all</i> your communication. The last relay of a Tor circuit, called the <i>exit node</i>,
+establishes the actual connection to the destination server. This last step can be unencrypted.</p>
+
+<img alt="A Tor connection goes through 3 relays with the last one establishing the actual connection to the final destination" class="img" src="../doc/anonymous_internet/tor/tor.svg" />
+
+<p>The exit node can:</p>
+
+<ul>
+
+<li><p>Observe your traffic. That is why <i>Tor Browser</i> and Tails include tools,
+like <a href="../doc/anonymous_internet/Tor_Browser.en.html#https-everywhere"><i>HTTPS Everywhere</i></a>, to
+encrypt the connection between the exit node and the
+destination server, whenever possible.</p></li>
+
+<li><p>Pretend to be the destination server, a technique known as
+<i>machine-in-the-middle</i> attack (MitM). That is why you should pay even
+more attention to the security warnings in <i>Tor Browser</i>. If you get such
+a warning, use the <a href="../doc/anonymous_internet/Tor_Browser.en.html#new-identity">New Identity</a> feature of <i>Tor Browser</i> to
+change exit node.</p></li>
+
+</ul>
+
+<img alt="Warning: Potential Security Risk Ahead" class="img" height="260" src="../doc/about/warnings/ssl_warning.png" width="533" />
+
+<p>To learn more about what information is available to someone observing the different
+parts of a Tor circuit, see the interactive graphics at
+<a href="https://support.torproject.org/https/https-1/">Tor FAQ: Can exit nodes
+eavesdrop on communications?</a>.</p>
+
+<div class="attack">
+
+<p>Tor exit nodes have been used in the past to collect sensitive
+information from unencrypted connections. Malicious exit nodes are regularly identified and removed from the Tor network. For an example, see
+<a href="https://arstechnica.com/information-technology/2007/09/security-expert-used-tor-to-collect-government-e-mail-passwords/">Ars
+Technica: Security expert used Tor to collect government e-mail
+passwords</a>.</p>
+
+</div>
+
+<h2 id="correlation">Adversaries watching both ends of a Tor circuit could identify users</h2>
+
+<p>A powerful adversary, who could analyze the timing and shape of the traffic
+entering and exiting the Tor network, might be able to deanonymize Tor users.
+These attacks are called <i>end-to-end correlation</i> attacks, because the attacker
+has to observe both ends of a Tor circuit at the same time.</p>
+
+<p>No anonymity network used for rapid connections, like browsing
+the web or instant messaging, can protect 100% from end-to-end correlation
+attacks. In this case, VPNs (Virtual Private Networks) are less secure than Tor,
+because they do not use 3 independent relays.</p>
+
+<div class="attack">
+
+<p>End-to-end correlation attacks have been studied in research papers,
+but we don&#39;t know of any actual use to deanonymize Tor users. For an example,
+see <a href="https://www.freehaven.net/anonbib/cache/murdoch-pet2007.pdf">Murdoch
+and Zieli&#x144;ski: Sampled Traffic Analysis by Internet-Exchange-Level Adversaries</a>.</p>
+
+</div>
+
+</div>
+
+<div class="toggleable" id="doc-about-warnings.computer">
+
+<span class="hide"><a class="toggle" href="#doc-about-warnings.computer"></a></span>
+
+
+
+
+<h1 class="embedded">Reducing risks when using untrusted computers</h1>
+
+<div class="standalone">
+
+
+
+
+
+</div>
+
+<h2 id="software">Install Tails from a computer that you trust</h2>
+
+<p>Tails protects you from viruses and malware on your usual
+operating system. This is because Tails runs independently from other operating systems.</p>
+
+<p>But your Tails might be corrupted if you install from a compromised
+operating system. To reduce that risk:</p>
+
+<ul>
+
+<li><p>Always install Tails from a trusted operating system.
+For example, download Tails on a computer without viruses or clone Tails
+from a trusted friend.</p></li>
+
+<li><p>Do not plug your Tails USB stick while another operating
+system is running on the computer.</p></li>
+
+<li><p>Use your Tails USB stick only to run Tails. Do not use your Tails
+USB stick to transfer files to or from another operating system.</p></li>
+
+</ul>
+
+<p>If you worry that your Tails might be corrupted, do a <a href="../doc/upgrade.en.html">manual
+upgrade</a> from a trusted operating system.</p>
+
+<div class="attack">
+
+<p>We don&#39;t know of any virus able to infect a Tails
+installation, but one could be created in the future.</p>
+
+</div>
+
+<h2 id="hardware">No operating system can protect against hardware alterations</h2>
+
+<p>Your computer might be compromised if its physical components have been altered.
+For example, if a keylogger has been physically installed on your computer,
+your passwords, personal information, and other data typed on your keyboard could
+be stored and accessed by someone else, even if you are using Tails.</p>
+
+<p>Try to keep your computer in a safe location. Hardware alterations are more likely on public computers,
+in internet caf&eacute;s or libraries, and on desktop computers, where a device is easier to hide.</p>
+
+<p>If you worry that a computer might be modified:</p>
+
+<ul>
+
+<li><p>Use a <a href="../doc/encryption_and_privacy/manage_passwords.en.html">password manager</a> to
+paste saved passwords. This way, you don&#39;t have to type passwords that might
+be visible to people or cameras near you.</p></li>
+
+<li><p>Use the <a href="../doc/encryption_and_privacy/virtual_keyboard.en.html">Screen Keyboard</a>,
+if you are using a public computer or worry that the computer might have
+a keylogger.</p></li>
+
+</ul>
+
+<div class="attack">
+
+<p>Keyloggers are easy to buy and hide on desktop computers but not on
+laptops. For an example, see
+<a href="https://www.youtube.com/watch?v=6JJo8qCYE8M">KeeLog: KeyGrabber
+forensic keylogger getting started</a>.</p>
+
+<p>Other hardware alterations are much more complicated and expensive
+to install. For an example, see
+<a href="https://arstechnica.com/tech-policy/2014/05/photos-of-an-nsa-upgrade-factory-show-cisco-router-getting-implant/">Ars
+Technica: Photos of an NSA &ldquo;upgrade&rdquo; factory show Cisco router getting
+implant</a>.</p>
+
+</div>
+
+<h2 id="firmware">No operating system can protect against BIOS and firmware attacks</h2>
+
+<p>Firmware includes the BIOS or UEFI and other software stored in electronic chips on the computer.
+All operating systems, including Tails, depend on firmware to start and run, so no operating system
+can protect against a firmware attack. In the same way that a car depends on the quality of the road
+it is driving on, operating systems depend on their firmware.</p>
+
+<p>Keeping your computer in a safe location can protect against some firmware
+attacks, but some other firmware attacks can be performed remotely.</p>
+
+<div class="attack">
+
+<p>Firmware attacks have been demonstrated, but are complicated and
+expensive to perform. We don&#39;t know of any actual use against Tails
+users. For an example, see
+<a href="https://www.youtube.com/watch?v=sNYsfUNegEA">LegbaCore: Stealing
+GPG keys/emails in Tails via remote firmware infection</a>.</p>
+
+</div>
+
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../contribute/design/installation_assistant.html">contribute/design/installation assistant</a>
+
+<a href="../contribute/how/documentation/release_notes/template.html">contribute/how/documentation/release notes/template</a>
+
+<a href="../doc.en.html">doc</a>
+
+<a href="../doc/about/openpgp_keys.en.html">doc/about/openpgp keys</a>
+
+<a href="../doc/advanced_topics/virtualization/virt-manager.en.html">doc/advanced topics/virtualization/virt-manager</a>
+
+<a href="./inc/steps/basic_troubleshooting.inline.en.html">inc/steps/basic troubleshooting.inline</a>
+
+<a href="../install.en.html">install</a>
+
+<a href="../news/achievements_in_2018.en.html">news/achievements in 2018</a>
+
+<a href="../news/celebrating_10_years.en.html">news/celebrating 10 years</a>
+
+<a href="../news/donations_2020.en.html">news/donations 2020</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="../news/report_2017_09.html">news/report 2017 09</a>
+
+<a href="../news/report_2017_12.html">news/report 2017 12</a>
+
+<a href="../news/report_2020_04.html">news/report 2020 04</a>
+
+<a href="../news/report_2021_06.html">news/report 2021 06</a>
+
+<a href="../news/version_2.10.html">news/version 2.10</a>
+
+<a href="../news/version_2.11.html">news/version 2.11</a>
+
+<a href="../news/version_2.12.html">news/version 2.12</a>
+
+<a href="../news/version_2.3.html">news/version 2.3</a>
+
+<a href="../news/version_2.4.html">news/version 2.4</a>
+
+<a href="../news/version_2.5.html">news/version 2.5</a>
+
+<a href="../news/version_2.6.html">news/version 2.6</a>
+
+<a href="../news/version_2.7.html">news/version 2.7</a>
+
+<a href="../news/version_2.7.1.html">news/version 2.7.1</a>
+
+<a href="../news/version_2.9.1.html">news/version 2.9.1</a>
+
+<a href="../news/version_3.0.en.html">news/version 3.0</a>
+
+<a href="../news/version_3.0.1.en.html">news/version 3.0.1</a>
+
+<a href="../news/version_3.1.en.html">news/version 3.1</a>
+
+<a href="../news/version_3.10.1.en.html">news/version 3.10.1</a>
+
+<a href="../news/version_3.11.en.html">news/version 3.11</a>
+
+<a href="../news/version_3.12.en.html">news/version 3.12</a>
+
+<a href="../news/version_3.12.1.en.html">news/version 3.12.1</a>
+
+<a href="../news/version_3.13.en.html">news/version 3.13</a>
+
+<a href="../news/version_3.13.1.en.html">news/version 3.13.1</a>
+
+<a href="../news/version_3.13.2.en.html">news/version 3.13.2</a>
+
+<a href="../news/version_3.14.en.html">news/version 3.14</a>
+
+<a href="../news/version_3.14.1.en.html">news/version 3.14.1</a>
+
+<a href="../news/version_3.14.2.en.html">news/version 3.14.2</a>
+
+<a href="../news/version_3.15.en.html">news/version 3.15</a>
+
+<a href="../news/version_3.16.en.html">news/version 3.16</a>
+
+<a href="../news/version_3.2.en.html">news/version 3.2</a>
+
+<a href="../news/version_3.3.en.html">news/version 3.3</a>
+
+<a href="../news/version_3.4.en.html">news/version 3.4</a>
+
+<a href="../news/version_3.5.en.html">news/version 3.5</a>
+
+<a href="../news/version_3.6.en.html">news/version 3.6</a>
+
+<a href="../news/version_3.6.1.en.html">news/version 3.6.1</a>
+
+<a href="../news/version_3.6.2.en.html">news/version 3.6.2</a>
+
+<a href="../news/version_3.7.en.html">news/version 3.7</a>
+
+<a href="../news/version_3.7.1.en.html">news/version 3.7.1</a>
+
+<a href="../news/version_3.8.en.html">news/version 3.8</a>
+
+<a href="../news/version_3.9.en.html">news/version 3.9</a>
+
+<a href="../news/version_3.9.1.en.html">news/version 3.9.1</a>
+
+<a href="../news/version_4.0.en.html">news/version 4.0</a>
+
+<a href="../news/version_4.1.en.html">news/version 4.1</a>
+
+<a href="../news/version_4.1.1.en.html">news/version 4.1.1</a>
+
+<a href="../news/version_4.10.en.html">news/version 4.10</a>
+
+<a href="../news/version_4.11.en.html">news/version 4.11</a>
+
+<a href="../news/version_4.12.en.html">news/version 4.12</a>
+
+<a href="../news/version_4.13.en.html">news/version 4.13</a>
+
+<a href="../news/version_4.14.en.html">news/version 4.14</a>
+
+<a href="../news/version_4.15.en.html">news/version 4.15</a>
+
+<a href="../news/version_4.15.1.en.html">news/version 4.15.1</a>
+
+<a href="../news/version_4.16.en.html">news/version 4.16</a>
+
+<a href="../news/version_4.17.en.html">news/version 4.17</a>
+
+<a href="../news/version_4.18.en.html">news/version 4.18</a>
+
+<a href="../news/version_4.19.en.html">news/version 4.19</a>
+
+<a href="../news/version_4.2.en.html">news/version 4.2</a>
+
+<a href="../news/version_4.2.2.en.html">news/version 4.2.2</a>
+
+<a href="../news/version_4.20.en.html">news/version 4.20</a>
+
+<a href="../news/version_4.21.en.html">news/version 4.21</a>
+
+<a href="../news/version_4.22.en.html">news/version 4.22</a>
+
+<a href="../news/version_4.3.en.html">news/version 4.3</a>
+
+<a href="../news/version_4.4.en.html">news/version 4.4</a>
+
+<a href="../news/version_4.4.1.en.html">news/version 4.4.1</a>
+
+<a href="../news/version_4.5.en.html">news/version 4.5</a>
+
+<a href="../news/version_4.6.en.html">news/version 4.6</a>
+
+<a href="../news/version_4.7.en.html">news/version 4.7</a>
+
+<a href="../news/version_4.8.en.html">news/version 4.8</a>
+
+<a href="../news/version_4.9.en.html">news/version 4.9</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=install/download">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+<script src="../ikiwiki/ikiwiki.js" type="text/javascript" charset="utf-8"></script>
+<script src="../ikiwiki/toggle.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

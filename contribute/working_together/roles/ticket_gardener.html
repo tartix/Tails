@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Ticket gardener</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../working_together.html">working together</a></li>
+
+
+
+
+
+<li><a href="../roles.html">roles</a></li>
+
+
+
+
+<li>Ticket gardener</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Ticket gardener
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>The aim of ticket gardening is to ensure that items tracked on GitLab stay
+relevant and contain helpful information for bringing a task to completion.  To
+achieve this goal contributors and teams need to be made aware of the existence
+of issues that need their input so they can self-organize and prioritize their
+work. Issues that are not relevant anymore should be closed.</p>
+
+<p>This work should be done every quarter.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Tasks</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Manual tasks</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Go through relevant GitLab views</a>
+			</li>
+			<li class="L3"><a href="#index2h3">Identify and fix inadequate milestone</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index2h2">Automated tasks</a>
+		<ol>
+			<li class="L3"><a href="#index3h3">Stalled WIP</a>
+			</li>
+			<li class="L3"><a href="#index4h3">Stalled validation</a>
+			</li>
+			<li class="L3"><a href="#index5h3">Stalled merge requests</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Tasks</h1>
+
+<p><a id="manual"></a></p>
+
+<h2><a name="index1h2"></a>Manual tasks</h2>
+
+<h3><a name="index1h3"></a>Go through relevant GitLab views</h3>
+
+<ul>
+<li><p><a href="https://gitlab.tails.boum.org/groups/tails/-/issues?label_name%5B%5D=T%3AWait"><code>T:Wait</code> label</a>:
+check if what was blocking was eventually resolved outside of Tails.
+Issues should either have an assignee, their <code>T:</code> label
+requalified, be rejected, or stay in this state.</p></li>
+<li><p><a href="https://gitlab.tails.boum.org/groups/tails/-/issues?scope=all&amp;utf8=&#x2713;&amp;state=opened&amp;label_name%5B%5D=Doing&amp;assignee_id=None">WIP without assignee</a>:
+identify issues that have a majority of work completed and could
+somewhat easily be finished. Create a list of those issues and send
+them to the responsible team; if that team cannot handle these issues,
+set the status label to something other than <em>Doing</em>.</p></li>
+</ul>
+
+
+<h3><a name="index2h3"></a>Identify and fix inadequate milestone</h3>
+
+<p>Some issues are missed by our automated
+setup. These issues are those whose milestone has been
+postponed after the N last releases by the Release Manager: every such
+milestone bump counts as an update so there&#39;s no chance the issue will
+ever be identified as stalled. Hence we need to manually
+identify these issues and remove their milestone.</p>
+
+<p>To select the corresponding issues:</p>
+
+<ol>
+<li>List <a href="https://gitlab.tails.boum.org/groups/tails/-/issues">issues in the <code>tails</code> group</a></li>
+<li>Filter the list to only include issues whose milestone is set to the next
+Tails release.</li>
+<li>Filter the list to only include issues that were postponed at least twice
+in a row by the RM: they have <code>missed:$version</code> labels.</li>
+</ol>
+
+
+<h4><a name="index1h4"></a>Criteria</h4>
+
+<p>Situations when dropping the milestone would be inadequate:</p>
+
+<ul>
+<li>If the issue was (re)assigned to the assignee recently.</li>
+<li>If there&#39;s been progress but it&#39;s not documented on the issue.</li>
+<li>If it&#39;s part of a sponsor deliverable.
+
+<ul>
+<li>If the official deadline is in the future, most of the time we don&#39;t want
+to touch the milestone.</li>
+</ul>
+</li>
+</ul>
+
+
+<p>Whether it&#39;s appropriate to drop the milestone depends on:</p>
+
+<ul>
+<li>When the last action on the issue by the assignee was performed. For
+example, if they did not update the issue since 3 months or more.</li>
+<li>If the issue was recently postponed be the RM and not by the assignee
+themselves &mdash; the latter would suggest they have it in mind and are updating
+their plans.</li>
+<li>Whether there&#39;s an assignee. If there&#39;s none but the issue was postponed a few times, then:
+
+<ul>
+<li>Either it&#39;s important and it should be put on the plate of a core team.</li>
+<li>Or it&#39;s unimportant and the milestone should be dropped: keeping it
+has little value. If someone wants to track
+those issues, there surely are better ways.</li>
+</ul>
+</li>
+<li>Whether the issue is blocked by anything (other issues or what not) that&#39;s
+out of the hands of the assignee.</li>
+<li>How safe/privileged is the assignee&#39;s position in Tails. For contributors
+that hold more power than average we can assume they know how to revert our
+changes.</li>
+</ul>
+
+
+<h4><a name="index2h4"></a>Template comment</h4>
+
+<p>We have a <a href="./ticket_gardener/inadequate_milestone.html">template message</a>
+that we can use as a basis to explain why we&#39;re removing the milestone.</p>
+
+<p><a id="automated"></a></p>
+
+<h2><a name="index2h2"></a>Automated tasks</h2>
+
+<p>To run the automated triaging processes described below, execute
+the following commands:</p>
+
+<pre><code>./config/gitlab-triage/bin/ensure-up-to-date-container-image &amp;&amp; \
+./bin/gitlab-triage-gardener \
+    --host-url &quot;$(bin/gitlab-url TailsGardener)&quot; \
+    --token &quot;$(bin/gitlab-api-token TailsGardener)&quot;
+</code></pre>
+
+<p>This can take a few dozens of minutes to complete.
+You can pass any extra <code>gitlab-triage</code> option, such as <code>--dry-run</code>.</p>
+
+<p>Implementation:</p>
+
+<ul>
+<li>uses <a href="https://gitlab.com/gitlab-org/gitlab-triage">GitLab Triage</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/bin/gitlab-triage-gardener">bin/gitlab-triage-gardener</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/tree/master/config/gitlab-triage">config/gitlab-triage</a></li>
+</ul>
+
+
+<h3><a name="index3h3"></a>Stalled WIP</h3>
+
+<ul>
+<li><p>Scope = issues assigned to somebody, labeled <em>Doing</em>,
+and not updated for a while</p></li>
+<li><p>Output = a summary issue, which:</p>
+
+<ul>
+<li>mentions each GitLab user who has such issues assigned to them;
+this adds an item to the To-Do list of these users</li>
+<li>lists these issues, grouped by assignee</li>
+</ul>
+</li>
+</ul>
+
+
+<h3><a name="index4h3"></a>Stalled validation</h3>
+
+<ul>
+<li><p>Scope = issues assigned to somebody, labeled <em>Needs Validation</em>,
+and not updated for a while</p></li>
+<li><p>Output = a summary issue, which:</p>
+
+<ul>
+<li>mentions each GitLab user who has such issues assigned to them;
+this adds an item to the To-Do list of these users</li>
+<li>lists these issues, grouped by assignee</li>
+</ul>
+</li>
+</ul>
+
+
+<h3><a name="index5h3"></a>Stalled merge requests</h3>
+
+<ul>
+<li><p>Scope = merge requests assigned to somebody not updated for a while</p></li>
+<li><p>Output = a summary issue, which:</p>
+
+<ul>
+<li>mentions each GitLab user who has such MRs assigned to them;
+this adds an item to the To-Do list of these users</li>
+<li>lists these MRs, grouped by assignee</li>
+</ul>
+</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../contribute.en.html">contribute</a>
+
+<a href="../../../contribute.de.html">contribute.de</a>
+
+<a href="../../../contribute.es.html">contribute.es</a>
+
+<a href="../../../contribute.fr.html">contribute.fr</a>
+
+<a href="../../../contribute.it.html">contribute.it</a>
+
+<a href="../../../contribute.pt.html">contribute.pt</a>
+
+<a href="../../../contribute.ru.html">contribute.ru</a>
+
+<a href="./sysadmins/GitLab.html">sysadmins/GitLab</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/working_together/roles/ticket_gardener">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

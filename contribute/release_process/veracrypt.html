@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Upgrading custom packages for VeraCrypt support</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../release_process.html">release process</a></li>
+
+
+
+
+<li>Upgrading custom packages for VeraCrypt support</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Upgrading custom packages for VeraCrypt support
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Until Tails is based on a Debian version which includes our patches,
+we have to maintain custom packages for the integration of VeraCrypt
+support in GNOME.
+This means we need to check if new versions of the following source
+packages have hit Debian buster or buster-security:</p>
+
+<ul>
+<li><a href="https://packages.debian.org/source/stable/gtk+3.0">gtk+3.0</a> (version in Tails: 3.24.5-1.0tails1)</li>
+<li><a href="https://packages.debian.org/source/stable/gvfs">gvfs</a> (version in Tails: 1.38.1-5.0tails1)</li>
+<li><a href="https://packages.debian.org/source/stable/gjs">gjs</a> (version in Tails: 1.54.3-1.0tails1)</li>
+<li><a href="https://packages.debian.org/source/stable/gnome-shell">gnome-shell</a> (version in Tails: 3.30.2-11~deb10u2.0tails1)</li>
+</ul>
+
+
+<p>If any of these have a new version in buster or buster-security:</p>
+
+<ol>
+<li><p>Download our custom package and source package it is was forked off from:</p>
+
+<pre><code># Set these variables to the correct values for the package to update
+PACKAGE_NAME=udisks2
+# The version currently in Tails
+OLD_VERSION=2.1.8-1.0tails3
+# The version of the official Debian package it was forked off from
+ORIGINAL_VERSION=2.1.8-1
+# The new version in buster or buster-security
+NEW_VERSION=2.1.8-2
+# Release the updated package should go in (stable, testing or devel)
+RELEASE=stable
+# The topic branch for this update
+BRANCH=feature/update-udisks
+SUITE=&quot;$(echo &quot;${BRANCH:?}&quot; | sed -e &#39;s,[^.a-z0-9-],-,ig&#39;  | tr &#39;[A-Z]&#39; &#39;[a-z]&#39;)&quot;
+
+sudo tee /etc/apt/sources.list.d/tails.list &lt;&lt;EOF
+deb-src tor+http://umjqavufhoix3smyq6az2sx4istmuvsgmz4bq5u5x56rnayejoo6l2qd.onion/ ${RELEASE:?} main
+deb-src [check-valid-until=no] tor+http://snapshot.debian.org/archive/debian/20180904T000000Z/ buster main
+EOF
+sudo apt update
+apt source --download-only &quot;${PACKAGE_NAME:?}=${OLD_VERSION:?}&quot;
+apt source --download-only &quot;${PACKAGE_NAME:?}=${ORIGINAL_VERSION:?}&quot;
+</code></pre></li>
+<li><p>Get the debdiff of our patches:</p>
+
+<pre><code>debdiff &quot;${PACKAGE_NAME:?}_${ORIGINAL_VERSION:?}.dsc&quot; &quot;${PACKAGE_NAME:?}_${OLD_VERSION:?}.dsc&quot; &gt; tails.diff
+</code></pre></li>
+<li><p>Download the new source package:</p>
+
+<pre><code>apt source &quot;${PACKAGE_NAME:?}=${NEW_VERSION:?}&quot;
+</code></pre></li>
+<li><p>Apply the debdiff on the new version:</p>
+
+<pre><code>debdiff-apply &quot;${PACKAGE_NAME:?}_${NEW_VERSION:?}.dsc&quot; tails.diff
+</code></pre></li>
+<li><p>Add changelog entry and build a new version of the patched package
+in a Buster/amd64 chroot:</p>
+
+<pre><code>cd &quot;${PACKAGE_NAME:?}&quot;*/
+debchange --newversion=&quot;${NEW_VERSION:?}.0tails1&quot; --distribution=&quot;${SUITE:?}&quot; --force-distribution
+pdebuild
+</code></pre></li>
+<li><p>Install the newly built package in the build environment and rebuild all
+custom packages which depend on it. The dependencies are as follows (where
+<code>X: Y</code> means that <code>X</code> is dependency of <code>Y</code>):</p>
+
+<ul>
+<li><code>gjs</code>: <code>gnome-shell</code></li>
+</ul>
+</li>
+<li><p>Sign and upload updated packages</p>
+
+<pre><code>debsign &quot;${CHANGES_FILE:?}&quot;
+dupload --to tails &quot;${CHANGES_FILE:?}&quot;
+</code></pre></li>
+<li><p>Update the &quot;version in Tails&quot; in this document.</p></li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/release_process/veracrypt">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

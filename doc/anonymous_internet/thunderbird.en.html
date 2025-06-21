@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Emailing and reading news with Thunderbird</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./pidgin.en.html" title="Chatting with Pidgin and OTR" />
+
+<link rel="up" href="../anonymous_internet.index.html" title="anonymous internet.index" />
+
+<link rel="next" href="./onionshare.en.html" title="Sharing files with OnionShare" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../anonymous_internet.en.html">anonymous internet</a></li>
+
+
+
+
+<li>Emailing and reading news with Thunderbird</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./thunderbird.de.html">de</a></span>
+   <span class="hidden"><a href="./thunderbird.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./thunderbird.es.html">es</a></span>
+   <span class="hidden"><a href="./thunderbird.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./thunderbird.fr.html">fr</a></span>
+   <span class="hidden"><a href="./thunderbird.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./thunderbird.it.html">it</a></span>
+   <span class="hidden"><a href="./thunderbird.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./thunderbird.pt.html">pt</a></span>
+   <span class="hidden"><a href="./thunderbird.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./thunderbird.ru.html">ru</a></span>
+   <span class="hidden"><a href="./thunderbird.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Emailing and reading news with Thunderbird
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./pidgin.en.html">Chatting with Pidgin and OTR</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./onionshare.en.html">Sharing files with OnionShare</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Tails includes <span class="application">Thunderbird</span> for:</p>
+
+<ul>
+<li>Reading and writing emails</li>
+<li>Reading <a href="https://en.wikipedia.org/wiki/RSS">RSS</a> and <a href="https://en.wikipedia.org/wiki/Atom%5F%28Web%5Fstandard%29">Atom</a> feeds for news and blogs</li>
+</ul>
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#account">Configuring an email account</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Configuring a Gmail account</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#privacy">Enhanced privacy</a>
+	</li>
+	<li class="L1"><a href="#language">Using Thunderbird in your language</a>
+	</li>
+	<li class="L1"><a href="#openpgp">OpenPGP encryption</a>
+	<ol>
+		<li class="L2"><a href="#master-password">Setting up a Master Password (recommended)</a>
+		</li>
+		<li class="L2"><a href="#import-private">Importing an existing private key</a>
+		</li>
+		<li class="L2"><a href="#generate-private">Generating a new OpenPGP private key</a>
+		</li>
+		<li class="L2"><a href="#encrypting">Encrypting an email</a>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+<p>To start <span class="application">Thunderbird</span> choose
+<span class="menuchoice">
+  <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guisubmenu">Internet</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Thunderbird</span></span>.</p>
+
+<div class="tip">
+
+<p>To store your
+emails, feeds, and settings across different working sessions,
+turn on the <a href="../first_steps/persistence/configure.en.html#thunderbird">Thunderbird</a>
+feature of the Persistent Storage.</p>
+
+</div>
+
+
+<p>For more detailed documentation, refer to the <a href="https://support.mozilla.org/en-US/products/thunderbird">official
+<span class="application">Thunderbird</span>
+help</a>.</p>
+
+<h1 id="account"><a name="index1h1"></a>Configuring an email account</h1>
+
+
+<ol>
+<li><p>When starting <span class="application">Thunderbird</span> for the first
+time, an assistant appears to guide you through the process of
+configuring <span class="application">Thunderbird</span> to access your
+email account.</p>
+
+<div class="tip">
+
+<p>To start this assistant again in the future from the main window of
+<span class="application">Thunderbird</span>, choose
+<span class="menuchoice">
+  <span class="guimenu"><img alt="Menu" class="symbolic" height="16" src="../../lib/open-menu.png" width="16" /></span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Account Settings</span>
+</span> and then, from the <span class="guilabel">Account Settings</span>
+dialog, choose <span class="guilabel">Account Actions</span>&nbsp;&#x25B8;
+<span class="guilabel">Add Mail Account&hellip;</span>.</p>
+
+</div>
+</li>
+<li><p>Enter your name, email address, and password into the corresponding fields.</p></li>
+<li><p>Click <span class="guilabel">Continue</span>.</p></li>
+<li><p>The assistant tries to configure automatically the correct settings
+to connect to your email provider based on your email address.</p>
+
+<p>If the automatic configuration fails, consult your email provider
+about how to configure your email account manually.</p>
+
+<div class="tip" id="gmail">
+
+<h2><a name="index1h2"></a>Configuring a Gmail account</h2>
+
+<p>If you are using Gmail, you need to first configure your account to
+allow access from other email clients, such as
+<span class="application">Thunderbird</span>.</p>
+
+<p>To configure your Gmail account to allow access from
+<span class="application">Thunderbird</span>, you need to:</p>
+
+<ol>
+  <li>Enable IMAP or POP. See <a href="https://support.google.com/mail/answer/7126229">Gmail Help: Check Gmail through other email platforms</a>.</li>
+  <li>Turn on 2-Step Verification. See <a href="https://support.google.com/accounts/answer/185839">Google Account Help: 2-Step Verification</a>.</li>
+  <li>Create an App Password. See <a href="https://support.google.com/mail/answer/185833">Gmail Help: Sign in with App Passwords</a>.</li>
+  <li>Use the App Password in <em>Thunderbird</em>.</li>
+</ol>
+
+</div>
+</li>
+<li><p>If the automatic configuration succeeds, you might have to specify
+which protocol to use to connect to your email provider, either
+<span class="guilabel">IMAP</span> or <span class="guilabel">POP</span>.</p>
+
+<ul>
+<li><p> With <span class="guilabel">IMAP</span>,
+ <span class="application">Thunderbird</span> constantly synchronizes
+ with the server and displays the emails and folders that are
+currently stored on the server. IMAP is better suited if you access
+ your emails from different operating systems.</p></li>
+<li><p> With <span class="guilabel">POP</span>,
+ <span class="application">Thunderbird</span> downloads the emails that
+ are in the inbox on the server and possibly deletes them from the
+server. POP is better suited if you access your emails from Tails only
+ and store them in the Persistent Storage.</p></li>
+</ul>
+
+
+<p>To know more, see also this <a href="https://help.riseup.net/en/email/clients/#choose-imap-or-pop">comparison between POP and
+IMAP</a> by
+Riseup.</p></li>
+</ol>
+
+
+<h1 id="privacy"><a name="index2h1"></a>Enhanced privacy</h1>
+
+
+<p><span class="application">Thunderbird</span> in Tails is configured
+for additional privacy and anonymity.</p>
+
+<p>For example, <span class="application">Thunderbird</span> in Tails:</p>
+
+<ul>
+<li>Removes information about the language of your session or spellchecker
+from the headers of the emails that you send.</li>
+<li>Removes information that could identify you as a Tails user from the
+headers of your emails.</li>
+<li>Only allows secure protocols and disables insecure protocols, like
+SSLv3.</li>
+<li>Disables tracking technologies, like cookies and JavaScript, when
+viewing emails or feeds in HTML.</li>
+</ul>
+
+
+<div class="note">
+
+<p>Emails and feeds in HTML format are displayed in plain text by
+default and can become harder to read.</p>
+
+</div>
+
+
+<p>These enhancements are inherited
+from the former
+<span class="application"><a href="https://trac.torproject.org/projects/tor/wiki/torbirdy">TorBirdy</a></span>
+extension.
+To learn more about the security properties provided by this configuration,
+you can read the <a href="https://trac.torproject.org/projects/tor/raw-attachment/wiki/doc/TorifyHOWTO/EMail/Thunderbird/Thunderbird%2BTor.pdf"><span class="application">TorBirdy</span> design document</a>.</p>
+
+<h1 id="language"><a name="index3h1"></a>Using Thunderbird in your language</h1>
+
+
+<p>To use <span class="application">Thunderbird</span> in your language, you can
+install the <span class="command">thunderbird-l10n-<span class="command-placeholder">lang</span></span>
+package using the <a href="../first_steps/additional_software.en.html">Additional Software</a>
+feature. Replace <span class="command-placeholder">lang</span> with the code
+for your language. For example, <span class="command">es</span> for Spanish or
+<span class="command">de</span> for German.</p>
+
+<h1 id="openpgp"><a name="index4h1"></a>OpenPGP encryption</h1>
+
+
+
+
+<div class="note">
+
+<p>Since Tails 4.13 (November 2020), <em>Thunderbird</em> 78 replaces the
+<em>Enigmail</em> extension with built-in support for OpenPGP encryption. If
+you used <em>Enigmail</em> before Tails 4.13, follow our <a href="./thunderbird/openpgp_migration.en.html">migration
+instructions</a>.</p>
+
+</div>
+
+
+<p>See also the official <a href="https://support.mozilla.org/kb/openpgp-thunderbird-howto-and-faq">OpenPGP in Thunderbird - HOWTO and
+FAQ</a>.</p>
+
+<h2 id="master-password"><a name="index2h2"></a>Setting up a Master Password (recommended)</h2>
+
+
+<p>In <em>Thunderbird</em>, OpenPGP private keys are not protected by a passphrase.
+That&#39;s why we recommend that you set up a Master Password.</p>
+
+<p>With a Master Password, your private key is encrypted in your
+<em>Thunderbird</em> profile and is only unlocked while <em>Thunderbird</em> is running.
+If your <em>Thunderbird</em> profile is stored in your Persistent Storage, then
+your private key is encrypted twice: once by <em>Thunderbird</em> in your
+profile and a second time by the encryption of the Persistent Storage.</p>
+
+<ol>
+<li><p>Choose <strong><img alt="Menu" class="symbolic" height="16" src="../../lib/open-menu.png" width="16" />&nbsp;&#x25B8; Preferences</strong>.</p></li>
+<li><p>Choose <strong>Privacy &amp; Security</strong>.</p></li>
+<li><p>In the <strong>Passwords</strong> section, select the option <strong>Use a master
+password</strong>.</p></li>
+<li><p>In the <strong>Change Master Password</strong> dialog, enter your Master Password
+and click <strong>Ok</strong>.</p></li>
+</ol>
+
+
+<h2 id="import-private"><a name="index3h2"></a>Importing an existing private key</h2>
+
+
+<p><em>Thunderbird</em> uses a different keyring than <em>GnuPG</em>.</p>
+
+<p>If you already have an OpenPGP private key outside of <em>Thunderbird</em>, follow the
+instructions below to export it from <em>GnuPG</em> and import it into <em>Thunderbird</em>.</p>
+
+<h3><a name="index1h3"></a>Export your private key using the <em>Passwords and Keys</em> utility</h3>
+
+
+<p>From the desktop:</p>
+
+<ol>
+<li><p>Choose <strong>Applications&nbsp;&#x25B8; Utilities&nbsp;&#x25B8; Passwords and Keys</strong>.</p></li>
+<li><p>In the left pane, choose <strong>GnuPG keys</strong>.</p></li>
+<li><p>In the right pane, double-click on the private key that you want to
+export and use in <em>Thunderbird</em>.</p></li>
+<li><p>In the <strong>Details</strong> tab of the properties dialog, click <strong>Export</strong>.</p></li>
+<li><p>Save your private key in your <em>Home</em> directory.</p></li>
+<li><p>Close the <em>Passwords and Keys</em> utility.</p></li>
+</ol>
+
+
+<h3><a name="index2h3"></a>Import your private key in <em>Thunderbird</em></h3>
+
+
+<p>In <em>Thunderbird</em>:</p>
+
+<ol>
+<li><p>Choose <strong><img alt="Menu" class="symbolic" height="16" src="../../lib/open-menu.png" width="16" />&nbsp;&#x25B8; Account Settings</strong>.</p></li>
+<li><p>In the left pane, identify the account
+that corresponds to the private key that you want to import and
+choose <strong>End-to-End Encryption</strong>.</p></li>
+<li><p>In the right pane, click the <strong>Add Key&hellip;</strong> button.</p></li>
+<li><p>In the <strong>Add a Personal OpenPGP Key</strong> dialog, choose <strong>Import an
+existing OpenPGP Key</strong> and click <strong>Continue</strong>.</p></li>
+<li><p>Click the <strong>Select File to Import&hellip;</strong> button and choose
+the private key that your exported from the <em>Passwords and Keys</em> utility.</p></li>
+<li><p>In the next dialog, make sure that your private key is listed and
+that the option <strong>Treat this key as a Personal Key</strong> is selected.</p></li>
+<li><p>Click <strong>Continue</strong>, enter the passphrase for your private key (if
+any), and click <strong>Continue</strong> again.</p>
+
+<p>Your private key should now be listed in the <strong>End-to-End
+Encryption</strong> settings of your account.</p></li>
+<li><p>Select your private key to enable OpenPGP encryption for this
+account.</p></li>
+</ol>
+
+
+<h2 id="generate-private"><a name="index4h2"></a>Generating a new OpenPGP private key</h2>
+
+
+<ol>
+<li><p>Choose <strong><img alt="Menu" class="symbolic" height="16" src="../../lib/open-menu.png" width="16" />&nbsp;&#x25B8; Account Settings</strong>.</p></li>
+<li><p>In the left pane, identify the account
+for which you want to create a new OpenPGP private key and
+choose <strong>End-to-End Encryption</strong>.</p></li>
+<li><p>In the right pane, click the <strong>Add Key&hellip;</strong> button.</p></li>
+<li><p>In the <strong>Add a Personal OpenPGP Key</strong> dialog, choose <strong>Create a new
+OpenPGP Key</strong>.</p></li>
+<li><p>Review the settings in the next dialog, click the <strong>Generate key</strong> button,
+and then click <strong>Confirm</strong>.</p>
+
+<p>Your private key should now be listed in the <strong>End-to-End
+Encryption</strong> settings of your account.</p></li>
+</ol>
+
+
+<h2 id="encrypting"><a name="index5h2"></a>Encrypting an email</h2>
+
+
+<p>To prevent you from sending unencrypted emails by mistake, <em>Thunderbird</em>
+in Tails is configured with the option <strong>Require Encryption</strong> turned on
+by default.</p>
+
+<p>With the option <strong>Require Encryption</strong>, <em>Thunderbird</em> tries to encrypt
+every email before sending it.</p>
+
+<p>To send an unencrypted email, in the composition window, choose
+<strong>Security</strong> and deselect the option <strong>Require Encryption</strong>.</p>
+
+<div class="bug">
+
+<p>We are unsatisfied with how the option <strong>Require
+Encryption</strong> works. Instead, <em>Thunderbird</em> should
+automatically encrypt when a public key is available and not try to
+encrypt otherwise.</p>
+
+<p>The developers of <em>Thunderbird</em> want to provide such an
+<a href="https://bugzilla.mozilla.org/show_bug.cgi?id=135636">option to
+&quot;encrypt when possible&quot;</a> in future versions.</p>
+
+</div>
+
+
+<p>When sending an encrypted email:</p>
+
+<ul>
+<li><p>If you already have a public key for the recipient and have marked it as
+accepted, <em>Thunderbird</em> encrypts the email and sends it.</p></li>
+<li><p>If you already have a public key for the recipient but have not
+marked it as accepted yet, <em>Thunderbird</em> fails to send the email.</p>
+
+<p>To mark the public key as accepted:</p>
+
+<ol>
+<li><p>In the error message, click <strong>Close</strong>.</p></li>
+<li><p>In the <strong>OpenPGP Message Security</strong> dialog, select the recipient
+that is marked as <strong>not accepted key</strong> and click the
+<strong>Manage keys for selected recipient&hellip;</strong> button.</p>
+
+<p>If the recipient is marked as <strong>no key available</strong>, you don&#39;t yet
+have a public key for them.</p></li>
+<li><p>In the next dialog, select the public key of your recipient and
+click the <strong>Open details and edit acceptance&hellip;</strong> button.</p></li>
+<li><p>In the <strong>Your Acceptance</strong> tab of the <strong>Key Properties</strong> dialog,
+select the option that applies to how much you verified the public
+key.</p></li>
+</ol>
+</li>
+<li><p>If you don&#39;t have a public key for the recipient, <em>Thunderbird</em> also fails
+to send the email.</p>
+
+<p>To look for a public key for this email address on the
+<a href="https://keys.openpgp.org/">keys.openpgp.org</a> keyserver:</p>
+
+<ol>
+<li><p>In the error message, click <strong>Close</strong>.</p></li>
+<li><p>In the <strong>OpenPGP Message Security</strong> dialog, select the recipient
+that is marked as <strong>not accepted key</strong> and click the
+<strong>Manage keys for selected recipient&hellip;</strong> button.</p></li>
+<li><p>Click the <strong>Discover new or updated key</strong> button.</p>
+
+<p>If no public key can be found, ask the recipient to send you their public
+key.</p>
+
+<p>If a public key for this email address is found, choose to import it.</p></li>
+<li><p>In the <strong>OpenPGP Message Security</strong> dialog, select the public key that was
+imported in the previous step and click the <strong>Open details and edit
+acceptance&hellip;</strong> button.</p></li>
+<li><p>In the <strong>Your Acceptance</strong> tab of the <strong>Key Properties</strong> dialog,
+select the option that applies to how much you verified the public
+key.</p></li>
+</ol>
+</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./pidgin.en.html">Chatting with Pidgin and OTR</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./onionshare.en.html">Sharing files with OnionShare</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../about/features.en.html">about/features</a>
+
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+
+<a href="../encryption_and_privacy/gpgapplet.warning.en.html">encryption and privacy/gpgapplet.warning</a>
+
+<a href="../first_steps/introduction_to_gnome_and_the_tails_desktop.en.html">first steps/introduction to gnome and the tails desktop</a>
+
+<a href="../first_steps/persistence/configure.en.html">first steps/persistence/configure</a>
+
+<a href="../../news/report_2019_11.html">news/report 2019 11</a>
+
+<a href="../../news/report_2019_12.html">news/report 2019 12</a>
+
+<a href="../../news/report_2020_11.html">news/report 2020 11</a>
+
+<a href="../../news/version_4.1.en.html">news/version 4.1</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/anonymous_internet/thunderbird">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

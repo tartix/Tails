@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Call for testing: simplified installation method</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Mon, 7 Jan 2019 12:34:56 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Call for testing: simplified installation method</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Call for testing: simplified installation method
+</span>
+<span class="date">2019-01-07</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<h1>USB images instead of ISO images</h1>
+
+<p>We need your help to test the simplified installation methods of Tails
+that we will release with 3.12 on January 29.</p>
+
+<p>The method will be much simpler and faster, especially for macOS users,
+but for Windows users as well. Debian and Ubuntu users won&#39;t have to
+install a specific program anymore and the process will also be faster
+for other Linux users.</p>
+
+<p>In short, instead of downloading an ISO image (a format originally
+designed for CDs) you will download a <strong>USB image</strong> that is already an
+image of the data as written to your USB stick by <em>Tails Installer</em>. So
+no need for <em>Tails Installer</em> anymore and no need for an <em>intermediary</em>
+Tails nor a second USB stick when installing from Windows or macOS.</p>
+
+<p>You should be able to create a persistent volume right away.</p>
+
+<p>The methods for upgrading Tails will remain the same.</p>
+
+<h1>Testing the beta</h1>
+
+<h2>Download the USB image</h2>
+
+<p><a class="download-file" href="http://dl.amnesia.boum.org/tails/alpha/tails-amd64-feature_15292-usb-image~beta1.img">Tails beta USB image</a></p>
+
+<p>We don&#39;t provide any OpenPGP signature or other verification technique
+for this test image. Please only use it for testing.</p>
+
+<h2>Installation instructions</h2>
+
+<p>As the new instructions are not yet available on our website, please
+refer to the following PDFs:</p>
+
+<ul>
+<li><p><strong>For Windows</strong></p>
+
+<p><a href="https://redmine.tails.boum.org/code/attachments/download/2255/windows.pdf">Download PDF instructions for Windows</a></p>
+
+<p>At the beginning, you will have to download a program called <em>Etcher</em>:</p>
+
+<p><a href="https://tails.boum.org/etcher/Etcher-Portable.exe">Download Etcher (portable) for Windows</a></p></li>
+<li><p><strong>For macOS</strong></p>
+
+<p><a href="https://redmine.tails.boum.org/code/attachments/download/2254/macos.pdf">Download PDF instructions for macOS</a></p>
+
+<p>At the beginning, you will have to download a program called <em>Etcher</em>:</p>
+
+<p><a href="https://tails.boum.org/etcher/Etcher.dmg">Download Etcher for macOS</a></p></li>
+<li><p><strong>For Linux (all distributions)</strong></p>
+
+<p><a href="https://redmine.tails.boum.org/code/attachments/download/2253/linux.pdf">Download PDF instructions for Linux</a></p></li>
+</ul>
+
+
+<h2>Reporting about your tests</h2>
+
+<p>Note that the USB image doesn&#39;t make Tails work on more hardware but it
+might work more reliably on recent hardware than the <em>intermediary</em>
+Tails (currently created using <em>Universal USB Installer</em> on Windows and
+<code>dd</code> on macOS).</p>
+
+<p>Make sure to specify:</p>
+
+<ul>
+<li><p>The OS you installed from.</p></li>
+<li><p>The model of the computer you started from.</p></li>
+</ul>
+
+
+<p>Report your findings by email to <a href="mailto:tails-testers@boum.org">tails-testers@boum.org</a>. This mailing
+list is <a href="https://lists.autistici.org/list/tails-testers.html">archived publicly</a>.</p>
+
+<h1>Known issues</h1>
+
+<p>None yet.</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+<div class="tags">
+Tags:
+
+<a href="../tags/announce.html" rel="tag">announce</a>
+
+</div>
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./test_3.12-rc1.html">test 3.12-rc1</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/test_usb_images">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

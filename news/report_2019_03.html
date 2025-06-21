@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for March, 2019</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Fri, 26 Apr 2019 11:10:06 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for March, 2019</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for March, 2019
+</span>
+<span class="date">2019-04-26</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Releases</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Code</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Documentation and website</a>
+	</li>
+	<li class="L1"><a href="#index4h1">User experience</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Hot topics on our help desk</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Infrastructure</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Funding</a>
+	</li>
+	<li class="L1"><a href="#index8h1">Outreach</a>
+	</li>
+	<li class="L1"><a href="#index9h1">On-going discussions</a>
+	</li>
+	<li class="L1"><a href="#index10h1">Translations</a>
+	</li>
+	<li class="L1"><a href="#index11h1">Metrics</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Releases</h1>
+
+<ul>
+<li><p><a href="./version_3.13.en.html">Tails 3.13 was released on March 19</a>.</p></li>
+<li><p>Tails 3.14 is <a href="../contribute/calendar.html">scheduled for May 14</a>.</p></li>
+</ul>
+
+
+<p>The following changes were introduced in Tails 3.13:</p>
+
+<ul>
+<li><p>Add support for the Bopomofo input method for Chinese using the
+<em>Chewing</em> library and improve support for the Pinyin input method.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/11292">#11292</a>)</p></li>
+<li><p>Save a backup of the configuration of the persistent storage every time it is
+modified. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16461">#16461</a>)</p>
+
+<p>This will help us understand and solve why sometimes all the settings of the
+persistent storage disappear. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/10976">#10976</a>)</p></li>
+<li><p>Prevent <em>Additional Software</em> from downloading packages that are already
+saved in the persistent storage. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15957">#15957</a>)</p></li>
+<li><p>Fix the localization of <em>Tor Launcher</em>, the application to configure a Tor
+bridge or a local proxy.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16338">#16338</a>)</p></li>
+<li><p>Fix accessibility when opening <em>Tor Browser</em> from a desktop notification.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16475">#16475</a>)</p></li>
+<li><p>Fix <em>WhisperBack</em> crashing when additional APT repositories is configured.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16563">#16563</a>)</p></li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Code</h1>
+
+<ul>
+<li><p>We agreed on a list of languages that we want to support
+out-of-the-box in Tails and started implementing it. The <a href="../doc/first_steps/additional_software.en.html"><em>Additional
+Software</em></a> feature will make it possible
+for other users to add their favorite dictionaries and language packs while
+making our USB image a bit smaller for everybody. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15807">#15807</a>,
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16095">#16095</a>, <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/9956">#9956</a>)</p></li>
+<li><p>We identified another possible cause for partially applied
+automatic upgrades. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16603">#16603</a>)</p></li>
+<li><p>We coordinated with the Tor Browser team regarding their upcoming 8.5
+major release and its implications for Tails.</p></li>
+<li><p>We continued deprecating <em>Tails Installer</em> from
+Debian and Ubuntu.</p></li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Documentation and website</h1>
+
+<ul>
+<li><p>We improved how installation and upgrade instructions are linked from
+our release notes and download pages. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16470">#16470</a>)</p></li>
+<li><p>We documented <a href="../doc/advanced_topics/virtualization/virt-manager.en.html#usb_image">how to run Tails from a USB image in
+<code>virt-manager</code></a>,
+which is the only virtualization solution that allows to use a
+persistent volume in a virtual machine.</p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>User experience</h1>
+
+<ul>
+<li><p>We drafted how to explain Tails in a new
+homepage and about
+page and tested it with 5 people with
+the help from <a href="https://simplysecure.org/">Simply Secure</a>.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16536">#16536</a>)</p></li>
+<li><p>We analyzed the <a href="https://lists.autistici.org/message/20190326.173900.138d9b45.en.html">success metrics of <em>Additional Software</em> and the
+integration of
+<em>VeraCrypt</em></a>:</p>
+
+<ul>
+<li>Both features probably participated in getting our boot stats to
+increase again (20% more since September 2019).</li>
+<li>Both features didn&#39;t change much the tech-savviness of our user
+base.</li>
+<li>The number of people who use <em>VeraCrypt</em> in Tails almost doubled.</li>
+</ul>
+
+
+<p>Results are good but we expected more. We need to improve how we let
+the world know about new features.</p></li>
+<li><p>We analyzed the <a href="https://lists.autistici.org/message/20190331.183400.d3d2350c.en.html">success metrics for USB
+images</a>:</p>
+
+<ul>
+<li>The percentage of people using Tails from macOS at least doubled
+since 3.12.</li>
+<li>USB images account for 76% of our downloads and our download buttons
+are hit 3970 times a day on average.</li>
+</ul>
+</li>
+<li><p>We created a new version of our logo that can be used
+with or without tagline. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/14835">#14835</a>)</p>
+
+<p><span class="createlink">tails-logo-flat.svg</span> <span class="createlink">tails-logo-flat-notagline.svg</span></p></li>
+<li><p>We documented <em>Kazam</em> instead of <em>recordMyDesktop</em> to <a href="../contribute/how/user_experience/recording.html#screencast">record
+screencasts when doing usability
+testing</a> because
+it is more reliable.</p></li>
+</ul>
+
+
+<h1><a name="index5h1"></a>Hot topics on our help desk</h1>
+
+<ol>
+<li><p>Partially applied incremental upgrades cause all kinds of trouble (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/14754">#14754</a>)</p></li>
+<li><p>persistence.conf lost, recoverable by reconfiguring (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/10976">#10976</a>)</p></li>
+</ol>
+
+
+<h1><a name="index6h1"></a>Infrastructure</h1>
+
+<ul>
+<li><p>We started making plans to migrate to GitLab.</p></li>
+<li><p>We interviewed 2 candidates for our open sysadmin position.</p></li>
+<li><p>We made good progress on switching to better maintained Puppet
+modules. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15510">#15510</a>)</p></li>
+<li><p>We worked on the software configuration of the prototype node for
+our next-generation CI hardware. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15501">#15501</a>)</p></li>
+<li><p>We fixed our LimeSurvey security updates monitoring system.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15466">#15466</a>)</p></li>
+<li><p>We stopped having public monthly meetings in favor of internal stand-up
+meetings.</p></li>
+</ul>
+
+
+<h1><a name="index7h1"></a>Funding</h1>
+
+<ul>
+<li><p>We documented how to <a href="../donate.en.html">donate in cash</a>.</p></li>
+<li><p>We explained on our donation page <a href="../donate.en.html#other-cryptos">why we don&#39;t accept donations in
+more cryptocurrencies</a>.</p></li>
+<li><p>We updated the statistics on <a href="../donate.en.html#expenses">how we spend our
+money</a>.</p></li>
+</ul>
+
+
+<h1><a name="index8h1"></a>Outreach</h1>
+
+<h2><a name="index1h2"></a>Past events</h2>
+
+<ul>
+<li>2 of us attended a <a href="https://wiki.debian.org/BSP/2019/03/fr/Paris">Debian Bug Squashing
+Party</a> in Paris on March
+30&ndash;31.</li>
+</ul>
+
+
+<h1><a name="index9h1"></a>On-going discussions</h1>
+
+<ul>
+<li>We started a <a href="http://lists.autistici.org/message/20190320.132313.7c24cc99.en.html">discussion about possible security implications that
+would arise from shipping the code of the Verification Extension in
+our website instead</a>.</li>
+</ul>
+
+
+<h1><a name="index10h1"></a>Translations</h1>
+
+<h2><a name="index2h2"></a>All the website</h2>
+
+<ul>
+<li>de: 45% (2832) strings translated, 7% strings fuzzy, 41% words translated</li>
+<li>es: 50% (3138) strings translated, 4% strings fuzzy, 42% words translated</li>
+<li>fa: 32% (1982) strings translated, 10% strings fuzzy, 33% words translated</li>
+<li>fr: 88% (5478) strings translated, 1% strings fuzzy, 87% words translated</li>
+<li>it: 31% (1970) strings translated, 5% strings fuzzy, 28% words translated</li>
+<li>pt: 25% (1553) strings translated, 7% strings fuzzy, 21% words translated</li>
+</ul>
+
+
+<p>Total original words: 65408</p>
+
+<h2><a name="index3h2"></a><a href="../contribute/l10n_tricks/core_po_files.txt">Core pages of the website</a></h2>
+
+<ul>
+<li>de: 71% (1252) strings translated, 12% strings fuzzy, 74% words translated</li>
+<li>es: 80% (1417) strings translated, 9% strings fuzzy, 82% words translated</li>
+<li>fa: 34% (615) strings translated, 13% strings fuzzy, 33% words translated</li>
+<li>fr: 96% (1712) strings translated, 1% strings fuzzy, 97% words translated</li>
+<li>it: 63% (1112) strings translated, 17% strings fuzzy, 65% words translated</li>
+<li>pt: 45% (798) strings translated, 13% strings fuzzy, 48% words translated</li>
+</ul>
+
+
+<p>Total original words: 16439</p>
+
+<h1><a name="index11h1"></a>Metrics</h1>
+
+<ul>
+<li>Tails has been started more than 809&nbsp;770 times in March. This makes 26&nbsp;121 boots a day on average.</li>
+<li>9&nbsp;970 downloads of the OpenPGP signature of a Tails USB image or ISO from our website.</li>
+<li>73 bug reports were received through WhisperBack.</li>
+</ul>
+
+
+<p><a href="../support/faq.en.html#boot-statistics">How do we know this?</a></p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2019_03">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

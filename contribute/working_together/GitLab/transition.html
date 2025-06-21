@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - How to transition to GitLab</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../working_together.html">working together</a></li>
+
+
+
+
+
+<li><a href="../GitLab.html">GitLab</a></li>
+
+
+
+
+<li>How to transition to GitLab</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+How to transition to GitLab
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>This page is meant for existing Tails contributors, who need to adjust
+their existing setup and habits to GitLab.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Activate your GitLab user account</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Update your Git configuration</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Use GitLab</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Known issues</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Activate your GitLab user account</h1>
+
+<p>If you have ever done anything on our Redmine, you now have a GitLab
+user account. To activate it:</p>
+
+<ol>
+<li>Visit the <a href="https://gitlab.tails.boum.org/users/password/new">Reset Password page</a>
+in a web browser.</li>
+<li>Enter the email address you were registered with on Redmine.</li>
+<li>Click <em>Reset Password</em>.</li>
+<li>Follow the instructions in the email you receive.</li>
+<li>Confirm your email address:
+
+<ol>
+<li>Visit <a href="https://gitlab.tails.boum.org/users/confirmation">https://gitlab.tails.boum.org/users/confirmation</a>
+in a web browser.</li>
+<li>Enter your email address.</li>
+<li>Click <em>Resend</em>.</li>
+<li>Follow the link you got by email.</li>
+</ol>
+</li>
+</ol>
+
+
+<h1><a name="index2h1"></a>Update your Git configuration</h1>
+
+<p>For every repository that&#39;s listed in
+<a href="https://gitlab.tails.boum.org/tails/">the <code>tails</code> GitLab group</a>,
+except <code>tails/jenkins-jobs</code> and <code>tails/puppet-*</code>:
+if you have a local clone of that repository,
+you need to points its Git remote to GitLab.</p>
+
+<p>Here&#39;s how to do that:</p>
+
+<ol>
+<li><p>Find the remote URL with the <em>Clone</em> button on the corresponding
+GitLab project.</p></li>
+<li><p>Run a command in the directory of your local clone.</p>
+
+<p>The exact command depends on the remote URL,
+on the name you gave to that remote,
+and on whether you want to use HTTPS or SSH.</p>
+
+<p>For example, you would run:</p>
+
+<pre><code>git remote set-url origin \
+    https://gitlab.tails.boum.org/tails/tails.git
+</code></pre>
+
+<p>or:</p>
+
+<pre><code>git remote set-url origin \
+    git@gitlab-ssh.tails.boum.org:tails/tails.git
+</code></pre></li>
+<li><p>Remove any obsolete <code>insteadOf</code> configuration you may have in <code>~/.gitconfig</code>,
+<code>~/.config/git/config</code>, and in this repository&#39;s <code>.git/config</code>. These could
+lead to problems that are hard to debug.</p></li>
+<li><p>Update submodules.</p>
+
+<p>For example, for <code>tails.git</code> you would run:</p>
+
+<pre><code>rm -rf submodules .git/modules/submodules
+git submodule sync
+git submodule update --init
+</code></pre></li>
+</ol>
+
+
+<p>Note: some repositories have not been migrated to GitLab yet (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17605">#17605</a>). That&#39;s why you need to do this operation on a per-clone basis,
+and not globally.</p>
+
+<h1><a name="index3h1"></a>Use GitLab</h1>
+
+<p>See the corresponding documentation:</p>
+
+<ul>
+<li><p><a href="../GitLab.html">how Tails uses GitLab</a></p></li>
+<li><p><a href="../../git.html">Git repositories</a></p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>Known issues</h1>
+
+<p>There is currently no known issue.</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../GitLab.html">GitLab</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/working_together/GitLab/transition">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

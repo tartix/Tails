@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for December, 2013</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Fri, 10 Jan 2014 09:24:25 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for December, 2013</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for December, 2013
+</span>
+<span class="date">2014-01-10</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<h1>Releases</h1>
+
+<p>Tails 0.22 was released on December 11.</p>
+
+<p>Tails 0.22.1 is scheduled for January 21. The schedule for the next
+releases is on our <a href="../contribute/calendar.html">calendar</a>.</p>
+
+<h1>Metrics</h1>
+
+<ul>
+<li>Tails has been started more than 218&nbsp;512 times in December.
+This make 7&nbsp;049 boots a day in average.</li>
+<li>17&nbsp;791 downloads of the OpenPGP signature of Tails ISO.</li>
+<li>103 reports were received through WhisperBack.</li>
+</ul>
+
+
+<h1>Code</h1>
+
+<p>New features:</p>
+
+<ul>
+<li>Huge progress was made on the
+MAC spoofing feature, that <a href="./spoof-mac.en.html">can now be
+tested</a> (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5421">#5421</a>).</li>
+<li>Experimental UEFI support was completed and is been tested. A bit
+more work <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5739">is needed</a>, though.</li>
+<li>The last mile was basically
+completed
+regarding incremental upgrades, that will be enabled by default
+starting with Tails 0.22.1 (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6014">#6014</a>).</li>
+</ul>
+
+
+<p>Work in progress:</p>
+
+<ul>
+<li>David Wolinsky has <a href="https://mailman.boum.org/pipermail/tails-dev/2013-December/004517.html">started
+porting</a>
+the WiNoN design to Tails: multiple, independent VMs connected to
+independent paths through the Tor network in order to wear multiple
+hats. Also, as David put it: &quot;There are other benefits of using VMs
+as the Whonix folks have recognized&quot; (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5748">#5748</a>).</li>
+<li>We have struggled against a <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6460">memory wipe
+regression</a> on some hardware with recent Linux kernels. No success
+so far.</li>
+<li>Some progress was made towards the
+migration to Wheezy (Tails 1.1).</li>
+<li>Early support for
+<a href="http://web.monkeysphere.info/monkeysign/">Monkeysign</a> was
+merged
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6455">#6455</a>), but <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6515">more work
+is needed</a>.</li>
+</ul>
+
+
+<p>Bug and regression fixes:</p>
+
+<ul>
+<li>Disable
+WebRTC (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6468">#6468</a>).</li>
+<li>Fix keyboard shortcuts
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6478">#6478</a>).</li>
+<li>Use the
+same User-Agent in htpdate as in the Tor Browser (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6477">#6477</a>).</li>
+<li>Fix the
+Unsafe Browser configuration (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6479">#6479</a>).</li>
+<li>Set the browser
+icon to IE&#39;s one in Windows camouflage mode.</li>
+</ul>
+
+
+<p>Branches pending review:</p>
+
+<ul>
+<li>Install a 64-bit
+kernel.</li>
+<li>Install
+poedit from official backports was proposed (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6456">#6456</a>).</li>
+<li>Do not
+create auto-login text consoles (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5588">#5588</a>).</li>
+</ul>
+
+
+<p>And also:</p>
+
+<ul>
+<li>Tor 0.2.4 is
+now stable!</li>
+<li>The Persistent Volume Assistant now <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5311">displays nicer paths</a>. Thanks to Andres Gomez!</li>
+<li>Torbutton was
+upgraded to 1.6.5.3 (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6566">#6566</a>).</li>
+<li>Our Tor Browser build and runtime dependencies
+were updated.</li>
+<li>We have fixed various NSS security issues in squeeze-backports
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6497">#6497</a>).</li>
+</ul>
+
+
+<h1>Documentation and website</h1>
+
+<ul>
+<li>A branch to
+clean up our ikiwiki configuration was started.</li>
+<li>The Mac installation
+instructions were made
+a bit safer.</li>
+<li>The links to files and branches in cgit were fixed.</li>
+<li>The tails-support mailing list is now mentioned on <a href="../contribute/how/help.html">Help other
+Tails users</a>.</li>
+<li>The documentation for incremental upgrades was written.</li>
+<li>The documentation for MAC spoofing was drafted.</li>
+<li>The <a href="../support/faq.en.html">draft FAQ</a> has now more content.</li>
+</ul>
+
+
+<h1>Infrastructure</h1>
+
+<h2>Test suite</h2>
+
+<ul>
+<li>The Tails automated test suite
+can now be run on pure Debian Wheezy
+with backports (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6399">#6399</a>). This allowed us to update
+the test suite to match current code, fix many bugs in it, and
+improve style a bit. Most of this was merged, but a few more
+branches are pending review: <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5959">#5959</a>, <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5465">#5465</a>, and <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6544">#6544</a>.</li>
+<li>Our automated test suite was
+partially ported to the feature/wheezy branch.</li>
+</ul>
+
+
+<h2>Build system</h2>
+
+<ul>
+<li>Thanks to David Wolinsky and others, our Vagrant setup
+was
+updated to work with newer Vagrant (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6221">#6221</a>), and
+the corresponding basebox updated to include up-to-date Debian
+archive keys. While we were at it, a few lurking bugs were fixed.</li>
+<li>Thanks to WinterFairy, <a href="https://git-tails.immerda.ch/winterfairy/tails/log/?h=feature/import-translations-extern">it is now
+easy</a>
+to import translations from Transifex into our various
+Git repositories.</li>
+</ul>
+
+
+<h1>On-going discussions</h1>
+
+<ul>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2013-December/004362.html">Tor Browser branding in Tails?</a></li>
+<li><a href="https://mailman.boum.org/pipermail/tails-dev/2013-December/004520.html">Risks of enabled/disabled TCP
+timestamps?</a>
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6579">#6579</a>)</li>
+</ul>
+
+
+<h1>Funding</h1>
+
+<ul>
+<li>The Freedom of the Press Foundation launched a <a href="https://pressfreedomfoundation.org/">campaign to support
+encryption tools for
+journalists</a>. Tails is among
+the projects this campaign gathers fund for.</li>
+<li>The proposal we have sent to sponsor Echo was accepted.</li>
+<li>Our grant proposal with sponsor Charlie was rejected.</li>
+<li>We are slowly making progress on our grant proposal with
+sponsor Golf.</li>
+<li>We have almost completed a proposal to be sent to sponsor Lima.</li>
+<li>Our contract with sponsor Bravo is now finished.</li>
+<li>Tails will soon accept donations in currencies other than Bitcoin.</li>
+<li>We are now very likely to create a non-profit organization dedicated
+to Tails.</li>
+<li>We have almost wrapped-up our bounties program. A report will be
+published soonish.</li>
+</ul>
+
+
+<h1>Outreach</h1>
+
+<p>Tails participated in the <a href="https://events.ccc.de/congress/2013/wiki/Main_Page">30th Chaos Communication
+Congress</a>. It was
+a great opportunity to meet, in person, a few existing and new
+contributors, as well as many people we are working with.</p>
+
+<p>A self-organized event called <em>Tails needs your help</em> was organized
+(<a href="https://tails.boum.org/promote/slides/2013-12-29_-_Tails_needs_your_help.shtml">slides</a>).
+It was a success considering the late notice.</p>
+
+<p>See you next year, probably with more space and events dedicated
+to Tails!</p>
+
+<h1>Press and testimonials</h1>
+
+<ul>
+<li>2013-12: Bruce Schneier
+<a href="http://www.reddit.com/r/IAmA/comments/1r8ibh/iama_security_technologist_and_author_bruce/cdknf7a">answered</a>
+to someone asking him what Linux distribution is its favorite: &quot;I don&#39;t
+use Linux. (Shhh. Don&#39;t tell anyone.) Although I have started using Tails&quot;.</li>
+<li>2013-12-12: In <a href="http://boingboing.net/2013/12/15/bruce-schneier-and-eben-moglen-2.html">A conversation with Bruce
+Schneier</a>,
+as part of the &quot;Snowden, the NSA and free software&quot; cycle at
+Columbia Law School NYC, Bruce Schneier says:
+
+<ul>
+<li>&quot;I think most of the public domain privacy tools are going to be
+safe, yes. I think GPG is going to be safe. I think OTR is going
+to be safe. I think that Tails is going to be safe. I do think
+that these systems, because they were not -- you know, the NSA has
+a big lever when a tool is written closed-source by a for-profit
+corporation. There are levers they have that they don&#39;t have in
+the open source international, altruistic community. And these are
+generally written by crypto-paranoids, they&#39;re pretty well
+designed. We make mistakes, but we find them and we correct them,
+and we&#39;re getting good at that. I think that if the NSA is going
+after these tools, they&#39;re going after implementations.&quot;</li>
+<li>&quot;What do I trust? I trust, I trust Tails, I trust GPG [...]&quot;</li>
+<li>&quot;We can make it harder, we can make it more expensive, we can make
+it more risky. And yes, every time we do something to increase one
+of those, we&#39;re making ourselves safer. [...] There are tools we
+are deploying in countries all over the world, that are keeping
+people alive. Tor is one of them. I mean, Tor saves lives. [...]
+And every time you use Tor [...] provides cover for everyone else
+who uses Tor [...]&quot;</li>
+</ul>
+</li>
+<li>Jacob Appelbaum stated at the <a href="https://events.ccc.de/congress/2013/Fahrplan/events/5713.html">Chaos Communication
+Congress</a>:
+&quot;if you are a journalist and you are not using Tails, you should
+probably be using Tails, unless you <em>really</em> know what
+you&#39;re doing&quot;.</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2013_12">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

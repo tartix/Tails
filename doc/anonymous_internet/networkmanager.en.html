@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Connecting to a local network</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="up" href="../anonymous_internet.index.html" title="anonymous internet.index" />
+
+<link rel="next" href="./no-wifi.en.html" title="Troubleshooting Wi-Fi not working" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../anonymous_internet.en.html">anonymous internet</a></li>
+
+
+
+
+<li>Connecting to a local network</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./networkmanager.de.html">de</a></span>
+   <span class="hidden"><a href="./networkmanager.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./networkmanager.es.html">es</a></span>
+   <span class="hidden"><a href="./networkmanager.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./networkmanager.fr.html">fr</a></span>
+   <span class="hidden"><a href="./networkmanager.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./networkmanager.it.html">it</a></span>
+   <span class="hidden"><a href="./networkmanager.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./networkmanager.pt.html">pt</a></span>
+   <span class="hidden"><a href="./networkmanager.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./networkmanager.ru.html">ru</a></span>
+   <span class="hidden"><a href="./networkmanager.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Connecting to a local network
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./no-wifi.en.html">Troubleshooting Wi-Fi not working</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Connecting to a local network</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Saving your network settings</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Modifying your network settings</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Connecting to a local network</h1>
+
+<p>You can connect to a local network using a wired, Wi-Fi, or mobile data
+connection:</p>
+
+<ol>
+<li><p>Open the system menu in the top-right corner.</p>
+
+<p><img class="img" height="217" src="../first_steps/introduction_to_gnome_and_the_tails_desktop/system.png" width="249" /></p>
+
+<ul>
+<li><p>If a wired connection is detected, Tails automatically connects to the network.</p></li>
+<li><p>To connect to a Wi-Fi network, choose <span class="guilabel">Wi-Fi Not
+Connected</span> and then <span class="guilabel">Select Network</span>.</p></li>
+</ul>
+
+
+<div class="bug">
+
+<p>If there is no option to connect to a Wi-Fi network, your Wi-Fi interface
+is not working in Tails. See our documentation on <a href="./no-wifi.en.html">troubleshooting Wi-Fi
+not working</a>.</p>
+
+</div>
+
+
+<ul>
+<li>To connect to a mobile data network, choose
+<span class="guilabel">Mobile Broadband</span>.</li>
+</ul>
+
+
+<div class="note">
+<p>It is currently impossible to connect to a network using:</p>
+
+<ul>
+<li>Dial-up modems.</li>
+<li>VPNs, see <a href="../../support/faq.en.html#vpn">the corresponding FAQ</a>.</li>
+</ul>
+
+</div>
+</li>
+<li><p>After you connect to a local network, the <em>Tor Connection</em> assistant
+appears to help you <a href="./tor.en.html">connect to the Tor network</a>.</p>
+
+<p><img class="img" height="421" src="./tor/tor-connection.png" width="648" /></p></li>
+</ol>
+
+
+<p>For more information, open
+<span class="application"><a href="../first_steps/introduction_to_gnome_and_the_tails_desktop.en.html#help">GNOME Help</a></span>
+and choose <span class="guilabel">Networking, web &amp; email</span>.</p>
+
+<h1><a name="index2h1"></a>Saving your network settings</h1>
+
+<p>To remember the password for Wi-Fi networks and custom network configurations
+across different Tails sessions, turn on the <a href="../first_steps/persistence/configure.en.html#network_connections">Network
+Connections</a> feature of
+the Persistent Storage.</p>
+
+<h1><a name="index3h1"></a>Modifying your network settings</h1>
+
+<p>To modify your network settings, for example, to configure whether or not
+to automatically connect to a Wi-Fi network, do the following:</p>
+
+<ol>
+<li><p>Open the system menu in the top-right corner.</p></li>
+<li><p>Click on the <img alt="System" class="symbolic" height="16" src="../../lib/preferences-system.png" width="16" /> button to open the system settings.</p></li>
+<li><p>Choose <span class="guilabel">Network</span>.</p></li>
+</ol>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./no-wifi.en.html">Troubleshooting Wi-Fi not working</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./Tor_Browser.en.html">Tor Browser</a>
+
+<a href="../about/features.en.html">about/features</a>
+
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+
+<a href="../first_steps/introduction_to_gnome_and_the_tails_desktop.en.html">first steps/introduction to gnome and the tails desktop</a>
+
+<a href="../first_steps/persistence/configure.en.html">first steps/persistence/configure</a>
+
+<a href="../first_steps/welcome_screen/mac_spoofing.en.html">first steps/welcome screen/mac spoofing</a>
+
+<a href="../../news/report_2019_01.html">news/report 2019 01</a>
+
+<a href="../../news/report_2020_07.html">news/report 2020 07</a>
+
+<a href="./tor.en.html">tor</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/anonymous_internet/networkmanager">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

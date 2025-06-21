@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Rescuing your Persistent Storage from a broken Tails</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./backup.en.html" title="Making a backup of your Persistent Storage" />
+
+<link rel="up" href="../../first_steps.index.html" title="first steps.index" />
+
+<link rel="next" href="./delete.en.html" title="Deleting the Persistent Storage" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../first_steps.en.html">first steps</a></li>
+
+
+
+
+
+<li><a href="../persistence.en.html">persistence</a></li>
+
+
+
+
+<li>Rescuing your Persistent Storage from a broken Tails</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./rescue.de.html">de</a></span>
+   <span class="hidden"><a href="./rescue.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./rescue.es.html">es</a></span>
+   <span class="hidden"><a href="./rescue.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./rescue.fr.html">fr</a></span>
+   <span class="hidden"><a href="./rescue.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./rescue.it.html">it</a></span>
+   <span class="hidden"><a href="./rescue.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./rescue.pt.html">pt</a></span>
+   <span class="hidden"><a href="./rescue.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./rescue.ru.html">ru</a></span>
+   <span class="hidden"><a href="./rescue.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Rescuing your Persistent Storage from a broken Tails
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./backup.en.html">Making a backup of your Persistent Storage</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../first_steps.index.html">first steps.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./delete.en.html">Deleting the Persistent Storage</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>If your Tails becomes broken, for example, it no longer starts, you can follow
+these instructions to try to rescue your Persistent Storage.</p>
+
+<div class="tip">
+
+<p>It is advisable to keep a current backup of your Persistent Storage. To learn
+how to create a backup of your Persistent Storage, see our <a href="./backup.en.html">instructions on
+how to back up your Persistent Storage to another Tails USB
+stick</a>.</p>
+
+</div>
+
+
+<ol>
+<li><p>Install Tails on a new USB stick on which you want to rescue your Persistent
+Storage. Make sure that this new USB stick is at least
+as large as the USB stick that has your broken Tails on it.</p></li>
+<li><p>Start on your new Tails and create a Persistent Storage.
+For detailed instructions, see how to
+<a href="./configure.en.html">create and configure a Persistent Storage</a>.</p>
+
+<p>When the Persistent Storage settings shows the list of possible features,
+click <strong>Save</strong> and exit.</p>
+
+<p>The process described below overrides the configuration of the Persistent
+Storage. So, it does not matter which features you turn on when creating
+the Persistent Storage.</p></li>
+<li><p>Restart on your new Tails, set up an <a href="../welcome_screen/administration_password.en.html">administration
+password</a>, and
+unlock the Persistent Storage.</p>
+
+<div class="caution">
+
+Make sure that all applications are closed before continuing with these
+instructions. Otherwise, the Persistent Storage might not be properly
+rescued from your broken Tails.
+
+</div>
+</li>
+<li><p>Choose
+<span class="menuchoice">
+  <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guisubmenu">Accessories</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Files</span></span>
+to open the <span class="application">Files</span> browser.</p></li>
+<li><p>Plug in the USB stick that has your broken Tails on it.</p>
+
+<p>A new encrypted volume appears in the sidebar of the
+<span class="application">Files</span> browser. Click on it and enter the
+passphrase of your broken Tails to unlock the volume.</p>
+
+<p>The Persistent Storage of your broken Tails shows up as
+<span class="guilabel">TailsData</span>.</p>
+
+<div class="bug">
+
+<p>If an encrypted volume does not appear, then you might not be able to
+rescue the Persistent Storage of your broken Tails.</p>
+
+</div>
+</li>
+<li><p>Choose
+<span class="menuchoice">
+  <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guisubmenu">System Tools</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Root Terminal</span>
+</span>
+to open a terminal with administration rights.</p></li>
+<li><p>Execute the following command to rescue the Persistent Storage of your
+broken Tails to your new Tails:</p></li>
+</ol>
+
+
+
+
+
+<p class="pre command root">rsync -PaSHAXv --del /media/amnesia/TailsData/ /live/persistence/TailsData_unlocked</p>
+
+
+<p>When the command finishes, it displays a summary of the data that was copied. For example:</p>
+
+<pre>
+sent 32.32M bytes  received 1.69K bytes  21.55M bytes/sec
+total size is 32.30M  speedup is 1.00
+</pre>
+
+
+<p>You can now eject the <span class="guilabel">TailsData</span> volume in the
+<span class="application">Files</span> browser and unplug the USB stick that
+has your broken Tails on it.</p>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./backup.en.html">Making a backup of your Persistent Storage</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../first_steps.index.html">first steps.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./delete.en.html">Deleting the Persistent Storage</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./backup.en.html">backup</a>
+
+<a href="../../first_steps.index.html">first steps.index</a>
+
+<a href="../persistence.en.html">persistence</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/first_steps/persistence/rescue">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

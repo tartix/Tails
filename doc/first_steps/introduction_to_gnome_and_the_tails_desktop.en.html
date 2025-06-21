@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Introduction to GNOME and the Tails desktop</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./welcome_screen/mac_spoofing.en.html" title="MAC address anonymization" />
+
+<link rel="up" href="../first_steps.index.html" title="first steps.index" />
+
+<link rel="next" href="./persistence.en.html" title="Encrypted Persistent Storage" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../first_steps.en.html">first steps</a></li>
+
+
+
+
+<li>Introduction to GNOME and the Tails desktop</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./introduction_to_gnome_and_the_tails_desktop.de.html">de</a></span>
+   <span class="hidden"><a href="./introduction_to_gnome_and_the_tails_desktop.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./introduction_to_gnome_and_the_tails_desktop.es.html">es</a></span>
+   <span class="hidden"><a href="./introduction_to_gnome_and_the_tails_desktop.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./introduction_to_gnome_and_the_tails_desktop.fr.html">fr</a></span>
+   <span class="hidden"><a href="./introduction_to_gnome_and_the_tails_desktop.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./introduction_to_gnome_and_the_tails_desktop.it.html">it</a></span>
+   <span class="hidden"><a href="./introduction_to_gnome_and_the_tails_desktop.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./introduction_to_gnome_and_the_tails_desktop.pt.html">pt</a></span>
+   <span class="hidden"><a href="./introduction_to_gnome_and_the_tails_desktop.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./introduction_to_gnome_and_the_tails_desktop.ru.html">ru</a></span>
+   <span class="hidden"><a href="./introduction_to_gnome_and_the_tails_desktop.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Introduction to GNOME and the Tails desktop
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./welcome_screen/mac_spoofing.en.html">MAC address anonymization</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../first_steps.index.html">first steps.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./persistence.en.html">Encrypted Persistent Storage</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>The desktop environment used in Tails is <a href="https://www.gnome.org">GNOME</a>.
+This page describes some important features of the desktop in the context of
+Tails.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#top-navigation-bar">Top navigation bar</a>
+	<ol>
+		<li class="L2"><a href="#applications">Applications menu</a>
+		<ol>
+			<li class="L3"><a href="#favorites">Favorites submenu</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#places">Places menu</a>
+		</li>
+		<li class="L2"><a href="#tor-status">Tor status and circuits</a>
+		</li>
+		<li class="L2"><a href="#openpgp">OpenPGP applet</a>
+		</li>
+		<li class="L2"><a href="#accessibility">Universal access</a>
+		</li>
+		<li class="L2"><a href="#keyboard">Keyboard layouts</a>
+		</li>
+		<li class="L2"><a href="#system">System menu</a>
+		<ol>
+			<li class="L3"><a href="#networking">Networking</a>
+			</li>
+			<li class="L3"><a href="#system-settings">System settings</a>
+			</li>
+			<li class="L3"><a href="#screen-locker">Screen locker</a>
+			</li>
+			<li class="L3"><a href="#suspend">Suspend</a>
+			</li>
+			<li class="L3"><a href="#restart">Restart</a>
+			</li>
+			<li class="L3"><a href="#shutdown">Shutdown</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#activities">Activities overview</a>
+	</li>
+	<li class="L1"><a href="#shortcuts">Desktop shortcuts</a>
+	</li>
+	<li class="L1"><a href="#files">The Files browser</a>
+	</li>
+</ol>
+</div>
+
+
+
+
+<h1 id="top-navigation-bar"><a name="index1h1"></a>Top navigation bar</h1>
+
+
+<p>In the upper left corner of the screen there are two menus:</p>
+
+<ul>
+<li>the <span class="guimenu">Applications</span> menu</li>
+<li>the <span class="guimenu">Places</span> menu</li>
+</ul>
+
+
+<h2 id="applications"><a name="index1h2"></a>Applications menu</h2>
+
+
+<p>The <span class="guimenu">Applications</span> menu provides shortcuts to the
+<a href="../about/features.en.html">included software</a> and to GNOME configuration utilities.</p>
+
+<p><img alt="" class="img" height="367" src="./introduction_to_gnome_and_the_tails_desktop/applications.png" width="375" /></p>
+
+<p><a id="help"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/help-browser.png" width="48" />
+<div class="text">
+  <span class="guimenuitem">Help</span>: to access the <span class="application">GNOME Desktop Help</span> choose
+  <span class="menuchoice">
+    <span class="guisubmenu">Utilities</span>&nbsp;&#x25B8;
+    <span class="guimenuitem">Help</span></span>
+  </div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/preferences-system.png" width="48" />
+<div class="text">
+  <span class="guimenuitem">Settings</span>:
+  to change various system settings such as keyboard, mouse and touchpad,
+  or displays choose
+  <span class="menuchoice">
+    <span class="guisubmenu">System Tools</span>&nbsp;&#x25B8;
+    <span class="guimenuitem">Settings</span>&nbsp;&#x25B8;
+    <span class="guimenuitem">Devices</span>
+    </span>
+  </div>
+</div>
+
+
+
+
+<div class="tip">
+
+<p>To learn about the many keyboard shortcuts in GNOME,
+open the <span class="application">Settings</span> utility and choose
+<span class="guimenuitem">Devices</span>&nbsp;&#x25B8;
+<span class="guimenuitem">Keyboard</span>.</p>
+
+</div>
+
+
+
+
+<div class="next">
+
+By default, any such customization is reset when shutting down Tails. Read the
+documentation on the <a href="./persistence.en.html">Persistent Storage</a> to learn which configuration can be
+made persistent across separate working sessions.
+
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/seahorse.png" width="48" />
+<div class="text">
+  <span class="guimenuitem">Seahorse</span>:
+  to manage your OpenPGP keys choose
+  <span class="menuchoice">
+    <span class="guisubmenu">Utilities</span>&nbsp;&#x25B8;
+    <span class="guimenuitem">Passwords and Keys</span></span>
+  </div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/help-about.png" width="48" />
+<div class="text">
+  <span class="guimenuitem">About Tails</span>:
+  to know the version of Tails that you are currently running, choose
+  <span class="menuchoice">
+    <span class="guisubmenu">Tails</span>&nbsp;&#x25B8;
+    <span class="guimenuitem">About Tails</span></span>
+  </div>
+</div>
+
+
+
+
+<h3 id="favorites"><a name="index1h3"></a>Favorites submenu</h3>
+
+
+<p>In the <span class="guisubmenu">Favorites</span> submenu, a few
+shortcuts allow you to launch the most frequently used applications:</p>
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/tor-browser.png" width="48" />
+<div class="text">
+<strong>Tor Browser</strong> to browse the web anonymously and uncensored<br />
+<a href="../anonymous_internet/Tor_Browser.en.html">See our documentation on browsing the web with <i>Tor Browser</i></a>
+</div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/tor-connection.png" width="48" />
+<div class="text">
+<strong>Tor Connection</strong> to connect to the Tor network<br />
+<a href="../anonymous_internet/tor.en.html">See our documentation on connecting to Tor</a>
+</div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/tails-persistence-setup.png" width="48" />
+<div class="text">
+<strong>Configure persistent volume</strong> to create and configure a Persistent Storage on your Tails USB stick<br />
+<a href="./persistence.en.html">See our documentation on the encrypted Persistent Storage</a>
+</div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/tails-help.png" width="48" />
+<div class="text">
+<strong>Tails documentation</strong> to open an offline version of the Tails website and documentation, embeded in Tails<br />
+</div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="47" src="../../lib/apps/whisperback.png" width="48" />
+<div class="text">
+<strong>WhisperBack Error Reporting</strong> to report problems about Tails to our team<br />
+<a href="./bug_reporting.en.html">See our documentation on reporting an error</a>
+</div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/tails-installer.png" width="48" />
+<div class="text">
+<strong>Tails Installer</strong> to clone Tails to another USB stick<br />
+</div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/thunderbird.png" width="48" />
+<div class="text"><strong>Thunderbird</strong> email client<br />
+<a href="../anonymous_internet/thunderbird.en.html">See our documentation on emailing and reading news with <i>Thunderbird</i></a>
+</div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/keepassxc.png" width="48" />
+<div class="text">
+<strong>KeePassXC</strong> password manager<br />
+<a href="../encryption_and_privacy/manage_passwords.en.html">See our documentation on managing passwords with <i>KeePassXC</i></a>
+</div>
+</div>
+
+
+
+
+<div class="icon">
+<img class="img" height="48" src="../../lib/apps/pidgin.png" width="48" />
+<div class="text">
+<strong>Pidgin Internet Messenger</strong><br />
+<a href="../anonymous_internet/pidgin.en.html">See our documentation on chatting with <i>Pidgin</i> and OTR</a>
+</div>
+</div>
+
+
+
+
+<div class="icon">
+<img alt="" class="img" height="48" src="../../lib/apps/files.png" width="48" />
+<div class="text">
+<strong>Files</strong> browser<br />
+<a href="./introduction_to_gnome_and_the_tails_desktop.en.html#files">See our documentation on the <i>Files</i> browser</a>
+</div>
+</div>
+
+
+
+
+<h2 id="places"><a name="index2h2"></a>Places menu</h2>
+
+
+<p>The <span class="guimenu">Places</span> menu provides direct access to different
+folders and storage media.</p>
+
+<p><img alt="" class="img" height="342" src="./introduction_to_gnome_and_the_tails_desktop/places.png" width="271" /></p>
+
+<h2 id="tor-status"><a name="index3h2"></a>Tor status and circuits</h2>
+
+
+<p>The Tor status icon and <em>Onion
+Circuits</em> allow you to view the status of Tor.</p>
+
+<p><img alt="" class="img" height="94" src="./introduction_to_gnome_and_the_tails_desktop/tor-status.png" width="246" /></p>
+
+<p><a href="../anonymous_internet/tor/circuits.en.html">See our documentation on <em>Onion Circuits</em>.</a></p>
+
+<h2 id="openpgp"><a name="index4h2"></a>OpenPGP applet</h2>
+
+
+<p>Using the <em>OpenPGP Applet</em>, you can
+encrypt and decrypt the clipboard using OpenPGP.</p>
+
+<p><img alt="" class="img" height="42" src="./introduction_to_gnome_and_the_tails_desktop/openpgp_applet.png" width="247" /></p>
+
+<p><a href="../encryption_and_privacy/gpgapplet.en.html">See our documentation on <em>OpenPGP Applet</em>.</a></p>
+
+<h2 id="accessibility"><a name="index5h2"></a>Universal access</h2>
+
+
+<p>The universal access menu allows you to activate the screen reader,
+screen keyboard, large text display, and other accessibility technologies.</p>
+
+<p><img alt="" class="img" height="300" src="./introduction_to_gnome_and_the_tails_desktop/accessibility.png" width="246" /></p>
+
+<p><a href="./accessibility.en.html">See our documentation on accessibility.</a></p>
+
+<h2 id="keyboard"><a name="index6h2"></a>Keyboard layouts</h2>
+
+
+<p>The keyboard layout menu allow you to change the keyboard layout and
+input method for non-Latin scripts.</p>
+
+<p><img alt="" class="img" height="270" src="./introduction_to_gnome_and_the_tails_desktop/keyboard.png" width="247" /></p>
+
+<h2 id="system"><a name="index7h2"></a>System menu</h2>
+
+
+<p>In the top-right corner of the top navigation bar, the system menu allows you to
+manage your settings, connect to a Wi-Fi network, and restart your computer.</p>
+
+<p><img alt="" class="img" height="217" src="./introduction_to_gnome_and_the_tails_desktop/system.png" width="249" /></p>
+
+<h3 id="networking"><a name="index2h3"></a>Networking</h3>
+
+
+<p>From the system menu, you can choose which Wi-Fi network to connect to.</p>
+
+<p>See also the documentation on <a href="../anonymous_internet/networkmanager.en.html">connecting to a network</a>.</p>
+
+<h3 id="system-settings"><a name="index3h3"></a>System settings</h3>
+
+
+<p>Click on the <img alt="Settings" class="symbolic" height="16" src="../../lib/preferences-system.png" width="16" />
+button to edit your system settings.</p>
+
+<p>These settings will not be saved when you restart Tails.</p>
+
+<h3 id="screen-locker"><a name="index4h3"></a>Screen locker</h3>
+
+
+<p>Click on the <img alt="Lock Screen" class="symbolic" height="16" src="../../lib/network-wireless-encrypted.png" width="16" />
+button to lock your screen with a password.</p>
+
+<ul>
+<li><p>If you set up an <a href="./welcome_screen/administration_password.en.html">administration password</a>
+when starting Tails, you can unlock your screen with your administration
+password.</p>
+
+<div class="tip">
+<p>Your screen will automatically lock after some time if you have set up an
+administration password. To disable this behavior, execute the following
+command:</p>
+
+<p class="pre command">gsettings set org.gnome.desktop.screensaver lock-enabled false</p>
+
+</div>
+</li>
+<li><p>Otherwise, you can set up a password to unlock your screen when locking your
+screen for the first time.</p>
+
+<p><img alt="" class="img" height="175" src="./introduction_to_gnome_and_the_tails_desktop/screen-locker.png" width="279" /></p></li>
+</ul>
+
+
+<h3 id="suspend"><a name="index5h3"></a>Suspend</h3>
+
+
+<p>Click on the <img alt="Suspend" class="symbolic" height="16" src="../../lib/media-playback-pause.png" width="16" />
+button to suspend your computer.</p>
+
+<p>While suspended, your computer is not computing anymore but is still powered on,
+like if it was standing still but still alive.</p>
+
+<p>To resume from suspend and go back to the Tails desktop, push the power button
+of your computer.</p>
+
+<div class="caution">
+
+<p>If you remove your Tails USB stick while suspended, your computer will not
+shut down immediately and will only shut down when resuming.</p>
+
+<p>An attacker with physical access to your computer and capable of finding
+your screen locker password or setting up a <a href="../advanced_topics/cold_boot_attacks.en.html">cold-boot
+attack</a> can compromise your Tails while
+suspended.</p>
+
+<p>For more security, <a href="./shutdown.en.html">shut down Tails</a> entirely.</p>
+
+</div>
+
+
+
+
+<h3 id="restart"><a name="index6h3"></a>Restart</h3>
+
+
+<p>Click on the <img alt="Restart" class="symbolic" height="16" src="../../lib/view-refresh.png" width="16" />
+button to restart your computer.</p>
+
+<h3 id="shutdown"><a name="index7h3"></a>Shutdown</h3>
+
+
+<p>Click on the <img alt="Power Off" class="symbolic" height="16" src="../../lib/system-shutdown.png" width="16" />
+button to shut down your computer.</p>
+
+<h1 id="activities"><a name="index2h1"></a>Activities overview</h1>
+
+
+<p>To access your windows and applications you can either:</p>
+
+<ul>
+<li>Choose <span class="menuchoice">
+  <span class="guisubmenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Activities Overview</span></span>.</li>
+<li>Throw your mouse pointer to the top-left hot corner.</li>
+<li>Press the windows key on your keyboard.</li>
+</ul>
+
+
+<p>You can see your windows and applications in the overview. You can also
+start typing to search your applications, files, and folders.</p>
+
+<h1 id="shortcuts"><a name="index3h1"></a>Desktop shortcuts</h1>
+
+
+
+
+<p></p><div class="icon">
+<img class="img" height="48" src="../../lib/apps/tails-help.png" width="48" />
+<div class="text">
+<strong>Tails documentation</strong> to open an offline version of the Tails website and documentation, embeded in Tails<br />
+</div>
+
+<div class="icon">
+<img class="img" height="47" src="../../lib/apps/whisperback.png" width="48" />
+<div class="text">
+<strong>Report an error</strong> to report problems about Tails to our team<br />
+<a href="./bug_reporting.en.html">See our documentation on reporting an error</a>
+</div>
+</div>
+
+
+<div class="icon">
+<img class="img" height="48" src="./introduction_to_gnome_and_the_tails_desktop/emptytrash.png" width="48" />
+<div class="text"><strong>Trash</strong>, where the &quot;deleted&quot; files are
+moved</div>
+</div>
+
+
+
+
+
+<h1 id="files"><a name="index4h1"></a>The <span class="application">Files</span> browser</h1>
+
+
+<p><img class="img" height="397" src="./introduction_to_gnome_and_the_tails_desktop/nautilus.png" width="549" /></p>
+
+<p>To open the <span class="application">Files</span> browser, you can
+either:</p>
+
+<ul>
+<li><p>Choose <span class="menuchoice">
+  <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guisubmenu">Accessories</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Files</span></span>.</p></li>
+<li><p>Open one of the shortcuts from the <span class="guimenu">Places</span>
+menu.</p></li>
+</ul>
+
+
+<p><img alt="" class="img" height="48" src="../../lib/apps/files.png" width="48" /></p>
+
+<p>To connect to a remote SFTP (SSH File Transfer Protocol) server:</p>
+
+<ol>
+<li><p>Choose <span class="guilabel">Other Locations</span> in the sidebar
+of the <span class="application">Files</span> browser.</p></li>
+<li><p>Specify an SFTP server in <span class="guilabel">Connect to
+Server</span> at the bottom of the right pane. For example:</p>
+
+<p class="pre command">ssh://user@example.com/</p>
+</li>
+<li><p>Click <span class="bold">Connect</span>.</p></li>
+</ol>
+
+</div>
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./welcome_screen/mac_spoofing.en.html">MAC address anonymization</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../first_steps.index.html">first steps.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./persistence.en.html">Encrypted Persistent Storage</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../about/features.en.html">about/features</a>
+
+<a href="../advanced_topics/internal_hard_disk.en.html">advanced topics/internal hard disk</a>
+
+<a href="../anonymous_internet/networkmanager.en.html">anonymous internet/networkmanager</a>
+
+<a href="../anonymous_internet/pidgin.en.html">anonymous internet/pidgin</a>
+
+<a href="../first_steps.index.html">first steps.index</a>
+
+<a href="../../news/achievements_in_2018.en.html">news/achievements in 2018</a>
+
+<a href="../../news/report_2014_end.html">news/report 2014 end</a>
+
+<a href="../../news/report_2019_01.html">news/report 2019 01</a>
+
+<a href="../../news/version_2.0.html">news/version 2.0</a>
+
+<a href="../../support/known_issues.en.html">support/known issues</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="../upgrade/error/install.en.html">upgrade/error/install</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/first_steps/introduction_to_gnome_and_the_tails_desktop">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

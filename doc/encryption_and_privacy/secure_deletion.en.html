@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Securely deleting files and clean diskspace</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./gpgapplet/decrypt_verify.en.html" title="Decrypting or verifying text using OpenPGP Applet" />
+
+<link rel="up" href="../encryption_and_privacy.index.html" title="encryption and privacy.index" />
+
+<link rel="next" href="./manage_passwords.en.html" title="Managing passwords using KeePassXC" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../encryption_and_privacy.en.html">encryption and privacy</a></li>
+
+
+
+
+<li>Securely deleting files and clean diskspace</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./secure_deletion.de.html">de</a></span>
+   <span class="hidden"><a href="./secure_deletion.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./secure_deletion.es.html">es</a></span>
+   <span class="hidden"><a href="./secure_deletion.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./secure_deletion.fr.html">fr</a></span>
+   <span class="hidden"><a href="./secure_deletion.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./secure_deletion.it.html">it</a></span>
+   <span class="hidden"><a href="./secure_deletion.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./secure_deletion.pt.html">pt</a></span>
+   <span class="hidden"><a href="./secure_deletion.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./secure_deletion.ru.html">ru</a></span>
+   <span class="hidden"><a href="./secure_deletion.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Securely deleting files and clean diskspace
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./gpgapplet/decrypt_verify.en.html">Decrypting or verifying text using OpenPGP Applet</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../encryption_and_privacy.index.html">encryption and privacy.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./manage_passwords.en.html">Managing passwords using KeePassXC</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Why use secure deletion?</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Warning about USB sticks and solid-state disks</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Securely delete files</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Securely clean available disk space</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Securely erasing an entire device</a>
+	</li>
+</ol>
+</div>
+
+
+<p><a id="why"></a></p>
+
+<h1><a name="index1h1"></a>Why use secure deletion?</h1>
+
+<p><strong>Operating systems do not actually remove the contents of a file when it is
+deleted</strong>, even after emptying the trash or explicitly removing the file, from
+the command line for example.</p>
+
+<p>Instead, they simply remove the file&#39;s entry from the file system directory,
+because this requires less work and is therefore faster. The contents of the
+file&mdash;the actual data&mdash;remain on the storage medium. The data will remain there
+until the operating system reuses the space for new data.</p>
+
+<p>Likewise, reformatting, repartitioning or reimaging a system is not always
+guaranteed to write to every area of the disk, though all will cause the disk to
+appear empty or, in the case of reimaging, empty except for the files present in
+the image, to most software.</p>
+
+<p>Finally, even when the storage medium is overwritten, physical properties of the
+medium may make it possible to recover the previous contents. In most cases
+however, this recovery is not possible by just reading from the storage device
+in the usual way, but requires using laboratory techniques such as disassembling
+the device and directly accessing/reading from its components.</p>
+
+<p class="quoted-from">Quoted from <a href="https://en.wikipedia.org/wiki/Secure%5Ffile%5Fdeletion">Wikipedia: Secure file deletion</a>.</p>
+
+
+<p><a id="usb_and_ssd"></a></p>
+
+<h1><a name="index2h1"></a>Warning about USB sticks and solid-state disks</h1>
+
+<p>The only way to securely delete any data, even a single file, from a USB
+stick or an SSD (Solid-State Disk) is to <a href="./secure_deletion.en.html#erase-device">securely erase the entire
+device</a>.</p>
+
+<p>For more details read the corresponding section of the Wikipedia article on
+<a href="https://en.wikipedia.org/wiki/Data%5Ferasure%23Limitations">Data erasure</a>.</p>
+
+<h1><a name="index3h1"></a>Securely delete files</h1>
+
+<div class="caution">
+
+<p>Securely deleting files does not erase the potential backup copies of
+the file (for example LibreOffice creates backup copies that allow
+you to recover your work in case LibreOffice stops responding).</p>
+
+</div>
+
+
+<ol>
+<li><p>Open the <span class="application">Files</span> browser.</p></li>
+<li><p>Navigate to the folder containing the files that you want to delete.</p></li>
+<li><p>Select the files that you want to delete with the mouse.</p></li>
+<li><p>Right-click (on Mac, click with two fingers) on the files and choose <span class="guimenuitem">Wipe</span>.</p>
+
+<p><img alt="Right-click&nbsp;&#x25B8; Wipe" class="img" height="394" src="./secure_deletion/wipe_files.png" width="549" /></p></li>
+<li><p>Confirm.</p></li>
+<li><p>The deletion will start. It can last from a few seconds to several minutes,
+according to the size of the files. Be patient&hellip;</p></li>
+</ol>
+
+
+<p><a id="clean_disk_space"></a></p>
+
+<h1><a name="index4h1"></a>Securely clean available disk space</h1>
+
+<p>In order to clean up the contents of all files that were previously suppressed
+but not securely deleted from a disk, it is also possible to securely clean all
+the free space on the disk.</p>
+
+<div class="caution">
+
+<p>This method does not work as expected on solid-state disks or USB
+sticks.</p>
+
+</div>
+
+
+<p>The disk or the folder may or may not contain other files. Those files will not
+be deleted during the operation.</p>
+
+<ol>
+<li><p>Open the <span class="application">Files</span> browser.</p></li>
+<li><p>Click on the disk that you want to clean in the left pane to
+ navigate to the root of this disk.</p></li>
+<li><p>Click on the <span class="guimenu"><img alt="menu toggle" class="symbolic" height="16" src="../../lib/pan-down.png" width="16" /></span> button in the title bar and choose
+ <span class="guilabel">Show Hidden Files</span>.</p></li>
+<li><p>If you want to empty the trash, delete the <span class="filename">.Trash-1000</span> folder or
+ similar.</p></li>
+<li><p>Right-click (on Mac, click with two fingers) in empty space in the right pane and choose <span class="guimenuitem">Wipe available diskspace</span>.</p>
+
+<p> <img alt="Right-click&nbsp;&#x25B8; Wipe
+ available diskspace" class="img" height="394" src="./secure_deletion/wipe_available_diskspace.png" width="549" /></p></li>
+<li><p>Confirm.</p></li>
+<li><p>The cleaning starts. It can last from a few minutes to a few hours,
+ according to the size of the available diskspace. Be patient&hellip;</p>
+
+<p> Note that a file with a name similar to <span class="filename">tmp.7JwHAyBvA9</span> is created in the
+ folder. It is made as big as possible to use all the available diskspace and
+ then securely deleted.</p></li>
+</ol>
+
+
+<p><a id="erase-device"></a></p>
+
+<h1><a name="index5h1"></a>Securely erasing an entire device</h1>
+
+<div class="note">
+
+<p>This technique is the only way to securely delete any data, even a
+single file, from a USB stick or an SSD (Solid-State Disk).</p>
+
+</div>
+
+
+<ol>
+<li><p>Open the <span class="application">Disks</span> utility.</p>
+
+<p>All the current storage devices are listed in the left pane.</p></li>
+<li><p>Plug in the USB stick or SSD that you want to securely delete.</p></li>
+<li><p>A new device appears in the list of storage devices. Click on it:</p>
+
+<p><img alt="" class="img" height="161" src="./encrypted_volumes/storage_devices_after.png" width="215" /></p></li>
+<li><p>Check that the description of the device on the right side of the screen
+corresponds to your device: its brand, its size, etc.</p></li>
+<li><p>Click on the <span class="guimenu"><img alt="Menu" class="symbolic" height="16" src="../../lib/open-menu.png" width="16" /></span> button
+in the titlebar and choose <span class="guilabel">Format Disk&hellip;</span>
+to erase all the existing partitions on the device.</p></li>
+<li><p>In the <span class="guilabel">Format Disk</span> dialog:</p>
+
+<ul>
+<li><p>Choose to
+<span class="guilabel">Overwrite existing data with zeroes</span> in the
+<span class="guilabel">Erase</span> drop-down list.</p></li>
+<li><p>Choose <span class="guilabel">Compatible with all
+systems and devices (MBR/DOS)</span> in the <span class="guilabel">Partitioning</span>
+drop-down list.</p></li>
+</ul>
+</li>
+<li><p>Click <span class="bold">Format&hellip;</span>.</p></li>
+<li><p>In the confirmation dialog, make sure that the device
+is correct. Click <span class="bold">Format</span> to confirm.</p></li>
+</ol>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./gpgapplet/decrypt_verify.en.html">Decrypting or verifying text using OpenPGP Applet</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../encryption_and_privacy.index.html">encryption and privacy.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./manage_passwords.en.html">Managing passwords using KeePassXC</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./encrypted_volumes.en.html">encrypted volumes</a>
+
+<a href="../encryption_and_privacy.index.html">encryption and privacy.index</a>
+
+<a href="../first_steps/persistence/delete.en.html">first steps/persistence/delete</a>
+
+<a href="../../news/version_0.10.html">news/version 0.10</a>
+
+<a href="../../news/version_4.0.en.html">news/version 4.0</a>
+
+<a href="../reset.intro.en.html">reset.intro</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/encryption_and_privacy/secure_deletion">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

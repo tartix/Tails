@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Translation platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../design.html">design</a></li>
+
+
+
+
+<li>Translation platform</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Translation platform
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Until 2019, our (website) translation infrastructure relied on
+translators <a href="../how/translate/with_Git.html">being able to know how to use
+Git</a>. This was a pretty high entry
+barrier for new translators, especially those who are not familiar with
+Git or the command line.</p>
+
+<p>This is the technical design documentation of our new setup.
+It is by no means perfect. We track known issues via
+<a href="https://gitlab.tails.boum.org/groups/tails/-/issues?label_name%5B%5D=C%3ATranslation+Platform">issues on GitLab</a>.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Terminology used in this document</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Setup and integration with our infrastructure</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Website and Weblate</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Repositories</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Automatic merging and pushing</a>
+		</li>
+		<li class="L2"><a href="#index4h2">Staging website</a>
+		</li>
+		<li class="L2"><a href="#index5h2">Machine translation</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Automatic translation</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index3h1">Access control on Weblate</a>
+	<ol>
+		<li class="L2"><a href="#index7h2">Requirements</a>
+		</li>
+		<li class="L2"><a href="#index8h2">Currently implemented proposal</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index4h1">Maintenance</a>
+	</li>
+	<li class="L1"><a href="#index5h1">See also</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Terminology used in this document</h1>
+
+<ul>
+<li>Canonical Git repository: the <a href="../git.html#main-repo">main Tails Git
+repository</a> that our
+website is built from, in scripts often called &quot;main repository&quot; or &quot;main
+Git&quot;</li>
+<li>Production server: the server that hosts our website</li>
+<li>translate.lizard: the VM that hosts our Weblate web interface, the
+corresponding Git repositories, as well as the <a href="https://staging.tails.boum.org/">staging website</a>.</li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Setup and integration with our infrastructure</h1>
+
+<p>We are using our own <a href="https://translate.tails.boum.org/">Weblate instance</a>.</p>
+
+<p>Weblate uses a clone of the Tails main Git repository, to which
+translations get committed and pushed once they have been approved by a user with
+reviewer status. Non-approved translations live on Weblate&#39;s database
+only, until they get reviewed. A <a href="https://staging.tails.boum.org/">staging website</a> allows translators to
+preview non-reviewed translations in context.</p>
+
+<p>Approved changes are automatically fed back into our canonical Git
+repository. This presents a major challenge, because we need to ensure
+that:</p>
+
+<ul>
+<li><p>No merge conflict occurs:</p>
+
+<ul>
+<li>such conflicts often occur in PO file headers which prevents Weblate
+from automatically merging changes</li>
+<li>many contributors work on the same code base using different tools
+(PO files can be edited by hand, using translation software such as
+Poedit, or they are generated by ikiwiki itself, which results in
+different formatting)</li>
+</ul>
+</li>
+<li><p>Only PO files are committed.</p></li>
+<li><p>The committed PO files comply with shared formatting standards.</p></li>
+<li><p>No compromised code is introduced.</p></li>
+</ul>
+
+
+<p>In order to integrate Weblate and the work done by translators into our
+process, we have set up this scheme:</p>
+
+<p><img class="img" src="../../lib/design/git_repository_details.svg" /></p>
+
+<h2><a name="index1h2"></a>Website and Weblate</h2>
+
+<p>Our website uses ikiwiki and its <a href="https://ikiwiki.info/plugins/po/">PO plugin</a>.</p>
+
+<p>It uses markdown files for
+the English original language and carries a PO file for each translated
+language. Thereby we distinguish languages that are activated on our
+website from languages that have translations but are not yet activated
+on the website because they do not <a href="../how/translate/team/new.html">cover enough of
+our core pages</a> to be considered
+usable.</p>
+
+<p>We have defined <a href="../how/translate.html#tier-1-languages">a list of tier-1
+languages</a>, that we consider
+to be of importance to our user base. No more languages shall be
+activated in Weblate as our main Git repository carries reviewed, and
+thus approved translations of all languages enabled on the Weblate
+platform, while only part of them are active on the website.</p>
+
+<p>Each PO file corresponds to a single component in Weblate, in order to
+appear in the Weblate interface. For example, the component:</p>
+
+<pre><code>wiki/src/support.*.po
+</code></pre>
+
+<p>relates to the files <code>support.mdwn</code>, <code>support.es.po</code>, <code>support.de.po</code>, <code>support.pot</code>,
+etc.</p>
+
+<h2><a name="index2h2"></a>Repositories</h2>
+
+<p>The repository used by Weblate is cloned and updated from the master
+branch of the Tails main
+repository. Changes generated on Weblate&#39;s copy
+of the Tails main Git repository, located on the VM which hosts the
+Weblate platform, are automatically fed back to the master branch of
+the Tails main repository. This happens through a number of scripts,
+checks, and cronjobs that we&#39;ll describe below.</p>
+
+<p>There are several languages enabled, some of them with few or no
+translations. As everything is fed back to the Tails canonical
+repository, all files are available when cloning this repository:</p>
+
+<pre><code>git clone https://gitlab.tails.boum.org/tails/tails.git
+</code></pre>
+
+<p>If needed, for exceptional means, Weblate&#39;s Git repository can be cloned
+or added as a remote:</p>
+
+<pre><code>git clone https://translate.tails.boum.org/git/tails/index/
+</code></pre>
+
+<p>At the server the repository is located in:</p>
+
+<pre><code>~weblate/repositories/vcs/tails/index
+</code></pre>
+
+<p>Weblate can commit to its local repository at any time, whenever
+translations get approved. Changes done in the canonical repository by
+Tails contributors via Git and changes done in Weblate thus need to be
+merged &mdash; in a safe place. This happens in an integration repository:</p>
+
+<pre><code>~weblate/repositories/integration
+</code></pre>
+
+<p>On the VM (translate.lizard), a third repository is used for the staging
+website:</p>
+
+<pre><code>~weblate/repositories/vcs/staging
+</code></pre>
+
+<h2><a name="index3h2"></a>Automatic merging and pushing</h2>
+
+<p>The integration of changes from the different repositories is done by a
+script which is executed on the VM hosting Weblate as
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/weblate.pp">a cronjob</a>.
+The
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/cron.sh"><code>cron.sh</code></a>
+script has the following steps which we will explain below:</p>
+
+<ol>
+<li>Canonical &rarr; Integration:
+ Update the integration repository with changes made on the
+ canonical repository (called &quot;main&quot; in the script).</li>
+<li>Make Weblate locally commit any pending approved translation</li>
+<li>Weblate &rarr; Integration:
+ Integrate committed changes from Weblate into the integration repository</li>
+<li>Integration &rarr; Canonical:
+ Push the up-to-date integration repository to the canonical repository.</li>
+<li>Canonical &rarr; Weblate:
+ Pull from the canonical repository and update the Weblate components.</li>
+<li>Update Weblate&#39;s index for fulltext search</li>
+</ol>
+
+
+<p>Whenever a contributor modifies a markdown (<code>*.mdwn</code>) file and pushes
+to master, the corresponding PO files are updated, that is: the
+translatable English strings within those files are updated. This
+update happens:</p>
+
+<ul>
+<li>on the production server itself, when <a href="../build/website.html">building the
+wiki</a>;</li>
+<li>only for languages that are enabled on the production website.</li>
+</ul>
+
+
+<p>We need to ensure on the translation platform server, that PO files for
+additional languages (that are enabled on Weblate but not on the
+production website) are equally updated, committed locally, and pushed to
+the canonical Git repository. On top of this we need to update Weblate&#39;s
+database accordingly, so that translatable strings can be updated for new or
+modified English strings in those files, in all languages.</p>
+
+<h3><a name="index1h3"></a>Step 1: Canonical &rarr; Integration</h3>
+
+<p><strong>Update the integration repository with changes made on the canonical
+repository</strong></p>
+
+<p>The script fetches from the canonical (remote) repository and tries to
+merge changes into the (local) integration repository. The merge
+strategy used for this step is defined in
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/merge_canonical_changes.py"><code>merge_canonical_changes.py</code></a>:</p>
+
+<p>When this script is executed, it merges changes in PO files based on
+single translation units (<code>msgids</code>). A merge conflict occurs when the same
+translation unit has been changed both in the canonical and the integration
+repository (in the latter case, this would mean that the change has been
+done via Weblate). In such a case, we always prefer the canonical
+version. This makes sure that Tails developers can fix issues in
+translations and have priority over Weblate.</p>
+
+<p>Due to this procedure we never end up with broken PO files. However, we
+may loose a translation done on Weblate.</p>
+
+<p>Until here, only PO files of languages that are activated on our
+production website will be merged, as the production website
+does not refresh PO files for languages that are not activated there,
+so these PO files are outdated in the canonical Git repository at this point.</p>
+
+<p>Because of this limitation of ikiwiki, once the activated language PO
+files are merged, the script checks if PO files of other languages, that are not
+activated in production, need updating. We do this by
+generating POT files out of a PO file that we&#39;ve previously defined as the
+default language. We do this for all components. If the actual POT
+file, generated on the production server, differs from the POT file we&#39;ve
+just created, then every additional language PO file needs to be
+updated.</p>
+
+<p>On top of this, if the PO file of the default language (that is, its
+Markdown file) has been renamed, moved, or deleted, then the PO files of
+additional languages need to be accordingly renamed, moved, or deleted.</p>
+
+<p>In summary, our script applies all changes detected on the default
+language to the additional languages.</p>
+
+<p>With <code>python-git</code> creating a diff against working directory against the index
+is very error-prone. But a diff between two commits works fine. That&#39;s why we
+always create a new commit within the described script, but often those commits
+don&#39;t change the content of any file. In order to omit these empty unnecessary
+commits our script also detects when a <code>fast-forward</code> is possible (the master
+branch is updated to HEAD of either the canonical or the integration branch).
+If only Weblate or only modifications on the canonical repository introduces
+new commits and the merge commit is empty, a fast-forward can be done, by a
+force reset to the desired HEAD.</p>
+
+<h3><a name="index2h3"></a>Step 2: Trigger commits</h3>
+
+<p>Weblate tries to minimize the number of commits (aka. &quot;lazy
+commits&quot;), so we need to explicitly to ask Weblate to commit every component
+which has outstanding changes since more than 24 hours.</p>
+
+<p>This is done by triggering Weblate to commit pending approved
+translations using the internal command (<a href="https://docs.weblate.org/en/weblate-2.20/admin/management.html#commit-pending"><code>manage.py commit_pending</code></a>).</p>
+
+<h3><a name="index3h3"></a>Step 3: Weblate &rarr; Integration</h3>
+
+<p><strong>Merging changes from Weblate&#39;s Git repository into the integration
+repository</strong></p>
+
+<p>The script fetches from the Weblate (remote) Git repository and tries to
+merge changes into the (local) integration repository. The merge
+strategy used for this step is defined in
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/merge_weblate_changes.py"><code>merge_weblate_changes.py</code></a>.</p>
+
+<p>Changes already present in the integration repository are preferred over
+the changes from the remote, Weblate repository. This makes fixes
+done to PO files manually, via the canonical Git repository, stick and propagate
+to Weblate.</p>
+
+<p>Again, PO file merges are done on translation units (<code>msgids</code>).</p>
+
+<p>Furthermore, we make sure via the script that Weblate has only modified
+PO files; indeed we automatically reset everything else to the version
+that exists in canonical.</p>
+
+<h3><a name="index4h3"></a>Step 4: Integration &rarr; Canonical</h3>
+
+<p><strong>Pushing from the integration repository to our canonical repository,
+aka &quot;production&quot;</strong></p>
+
+<p>After updating the Integration repository, we push the changes back to
+Canonical aka puppet-git.lizard. After this, the Canonical repository has
+everything integrated from Weblate.</p>
+
+<p>On the side of the canonical Git repository, a Gitolite hook
+(<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/gitolite/hooks/tails-weblate-update.hook"><code>tails-weblate-update.hook</code></a>)
+makes sure that Weblate only pushes changes on PO files.
+This hook also checks and verifies the committer of each commit, to make
+sure only translations made on the Weblate platform are automatically
+pushed. Otherwise
+the push is rejected, for security reasons.</p>
+
+<h3><a name="index5h3"></a>Step 5: Canonical &rarr; Weblate</h3>
+
+<p><strong>Integrating the changes made in the Canonical Git repository into
+the Weblate repository</strong></p>
+
+<p>After having merged changes from the canonical Git repository into the
+integration Git repository, and integrated changes from Weblate there,
+we can assume that every PO file is now up-to-date, both in the Integration
+and Canonical repositories. Hence we can try to pull from the Canonical
+repository using a fast-forward only merge (<code>git pull --ff-only</code>).  The
+canonical and Weblate repositories may see new commits anytime. This
+means: while our cronjob is running a new commit can be made. Then, a
+new commit on one side (canonical or Weblate), prevents a
+<code>fast-forward</code>. When this happens, the cronjob is run 5 minutes later
+anew, and then steps 1, 3 and 4 of the cronjob aim at fixing the cause of
+why the fast-forward was not possible this time.</p>
+
+<p>If the fast-forward merge was successful, we need to update Weblate&#39;s components
+to reflect the modifications that happened in Git, such as
+string and file updates, removals, renames, or additions. This is
+handled by another script:
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/update_weblate_components.py"><code>update_weblate_components.py</code></a>.</p>
+
+<p>Besides our scripts that modify the Weblate repository, Weblate itself
+keeps creating commits and updates the master branch. That&#39;s why the
+script is using a dedicated Git remote named <code>cron</code> to keep track of which
+commits need to be looked at for Weblate component changes. This remote
+name is set in
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/weblate.pp">weblate.pp</a>
+and used in the cronjob like this:</p>
+
+<pre><code>update_weblate_components.py --remoteBranch=cron/master [...]
+</code></pre>
+
+<h3><a name="index6h3"></a>Step 6</h3>
+
+<p>Run <a href="https://docs.weblate.org/en/weblate-2.20/admin/management.html#update-index"><code>manage.py update_index</code></a>.
+This updates Weblate&#39;s index for fulltext search.
+Weblate upstream authors recommend running it every 5 minutes.</p>
+
+<p><a id="staging-website"></a></p>
+
+<h2><a name="index4h2"></a>Staging website</h2>
+
+<h3><a name="index7h3"></a>Goals</h3>
+
+<p>In order to allow translators to see their non committed suggestions as
+well as languages which are not activated on <a href="https://tails.boum.org">https://tails.boum.org</a>, we
+have put in place a <a href="https://staging.tails.boum.org/">staging website</a>.
+It is a clone of our production website and is regularly refreshed.</p>
+
+<p>On top of what our production website has, it includes:</p>
+
+<ul>
+<li><p>all languages available on Weblate, even those that are not enabled
+on our production website yet;</p></li>
+<li><p>all translation suggestions made on Weblate.</p></li>
+</ul>
+
+
+<p>This allows:</p>
+
+<ul>
+<li><p>translators to check how the result of their work will look like
+on our website;</p></li>
+<li><p>reviewers to check how translation suggestions look like on the
+website, before validating them.</p></li>
+</ul>
+
+
+<h3><a name="index8h3"></a>What is done behind the scenes to generate a new version of the staging website?</h3>
+
+<p>The
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/update-staging-website.sh"><code>update-staging-website.sh</code></a>
+cronjob is run.</p>
+
+<p>This cronjob calls a script that extracts suggestions from Weblate&#39;s
+database and applies them to a local clone of Weblate&#39;s Git repository,
+after having updated this clone:
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/save-suggestions.py"><code>save-suggestions.py</code></a>.</p>
+
+<p>After that we run <code>ikiwiki --refresh</code> using an dedicated <code>ikiwiki.setup</code>
+file for the staging website.</p>
+
+<p>None of the changes on this repository clone are fed back anywhere and they
+should not.</p>
+
+<h3><a name="index9h3"></a>Sanity checks</h3>
+
+<p>We automatically perform some sanity checks on this staging website.
+The last report of these checks is published on
+<a href="https://staging.tails.boum.org/last-sanity-errors.txt">https://staging.tails.boum.org/last-sanity-errors.txt</a>.</p>
+
+<h2><a name="index5h2"></a>Machine translation</h2>
+
+<p>This is an important feature, because it saves time for translators, especially
+in cumbersome documents, and helps us to be consistent not only with our
+translations but, for example, with the Debian locales if we feed them
+to the tmserver.</p>
+
+<p>It is a very subtle way of increasing the quality of our translations.</p>
+
+<p>It should give suggestions when one is translating, under the translation
+window, in the <em>Machine translation</em> tab.</p>
+
+<p>We use tmserver for machine translation (<a href="https://docs.weblate.org/en/weblate-2.20/admin/machine.html#tmserver">upstream documentation</a>).</p>
+
+<p>In order to update the suggestion we run
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/templates/weblate/update_tm.sh.erb"><code>update_tm.sh</code></a>
+via cronjob every month.</p>
+
+<p>The tmserver can be queried like this
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/weblate.pp">(see <code>tmserver.service</code>)</a>:</p>
+
+<pre><code>http://localhost:8080/tmserver/en/de/unit/contribute
+</code></pre>
+
+<h2><a name="index6h2"></a>Automatic translation</h2>
+
+<p>This is the possibility of automatically translating strings that are already translated in
+other components and have the exact same source.</p>
+
+<p>It is used mainly for titles that repeat (as the titles for the release notes,
+monthly reports, etc) and markup/code-only strings that repeat all around our website.</p>
+
+<p>Only reviewers can perform this action and it is done in a per-component basis.
+See <a href="https://gitlab.tails.boum.org/tails/sysadmin/-/issues/17767">the corresponding issue</a> for reference.</p>
+
+<p><a id="access-control"></a></p>
+
+<h1><a name="index3h1"></a>Access control on Weblate</h1>
+
+<h2><a name="index7h2"></a>Requirements</h2>
+
+<ul>
+<li><p>Every translation change must be reviewed by another person before
+it&#39;s validated (and thus committed by Weblate and pushed to our
+production website).</p>
+
+<ul>
+<li><p>This requirement must be enforced via technical means, for
+translators that are not particularly trusted (e.g. new user
+accounts). For example, it must be impossible for an attacker to
+pretend to be that second person and validate their own changes,
+simply by creating a second user account.</p></li>
+<li><p>It&#39;s acceptable that this requirement is enforced only via social
+rules, and not via technical means, for a set of
+trusted translators.</p></li>
+</ul>
+</li>
+<li><p>We need to be able to bootstrap a new language and give its
+translators sufficient access rights so that they can do their job,
+even without anyone at Tails personally knowing any of them.</p></li>
+<li><p>Suggested translations are used to build the <a href="./translation_platform.html#staging-website">staging
+website</a>.</p></li>
+</ul>
+
+
+<h2><a name="index8h2"></a>Currently implemented proposal</h2>
+
+<ul>
+<li><p>In Weblate lingo, we use the <a href="https://docs.weblate.org/en/latest/workflows.html#dedicated-reviewers">dedicated
+reviewers</a>
+workflow: it&#39;s the only one that protects us against an adversary
+who&#39;s ready to create multiple user accounts. The permissions for
+the different roles are enforced through <a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/config/weblate_permissions.yaml">puppet</a>.</p></li>
+<li><p>When not logged in, a visitor is in the <code>Guests</code> group and is
+only allowed to suggest translations.</p></li>
+<li><p>Every logged in user is in the <code>Users</code> and <code>Viewers</code> groups. Members of
+the <code>Users</code> group are allowed to suggest translations but not to accept
+suggestions nor to directly save new translations of their own. They can also
+vote on suggestions. This groups are native to Weblate and we cannot
+delete them.</p></li>
+<li><p>A reviewer, i.e. a member of the <code>Reviewers</code> group in Weblate, is
+allowed to accept and delete all the suggestions. This group is limited
+to a few translators that need to work in more languages than their main language.
+There are reviewer groups specific to each of the languages in the platform,
+such as <code>Reviewers Arabic</code>, <code>Reviewers French</code>, etc.</p>
+
+<p>Limitations:</p>
+
+<ul>
+<li><p>Technically, reviewers are also allowed to directly save new
+translations of their own, edit existing translations, and
+accept their own suggestions; we ask them in our
+documentation to use this privilege sparingly, only to fix
+important and obvious problems.</p>
+
+<p>Even if we forbid reviewers to accept their own suggestions,
+nothing would prevent them from creating another account, making
+the suggestion from there, and then accepting it with their
+reviewer account.</p></li>
+</ul>
+</li>
+<li><p>How one gets reviewer status:</p>
+
+<ul>
+<li><p>We ported to Weblate semantics the pre-existing trust
+relationship we already had towards translation teams that have
+been using Git so far: they all became reviewers.</p></li>
+<li><p>One can request reviewer status to Weblate administrators, who
+will:</p>
+
+<ol>
+<li>Accept this request if, and only if, a sufficient amount of
+work was done by the requesting translator (this can be checked on
+the user&#39;s page, e.g.
+<a href="https://translate.tails.boum.org/user/intrigeri/">intrigeri&#39;s</a>.
+In other words, we use proof-of-work to increase the cost of attacks.</li>
+<li>Let <a href="mailto:tails-l10n@boum.org">tails-l10n@boum.org</a> and all the other Weblate reviewers
+know about this status change.</li>
+</ol>
+</li>
+<li><p>Contributors can reach an agreement on tails-l10n mailing list and
+nominate a new reviewer for their language.</p></li>
+</ul>
+</li>
+<li><p>Bootstrapping a new language</p>
+
+<p>As a result of this access control setup, translators for a new
+language can only make suggestions until they have done a sufficient
+amount of work and two of them are granted reviewer status. In the
+meantime, they can see the output of their work on the <a href="./translation_platform.html#staging-website">staging
+website</a>.</p>
+
+<p>Pending questions:</p>
+
+<ul>
+<li>Is the resulting UX good enough? Does the ability to vote up
+suggestions helps sufficiently?</li>
+</ul>
+</li>
+</ul>
+
+
+<h1><a name="index4h1"></a>Maintenance</h1>
+
+<p>A plan for the future maintenance of our Weblate instance will be
+worked on in November 2019 and laid out before the end of the year
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17050">#17050</a>):</p>
+
+<ul>
+<li><a href="../working_together/roles/translation_platform.html">maintainers&#39;s role definition</a></li>
+<li><a href="../working_together/roles/translation_platform/operations.html">operations documentation</a></li>
+</ul>
+
+
+<h1><a name="index5h1"></a>See also</h1>
+
+<ul>
+<li><a href="./translation_platform/specification.html">specification</a></li>
+<li><a href="../how/translate/with_translation_platform.html">documentation for translators</a></li>
+<li>blueprint for future work: <a href="https://gitlab.tails.boum.org/tails/blueprints/-/wikis/translation_platform">translation platform</a></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../how/translate/with_translation_platform.html">how/translate/with translation platform</a>
+
+<a href="../../news/report_2019_10.html">news/report 2019 10</a>
+
+<a href="../working_together/roles/sysadmins.html">working together/roles/sysadmins</a>
+
+<a href="../working_together/roles/translation_platform.html">working together/roles/translation platform</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/design/translation_platform">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

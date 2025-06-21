@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+
+<html lang="fr" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - V&#xE9;rifier le syst&#xE8;me de fichiers du stockage persistant</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./change_passphrase.fr.html" title="Modifier la phrase de passe du stockage persistant" />
+
+<link rel="up" href="../../advanced_topics.index.fr.html" title="advanced topics.index.fr" />
+
+<link rel="next" href="../lan.fr.html" title="Accéder aux ressources sur le réseau local" />
+
+
+
+
+</head>
+
+
+<body class="fr">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.fr.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.fr.html">Accueil</a></li>
+  <li><a href="../../../about.fr.html">Fonctionnement de Tails</a></li>
+  <li><a href="../../../install.fr.html">Obtenir Tails</a></li>
+  <li><a href="../../../doc.fr.html">Documentation</a></li>
+  <li><a href="../../../support.fr.html">Assistance</a></li>
+  <li><a href="../../../contribute.fr.html">Participer</a></li>
+  <li><a href="../../../news.fr.html">Nouvelles</a></li>
+  <li><a href="../../../jobs.html">Postes &agrave; pourvoir</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.fr.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.fr.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../advanced_topics.fr.html">advanced topics</a></li>
+
+
+
+
+
+<li><a href="../../../index.fr.html">persistence</a></li>
+
+
+
+
+<li>V&#xE9;rifier le syst&#xE8;me de fichiers du stockage persistant</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Français
+   </span>
+   <span class="hidden">Français
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./check_file_system.en.html">en</a></span>
+   <span class="hidden"><a href="./check_file_system.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./check_file_system.de.html">de</a></span>
+   <span class="hidden"><a href="./check_file_system.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./check_file_system.es.html">es</a></span>
+   <span class="hidden"><a href="./check_file_system.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./check_file_system.it.html">it</a></span>
+   <span class="hidden"><a href="./check_file_system.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./check_file_system.pt.html">pt</a></span>
+   <span class="hidden"><a href="./check_file_system.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./check_file_system.ru.html">ru</a></span>
+   <span class="hidden"><a href="./check_file_system.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+V&#xE9;rifier le syst&#xE8;me de fichiers du stockage persistant
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./change_passphrase.fr.html">Modifier la phrase de passe du stockage persistant</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="../lan.fr.html">Accéder aux ressources sur le réseau local</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>En de rares occasions, vous pourriez avoir &agrave; faire une v&eacute;rification du
+syst&egrave;me de fichiers pour r&eacute;parer un stockage persistant endommag&eacute;.</p>
+
+<h1>D&eacute;verrouiller le stockage persistant</h1>
+
+<ol>
+<li><p>Lorsque vous d&eacute;marrez Tails, gardez le stockage persistant verrouill&eacute; et
+<a href="../../first_steps/welcome_screen/administration_password.fr.html">d&eacute;finissez un mot de passe
+d&#39;administration</a>.</p></li>
+<li><p>Choisissez
+<span class="menuchoice">
+  <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+  <span class="guisubmenu">Utilitaires</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Disques</span>
+</span>
+pour ouvrir l&#39;utilitaire <span class="application">Disques de GNOME</span>.</p></li>
+<li><p>Dans la partie gauche, cliquez sur le p&eacute;riph&eacute;rique correspondant &agrave; votre
+cl&eacute; USB Tails.</p></li>
+<li><p>Dans la partie droite, cliquez sur la partition marqu&eacute;e comme <span class="guilabel">TailsData LUKS</span>.</p></li>
+<li><p>Cliquez sur <strong>D&eacute;verrouiller</strong> pour d&eacute;verrouiller le stockage
+persistant. Entrez votre phrase de passe et cliquez &agrave; nouveau sur
+<strong>D&eacute;verrouiller</strong>.</p></li>
+<li><p>Dans la fen&ecirc;tre de confirmation, entrez votre mot de passe
+d&#39;administration et cliquez sur <span class="guilabel">S&#39;authentifier</span>.</p></li>
+<li><p>Cliquez sur la partition <span class="guilabel">TailsData Ext4</span> qui
+appara&icirc;t en-dessous de la partition <span class="guilabel">TailsData
+LUKS</span>.</p></li>
+<li><p>Identifiez le nom du p&eacute;riph&eacute;rique de votre stockage persistant. Le nom du
+p&eacute;riph&eacute;rique appara&icirc;t en-dessous de la liste des volumes.  Il devrait
+ressembler &agrave; <code>/dev/mapper/luks-xxxxxxxx</code>.</p>
+
+<p>Triple-cliquez pour le s&eacute;lectionner et appuyez sur <strong>Ctrl+C</strong>
+pour le copier dans le presse-papier.</p></li>
+</ol>
+
+
+<h1>V&eacute;rifier le syst&egrave;me de fichiers en utilisant le terminal</h1>
+
+<ol>
+<li><p>Choisissez
+ <span class="menuchoice">
+   <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+   <span class="guisubmenu">Outils syst&egrave;me</span>&nbsp;&#x25B8;
+   <span class="guimenuitem">Terminal administrateur</span>
+</span>
+et entrez votre mot de passe d&#39;administration pour ouvrir le terminal administrateur.</p></li>
+<li><p>Dans le terminal, ex&eacute;cutez la commande suivante en rempla&ccedil;ant
+<code>[p&eacute;riph&eacute;rique]</code> par le nom de p&eacute;riph&eacute;rique trouv&eacute; &agrave; l&#39;&eacute;tape 8 :</p>
+
+<pre><code> fsck -y [p&eacute;riph&eacute;rique]
+</code></pre>
+
+<p>Pour se faire, vous pouvez taper <span class="command">fsck -y&nbsp;</span> et appuyer sur
+<span class="keycap">Shift+Ctrl+V</span> pour copier le nom de p&eacute;riph&eacute;rique depuis le
+presse-papier.</p></li>
+<li><p>Si le syst&egrave;me de fichiers n&#39;a pas d&#39;erreur, la derni&egrave;re ligne de la
+sortie de <span class="command">fsck</span> commence par <span class="command">TailsData: clean</span>.</p>
+
+<p>Si le syst&egrave;me de fichiers a des erreurs, <span class="command">fsck</span> essaye de
+les corriger automatiquement. Apr&egrave;s qu&#39;il ait fini, vous pouvez essayer d&#39;ex&eacute;cuter la m&ecirc;me
+commande &agrave; nouveau pour v&eacute;rifier que toutes les erreurs ont &eacute;t&eacute; corrig&eacute;es.</p></li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./change_passphrase.fr.html">Modifier la phrase de passe du stockage persistant</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="../lan.fr.html">Accéder aux ressources sur le réseau local</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+
+<a href="../../first_steps/shutdown.fr.html">first steps/shutdown.fr</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/persistence/check_file_system.fr">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

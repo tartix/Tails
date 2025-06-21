@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+
+<html lang="fr" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - VirtualBox</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="../virtualization.fr.html" title="Utiliser Tails dans une machine virtuelle" />
+
+<link rel="up" href="../../advanced_topics.index.fr.html" title="advanced topics.index.fr" />
+
+<link rel="next" href="./boxes.fr.html" title="GNOME Boxes" />
+
+
+
+
+</head>
+
+
+<body class="fr">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.fr.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.fr.html">Accueil</a></li>
+  <li><a href="../../../about.fr.html">Fonctionnement de Tails</a></li>
+  <li><a href="../../../install.fr.html">Obtenir Tails</a></li>
+  <li><a href="../../../doc.fr.html">Documentation</a></li>
+  <li><a href="../../../support.fr.html">Assistance</a></li>
+  <li><a href="../../../contribute.fr.html">Participer</a></li>
+  <li><a href="../../../news.fr.html">Nouvelles</a></li>
+  <li><a href="../../../jobs.html">Postes &agrave; pourvoir</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.fr.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.fr.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../advanced_topics.fr.html">advanced topics</a></li>
+
+
+
+
+
+<li><a href="../virtualization.fr.html">virtualization</a></li>
+
+
+
+
+<li>VirtualBox</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Français
+   </span>
+   <span class="hidden">Français
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./virtualbox.en.html">en</a></span>
+   <span class="hidden"><a href="./virtualbox.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualbox.de.html">de</a></span>
+   <span class="hidden"><a href="./virtualbox.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualbox.es.html">es</a></span>
+   <span class="hidden"><a href="./virtualbox.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualbox.it.html">it</a></span>
+   <span class="hidden"><a href="./virtualbox.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualbox.pt.html">pt</a></span>
+   <span class="hidden"><a href="./virtualbox.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualbox.ru.html">ru</a></span>
+   <span class="hidden"><a href="./virtualbox.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+VirtualBox
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="../virtualization.fr.html">Utiliser Tails dans une machine virtuelle</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./boxes.fr.html">GNOME Boxes</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Il est possible d&#39;utiliser Tails dans une machine virtuelle avec <a href="https://www.virtualbox.org/"><span class="application">VirtualBox</span></a> depuis un
+syst&egrave;me d&#39;exploitation Windows, Linux, ou macOS..</p>
+
+<div class="caution">
+
+Utiliser Tails dans une machine virtuelle a <a href="../virtualization.fr.html#security">de nombreuses cons&eacute;quences en
+terme de s&eacute;curit&eacute;</a>. En fonction du syst&egrave;me
+d&rsquo;exploitation h&ocirc;te et de vos besoins en terme de s&eacute;curit&eacute;, faire tourner
+Tails dans une machine virtuelle peut &ecirc;tre dangereux.
+
+</div>
+
+
+<p><span class="application">VirtualBox</span> a une version libre,
+appel&eacute;e <span class="application">VirtualBox Open Source Edition</span>
+et des composants propri&eacute;taires, par exemple pour ajouter la prise en charge
+des p&eacute;riph&eacute;riques USB.</p>
+
+<div class="caution">
+
+Pour des raisons de s&eacute;curit&eacute;, nous recommandons d&#39;utiliser uniquement la version <span class="application">Open Source Edition</span>, m&ecirc;me si elle ne
+permet pas l&#39;utilisation d&#39;un stockage persistant.
+
+</div>
+
+
+
+
+<div class="tip">
+
+<p>Avec la fonctionnalit&eacute; de <a href="https://www.virtualbox.org/manual/ch04.html#sharedfolders">
+<span class="guilabel">dossiers partag&eacute;s</span></a> de
+<span class="application">VirtualBox</span> vous pouvez avoir acc&egrave;s &agrave; des fichiers
+de votre syst&egrave;me h&ocirc;te depuis votre syst&egrave;me invit&eacute;.</p>
+
+<p>Assurez-vous de comprendre les implications en terme de s&eacute;curit&eacute; de l&#39;<a href="../internal_hard_disk.fr.html">acc&egrave;s
+aux disques durs internes</a>
+depuis Tails avant d&#39;utiliser cette fonctionnalit&eacute;.</p>
+
+</div>
+
+
+<h1>Consid&eacute;rations de s&eacute;curit&eacute; pour Windows et macOS</h1>
+
+<p>Dans nos <a href="../virtualization.fr.html#security">avertissements de s&eacute;curit&eacute; &agrave; propos de la
+virtualisation</a> nous recommandons d&#39;utiliser Tails
+dans une machine virtuelle seulement si le syst&egrave;me d&#39;exploitation est de
+confiance.</p>
+
+<div class="caution">
+
+Microsoft Windows et macOS &eacute;tant des logiciels propri&eacute;taires, ils ne peuvent
+pas &ecirc;tre consid&eacute;r&eacute;s de confiance. Utilisez Tails dans une machine virtuelle
+h&eacute;berg&eacute;e par Windows ou macOS seulement pour faire des tests et ne comptez
+pas dessus pour de la s&eacute;curit&eacute;.
+
+</div>
+
+
+<h1>Installation</h1>
+
+<p>Pour installer <em>VirtualBox</em> dans Debian ou Ubuntu, ex&eacute;cutez la commande
+suivante :</p>
+
+<pre><code>sudo apt install virtualbox
+</code></pre>
+
+<p>Pour des instructions d&#39;installation de <em>VirtualBox</em> pour d&#39;autres syst&egrave;mes
+d&#39;exploitations, consultez la <a href="https://www.virtualbox.org/wiki/End-user_documentation">documentation de VirtualBox
+</a>.</p>
+
+<h1>Utiliser Tails depuis une image ISO</h1>
+
+<p>Tout d&#39;abord, lancer <em>VirtualBox</em>.</p>
+
+<p>Pour cr&eacute;er une nouvelle machine virtuelle :</p>
+
+<ol>
+<li>Choisir
+ <span class="menuchoice">
+ <span class="guimenu">Machine</span>&nbsp;&#x25B8;
+ <span class="guimenuitem">Nouvelle...</span></span>.</li>
+<li>Dans la fen&ecirc;tre <strong>Nom et syst&egrave;me d&#39;exploitation</strong>,  mettre :
+
+<ul>
+<li>Un nom de votre choix.</li>
+<li><strong>Type</strong> : <strong>Linux</strong>.</li>
+<li><strong>Version</strong> : <strong>Autre Linux (64 bit)</strong>.</li>
+<li>Cliquer sur <strong>Suivant</strong>.</li>
+</ul>
+</li>
+<li>Dans la fen&ecirc;tre <strong>Taille de la m&eacute;moire</strong> :
+
+<ul>
+<li>Allouer au moins 2048 Mo de RAM.</li>
+<li>Cliquer sur <strong>Suivant</strong>.</li>
+</ul>
+</li>
+<li>Dans la fen&ecirc;tre <strong>Disque dur</strong> :
+
+<ul>
+<li>Choisir <strong>Ne pas ajouter de disque dur virtuel</strong>.</li>
+<li>Cliquer sur <strong>Cr&eacute;er</strong>.</li>
+<li>Cliquer sur <strong>Continuer</strong> dans la fen&ecirc;tre d&#39;avertissement &agrave; propos
+de la cr&eacute;ation de machine virtuelle sans disque dur.</li>
+</ul>
+</li>
+</ol>
+
+
+<p>Pour configurer la machine virtuelle pour d&eacute;marrer depuis une image ISO :</p>
+
+<ol>
+<li>S&eacute;lectionner la machine virtuelle dans la partie gauche.</li>
+<li>Choisir <span class="menuchoice"> <span class="guimenu">Machine</span>&nbsp;&#x25B8; <span class="guimenuitem">Configuration...</span></span>.</li>
+<li>S&eacute;lectionner <strong>Syst&egrave;me</strong> dans la partie gauche.</li>
+<li>Dans la section <strong>Fonctions avanc&eacute;es</strong> de l&#39;onglet <strong>Carte m&egrave;re</strong>,
+ v&eacute;rifier que la case <strong>Activer les IO-APIC</strong> est coch&eacute;e.</li>
+<li>S&eacute;lectionner <strong>Stockage</strong> dans la partie gauche.</li>
+<li>S&eacute;lectionner <strong>Vide</strong> sous <strong>Contr&ocirc;leur IDE</strong> dans la liste de
+ s&eacute;lection de l&#39;<strong>Arborescence de stockage</strong> dans la partie droite.</li>
+<li>Cliquer sur l&#39;ic&ocirc;ne <strong>CD</strong> dans la droite de la fen&ecirc;tre et s&eacute;lectionner
+<strong>Choisissez un fichier de CD/DVD virtuel...</strong> pour naviguer jusqu&#39;&agrave; l&#39;image ISO
+de Tails.</li>
+<li>Cocher l&#39;option <strong>Live CD/DVD</strong>.</li>
+<li>Cliquer sur <strong>OK</strong>.</li>
+</ol>
+
+
+<p>Pour d&eacute;marrer la nouvelle machine virtuelle :</p>
+
+<ol>
+<li>S&eacute;lectionner la machine virtuelle dans la partie gauche de la fen&ecirc;tre.</li>
+<li>Cliquer sur <strong>D&eacute;marrer</strong>.</li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="../virtualization.fr.html">Utiliser Tails dans une machine virtuelle</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./boxes.fr.html">GNOME Boxes</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../advanced_topics.index.fr.html">advanced topics.index.fr</a>
+
+<a href="../../../news/report_2015_01-02.html">news/report 2015 01-02</a>
+
+<a href="../virtualization.fr.html">virtualization.fr</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/virtualization/virtualbox.fr">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Migrating OpenPGP configuration from Enigmail in Thunderbird 78</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../anonymous_internet.en.html">anonymous internet</a></li>
+
+
+
+
+
+<li><a href="../thunderbird.en.html">thunderbird</a></li>
+
+
+
+
+<li>Migrating OpenPGP configuration from Enigmail in Thunderbird 78</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./openpgp_migration.de.html">de</a></span>
+   <span class="hidden"><a href="./openpgp_migration.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./openpgp_migration.es.html">es</a></span>
+   <span class="hidden"><a href="./openpgp_migration.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./openpgp_migration.fr.html">fr</a></span>
+   <span class="hidden"><a href="./openpgp_migration.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./openpgp_migration.it.html">it</a></span>
+   <span class="hidden"><a href="./openpgp_migration.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./openpgp_migration.pt.html">pt</a></span>
+   <span class="hidden"><a href="./openpgp_migration.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./openpgp_migration.ru.html">ru</a></span>
+   <span class="hidden"><a href="./openpgp_migration.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Migrating OpenPGP configuration from Enigmail in Thunderbird 78
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#private">Migrate your private key</a>
+	<ol>
+		<li class="L2"><a href="#export-private">Export your private key using the Passwords and Keys utility</a>
+		</li>
+		<li class="L2"><a href="#import-private">Import your private key in Thunderbird</a>
+		</li>
+		<li class="L2"><a href="#master-password">Set up a Master Password</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#public">Migrate the public keys of your contacts</a>
+	<ol>
+		<li class="L2"><a href="#export-public">Export the public keys using the Password and Keys utility</a>
+		</li>
+		<li class="L2"><a href="#import-public">Import the public keys in Thunderbird</a>
+		</li>
+		<li class="L2"><a href="#accept-public">Mark the public keys as accepted</a>
+		</li>
+		<li class="L2"><a href="#disable-gnupg">Turn off the GnuPG feature of your Persistent Storage</a>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+<p>Since Tails 4.13 (November 2020), <em>Thunderbird</em> 78 replaces the
+<em>Enigmail</em> extension with built-in support for OpenPGP encryption.</p>
+
+<p>If you used <em>Enigmail</em> before Tails 4.13, follow the instructions below to
+migrate from <em>Enigmail</em> to <em>Thunderbird</em> 78. Tails does not include <em>Enigmail</em>
+2.2, the last version of the extension, which automates this migration.</p>
+
+<p>See also the official <a href="https://support.mozilla.org/kb/openpgp-thunderbird-howto-and-faq">OpenPGP in Thunderbird - HOWTO and
+FAQ</a>.</p>
+
+<h1 id="private"><a name="index1h1"></a>Migrate your private key</h1>
+
+
+
+
+<h2 id="export-private"><a name="index1h2"></a>Export your private key using the <em>Passwords and Keys</em> utility</h2>
+
+
+<p>From the desktop:</p>
+
+<ol>
+<li><p>Choose <strong>Applications&nbsp;&#x25B8; Utilities&nbsp;&#x25B8; Passwords and Keys</strong>.</p></li>
+<li><p>In the left pane, choose <strong>GnuPG keys</strong>.</p></li>
+<li><p>In the right pane, double-click on the private key that you want to
+export and use in <em>Thunderbird</em>.</p></li>
+<li><p>In the <strong>Details</strong> tab of properties dialog, click <strong>Export</strong>.</p></li>
+<li><p>Save your private key in your <em>Home</em> directory.</p></li>
+<li><p>Close the <em>Passwords and Keys</em> utility.</p></li>
+</ol>
+
+
+<h2 id="import-private"><a name="index2h2"></a>Import your private key in <em>Thunderbird</em></h2>
+
+
+<p>In <em>Thunderbird</em>:</p>
+
+<ol>
+<li><p>Choose <strong><img alt="Menu" class="symbolic" height="16" src="../../../lib/open-menu.png" width="16" />&nbsp;&#x25B8; Account Settings</strong>.</p></li>
+<li><p>In the left pane, identify the account
+that corresponds to the private key that you want to import and
+choose <strong>End-to-End Encryption</strong>.</p></li>
+<li><p>In the right pane, click the <strong>Add Key&hellip;</strong> button.</p></li>
+<li><p>In the <strong>Add a Personal OpenPGP Key</strong> dialog, choose <strong>Import an
+existing OpenPGP Key</strong> and click <strong>Continue</strong>.</p></li>
+<li><p>Click the <strong>Select File to Import&hellip;</strong> button and choose
+the private key that your exported from the <em>Passwords and Keys</em> utility.</p></li>
+<li><p>In the next dialog, make sure that your private key is listed and
+that the option <strong>Treat this key as a Personal Key</strong> is selected.</p></li>
+<li><p>Click <strong>Continue</strong>, enter the passphrase for your private key (if
+any), and click <strong>Continue</strong> again.</p>
+
+<p>Your private key should now be listed in the <strong>End-to-End
+Encryption</strong> settings of your account.</p></li>
+<li><p>Select your private key to enable OpenPGP encryption for this
+account.</p></li>
+</ol>
+
+
+<h2 id="master-password"><a name="index3h2"></a>Set up a Master Password</h2>
+
+
+<p>In <em>Thunderbird</em> 78, OpenPGP private keys are not protected by a passphrase.
+That&#39;s why we recommend that you set up a Master Password.</p>
+
+<p>With a Master Password, your private key is encrypted in your
+<em>Thunderbird</em> profile and only unlocked while <em>Thunderbird</em> is running.
+If your <em>Thunderbird</em> profile is stored in your Persistent Storage, then
+your private key is encrypted twice: once by <em>Thunderbird</em> in your
+profile and a second time by the encryption of the Persistent Storage.</p>
+
+<ol>
+<li><p>Choose <strong><img alt="Menu" class="symbolic" height="16" src="../../../lib/open-menu.png" width="16" />&nbsp;&#x25B8; Preferences</strong>.</p></li>
+<li><p>Choose <strong>Privacy &amp; Security</strong>.</p></li>
+<li><p>In the <strong>Passwords</strong> section, select the option <strong>Use a master
+password</strong>.</p></li>
+<li><p>In the <strong>Change Master Password</strong> dialog, enter your Master Password
+and click <strong>Ok</strong>.</p></li>
+</ol>
+
+
+<h1 id="public"><a name="index2h1"></a>Migrate the public keys of your contacts</h1>
+
+
+
+
+<h2 id="export-public"><a name="index4h2"></a>Export the public keys using the <em>Password and Keys</em> utility</h2>
+
+
+<p>From the desktop:</p>
+
+<ol>
+<li><p>Choose <strong>Applications&nbsp;&#x25B8; Utilities&nbsp;&#x25B8; Passwords and Keys</strong>.</p></li>
+<li><p>In the left pane, choose <strong>GnuPG keys</strong>.</p></li>
+<li><p>Select the public keys that you want to migrate to <em>Thunderbird</em>.</p>
+
+<p>You can use <strong>Shift+click</strong> and <strong>Ctrl+click</strong> to select multiple keys.</p></li>
+<li><p>Choose <strong>File&nbsp;&#x25B8; Export&hellip;</strong> and save these public keys to your
+<em>Home</em> directory.</p></li>
+</ol>
+
+
+<h2 id="import-public"><a name="index5h2"></a>Import the public keys in <em>Thunderbird</em></h2>
+
+
+<p>In <em>Thunderbird</em>:</p>
+
+<ol>
+<li><p>Choose <strong><img alt="Menu" class="symbolic" height="16" src="../../../lib/open-menu.png" width="16" />&nbsp;&#x25B8; Tools&nbsp;&#x25B8; OpenPGP Key Manager</strong>.</p></li>
+<li><p>In the <strong>OpenPGP Key Manager</strong>, choose <strong>File&nbsp;&#x25B8; Import Public Key(s)
+From File.</strong></p></li>
+<li><p>Choose the file containing the public keys that you exported from the
+<em>Passwords and Keys</em> utility.</p>
+
+<p>If <em>Thunderbird</em> fails to import many public keys at once, split
+these public keys into several smaller files. <em>Thunderbird</em> can only import
+public key files of less than 5 MB.</p></li>
+</ol>
+
+
+<h2 id="accept-public"><a name="index6h2"></a>Mark the public keys as accepted</h2>
+
+
+<p>By default, new public keys are not marked as &quot;<em>accepted</em>&quot; by <em>Thunderbird</em> and
+you cannot encrypt emails to &quot;unaccepted&quot; keys.</p>
+
+<p>To mark a public key as accepted:</p>
+
+<ol>
+<li><p>Choose <strong><img alt="Menu" class="symbolic" height="16" src="../../../lib/open-menu.png" width="16" />&nbsp;&#x25B8; Tools&nbsp;&#x25B8; OpenPGP Key Manager</strong>.</p></li>
+<li><p>Double-click on the public key that you want to mark as accepted.</p></li>
+<li><p>In the <strong>Your Acceptance</strong> tab of the <strong>Key Properties</strong> dialog,
+select the option that applies to how much you verified the public
+key.</p></li>
+</ol>
+
+
+<h2 id="disable-gnupg"><a name="index7h2"></a>Turn off the GnuPG feature of your Persistent Storage</h2>
+
+
+<p>If you only use OpenPGP in <em>Thunderbird</em>, you can turn off the GnuPG
+feature of the Persistent Storage:</p>
+
+<ol>
+<li><p>Choose <strong>Applications&nbsp;&#x25B8; Configure persistent volume</strong>.</p></li>
+<li><p>Turn off the GnuPG feature.</p></li>
+<li><p>Click <strong>Save</strong>.</p></li>
+</ol>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../news/report_2020_11.html">news/report 2020 11</a>
+
+<a href="../../../news/test_4.19-rc1.html">news/test 4.19-rc1</a>
+
+<a href="../../../news/version_4.13.en.html">news/version 4.13</a>
+
+<a href="../thunderbird.en.html">thunderbird</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/anonymous_internet/thunderbird/openpgp_migration">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

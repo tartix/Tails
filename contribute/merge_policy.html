@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Proposing, reviewing, and merging changes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../contribute.en.html">contribute</a></li>
+
+
+
+
+<li>Proposing, reviewing, and merging changes</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Proposing, reviewing, and merging changes
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div id="intro">
+
+<p>Tails is developed in <a href="./working_together/GitLab.html">GitLab</a>,
+using a number of <a href="./git.html">Git repositories</a>.</p>
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Common rules</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Documentation is not optional</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Do not break the build... or get reverted</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Coordinate major changes and freeze exceptions with Release Managers</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index2h1">How to submit your proposed changes</a>
+	</li>
+	<li class="L1"><a href="#index3h1">How to review and merge proposed changes</a>
+	<ol>
+		<li class="L2"><a href="#index4h2">Review</a>
+		</li>
+		<li class="L2"><a href="#index5h2">Give feedback</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Merge</a>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+</div>
+
+
+<h1><a name="index1h1"></a>Common rules</h1>
+
+<h2><a name="index1h2"></a>Documentation is not optional</h2>
+
+<p>When writing Tails code, one commits to adapt the design and end-user
+documentations accordingly in a timely manner, writing brand new
+chapters if needed.</p>
+
+<h3><a name="index1h3"></a>Design documentation</h3>
+
+<p>As a side note, best is generally to write specification and design
+documentation before implementing changes; among other very valid
+reasons to do so, it may avoid doing work that won&#39;t be applied ever,
+or be reverted later, because of a faulty design that was reviewed and
+diagnosed only when the implementation was up and running. On the
+other hand, we&#39;re not great fans of over-engineering and we do know
+proceeding like this is not always an option, as the right design
+sometimes arises from erratic implementation attempts.</p>
+
+<h3><a name="index2h3"></a>User documentation</h3>
+
+<p>See our <a href="./how/documentation/style_guide.html">documentation guidelines</a>.</p>
+
+<p>Verify that your changes do not affect the rest of the user documentation and
+FAQ. If they do, or if in doubt, create an issue to ask our
+<a href="./working_together/roles/technical_writer.html">technical writers</a>
+to update the documentation accordingly.</p>
+
+<p>We generally prepare documentation updates in the same branch as the
+corresponding code changes, so that both get released together.</p>
+
+<p>Regarding the <a href="../support/faq.en.html">FAQ</a>, don&#39;t write new questions in advance but make sure that the
+existing ones are still correct.</p>
+
+<h2><a name="index2h2"></a>Do not break the build... or get reverted</h2>
+
+<p>Do not push changes breaking the build into one of our <a href="./git.html#branches">main Git
+branches</a>: <code>master</code>, <code>stable</code>, <code>testing</code>, and <code>devel</code>.</p>
+
+<p>If you find the <code>devel</code> branch in a non-building state and can
+identify the root cause of it to a recent commit, fix it if you wish,
+but don&#39;t let it disturb you otherwise: just revert the faulty commit
+and inform the other developers on <a href="../about/contact.en.html#tails-dev">tails-dev@boum.org</a> so that the author knows
+s/he needs to fix his/her stuff before reapplying it at a later point.</p>
+
+<h2><a name="index3h2"></a>Coordinate major changes and freeze exceptions with Release Managers</h2>
+
+<p>See the coordination guidelines <a href="./working_together/interfaces/developers_and_release_managers.html">for developers with Release
+Managers</a>.</p>
+
+<p><a id="submit"></a></p>
+
+<h1><a name="index2h1"></a>How to submit your proposed changes</h1>
+
+<p>We use <a href="https://gitlab.tails.boum.org/">GitLab</a> for tracking issues, merge requests, and
+code. Please ensure you are familiar with <a href="./working_together/GitLab.html">how we use GitLab at
+Tails</a>.</p>
+
+<p>All proposed changes should be prepared in topic branches.
+A branch about issue number NNNN should be named <code>NNNN-XXX</code>.</p>
+
+<p>To submit your branch for review:</p>
+
+<ol>
+<li><p>Test your branch. If your branch contains code changes, test it with its
+target branch (<code>config/base_branch</code>) merged into it.</p></li>
+<li><p>Push your branch</p>
+
+<p>If you have commit access to the official Tails Git repository,
+push your branch there so our CI picks it up.</p>
+
+<p>Else, push to your own fork of the Tails
+<a href="https://gitlab.tails.boum.org/tails/tails">Git repository</a>.</p></li>
+<li><p>Once you would like your branch to be reviewed, and possibly merged,
+submit it:</p>
+
+<ol>
+<li><p>If your branch contains code changes and you have access to our Jenkins
+instance:</p>
+
+<ul>
+<li>Ensure your branch builds on Jenkins.</li>
+<li>Either take note of the test suite scenarios you&#39;ve seen pass
+successfully locally, or check that the test suite passes on Jenkins.</li>
+</ul>
+</li>
+<li><p>On the corresponding GitLab issue:</p>
+
+<ul>
+<li>Set the <em>Milestone</em> field to the release you would like your changes to
+land in.</li>
+<li>If there&#39;s a <em>To Do</em> or <em>Doing</em> label, replace it with the <em>Needs
+Validation</em> label.</li>
+</ul>
+</li>
+<li><p>Create a <a href="https://gitlab.tails.boum.org/help/user/project/merge_requests/index.md">Merge
+Request</a> (aka. MR). There are <a href="https://gitlab.tails.boum.org/help/user/project/merge_requests/creating_merge_requests.html">many
+ways</a> to do so. For example, you can click the <em>Create merge request</em>
+button on the corresponding issue.</p>
+
+<p>In this new MR:</p>
+
+<ul>
+<li>Use the description to:
+
+<ul>
+<li>Summarize what problem this MR will fix, in terms of impact on users.</li>
+<li>Reference the issues this MR will solve: <code>Closes #xxx, #yyyy</code>.</li>
+</ul>
+</li>
+<li>Set the target branch your branch should be merged into.
+See the <a href="./git.html#branches">documentation for our main branches</a>.</li>
+<li>If it&#39;s obvious to you who can, and should, review your branch,
+and you&#39;re allowed to request reviews on MRs: request a review
+by making that person the <em>Reviewer</em> on the MR.<br />
+Else, leave the MR with no <em>Reviewer</em>:
+the <a href="./working_together/roles/foundations_team.html">Foundations Team</a> will
+either handle the review themselves or help you find a suitable reviewer.</li>
+<li>If you have run some test suite scenarios locally: report about your
+results in a new comment.</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+
+
+<p>Then, for every subsequent submit/review/fix cycle: once you&#39;ve fixed all
+problems raised by the reviewer, update the issue and MR metadata again as
+documented above (milestone, reviewer, and labels).</p>
+
+<h1><a name="index3h1"></a>How to review and merge proposed changes</h1>
+
+<p>We use <a href="https://gitlab.tails.boum.org/">GitLab</a> for tracking issues, merge requests, and
+code. Please ensure you are familiar with <a href="./working_together/GitLab.html">how we use GitLab at
+Tails</a>.</p>
+
+<p>In particular, see
+<a href="./working_together/GitLab.html#discussions">how to participate in discussions</a>.</p>
+
+<p><a id="review"></a></p>
+
+<h2><a name="index4h2"></a>Review</h2>
+
+<ul>
+<li>Set yourself as the <em>Reviewer</em> on the <a href="https://gitlab.tails.boum.org/help/user/project/merge_requests/index.md">Merge
+Request</a> to you. This avoids duplicating work.</li>
+<li>Verify that the destination branch matches what&#39;s in <code>config/base_branch</code> on
+the branch, and is correct:
+
+<ul>
+<li>for a new feature: into <code>devel</code></li>
+<li>for a fix on top on the last RC: into <code>testing</code>; then merge
+<code>testing</code> into <code>devel</code></li>
+<li>for a fix on top of the last stable: into <code>stable</code>; then merge
+<code>stable</code> into <code>devel</code></li>
+</ul>
+</li>
+<li>Merge the destination branch of the MR into the topic branch.</li>
+<li>Build the topic branch and test the feature.</li>
+<li>Check automated ISO build and test results on
+<a href="https://jenkins.tails.boum.org/">https://jenkins.tails.boum.org/</a>.</li>
+<li>Review the diff, either in the GitLab interface or on the command line.
+If you&#39;re using the command line, beware of changes introduced
+by merge commits: either add the <code>--cc</code> option to <code>git log</code>, or use
+<code>git diff</code> after reviewing the individual patches.</li>
+<li><p>Check the contents of every APT overlay that the branch enables:</p>
+
+<ul>
+<li><p>If you have upload rights to our <a href="./APT_repository/custom.html">custom APT
+repository</a>:</p>
+
+<pre><code>ssh reprepro@incoming.deb.tails.boum.org \
+    reprepro list ${APT_overlay}`
+</code></pre></li>
+<li><p>Else:</p>
+
+<ul>
+<li><a href="https://deb.tails.boum.org/dists/${APT_overlay}/main/source/Sources">https://deb.tails.boum.org/dists/${APT_overlay}/main/source/Sources</a></li>
+<li><a href="https://deb.tails.boum.org/dists/${APT_overlay}/main/binary-amd64/Packages">https://deb.tails.boum.org/dists/${APT_overlay}/main/binary-amd64/Packages</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Check the user and design documentation.</p></li>
+<li>Check the corresponding GitLab issue.</li>
+<li>Ensure the description of the MR includes <code>Closes #NNNN</code>
+statements for the issues fixed by this MR.
+<a id="closes"></a>
+<a id="fix-committed"></a></li>
+<li>Changes proposed by new contributors, or by the patch&#39;n&#39;forget kind,
+shall respectively be applied once they are in <em>good enough</em> state.
+That is, once the core developers team feels like maintaining it on
+the long run in case the initial submitter disappears. Such
+maintenance includes: polishing the proposed changes to make them fit
+for release; writing and updating the design and end-user
+documentations; fixing bugs.</li>
+<li>As reviewer, you are allowed to commit trivial fixes on top of the
+proposed branch to avoid round-trips: for example, fixing typos
+and improving phrasing of comments and strings.
+Then, report back about these changes on the MR.</li>
+</ul>
+
+
+<h2><a name="index5h2"></a>Give feedback</h2>
+
+<p>First, remember that it&#39;s hard to receive negative feedback. Don&#39;t forget
+to note the good parts, be constructive and precise in your
+comments, and never use reviews to make personal attacks. You can
+read these blog posts on review and feedback:</p>
+
+<ul>
+<li><a href="https://www.kateheddleston.com/blog/criticism-and-ineffective-feedback">Kate Heddleston: Criticism and ineffective feedback</a> (blog post on how to do a good review)</li>
+<li><a href="http://www.3coze.com/2016/07/17/bite-your-tongue/">Liane Davey: Maybe you shouldn&#39;t give feedback</a></li>
+</ul>
+
+
+<p>As part of your review, if you spot problems that block the merge
+in your opinion:</p>
+
+<ol>
+<li>Give feedback about these problems.</li>
+<li>Unset the <em>Reviewer</em> on the MR.</li>
+<li>On the corresponding issue: replace the <em>Needs Validation</em> label
+with <em>Doing</em>.</li>
+</ol>
+
+
+<p><a id="merge"></a></p>
+
+<h2><a name="index6h2"></a>Merge</h2>
+
+<ol>
+<li><p>Click the <em>Merge</em> button on the MR.</p>
+
+<p>If you are not authorized to do so, instead:</p>
+
+<ul>
+<li>Add a comment on the MR to say you have reviewed the branch.
+If you approve its merging, click the <em>Approve</em> button.</li>
+<li>Unset the <em>Reviewer</em> on the MR.</li>
+</ul>
+</li>
+<li><p>Close the issues fixed by this MR.</p>
+
+<p>You don&#39;t need to do this if the destination branch of the MR
+is <code>stable</code>: these issues will be closed automatically.</p></li>
+<li><p>If the destination branch of the MR was <code>stable</code>, then
+pull <code>stable</code> locally, merge it into <code>devel</code>, and push <code>devel</code>.</p>
+
+<p>Rationale: <code>devel</code> must also contain all the improvements that have been
+applied on <code>stable</code>.</p></li>
+</ol>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../contribute.en.html">contribute</a>
+
+<a href="../contribute.de.html">contribute.de</a>
+
+<a href="../contribute.es.html">contribute.es</a>
+
+<a href="../contribute.fr.html">contribute.fr</a>
+
+<a href="../contribute.it.html">contribute.it</a>
+
+<a href="../contribute.pt.html">contribute.pt</a>
+
+<a href="../contribute.ru.html">contribute.ru</a>
+
+<a href="./git.html">git</a>
+
+<a href="./how/code.html">how/code</a>
+
+<a href="./how/documentation.html">how/documentation</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="./tor.html">tor</a>
+
+<a href="./working_together/GitLab.html">working together/GitLab</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/merge_policy">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

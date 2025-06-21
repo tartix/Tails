@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Call for testing 4.22~rc1</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Thu, 19 Aug 2021 12:00:00 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Call for testing 4.22~rc1</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Call for testing 4.22~rc1
+</span>
+<span class="date">2021-08-19</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Contribute to Tails by testing our release candidate for Tails 4.22 by the end of August!</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#new">What's new in 4.22~rc1?</a>
+	</li>
+	<li class="L1"><a href="#index2h1">What's new since 4.21?</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Get Tails 4.22~rc1</a>
+	</li>
+	<li class="L1"><a href="#how-to-test">What to test in Tails 4.22~rc1?</a>
+	</li>
+	<li class="L1"><a href="#known-issues">Known issues in 4.22~rc1</a>
+	</li>
+</ol>
+</div>
+
+
+
+
+<h1 id="new"><a name="index1h1"></a>What's new in 4.22~rc1?</h1>
+
+
+<p>Tails 4.22, scheduled for release on September 7, will allow users to
+manually set their correct time zone and clock. This helps users to work around
+a long-standing issue of Tails not being able to connect to Tor when obfs4
+bridges are being used and the computer has a hardware clock that is set to
+a time zone that is east of UTC. See <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15548">#15548</a>.</p>
+
+<p><img alt="" class="img" height="464" src="./test_4.22-rc1/tor-connection-fix-clock.png" width="809" /></p>
+
+<p>Also, Tails 4.22 will allow users to save bridges to Persistent Storage so
+that the bridges do not need to be reentered every time Tails is restarted.</p>
+
+<h1><a name="index2h1"></a>What's new since 4.21?</h1>
+
+
+<ul>
+<li><p>Update <em>Thunderbird</em> to <a href="https://www.thunderbird.net/en-US/thunderbird/78.13.0/releasenotes/">78.13</a></p></li>
+<li><p>Tor Connection assistant will stop trying to connect to Tor when the error
+screen is displayed.</p></li>
+<li><p>Offline documentation includes the Russian language translation.</p></li>
+</ul>
+
+
+<p>For more details, read our
+<a href="https://gitlab.tails.boum.org/tails/tails/-/raw/4.22-rc1/debian/changelog">changelog</a>.</p>
+
+<h1><a name="index3h1"></a>Get Tails 4.22~rc1</h1>
+
+
+
+
+<h2 id="upgrade"><a name="index1h2"></a>To upgrade your Tails USB stick and keep your persistent storage</h2>
+
+
+<p>If you are running Tails 4.19 or later, you can upgrade like this:</p>
+
+<ol>
+<li><p>Start Tails and
+<a href="../doc/first_steps/welcome_screen/administration_password.en.html">set an administration password</a>.</p></li>
+<li><p>Connect to the network and make sure Tor is connected successfully.</p></li>
+<li><p>Run this command in a <em>Terminal</em>:</p>
+
+<pre><code>echo TAILS_CHANNEL=\&quot;alpha\&quot; | sudo tee -a /etc/os-release &amp;&amp; \
+     tails-upgrade-frontend-wrapper
+</code></pre>
+
+<p>Enter the administration password when asked for the &quot;password
+for amnesia&quot;.</p></li>
+<li><p>After the upgrade is applied, restart Tails and choose
+<strong>Applications&nbsp;&#x25B8; Tails&nbsp;&#x25B8; About Tails</strong>
+to verify that you are running Tails 4.22~rc1.</p></li>
+</ol>
+
+
+<p></p><h2 id="download"><a name="index2h2"></a>Download Tails 4.22~rc1
+
+</h2><p>Download and install Tails 4.22~rc1 as usually.</p>
+
+<div class="caution">
+
+<p>All the data on this USB stick will be lost. Don&#39;t install Tails 4.22~rc1
+on any USB stick that already has a Persistent Storage, upgrade instead.</p>
+
+</div>
+
+
+<h3><a name="index1h3"></a>Direct download</h3>
+
+<ul>
+<li><p><a class="use-mirror-pool" href="http://dl.amnesia.boum.org/tails/alpha/tails-amd64-4.22~rc1/tails-amd64-4.22~rc1.img">For USB sticks (USB image)</a><br />
+<small><span class="createlink">OpenPGP signature</span><br />SHA256SUM: 52930e1241809c0939754968e9d6925de4306a1dd3b727d5a2f0b33f5442859f</small></p></li>
+<li><p><a class="use-mirror-pool" href="http://dl.amnesia.boum.org/tails/alpha/tails-amd64-4.22~rc1/tails-amd64-4.22~rc1.iso">For DVDs and virtual machines (ISO image)</a><br />
+<small><span class="createlink">OpenPGP signature</span><br />SHA256SUM: 6e37811b753f480d709d7c88464ae1b2d7282470876e25513a49b987adafa87e</small></p></li>
+</ul>
+
+
+<h3><a name="index2h3"></a>BitTorrent download</h3>
+
+<ul>
+<li><p><a href="https://tails.boum.org/torrents/files/tails-amd64-4.22~rc1.img.torrent">For USB sticks (USB image)</a></p></li>
+<li><p><a href="https://tails.boum.org/torrents/files/tails-amd64-4.22~rc1.iso.torrent">For DVDs and virtual machines (ISO image)</a></p></li>
+</ul>
+
+
+<h1 id="how-to-test"><a name="index4h1"></a>What to test in Tails 4.22~rc1?</h1>
+
+
+<p>We particularly would like to know if Tails successfully connects to Tor
+using bridges when the correct time zone and clock are set from within Tor Connection
+assistant.</p>
+
+<p>Also, we want to make sure that bridges are properly saved to and restored
+from Persistent Storage when the Tor Bridges feature is enabled.</p>
+
+<p>Tell us if anything is unclear, confusing, or not working as you would expect.</p>
+
+<p>Please, send your feedback to <a href="mailto:tails-testers@boum.org">tails-testers@boum.org</a> (public mailing list).</p>
+
+<h1 id="known-issues"><a name="index5h1"></a>Known issues in 4.22~rc1</h1>
+
+
+<p>None specific to this release.</p>
+
+<p>Happy testing!</p>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+<div class="tags">
+Tags:
+
+<a href="../tags/announce.html" rel="tag">announce</a>
+
+</div>
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/test_4.22-rc1">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

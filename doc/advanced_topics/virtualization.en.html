@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Running Tails in a virtual machine</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./cold_boot_attacks.en.html" title="Protection against cold boot attacks" />
+
+<link rel="up" href="../advanced_topics.index.html" title="advanced topics.index" />
+
+<link rel="next" href="./virtualization/virtualbox.en.html" title="VirtualBox" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../advanced_topics.en.html">advanced topics</a></li>
+
+
+
+
+<li>Running Tails in a virtual machine</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualization.de.html">de</a></span>
+   <span class="hidden"><a href="./virtualization.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualization.es.html">es</a></span>
+   <span class="hidden"><a href="./virtualization.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualization.fr.html">fr</a></span>
+   <span class="hidden"><a href="./virtualization.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualization.it.html">it</a></span>
+   <span class="hidden"><a href="./virtualization.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualization.pt.html">pt</a></span>
+   <span class="hidden"><a href="./virtualization.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./virtualization.ru.html">ru</a></span>
+   <span class="hidden"><a href="./virtualization.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Running Tails in a virtual machine
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./cold_boot_attacks.en.html">Protection against cold boot attacks</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./virtualization/virtualbox.en.html">VirtualBox</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Security considerations</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Virtualization solutions</a>
+	</li>
+</ol>
+</div>
+
+
+<p>It is sometimes convenient to be able to run Tails without having to
+restart your computer every time. This is possible using
+<a href="https://en.wikipedia.org/wiki/Virtual%5Fmachine">virtual machines</a>.</p>
+
+<p>With virtual machines, it is possible to run Tails inside a <em>host</em>
+operating system (Linux, Windows, or macOS). A virtual machine
+emulates a real computer and its operating system, called a <em>guest</em>, which
+appears in a window on the <em>host</em> operating system.</p>
+
+<p>When running Tails in a virtual machine, you can use most features of
+Tails from your usual operating system, and you can use both Tails and your usual operating system in parallel,
+without the need to restart the computer.</p>
+
+<p>This is how Tails looks when run in a virtual machine on Debian using <em>GNOME Boxes</em>:</p>
+
+<p><img alt="" class="img" height="360" src="./virtualization/tails-in-vm.png" width="640" /></p>
+
+<div class="note">
+
+<p>We do not currently provide a solution for running a virtual machine
+inside a Tails host.</p>
+
+</div>
+
+
+<p><a id="security"></a></p>
+
+<h1><a name="index1h1"></a>Security considerations</h1>
+
+<div class="caution">
+
+Running Tails inside a virtual machine has various security
+implications. Depending on the host operating system and your security
+needs, running Tails in a virtual machine might be dangerous.
+
+</div>
+
+
+<p><a id="trustworthy"></a></p>
+
+<ul>
+<li><p>Both the host operating system and the <a href="./virtualization.en.html#software">virtualization
+software</a> are able to monitor what you are
+doing in Tails.</p>
+
+<p>If the host operating system is compromised with a software
+keylogger or other malware, then it can break the security features
+of Tails.</p>
+
+<div class="caution">
+    
+Only run Tails in a virtual machine if both the host operating
+system and the virtualization software are trustworthy.
+    
+</div>
+</li>
+</ul>
+
+
+<p><a id="traces"></a></p>
+
+<ul>
+<li><p>Traces of your Tails session are likely to be left on the local hard
+disk. For example, host operating systems usually use swapping (or <em>paging</em>) which
+copies part of the RAM to the hard disk.</p>
+
+<div class="caution">
+    
+Only run Tails in a virtual machine if leaving traces on the hard disk
+is not a concern for you.
+    
+</div>
+</li>
+</ul>
+
+
+<p>This is why Tails warns you when it is running inside a virtual machine.</p>
+
+<div class="note">
+
+The Tails virtual machine does not modify the behaviour of the host
+operating system and the network traffic of the host is not anonymized. The MAC
+address of the computer is not modified by the <a href="../first_steps/welcome_screen/mac_spoofing.en.html">MAC address
+anonymization</a> feature of Tails
+when run in a virtual machine.
+
+</div>
+
+
+<p><a id="software"></a></p>
+
+<h1><a name="index2h1"></a>Virtualization solutions</h1>
+
+<p>To run Tails inside a virtual machine, you need to have
+virtualization software installed on the host operating system.
+Different virtualization software exists for Linux, Windows, and macOS.</p>
+
+<div class="note">
+
+<p>The following list includes only free software as we believe that
+this is a necessary condition for the software to be trustworthy. See the
+<a href="./virtualization.en.html#trustworthy">previous warning</a> and our statement about
+<a href="../about/trust.en.html#free_software">free software and public scrutiny</a>.</p>
+
+<p>Proprietary virtualization software solutions exist such as <span class="application">VMWare</span> but are not listed here on
+purpose.</p>
+
+</div>
+
+
+<ul>
+<li><p><strong><em>VirtualBox</em></strong> is available on
+Linux, Windows, and Mac. Its
+free software version does not include support for USB devices and
+does not allow use of a Persistent Storage.</p>
+
+<p><a href="./virtualization/virtualbox.en.html">See the corresponding documentation.</a></p></li>
+<li><p><strong><em>GNOME Boxes</em></strong> is available on
+Linux. It has a simple user
+interface but does not allow use of a Persistent Storage.</p>
+
+<p><a href="./virtualization/boxes.en.html">See the corresponding documentation.</a></p></li>
+<li><p><strong><em>virt-manager</em></strong> is available on
+Linux. It has a more
+complex user interface and allows use of a Persistent Storage, either
+by:</p>
+
+<ul>
+<li>Starting Tails from a USB stick.</li>
+<li>Creating a virtual USB storage volume saved as a single file on the host
+operating system.</li>
+</ul>
+
+
+<p><a href="./virtualization/virt-manager.en.html">See the corresponding documentation.</a></p></li>
+</ul>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./cold_boot_attacks.en.html">Protection against cold boot attacks</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./virtualization/virtualbox.en.html">VirtualBox</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../about/features.en.html">about/features</a>
+
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+
+<a href="../../contribute/build.html">contribute/build</a>
+
+<a href="../../contribute/design/virtualization_support.html">contribute/design/virtualization support</a>
+
+<a href="../../install/inc/steps/download.inline.en.html">install/inc/steps/download.inline</a>
+
+<a href="../../news/report_2015_01-02.html">news/report 2015 01-02</a>
+
+<a href="./virtualization.caution.en.html">virtualization.caution</a>
+
+<a href="./virtualization/virtualbox.en.html">virtualization/virtualbox</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/virtualization">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

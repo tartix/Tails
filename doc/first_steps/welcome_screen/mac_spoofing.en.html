@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - MAC address anonymization</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./administration_password.en.html" title="Administration password" />
+
+<link rel="up" href="../../first_steps.index.html" title="first steps.index" />
+
+<link rel="next" href="../introduction_to_gnome_and_the_tails_desktop.en.html" title="Introduction to GNOME and the Tails desktop" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../first_steps.en.html">first steps</a></li>
+
+
+
+
+
+<li><a href="../welcome_screen.en.html">welcome screen</a></li>
+
+
+
+
+<li>MAC address anonymization</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./mac_spoofing.de.html">de</a></span>
+   <span class="hidden"><a href="./mac_spoofing.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./mac_spoofing.es.html">es</a></span>
+   <span class="hidden"><a href="./mac_spoofing.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./mac_spoofing.fr.html">fr</a></span>
+   <span class="hidden"><a href="./mac_spoofing.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./mac_spoofing.it.html">it</a></span>
+   <span class="hidden"><a href="./mac_spoofing.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./mac_spoofing.pt.html">pt</a></span>
+   <span class="hidden"><a href="./mac_spoofing.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./mac_spoofing.ru.html">ru</a></span>
+   <span class="hidden"><a href="./mac_spoofing.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+MAC address anonymization
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./administration_password.en.html">Administration password</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../first_steps.index.html">first steps.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="../introduction_to_gnome_and_the_tails_desktop.en.html">Introduction to GNOME and the Tails desktop</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">What is a MAC address?</a>
+	</li>
+	<li class="L1"><a href="#index2h1">What is MAC address anonymization?</a>
+	</li>
+	<li class="L1"><a href="#index3h1">When to keep MAC address anonymization enabled</a>
+	</li>
+	<li class="L1"><a href="#index4h1">When to disable MAC address anonymization</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Disable MAC address anonymization</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Other considerations</a>
+	</li>
+</ol>
+</div>
+
+
+<p><a id="what-is-mac-address"></a></p>
+
+<h1><a name="index1h1"></a>What is a MAC address?</h1>
+
+<p>Every network interface &mdash; wired or Wi-Fi &mdash; has a <a href="https://en.wikipedia.org/wiki/MAC%20address">MAC address</a>, which is
+a serial number assigned to each interface at the factory by the vendor. MAC addresses
+are used on the local network to identify the communications of each network
+interface.</p>
+
+<p>While your IP address identifies where you are on the Internet, your MAC address
+identifies which device you are using on the local network. MAC addresses are
+only useful on the local network and are not sent over the Internet.</p>
+
+<p>Having such a unique identifier used on the local network can harm your privacy.
+Here are two examples:</p>
+
+<ol>
+<li><p>If you use your laptop to connect to several Wi-Fi networks, the
+same MAC address of your Wi-Fi interface is used on all those local networks. Someone
+observing those networks can recognize your MAC address and <strong>track your
+geographical location</strong>.</p></li>
+<li><p>Unless you choose to <a href="../../anonymous_internet/tor.en.html">hide that you are connecting to the Tor
+network</a>, someone who monitors your Internet
+connection can know that. In this case, your MAC address can <strong>reveal that you are
+a Tor user</strong>.</p></li>
+</ol>
+
+
+<h1><a name="index2h1"></a>What is MAC address anonymization?</h1>
+
+<p>When MAC address anonymization is enabled, Tails temporarily changes the MAC addresses of your network interfaces to random
+values for the time of your Tails session.
+MAC address anonymization hides the serial number of your network interface,
+and so, to some extent, who you are, from the local network.</p>
+
+<p>MAC address anonymization is enabled by default in Tails because it is usually
+beneficial. But in some situations it might also lead to connectivity problems
+or make your network activity look suspicious. This documentation explains
+whether to use MAC address anonymization or not, depending on your situation.</p>
+
+<h1><a name="index3h1"></a>When to keep MAC address anonymization enabled</h1>
+
+<p><strong>MAC address anonymization is enabled by default for all network interfaces.</strong> This is
+usually beneficial, even if you don&#39;t want to hide your geographical location.</p>
+
+<p>Here are a few examples:</p>
+
+<ul>
+<li><p><strong>Using your own computer on an public network without registration</strong>, for
+example a free Wi-Fi service in a restaurant where you don&#39;t need to register with your
+identity. In this case, MAC address anonymization hides the fact that your computer
+is connected to this network.</p></li>
+<li><p><strong>Using your own computer on a network that you use frequently</strong>, for example
+at a friend&#39;s place, at work, at university, etc. You already have a strong
+relationship with this place but MAC address anonymization hides the fact that your
+computer is connected to this network <em>at a particular time</em>. It also hides
+the fact that <em>you</em> are connecting to the Tor network on this network.</p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>When to disable MAC address anonymization</h1>
+
+<p>In some situations MAC address anonymization is not useful but can instead be
+problematic. In such cases, you might want to disable MAC address
+anonymization as instructed below.</p>
+
+<p>Note that even if MAC address anonymization is disabled, your anonymity on the Internet is
+preserved:</p>
+
+<ul>
+<li>An adversary on the local network can only see encrypted connections to the
+Tor network.</li>
+<li>Your MAC address is not sent over the Internet to the websites that you are
+visiting.</li>
+</ul>
+
+
+<p>However, as <a href="./mac_spoofing.en.html#what-is-mac-address">discussed above</a>, disabling MAC address anonymization makes it possible
+for someone to track your geographical location. If this is problematic, consider
+using a different network interface, like a <a href="../../anonymous_internet/networkmanager.en.html#wi-fi-adapters">USB Wi-Fi adapter</a>, or moving to another network.</p>
+
+<p>Here are a few examples:</p>
+
+<ul>
+<li><p><strong>Using a public computer</strong>, for example in an Internet caf&eacute; or a library.
+This computer is regularly used on this local network, and its MAC address is
+not associated with your identity. In this case, MAC address anonymization can make
+it impossible to connect. It can even <strong>look suspicious</strong> to the network
+administrators to see an unknown MAC address being used on that network.</p></li>
+<li><p>On some network interfaces, <strong>MAC address anonymization is impossible</strong> due to
+limitations in the hardware or in Linux. Tails temporarily disables such
+network interfaces. You might disable MAC address anonymization to be able to use them.</p></li>
+<li><p>Some networks <strong>only allow connections from a list of authorized MAC
+addresses</strong>. In this case, MAC address anonymization makes it impossible to connect
+to such networks. If you were granted access to such network in the past, then
+MAC address anonymization might prevent you from connecting.</p></li>
+<li><p><strong>Using your own computer at home</strong>. Your identity and the MAC address of your
+computer are already associated to this local network, so MAC address anonymization
+is probably useless. But if access to your local network is restricted based
+on MAC addresses it might be impossible to connect with an anonymized MAC address.</p></li>
+</ul>
+
+
+<p><a id="disable"></a></p>
+
+<h1><a name="index5h1"></a>Disable MAC address anonymization</h1>
+
+<p>You can disable MAC address anonymization from the <a href="../welcome_screen.en.html">Welcome
+Screen</a>:</p>
+
+<ol>
+<li><p>When the Welcome Screen appears, click on the
+<strong><img alt="Add Additional Setting" class="symbolic" height="16" src="../../../lib/list-add.png" width="16" /></strong> button.</p>
+
+<p><img alt="" class="img" height="159" src="./additional.png" width="533" /></p></li>
+<li><p>Choose <strong>MAC Address Anonymization</strong> in the <strong>Additional Settings</strong> dialog.</p></li>
+<li><p>Select the <span class="guilabel">Don&#39;t anonymize MAC addresses</span> option.</p></li>
+</ol>
+
+
+<h1><a name="index6h1"></a>Other considerations</h1>
+
+<ul>
+<li><p>Other means of surveillance can reveal your geographical location: video
+surveillance, mobile phone activity, credit card transactions, social
+interactions, etc.</p></li>
+<li><p>While using Wi-Fi, anybody within range of your Wi-Fi interface can
+see your MAC address, even without being connected to the same Wi-Fi
+access point.</p></li>
+<li><p>When using mobile phone connectivity, such as 3G or GSM, the identifier of
+your SIM card (IMSI) and the serial number of your phone (IMEI) are always
+revealed to the mobile phone operator.</p></li>
+<li><p>Some <a href="https://en.wikipedia.org/wiki/captive%20portals">captive portals</a> might send your MAC address over the
+Internet to their authentication servers. This should not affect your decision
+regarding MAC address anonymization. If you decide to disable MAC address anonymization
+your computer can already be identified by your ISP.</p></li>
+</ul>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./administration_password.en.html">Administration password</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../first_steps.index.html">first steps.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="../introduction_to_gnome_and_the_tails_desktop.en.html">Introduction to GNOME and the Tails desktop</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../advanced_topics/virtualization.en.html">advanced topics/virtualization</a>
+
+<a href="../../anonymous_internet/no-wifi.inline.en.html">anonymous internet/no-wifi.inline</a>
+
+<a href="../../first_steps.index.html">first steps.index</a>
+
+<a href="../../../news/report_2014_03.html">news/report 2014 03</a>
+
+<a href="../../../news/report_2020_06.html">news/report 2020 06</a>
+
+<a href="../../../news/version_0.23.html">news/version 0.23</a>
+
+<a href="../../../news/version_1.0.html">news/version 1.0</a>
+
+<a href="../../../news/version_4.8.en.html">news/version 4.8</a>
+
+<a href="../../../support/known_issues.en.html">support/known issues</a>
+
+<a href="../welcome_screen.en.html">welcome screen</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/first_steps/welcome_screen/mac_spoofing">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

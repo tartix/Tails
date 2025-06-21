@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - tor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../contribute.en.html">contribute</a></li>
+
+
+
+
+<li>tor</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+tor
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>This document is about how we upgrade packages built from the <code>tor</code>
+source package.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Background</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Process</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Tip: pushing back expiration date</a>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Background</h1>
+
+<p>Tails is built using a combination of snapshots of APT
+repositories and overlay APT suites. This document assumes a good
+understanding of this <a href="./APT_repository.html">somewhat complex system</a>.</p>
+
+<p>We generally install packages built from the <code>tor</code> source package from
+<a href="http://deb.torproject.org/torproject.org">http://deb.torproject.org/torproject.org</a>:</p>
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_sources/torproject.chroot">config/chroot sources/torproject.chroot</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_apt/preferences">config/chroot apt/preferences</a></li>
+</ul>
+
+
+<p>The corresponding archive in our APT snapshots setup is called <code>torproject</code>:
+<a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/APT_snapshots.d/torproject/serial">config/APT snapshots.d/torproject/serial</a>.</p>
+
+<h1><a name="index2h1"></a>Process</h1>
+
+<p>A Foundations Team member or Release Manager creates a tracking issue whenever
+a new stable version of <code>tor</code> is released.</p>
+
+<p>Once this new version is available in our APT snapshots, a Foundations Team
+member (you!) gathers the data that will inform our decision, and prepares
+the upgrade:</p>
+
+<ol>
+<li>Fork a branch off <code>stable</code> called
+<code>NNNNN-tor-X.Y+force-all-tests</code>.</li>
+<li>On that branch, bump <code>config/APT_snapshots.d/torproject/serial</code> to a snapshot
+that&#39;s recent enough to include the relevant new version of <code>tor</code>.</li>
+<li>Push this new branch to our CI.</li>
+<li>Compare the Jenkins build and test results to the ones for our
+<code>stable</code> branch. What follows assumes that these CI results look good.
+If they don&#39;t, more work is needed.</li>
+<li><a href="./APT_repository/time-based_snapshots.html#bump-expiration-date">Bump the expiration
+date</a>
+for the snapshot of the <code>torproject</code> archive that you&#39;ve switched the
+branch <em>to</em>. Set the same expiration date as the one for the snapshot
+of the <code>torproject</code> archive that you&#39;ve switched the branch <em>from</em>.
+See tip below.</li>
+<li>State on the tracking issue that you&#39;ve bumped the expiration
+date of the snapshot.</li>
+<li>Submit your branch for review via our <a href="./merge_policy.html#submit">usual
+process</a>.</li>
+</ol>
+
+
+<h2><a name="index1h2"></a>Tip: pushing back expiration date</h2>
+
+<p>Let&#39;s set some variables: the Debian base distribution, and the old
+serial (before the change to <code>config/APT_snapshots.d/torproject/serial</code>):</p>
+
+<pre><code>DIST=buster
+OLD_SERIAL=2020020402
+</code></pre>
+
+<p>Get the timestamp from the <code>Valid-Until</code> field in the <code>Release</code> file
+for the old snapshot of that distribution, and compute the number of
+days between now and then:</p>
+
+<pre><code>old_url=&quot;https://time-based.snapshots.deb.tails.boum.org/torproject/dists/${DIST?:}/snapshots/${OLD_SERIAL?:}/Release&quot;
+old_ts=$(date -d &quot;$(wget -q $old_url -O- | awk &#39;/^Valid-Until:/ {$1=&quot;&quot;; print}&#39;)&quot; +%s)
+now_ts=$(date +%s)
+echo &quot;Days from now: $(((old_ts-now_ts)/(24*60*60)+1))&quot;
+</code></pre>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../contribute.en.html">contribute</a>
+
+<a href="../contribute.de.html">contribute.de</a>
+
+<a href="../contribute.es.html">contribute.es</a>
+
+<a href="../contribute.fr.html">contribute.fr</a>
+
+<a href="../contribute.it.html">contribute.it</a>
+
+<a href="../contribute.pt.html">contribute.pt</a>
+
+<a href="../contribute.ru.html">contribute.ru</a>
+
+<a href="./design.html">design</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/tor">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

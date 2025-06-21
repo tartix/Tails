@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Linux kernel</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../contribute.en.html">contribute</a></li>
+
+
+
+
+<li>Linux kernel</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Linux kernel
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>This document is about:</p>
+
+<ul>
+<li>How we keep track of upcoming Linux kernel upgrades we may want, or
+have to, apply in Tails.</li>
+<li>How we apply such upgrades.</li>
+</ul>
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Background</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">APT repositories</a>
+		</li>
+		<li class="L2"><a href="#index2h2">The Debian side of things</a>
+		</li>
+		<li class="L2"><a href="#index3h2">We need to decide</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index2h1">Process</a>
+	<ol>
+		<li class="L2"><a href="#index4h2">Test the new kernel</a>
+		</li>
+		<li class="L2"><a href="#index5h2">Gather other data that will inform our decision</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Make a decision</a>
+		</li>
+		<li class="L2"><a href="#index7h2">Implement the decision</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index3h1">Enable new security features</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Background</h1>
+
+<p>&hellip; where the reader learns why this page is even needed and a few
+relevant facts they should be aware of.</p>
+
+<h2><a name="index1h2"></a>APT repositories</h2>
+
+<p>Tails is built using a combination of snapshots of the Debian archive
+and overlay APT suites. This greatly impact the timeline and processes
+of upgrading any Debian package in Tails, and in particular the Linux
+kernel. This document assumes a good understanding of this <a href="./APT_repository.html">somewhat
+complex system</a>.</p>
+
+<h2><a name="index2h2"></a>The Debian side of things</h2>
+
+<p>We generally ship the latest Linux kernel from Debian <em>stable backports</em>, and
+occasionally from <em>unstable</em> when a critical security fix is not available in
+<em>stable backports</em> yet.</p>
+
+<p>The Linux kernel binary packages include an ABI version number, e.g.
+for <code>linux-image-4.18.0-2-amd64</code> the ABI is version 2.</p>
+
+<p>Sometimes, the only way to include security fixes is to
+upgrade Linux to a major new version. For example, say the current
+Tails release includes Linux 5.18.8, an important security issue was
+fixed in 5.18.9 and in 5.19.6. If 5.19.6 was uploaded to <em>unstable</em>
+but 5.18.9 never was, then our only option to include this security
+fix is to upgrade to 5.19.6.</p>
+
+<h2><a name="index3h2"></a><em>We</em> need to decide</h2>
+
+<p>Which exact Linux kernel version we ship in a given Tails release is
+a trade-off between packages availability, security fixes, limiting
+the risks of hardware support regressions, and adding support for new
+hardware. The Foundations Team has to make this decision
+during every Tails release cycle. Due to the way we manage our APT
+repositories and to the fact we don&#39;t publish release candidates for
+Tails bugfix releases, how this decision is made and implemented
+depends in great part on what kind of Tails release is upcoming (major
+or bugfix).</p>
+
+<p>The <code>KERNEL_VERSION</code> variable in <a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/amnesia">config/amnesia</a>
+determines what version of the kernel will be installed during the
+build. This includes the ABI version number, so even our <code>devel</code>
+branch does not get Linux point-release (e.g. 4.19.7) upgrades
+automatically if the ABI is bumped.</p>
+
+<h1><a name="index2h1"></a>Process</h1>
+
+<p>A Foundations Team member (generally the team lead, so far) creates
+a tracking issue whenever:</p>
+
+<ul>
+<li>A new major version of Linux is released. At this point, that
+version is generally available only in Debian <em>experimental</em>.</li>
+<li>A Linux point-release (e.g. 4.19.7) that includes potentially
+relevant security fixes or changes the ABI is uploaded to Debian
+<em>unstable</em>.</li>
+</ul>
+
+
+<p>Once this new kernel is available in our APT snapshots a Foundations
+Team member (you!) gathers the data that will inform our decision.
+There are two aspects to it: how it works for us and what the
+risk/benefit of the upgrade is.</p>
+
+<h2><a name="index4h2"></a>Test the new kernel</h2>
+
+<p>To learn how the new kernel works for us:</p>
+
+<ol>
+<li>Fork a branch off <code>devel</code> called
+<code>NNNNN-linux-X.Y+force-all-tests</code>.</li>
+<li>Adjust <code>KERNEL_VERSION</code> in <code>config/amnesia</code>. If <code>KERNEL_VERSION</code> is
+unchanged (point-release without ABI bump), then this branch is
+identical to <code>devel</code> and its only purpose is to force Jenkins to
+run our entire test suite (<code>+force-all-tests</code>). But since this
+branch has no commit on top of <code>devel</code>, Jenkins will ignore it, so
+you need to create a dummy commit.</li>
+<li>Push this new branch to our CI.</li>
+<li>Quickly test a build from this branch on your hardware.</li>
+<li>Compare the Jenkins build and test results to the ones for our
+<code>stable</code> and <code>devel</code> branch.</li>
+<li>Report your findings on the issue.</li>
+</ol>
+
+
+<h2><a name="index5h2"></a>Gather other data that will inform our decision</h2>
+
+<p>Take notes on the issue of the most relevant bits, or lack thereof,
+for:</p>
+
+<h3><a name="index1h3"></a>Security issues fixed since the version we currently ship</h3>
+
+<p>To do so, look for &quot;CVE&quot; in the
+<a href="https://salsa.debian.org/kernel-team/linux/raw/sid/debian/changelog">Changelog</a>
+entries newer than the kernel we currently ship.</p>
+
+<h3><a name="index2h3"></a>Major security fixes still not fixed in the version we&#39;re considering</h3>
+
+<p>(in which case, depending on when we are in our own release process,
+it may be worth delaying the analysis a bit, or exceptionally installing
+the kernel from <em>unstable</em>)</p>
+
+<p>To do so, use the Debian <a href="https://security-tracker.debian.org/tracker/source-package/linux">security tracker for
+Linux</a>.</p>
+
+<h3><a name="index3h3"></a>Important regressions</h3>
+
+<p>&hellip; i.e. bugs with severity <em>important</em> or higher recently reported to Debian against this version of the kernel.</p>
+
+<p>To do so, in the <a href="https://udd.debian.org/bugs.cgi?release=sid&amp;merged=ign&amp;fnewerval=7&amp;flastmodval=7&amp;packages=linux&amp;cseverity=1&amp;sortby=id&amp;sorto=desc&amp;format=html#results">Debian
+BTS</a>,
+look for bugs with severity <em>important</em> or higher that satisfy one of these
+criteria:</p>
+
+<ul>
+<li>the bug title includes the kernel version we&#39;re considering upgrading to</li>
+<li>the bug was reported very recently (the bug title may not say
+what kernel version is affected, but once you open the bug&#39;s page,
+you&#39;ll see that info; for example, <a href="https://bugs.debian.org/960871">Debian bug #960871</a> is marked
+as affecting linux/5.6.7-1)</li>
+</ul>
+
+
+<p>If there are important hardware support regressions, ask someone who has an
+archive of WhisperBack reports (for example intrigeri) to check the
+popularity <em>in Tails</em> of the affected hardware: while assessing the impact of
+regressions, we need to take into account that some devices are much more
+popular among Tails users than among the general Debian users population.</p>
+
+<h3><a name="index4h3"></a>Relevant hardware support improvements</h3>
+
+<p>To get a rough guts feeling about it, look for improvements related to graphics
+cards and Wi-Fi adapters support while skimming over:</p>
+
+<ul>
+<li>the &quot;Drivers&quot; section of Kernelnewbies&#39;s <a href="https://kernelnewbies.org/LinuxChanges">human-readable
+changelog</a> of upstream changes
+(only relevant for a new major Linux release)</li>
+<li>the Debian package&#39;s
+<a href="https://salsa.debian.org/kernel-team/linux/raw/sid/debian/changelog">Changelog</a></li>
+</ul>
+
+
+<h2><a name="index6h2"></a>Make a decision</h2>
+
+<p>With all the information you gathered earlier, use your best judgement
+to make a decision. The kind of decision you need to make depends on
+several factors:</p>
+
+<ul>
+<li><p>If the upcoming Tails release is a major one and upgrading the
+kernel did not require modifying <code>KERNEL_VERSION</code>, then if we do
+nothing particular, our next release will get the upgrade. So you
+need to decide whether this kernel upgrade is bad enough for us to
+opt-out, or important enough for us to fix whatever regressions it
+may bring. In practice, opting-out of the upgrade is rarely the
+best choice but YMMV.</p></li>
+<li><p>Otherwise, upgrading Linux in our next release will require work,
+so you need to decide whether the overall cost/benefit of the
+upgrade is worth it, factoring in the work needed and all the data
+you&#39;ve gathered earlier.</p></li>
+</ul>
+
+
+<p>If in doubt, ask your team-mates :)</p>
+
+<p>If the decision is &quot;do nothing&quot;, close the issue and stop reading here.
+Else, read on.</p>
+
+<h2><a name="index7h2"></a>Implement the decision</h2>
+
+<p>How to implement the decision depends on what kind of Tails release is
+upcoming.</p>
+
+<h3><a name="index5h3"></a>Bugfix release</h3>
+
+<p>The branch you&#39;ve used so far to get results from our CI was forked
+off <code>devel</code> so it&#39;s not a valid candidate for merging into <code>stable</code>.
+Therefore, create a new
+<code>NNNNN-linux-X.Y-stable+force-all-tests</code> topic branch forked
+off <code>stable</code> and transplant onto it the commits you had to create on
+your <code>devel</code>-based topic branch (<code>git rebase --onto</code> or <code>git
+cherry-pick</code>).</p>
+
+<p>But the new resulting topic branch will likely not build: a bugfix
+release is built from our <code>stable</code> branch, that uses a set of APT
+snapshots frozen during the last major release process, and these old
+snapshots probably don&#39;t include the version of the kernel you want to
+upgrade to. So there are two options:</p>
+
+<ul>
+<li><p>Either bump the APT snapshot of the <code>debian</code> archive to the oldest
+one that includes this new kernel. When it can reasonably be done,
+this is the cheapest option so it&#39;s worth trying it first:</p>
+
+<ol>
+<li>Update <code>config/APT_snapshots.d/debian/serial</code>, commit, push and
+trigger a build on Jenkins.</li>
+<li>Compare the <code>.build-manifest</code> and <code>.packages</code> files generated
+by building your topic branch with <a href="https://gitlab.tails.boum.org/tails/tails/-/tree/master/wiki/src/torrents/files">the
+ones for the current Tails release</a>.</li>
+<li>If the diff seems reasonable, fine. Otherwise, fall back to the
+next option (freeze exception).</li>
+</ol>
+</li>
+<li><p>Or use our <a href="./APT_repository/time-based_snapshots.html#design-freeze-exceptions">freeze
+exception</a>
+mechanism i.e. import the new Linux packages into a dedicated
+overlay suite in our custom APT repository and make your topic
+branch use it.</p></li>
+</ul>
+
+
+<p>The CI results you got with your previous topic branch based on
+<code>devel</code> are not valid for your new branch: the new kernel may work
+fine in the former case thanks to corresponding userspace changes, but
+cause trouble in the context of our <code>stable</code> branch. So push your
+branch to our CI, trigger a build in Jenkins and analyze the
+test results. Once happy:</p>
+
+<ol>
+<li>Follow our usual process to get it reviewed and merged.</li>
+<li>Follow the instructions to <a href="./Linux_kernel.html#new-security-features">enable new security
+features</a>.</li>
+</ol>
+
+
+<h3><a name="index6h3"></a>Major release</h3>
+
+<p>If you decided to opt-out from a kernel upgrade we would otherwise
+automatically include: piggy-back on our <a href="./APT_repository/time-based_snapshots.html#design-freeze-exceptions">freeze
+exception</a>
+mechanism to force the installation of an older kernel.</p>
+
+<p>Else, you&#39;re trying to upgrade the kernel. It turns out you already
+have prepared the very topic branch we need to do that, so:</p>
+
+<ol>
+<li>Follow our usual process to get it reviewed and merged.</li>
+<li>Follow the instructions to <a href="./Linux_kernel.html#new-security-features">enable new security
+features</a>.</li>
+</ol>
+
+
+<p><a id="new-security-features"></a></p>
+
+<h1><a name="index3h1"></a>Enable new security features</h1>
+
+<p>This section assumes we have decided to upgrade to a major new version
+of Linux.</p>
+
+<p>Major new kernel versions often bring new security features.
+After each major kernel release, Kees Cook publishes on
+<a href="https://outflux.net/blog/">his blog</a> an article titled
+&quot;security things in Linux $VERSION&quot; about these improvements.</p>
+
+<p>What you need to do depends on what it takes to benefit from each such
+improvement:</p>
+
+<ul>
+<li><p>Enabled by default: nothing to do, profit :)</p></li>
+<li><p>Guarded by local configuration such as a sysctl or a kernel command
+line option: file a GitLab issue about it, with the
+<code>Core work: Foundations Team</code> label.
+Optionally, do the work yourself:
+once you&#39;ve got CI results about your topic branch with this new
+option disabled, add a commit that enables it and compare the
+results (including test suite total run time, to spot important
+performance regressions).</p></li>
+<li><p>Needs to be enabled at kernel configuration time: check if it&#39;s
+been enabled in the Debian kernel; if it&#39;s not been enabled there
+yet and enabling it would make sense in a general-purpose distro
+kernel where UX breakage and performance regressions can be serious
+problems, file a wishlist bug against the <code>linux</code> source package.
+Point to Kees&#39; post and explain why you think it&#39;s worth it.</p></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../contribute.en.html">contribute</a>
+
+<a href="../contribute.de.html">contribute.de</a>
+
+<a href="../contribute.es.html">contribute.es</a>
+
+<a href="../contribute.fr.html">contribute.fr</a>
+
+<a href="../contribute.it.html">contribute.it</a>
+
+<a href="../contribute.pt.html">contribute.pt</a>
+
+<a href="../contribute.ru.html">contribute.ru</a>
+
+<a href="./design.html">design</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/Linux_kernel">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

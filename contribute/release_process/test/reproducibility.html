@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Verification of Tails reproducibility</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../release_process.html">release process</a></li>
+
+
+
+
+
+<li><a href="../test.html">test</a></li>
+
+
+
+
+<li>Verification of Tails reproducibility</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Verification of Tails reproducibility
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="note">
+
+After accepting to be the <i>Trusted Reproducer</i> you should have been
+instructed to go here immediately and read the &quot;Preparation&quot;
+section. For a planned release you should be doing this weeks before
+the release you are about to reproduce; for emergency releases you
+likely only have days or even hours. If you were not, file an
+issue about this, since an important part of process must have been
+missed by the RM.
+
+</div>
+
+
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Preparation (when accepting to be the Trusted Reproducer)</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Gather input data</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Inputs from manual testers</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Your inputs</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Derived environment variables</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index3h1">Build your own products</a>
+	<ol>
+		<li class="L2"><a href="#index4h2">Build your own images</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index4h1">Verification</a>
+	<ol>
+		<li class="L2"><a href="#index5h2">Verify that your products match what was tested</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Wait for the release to be published</a>
+		</li>
+		<li class="L2"><a href="#index7h2">Download published products</a>
+		</li>
+		<li class="L2"><a href="#index8h2">Verify that your products match what was published</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">ISO and USB images</a>
+			</li>
+			<li class="L3"><a href="#index2h3">IDF</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+<p><a id="preparation"></a></p>
+
+<h1><a name="index1h1"></a>Preparation (when accepting to be the Trusted Reproducer)</h1>
+
+<p>Use whatever scheduling tool you prefer to make sure you will, on your
+own initiative, return to this document and follow it within 72 hours
+from the start of the manual testing session. In particular, do not
+trust anything said by the RM about this process: we assume their
+system may be compromised and could be used by an adversary to
+mislead you.</p>
+
+<h1><a name="index2h1"></a>Gather input data</h1>
+
+<h2><a name="index1h2"></a>Inputs from manual testers</h2>
+
+<p>A manual tester should have sent you
+clear-signed hashes for all products of this release. Then:</p>
+
+<ol>
+<li>Verify that the
+signature is valid and made by one of our usual manual testers</li>
+<li>Put the hashes, excluding the OpenPGP signature data, into a file
+called <code>SHA512SUMS.txt</code>.</li>
+</ol>
+
+
+
+
+
+
+
+
+<h2><a name="index2h2"></a>Your inputs</h2>
+
+<p>Set these environment variables accordingly:</p>
+
+<ul>
+<li><code>ARTIFACTS</code>: the directory where build artifacts (e.g. the <code>.packages</code> file) land</li>
+<li><code>DIST</code>: either &#39;alpha&#39; (for RC:s) or &#39;stable&#39; (for actual releases)</li>
+<li><code>ISOS</code>: the directory where one stores <code>tails-amd64-*</code> sub-directories,
+like the ones downloaded with BitTorrent.</li>
+<li><code>RELEASE_BRANCH</code>: <code>testing</code> if this is a major release, else <code>stable</code></li>
+<li><code>VERSION</code>: the version you&#39;re trying to reproduce</li>
+</ul>
+
+
+
+
+
+
+
+
+<ul>
+<li><code>PUBLISHED_ARTIFACTS</code>: some <em>new</em> directory where you can download
+gigabytes of data to.</li>
+<li><code>SHA512SUMS</code>: the path of the <code>SHA512SUMS.txt</code> file from above.</li>
+<li><code>TAILS_CHECKOUT</code>: path to your Tails Git repo checkout.</li>
+</ul>
+
+
+<h2><a name="index3h2"></a>Derived environment variables</h2>
+
+<pre><code>TAG=&quot;$(echo $VERSION | tr &#39;~&#39; &#39;-&#39;)&quot;
+</code></pre>
+
+<h1><a name="index3h1"></a>Build your own products</h1>
+
+<h2><a name="index4h2"></a>Build your own images</h2>
+
+<ol>
+<li><p>Ensure your <a href="../../build.html">build setup</a> is up-to-date.</p></li>
+<li><p>Fetch and verify the Git tag:</p>
+
+<pre><code> cd &quot;${TAILS_CHECKOUT:?}&quot; &amp;&amp; \
+ git fetch origin --tags --force &amp;&amp; \
+ git tag -v &quot;${TAG}&quot;
+</code></pre>
+
+<p>If the last output is a &quot;Good signature&quot; for the expected tag, made by
+Tails signing key, then we are good.
+Otherwise, if you see <em>anything</em> else, we&#39;re <em>not</em> good; immediately
+contact the RM and <a href="mailto:tails@boum.org">tails@boum.org</a>! Proceeding with the rest of the steps
+are pointless in this case, so await instruction.</p></li>
+<li><p>Build ISO and USB images:</p>
+
+<pre><code> cd &quot;${TAILS_CHECKOUT:?}&quot; &amp;&amp; \
+ git checkout &quot;${TAG:?}&quot; &amp;&amp; \
+ git submodule update --init &amp;&amp; \
+ export SOURCE_DATE_EPOCH=$(date --utc --date=&quot;$(dpkg-parsechangelog --show-field=Date)&quot; &#39;+%s&#39;) &amp;&amp; \
+ rake build &amp;&amp; \
+ mkdir -p &quot;${ISOS:?}/tails-amd64-${VERSION:?}&quot; &amp;&amp; \
+ mv &quot;${ARTIFACTS:?}/tails-amd64-${VERSION:?}&quot;.* \
+    &quot;${ISOS:?}/tails-amd64-${VERSION:?}/&quot;
+</code></pre></li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1><a name="index4h1"></a>Verification</h1>
+
+<p>If there is <em>any</em> type of mismatch at some point below, let the RM and
+<a href="mailto:tails@boum.org">tails@boum.org</a> know <em>immediately</em>! But still proceed and do everything below,
+potentially reporting multiple different issues.</p>
+
+<h2><a name="index5h2"></a>Verify that your products match what was tested</h2>
+
+<pre><code>cd &quot;${ISOS:?}/tails-amd64-${VERSION:?}&quot; &amp;&amp; \
+sha512sum -c &quot;${SHA512SUMS:?}&quot;
+</code></pre>
+
+<h2><a name="index6h2"></a>Wait for the release to be published</h2>
+
+<p>In order to get the guarantees we&#39;re looking for here,
+the following steps have to be done only after the release has been made public.</p>
+
+<h2><a name="index7h2"></a>Download published products</h2>
+
+<pre><code>mkdir -p &quot;${PUBLISHED_ARTIFACTS:?}&quot; &amp;&amp; \
+cd &quot;${PUBLISHED_ARTIFACTS:?}&quot; &amp;&amp; \
+mkdir tails-amd64-${VERSION:?} &amp;&amp; \
+cd tails-amd64-${VERSION:?} &amp;&amp; \
+wget http://dl.amnesia.boum.org/tails/${DIST:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.{img,iso}
+</code></pre>
+
+<h2><a name="index8h2"></a>Verify that your products match what was published</h2>
+
+<h3><a name="index1h3"></a>ISO and USB images</h3>
+
+<pre><code>for type in iso usb ; do
+   case &quot;$type&quot; in
+      iso)
+         ext=iso
+         ;;
+      usb)
+         ext=img
+         ;;
+   esac
+   if cmp --quiet \
+      &quot;${ISOS:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.$ext&quot; \
+      &quot;${PUBLISHED_ARTIFACTS:?}/tails-amd64-${VERSION:?}/tails-amd64-${VERSION:?}.$ext&quot; ; then
+      echo &quot;OK: locally built $type matches the published one&quot;
+   else
+      echo &quot;FAIL: locally built $type does not match the published one&quot;
+   fi
+done
+</code></pre>
+
+<h3><a name="index2h3"></a>IDF</h3>
+
+<p>If you are verifying the reproducibility of anything but a stable release
+(for example, a beta or a RC), skip this part.</p>
+
+<p>Download the IDF by running:</p>
+
+<pre><code>wget https://tails.boum.org/install/v2/Tails/amd64/${DIST:?}/latest.json
+</code></pre>
+
+<p>Then check that the hashes and sizes match what you have built:</p>
+
+<pre><code>sudo apt install jq &amp;&amp; \
+for type in iso usb ; do
+   locally_built_dir=&quot;${ISOS:?}/tails-amd64-${VERSION:?}&quot;
+   case &quot;$type&quot; in
+      iso)
+         ext=iso
+         ;;
+      usb)
+         ext=img
+         ;;
+   esac
+   locally_built_file=&quot;${locally_built_dir}/tails-amd64-${VERSION:?}.$ext&quot;
+   idf_size=$(cat latest.json | jq &quot;.installations[0].\&quot;installation-paths\&quot; | map(select(.type == \&quot;$ext\&quot;))[0].\&quot;target-files\&quot;[0].size&quot;)
+   locally_built_size=$(stat --format=&#39;%s&#39; &quot;$locally_built_file&quot;)
+   if [ &quot;$idf_size&quot; = &quot;$locally_built_size&quot; ]; then
+      echo &quot;OK: $type size matches&quot;
+   else
+      echo &quot;FAIL: $type size does not match&quot;
+   fi
+   idf_sha256=$(cat latest.json | jq --raw-output &quot;.installations[0].\&quot;installation-paths\&quot; | map(select(.type == \&quot;$ext\&quot;))[0].\&quot;target-files\&quot;[0].sha256&quot;)
+   locally_built_sha256=$(sha256sum &quot;$locally_built_file&quot; | cut -f 1 -d &#39; &#39; | tr -d &#39;\n&#39;)
+   if [ &quot;$idf_sha256&quot; = &quot;$locally_built_sha256&quot; ]; then
+      echo &quot;OK: $type sha256 matches&quot;
+   else
+      echo &quot;FAIL: $type sha256 does not match&quot;
+   fi
+done
+</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/release_process/test/reproducibility">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

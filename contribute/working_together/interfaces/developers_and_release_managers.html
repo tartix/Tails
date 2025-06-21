@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Interface between developers and Release Managers</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../working_together.html">working together</a></li>
+
+
+
+
+
+<li><a href="../interfaces.html">interfaces</a></li>
+
+
+
+
+<li>Interface between developers and Release Managers</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Interface between developers and Release Managers
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Code changes merged into our release branches (<code>stable</code>, <code>testing</code>, <code>devel</code>) may
+impact the <a href="../roles/release_manager.html">Release
+Managers</a>&#39; work: for example,
+the Release Manager on duty is on the frontline when manual testing done during
+the release process identifies critical breakage at the last minute before we
+publish a new version of Tails. This can disrupt the release schedule and lead
+to highly stressful situations.</p>
+
+<p>These guidelines are meant to decrease the risk of seeing such problems happen.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Changes that may impact automatic upgrades</a>
+	</li>
+	<li class="L1"><a href="#index2h1">During a code freeze</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Deciding whether to release a beta or a RC</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Changes that may impact automatic upgrades</h1>
+
+<p>For changes that may impact automatic upgrades, the responsible developers MUST
+put the Release Managers into the loop in advance, way before the code is
+merged. This allows the Release Managers to:</p>
+
+<ul>
+<li>Raise any concerns they may have about the design or implementation
+of the proposed changes.</li>
+<li>Propose extra manual tests that could be done ahead of merging
+and/or during the manual testing session of the release process,
+in order to build confidence in the proposed changes.</li>
+<li>Make developers benefit from an independent &quot;What can possibly go
+wrong?&quot; brainstorming.</li>
+</ul>
+
+
+<h1><a name="index2h1"></a>During a code freeze</h1>
+
+<p>We sometimes <a href="../../release_schedule.html">freeze</a> one of our release branches,
+in order to stabilize it before a release.</p>
+
+<p>During such a code freeze, developers MUST notify the Release Manager on duty
+about freeze exceptions they intend to propose or merge. And then:</p>
+
+<ul>
+<li><p>If the proposed changes may impact automatic upgrades, as a developer, ensure
+you get feedback from the Release Manager on duty, before you apply
+a freeze exception.</p></li>
+<li><p>Else, that is in the general case, as a developer you don&#39;t need to block on
+the Release Manager&#39;s feedback before you apply the freeze exception.</p></li>
+</ul>
+
+
+<p><a id="beta-or-rc"></a></p>
+
+<h1><a name="index3h1"></a>Deciding whether to release a beta or a RC</h1>
+
+<p>We use beta releases and/or release candidates to get risky changes tested by
+enthusiastic users, more broadly than what developers and automated tests can do.
+This allows us to identify problems before we release those changes in a stable
+Tails release, that we will recommend all users upgrade to.</p>
+
+<p>Compared to a release candidate (RC), in general a beta release:</p>
+
+<ul>
+<li><p>is prepared by someone else than Release Manager: most often, one of the
+developers who worked on the feature announces a beta release;</p></li>
+<li><p>does not necessarily go through any, or all of, our
+<a href="../../release_process/test.html">manual test suite</a>;</p></li>
+<li><p>is often published as an non-trusted
+<a href="https://nightly.tails.boum.org/">Jenkins nightly build</a>;</p></li>
+<li><p>cannot be automatically upgraded from; it follows a beta release
+comes with no security support;</p></li>
+<li><p>is scheduled in an ad-hoc manner, while release candidates are
+<a href="../../release_schedule.html">scheduled</a> in our <a href="../../calendar.html">calendar</a>
+months ahead;</p></li>
+<li><p>does not imply freezing any release branch.</p></li>
+</ul>
+
+
+<p>As a consequence of the above, compared to a RC, a beta release:</p>
+
+<ul>
+<li><p>requires vastly less effort and coordination to publish;</p></li>
+<li><p>is tested only briefly and by fewer people: Tails users should not upgrade
+their &quot;production&quot; Tails USB stick to a beta.</p></li>
+</ul>
+
+
+<p>It can be tough to decide whether a given change requires a RC, as opposed to
+a mere beta. Here are some guidelines that may help:</p>
+
+<ul>
+<li><p>If the change has a broad impact, and carries a risk to break any part of
+Tails, then a RC may be worth it: production usage has a vastly greater test
+coverage than our automated test suite.</p>
+
+<p>For example, migrating from <code>aufs</code> to <code>overlayfs</code> was first
+done in a <a href="https://lists.autistici.org/message/20191221.150827.105ba267.en.html">beta</a>, then in 4.5~rc1, before being shipped in a stable release.</p></li>
+<li><p>If the change can be tested very quickly, then a beta may be sufficient.</p></li>
+<li><p>If the change affects only specific hardware, then it may be sufficient
+to release a beta and call for testing on that specific hardware.</p></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../contribute.en.html">contribute</a>
+
+<a href="../../../contribute.de.html">contribute.de</a>
+
+<a href="../../../contribute.es.html">contribute.es</a>
+
+<a href="../../../contribute.fr.html">contribute.fr</a>
+
+<a href="../../../contribute.it.html">contribute.it</a>
+
+<a href="../../../contribute.pt.html">contribute.pt</a>
+
+<a href="../../../contribute.ru.html">contribute.ru</a>
+
+<a href="../../merge_policy/common_rules.html">merge policy/common rules</a>
+
+<a href="../../release_schedule.html">release schedule</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/working_together/interfaces/developers_and_release_managers">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

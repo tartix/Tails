@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for July, 2013</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Thu, 13 Aug 2013 09:09:39 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for July, 2013</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for July, 2013
+</span>
+<span class="date">2013-08-13</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Tails summit</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Releases</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Metrics</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Code</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Documentation and Website</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Localization and Internationalization</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Infrastructure</a>
+	</li>
+	<li class="L1"><a href="#index8h1">Funding</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Tails summit</h1>
+
+<p>Five developers met for our annual summit. The summit was less dense
+than last year but still very productive. See the <a href="./summit_2013.en.html">detailed
+report</a>.</p>
+
+<h1><a name="index2h1"></a>Releases</h1>
+
+<p>There was no release in July. Tails 0.20 <a href="https://mailman.boum.org/pipermail/tails-dev/2013-July/003292.html">is
+planned</a>
+for the 9th of August.</p>
+
+<h1><a name="index3h1"></a>Metrics</h1>
+
+<ul>
+<li><p>151&nbsp;657 connections of Tails to the Tor network. This makes a boot
+every 17.7 seconds on average. This is an approximation from the
+requests made to the security announcements feed when Tails is
+connected to Tor.</p></li>
+<li><p>77 non-empty bug reports were received through WhisperBack.</p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>Code</h1>
+
+<ul>
+<li><p>We had two low-hanging fruits sessions, that were mostly used to
+review and merge pending branches.</p></li>
+<li><p>A lot of work has been done to migrate to Debian Wheezy:</p></li>
+<li><p>A first build of Tails based on Debian Wheezy version was tested,
+and many bugs <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6015">were identified</a>.</p></li>
+<li><p>The work on AppArmor was
+continued. An early upstream patch that aims to add support
+for stacked filesystems <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6199">was tested</a>.</p></li>
+<li><p>The included Linux kernel was
+updated to 3.10-1.</p></li>
+<li><p>A deprecation wrapper for Truecrypt was
+written. Many thanks to Julien
+Voisin for providing patches.</p></li>
+<li><p>Dasher, a graphical predictive text input system, was
+installed.</p></li>
+<li><p>The Wikileaks IRC server address was
+tentatively fixed. Many thanks to Julien
+Voisin for providing patches. User interface issues have prevented us from
+merging this branch yet.</p></li>
+<li><p>Claws mail will
+no more display a
+dialog box when sending a message. Many thanks to matsa for
+providing a patch.</p></li>
+<li><p>Many
+improvements to additional software have been merged.</p></li>
+<li><p>A bunch of improvements to our test suite were proposed and
+reviewed.</p></li>
+</ul>
+
+
+<h1><a name="index5h1"></a>Documentation and Website</h1>
+
+<ul>
+<li><p>The <a href="../contribute/how/promote.html">Promote</a> page was <a href="https://gitlab.tails.boum.org/tails/tails/-/commit/c8f80ebb18a6077feacbf00e7c31a19a99b22648">fully rewritten</a>.</p></li>
+<li><p>A new page <a href="../contribute/how/website.html">Website</a> on how to improve the
+Tails website was <a href="https://gitlab.tails.boum.org/tails/tails/-/commit/fb9135c3ba1cbb974f9ab3bf596d17ce03803e4a">added to the contribute
+section</a>.</p></li>
+<li><p>The page <a href="../contribute/how/translate.html">Translate</a> was
+reworked in
+depth to match our new translation workflow using either Git or
+Transifex.</p></li>
+<li><p>The <a href="../doc/anonymous_internet/pidgin.en.html">Pidgin</a> documentation was
+was fully rewritten.</p></li>
+<li><p>The <a href="../index.html">homepage</a> was
+rephrased to mention Internet circumvention.</p></li>
+<li><p>Our Tor enforcement policy was <a href="https://gitlab.tails.boum.org/tails/tails/-/commit/e0dba123f20e0df72ac723510b6fba093a1a29d7">clarified</a> on the
+<a href="../about.en.html">About</a> page.</p></li>
+<li><p>The OpenPGP signature to verify the ISO images is now
+served directly
+by our website.</p></li>
+<li><p>A prototype conversion of our test suite to use
+native ruby + rjb instead of JRuby was pushed to Git.</p></li>
+</ul>
+
+
+<h1><a name="index6h1"></a>Localization and Internationalization</h1>
+
+<ul>
+<li>All Tails strings but the website are now translatable in Transifex.</li>
+<li>i18nspector was uploaded to wheezy-backports.</li>
+</ul>
+
+
+<h1><a name="index7h1"></a>Infrastructure</h1>
+
+<ul>
+<li><p>Our todo list items were migrated to Redmine.</p></li>
+<li><p>Blueprints were extracted from our old todo section into the new
+Blueprint section to store our research and plans in a
+static form outside of Redmine.</p></li>
+<li><p>Criterion to flag a task as easy were
+<a href="../contribute/working_together/criteria_for_starter_tasks.html">identified</a> as
+a way to orientate better new contributors.</p></li>
+<li><p>Our roadmap was updated and we defined our objectives for Tails 1.0,
+1.1, 2.0, and 3.0:</p>
+
+<ul>
+<li><a href="https://labs.riseup.net/code/projects/tails/roadmap#Tails%201.0">Tails 1.0</a>: feature parity with Incognito</li>
+<li><a href="https://labs.riseup.net/code/projects/tails/roadmap#Tails%201.1">Tails 1.1</a>: Tails based on Debian Wheezy</li>
+<li><a href="https://labs.riseup.net/code/projects/tails/roadmap#Tails%202.0">Tails 2.0</a>: Sustainability and maintainability</li>
+<li><a href="https://labs.riseup.net/code/projects/tails/roadmap#Tails%203.0">Tails 3.0</a>: Hardening and better security</li>
+</ul>
+</li>
+<li><p>We started working on making our infrastructure more reliable:
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6185">looking for a system</a> that could act as
+a fail-over for our main server.</p></li>
+</ul>
+
+
+<h1><a name="index8h1"></a>Funding</h1>
+
+<ul>
+<li><p>A short-term funding with sponsor Bravo has been tentatively confirmed and
+redefined, but not signed yet.</p></li>
+<li><p>The contracts for the bounty program are still being signed. But some
+work has already been done and tested on Seahorse Nautilus, AppArmor,
+ikiwiki to Redmine, keyringer and libvirt.</p></li>
+<li><p>We sent a concept note to answer sponsor Charlie&#39;s call
+for proposals.</p></li>
+</ul>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2013_07">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

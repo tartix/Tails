@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Survey platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../how.html">how</a></li>
+
+
+
+
+
+<li><a href="../user_experience.html">user experience</a></li>
+
+
+
+
+<li>Survey platform</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Survey platform
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>We have an installation of <a href="https://limesurvey.org/">LimeSurvey</a> to
+create surveys:</p>
+
+<p><a href="https://survey.tails.boum.org/">https://survey.tails.boum.org/</a></p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Infrastructure</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Updating LimeSurvey</a>
+	</li>
+	<li class="L1"><a href="#delete">Deleting old tables</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Infrastructure</h1>
+
+<p>Puppet configuration files:</p>
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/limesurvey.pp">manifests/limesurvey.pp</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/limesurvey/sudo/limesurvey-admin">files/limesurvey/sudo/limesurvey-admin</a></li>
+</ul>
+
+
+<p>Git repositories:</p>
+
+<ul>
+<li><p><em>Upstream repo</em> in <a href="https://github.com/LimeSurvey/LimeSurvey.git">https://github.com/LimeSurvey/LimeSurvey.git</a>.</p></li>
+<li><p><em>Updates repo</em> in <em>/var/lib/limesurvey/</em> which is synced automatically
+to the <em>upstream repo</em>.</p></li>
+<li><p><em>Production repo</em> in <em>/var/www/limesurvey</em> which has the <em>update repo</em>
+as origin.</p></li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Updating LimeSurvey</h1>
+
+<ol>
+<li><p>Log in to the administration interface to identify which version is
+currently installed:</p>
+
+<p><a href="https://survey.tails.boum.org/index.php/admin">https://survey.tails.boum.org/index.php/admin</a></p></li>
+<li><p>Read the release notes:</p>
+
+<p><a href="https://github.com/LimeSurvey/LimeSurvey/blob/master/docs/release_notes.txt">https://github.com/LimeSurvey/LimeSurvey/blob/master/docs/release_notes.txt</a>.</p></li>
+<li><p>Connect to the platform:</p>
+
+<pre><code>ssh unlehxtgqn5xg6ccxwnm5w3ddcrll5ctlavo7srjvkkpay67dv3sdzyd.onion
+</code></pre></li>
+<li><p>Update the backup of the database:</p>
+
+<pre><code>sudo /usr/sbin/backupninja --now --debug --run /etc/backup.d/10.mysql
+</code></pre></li>
+<li><p>Login as <code>www-data</code>:</p>
+
+<pre><code>sudo -u www-data bash
+cd ~/limesurvey/
+</code></pre></li>
+<li><p>Save a backup of the custom files in the working directory:</p>
+
+<pre><code>tar zcvf /tmp/limesurvey-$(date +%Y-%m-%d-%H:%M).tgz application/config/config.php upload
+</code></pre></li>
+<li><p>Fetch the changes from the <em>updates repo</em>:</p>
+
+<pre><code>git fetch origin
+</code></pre></li>
+<li><p>Check the version number in the <em>production repo</em> and the <em>updates repo</em>:</p>
+
+<pre><code>git log master
+git log origin/master
+</code></pre></li>
+<li><p>Identity the tag to which to update:</p>
+
+<pre><code>git tag
+</code></pre></li>
+<li><p>Merge the <em>updates repo</em> (or the <em>upstream</em> repo) into the
+<em>production repo</em>:</p>
+
+<pre><code>git merge $TAG
+</code></pre>
+
+<p>Remove all untracked files:</p>
+
+<pre><code>git clean -df
+</code></pre>
+
+<p>Restore the custom files:</p>
+
+<pre><code>tar zxvf /tmp/limesurvey-$(date +%Y-%m-%d)-*.tgz
+</code></pre></li>
+<li><p>Make sure that our local changes are still here:</p>
+
+<pre><code>git log --no-merges $TAG..
+</code></pre>
+
+<p>Should return:</p>
+
+<pre><code>commit 9fa3c438b2c2ad81529b6d765597301e4c57a973
+Author: www-data &lt;www-data@survey.lizard&gt;
+Date:   Tue Oct 27 01:24:06 2020 +0000
+
+    Use a more generic message (fundraising#17704)
+
+    We&#39;re now using LimeSurvey to send emails to donors.
+</code></pre></li>
+<li><p>Update the database from either:</p>
+
+<ul>
+<li><p>The command line:</p>
+
+<pre><code>php application/commands/console.php updatedb
+</code></pre></li>
+<li><p>The web interface:</p>
+
+<p><a href="https://survey.tails.boum.org/index.php/admin/index">https://survey.tails.boum.org/index.php/admin/index</a></p></li>
+</ul>
+
+
+<p>One might work but not the other.</p></li>
+<li><p>Check the version in the footer of:</p>
+
+<p><a href="https://survey.tails.boum.org/index.php/admin/index">https://survey.tails.boum.org/index.php/admin/index</a></p></li>
+<li><p>Remove the backup of the custom files:</p>
+
+<pre><code>rm /tmp/limesurvey-*.tgz
+</code></pre></li>
+</ol>
+
+
+<h1 id="delete"><a name="index3h1"></a>Deleting old tables</h1>
+
+
+<p>When a survey is deactivated in LimeSurvey, the data of the survey (responses
+and list of participants) is moved to MySQL tables with the prefix <code>old_</code>.</p>
+
+<p>To delete all these tables at once:</p>
+
+<ol>
+<li><p>Connect to the platform:</p>
+
+<pre><code>ssh unlehxtgqn5xg6ccxwnm5w3ddcrll5ctlavo7srjvkkpay67dv3sdzyd.onion
+</code></pre></li>
+<li><p>Update the backup of the database:</p>
+
+<pre><code>sudo /usr/sbin/backupninja --now --debug --run /etc/backup.d/10.mysql
+</code></pre></li>
+<li><p>Login as <code>www-data</code>:</p>
+
+<pre><code>sudo -u www-data bash
+</code></pre></li>
+<li><p>Store the MySQL password in a shell variable:</p>
+
+<pre><code>grep &quot;&#39;password&#39; =&gt;&quot; /var/www/limesurvey/application/config/config.php | sed -r &quot;s/^\s+&#39;password&#39; =&gt; &#39;(\w+)&#39;,$/\1/&quot;
+export PASSWORD=
+</code></pre></li>
+<li><p>Delete all tables that have the prefix <code>old_</code>:</p>
+
+<pre><code>echo &quot;show tables like &#39;old_%&#39;;&quot; | mysql --user limesurvey --password=${PASSWORD} --skip-column-names limesurvey | while read table ; do echo &quot;Dropping $table...&quot; ; echo &quot;drop table $table;&quot; | mysql --user limesurvey --password=${PASSWORD} limesurvey ; done
+</code></pre></li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../news/report_2018_03.html">news/report 2018 03</a>
+
+<a href="../../../news/report_2018_04.html">news/report 2018 04</a>
+
+<a href="../user_experience.html">user experience</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/how/user_experience/limesurvey">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

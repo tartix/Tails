@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Git repositories</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../contribute.en.html">contribute</a></li>
+
+
+
+
+<li>Git repositories</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Git repositories
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div id="intro">
+
+<p>Tails and its website are developed in numerous Git repositories.</p>
+
+<p><span class="application">Git</span> is a distributed version control
+system. It allows several people to work on the same source code and
+handle changes in a distributed and efficient way.</p>
+
+</div>
+
+
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Learn Git</a>
+	</li>
+	<li class="L1"><a href="#index2h1">General information</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">GitLab</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Merge policy</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index3h1">Repositories</a>
+	<ol>
+		<li class="L2"><a href="#index3h2">Main repository</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Configuration</a>
+			</li>
+			<li class="L3"><a href="#index2h3">Branches</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index4h2">Promotion material</a>
+		</li>
+		<li class="L2"><a href="#index5h2">Puppet code</a>
+		<ol>
+			<li class="L3"><a href="#index3h3">Puppet manifests</a>
+			</li>
+			<li class="L3"><a href="#index4h3">Puppet modules</a>
+			</li>
+		</ol>
+		</li>
+		<li class="L2"><a href="#index6h2">Other repositories</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index4h1">Submodules</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Creating a new repository</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Initializing a git-remote-gcrypt repository</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Troubleshooting</a>
+	</li>
+</ol>
+</div>
+
+
+<p><a id="learn_Git"></a></p>
+
+<h1><a name="index1h1"></a>Learn Git</h1>
+
+<p>To learn more about <span class="application">Git</span>, refer to
+its <a href="http://git-scm.com/">homepage</a>, and <a href="http://git-scm.com/documentation">official documentation</a>.</p>
+
+
+<p>Here are a couple of links to get started with Git:</p>
+
+<ul>
+<li>An <a href="https://try.github.io/">interactive introduction</a> to Git</li>
+<li><a href="https://www.atlassian.com/git/tutorial/git-basics">Git basics</a>, by Atlassian</li>
+<li><a href="http://gitimmersion.com/">Git immersion</a>, a step-by-step introduction</li>
+<li>Pro Git: <a href="http://git-scm.com/book">online</a>,
+<a href="https://github.s3.amazonaws.com/media/progit.en.pdf">PDF</a>, a book on Git from
+basic to advanced usage. This book is available in several languages. Among others:
+<a href="http://git-scm.com/book/de">German</a>, <a href="http://git-scm.com/book/fr">French</a>, <a href="http://git-scm.com/book/pt-br">Portugu&ecirc;s</a> (Brasil)</li>
+<li><a href="https://openhatch.org/missions/git">OpenHatch Missions: Using Git</a>, concrete
+exercises to train yourself in using Git.</li>
+<li><a href="http://mirror.linux.org.au/linux.conf.au/2013/mp4/Git_For_Ages_4_And_Up.mp4">Git For Ages 4 And
+Up</a>,
+a video on learning Git.</li>
+</ul>
+
+
+<p><a id="general-information"></a></p>
+
+<h1><a name="index2h1"></a>General information</h1>
+
+<p><a id="gitlab"></a></p>
+
+<h2><a name="index1h2"></a>GitLab</h2>
+
+<p>Most of our repositories live in <a href="https://gitlab.tails.boum.org/">our GitLab</a>.</p>
+
+<p>See the <a href="./working_together/GitLab.html">documentation about how we&#39;re using GitLab</a>.</p>
+
+<h2><a name="index2h2"></a>Merge policy</h2>
+
+<p>See our <a href="./merge_policy.html">merge policy</a>.</p>
+
+<h1><a name="index3h1"></a>Repositories</h1>
+
+<p><a id="main-repo"></a></p>
+
+<h2><a name="index3h2"></a>Main repository</h2>
+
+<p>This repository contains the Tails source code and the source of the website.</p>
+
+<p>For instructions about cloning and forking this repository,
+visit it <a href="https://gitlab.tails.boum.org/tails/tails">on GitLab</a>.</p>
+
+<p>We use Git submodules, so after cloning this repository, in your new Git clone&#39;s
+directory, run:</p>
+
+<pre><code>git submodule update --init
+</code></pre>
+
+<p>For more information about our usage of Git submodules, see
+<a href="./git.html#submodules">the dedicated section</a>.</p>
+
+<h3><a name="index1h3"></a>Configuration</h3>
+
+<p>Developers with write access to the repositories should:</p>
+
+<pre><code>git config --global url.git@gitlab-ssh.tails.boum.org:.insteadOf \
+   https://gitlab.tails.boum.org/
+</code></pre>
+
+<p>We also recommend the following setting in your Tails clone since it
+otherwise is too easy to forget pushing updated submodules:</p>
+
+<pre><code>git config push.recurseSubmodules check
+</code></pre>
+
+<p><a id="branches"></a></p>
+
+<h3><a name="index2h3"></a>Branches</h3>
+
+<p>Tails development uses several branches modeled a bit like the
+Debian development process. Here they are.</p>
+
+<p><a id="master_branch"></a></p>
+
+<h4><a name="index1h4"></a>master</h4>
+
+<p>The <code>master</code> branch is mostly used to build the website. It is
+merged into <code>devel</code> and <code>stable</code> from time to time.
+We merge into <code>master</code>:</p>
+
+<ul>
+<li><a href="./how/documentation.html">Documentation improvements</a> that
+affect current Tails (e.g. not the next Tails release).</li>
+<li>Other changes to the website (<a href="../news.en.html">news</a>, <a href="../security.en.html">security advisories</a>, layout, and so on).</li>
+<li><a href="./how/translate.html#website">Translations</a> of the website.</li>
+<li>When <a href="./release_process.html">releasing a new Tails</a>, the branch
+the release was built from (<code>stable</code> or <code>testing</code>).</li>
+</ul>
+
+
+<h4><a name="index2h4"></a>stable</h4>
+
+<p>The <code>stable</code> branch is intended to contain:</p>
+
+<ul>
+<li>the state of the code tagged for the last stable release</li>
+<li>fixes for security or important bugs.</li>
+</ul>
+
+
+<p>Its purpose is to prepare bugfix releases.</p>
+
+<h4><a name="index3h4"></a>testing</h4>
+
+<p>The <code>testing</code> branch is used to prepare an imminent major release: at some
+point of the development process, the <code>devel</code> branch code is merged
+into <code>testing</code>, frozen, and endures careful testing and bug-fixing
+until this branch is considered good enough to become a stable
+release. The <code>testing</code> branch is then merged into the <code>stable</code> and
+<code>master</code> ones, images built and shipped and we go back to code shiny
+new stuff in the <code>devel</code> branch.</p>
+
+<p>Please note that the <code>testing</code> branch generally has not been granted
+the same testing and attention as code that has made it into a
+stable release: please use it for testing purposes but do not rely
+on it for anything. No guarantee, blablabla.</p>
+
+<h4><a name="index4h4"></a>devel</h4>
+
+<p>Large changes that need to be included in a release candidate
+before we release them in a major Tails release are based on the
+<code>devel</code> branch. This branch will never get released; instead, code
+from it will be merged into testing and then into a real release.</p>
+
+<p>Please note that the <code>devel</code> branch can be broken, have awful security
+problems and so on. No guarantee, blablabla.</p>
+
+<p>The <code>master</code> branch is merged into <code>devel</code> from time to time.</p>
+
+<h4><a name="index5h4"></a>Topic branches</h4>
+
+<p>We generally use topic branches called <code>NNNNN-*</code>, with &quot;NNNNN&quot; being the main
+issue addressed by the branch. Once ready, a topic branch is
+merged (with <code>--no-ff</code>) into the appropriate branch (generally
+<code>devel</code>). Until it has been merged, a topic branch&#39;s history may be
+rewritten, e.g. it may be rebased on top of <code>devel</code>.</p>
+
+<p>Unless there are good reasons to do otherwise, bugfix branches must be
+forked off the stable branch, while feature branches
+should be forked off the devel branch.</p>
+
+<p>If you intend to work on a branch not really meant to be proposed to a
+merge at first, like an experimenting branch that you still want to push
+to share with other developers, you can prefix its name by the keyword
+<code>wip/</code>.  It will make it clear to everyone that this branch shouldn&#39;t be
+merged before being renamed, and our Jenkins instance will not build nor
+test it.</p>
+
+<p><a id="promotion-material"></a></p>
+
+<h2><a name="index4h2"></a>Promotion material</h2>
+
+<p>This repository contains Tails <a href="./how/promote/material.html">promotion
+material</a>.</p>
+
+<p>For instructions about cloning and forking this repository,
+visit it <a href="https://gitlab.tails.boum.org/tails/promotion-material">on GitLab</a>.</p>
+
+<p><a id="puppet"></a></p>
+
+<h2><a name="index5h2"></a>Puppet code</h2>
+
+<h3><a name="index3h3"></a>Puppet manifests</h3>
+
+<p>Only Tails
+<a href="./working_together/roles/sysadmins.html">system administrators</a>
+have access to our Puppet manifests. If you are not a member of that
+team, please skip to the <em>Puppet modules</em> section below.</p>
+
+<ol>
+<li><p>Configure your SSH client:</p>
+
+<pre><code> Host git.puppet.tails.boum.org
+     HostName 2utzcq6igi4egjhojn46campt6jeriypxpffsmbsmanbhfv2radglkqd.onion
+     ProxyCommand /bin/nc -X 5 -x 127.0.0.1:9050 %h %p
+</code></pre></li>
+<li><p>Clone our private Puppet manifests repository:</p>
+
+<pre><code> git clone gitolite@git.puppet.tails.boum.org:puppet-lizard-manifests &amp;&amp; \
+ git submodule update --init
+</code></pre></li>
+</ol>
+
+
+<p>All the Puppet modules we use are tracked as Git submodules in
+this repository.</p>
+
+<p><a id="puppet-modules"></a></p>
+
+<h3><a name="index4h3"></a>Puppet modules</h3>
+
+<p>We use and publish a lot of other Puppet modules. Each of them is
+stored in a Git repository called <code>puppet-$module</code>. For example,
+<code>puppet-tails</code> is the main public Puppet module we use to manage Tails
+infrastructure, including classes such as <code>tails::reprepro</code> and
+<code>tails::whisperback::relay</code>.</p>
+
+<p>If you are on the Tails system administration team, use the
+authoritative repositories for these modules at
+<code>git.puppet.tails.boum.org</code>:</p>
+
+<ul>
+<li>They are referenced as Git submodules in our private Puppet
+manifests repository so you should have a local clone of
+them already.</li>
+<li>Anything you push to these repositories (except <code>tails_secrets_*</code>)
+is automatically synchronized to public mirrors
+<a href="https://gitlab.tails.boum.org/tails">on our GitLab</a>.</li>
+<li>Do not push to the public mirrors: your changes would be
+overwritten by the next automatic synchronization.</li>
+</ul>
+
+
+<p>Otherwise, you can list, browse and fork these repositories using
+their <a href="./git.html#other-repositories">public mirrors</a>.</p>
+
+<p><a id="other-repositories"></a></p>
+
+<h2><a name="index6h2"></a>Other repositories</h2>
+
+<p>Most other public Tails Git repositories are
+<a href="https://gitlab.tails.boum.org/tails">on our GitLab</a>.</p>
+
+<p><a id="submodules"></a></p>
+
+<h1><a name="index4h1"></a>Submodules</h1>
+
+<p>We use Git submodules to track external repositories from the main
+Tails source tree.</p>
+
+<p>The main practical consequence thereof so far, for most Tails
+contributors, is that one should generally run the following command
+after checking out a branch:</p>
+
+<pre><code>git submodule update --init
+</code></pre>
+
+<p>For more information, see:</p>
+
+<ul>
+<li>the <a href="https://git-scm.herokuapp.com/book/en/v2/Git-Tools-Submodules">chapter about
+submodules</a>
+in the <em>Pro Git</em> book;</li>
+<li>the <a href="http://manpages.debian.org/git-submodule"><code>git-submodule(1)</code></a>
+man page.</li>
+</ul>
+
+
+<p><a id="creating-a-new-repository"></a></p>
+
+<h1><a name="index5h1"></a>Creating a new repository</h1>
+
+<p>In the vast majority of cases, your new repository will be hosted
+<a href="https://gitlab.tails.boum.org/">our GitLab</a>.</p>
+
+<p>If you want to modify files that are already in one of our Git repositories,
+<a href="https://gitlab.tails.boum.org/help/user/project/repository/forking_workflow.md">create
+your own fork</a> of this repository from your account on our GitLab.</p>
+
+<p>Else, if you want a new repository for a different project or a new team, request it from the
+<a href="../about/contact.en.html#tails-sysadmins">Tails system administrators</a>.
+Include the following information in your request:</p>
+
+<ul>
+<li> your GitLab user name</li>
+<li> the preferred name of the new repository</li>
+<li> which teams and individuals should have read access to this new repository</li>
+<li> which teams and individuals should have write access to this new repository</li>
+</ul>
+
+
+<p>Once your repository has been created, clone it:</p>
+
+<ul>
+<li>If you want to encrypt the content of your new Git repository with
+OpenPGP, go through some arcane
+<a href="./git.html#initialize-git-remote-gcrypt">initialization ritual</a>
+to reach wisdom, bliss and enlightenment.</li>
+<li>Otherwise (lucky you!), find your new repository
+and instructions to clone it on <a href="https://gitlab.tails.boum.org/">GitLab</a>.</li>
+</ul>
+
+
+<p><a id="initialize-git-remote-gcrypt"></a></p>
+
+<h1><a name="index6h1"></a>Initializing a git-remote-gcrypt repository</h1>
+
+<p>Clone the new, empty repository in a way that tells Git it&#39;s going to
+be encrypted:</p>
+
+<pre><code>git clone gcrypt::git@gitlab-ssh.tails.boum.org:$REPOSITORY
+</code></pre>
+
+<p>Change directory into the newly cloned repository:</p>
+
+<pre><code>cd $REPOSITORY
+</code></pre>
+
+<p>Decide whether you want to hide to the immerda administrators which
+OpenPGP keys this repository will be encrypted for (note that this has
+severe usability drawbacks). Skip to the next step if you really want
+that. Otherwise:</p>
+
+<pre><code>git config gcrypt.publish-participants true
+</code></pre>
+
+<p>Tell Git which OpenPGP keys the repository will be encrypted for:</p>
+
+<pre><code>git config gcrypt.participants &quot;LIST OF OPENPGP FINGERPRINTS&quot;
+</code></pre>
+
+<p>Write some setup instructions for your team-mates, e.g. copy and
+paste the <code>git config</code> command(s) you have just run:</p>
+
+<pre><code>editor README
+</code></pre>
+
+<p>Add these setup instructions to the repository and commit:</p>
+
+<pre><code>git add README &amp;&amp; git commit -m &#39;Add setup documentation.&#39;
+</code></pre>
+
+<p>Push:</p>
+
+<pre><code>git push -u origin master
+</code></pre>
+
+<h1><a name="index7h1"></a>Troubleshooting</h1>
+
+<p>First, check with your team-mates: in some cases they can help you
+troubleshoot your problem, and confirm whether the problem is on your
+side or on the server side. If that is not enough, get in touch with
+the <a href="../about/contact.en.html#tails-sysadmins">Tails system administrators</a>.</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./build.html">build</a>
+
+<a href="./build/vagrant-setup.html">build/vagrant-setup</a>
+
+<a href="./build/website.html">build/website</a>
+
+<a href="../contribute.en.html">contribute</a>
+
+<a href="../contribute.de.html">contribute.de</a>
+
+<a href="../contribute.es.html">contribute.es</a>
+
+<a href="../contribute.fr.html">contribute.fr</a>
+
+<a href="../contribute.it.html">contribute.it</a>
+
+<a href="../contribute.pt.html">contribute.pt</a>
+
+<a href="../contribute.ru.html">contribute.ru</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="./design.html">design</a>
+
+<a href="./design/persistence.html">design/persistence</a>
+
+<a href="./design/translation_platform.html">design/translation platform</a>
+
+<a href="../doc/about/license.en.html">doc/about/license</a>
+
+<a href="../doc/about/license.de.html">doc/about/license.de</a>
+
+<a href="../doc/about/license.es.html">doc/about/license.es</a>
+
+<a href="../doc/about/license.fr.html">doc/about/license.fr</a>
+
+<a href="../doc/about/license.it.html">doc/about/license.it</a>
+
+<a href="../doc/about/license.pt.html">doc/about/license.pt</a>
+
+<a href="../doc/about/license.ru.html">doc/about/license.ru</a>
+
+<a href="./glossary.html">glossary</a>
+
+<a href="./how/code.html">how/code</a>
+
+<a href="./how/code/HACKING.html">how/code/HACKING</a>
+
+<a href="./how/promote.html">how/promote</a>
+
+<a href="./how/promote/material.html">how/promote/material</a>
+
+<a href="./how/sysadmin.html">how/sysadmin</a>
+
+<a href="./how/translate/with_Git.html">how/translate/with Git</a>
+
+<a href="./l10n_tricks.html">l10n tricks</a>
+
+<a href="./merge_policy.html">merge policy</a>
+
+<a href="./merge_policy/common_rules.html">merge policy/common rules</a>
+
+<a href="./merge_policy/submit.html">merge policy/submit</a>
+
+<a href="../news/report_2011_03-04.html">news/report 2011 03-04</a>
+
+<a href="../news/report_2013_02.html">news/report 2013 02</a>
+
+<a href="../news/report_2013_06.html">news/report 2013 06</a>
+
+<a href="./release_process/test/usage.html">release process/test/usage</a>
+
+<a href="../security.es.html">security.es</a>
+
+<a href="../security.fr.html">security.fr</a>
+
+<a href="../security.it.html">security.it</a>
+
+<a href="../security.pt.html">security.pt</a>
+
+<a href="../security/ineffective_firewall-level_Tor_enforcement.en.html">security/ineffective firewall-level Tor enforcement</a>
+
+<a href="../security/ineffective_firewall-level_Tor_enforcement.de.html">security/ineffective firewall-level Tor enforcement.de</a>
+
+<a href="../security/ineffective_firewall-level_Tor_enforcement.es.html">security/ineffective firewall-level Tor enforcement.es</a>
+
+<a href="../security/ineffective_firewall-level_Tor_enforcement.fr.html">security/ineffective firewall-level Tor enforcement.fr</a>
+
+<a href="../security/ineffective_firewall-level_Tor_enforcement.it.html">security/ineffective firewall-level Tor enforcement.it</a>
+
+<a href="../security/ineffective_firewall-level_Tor_enforcement.pt.html">security/ineffective firewall-level Tor enforcement.pt</a>
+
+<a href="../security/ineffective_firewall-level_Tor_enforcement.ru.html">security/ineffective firewall-level Tor enforcement.ru</a>
+
+<a href="./working_together/GitLab.html">working together/GitLab</a>
+
+<a href="./working_together/GitLab/transition.html">working together/GitLab/transition</a>
+
+<a href="./working_together/roles/sysadmins.html">working together/roles/sysadmins</a>
+
+<a href="./working_together/roles/sysadmins/automated_tests_in_Jenkins.html">working together/roles/sysadmins/automated tests in Jenkins</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/git">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

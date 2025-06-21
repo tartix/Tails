@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for November, 2020</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Wed, 16 Dec 2020 07:21:15 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for November, 2020</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for November, 2020
+</span>
+<span class="date">2020-12-16</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Releases</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Code</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Documentation and website</a>
+	</li>
+	<li class="L1"><a href="#index4h1">User experience</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Hot topics on our help desk</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Funding</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Outreach</a>
+	</li>
+	<li class="L1"><a href="#index8h1">Translations</a>
+	</li>
+	<li class="L1"><a href="#index9h1">Metrics</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Releases</h1>
+
+<ul>
+<li><a href="./version_4.13.en.html">Tails 4.13 was released on November 17</a>.</li>
+</ul>
+
+
+<p>The following changes were introduced in Tails 4.13:</p>
+
+<ul>
+<li><p>Update Thunderbird from 68.12 to 78.4.2. Thunderbird 78 replaces the Enigmail extension with built-in support for OpenPGP encryption. If you used Enigmail before Tails 4.13, follow <a href="https://tails.boum.org/doc/anonymous_internet/thunderbird/openpgp_migration/index.html">our instructions to migrate from Enigmail to Thunderbird 78</a>.</p></li>
+<li><p>Add a button to restart Tails at the end of creating the Persistent Storage. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16384">#16384</a>)</p></li>
+<li><p>Only include translations for languages that are available in the Welcome Screen. This reduces the size of the download by 5%. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17139">#17139</a>)</p></li>
+<li><p>Make the root directory of the Persistent Storage only readable by the root user. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/7465">#7465</a>)</p></li>
+<li><p>Users of the Dotfiles feature of the Persistent Storage can choose Places &#x25B8; Dotfiles to open the /live/persistence/TailsData_unlocked/dotfiles folder in the Files browser.</p></li>
+<li><p>Enable TCP timestamps. This might increase stability on slower Internet connections. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17491">#17491</a>)</p></li>
+</ul>
+
+
+<h2><a name="index1h2"></a>Release management</h2>
+
+<p>A year ago, when we learned we had to switch to a 4-weeks release cycle to
+follow Mozilla&#39;s lead, we acknowledged that the need to streamline our release
+process, in order to make this part of our work more sustainable. In November,
+the Tails Release Managers team had a sprint focused on this very topic, during
+which we identified a great number of issues and fixed most of them! :)</p>
+
+<p>For details, read the <a href="https://lists.autistici.org/message/20201116.132555.7bc56b9c.en.html">sprint
+report</a>.</p>
+
+<h1><a name="index2h1"></a>Code</h1>
+
+<ul>
+<li><p>We had a meeting to prioritize &amp; organize work on our next big things.
+We decided to first focus on:</p>
+
+<ul>
+<li><p>Wayland blockers, that can be addressed incrementally.</p></li>
+<li><p>Deal with deprecation of Tor Launcher (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17215">#17215</a>)</p></li>
+<li><p>Rewrite Persistent Storage GUI frontend (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17803">#17803</a></p></li>
+</ul>
+</li>
+<li><p>We scheduled a sprint in January to bootstrap our work on the RIPE
+grant and on Wayland blockers.</p></li>
+<li><p>We re-bootstrapped our experiment on sharing our team&#39;s &quot;front desk&quot; workload.</p></li>
+<li><p>We started reorganizing our team meetings.</p></li>
+<li><p>We now require Debian 10 &quot;Buster&quot; or newer for running our test suite
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17842">#17842</a>), and started to take benefit from this change.</p></li>
+<li><p>We automated a great part of the tests we do as part of release
+quality assurance.</p></li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Documentation and website</h1>
+
+<ul>
+<li><p>Planned the <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16128">deprecation of the Tails
+Verification extension</a>.</p></li>
+<li><p>Documented how to use <a href="../doc/anonymous_internet/thunderbird.en.html#gmail">GMail in
+Thunderbird</a>.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17879">#17879</a>)</p></li>
+<li><p>Explained why is a <a href="../support/faq.en.html#older-version">bad idea to use an old version of
+Tails</a> in the FAQ. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18001">#18001</a>)</p></li>
+<li><p>Recommended <a href="../install/win/usb.en.html#recommendations">doing backups</a> at the end of
+our installation instructions. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18000">#18000</a>)</p></li>
+<li><p>Decided to remove <em>/support/learn</em>. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17920">#17920</a>)</p></li>
+<li><p>Updated our doc to Thunderbird 78 and wrote <a href="../doc/anonymous_internet/thunderbird/openpgp_migration.en.html">migration
+instructions</a>.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17147">#17147</a>)</p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>User experience</h1>
+
+<ul>
+<li><p>Published improved consent documents for user research: (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16534">#16534</a>)</p>
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/ux/-/raw/master/tools/consent_form.fodt">Consent form</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/ux/-/raw/master/tools/research_information_sheet.fodt">Research information sheet</a></li>
+</ul>
+</li>
+<li><p>Cleaned our user research data for 2021/2022. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17409">#17409</a>)</p></li>
+</ul>
+
+
+<h1><a name="index5h1"></a>Hot topics on our help desk</h1>
+
+<ol>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17955">Touchpad and keyboard do not work in Asus computers</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17807">Some users lost their OpenPGP keys but could recover them from the backup file</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17987">Panda Wireless adaptors stopped working</a></li>
+</ol>
+
+
+<h1><a name="index6h1"></a>Funding</h1>
+
+<ul>
+<li><p>The first numbers that we could analyze for the donation campaign look
+very promising compared to the same period last year:</p>
+
+<ul>
+<li>PayPal: 34% more donations, 28% more money</li>
+<li>Bitcoin: 62% more donations</li>
+<li>Monero: 205% more donations</li>
+</ul>
+</li>
+<li><p>We programmed our biggest Twitter campaign ever: 34 tweets, 1 tweet
+every 2 days at most. Half of them are not direct calls to donate but
+rather build up on the new  Home and About pages to talk about the
+main properties of Tails.</p></li>
+<li><p>We decided not to blog about the donation campaign for now because our
+team is seriously overworked. It doesn&#39;t seem to have impacted the
+campaign significantly. We might still blog about achievements and
+plans in December.</p></li>
+<li><p>Our grant to RIPE on <a href="https://www.ripe.net/support/cpf/funding-recipients-2020">improving Tails for censorship
+circumvention</a>
+was approved.</p></li>
+</ul>
+
+
+<h1><a name="index7h1"></a>Outreach</h1>
+
+<h2><a name="index2h2"></a>Past events</h2>
+
+<ul>
+<li><p>Privacy Week 2020: <a href="https://media.ccc.de/v/pw20-342-tails">Tails</a>.</p></li>
+<li><p>Tails was mentioned in another Privacy Week 2020 speech: <a href="https://media.ccc.de/v/pw20-354-how-the-internet-really-works-what-interferes-with-information-traveling-over-the-internet-#t=1038">How internet works</a></p></li>
+<li><p>Tails was presented (among other tools) to journalism students at <a href="http://www.sciencespo-rennes.fr/en/">Sciences Po Rennes</a> (Rennes, France).</p></li>
+</ul>
+
+
+<h1><a name="index8h1"></a>Translations</h1>
+
+<h2><a name="index3h2"></a>All the website</h2>
+
+<ul>
+<li>de: 28% (1897) strings translated, 14% strings fuzzy</li>
+<li>es: 51% (3392) strings translated, 6% strings fuzzy</li>
+<li>fa: 21% (1396) strings translated, 13% strings fuzzy</li>
+<li>fr: 78% (5224) strings translated, 8% strings fuzzy</li>
+<li>it: 28% (1879) strings translated, 10% strings fuzzy</li>
+<li>pt: 19% (1300) strings translated, 9% strings fuzzy</li>
+</ul>
+
+
+<h2><a name="index4h2"></a><a href="../contribute/l10n_tricks/core_po_files.txt">Core pages of the website</a></h2>
+
+<ul>
+<li>de: 45% (970) strings translated, 23% strings fuzzy</li>
+<li>es: 86% (1844) strings translated, 5% strings fuzzy</li>
+<li>fa: 19% (426) strings translated, 15% strings fuzzy</li>
+<li>fr: 76% (1633) strings translated, 12% strings fuzzy</li>
+<li>it: 50% (1075) strings translated, 21% strings fuzzy</li>
+<li>pt: 38% (822) strings translated, 14% strings fuzzy</li>
+</ul>
+
+
+<h2><a name="index5h2"></a>Core pages of the website for languages not activated on the website yet</h2>
+
+<ul>
+<li>ar: 7% (165) strings translated, 8% strings fuzzy</li>
+<li>ca: 8% (174) strings translated, 8% strings fuzzy</li>
+<li>id: 6% (138) strings translated, 5% strings fuzzy</li>
+<li>pl: 7% (166) strings translated, 6% strings fuzzy</li>
+<li>ru: 8% (182) strings translated, 7% strings fuzzy</li>
+<li>sr_Latn: 5% (114) strings translated, 4% strings fuzzy</li>
+<li>tr: 8% (172) strings translated, 7% strings fuzzy</li>
+<li>zh: 10% (222) strings translated, 8% strings fuzzy</li>
+<li>zh_TW: 21% (460) strings translated, 13% strings fuzzy</li>
+</ul>
+
+
+<h1><a name="index9h1"></a>Metrics</h1>
+
+<ul>
+<li>Tails has been started more than 947&#x202F;384 times this month. This makes 31&#x202F;579 boots a day on average.</li>
+</ul>
+
+
+<p><a href="../support/faq.en.html#boot-statistics">How do we know this?</a></p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2020_11">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

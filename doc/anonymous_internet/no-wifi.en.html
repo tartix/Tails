@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Troubleshooting Wi-Fi not working</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./networkmanager.en.html" title="Connecting to a local network" />
+
+<link rel="up" href="../anonymous_internet.index.html" title="anonymous internet.index" />
+
+<link rel="next" href="./unsafe_browser.en.html" title="Signing in to a network using a captive portal" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../anonymous_internet.en.html">anonymous internet</a></li>
+
+
+
+
+<li>Troubleshooting Wi-Fi not working</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./no-wifi.de.html">de</a></span>
+   <span class="hidden"><a href="./no-wifi.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./no-wifi.es.html">es</a></span>
+   <span class="hidden"><a href="./no-wifi.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./no-wifi.fr.html">fr</a></span>
+   <span class="hidden"><a href="./no-wifi.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./no-wifi.it.html">it</a></span>
+   <span class="hidden"><a href="./no-wifi.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./no-wifi.pt.html">pt</a></span>
+   <span class="hidden"><a href="./no-wifi.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./no-wifi.ru.html">ru</a></span>
+   <span class="hidden"><a href="./no-wifi.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Troubleshooting Wi-Fi not working
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./networkmanager.en.html">Connecting to a local network</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./unsafe_browser.en.html">Signing in to a network using a captive portal</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>If your Wi-Fi interface is not working, either:</p>
+
+<ul>
+<li><p>There is no Wi-Fi option in the system menu:</p>
+
+<p><img alt="" class="img" height="217" src="./no-wifi/system-without-wifi.png" width="249" /></p></li>
+<li><p>The interface is disabled when starting Tails or when plugging in your USB
+Wi-Fi adapter:</p>
+
+<p><img alt="Notification about network card being disabled" class="img" height="81" src="./no-wifi/mac-spoofing-disabled.png" width="382" /></p>
+
+<p>In this case, you can disable MAC address anonymization to get your Wi-Fi interface
+to work in Tails. Disabling MAC address anonymization has security implications, so read
+carefully our <a href="../first_steps/welcome_screen/mac_spoofing.en.html">documentation about MAC
+address anonymization</a> before doing so.</p></li>
+</ul>
+
+
+<p>To connect to the Internet, you can try to:</p>
+
+<ul>
+<li><p>Use an Ethernet cable instead of Wi-Fi if possible. Wired interfaces work
+much more reliably than Wi-Fi in Tails.</p></li>
+<li><p>Share the Wi-Fi or mobile data connection of your phone using a
+USB cable. Sharing a connection this way is called <em>USB tethering</em>.</p>
+
+<p><img alt="" class="img" height="95" src="./no-wifi/usb-tethering.png" width="375" /></p>
+
+<p>See instructions for:</p>
+
+<ul>
+<li><p><a href="https://support.google.com/android/answer/9059108?hl=en">Android</a></p></li>
+<li><p><a href="https://support.apple.com/en-us/HT204023">iPhones or iPads</a><br />
+Only sharing mobile data works on iPhones and iPads; sharing Wi-Fi does not work.</p></li>
+</ul>
+
+
+<div class="caution">
+<p>Tails cannot hide the information that identifies your phone on the local network.
+If you connect your phone to:</p>
+<ul>
+<li><p>A Wi-Fi network, then the network will know the MAC
+address of your phone. This has security implications that are discussed in
+our <a href="../first_steps/welcome_screen/mac_spoofing.en.html">documentation on MAC address anonymization</a>.
+Some phones have a feature to hide the real MAC address of the phone.</p></li>
+<li><p>A mobile data network, then
+the network will be able to know the identifier of your SIM card (IMSI)
+and also the serial number of your phone (IMEI).</p></li>
+</ul>
+</div>
+</li>
+</ul>
+
+
+<p><a id="wi-fi-adapters"></a></p>
+
+<ul>
+<li><p>Buy a USB Wi-Fi adapter that works in Tails:</p>
+
+
+
+
+<table>
+<tr><th>Vendor</th><th>Model</th><th>Size</th><th>Speed</th><th>Price</th><th>Buy offline</th><th>Buy online</th></tr>
+<tr><td>Panda Wireless</td><td>Ultra</td><td>Nano</td><td>150 Mbit/s</td><td>$12</td><td>No</td><td><a href="https://www.amazon.com/d/B00762YNMG">Amazon</a></td></tr> 
+<tr><td>Panda Wireless</td><td>PAU05</td><td>Small</td><td>300 Mbit/s</td><td>$14</td><td>No</td><td><a href="https://www.amazon.com/d/B00EQT0YK2">Amazon</a></td></tr> 
+</table>
+
+
+
+
+
+<div class="note">
+<p>If you find another USB Wi-Fi adapter that works in Tails, please let us
+know. You can write to <a href="mailto:sajolida@pimienta.org">sajolida@pimienta.org</a> (private email).</p>
+</div>
+</li>
+<li><p>Check in our list of <a href="../../support/known_issues.en.html#wi-fi-workarounds">known Wi-Fi issues</a>
+if there is a workaround to get your Wi-Fi interface to work in Tails.</p></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./networkmanager.en.html">Connecting to a local network</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./unsafe_browser.en.html">Signing in to a network using a captive portal</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+
+<a href="../first_steps/bug_reporting.en.html">first steps/bug reporting</a>
+
+<a href="./networkmanager.en.html">networkmanager</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/anonymous_internet/no-wifi">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Accessing resources on the local network</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./persistence/check_file_system.en.html" title="Checking the file system of the Persistent Storage" />
+
+<link rel="up" href="../advanced_topics.index.html" title="advanced topics.index" />
+
+<link rel="next" href="./wireless_devices.en.html" title="Enabling a wireless device" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../advanced_topics.en.html">advanced topics</a></li>
+
+
+
+
+<li>Accessing resources on the local network</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./lan.de.html">de</a></span>
+   <span class="hidden"><a href="./lan.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./lan.es.html">es</a></span>
+   <span class="hidden"><a href="./lan.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./lan.fr.html">fr</a></span>
+   <span class="hidden"><a href="./lan.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./lan.it.html">it</a></span>
+   <span class="hidden"><a href="./lan.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./lan.pt.html">pt</a></span>
+   <span class="hidden"><a href="./lan.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./lan.ru.html">ru</a></span>
+   <span class="hidden"><a href="./lan.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Accessing resources on the local network
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./persistence/check_file_system.en.html">Checking the file system of the Persistent Storage</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./wireless_devices.en.html">Enabling a wireless device</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>The term &quot;local network&quot; here refers to the set of computers and devices
+that can be reached directly from your computer without going through
+the Internet. For example, your home router, your network printer, or
+the intranet of your company are most likely on your
+local network, also called LAN for Local Area Network. In technical
+terms, this refers to the set of IP addresses defined in
+<a href="https://tools.ietf.org/html/rfc1918">RFC1918</a>.</p>
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Security considerations</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Browsing web pages on the local network</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Downloading files from web pages on the local network</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Security considerations</h1>
+
+<p>Accessing resources on the local network can be useful in the context of
+Tails, for example to exchange documents with someone on the same local
+network without going through the Internet.</p>
+
+<p>But an application that can connect to both resources on the
+Internet (going through Tor) and resources on the local network (without going
+through Tor) can break your anonymity. For example, if a website that
+you visit anonymously using <span class="application">Tor Browser</span> could also connect to other
+web pages that are specific to your local network, then this information
+could reveal where you are. This is why <span class="application">Tor Browser</span> is prevented from
+accessing the local network in Tails.</p>
+
+<p>This page describes some of the security measures built in Tails to
+protect from such attacks and explains how to access some types of
+resources on the local network.</p>
+
+<div class="caution">
+
+<p>Connections made to the local network are not anonymous and do not go
+through Tor.</p>
+
+</div>
+
+
+<p><a id="browser"></a></p>
+
+<h1><a name="index2h1"></a>Browsing web pages on the local network</h1>
+
+<p>It is impossible to access web pages on the local network using <span class="application">Tor
+Browser</span>. This prevents websites on the Internet from deducing your
+location from the content of other web pages that might be specific to your local
+network.</p>
+
+<p>To access web pages on the local network, use the <a href="../anonymous_internet/unsafe_browser.en.html"><span class="application">Unsafe
+Browser</span></a> instead.</p>
+
+<p><a id="http"></a></p>
+
+<h1><a name="index3h1"></a>Downloading files from web pages on the local network</h1>
+
+<p>If you download files using the <span class="application">Unsafe
+Browser</span> it is not possible to access them outside of the <span class="application">Unsafe Browser</span> itself.</p>
+
+
+<p>To download files from web pages on the local network, you can use the
+<code>curl</code> command instead. For example, to download a document available on
+the local network at <span class="filename">http://192.168.1.40/document.pdf</span>
+execute the following command:</p>
+
+<pre><code>curl http://192.168.1.40/document.pdf
+</code></pre>
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./persistence/check_file_system.en.html">Checking the file system of the Persistent Storage</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./wireless_devices.en.html">Enabling a wireless device</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+
+<a href="../anonymous_internet/unsafe_browser/security_implications.inline.en.html">anonymous internet/unsafe browser/security implications.inline</a>
+
+<a href="../../news/report_2015_07.html">news/report 2015 07</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/lan">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

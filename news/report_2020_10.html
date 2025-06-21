@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for October, 2020</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Tue, 10 Nov 2020 21:44:16 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for October, 2020</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for October, 2020
+</span>
+<span class="date">2020-11-10</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Releases</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Code</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Hot topics on our help desk</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Infrastructure</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Funding</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Translations</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Metrics</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Releases</h1>
+
+<ul>
+<li><p><a href="./version_4.12.en.html">Tails 4.12 was released on October 20</a>.</p></li>
+<li><p>Tails 4.13 is <a href="../contribute/calendar.html">scheduled for November 17</a>.</p></li>
+</ul>
+
+
+<p>The following changes were introduced in Tails 4.12:</p>
+
+<ul>
+<li><p>Add a button to cancel an automated upgrade while downloading. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17310">#17310</a>)</p></li>
+<li><p>Fix several internationalization issues in <em>Electrum</em>, <em>Tails Installer</em>, and
+<em>Tails Upgrader</em>. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17958">#17958</a>, <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17758">#17758</a>, and
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17961">#17961</a>)</p></li>
+<li><p>Anonymize URLs in the technical details provided by <em>WhisperBack</em>.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17147">#17147</a>)</p></li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Code</h1>
+
+<ul>
+<li><p>Good progress on the upgrade to Thunderbird 78
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17148">#17148</a>, <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17147">#17147</a>)</p></li>
+<li><p>Worked together with our Help Desk to improve our collaboration and focus on
+issues that will make a difference for many Tails users.</p></li>
+<li><p>Resumed work on automating our manual release quality assurance.</p></li>
+<li><p>Re-enabled TCP timestamps
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17491">#17491</a>)</p></li>
+<li><p>Added buttons to restart Tails at the end of creating the Persistent Storage
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16384">#16384</a>)</p></li>
+<li><p>Dropped obsolete code for read-only persistence
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17972">#17972</a>)</p></li>
+<li><p>Fixed tails-installer failing to operate in Turkish
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17576">#17576</a>)</p></li>
+<li><p>Anti-Test for ICMP dropping on tor_enforcement fails
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17848">#17848</a>)</p></li>
+<li><p>Document --keep-snapshots in our test doc
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17802">#17802</a>)</p></li>
+<li><p>Avoid mirrors and rsync.lizard running out of disk space during the release process when upgrades to a beta/RC are present
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17944">#17944</a>)</p></li>
+<li><p>Migrate deb.tails.boum.org APT source to v3 onion
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17937">#17937</a>)</p></li>
+<li><p>Regression with Intel Corporation [8086:22b0] and [8086:22b1] GPU since 4.9
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17953">#17953</a>)</p></li>
+<li><p>Evaluate Debian packages maintenance setup
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17765">#17765</a>)</p></li>
+<li><p>Tor Browser displays an &quot;Update Failed&quot; pop-up
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17159">#17159</a>)</p></li>
+<li><p>All branches FTBFS since Thunderbird 78 reached the Buster security repo
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17962">#17962</a>)</p></li>
+<li><p>Move custom software to our main Git repository
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/7036">#7036</a>)</p></li>
+<li><p>Move WhisperBack source to our main Git repository
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16936">#16936</a>)</p></li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Hot topics on our help desk</h1>
+
+<ul>
+<li><p>A lot of people reached the helpdesk at the start of the month worried about JavaScript not being disabled when Tor Browser is in safest mode: <a href="https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/40082">NoScript is doing that job now</a>, <a href="https://gitlab.torproject.org/tpo/applications/tor-browser/-/issues/33613">as intended</a>. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17963">#17963</a>)</p></li>
+<li><p>Keyboard and touchpad are not working anymore on some Acer and Asus laptops. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17955">#17955</a>)</p></li>
+<li><p>Tails cannot start with some new Intel cards. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17953">#17953</a>)</p></li>
+<li><p>Tails Installer does not allow upgrade in languages that have a translation for the &#39;Clone the current Tails&#39; string. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17982">#17982</a>)</p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>Infrastructure</h1>
+
+<ul>
+<li><p>We started experimenting with GitLab CI
+(<a href="https://gitlab.tails.boum.org/tails/sysadmin/-/issues/17740">tails/sysadmin/-/issues/17740</a>)</p></li>
+<li><p>We upgraded to Debian 10 (&quot;Buster&quot;) the nodes that run automated tests on
+Tails images in our CI (<a href="https://gitlab.tails.boum.org/tails/sysadmin/-/issues/17731">tails/sysadmin/-/issues/17731</a>)</p></li>
+</ul>
+
+
+<h1><a name="index5h1"></a>Funding</h1>
+
+<h3><a name="index1h3"></a>Grants</h3>
+
+<ul>
+<li><p>Our application to <a href="https://www.ripe.net/publications/news/announcements/ripe-ncc-community-project-fund-2020-recipients-announced">RIPE NCC</a>
+on improving Tails for censorship circumvention was approved.</p></li>
+<li><p>Our applications to Prototype Fund in March and Code Lutins were rejected.</p></li>
+</ul>
+
+
+<h3><a name="index2h3"></a>Donation process</h3>
+
+<ul>
+<li><p>We analyzed the results of the A/B testing on the new display of &quot;one- time&quot;
+and &quot;monthly&quot;.</p>
+
+<p>The new version leads to more donation attempts AND less cancellations in the
+attempt. The new version is live on the website for everybody now.</p></li>
+</ul>
+
+
+<h3><a name="index3h3"></a>Donation campaign</h3>
+
+<ul>
+<li><p>We launched the donation campaign!</p></li>
+<li><p>We started a database of problems reported by donors, as a way of
+gathering data whenever we will want to improve on the most pressing
+issues.</p></li>
+<li><p>The only metrics that we can gather right now is donations in
+cryptocurrencies.</p>
+
+<p>So far we&#39;ve had +62% donations in Bitcoin (266, 6.9k&euro;) and +205%
+donations in Monero (156, 2.2k&euro;).</p></li>
+</ul>
+
+
+<h1><a name="index6h1"></a>Translations</h1>
+
+<ul>
+<li><p>We improved the staging website build process.</p></li>
+<li><p>We changed the maintainers email contact from tails-translations@boum.org to
+tails-weblate@boum.org, to prevent confusion on matters related to
+translations. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17734">#17734</a></p></li>
+</ul>
+
+
+<h2><a name="index1h2"></a>All the website</h2>
+
+<ul>
+<li>fr: 78% (5159) strings translated, 9% strings fuzzy</li>
+<li>es: 49% (3300) strings translated, 6% strings fuzzy</li>
+<li>de: 28% (1899) strings translated, 14% strings fuzzy</li>
+<li>it: 28% (1863) strings translated, 10% strings fuzzy</li>
+<li>fa: 21% (1396) strings translated, 13% strings fuzzy</li>
+<li>pt: 19% (1299) strings translated, 9% strings fuzzy</li>
+</ul>
+
+
+<h2><a name="index2h2"></a><a href="../contribute/l10n_tricks/core_po_files.txt">Core pages of the website</a></h2>
+
+<ul>
+<li>es: 83% (1791) strings translated, 6% strings fuzzy</li>
+<li>fr: 75% (1603) strings translated, 13% strings fuzzy</li>
+<li>it: 49% (1059) strings translated, 21% strings fuzzy</li>
+<li>de: 45% (972) strings translated, 23% strings fuzzy</li>
+<li>pt: 38% (821) strings translated, 15% strings fuzzy</li>
+<li>fa: 19% (425) strings translated, 15% strings fuzzy</li>
+</ul>
+
+
+<h2><a name="index3h2"></a>Core pages of the website for languages not activated on the website yet</h2>
+
+<ul>
+<li>zh_TW: 21% (461) strings translated, 13% strings fuzzy</li>
+<li>zh: 10% (222) strings translated, 8% strings fuzzy</li>
+<li>ru: 8% (181) strings translated, 7% strings fuzzy</li>
+<li>ca: 8% (174) strings translated, 7% strings fuzzy</li>
+<li>tr: 7% (171) strings translated, 7% strings fuzzy</li>
+<li>ar: 7% (164) strings translated, 8% strings fuzzy</li>
+<li>pl: 7% (165) strings translated, 7% strings fuzzy</li>
+<li>id: 6% (139) strings translated, 5% strings fuzzy</li>
+<li>sr_Latn: 5% (114) strings translated, 4% strings fuzzy</li>
+</ul>
+
+
+<h1><a name="index7h1"></a>Metrics</h1>
+
+<ul>
+<li>Tails has been started more than 947&#x202F;750 times this month. This makes
+30&#x202F;572 boots a day on average.</li>
+</ul>
+
+
+<p><a href="../support/faq.en.html#boot-statistics">How do we know this?</a></p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2020_10">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

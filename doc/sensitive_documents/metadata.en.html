@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Removing metadata using mat2</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./printing_and_scanning.en.html" title="Printing and scanning" />
+
+<link rel="up" href="../sensitive_documents.index.html" title="sensitive documents.index" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../sensitive_documents.en.html">sensitive documents</a></li>
+
+
+
+
+<li>Removing metadata using mat2</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./metadata.de.html">de</a></span>
+   <span class="hidden"><a href="./metadata.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./metadata.es.html">es</a></span>
+   <span class="hidden"><a href="./metadata.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./metadata.fr.html">fr</a></span>
+   <span class="hidden"><a href="./metadata.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./metadata.it.html">it</a></span>
+   <span class="hidden"><a href="./metadata.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./metadata.pt.html">pt</a></span>
+   <span class="hidden"><a href="./metadata.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./metadata.ru.html">ru</a></span>
+   <span class="hidden"><a href="./metadata.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Removing metadata using mat2
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./printing_and_scanning.en.html">Printing and scanning</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../sensitive_documents.index.html">sensitive documents.index</a>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">What is metadata?</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Removing metadata from files</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>What is metadata?</h1>
+
+<p>Metadata is &quot;data about data&quot; or &quot;information about information&quot; that is embedded
+in computer files, usually automatically. Metadata is used to describe,
+identify, categorize, and sort files.</p>
+
+<p>However, metadata can also be used to deanonymize users and expose
+private information.</p>
+
+<p>Examples of metadata include:</p>
+
+<ul>
+<li>In image files:
+
+<ul>
+<li>the location where a photo was taken</li>
+<li>the date and time a photo was taken</li>
+<li>the model and serial number of the camera used to take a photo</li>
+</ul>
+</li>
+<li>In text document files:
+
+<ul>
+<li>the author of the document</li>
+<li>changes to the document</li>
+</ul>
+</li>
+</ul>
+
+
+<p>To learn more about how metadata can be used to identify and reveal personal information, see
+<a href="https://exposingtheinvisible.org/en/guides/behind-the-data-metadata-investigations/">Behind the Data: Investigating metadata</a>.</p>
+
+<h1><a name="index2h1"></a>Removing metadata from files</h1>
+
+<p>Tails includes
+<a href="https://0xacab.org/jvoisin/mat2"><span class="application">mat2</span></a>
+so you can remove metadata from files before you publish or share them.</p>
+
+<p><span class="application">mat2</span> works on many file formats, including:</p>
+
+<ul>
+<li>image files, such as .jpeg, .png, and .gif</li>
+<li><span class="application">LibreOffice</span> files, such as .odt and .ods</li>
+<li><span class="application">Microsoft Office</span> documents, such as .docx, .xlsx, and .pptx</li>
+<li>audio files, such as .mp3, .flac, and .ogg</li>
+<li>video files, such as .mp4 and .avi</li>
+<li>archive files, such as .zip and .tar</li>
+</ul>
+
+
+<p>To use <span class="application">mat2</span> to remove metadata from your
+files:</p>
+
+<ol>
+<li><p>Open the <span class="application">Files</span> browser.</p></li>
+<li><p>Navigate to the folder containing the files that you want to remove
+metadata from.</p></li>
+<li><p>Select the files that you want to remove metadata from.</p></li>
+<li><p>Right-click (on Mac, click with two fingers) on the files and choose
+<span class="guimenuitem">Remove metadata</span>.</p></li>
+</ol>
+
+
+<div class="caution">
+
+<p>It is impossible to reliably find and remove all metadata in complex file
+formats. For example, <i>Microsoft Office</i> documents can contain embedded images,
+audio, and other files containing their own metadata that <i>mat2</i> cannot
+remove.</p>
+
+<p>You should run <i>mat2</i> on any files before you embed them into another
+document.</p>
+
+<p>Also, you should save files in simpler formats whenever possible.
+For example, instead of saving a text document as a .docx file,
+you can save the document as a plain .txt file.</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./printing_and_scanning.en.html">Printing and scanning</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../sensitive_documents.index.html">sensitive documents.index</a>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../about/warnings/identity.en.html">about/warnings/identity</a>
+
+<a href="./metadata.inline.en.html">metadata.inline</a>
+
+<a href="../../news/report_2021_06.html">news/report 2021 06</a>
+
+<a href="../sensitive_documents.index.html">sensitive documents.index</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/sensitive_documents/metadata">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

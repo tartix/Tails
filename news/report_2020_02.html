@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for February, 2020</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Wed, 11 Mar 2020 19:22:54 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for February, 2020</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for February, 2020
+</span>
+<span class="date">2020-03-11</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Releases</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Code</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Hot topics on our help desk</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Infrastructure</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Funding</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Jobs</a>
+	</li>
+	<li class="L1"><a href="#index7h1">On-going discussions</a>
+	</li>
+	<li class="L1"><a href="#index8h1">Press and testimonials</a>
+	</li>
+	<li class="L1"><a href="#index9h1">Translations</a>
+	</li>
+	<li class="L1"><a href="#index10h1">Metrics</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Releases</h1>
+
+<ul>
+<li><p><a href="./version_4.3.en.html">Tails 4.3 was released on February 11</a>. (bugfix release)</p></li>
+<li><p>Tails 4.4 is <a href="../contribute/calendar.html">scheduled for March 12</a>.</p></li>
+</ul>
+
+
+<p>The following changes were introduced in Tails 4.3:</p>
+
+<ul>
+<li><p>We included the <code>trezor</code> package, which provides a command line tool
+to use a Trezor hardware wallet for cryptocurrencies.</p></li>
+<li><p>Fix the progress bar and prevent closing the window while an upgrade
+is being applied. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16603">#16603</a>)</p></li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Code</h1>
+
+<ul>
+<li><p>We made great progress on Secure boot support (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6560">#6560</a>)
+and are now quite confident we can ship this in Tails 4.5 (April 7).</p>
+
+<p>Thanks to everyone who answered our call for testing!</p></li>
+<li><p>In order to make the development process a bit smoother, we improved the
+performance of our builds (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17439">#17439</a>, <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17386">#17386</a>).</p></li>
+<li><p>We kept working on replacing Sikuli in our test suite (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15460">#15460</a>), which will allow running it on recent Debian systems.
+We&#39;re almost there! :)</p></li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Hot topics on our help desk</h1>
+
+<ol>
+<li><p>Users are still complaining about <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17183">Seahorse failing to import public keys</a></p></li>
+<li><p>Several users reported that Stefano Zacchiroli&#39;s public key being expired since 2020-02-07 <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17475">broke our documentation</a> about <a href="https://tails.boum.org/install/expert/usb/">using the command line and GnuPG to install Tails</a></p></li>
+<li><p>And people are still reporting <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16875">GDM errors with Intel HD 630</a> (while their issue is usually with their NVidia Maxwell discreet GPU)</p></li>
+</ol>
+
+
+<h1><a name="index4h1"></a>Infrastructure</h1>
+
+<ul>
+<li><p>We&#39;ve been working towards making our CI feedback loop shorter
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16960">#16960</a>, <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17439">#17439</a>).</p></li>
+<li><p>We organized the sysadmin work we will need to do as part
+of migrating to GitLab.</p></li>
+</ul>
+
+
+<h1><a name="index5h1"></a>Funding</h1>
+
+<ul>
+<li><p>We worked on the full proposal for the joint grant proposal with
+Tor and the Guardian Project to the DRL Internet Freedom program.</p></li>
+<li><p>We started working on a grant proposal to the Prototype Fund.</p></li>
+</ul>
+
+
+<h1><a name="index6h1"></a>Jobs</h1>
+
+<ul>
+<li><a href="https://tails.boum.org/jobs/Linux_generalist/">Privacy loving Linux generalist</a></li>
+</ul>
+
+
+<h1><a name="index7h1"></a>On-going discussions</h1>
+
+<ul>
+<li><a href="https://lists.autistici.org/message/20200227.123500.9aee624d.en.html">Reconsider the terminology around &quot;persistence&quot;</a>.</li>
+</ul>
+
+
+<h1><a name="index8h1"></a>Press and testimonials</h1>
+
+<ul>
+<li>2020-02-26: <a href="https://www.solidaire.org/articles/tails-le-logiciel-qui-permis-snowden-d-echapper-aux-services-secrets">Tails : le logiciel qui a permis &agrave; Snowden d&rsquo;&eacute;chapper aux services secrets</a> by Tibor Van Cutsem in Solidaire.</li>
+</ul>
+
+
+<h1><a name="index9h1"></a>Translations</h1>
+
+<h2><a name="index1h2"></a>All the website</h2>
+
+<ul>
+<li>de: 34% (2176) strings translated, 10% strings fuzzy</li>
+<li>es: 53% (3373) strings translated, 2% strings fuzzy</li>
+<li>fa: 27% (1714) strings translated, 10% strings fuzzy</li>
+<li>fr: 90% (5671) strings translated, 0% strings fuzzy</li>
+<li>it: 30% (1948) strings translated, 7% strings fuzzy</li>
+<li>pt: 22% (1432) strings translated, 8% strings fuzzy</li>
+</ul>
+
+
+<h2><a name="index2h2"></a><a href="../contribute/l10n_tricks/core_po_files.txt">Core pages of the website</a></h2>
+
+<ul>
+<li>de: 65% (1168) strings translated, 15% strings fuzzy</li>
+<li>es: 94% (1691) strings translated, 1% strings fuzzy</li>
+<li>fa: 34% (615) strings translated, 14% strings fuzzy</li>
+<li>fr: 98% (1755) strings translated, 0% strings fuzzy</li>
+<li>it: 64% (1147) strings translated, 15% strings fuzzy</li>
+<li>pt: 45% (820) strings translated, 14% strings fuzzy</li>
+</ul>
+
+
+<h1><a name="index10h1"></a>Metrics</h1>
+
+<ul>
+<li>Tails has been started more than 808&#x202F;936 times this month. This makes 27&#x202F;894 boots a day on average.</li>
+</ul>
+
+
+<p><a href="../support/faq.en.html#boot-statistics">How do we know this?</a></p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2020_02">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

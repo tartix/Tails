@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Tails report for December, 2019</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="date" content="Tue, 21 Jan 2020 15:18:49 +0000" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../index.html">Home</a></li>
+  <li><a href="../about.en.html">How Tails works</a></li>
+  <li><a href="../install.en.html">Get Tails</a></li>
+  <li><a href="../doc.en.html">Documentation</a></li>
+  <li><a href="../support.en.html">Support</a></li>
+  <li><a href="../contribute.en.html">Contribute</a></li>
+  <li><a href="../news.en.html">News</a></li>
+  <li><a href="../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../index.html"><img alt="home" src="../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../news.en.html">news</a></li>
+
+
+
+
+<li>Tails report for December, 2019</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Tails report for December, 2019
+</span>
+<span class="date">2020-01-21</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Releases</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Code</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Documentation and website</a>
+	</li>
+	<li class="L1"><a href="#index4h1">User experience</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Hot topics on our help desk</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Infrastructure</a>
+	</li>
+	<li class="L1"><a href="#index7h1">Funding</a>
+	</li>
+	<li class="L1"><a href="#index8h1">Outreach</a>
+	</li>
+	<li class="L1"><a href="#index9h1">On-going discussions</a>
+	</li>
+	<li class="L1"><a href="#index10h1">Press and testimonials</a>
+	</li>
+	<li class="L1"><a href="#index11h1">Translations</a>
+	</li>
+	<li class="L1"><a href="#index12h1">Metrics</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Releases</h1>
+
+<ul>
+<li><p><a href="./version_4.1.en.html">Tails 4.1 was released on December 3</a>.</p></li>
+<li><p>Tails 4.3 is <a href="../contribute/calendar.html">scheduled for February 11</a>.</p></li>
+</ul>
+
+
+<p>The following changes were introduced in Tails 4.1:</p>
+
+<ul>
+<li><p>Use <a href="https://keys.openpgp.org/">https://keys.openpgp.org/</a>, also available on
+<a href="http://zkaan2xfbuxia2wpf7ofnkbz6r5zdbbvxbunvp5g2iebopbfc4iqmbad.onion/">http://zkaan2xfbuxia2wpf7ofnkbz6r5zdbbvxbunvp5g2iebopbfc4iqmbad.onion/</a>,
+as the default OpenPGP keyserver.</p></li>
+<li><p>Replace the <a href="../doc/anonymous_internet/thunderbird.en.html#torbirdy"><em>TorBirdy</em>
+extension</a> with custom
+settings and patches in <em>Thunderbird</em> that provide equivalent privacy.</p></li>
+<li><p>Add back the <strong>Show Passphrase</strong> check box in <em>Tails Greeter</em>.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17177">#17177</a>)</p></li>
+<li><p>Fix the display of the troubleshooting error when GDM fails to start.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17200">#17200</a>)</p></li>
+<li><p>Add back the option to <strong>Open in Terminal</strong> when doing right-click (on
+Mac, click with two fingers) in a folder in the <em>Files</em> browser.
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17186">#17186</a>)</p></li>
+<li><p>Make the installation of additional software more reliable. (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17203">#17203</a>)</p></li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Code</h1>
+
+<ul>
+<li><p>We <a href="https://lists.autistici.org/message/20191221.150827.105ba267.en.html">published a first
+alpha</a>
+with Secure Boot support, which will remove a major blocker for less
+tech-savvy users to adopt Tails.</p></li>
+<li><p>We finalized the implementation of our slightly <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15281">redesigned upgrade system</a>.</p></li>
+</ul>
+
+
+<h1><a name="index3h1"></a>Documentation and website</h1>
+
+<ul>
+<li><p>Blogged about <a href="./plans_for_2020.en.html">our plans for 2020</a>.</p></li>
+<li><p>Blogged to <a href="./celebrating_10_years.en.html">celebrate 10 years of Tails</a>.</p></li>
+<li><p>Wrote some documentation on how to <a href="../doc/encryption_and_privacy/openpgp_keyserver.en.html">update your OpenPGP keyserver
+configuration</a> and switch your
+Persistence to using <a href="https://keys.openpgp.org">https://keys.openpgp.org</a>.</p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>User experience</h1>
+
+<ul>
+<li><p>Published an interview with <a href="../contribute/how/user_experience/interviews/roberto.html">Roberto</a>,
+an investigative journalist working on a GlobaLeaks platform in Latin
+America, called <em>Leaks</em> in the interview.</p></li>
+<li><p>Hired <a href="https://anhdr.es/">Andr&eacute;s Fern&aacute;ndez Cord&oacute;n</a> to <a href="../jobs/illustrations_how_tails_work.html">illustrate
+what is Tails and how it works</a>.</p>
+
+<p>Welcome Andr&eacute;s and thanks again to the 40+ other people who applied for this
+job!</p></li>
+<li><p>Hired <a href="https://studiomoare.com/">Odile Carabantes</a> to layout flyers
+explaining what is Tails and why use it.</p></li>
+<li><p>Did a cognitive walk-through of automatic upgrades (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16991">#16991</a>)
+and reported 3 new UX bugs:</p>
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17310">Add a button to cancel the upgrade while it&#39;s downloading</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17312">Prevent users from closing Tails Upgrader while an upgrade is being applied</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17313">Tails doesn&#39;t restart after applying an automatic upgrade</a></li>
+</ul>
+</li>
+<li><p>Did some design work for small UX debts tickets: (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/14544">#14544</a>)</p>
+
+<ul>
+<li><p>Ask for confirmation when starting without unlocking the persistent storage
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15573#note-10">#15573#note-10</a>)</p></li>
+<li><p>Force restarting after creating persistent storage
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16384#note-12">#16384#note-12</a>)</p></li>
+<li><p>Improve UX when Wi-Fi is not working
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/14534#note-26">#14534#note-26</a>)</p></li>
+<li><p>Customize &quot;Proxy is refusing connections&quot; error messages in
+Tor Browser and remove the &quot;Tor is not ready&quot; popup
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/8061#note-33">#8061#note-33</a>)</p></li>
+<li><p>Update our list of &quot;Favorites&quot; applications
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/16990#note-6">#16990#note-6</a>)</p></li>
+<li><p>Merge &quot;Delete persistent volume&quot; and &quot;Configure persistent
+volume&quot;
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17331">#17331</a>)</p></li>
+</ul>
+</li>
+<li><p>Created 2 tickets for UX improvements related to Wi-Fi in GNOME:</p>
+
+<ul>
+<li><a href="https://gitlab.gnome.org/GNOME/network-manager-applet/issues/83">Display an empty Wi-Fi icon when the Wi-Fi is not connected</a></li>
+<li><a href="https://gitlab.gnome.org/GNOME/network-manager-applet/issues/84">Simplify the process of connecting to a Wi-Fi network</a></li>
+</ul>
+</li>
+</ul>
+
+
+<h1><a name="index5h1"></a>Hot topics on our help desk</h1>
+
+<ol>
+<li><p>Users reported various issues related to GPU <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17155">nvidia</a> and <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17379">radeon</a>.</p></li>
+<li><p>Seahorse still cannot import GPG keys (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17183">#17183</a>) as
+well as other issues like <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17372">encrypts file
+using most recent key only</a> and <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17371">connect to
+keyserver</a>.</p></li>
+<li><p>Mac - <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17320">kernel panic</a> (fixed, caused an
+emergency release), <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17380">graphical distorsions</a>
+(there&#39;s a workaround), and <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17049">no boot</a>.</p></li>
+</ol>
+
+
+<h1><a name="index6h1"></a>Infrastructure</h1>
+
+<ul>
+<li><p>We discussed our needs and desires regarding our upcoming GitLab instance and
+eventually decided to hosting it at <a href="https://www.immerda.ch/">immerda.ch</a>.</p>
+
+<p>Thanks <em>immerda.ch</em> for your support since so many years!</p></li>
+<li><p>We taught our CI to <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15287">reproducibly build automatic
+upgrades</a>.</p></li>
+</ul>
+
+
+<h1><a name="index7h1"></a>Funding</h1>
+
+<ul>
+<li>Wrote to the press and all past funders about our blog post on &quot;<a href="./celebrating_10_years.en.html">Celebrating
+10 years of Tails</a>&quot;. We sent close to 100 emails in
+total.</li>
+</ul>
+
+
+<h1><a name="index8h1"></a>Outreach</h1>
+
+<h2><a name="index1h2"></a>Past events</h2>
+
+<ul>
+<li><p>intrigeri attended the <a href="https://reproducible-builds.org/events/Marrakesh2019/">Reproducible Builds
+summit</a> in Marrakesh.</p></li>
+<li><p>Some of us attended the <a href="https://events.ccc.de/congress/2019/wiki/index.php/Main_Page">36th Chaos Communication Congress
+(36C3)</a>
+in Leipzig, Germany.</p></li>
+</ul>
+
+
+<h1><a name="index9h1"></a>On-going discussions</h1>
+
+<ul>
+<li>Our Release Managers have been discussing how to adapt to the Firefox
+4-weeks release cycle.</li>
+</ul>
+
+
+<h1><a name="index10h1"></a>Press and testimonials</h1>
+
+<ul>
+<li><p>2019-12-18: <a href="https://www.lemonde.fr/blog/bugbrother/2019/12/18/pourquoi-je-prefere-la-bd-sur-snowden-a-son-autobiographie-vive-tails-aussi-3/">Pourquoi je pr&eacute;f&egrave;re la BD sur Snowden &agrave; son
+autobiographie (&amp; vive Tails aussi &lt;3)</a>
+by Jean-Marc Manach in Le Monde.</p></li>
+<li><p>2019-12-17: <a href="https://www.youtube.com/watch?v=GFgWl_-sIdE">Sa cl&eacute; USB qui permet d&#39;aller sur le dark web</a>
+by Guillaume Pley in Le QG.</p></li>
+<li><p>Our blog post on &quot;<a href="./celebrating_10_years.en.html">Celebrating 10 years of
+Tails</a>&quot; received some press coverage:</p>
+
+<ul>
+<li><p>2019-12-15: <a href="https://www.lalibre.be/economie/digital/l-outil-prefere-d-edward-snowden-ne-laisse-aucune-trace-depuis-dix-ans-5df65c7bf20d5a0c4604c152">L&rsquo;outil pr&eacute;f&eacute;r&eacute; d&rsquo;Edward Snowden ne laisse aucune trace
+depuis dix ans</a>
+by Christophe Lamfalussy in La Libre Belgique.</p></li>
+<li><p>2019-12-16: <a href="https://boingboing.net/2019/12/16/paranoid-linux-for-real.html">Happy 10th birthday, TAILS -- the real Paranoid
+Linux!</a>
+by Cory Doctorow in Boing Boing.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h1><a name="index11h1"></a>Translations</h1>
+
+<h2><a name="index2h2"></a>All the website</h2>
+
+<ul>
+<li>fr: 88% (5418) strings translated, 1% strings fuzzy, 86% words translated</li>
+<li>es: 51% (3137) strings translated, 4% strings fuzzy, 42% words translated</li>
+<li>de: 46% (2832) strings translated, 7% strings fuzzy, 41% words translated</li>
+<li>fa: 32% (1982) strings translated, 10% strings fuzzy, 33% words translated</li>
+<li>it: 32% (1969) strings translated, 5% strings fuzzy, 28% words translated</li>
+<li>pt: 25% (1553) strings translated, 7% strings fuzzy, 21% words translated</li>
+</ul>
+
+
+<p>Total original words: 65286</p>
+
+<h2><a name="index3h2"></a><a href="../contribute/l10n_tricks/core_po_files.txt">Core pages of the website</a></h2>
+
+<ul>
+<li>fr: 96% (1705) strings translated, 1% strings fuzzy, 96% words translated</li>
+<li>es: 80% (1417) strings translated, 9% strings fuzzy, 82% words translated</li>
+<li>de: 71% (1252) strings translated, 12% strings fuzzy, 74% words translated</li>
+<li>it: 63% (1112) strings translated, 17% strings fuzzy, 65% words translated</li>
+<li>pt: 45% (798) strings translated, 13% strings fuzzy, 48% words translated</li>
+<li>fa: 34% (615) strings translated, 13% strings fuzzy, 33% words translated</li>
+</ul>
+
+
+<p>Total original words: 16439</p>
+
+<h1><a name="index12h1"></a>Metrics</h1>
+
+<ul>
+<li>Tails has been started more than 819&#x202F;136 times this month. This
+makes 26&#x202F;424 boots a day on average.</li>
+</ul>
+
+
+<p><a href="../support/faq.en.html#boot-statistics">How do we know this?</a></p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=news/report_2019_12">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

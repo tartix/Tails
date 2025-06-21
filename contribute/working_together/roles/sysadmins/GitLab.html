@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - GitLab for Tails sysadmins</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../../index.html">Home</a></li>
+  <li><a href="../../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../../support.en.html">Support</a></li>
+  <li><a href="../../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../../news.en.html">News</a></li>
+  <li><a href="../../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../../index.html"><img alt="home" src="../../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../../working_together.html">working together</a></li>
+
+
+
+
+
+<li><a href="../../roles.html">roles</a></li>
+
+
+
+
+
+<li><a href="../sysadmins.html">sysadmins</a></li>
+
+
+
+
+<li>GitLab for Tails sysadmins</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+GitLab for Tails sysadmins
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Administration of GitLab</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Configuration of GitLab</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Access control</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Objects</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Subjects</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Implementation</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index4h1">Interactions with other parts of our infrastructure</a>
+	</li>
+</ol>
+</div>
+
+
+<p>This page documents what Tails syadmins need to know about our GitLab instance.
+The user documentation is kept <a href="../../GitLab.html">in a separate
+page</a>.</p>
+
+<p>Tails previously used Redmine, and the migration was coordinated using
+<a href="https://salsa.debian.org/tails-team/gitlab-migration">Salsa</a>.</p>
+
+<h1><a name="index1h1"></a>Administration of GitLab</h1>
+
+<p>Our friends at <a href="https://www.immerda.ch/">https://www.immerda.ch/</a> host <a href="https://gitlab.tails.boum.org/">our GitLab
+instance</a>. We usually contact them through e-mail or their Jabber channel
+(see their <a href="https://www.immerda.ch/contact.html">contact info</a>).</p>
+
+<p>The Tails <a href="../sysadmins.html">system administrators</a>
+administrate this GitLab instance. They don&#39;t have shell access to the VM
+hosting the service so, among many other things, using <a href="https://docs.gitlab.com/ce/administration/server_hooks.html">Server
+Hooks</a> is not easy
+and would depend on coordination with the service provider.</p>
+
+<h1><a name="index2h1"></a>Configuration of GitLab</h1>
+
+<p>The configuration of our GitLab instance lives in the private <a href="https://gitlab.tails.boum.org/tails/gitlab-config">tails/gitlab-config</a> GitLab project.</p>
+
+<p>If you have access to this project, you can propose configuration changes:
+push a topic branch and submit a merge request.</p>
+
+<p>This can be useful, for example:</p>
+
+<ul>
+<li>to modify group membership when someone joins or leaves a team</li>
+<li>to propose new <a href="https://gitlab.tails.boum.org/groups/tails/-/labels">group labels</a>
+shared by all our GitLab projects</li>
+<li>to propose a new project under the <code>tails/</code> namespace, ensuring our common
+project settings &amp; permission model are applied</li>
+</ul>
+
+
+<p>Note that GitLab&#39;s <code>root</code> user is an owner of all projects because that makes
+sense for the way Tails currently manages user permissions for the different
+groups and projects. Notifications are turned off for that user and it
+shouldn&#39;t be used for communicating with other users.</p>
+
+<p><a id="access-control"></a></p>
+
+<h1><a name="index3h1"></a>Access control</h1>
+
+<h2><a name="index1h2"></a>Objects</h2>
+
+<ul>
+<li><p><em>Canonical Git repo</em>: the authoritative <a href="https://gitlab.tails.boum.org/tails/tails">tails/tails</a>
+repository, hosted on GitLab</p></li>
+<li><p><em>Major branches</em>: <code>master</code>, <code>stable</code>, <code>testing</code>, <code>devel</code>,
+and possibly <code>feature/bullseye</code></p></li>
+<li><p><em>Release tags</em>: a signed Git tag that identifies the source code
+used to build a specific Tails release; currently all tags
+in the authoritative <code>tails.git</code> repository are release tags;
+the tag name is a version number, with &#39;~&#39; replaced by &#39;-&#39;.</p></li>
+<li><p><em>Particularly sensitive data</em>: confidential data that specific teams
+like Fundraising and Accounting need to handle, but that other
+contributors generally don&#39;t need direct access to. This definitely
+include issues; this might include Git repositories at some point.</p>
+
+<p>Note that as of 2020-03-29, it is undefined:</p>
+
+<ul>
+<li><p>What subset of this data can go to a web-based issue tracker or not.<br />
+This was already a problem with Redmine.<br />
+Fixing this will require discussions between various stakeholders.</p></li>
+<li><p>What subset of this data could live in a cleartext Git
+repository hosted here or there, as opposed to requiring
+end-to-end encryption between members of these teams.
+This is a hypothetical problem for now.</p></li>
+</ul>
+</li>
+</ul>
+
+
+<h2><a name="index2h2"></a>Subjects</h2>
+
+<ul>
+<li><p>An <em>admin</em>:</p>
+
+<ul>
+<li>can configure GitLab
+
+<ul>
+<li>As a consequence, an admin can grant themselves
+any permission they want if an emergency requires it;
+in other situations, better follow due process to request
+such status or permissions :)</li>
+</ul>
+</li>
+<li>MUST comply with our &quot;Level 3&quot; security policy</li>
+</ul>
+</li>
+<li><p>A <em>committer</em>:</p>
+
+<ul>
+<li>can push and force-push to any ref in the canonical Git repo,
+including major branches and release tags;<br />
+incidentally, this ensures the following requirement is met:</li>
+<li>their branches are picked up by Jenkins; it follows that they
+MUST comply with our &quot;Infrastructure&quot; security policy</li>
+<li>can merge MRs into major branches</li>
+<li>can modify issues metadata</li>
+<li>is allowed to view confidential issues in the <a href="https://gitlab.tails.boum.org/tails/tails">tails/tails</a>
+GitLab project; that&#39;s OK, because particularly sensitive data
+lives somewhere else, with stricter access control</li>
+<li>can edit other users&#39; comments</li>
+<li>MUST comply with our &quot;Level 3&quot; security policy</li>
+</ul>
+</li>
+<li><p>A <em>regular, particularly trusted contributor</em>:</p>
+
+<ul>
+<li>can push and force-push to a subset of refs in the canonical Git repo;
+this subset MUST NOT include any major branch nor release tag;<br />
+this is required to ensure the following requirement is met:</li>
+<li>their branches are picked up by Jenkins; it follows that they
+MUST comply with our &quot;Infrastructure&quot; security policy</li>
+<li>can modify issues metadata</li>
+<li>is allowed to view confidential issues in the <a href="https://gitlab.tails.boum.org/tails/tails">tails/tails</a>
+GitLab project; that&#39;s OK, because particularly sensitive data
+lives somewhere else, with stricter access control</li>
+</ul>
+</li>
+<li><p>A <em>regular contributor</em>:</p>
+
+<ul>
+<li>can fork the Git repositories and push changes to their own fork</li>
+<li>can modify issues metadata</li>
+<li>is allowed to view confidential issues in the <a href="https://gitlab.tails.boum.org/tails/tails">tails/tails</a>
+GitLab project; that&#39;s OK, because particularly sensitive data
+lives somewhere else, with stricter access control</li>
+</ul>
+</li>
+<li><p><em>Anybody with a GitLab account</em> on the instance we use:</p>
+
+<ul>
+<li>can view and submit issues in public projects</li>
+<li>can submit MRs in public projects</li>
+</ul>
+</li>
+</ul>
+
+
+<h2><a name="index3h2"></a>Implementation</h2>
+
+<p>See <a href="../../GitLab.html#access-control">GitLab</a>.</p>
+
+<h1><a name="index4h1"></a>Interactions with other parts of our infrastructure</h1>
+
+<p>The following pieces of the Tails infrastructure interact with GitLab either
+directly or indirectly:</p>
+
+<ul>
+<li><p>The <a href="../ticket_gardener.html">Ticket Gardener</a>
+queries GitLab for information about the state of issues and merge
+requests.</p></li>
+<li><p>The <a href="../translation_platform.html">Translation
+Platform</a>
+constantly merges modifications made through
+<a href="https://translate.tails.boum.org">Weblate</a> and pushes them back to the Tails
+main repository (see <a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/weblate/scripts/cron.sh">the
+script</a>
+for that). We use a local &quot;gatekeeper&quot; repository with a
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/gitolite/hooks/tails-weblate-update.hook">hook</a>
+to prevent the Translation Platform from messing with more things than it
+should.</p></li>
+<li><p>Ikiwiki is notified whenever there&#39;s a change in the <code>master</code> branch of the
+<a href="https://gitlab.tails.boum.org/tails/tails">main Tails repository</a> and
+creates/updates <code>.po</code> files when new content was added to the Tails website.
+For this, GitLab was manually configured to mirror the main Tails repository to
+a local repository in the Tails infrastructure, and the local mirror
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/gitolite/hooks/www_website_ping-post-update.hook">pings</a>
+Ikiwiki when its master branch was modified. Some other <a href="https://gitlab.tails.boum.org/tails/puppet-tails/tree/master/manifests/website.pp#n19">&quot;underlay&quot;
+repositories</a>
+are also configured to <a href="https://gitlab.tails.boum.org/tails/puppet-tails/tree/master/files/gitolite/hooks/www_website_underlays-post-update.hook">cause Ikiwiki to
+refresh</a>
+the main website.</p></li>
+<li><p>Our <a href="./Jenkins.html">Jenkins</a> master
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/templates/gitolite/hooks/tails-post-receive.erb">is also
+notified</a>
+when there are relevant changes to the main Tails repository, and its Jenkins
+slaves query GitLab to determine <a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/decide_if_reproduce">whether to conduct reproducibility
+tests</a>
+and <a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/jenkins/slaves/isobuilders/output_ISO_builds_and_tests_notifications">whether to send notifications through
+e-mail</a>.</p></li>
+</ul>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../GitLab.html">GitLab</a>
+
+<a href="../sysadmins.html">sysadmins</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/working_together/roles/sysadmins/GitLab">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

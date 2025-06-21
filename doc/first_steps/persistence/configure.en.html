@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Creating and configuring the Persistent Storage</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./warnings.en.html" title="Warnings about the Persistent Storage" />
+
+<link rel="up" href="../../first_steps.index.html" title="first steps.index" />
+
+<link rel="next" href="./use.en.html" title="Unlocking and using the Persistent Storage" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../first_steps.en.html">first steps</a></li>
+
+
+
+
+
+<li><a href="../persistence.en.html">persistence</a></li>
+
+
+
+
+<li>Creating and configuring the Persistent Storage</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./configure.de.html">de</a></span>
+   <span class="hidden"><a href="./configure.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./configure.es.html">es</a></span>
+   <span class="hidden"><a href="./configure.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./configure.fr.html">fr</a></span>
+   <span class="hidden"><a href="./configure.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./configure.it.html">it</a></span>
+   <span class="hidden"><a href="./configure.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./configure.pt.html">pt</a></span>
+   <span class="hidden"><a href="./configure.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./configure.ru.html">ru</a></span>
+   <span class="hidden"><a href="./configure.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Creating and configuring the Persistent Storage
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./warnings.en.html">Warnings about the Persistent Storage</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../first_steps.index.html">first steps.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./use.en.html">Unlocking and using the Persistent Storage</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="caution">
+
+<p>Using the Persistent Storage can have security implications
+in a system like Tails, which is designed to provide
+anonymity and leave no trace.
+<a href="./warnings.en.html">Read our warnings about the Persistent Storage.</a></p>
+
+</div>
+
+
+
+
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Features of the Persistent Storage</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Personal Data</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Welcome Screen</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Tor Bridge</a>
+		</li>
+		<li class="L2"><a href="#index4h2">Browser Bookmarks</a>
+		</li>
+		<li class="L2"><a href="#index5h2">Network Connections</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Additional Software</a>
+		</li>
+		<li class="L2"><a href="#index7h2">Printers</a>
+		</li>
+		<li class="L2"><a href="#index8h2">Thunderbird</a>
+		</li>
+		<li class="L2"><a href="#index9h2">GnuPG</a>
+		</li>
+		<li class="L2"><a href="#index10h2">Bitcoin Client</a>
+		</li>
+		<li class="L2"><a href="#index11h2">Pidgin</a>
+		</li>
+		<li class="L2"><a href="#index12h2">SSH Client</a>
+		</li>
+		<li class="L2"><a href="#index13h2">Dotfiles</a>
+		<ol>
+			<li class="L3"><a href="#index1h3">Save the configuration of your displays</a>
+			</li>
+		</ol>
+		</li>
+	</ol>
+	</li>
+</ol>
+</div>
+
+
+<p>To create or configure the Persistent Storage, choose
+<strong>Applications</strong>&nbsp;&#x25B8; <strong>Tails</strong>&nbsp;&#x25B8; <strong>Configure persistent volume</strong>.</p>
+
+<div class="note">
+
+
+
+<p>The error message <em>Error, Persistence partition is not
+unlocked.</em> means that the Persistent Storage was not unlocked in
+the Welcome Screen. You cannot use or configure your Persistent Storage
+but you can delete it and create a new one.</p>
+
+<p>To change the configuration of your Persistent Storage, restart Tails,
+unlock the Persistent Storage, and choose <strong>Applications</strong>&nbsp;&#x25B8;
+<strong>Tails</strong>&nbsp;&#x25B8; <strong>Configure persistent volume</strong>
+again.</p>
+
+</div>
+
+
+
+
+<div class="bug">
+
+<p>There is currently no visible way to close the
+<b>Configure persistent volume</b> application when no changes have been made.
+See <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18379">#18379</a>.</p>
+
+<p>To close the <b>Configure persistent volume</b> application,
+press <span class="keycap">Esc</span>.</p>
+
+</div>
+
+
+<p>When run for the first time, or after <a href="./delete.en.html">deleting the Persistent
+Storage</a>, an assistant allows you to create a Persistent Storage in
+the free space left on the USB stick. Refer to our <a href="../../../install/clone.en.html#create-persistence">installation
+instructions</a> for more guidance on
+creating the Persistent Storage.</p>
+
+<h1><a name="index1h1"></a>Features of the Persistent Storage</h1>
+
+<div class="note">
+
+<p><strong>Restart Tails to apply the changes</strong> after selecting or
+deselecting one or several features.</p>
+
+</div>
+
+
+
+
+<div class="note">
+
+<p>Only the features that are listed below can currently be made
+persistent.</p>
+
+<p>We are often asked to implement new features of the
+Persistent Storage:
+Tor Browser preferences,
+Tor configuration,
+desktop background,
+mouse and touchpad settings,
+etc.
+See the
+<a href="https://gitlab.tails.boum.org/groups/tails/-/issues?scope=all&amp;utf8=&#x2713;&amp;state=opened&amp;label_name%5B%5D=C%3APersistence">list of issues about the Persistent Storage</a>.</p><p>
+
+</p></div>
+
+
+
+
+<div class="bug" id="deselect">
+
+<p>If you turn off a feature, it will be
+unavailable after restarting Tails but the
+corresponding files
+are still saved in the Persistent Storage.</p>
+
+<p>To delete the files corresponding to a feature:</p>
+
+<ol>
+  <li>
+    Start Tails and set an
+    <a href="../welcome_screen/administration_password.en.html">administration password</a>.
+  </li>
+  <li>
+    Choose
+    <span class="menuchoice">
+      <span class="guimenu">Applications</span>&nbsp;&#x25B8;
+      <span class="guisubmenu">System Tools</span>&nbsp;&#x25B8;
+      <span class="guimenuitem">Root Terminal</span>
+    </span>
+    to open a terminal with administration rights.
+  </li>
+  <li>
+    Execute the <span class="code">nautilus</span> command to open the file
+    browser with administration rights.
+  </li>
+  <li>
+    In the file browser, navigate to <span class="filename">
+    /live/persistence/TailsData_unlocked</span>.
+  </li>
+  <li>
+    Delete the folder corresponding to the feature:
+    <ul>
+      <li><strong>Personal Data</strong>: <code>Persistent</code> folder</li>
+      <li><strong>Welcome Screen</strong>: <code>greeter-settings</code> folder</li>
+      <li><strong>Browser Bookmarks</strong>: <code>bookmarks</code> folder</li>
+      <li><strong>Network Connections</strong>: <code>nm-system-connections</code></li>
+      <li><strong>Additional Software</strong>: <code>apt</code> and <code>apt-sources.list.d</code> folders and <code>live-additional-software.conf</code> file</li>
+      <li><strong>Printers</strong>: <code>cups-configuration</code> folder</li>
+      <li><strong>Thunderbird</strong>: <code>thunderbird</code> folder</li>
+      <li><strong>GnuPG</strong>: <code>gnupg</code> folder</li>
+      <li><strong>Bitcoin Client</strong>: <code>electrum</code> folder</li>
+      <li><strong>Pidgin</strong>: <code>pidgin</code> folder</li>
+      <li><strong>SSH Client</strong>: <code>openssh-client</code> folder</li>
+      <li><strong>Dotfiles</strong>: <code>dotfiles</code> folder</li>
+    </ul>
+  </li>
+</ol>
+
+</div>
+
+
+<p><a id="personal_data"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="./stock_folder.png" width="48" />
+<div class="text"><h2><a name="index1h2"></a>Personal Data</h2></div>
+</div>
+
+
+<p>When the Personal Data feature is turned on, you can save your personal files and working
+documents in the <span class="filename">Persistent</span> folder.</p>
+
+<p>To open the <span class="filename">Persistent</span> folder, choose
+<span class="menuchoice">
+  <span class="guimenu">Places</span>&nbsp;&#x25B8;
+  <span class="guimenuitem">Persistent</span></span>.</p>
+
+<p><a id="welcome_screen"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="../../../lib/apps/preferences-system.png" width="48" />
+<div class="text"><h2><a name="index2h2"></a>Welcome Screen</h2></div>
+</div>
+
+
+<p>When the Welcome Screen feature is turned on, the settings from the
+Welcome Screen are saved in the Persistent Storage: language, keyboard,
+and additional settings.</p>
+
+<p>To restore your settings when starting Tails, unlock your Persistent
+Storage in the Welcome Screen.</p>
+
+<p><a id="tor-bridge"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="./onioncircuits.png" width="47" />
+<div class="text"><h2><a name="index3h2"></a>Tor Bridge</h2></div>
+</div>
+
+
+<p>When the Tor Bridge feature is turned on, the last <a href="../../anonymous_internet/tor.en.html">Tor
+bridge</a> that you used to connect to Tor
+successfully is saved in the Persistent Storage.</p>
+
+<p><a id="browser_bookmarks"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="./user-bookmarks.png" width="48" />
+<div class="text"><h2><a name="index4h2"></a>Browser Bookmarks</h2></div>
+</div>
+
+
+<p>When the Browser Bookmarks feature is turned on, changes to the bookmarks in
+<a href="../../anonymous_internet/Tor_Browser.en.html"><em>Tor Browser</em></a>
+are saved in the Persistent Storage. This does not apply to the
+<a href="../../anonymous_internet/unsafe_browser.en.html"><em>Unsafe Browser</em></a>.</p>
+
+<p><a id="network_connections"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="./network-manager.png" width="48" />
+<div class="text"><h2><a name="index5h2"></a>Network Connections</h2></div>
+</div>
+
+
+<p>When the Network Connections feature is turned on, the
+<a href="../../anonymous_internet/networkmanager.en.html">configuration of the network devices and connections</a>
+is saved in the Persistent Storage, for example the passwords of Wi-Fi
+networks.</p>
+
+<p><a id="additional_software"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="./additional-software.png" width="48" />
+<div class="text"><h2><a name="index6h2"></a>Additional Software</h2></div>
+</div>
+
+
+<p>When the Additional Software feature is turned on, a list of
+<a href="../additional_software.en.html">additional software</a> of
+your choice is automatically installed every
+time you start Tails.</p>
+
+<p>The corresponding software packages are stored in the
+Persistent Storage. They are automatically upgraded for security after
+a network connection is established.</p>
+
+<div class="caution">
+
+<p>The packages included in Tails are carefully tested for security.
+Installing additional packages might break the security built in Tails,
+so <a href="../additional_software.en.html#warning">be careful with what you install</a>.</p>
+
+</div>
+
+
+<p><a id="printers"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="./printer.png" width="48" />
+<div class="text"><h2><a name="index7h2"></a>Printers</h2></div>
+</div>
+
+
+<p>When the Printers feature is turned on, the
+<a href="../../sensitive_documents/printing_and_scanning.en.html">configuration of the printers</a>
+is saved in the Persistent Storage.</p>
+
+<p><a id="thunderbird"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="../../../lib/apps/thunderbird.png" width="48" />
+<div class="text"><h2><a name="index8h2"></a>Thunderbird</h2></div>
+</div>
+
+
+<p>When the Thunderbird feature is turned on, the email, feeds, and OpenPGP keys in the
+<a href="../../anonymous_internet/thunderbird.en.html"><em>Thunderbird</em> email client</a>
+are saved in the Persistent Storage.</p>
+
+<p><a id="gnupg"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="./seahorse-key.png" width="48" />
+<div class="text"><h2><a name="index9h2"></a>GnuPG</h2></div>
+</div>
+
+
+<p>When the GnuPG feature is turned on, the OpenPGP keys that you create or import are
+saved in the Persistent Storage.</p>
+
+<div class="note">
+
+<p>Since Tails 4.13 (November 2020), <em>Thunderbird</em> uses its own OpenPGP keyring,
+different from the keyring used by <em>GnuPG</em>. You don&#39;t need to enable the GnuPG
+feature anymore if you only use OpenPGP encryption in
+<em>Thunderbird</em>.</p>
+
+</div>
+
+
+
+
+<div class="caution">
+
+<p>You might lessen your anonymity, weaken encryption, or break features of
+GnuPG if you manually edit or overwrite the <em>~/.gnupg/gpg.conf</em>
+configuration file.</p>
+
+</div>
+
+
+<p><a id="bitcoin"></a></p>
+
+<div class="icon">
+<img class="img" height="44" src="../../../lib/apps/electrum.png" width="48" />
+<div class="text"><h2><a name="index10h2"></a>Bitcoin Client</h2></div>
+</div>
+
+
+<p>When the Bitcoin Client feature is turned on, the bitcoin wallet and preferences of
+the <a href="../../anonymous_internet/electrum.en.html"><em>Electrum</em> bitcoin client</a> are saved in the
+Persistent Storage.</p>
+
+<p><a id="pidgin"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="../../../lib/apps/pidgin.png" width="48" />
+<div class="text"><h2><a name="index11h2"></a>Pidgin</h2></div>
+</div>
+
+
+<p>When the Pidgin feature is turned on, all the configuration files of the
+<a href="../../anonymous_internet/pidgin.en.html"><em>Pidgin</em> internet messenger</a>
+are saved in the Persistent Storage:</p>
+
+<ul>
+<li>The configuration of your accounts, buddies and chats.</li>
+<li>Your OTR encryption keys and keyring.</li>
+<li>The content of the discussions is not saved unless you configure
+<span class="application">Pidgin</span> to do so.</li>
+</ul>
+
+
+<p>All the configuration options are available from the graphical interface of <em>Pidgin</em>. There
+is no need to manually edit or overwrite the configuration files.</p>
+
+<p><a id="ssh_client"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="./seahorse-key-ssh.png" width="48" />
+<div class="text"><h2><a name="index12h2"></a>SSH Client</h2></div>
+</div>
+
+
+<p>When the SSH Client feature is turned on, all the files related to the secure-shell (SSH) client
+are saved in the Persistent Storage:</p>
+
+<ul>
+<li>The SSH keys that you create or import</li>
+<li>The public keys of the hosts you connect to</li>
+<li>The SSH configuration file in <span class="filename">~/.ssh/config</span></li>
+</ul>
+
+
+<div class="caution">
+
+If you manually edit the <span class="filename">~/.ssh/config</span>
+configuration file, make sure not to overwrite the
+default configuration from the
+<span class="filename">/etc/ssh/ssh_config</span> file. Otherwise, you may weaken the
+encryption defaults or render SSH unusable.
+
+</div>
+
+
+<p><a id="dotfiles"></a></p>
+
+<div class="icon">
+<img class="img" height="48" src="./preferences-desktop.png" width="48" />
+<div class="text"><h2><a name="index13h2"></a>Dotfiles</h2></div>
+</div>
+
+
+<p>When the Dotfiles feature is turned on:</p>
+
+<ul>
+<li><p>All the files in the
+<em>/live/persistence/TailsData_unlocked/dotfiles</em> folder
+are linked in the <em>Home</em> folder using Linux symbolic links.</p></li>
+<li><p>All the files in subfolders of
+<em>/live/persistence/TailsData_unlocked/dotfiles</em> are also linked in the
+corresponding subfolder of the <em>Home</em> folder using Linux symbolic links.</p></li>
+<li><p>A shortcut is provided in the left pane of the <em>Files</em> browser and in the
+<strong>Places</strong> menu in the top navigation bar to access the
+<em>/live/persistence/TailsData_unlocked/dotfiles</em> folder.</p></li>
+</ul>
+
+
+<p>For example, having the following files in
+<em>/live/persistence/TailsData_unlocked/dotfiles</em>:</p>
+
+<pre><code>/live/persistence/TailsData_unlocked/dotfiles
+&#x251C;&#x2500;&#x2500; file_a
+&#x251C;&#x2500;&#x2500; folder
+&#x2502;&nbsp;&nbsp; &#x251C;&#x2500;&#x2500; file_b
+&#x2502;&nbsp;&nbsp; &#x2514;&#x2500;&#x2500; subfolder
+&#x2502;&nbsp;&nbsp;     &#x2514;&#x2500;&#x2500; file_c
+&#x2514;&#x2500;&#x2500; emptyfolder
+</code></pre>
+
+<p>Produces the following result in <em>/home/amnesia</em>:</p>
+
+<pre><code>/home/amnesia
+&#x251C;&#x2500;&#x2500; file_a &rarr; /live/persistence/TailsData_unlocked/dotfiles/file_a
+&#x2514;&#x2500;&#x2500; folder
+ &nbsp;&nbsp; &#x251C;&#x2500;&#x2500; file_b &rarr; /live/persistence/TailsData_unlocked/dotfiles/folder/file_b
+ &nbsp;&nbsp; &#x2514;&#x2500;&#x2500; subfolder
+ &nbsp;&nbsp;     &#x2514;&#x2500;&#x2500; file_c &rarr; /live/persistence/TailsData_unlocked/dotfiles/folder/subfolder/file_c
+</code></pre>
+
+<div class="note">
+
+<p>The Dotfiles feature only links specific files, and not entire folders, from
+the Persistent Storage. Accordingly, empty folders are ignored, as shown in
+the above example.</p>
+
+</div>
+
+
+<p>On Tails and Linux in general, the name of configuration files often starts
+with a dot and are sometimes called <a href="https://en.wikipedia.org/wiki/dotfiles">dotfiles</a> for this reason.
+The Dotfiles feature of the Persistent Storage makes it easy to persist such
+&quot;<em>dotfiles</em>&quot;, for example <em>~/.gitconfig</em> or <em>~/.bashrc</em>.</p>
+
+<p><a id="displays"></a></p>
+
+<h3><a name="index1h3"></a>Save the configuration of your displays</h3>
+
+<p>If you have more than one display (for example, two monitors or a
+projector), you can save the configuration of your displays using the
+<span class="guilabel">Dotfiles</span> feature.</p>
+
+<ol>
+<li><p>Turn on the <em>Dotfiles</em> feature and restart Tails.</p></li>
+<li><p>Open the <span class="application">Settings</span> utility.</p></li>
+<li><p>Choose <span class="menuchoice">
+<span class="guimenu">Devices</span>&nbsp;&#x25B8;
+<span class="guisubmenu">Displays</span></span>.</p></li>
+<li><p>Configure your displays.</p></li>
+<li><p>Choose <strong>Places</strong>&nbsp;&#x25B8; <strong>Dotfiles</strong>
+to open the <span class="filename">/live/persistence/TailsData_unlocked/dotfiles</span> folder
+in the <span class="application">Files</span> browser.</p></li>
+<li><p>Click on the <span class="guimenu"><img alt="menu toggle" class="symbolic" height="16" src="../../../lib/pan-down.png" width="16" /></span> button in the title bar and choose
+<span class="guilabel">Show Hidden Files</span>.</p></li>
+<li><p>Create a folder called <span class="filename">.config</span>
+(<span class="filename">config</span> preceded by a dot).</p></li>
+<li><p>Copy the <span class="filename">.config/monitors.xml</span> file from
+your <span class="filename">Home</span> folder to
+<span class="filename">/live/persistence/TailsData_unlocked/dotfiles/.config</span>.</p></li>
+</ol>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./warnings.en.html">Warnings about the Persistent Storage</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../first_steps.index.html">first steps.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./use.en.html">Unlocking and using the Persistent Storage</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../about/features.en.html">about/features</a>
+
+<a href="../additional_software.en.html">additional software</a>
+
+<a href="../../advanced_topics/virtualization/virt-manager.en.html">advanced topics/virtualization/virt-manager</a>
+
+<a href="../../anonymous_internet/Tor_Browser.en.html">anonymous internet/Tor Browser</a>
+
+<a href="../../anonymous_internet/electrum.en.html">anonymous internet/electrum</a>
+
+<a href="../../anonymous_internet/networkmanager.en.html">anonymous internet/networkmanager</a>
+
+<a href="../../anonymous_internet/pidgin.en.html">anonymous internet/pidgin</a>
+
+<a href="../../anonymous_internet/thunderbird.en.html">anonymous internet/thunderbird</a>
+
+<a href="../../anonymous_internet/tor.en.html">anonymous internet/tor</a>
+
+<a href="../../anonymous_internet/unsafe_browser.en.html">anonymous internet/unsafe browser</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="./backup.en.html">backup</a>
+
+<a href="../../../contribute/glossary.html">contribute/glossary</a>
+
+<a href="../../../contribute/how/documentation/style_guide.html">contribute/how/documentation/style guide</a>
+
+<a href="../../encryption_and_privacy/gpgapplet/decrypt_verify.en.html">encryption and privacy/gpgapplet/decrypt verify</a>
+
+<a href="../../encryption_and_privacy/gpgapplet/public-key_cryptography.en.html">encryption and privacy/gpgapplet/public-key cryptography</a>
+
+<a href="../../encryption_and_privacy/manage_passwords.en.html">encryption and privacy/manage passwords</a>
+
+<a href="../../first_steps.index.html">first steps.index</a>
+
+<a href="../../../news/report_2015_05.html">news/report 2015 05</a>
+
+<a href="../../../news/report_2016_06.html">news/report 2016 06</a>
+
+<a href="../../../news/report_2017_04.html">news/report 2017 04</a>
+
+<a href="../../../news/report_2017_12.html">news/report 2017 12</a>
+
+<a href="../../../news/report_2018_03.html">news/report 2018 03</a>
+
+<a href="../../../news/test_2.0-beta1.html">news/test 2.0-beta1</a>
+
+<a href="../../../news/version_0.15.html">news/version 0.15</a>
+
+<a href="../../../news/version_0.18.html">news/version 0.18</a>
+
+<a href="../../../news/version_1.3.html">news/version 1.3</a>
+
+<a href="../../../news/version_2.4.html">news/version 2.4</a>
+
+<a href="../../../news/version_3.6.en.html">news/version 3.6</a>
+
+<a href="../persistence.en.html">persistence</a>
+
+<a href="./rescue.en.html">rescue</a>
+
+<a href="../../sensitive_documents/printing_and_scanning.en.html">sensitive documents/printing and scanning</a>
+
+<a href="../../../support/faq.en.html">support/faq</a>
+
+<a href="./warnings.en.html">warnings</a>
+
+<a href="../welcome_screen.en.html">welcome screen</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/first_steps/persistence/configure">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

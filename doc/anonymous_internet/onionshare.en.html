@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Sharing files with OnionShare</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./thunderbird.en.html" title="Emailing and reading news with Thunderbird" />
+
+<link rel="up" href="../anonymous_internet.index.html" title="anonymous internet.index" />
+
+<link rel="next" href="./electrum.en.html" title="Exchanging bitcoins using Electrum" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../anonymous_internet.en.html">anonymous internet</a></li>
+
+
+
+
+<li>Sharing files with OnionShare</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./onionshare.de.html">de</a></span>
+   <span class="hidden"><a href="./onionshare.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./onionshare.es.html">es</a></span>
+   <span class="hidden"><a href="./onionshare.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./onionshare.fr.html">fr</a></span>
+   <span class="hidden"><a href="./onionshare.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./onionshare.it.html">it</a></span>
+   <span class="hidden"><a href="./onionshare.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./onionshare.pt.html">pt</a></span>
+   <span class="hidden"><a href="./onionshare.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./onionshare.ru.html">ru</a></span>
+   <span class="hidden"><a href="./onionshare.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Sharing files with OnionShare
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./thunderbird.en.html">Emailing and reading news with Thunderbird</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./electrum.en.html">Exchanging bitcoins using Electrum</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p><a href="https://onionshare.org/">OnionShare</a> is a tool to share files of any
+size securely and anonymously.</p>
+
+<p><span class="application">OnionShare</span> creates an onion address
+that someone else can visit in <span class="application">Tor
+Browser</span> to access the files that you want to share.</p>
+
+<p>To share files with <span class="application">OnionShare</span>:</p>
+
+<ol>
+<li><p>Open the <span class="application">Files</span> browser.</p></li>
+<li><p>Right-click (on Mac, click with two fingers) on the files or folders that you want to share and choose
+<span class="guilabel">Share via OnionShare</span>.
+<span class="application">OnionShare</span> starts.</p></li>
+<li><p>To share more files or folders, you can either:</p>
+
+<ul>
+<li><p>Drag and drop them from the <span class="application">Files</span>
+browser onto <span class="application">OnionShare</span>.</p></li>
+<li><p>Click the <span class="guilabel">Add</span> button in
+<span class="application">OnionShare</span>.</p></li>
+</ul>
+</li>
+<li><p>Click <span class="guilabel">Start Sharing</span>.</p>
+
+<div class="bug">
+<p>Starting to share the files can take up to several minutes.</p>
+</div>
+
+
+<p>When the files are available for sharing, an onion address appears at
+the bottom of <span class="application">OnionShare</span>.</p>
+
+<p><img alt="" class="img" height="513" src="./onionshare/onionshare.png" width="595" /></p></li>
+<li><p>Send this onion address to someone else, for example, by email.</p>
+
+<p>The other person can download the files by visiting the onion address
+in <span class="application">Tor Browser</span>.</p></li>
+<li><p><span class="application">OnionShare</span> informs you when the
+files are being accessed.</p>
+
+<p>The files are not shared anymore as soon as you close
+<span class="application">OnionShare</span> or shut down Tails.</p></li>
+</ol>
+
+
+<div class="tip">
+
+<p>To learn more about how to use <i>OnionShare</i>, see the
+<a href="https://docs.onionshare.org/"><i>OnionShare</i> documentation.</a></p>
+
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./thunderbird.en.html">Emailing and reading news with Thunderbird</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./electrum.en.html">Exchanging bitcoins using Electrum</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+
+<a href="../../news/report_2017_01.html">news/report 2017 01</a>
+
+<a href="../../news/version_2.10.html">news/version 2.10</a>
+
+<a href="../../news/what_we_accomplished_in_2017.en.html">news/what we accomplished in 2017</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/anonymous_internet/onionshare">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

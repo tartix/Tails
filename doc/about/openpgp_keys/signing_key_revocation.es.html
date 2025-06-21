@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+
+<html lang="es" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Revocaci&#xF3;n de la llave de firmado de Tails</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="es">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.es.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.es.html">Inicio</a></li>
+  <li><a href="../../../about.es.html">C&oacute;mo funciona Tails</a></li>
+  <li><a href="../../../install.es.html">Obtener Tails</a></li>
+  <li><a href="../../../doc.es.html">Documentaci&oacute;n</a></li>
+  <li><a href="../../../support.es.html">Soporte</a></li>
+  <li><a href="../../../contribute.es.html">Colabora</a></li>
+  <li><a href="../../../news.es.html">Noticias</a></li>
+  <li><a href="../../../jobs.html">Trabajos</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.es.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.es.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../about.es.html">about</a></li>
+
+
+
+
+
+<li><a href="../openpgp_keys.es.html">openpgp keys</a></li>
+
+
+
+
+<li>Revocaci&#xF3;n de la llave de firmado de Tails</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Español
+   </span>
+   <span class="hidden">Español
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./signing_key_revocation.en.html">en</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.de.html">de</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.fr.html">fr</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.it.html">it</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.pt.html">pt</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./signing_key_revocation.ru.html">ru</a></span>
+   <span class="hidden"><a href="./signing_key_revocation.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Revocaci&#xF3;n de la llave de firmado de Tails
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Este documento propone un mecanismo para la distribuci&oacute;n y activaci&oacute;n del
+certificado de revocaci&oacute;n de la llave de firmado de Tails.</p>
+
+<h1>Objetivos</h1>
+
+<p>Covered by the current proposal:</p>
+
+<ul>
+<li><p>Prevent any single individual from revoking our signing key.</p></li>
+<li><p>Allow a coalition of people from tails@boum.org to revoke our signing key
+in case most of the people from tails@boum.org become unavailable.</p></li>
+<li><p>Allow a coalition of people, not necessarily from tails@boum.org, to
+revoke our signing key in case everybody or almost everybody from
+tails@boum.org becomes unavailable.</p></li>
+<li><p>Make it hard for a coalition of people not from tails@boum.org to revoke
+our signing key unless everybody or almost everybody from tails@boum.org
+becomes unavailable.</p></li>
+<li><p>People not from tails@boum.org shouldn&#39;t know how the shares are spread
+and who has them.</p></li>
+<li><p>People in possession of a share of the revocation certificate of the
+signing key should have instructions on how to use it if needed.</p></li>
+</ul>
+
+
+<h1>Grupos</h1>
+
+<p>Definimos cuatro grupos complementarios de gente confiable:</p>
+
+<ul>
+<li>Grupo A: gente del mismo tails@boum.org</li>
+<li>Grupo B</li>
+<li>Grupo C</li>
+<li>Grupo D</li>
+</ul>
+
+
+<p>Todas estas personas tienen que tener una clave OpenPGP y entender lo que es
+un certificado de revocaci&oacute;n.</p>
+
+<h1>Porciones criptogr&aacute;ficas</h1>
+
+<p>Generamos un certificado de revocaci&oacute;n de la clave de firmado y la dividimos
+en un n&uacute;mero de porciones criptogr&aacute;ficas, usando por ejemplo el esquema para
+compartir secretos de Shamir implementado por <code>gfshare</code>.</p>
+
+<p>Las siguientes combinaciones de gente podr&iacute;an juntarse y rearmar sus
+porciones para reconstruir un certificado de revocaci&oacute;n completo:</p>
+
+<ul>
+<li>Tres personas de tails@boum.org: A{3}</li>
+<li>Dos personas de tails@boum.org y una persona que no sea de
+tails@boum.org: A{2}+(B|C|D)</li>
+<li>Una persona de tails@boum.org, y dos personas que no sean de
+tails@boum.org pero de distintos grupos: A+(B|C|D){2}</li>
+<li>Tres personas que no sean de tails@boum.org pero de tres grupos
+diferentes: (B+C+D){3}</li>
+</ul>
+
+
+<p>Generamos estas porciones:</p>
+
+<ul>
+<li>N porciones, una para cada persona de tails@boum.org</li>
+<li>Una porci&oacute;n para las personas en el grupo B</li>
+<li>Una porci&oacute;n para las personas en el grupo C</li>
+<li>Una porci&oacute;n para las personas en el grupo D</li>
+</ul>
+
+
+<h1>Qui&eacute;n sabe qu&eacute;</h1>
+
+<ul>
+<li>La gente de tails@boum.org sabe la composici&oacute;n de cada grupo</li>
+<li>People not from tails@boum.org:
+
+<ul>
+<li>Are explained in which circumstances they should revoke the signing key</li>
+<li>Are told to write to a certain contact email address if they decide to revoke the signing key</li>
+<li>Are told that they need three different shares to reassemble the revocation certificate</li>
+</ul>
+</li>
+</ul>
+
+
+<h1>Infraestructura</h1>
+
+<ul>
+<li>Toda persona que tenga una porci&oacute;n est&aacute; suscrita a una lista de correo.</li>
+<li>Esta lista de correo est&aacute; alojada en un servidor de confianza distinto
+de boum.org para ser m&aacute;s estable que nuestros canales de comunicaci&oacute;n
+habituales.</li>
+<li>Someone hosting the mailing list is part of group B, C, or D so they can
+ensure that the list keeps working even if it never used.</li>
+</ul>
+
+
+<h1>Cambiar los miembros de los grupos B, C o D</h1>
+
+<p>Para agregar a alguien a un grupo determinado:</p>
+
+<ul>
+<li>Pedirle a alguien de ese grupo que le env&iacute;e su porci&oacute;n a la nueva
+persona del grupo.</li>
+</ul>
+
+
+<p>Para remover a alguien de un grupo:</p>
+
+<ul>
+<li>Enviar nuevas porciones a todo el mundo, excepto a la persona que se
+est&aacute; removiendo.</li>
+<li>Request everybody to delete their previous share and track this.  Once
+everybody in 2 groups amongst B, C, or D have deleted their share, it
+becomes impossible for them to reassemble the revocation certificate
+with the previous set of shares.</li>
+<li>Esperemos que esto no pase tan a menudo :)</li>
+</ul>
+
+
+<h1>Expiraci&oacute;n</h1>
+
+<p>There is no expiry date on revocation certificates. One way of cancelling
+the revocation power is to destroy all copies of shares of 2 groups amongst
+B, C, or D.</p>
+
+<p><a id="invitation"></a></p>
+
+<h1>Invitation email</h1>
+
+<p>Someone who has a personal trust relationship with the person being invited
+sends this email.</p>
+
+<pre>
+Asunto: distribuci&oacute;n
+
+Hola,
+
+Te proponemos que seas parte de un mecanismo distribuido para el certificado
+de revocaci&oacute;n de la clave de firma de Tails.
+
+La idea es distribuir porciones criptogr&aacute;ficas de este certificado de
+revocaci&oacute;n a gente en la que confiamos. Estas porciones criptogr&aacute;ficas
+pueden juntarse para recrear el certificado de revocaci&oacute;n y revocar la clave
+de firma de Tails. Esto podr&iacute;a ser necesario en caso de que nos pase algo
+malo y no podamos revocarla por nuestra cuenta.
+
+Nota: En todo este documento, &#39;nosotros&#39; se refiere al conjunto de gente
+suscrita a tails@boum.org que es una lista de correo Schleuder.
+
+Puedes leer una descripci&oacute;n completa del mecanismo de distribuci&oacute;n en:
+
+https://tails.boum.org/doc/about/openpgp_keys/signing_key_revocation/index.es.html.
+
+La receta es p&uacute;blica y el &uacute;nico componente secreto es la lista de gente que
+tiene el material criptogr&aacute;fico.
+
+We are proposing this to you because we trust in both your technical
+abilities to store your share in a safe place and manipulate it as
+required. But also because we trust you as a human being to make informed
+judgment on when to use your share and act only in the interest of Tails.
+
+Las cosas malas que podr&iacute;an pasar si el mecanismo falla son:
+
+A. The signing key is not revoked when it should be. This could allow
+possible attackers to distribute malicious Tails images or publish malicious
+information on our name.
+
+B. The signing key is revoked when it should not have been. This would
+prevent people from verifying our images with OpenPGP until we publish a new
+signing key and build trust in it.
+
+Distribuci&oacute;n de las porciones
+==============================
+
+Cada persona de tails@boum.org, el grupo A, tiene una porci&oacute;n *distinta*,
+A1, A2, ..., An.
+
+On top of this, we defined three complementary groups, B, C, and D of
+trusted people who have a close relationship with Tails but different
+interests and different access to information about us. You are part of one
+of these groups.
+
+Todas las personas en el grupo B tienen *la misma* porci&oacute;n B.
+
+Todas las personas en el grupo C tienen *la misma* porci&oacute;n C.
+
+Todas las personas en el grupo D tienen *la misma* porci&oacute;n D.
+
+Three different shares are needed to reassemble the revocation
+certificate. For example, shares A1, A2, and A3, or shares A1, B, and C.
+
+How to store your share
+=======================
+
+Please keep your share in an encrypted storage and make it as hard as you
+can for untrusted people to get a copy of it.
+
+You can rename the file as long as you keep the number in the file name of
+your share as it is needed to use the share.
+
+Feel free to back up the file but we might also request you to delete it at
+some point and you should be able to know whether you still have a copy of
+it or not. It is all-right to lose your share as long as you tell us that
+you have lost it. It is actually worse to still have a copy of the share
+&quot;somewhere&quot; while thinking that you don&#39;t, than to lose it by mistake.
+
+Don&#39;t hesitate to ask us if you need clarification on the technical aspects
+of this.
+
+Cu&aacute;ndo usar tu porci&oacute;n
+========================
+
+Everybody in possession of a share is subscribed to a mailing list.
+
+If someone in possession of a share gets to learn about a very bad event
+that happened to many of us and really thinks that we are not capable of
+revoking the Tails signing key ourselves anymore, then this person should
+write to the mailing list explaining why she thinks that the signing key
+needs to be revoked.
+
+Yes, there is no mathematically proven algorithm for this and here is where
+your judgment as a human being is needed. The description of the very bad
+event should be checked or backed by enough people to be plausible.
+
+People on the list who are also convinced that the signing key should be
+revoked share their shares until they have 3 different shares. Then they can
+assemble the revocation certificate and publish it to revoke the signing
+key.
+
+Keep in mind that we could still revoke the signing key ourselves as long as
+three of us are able to communicate and gather their shares. So we only need
+your help if no more than two of us are still able to communicate.
+
+Unless you really want to start the key revocation process, do not write to
+this mailing list.
+
+Siguientes comunicaciones
+=========================
+
+In case we need to communicate with you about this revocation mechanism in
+the future, we will always do it through the tails@boum.org mailing list. We
+might do so for example to:
+
+  - Ask you to send your share to a new member of your group.
+
+  - Ask you to delete your share. This could be needed to cancel the power
+    of others people&#39;s share: as long as enough of you delete their shares,
+    the few people that might not delete them would end up with unusable
+    shares.
+
+The tails@boum.org mailing list has its own OpenPGP key, which is signed by
+the Tails signing key itself:
+
+    https://tails.boum.org/tails-email.key
+
+Entonces, &iquest;Podemos contar contigo para esto?
+
+If you answer positively, we will send you your share and subscribe you to
+the mailing list.
+
+Thanks, and may the force be with you!
+</pre>
+
+
+<h1>Keeping the members of the groups B, C, and D up-to-date</h1>
+
+<p>At least every 2 years, we make sure that the mechanism still works:</p>
+
+<ol>
+<li><p>We review internally the list of members of each group and decide
+possible additions to, and removals from, each group.</p></li>
+<li><p>We write to every individual member of each group to ask them to check
+that they still have their share and the number in the file name.</p></li>
+<li><p>We log in to the administration interface of the mailing list, make sure
+that it still exists, and is configured correctly.</p></li>
+</ol>
+
+
+<p><a id="update"></a></p>
+
+<h2>Update email</h2>
+
+<p>We send these emails through tails@boum.org to avoid the need for a personal
+trust relationship between the person sending the mail and the recipient. We
+don&#39;t send shares from groups B, C, or D with tails@boum.org by doing so.</p>
+
+<pre>
+Subject: update
+
+Hola,
+
+Some years ago, you agreed to be part of a distributed mechanism for the
+revocation certificate of the Tails signing key and we sent you a
+cryptographic share of this revocation certificate.
+
+Today, we are asking you to:
+
+1. Verify the authenticity of this email, either by verifying that it is
+   signed by the tails@boum.org mailing or by talking directly to someone
+   from tails@boum.org.
+
+   The tails@boum.org mailing list has its own OpenPGP key, which is
+   signed by the Tails signing key itself:
+
+   https://tails.boum.org/tails-email.key
+
+2. Confirm whether you still have in your possession:
+
+   - Your share of the revocation certificate.
+
+   - The number NNN in the file name of your share.
+
+     The file was named tails-signing-key-revocation-cert.asc.NNN, where
+     NNN is a 3 digit number.
+
+For the record, the address of the mailing list that you should write to in
+case you want to assemble the revocation certificate is:
+
+    address@example.org
+
+Do not write to this mailing list unless you really want to start the key
+revocation process.
+
+We are also copying below a summary of the mechanism.
+
+XXX: Copy the invitation email:
+XXX: - Include &quot;You can read a complete description of the distribution mechanism on:&quot;
+XXX: - Stop before &quot;So, can we count on you for this?&quot;
+</pre>
+
+
+<h2>Adding a new member</h2>
+
+<ol>
+<li><p>Send the <a href="./signing_key_revocation.es.html#invitation">invitation email</a> to the
+new member.</p></li>
+<li><p>If they agree, ask someone else from the same group to send them their
+share of the key.</p>
+
+<p>Unfortunately, this reveals some membership information to these two
+people.</p></li>
+<li><p>Ask the new member to confirm the reception of their share.</p></li>
+</ol>
+
+
+<p><a id="sharing"></a></p>
+
+<h3>Sharing email</h3>
+
+<p>We send these emails through tails@boum.org to avoid the need for a personal
+trust relationship between the person sending the mail and the recipient. We
+don&#39;t send shares from groups B, C, or D with tails@boum.org by doing so.</p>
+
+<pre>
+Subject: sharing
+
+Hola,
+
+We asked someone else from your group to send you a copy of your share.
+
+Please tell us once you receive it.
+
+The address of the mailing list that you should write to in case you want to
+assemble the revocation certificate is:
+
+    address@example.org
+
+Do not write to this mailing list unless you really want to start the key
+revocation process.
+
+Thanks, and may the force be with you!
+</pre>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../news/report_2016_10.html">news/report 2016 10</a>
+
+<a href="../../../news/report_2016_11.html">news/report 2016 11</a>
+
+<a href="../../../news/report_2017_04.html">news/report 2017 04</a>
+
+<a href="../../../news/report_2019_07.html">news/report 2019 07</a>
+
+<a href="../../../news/report_2019_11.html">news/report 2019 11</a>
+
+<a href="../openpgp_keys.es.html">openpgp keys.es</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/about/openpgp_keys/signing_key_revocation.es">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

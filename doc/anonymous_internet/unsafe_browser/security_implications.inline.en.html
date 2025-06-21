@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - security implications.inline</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../anonymous_internet.en.html">anonymous internet</a></li>
+
+
+
+
+
+<li><a href="../unsafe_browser.en.html">unsafe browser</a></li>
+
+
+
+
+<li>security implications.inline</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./security_implications.inline.de.html">de</a></span>
+   <span class="hidden"><a href="./security_implications.inline.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./security_implications.inline.es.html">es</a></span>
+   <span class="hidden"><a href="./security_implications.inline.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./security_implications.inline.fr.html">fr</a></span>
+   <span class="hidden"><a href="./security_implications.inline.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./security_implications.inline.it.html">it</a></span>
+   <span class="hidden"><a href="./security_implications.inline.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./security_implications.inline.pt.html">pt</a></span>
+   <span class="hidden"><a href="./security_implications.inline.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./security_implications.inline.ru.html">ru</a></span>
+   <span class="hidden"><a href="./security_implications.inline.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+security implications.inline
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<ul>
+<li><p><strong>The <em>Unsafe Browser</em> is not anonymous.</strong></p>
+
+<p>The <em>Unsafe Browser</em> does not use Tor. The websites that you visit can
+see your real IP address.</p>
+
+<p>This is why we recommend that you:</p>
+
+<ul>
+<li>Only use the <em>Unsafe Browser</em> to sign in to a network using a captive portal or
+<a href="../../advanced_topics/lan.en.html#browser">browse trusted web pages on the local
+network</a>.</li>
+<li>Close the <em>Unsafe Browser</em> after signing in to the network,
+to avoid using it by mistake.</li>
+</ul>
+</li>
+<li><p><strong>The <em>Unsafe Browser</em> can be used to deanonymize you.</strong></p>
+
+<p>An attacker could exploit a security vulnerability in another
+application in Tails to start an invisible <em>Unsafe Browser</em> and reveal
+your IP address, even if you are not using the <em>Unsafe Browser</em>.</p>
+
+<p>For example, an attacker could exploit a security vulnerability in
+<em>Thunderbird</em> by sending you a <a href="https://ssd.eff.org/en/module/how-avoid-phishing-attacks">phishing
+email</a> that
+could start an invisible <em>Unsafe Browser</em> and reveal them your IP
+address.</p>
+
+<p>Such an attack is very unlikely but could be performed by a strong
+attacker, such as a government or a hacking firm.</p>
+
+<p>This is why we recommend that you:</p>
+
+<ul>
+<li>Only enable the <em>Unsafe Browser</em> if you need to sign to a network using a captive
+portal.</li>
+<li>Always upgrade to the latest version of Tails to fix known
+vulnerabilities as soon as possible.</li>
+</ul>
+
+
+<p>We have plans to fix the root cause of this problem but it requires
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/12213">important engineering work</a>.</p></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/anonymous_internet/unsafe_browser/security_implications.inline">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

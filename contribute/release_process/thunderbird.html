@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Updating Thunderbird patches</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../release_process.html">release process</a></li>
+
+
+
+
+<li>Updating Thunderbird patches</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Updating Thunderbird patches
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Until we have
+<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6156">upstreamed our secure autoconfiguration patches</a>
+we have to maintain a patch series for Thunderbird ourselves, that we apply
+while building Tails images.</p>
+
+<p>We need to follow the following instructions whenever the patch series
+we have exported to tails.git does not apply anymore, therefore breaking
+the Tails images build process.</p>
+
+<ol>
+<li><p>Create, checkout and push a branch in <code>tails.git</code>.</p></li>
+<li><p>The first time you do this requires some additional steps (WARNING!
+this will download almost 2 GiB of data):</p>
+
+<ol>
+<li><p>Clone <a href="https://gitlab.tails.boum.org/tails/thunderbird">Tails&#39; Thunderbird repo</a>.</p></li>
+<li><p>Add a remote for Debian:</p>
+
+<p>  git remote add debian-upstream https://salsa.debian.org/mozilla-team/thunderbird.git</p></li>
+</ol>
+</li>
+<li><p>Set environment variables:</p>
+
+<p>Let&#39;s pretend the scenario is that Thunderbird 68.10.0-1~deb10u1 has just been
+released:</p>
+
+<pre><code> VERSION=&quot;68.10.0-1~deb10u1&quot;
+ TAG=&quot;debian/1%$(echo ${VERSION:?} | tr &#39;~&#39; &#39;_&#39;)&quot;
+</code></pre></li>
+<li><p><code>git fetch &amp;&amp; git fetch debian-upstream</code></p></li>
+<li><p>Verify the signed tag:</p>
+
+<pre><code> git tag -v &quot;${TAG:?}&quot;
+</code></pre>
+
+<p>The tag should have been signed with one of the keys that follow;
+investigate if it&#39;s not the case:</p>
+
+<ul>
+<li><code>8B94 819C 2555 70A3 74B6  2CCD 26E3 C875 A744 20EF</code></li>
+<li><code>B70D FC6F 134F ECFC 011E  62AA 8301 6014 251D 1DB0</code></li>
+<li><code>D343 9DAA 19DC FACD AE87  9CF2 B999 CDB5 8C8D DBD2</code></li>
+</ul>
+</li>
+<li><p>Let&#39;s update our branch to the new version:</p>
+
+<pre><code> git checkout tails/buster &amp;&amp; git merge origin/tails/buster &amp;&amp; \
+ git merge --no-edit &quot;${TAG:?}&quot;
+</code></pre></li>
+<li><p>Let&#39;s ensure our patches still apply cleanly:</p>
+
+<ol>
+<li><p>Check if they do:</p>
+
+<pre><code>quilt push -a
+</code></pre></li>
+<li><p>Regardless of whether our patches applied cleanly, clean up:</p>
+
+<pre><code>quilt pop -a &amp;&amp; rm -rf .pc
+</code></pre></li>
+<li><p>If our patches applied cleanly, move on. Otherwise:</p>
+
+<p>XXX (undocumented as we prefer focusing our efforts on
+upstreaming our patches than on documenting the current,
+temporary state of things): after reverse-engineering the state
+of our Git repository, it seems that one should create a new
+<code>secure_account_creation-${VERSION:?}</code> branch forked of the
+latest existing one, transplant our commits on top of <code>${TAG}</code>
+with the appropriate <code>--onto</code> option, squash our commits into
+a new <code>secure_account_creation-${VERSION:?}-squashed</code> branch,
+extract updated patches from there into
+<code>debian/patches/secure-account-creation/</code>.</p></li>
+</ol>
+</li>
+<li><p>Git push:</p>
+
+<pre><code> git push --follow-tags origin tails/buster
+</code></pre>
+
+<p>Note: pushing some tags will fail due to <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/11531">#11531</a>.</p></li>
+<li><p>Set variables according to your local environment:</p>
+
+<pre><code> TAILS_GIT_CHECKOUT=/path/to/your/tails/git/checkout
+ THUNDERBIRD_GIT_CHECKOUT=/path/to/your/thunderbird/git/checkout
+</code></pre></li>
+<li><p>Update the patches in tails.git:</p>
+
+<pre><code> THUNDERBIRD_GIT_COMMIT=$(git --git-dir=&quot;${THUNDERBIRD_GIT_CHECKOUT}/.git&quot; rev-parse --verify HEAD)
+ TAILS_GIT_PATCHES_DIR=&quot;config/chroot_local-includes/usr/share/tails/build/thunderbird-patches&quot;
+ cd &quot;$TAILS_GIT_CHECKOUT&quot; &amp;&amp; \
+ git rm -r &quot;$TAILS_GIT_PATCHES_DIR&quot; &amp;&amp; \
+ cp -r &quot;${THUNDERBIRD_GIT_CHECKOUT}/debian/patches/secure-account-creation&quot; \
+    &quot;$TAILS_GIT_PATCHES_DIR&quot; &amp;&amp; \
+ grep -E &#39;^secure-account-creation/&#39; &quot;${THUNDERBIRD_GIT_CHECKOUT}/debian/patches/series&quot; \
+    | perl -pE &#39;s{^secure-account-creation/}{}&#39; \
+    &gt; &quot;${TAILS_GIT_PATCHES_DIR}/series&quot; &amp;&amp; \
+ git add &quot;$TAILS_GIT_PATCHES_DIR&quot; &amp;&amp; \
+ git commit -m &quot;Update Thunderbird patches from tails/thunderbird.git at commit ${THUNDERBIRD_GIT_COMMIT}&quot;
+</code></pre></li>
+<li><p>Ensure the Thunderbird account setup wizard works in an image built
+from your tails.git branch.</p></li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/release_process/thunderbird">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

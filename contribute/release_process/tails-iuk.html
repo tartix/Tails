@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Generating IUKs, UDFs, and testing the Upgrader</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../release_process.html">release process</a></li>
+
+
+
+
+<li>Generating IUKs, UDFs, and testing the Upgrader</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Generating IUKs, UDFs, and testing the Upgrader
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Pre-requisites</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Install dependencies needed to generate IUKs, UDFs, and to run the test suite</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Run the test suite</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Test manually</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Pre-requisites</h1>
+
+<ul>
+<li>a Debian Stretch (or newer) system</li>
+<li>a user that has sudo credentials</li>
+<li><a href="./perl5lib.html#build-deps">Install perl5lib&#39;s dependencies</a></li>
+</ul>
+
+
+<p><a id="build-deps"></a></p>
+
+<h1><a name="index2h1"></a>Install dependencies needed to generate IUKs, UDFs, and to run the test suite</h1>
+
+<pre><code>cat $(git rev-parse --show-toplevel)/config/chroot_local-packageslists/tails-iuk.list \
+   | grep -E -v &#39;^#&#39; \
+   | xargs sudo apt --yes install &amp;&amp; \
+sudo apt install \
+   libdist-zilla-plugin-test-notabs-perl \
+   libdist-zilla-plugin-test-perl-critic-perl \
+   libdist-zilla-app-command-authordebs-perl \
+   libtest-lwp-useragent-perl &amp;&amp; \
+cd &quot;$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/iuk&quot; &amp;&amp; \
+dzil authordebs --install &amp;&amp; \
+sudo apt install \
+   attr \
+   bsdtar \
+   libdevice-cdio-perl \
+   dosfstools \
+   faketime \
+   gdisk \
+   genisoimage \
+   gnutls-bin \
+   kpartx \
+   libdata-dumper-concise-perl \
+   libdatetime-perl \
+   libfile-copy-recursive-perl \
+   nginx \
+   squashfs-tools \
+   syslinux
+</code></pre>
+
+<div class="note">
+You need <code>squashfs-tools</code> 4.4 or newer.
+</div>
+
+
+<h1><a name="index3h1"></a>Run the test suite</h1>
+
+<p>Prepare your environment (which includes getting a <code>sudo</code> authentication token,
+that&#39;s needed by the test suite, and setting a <code>umask</code> that runs the tests in
+conditions closer to production):</p>
+
+<pre><code>export SOURCE_DATE_EPOCH=$(date --utc +%s)
+sudo true
+umask 077
+</code></pre>
+
+<p>Run the full test suite:</p>
+
+<pre><code>cd &quot;$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/iuk&quot; &amp;&amp; \
+TAILS_GIT_CHECKOUT=&quot;$(git rev-parse --show-toplevel)&quot; \
+NODE_PATH=&quot;${TAILS_GIT_CHECKOUT}/submodules/mirror-pool-dispatcher/lib/js&quot; \
+PATH=&quot;${TAILS_GIT_CHECKOUT}/submodules/mirror-pool-dispatcher/bin:$PATH&quot; \
+PERL5LIB=&quot;${TAILS_GIT_CHECKOUT}/config/chroot_local-includes/usr/src/perl5lib/lib&quot; \
+   LC_ALL=C.UTF-8 \
+   dzil test --all
+</code></pre>
+
+<p>To run only BDD tests (ala Cucumber) defined under
+<code>config/chroot_local-includes/usr/src/iuk/features</code>, use <code>pherkin</code>.
+For example:</p>
+
+<pre><code>cd &quot;$(git rev-parse --show-toplevel)/config/chroot_local-includes/usr/src/iuk&quot; &amp;&amp; \
+TAILS_GIT_CHECKOUT=&quot;$(git rev-parse --show-toplevel)&quot; \
+NODE_PATH=&quot;${TAILS_GIT_CHECKOUT}/submodules/mirror-pool-dispatcher/lib/js&quot; \
+PATH=&quot;${TAILS_GIT_CHECKOUT}/submodules/mirror-pool-dispatcher/bin:$PATH&quot; \
+PERL5LIB=&quot;${TAILS_GIT_CHECKOUT}/config/chroot_local-includes/usr/src/perl5lib/lib&quot; \
+   LC_ALL=C.UTF-8 \
+   pherkin features/download_upgrade-description_file
+</code></pre>
+
+<h1><a name="index4h1"></a>Test manually</h1>
+
+<p>To test automatic upgrades on an image that includes changes to our <em>Upgrader</em>,
+typically you need to make the running Tails under test system believe
+it&#39;s running an older version of Tails, that can be upgraded.</p>
+
+<p>To do so:</p>
+
+<ol>
+<li><p>Install the Tails image you want to test on a USB drive.</p></li>
+<li><p>Start Tails from that USB drive.</p></li>
+<li><p>Set an Administration Password.</p></li>
+<li><p>Create a copy of the file that the <em>Upgrader</em> uses to tell which
+version of Tails was initially installed on this USB stick:</p>
+
+<pre><code> install -m 644 /lib/live/mount/rootfs/filesystem.squashfs/etc/os-release /tmp/
+</code></pre></li>
+<li><p>Modify <code>/tmp/os-release</code></p>
+
+<p>Typically, you would set <code>TAILS_VERSION_ID</code> to the version of the
+last-but-one Tails release.</p></li>
+<li><p>Mask the 2 real <code>os-release</code> files with your own:</p>
+
+<pre><code> sudo cp /tmp/os-release /etc/os-release &amp;&amp; \
+ sudo mount -o bind /tmp/os-release /lib/live/mount/rootfs/filesystem.squashfs/etc/os-release
+</code></pre></li>
+<li><p>Restart the <em>Upgrader</em> service:</p>
+
+<pre><code> systemctl --user restart tails-upgrade-frontend.service
+</code></pre></li>
+</ol>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../design/incremental_upgrades.html">design/incremental upgrades</a>
+
+<a href="../release_process.html">release process</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/release_process/tails-iuk">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

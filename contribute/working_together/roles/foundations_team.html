@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Foundations Team</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../working_together.html">working together</a></li>
+
+
+
+
+
+<li><a href="../roles.html">roles</a></li>
+
+
+
+
+<li>Foundations Team</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Foundations Team
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Duties</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Meetings</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Attendees</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Daily stand-up meeting</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Monthly'ish meeting</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index3h1">Tasks management</a>
+	<ol>
+		<li class="L2"><a href="#index4h2">How to pick your next task</a>
+		</li>
+		<li class="L2"><a href="#index5h2">Milestone</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Assignee</a>
+		</li>
+		<li class="L2"><a href="#index7h2">UX improvements</a>
+		</li>
+		<li class="L2"><a href="#index8h2">Useful links</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index4h1">Internal tools</a>
+	<ol>
+		<li class="L2"><a href="#index9h2">Team mailing list</a>
+		</li>
+		<li class="L2"><a href="#index10h2">Private Git repository</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index5h1">Contact</a>
+	</li>
+</ol>
+</div>
+
+
+<p><a id="duties"></a></p>
+
+<h1><a name="index1h1"></a>Duties</h1>
+
+<p>The Tails Foundations Team is responsible for:</p>
+
+<ul>
+<li><p>maintaining the core Tails system, which includes e.g.</p>
+
+<ul>
+<li>porting Tails to the new version of its upstream foundations, such
+as a new Debian, Tor or Tor Browser;</li>
+<li>keeping our core code base up-to-date and maintainable, e.g.
+refactor or clean up stuff that has bit-rotted, migrate code that
+would otherwise rely on obsolete technologies;</li>
+<li>maintaining the Tails ISO and USB images build system;</li>
+<li>doing the <em>extra</em> peer-review and
+<a href="./release_manager.html">release management</a> work that corresponds to
+the above bullet points;</li>
+</ul>
+</li>
+<li><p>welcoming and mentoring new code contributors;</p></li>
+<li><p>reviewing code contributions
+in a timely manner (1 week in general, up to 2 weeks if needed in exceptional
+cases). If nobody on the Foundations Team can take care of a given MR,
+it&#39;s the Foundations Team&#39;s responsibility to ask for help:
+<a href="https://gitlab.tails.boum.org/groups/tails/-/merge_requests">Merge Requests
+(MRs)</a>, and in particular <a href="https://gitlab.tails.boum.org/groups/tails/-/merge_requests?scope=all&amp;utf8=&#x2713;&amp;state=opened&amp;assignee_id=None&amp;wip=no">unassigned Merge Requests (MRs) that are not marked as
+drafts</a></p></li>
+<li><p>triaging issues forwarded by <a href="./help_desk.html">Help Desk</a>.</p>
+
+<p>The members of the Foundations Team who share the &quot;frontdesk&quot; workload are
+subscribed to the mailing list that receives bug reports:
+<a href="mailto:tails-bugs@boum.org">tails-bugs@boum.org</a>. In order to raise FT&#39;s attention on a specific report,
+Help Desk replies to it on that mailing list, adding a <code>[FT]</code> tag in
+the subject.</p>
+
+<p>Then, Foundations Team &quot;frontdesk&quot; checks how important each issue forwarded
+by Help Desk is, whether it&#39;s worth documenting it, and validates the
+workarounds. If it&#39;s worth documenting the problem and possibly the
+workarounds, either put it on our Technical Writers&#39; plate, or draft something
+directly, or merge a draft proposed by Technical Writer apprentices;</p></li>
+<li><p>triaging
+<a href="https://gitlab.tails.boum.org/groups/tails/-/issues?scope=all&amp;utf8=%E2%9C%93&amp;state=opened&amp;not[label_name][]=To%20Do&amp;not[label_name][]=Doing&amp;not[label_name][]=Needs%20Validation&amp;not[label_name][]=Rejected&amp;assignee_id=None&amp;sort=created_date">newly created issues</a>
+when they are more technical than feature
+request (those are handled by the UX designers) or about bugs;
+reassigning to whoever is on Help Desk duty any new issue that&#39;s
+really a support request;</p></li>
+<li><p>ensuring that development discussions started on
+<a href="mailto:tails-dev@boum.org">tails-dev@boum.org</a> are followed-up;</p></li>
+<li><p>proposing a release schedule for next year once Mozilla&#39;s own
+schedule is available (generally during Q3), ensuring everyone
+affected is aware of it and OK with it (e.g. team managers for
+sponsor deliverables), leading this discussion to a conclusion,
+updating the <a href="../../calendar.html">calendar</a> accordingly, and asking
+<a href="mailto:tails-rm@boum.org">tails-rm@boum.org</a> to decide between themselves how they will share
+the <a href="./release_manager.html">release manager</a> shifts; things to keep in mind:</p>
+
+<ul>
+<li>An emergency release is often needed shortly after <a href="https://en.wikipedia.org/wiki/Pwn2Own">Pwn2Own</a>.</li>
+</ul>
+</li>
+<li><p>deal with last minute emergency fixes needed during release process,
+e.g. <a href="https://gitlab.tails.boum.org/tails/tails/-/issues/14962">#14962</a>;</p></li>
+<li><p>if time allows, do whatever code task the project sees as
+top-priority, such as fixing Holes in the Roof, important bugs, or
+implementing a feature that is needed to keep Tails relevant.</p></li>
+<li><p>Maintain Tails relevant Debian packages in Debian</p>
+
+<ul>
+<li>Role: being the fallback, on behalf of Tails, to ensure these packages are
+well maintained in Debian (it&#39;s OK, and even great, if other pkg-privacy
+members do part of the work).</li>
+<li>Tasks:
+
+<ul>
+<li><a href="https://udd.debian.org/dmd/?email1=&amp;email2=&amp;email3=&amp;packages=libgsecuredelete+libotr+mat+nautilus-wipe+onioncircuits+onionshare+pidgin-otr+seahorse-nautilus+torsocks&amp;ignpackages=&amp;format=html#todo">Maintain a bunch of packages</a>.
+
+<ul>
+<li><code>mat</code> will be removed from this list once the Stretch LTS lifetime is
+over (June 2022).</li>
+<li><code>pidgin-otr</code> and <code>libotr</code> will be removed from this list once we don&#39;t ship Pidgin anymore
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/8573">#8573</a>)</li>
+<li><code>seahorse-nautilus</code> is a candidate for removal (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18484">#18484</a>)</li>
+</ul>
+</li>
+<li><a href="https://udd.debian.org/dmd/?email1=&amp;email2=&amp;email3=&amp;packages=bilibop+keyringer&amp;ignpackages=&amp;format=html#todo">Review and sponsor a few more packages</a>.
+
+<ul>
+<li><code>keyringer</code> could be removed from this list if all teams migrated to <a href="https://tracker.debian.org/pkg/pass">pass</a></li>
+</ul>
+</li>
+<li>Track Debian bugs and forward them upstream.</li>
+</ul>
+</li>
+<li>Duration:
+
+<ul>
+<li>as long as we ship these packages in Tails</li>
+<li>until the EOL of the last Debian stable release (including
+LTS) we put it in, even if we drop the package from Tails:
+including a package in a stable Debian release implies
+a commitment to maintain it during its lifetime.</li>
+</ul>
+</li>
+<li>In order to communicate expectations to the person who wears this hat,
+Tails contributors can:
+
+<ul>
+<li>use the Debian BTS</li>
+<li>mention <code>@debian-packages-maintainers</code> on our <a href="https://gitlab.tails.boum.org/">GitLab</a></li>
+</ul>
+</li>
+<li>Not in the scope of this work:
+
+<ul>
+<li><a href="https://qa.debian.org/developer.php?email=pkg-apparmor-team%40lists.alioth.debian.org">Debian AppArmor team</a>&#39;s packages,
+Perl libraries our custom software depends on: intrigeri does it
+as a volunteer with his Debian hat.</li>
+<li><a href="https://tracker.debian.org/pkg/torbrowser%2Dlauncher">torbrowser-launcher</a>: we only use its AppArmor
+profiles, that we could easily take from upstream if the Debian
+package was not maintained.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Track bugs related to the aforementioned packages in Tails and forward them
+to Debian.</p></li>
+<li><p>Maintain the backend of the <a href="../../../install/inc/js/download.js">verification
+JavaScript</a> that is used on our download pages.
+For example, update it to new versions of the Forge library. See its
+<a href="../../release_process/verification_javascript.html">release process</a>.</p></li>
+</ul>
+
+
+<p><a id="meetings"></a></p>
+
+<h1><a name="index2h1"></a>Meetings</h1>
+
+<h2><a name="index1h2"></a>Attendees</h2>
+
+<p>These meetings are primarily meant to coordinate the work of the most active
+members of the team. Other team members are welcome to join, but not
+expected to.</p>
+
+<h2><a name="index2h2"></a>Daily stand-up meeting</h2>
+
+<p>We have a short stand-up meeting every work day at 11:00 CET/CEST.</p>
+
+<p>The most active team members are expected to attend at least half of
+these meetings.</p>
+
+<h2><a name="index3h2"></a>Monthly'ish meeting</h2>
+
+<p>At the beginning of every release cycle, we replace one daily stand-up meeting
+with a 1-hour meeting focused on bigger-picture-y topics, such as:</p>
+
+<ul>
+<li>coordinating work for this release cycle</li>
+<li>looking further ahead: zooming out to our roadmap</li>
+<li>sharing feedback</li>
+</ul>
+
+
+<p>Logistics:</p>
+
+<ul>
+<li><strong>Date</strong>: the Thursday that immediately follows a scheduled release</li>
+<li><strong>Time</strong>: 11:00 CET/CEST</li>
+<li><strong>Location</strong>: see <code>meetings/next.mdwn</code> in the Foundations Team&#39;s internal Git
+repository</li>
+</ul>
+
+
+<p>If you cannot make one of these meetings, please share with the team, before the
+meeting:</p>
+
+<ul>
+<li>a brief status update about life, work, and blockers;</li>
+<li>information about how your plans for this release cycle.</li>
+</ul>
+
+
+<p><a id="tasks-management"></a></p>
+
+<h1><a name="index3h1"></a>Tasks management</h1>
+
+<p>This section documents the principles and guidelines we use for tracking
+<a href="https://gitlab.tails.boum.org/tails/tails/-/boards/4?&amp;label_name%5B%5D=Core%20Work%3AFoundations%20Team">our tasks</a>.</p>
+
+<p>This applies on top of the broader Tails project&#39;s tasks management
+guidelines:</p>
+
+<ul>
+<li><a href="../GitLab.html">GitLab</a></li>
+<li><a href="../GitLab.html#document-progress">How to document progress</a></li>
+</ul>
+
+
+<p><a id="tasks-management-pick"></a></p>
+
+<h2><a name="index4h2"></a>How to pick your next task</h2>
+
+<div class="note">
+This is an initial draft, to be refined while learning from experience :)
+</div>
+
+
+<p>Among the Foundations Team issues, in decreasing order of priority :</p>
+
+<ol>
+<li>Milestone is the upcoming version, for good reasons.</li>
+<li>Grant deliverable with a deadline.</li>
+<li>Milestone is the version that follows the upcoming release, for good reasons.</li>
+<li>Has a <code>$YEAR</code> label, which means this issue is on our roadmap.</li>
+<li><a href="./foundations_team.html#tasks-management-ux-improvements">UX debt</a></li>
+<li>Priority is high (<code>P:High</code> label)</li>
+<li>Priority is elevated (<code>P:Elevated</code> label)</li>
+</ol>
+
+
+<p><a id="tasks-management-milestone"></a>
+<a id="tasks-management-target-version"></a></p>
+
+<h2><a name="index5h2"></a>Milestone</h2>
+
+<p>The Foundation Team treats the <em>Milestone</em> field as a commitment.
+Other Tails teams, contributors, and users should be able to rely on
+the value of this field.</p>
+
+<p>An issue
+<a href="https://gitlab.tails.boum.org/tails/tails/-/boards/4?&amp;label_name%5B%5D=Core%20Work%3AFoundations%20Team">owned by the Foundations Team</a>
+should have a milestone set if, and only if, at least
+one of these conditions is met:</p>
+
+<ul>
+<li><p>External constraints determine the timeline of our work.
+For example, we have to upgrade to the next Tor Browser
+major release.</p></li>
+<li><p>We are <em>very</em> confident we will complete the task in time for
+a specific release and we have a good reason to focus on it.
+For example, work in progress tasks can be good candidates,
+as opposed to starting work on a new task.</p></li>
+</ul>
+
+
+<p>Postponing a task to the next milestone more than once is not
+business as usual &mdash; it&#39;s a red flag. Such a change should be
+justified. The underlying problem should be identified and addressed:
+for example, the assignee might need help or be over-committed; the
+team could be under-staffed; or perhaps the task should simply not
+have any milestone in the first place.</p>
+
+<p><a id="tasks-management-assignee"></a></p>
+
+<h2><a name="index6h2"></a>Assignee</h2>
+
+<p>See <a href="../GitLab.html#assignee">GitLab</a>.</p>
+
+<p><a id="tasks-management-ux-improvements"></a></p>
+
+<h2><a name="index7h2"></a>UX improvements</h2>
+
+<p>We have a list of
+<a href="https://gitlab.tails.boum.org/groups/tails/-/issues?scope=all&amp;utf8=&#x2713;&amp;state=opened&amp;label_name%5B%5D=Core%20Work%3AFoundations%20Team&amp;label_name%5B%5D=UX%3Adebt">UX improvements that qualify as Foundations Team work</a>.</p>
+
+<p>When you start working on such an issue:</p>
+
+<ul>
+<li><p>Assign it to yourself.</p></li>
+<li><p>Notify our <a href="./ux.html">UX designers</a> with a <code>@sajolida</code> mention on
+the issue: then they can explain what kind of work they have to do
+before you can complete your part of the work.</p></li>
+</ul>
+
+
+<h3><a name="index1h3"></a>Process</h3>
+
+<p>Our <a href="./ux.html">UX designers</a> maintain a
+<a href="https://gitlab.tails.boum.org/groups/tails/-/issues?scope=all&amp;utf8=&#x2713;&amp;state=opened&amp;label_name%5B%5D=UX%3Adebt">list of UX improvements</a> that would be welcome,
+using the &quot;UX:debt&quot; label.</p>
+
+<p>From time to time, some Foundations Team members meet with UX designers and do
+a value/cost analysis of these issues. Then, those with the best value/cost,
+that we can work on without waiting for lots of UX design work to be done, are
+added to the list of Foundations Team tasks.</p>
+
+<p><a id="tasks-management-useful-links"></a></p>
+
+<h2><a name="index8h2"></a>Useful links</h2>
+
+<ul>
+<li><p><a href="https://gitlab.tails.boum.org/tails/tails/-/boards/4?&amp;label_name%5B%5D=Core%20Work%3AFoundations%20Team&amp;milestone_title=%23upcoming">Board: our tasks scheduled for the upcoming milestone</a></p></li>
+<li><p><a href="https://gitlab.tails.boum.org/tails/tails/-/boards/4?&amp;label_name%5B%5D=Core%20Work%3AFoundations%20Team&amp;milestone_title=%23started">Board: our tasks scheduled for any started milestone</a></p></li>
+</ul>
+
+
+<h1><a name="index4h1"></a>Internal tools</h1>
+
+<h2><a name="index9h2"></a>Team mailing list</h2>
+
+<p>Foundations Team members are on the <a href="mailto:tails-foundations@boum.org">tails-foundations@boum.org</a>
+Schleuder mailing list.</p>
+
+<h2><a name="index10h2"></a>Private Git repository</h2>
+
+<p>To set it up:</p>
+
+<ol>
+<li><p>Install needed tools</p>
+
+<pre><code> apt install git-remote-gcrypt
+</code></pre></li>
+<li><p>Clone it the repo</p>
+
+<pre><code> git clone gcrypt::git@gitlab-ssh.tails.boum.org:tails/foundations.git
+</code></pre></li>
+<li><p>Follow the setup documentation: <code>README.md</code> in the Git repository.</p></li>
+</ol>
+
+
+<p><a id="contact"></a></p>
+
+<h1><a name="index5h1"></a>Contact</h1>
+
+<p>To get in touch with the entire Foundations Team, you can:</p>
+
+<ul>
+<li>write to <a href="mailto:tails-foundations@boum.org">tails-foundations@boum.org</a>;</li>
+<li>mention <code>@foundations-team</code> on GitLab: GitLab will send an email notification
+about it to every member of the Foundations Team, and add it to their
+To-Do list.</li>
+</ul>
+
+
+<p>You can encrypt your email with our <a href="../../../tails-foundations.key">OpenPGP key</a>
+(<a href="../../../doc/about/openpgp_keys.en.html#foundations">details</a>).</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../../about/contact.en.html">about/contact</a>
+
+<a href="../../../about/contact.de.html">about/contact.de</a>
+
+<a href="../../../about/contact.es.html">about/contact.es</a>
+
+<a href="../../../about/contact.fr.html">about/contact.fr</a>
+
+<a href="../../../about/contact.it.html">about/contact.it</a>
+
+<a href="../../../about/contact.pt.html">about/contact.pt</a>
+
+<a href="../../../about/contact.ru.html">about/contact.ru</a>
+
+<a href="../../../contribute.en.html">contribute</a>
+
+<a href="../../../contribute.de.html">contribute.de</a>
+
+<a href="../../../contribute.es.html">contribute.es</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="../../../contribute.fr.html">contribute.fr</a>
+
+<a href="../../../contribute.it.html">contribute.it</a>
+
+<a href="../../../contribute.pt.html">contribute.pt</a>
+
+<a href="../../../contribute.ru.html">contribute.ru</a>
+
+<a href="../../../jobs/Linux_generalist.html">jobs/Linux generalist</a>
+
+<a href="../../merge_policy/submit.html">merge policy/submit</a>
+
+<a href="../../../news/report_2018_08.html">news/report 2018 08</a>
+
+<a href="../../../news/report_2019_04.html">news/report 2019 04</a>
+
+<a href="../../../news/report_2020_12.html">news/report 2020 12</a>
+
+<a href="../../../news/report_2021_08.html">news/report 2021 08</a>
+
+<a href="./release_manager.html">release manager</a>
+
+<a href="./technical_writer.html">technical writer</a>
+
+<a href="./ux.html">ux</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/working_together/roles/foundations_team">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

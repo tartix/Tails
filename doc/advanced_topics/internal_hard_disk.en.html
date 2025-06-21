@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Accessing the internal hard disk</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./boot_options.en.html" title="Modifying the boot options using the Boot Loader" />
+
+<link rel="up" href="../advanced_topics.index.html" title="advanced topics.index" />
+
+<link rel="next" href="./cold_boot_attacks.en.html" title="Protection against cold boot attacks" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../advanced_topics.en.html">advanced topics</a></li>
+
+
+
+
+<li>Accessing the internal hard disk</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./internal_hard_disk.de.html">de</a></span>
+   <span class="hidden"><a href="./internal_hard_disk.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./internal_hard_disk.es.html">es</a></span>
+   <span class="hidden"><a href="./internal_hard_disk.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./internal_hard_disk.fr.html">fr</a></span>
+   <span class="hidden"><a href="./internal_hard_disk.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./internal_hard_disk.it.html">it</a></span>
+   <span class="hidden"><a href="./internal_hard_disk.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./internal_hard_disk.pt.html">pt</a></span>
+   <span class="hidden"><a href="./internal_hard_disk.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./internal_hard_disk.ru.html">ru</a></span>
+   <span class="hidden"><a href="./internal_hard_disk.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Accessing the internal hard disk
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./boot_options.en.html">Modifying the boot options using the Boot Loader</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./cold_boot_attacks.en.html">Protection against cold boot attacks</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="caution">
+
+<p>Accessing internal disks of the computer has security implications:
+
+</p><ul>
+  <li>You can leave traces of your activities in Tails on the hard disks.</li>
+  <li>If Tails is compromised, a malware could install itself on your usual operating system.</li>
+  <li>If an application in Tails is compromised, it could access private data on your disks and use it to de-anonymize you.</li>
+</ul>
+
+
+
+</div>
+
+
+<p>To access internal hard disks:</p>
+
+<ol>
+<li><p>When starting Tails, <a href="../first_steps/welcome_screen/administration_password.en.html">set up an administration password</a>.</p></li>
+<li><p>Open the <a href="../first_steps/introduction_to_gnome_and_the_tails_desktop.en.html#files"><em>Files</em> browser</a>.</p></li>
+<li><p>Click on the hard disk of your choice in the left pane.</p></li>
+</ol>
+
+
+<div class="caution">
+
+<p>If your usual operating system is in
+hibernation, accessing it might corrupt your file system. Only access your disk
+if your system was shut down properly.</p>
+
+</div>
+
+
+
+
+<div class="note">
+
+<p>If you have a GNU/Linux system on your disks, you can only access
+files owned by the first user (<code>uid=1000</code>) on that system.</p>
+
+<p>In all cases, you might encounter permissions problems. To bypass
+permission limitations, you can run the <span class="application">Files</span> browser
+with administration rights.</p>
+
+</div>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./boot_options.en.html">Modifying the boot options using the Boot Loader</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./cold_boot_attacks.en.html">Protection against cold boot attacks</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../advanced_topics.index.html">advanced topics.index</a>
+
+<a href="../first_steps/welcome_screen/administration_password.en.html">first steps/welcome screen/administration password</a>
+
+<a href="./virtualization/virtualbox.en.html">virtualization/virtualbox</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/internal_hard_disk">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

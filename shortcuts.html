@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - shortcuts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+
+<link rel="stylesheet" href="local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="./index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="./index.html">Home</a></li>
+  <li><a href="./about.en.html">How Tails works</a></li>
+  <li><a href="./install.en.html">Get Tails</a></li>
+  <li><a href="./doc.en.html">Documentation</a></li>
+  <li><a href="./support.en.html">Support</a></li>
+  <li><a href="./contribute.en.html">Contribute</a></li>
+  <li><a href="./news.en.html">News</a></li>
+  <li><a href="./jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="./index.html"><img alt="home" src="lib/home.png"></a></li>
+
+
+
+
+
+
+<li>shortcuts</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+shortcuts
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>Some examples of using shortcuts include:</p>
+
+<pre><code>[[!google  foo]]
+[[!wikipedia  War_of_1812]]
+[[!debbug  12345]]
+Check the [[!cia  ikiwiki desc=&quot;CIA page for %s&quot;]].
+</code></pre>
+
+<p>This page controls what shortcut links the wiki supports.</p>
+
+<ul>
+<li>shortcut google points to <i>https://encrypted.google.com/search?q=%s</i></li>
+<li>shortcut archive points to <i>http://web.archive.org/*/%S</i></li>
+<li>shortcut gmap points to <i>https://maps.google.com/maps?q=%s</i></li>
+<li>shortcut gmsg points to <i>https://groups.google.com/groups?selm=%s</i></li>
+<li>shortcut wikipedia points to <i>https://en.wikipedia.org/wiki/%W</i></li>
+<li>shortcut wikitravel points to <i>https://wikitravel.org/en/%s</i></li>
+<li>shortcut wiktionary points to <i>https://en.wiktionary.org/wiki/%s</i></li>
+<li>shortcut debbug points to <i>https://bugs.debian.org/%S</i></li>
+<li>shortcut deblist points to <i>https://lists.debian.org/debian-%s</i></li>
+<li>shortcut debpkg points to <i>http://packages.debian.org/%s</i></li>
+<li>shortcut debpkgsid points to <i>http://packages.debian.org/sid/%s</i></li>
+<li>shortcut debpts points to <i>https://tracker.debian.org/pkg/%s</i></li>
+<li>shortcut debmsg points to <i>https://lists.debian.org/msgid-search/%s</i></li>
+<li>shortcut debrt points to <i>https://rt.debian.org/Ticket/Display.html?id=%s</i></li>
+<li>shortcut debss points to <i>http://snapshot.debian.org/package/%s/</i>
+
+<ul>
+<li>Usage: <code>[[!debss  package]]</code> or <code>[[!debss  package/version]]</code>.  See <a href="http://snapshot.debian.org/">http://snapshot.debian.org/</a> for details.</li>
+</ul>
+</li>
+<li>shortcut debwiki points to <i>https://wiki.debian.org/%S</i></li>
+<li>shortcut fdobug points to <i>https://bugs.freedesktop.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut fdolist points to <i>http://lists.freedesktop.org/mailman/listinfo/%s</i></li>
+<li>shortcut gnomebug points to <i>https://bugzilla.gnome.org/show_bug.cgi?id=%s</i>
+*
+shortcut gnome_gitlab points to <i>https://gitlab.gnome.org/GNOME/%S</i></li>
+<li>shortcut linuxbug points to <i>https://bugzilla.kernel.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut mozbug points to <i>https://bugzilla.mozilla.org/show_bug.cgi?id=%s</i></li>
+<li>shortcut gnulist points to <i>https://lists.gnu.org/mailman/listinfo/%s</i></li>
+<li>shortcut marcmsg points to <i>http://marc.info/?i=%s</i></li>
+<li>shortcut marclist points to <i>http://marc.info/?l=%s</i></li>
+<li>shortcut gmane points to <i>http://dir.gmane.org/gmane.%s</i></li>
+<li>shortcut gmanemsg points to <i>http://mid.gmane.org/%s</i></li>
+<li>shortcut cpan points to <i>http://metacpan.org/search?q=%s</i></li>
+<li>shortcut ctan points to <i>http://tug.ctan.org/cgi-bin/ctanPackageInformation.py?id=%s</i></li>
+<li>shortcut hoogle points to <i>http://haskell.org/hoogle/?q=%s</i></li>
+<li>shortcut iki points to <i>http://ikiwiki.info/%S/</i></li>
+<li>shortcut ljuser points to <i>http://%s.livejournal.com/</i></li>
+<li>shortcut rfc points to <i>https://www.ietf.org/rfc/rfc%s.txt</i></li>
+<li>shortcut c2 points to <i>http://c2.com/cgi/wiki?%s</i></li>
+<li>shortcut meatballwiki points to <i>http://www.usemod.com/cgi-bin/mb.pl?%s</i></li>
+<li>shortcut emacswiki points to <i>http://www.emacswiki.org/cgi-bin/wiki/%s</i></li>
+<li>shortcut haskellwiki points to <i>http://haskell.org/haskellwiki/%s</i></li>
+<li>shortcut dict points to <i>http://www.dict.org/bin/Dict?Form=Dict1&amp;Strategy=<em>&amp;Database=</em>&amp;Query=%s</i></li>
+<li>shortcut imdb points to <i>http://imdb.com/find?q=%s</i></li>
+<li>shortcut gpg points to <i>http://pgpkeys.mit.edu:11371/pks/lookup?op=vindex&amp;exact=on&amp;search=0x%s</i></li>
+<li>shortcut perldoc points to <i>http://perldoc.perl.org/search.html?q=%s</i></li>
+<li>shortcut whois points to <i>http://reports.internic.net/cgi/whois?whois_nic=%s&amp;type=domain</i></li>
+<li>shortcut cve points to <i>https://cve.mitre.org/cgi-bin/cvename.cgi?name=%s</i></li>
+<li>shortcut cia points to <i>http://cia.vc/stats/project/%s</i></li>
+<li>shortcut ciauser points to <i>http://cia.vc/stats/user/%s</i></li>
+<li>shortcut flickr points to <i>https://secure.flickr.com/photos/%s</i></li>
+<li>shortcut man points to <i>http://linux.die.net/man/%s</i></li>
+<li>shortcut ohloh points to <i>https://www.ohloh.net/p/%s</i></li>
+<li>shortcut cpanrt points to <i>https://rt.cpan.org/Ticket/Display.html?id=%s</i></li>
+<li>shortcut novellbug points to <i>https://bugzilla.novell.com/show_bug.cgi?id=%s</i></li>
+<li>shortcut ubupkg points to <i>http://packages.ubuntu.com/%s</i></li>
+<li>shortcut mozillazinekb points to <i>http://kb.mozillazine.org/%s</i></li>
+<li>shortcut freebsdwiki points to <i>http://wiki.freebsd.org/%s</i></li>
+<li>shortcut hackage points to <i>http://hackage.haskell.org/package/%s</i></li>
+</ul>
+
+
+<p>To add a new shortcut, use the <code>shortcut</code>
+<a href="./ikiwiki/directive.html">directive</a>. In the url, &quot;%s&quot; is replaced with the
+text passed to the named shortcut, after <a href="https://en.wikipedia.org/wiki/url%5Fencoding">url encoding</a>
+it, and &#39;%S&#39; is replaced with the raw, non-encoded text.
+Additionally, <code>%W</code> is replaced with the text encoded just right for
+Wikipedia. The optional <code>desc</code> parameter controls the description of
+the link.</p>
+
+<p>Remember that the <code>name</code> you give the shortcut will become a new
+<a href="./ikiwiki/directive.html">directive</a>.  Avoid using a <code>name</code> that conflicts
+with an existing directive.  These directives also accept a <code>desc</code>
+parameter that will override the one provided at definition time.</p>
+
+<p>If you come up with a shortcut that you think others might find useful,
+consider contributing it to the <a href="http://ikiwiki.info/shortcuts/">shortcuts page on the ikiwiki
+wiki</a>, so that future versions of
+ikiwiki will include your shortcut in the standard underlay.</p>
+
+<h1>Local shortcuts</h1>
+
+<ul>
+<li>shortcut tails_website points to <i>https://tails.boum.org/%S</i></li>
+<li>shortcut tails_blueprint points to <i>https://gitlab.tails.boum.org/tails/blueprints/-/wikis/%S</i></li>
+<li>shortcut tails_gitlab points to <i>https://gitlab.tails.boum.org/%S</i></li>
+<li>shortcut tails_gitlab_starter points to <i>https://gitlab.tails.boum.org/groups/tails/-/issues?scope=all&amp;utf8=&#x2713;&amp;state=opened&amp;label_name[]=Starter</i></li>
+<li>shortcut tails_ticket points to <i>https://gitlab.tails.boum.org/tails/tails/-/issues/%S</i></li>
+<li>shortcut tails_mr points to <i>https://gitlab.tails.boum.org/tails/tails/-/merge_requests/%S</i></li>
+<li>shortcut tails_roadmap points to <i>https://tails.boum.org/contribute/roadmap</i></li>
+<li>shortcut tails_gitweb points to <i>https://gitlab.tails.boum.org/tails/tails/-/blob/master/%S</i></li>
+<li>shortcut tails_gitweb_dir points to <i>https://gitlab.tails.boum.org/tails/tails/-/tree/master/%S</i></li>
+<li>shortcut tails_gitweb_branch points to <i>https://gitlab.tails.boum.org/tails/tails/-/commits/%S/</i></li>
+<li>shortcut tails_gitweb_commit points to <i>https://gitlab.tails.boum.org/tails/tails/-/commit/%s</i></li>
+<li>shortcut tails_gitweb_repo points to <i>https://gitlab.tails.boum.org/tails/%S</i></li>
+<li>shortcut tails_gitweb_puppet_tails points to <i>https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/%S</i></li>
+<li>shortcut launchpad_bug points to <i>https://bugs.launchpad.net/onboard/+bug/%s</i></li>
+<li>shortcut tor_bug points to <i>https://bugs.torproject.org/%s</i></li>
+<li>shortcut debusertag points to <i>https://bugs.debian.org/cgi-bin/pkgreport.cgi?users=tails-dev@boum.org;tag=%s</i></li>
+<li>shortcut wikipedia_de points to <i>https://de.wikipedia.org/wiki/%s</i></li>
+<li>shortcut wikipedia_es points to <i>https://es.wikipedia.org/wiki/%s</i></li>
+<li>shortcut wikipedia_fa points to <i>https://fa.wikipedia.org/wiki/%s</i></li>
+<li>shortcut wikipedia_fr points to <i>https://fr.wikipedia.org/wiki/%s</i></li>
+<li>shortcut wikipedia_it points to <i>https://it.wikipedia.org/wiki/%s</i></li>
+<li>shortcut wikipedia_pt points to <i>https://pt.wikipedia.org/wiki/%s</i></li>
+<li>shortcut wikipedia_tr points to <i>https://tr.wikipedia.org/wiki/%s</i></li>
+<li>shortcut debsa2012 points to <i>https://www.debian.org/security/2012/dsa-%s</i></li>
+<li>shortcut debsa2013 points to <i>https://www.debian.org/security/2013/dsa-%s</i></li>
+<li>shortcut debsa2014 points to <i>https://www.debian.org/security/2014/dsa-%s</i></li>
+<li>shortcut debsa2015 points to <i>https://www.debian.org/security/2015/dsa-%s</i></li>
+<li>shortcut debsa2016 points to <i>https://www.debian.org/security/2016/dsa-%s</i></li>
+<li>shortcut debsa2017 points to <i>https://www.debian.org/security/2017/dsa-%s</i></li>
+<li>shortcut debsa2018 points to <i>https://www.debian.org/security/2018/dsa-%s</i></li>
+<li>shortcut debsa2019 points to <i>https://www.debian.org/security/2019/dsa-%s</i></li>
+<li>shortcut debsa2020 points to <i>https://www.debian.org/security/2020/dsa-%s</i></li>
+<li>shortcut mfsa points to <i>https://www.mozilla.org/en-US/security/advisories/mfsa%s/</i></li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./contribute/how/documentation/style_guide.html">contribute/how/documentation/style guide</a>
+
+<a href="./contribute/how/translate/with_Git.html">contribute/how/translate/with Git</a>
+
+<a href="./ikiwiki/formatting.html">ikiwiki/formatting</a>
+
+<a href="./ikiwiki/formatting.de.html">ikiwiki/formatting.de</a>
+
+<a href="./ikiwiki/formatting.es.html">ikiwiki/formatting.es</a>
+
+<a href="./ikiwiki/formatting.fr.html">ikiwiki/formatting.fr</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=shortcuts">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

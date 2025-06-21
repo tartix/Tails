@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+
+<html lang="es" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Cambiar la contrase&#xF1;a del Almacenamiento Persistente</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="../virtualization/virt-manager.es.html" title="virt-manager" />
+
+<link rel="up" href="../../advanced_topics.index.es.html" title="advanced topics.index.es" />
+
+<link rel="next" href="./check_file_system.es.html" title="Revisar el sistema de ficheros del Almacenamiento Persistente" />
+
+
+
+
+</head>
+
+
+<body class="es">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.es.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.es.html">Inicio</a></li>
+  <li><a href="../../../about.es.html">C&oacute;mo funciona Tails</a></li>
+  <li><a href="../../../install.es.html">Obtener Tails</a></li>
+  <li><a href="../../../doc.es.html">Documentaci&oacute;n</a></li>
+  <li><a href="../../../support.es.html">Soporte</a></li>
+  <li><a href="../../../contribute.es.html">Colabora</a></li>
+  <li><a href="../../../news.es.html">Noticias</a></li>
+  <li><a href="../../../jobs.html">Trabajos</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.es.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../doc.es.html">doc</a></li>
+
+
+
+
+
+<li><a href="../../advanced_topics.es.html">advanced topics</a></li>
+
+
+
+
+
+<li><a href="../../../index.es.html">persistence</a></li>
+
+
+
+
+<li>Cambiar la contrase&#xF1;a del Almacenamiento Persistente</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current">
+   <span class="visible">Español
+   </span>
+   <span class="hidden">Español
+()
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li  class="master">
+
+   <span class="visible"><a href="./change_passphrase.en.html">en</a></span>
+   <span class="hidden"><a href="./change_passphrase.en.html">English</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.de.html">de</a></span>
+   <span class="hidden"><a href="./change_passphrase.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.fr.html">fr</a></span>
+   <span class="hidden"><a href="./change_passphrase.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.it.html">it</a></span>
+   <span class="hidden"><a href="./change_passphrase.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.pt.html">pt</a></span>
+   <span class="hidden"><a href="./change_passphrase.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./change_passphrase.ru.html">ru</a></span>
+   <span class="hidden"><a href="./change_passphrase.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Cambiar la contrase&#xF1;a del Almacenamiento Persistente
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="../virtualization/virt-manager.es.html">virt-manager</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.es.html">advanced topics.index.es</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./check_file_system.es.html">Revisar el sistema de ficheros del Almacenamiento Persistente</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<ol>
+<li><p>Arranca Tails <a href="../../first_steps/welcome_screen/administration_password.es.html">configurando una contrase&ntilde;a de
+ administrador</a>.</p>
+
+<p> En la Pantalla de Bienvenida, mant&eacute;n el Almacenamiento Persistente cerrado.</p></li>
+<li><p>Abre <span class="application">Discos</span> desde el men&uacute;
+ <span class="menuchoice">
+   <span class="guimenu">Aplicaciones</span>&nbsp;&#x25B8;
+   <span class="guisubmenu">Utilidades</span>&nbsp;&#x25B8;
+   <span class="guimenuitem">Discos</span></span>.</p>
+
+<p> <span class="application">Discos</span> lista todos los dispositivos de almacenamiento
+ en el panel izquierdo de la ventana. Al seleccionar uno de estos dispositivos
+ se despliega informaci&oacute;n m&aacute;s detallada en el panel de la derecha: sus particiones,
+ su marca, su capacidad, etc.</p></li>
+<li><p>Find which device is your Tails USB stick. It should have 2 partitions:
+ one labeled <strong>Tails</strong> and another one labeled <strong>TailsData</strong>, which
+ corresponds to the Persistent Storage.</p></li>
+<li><p>In the right pane, click on the Persistent Storage partition, labeled
+ <span class="guilabel">TailsData</span>.</p></li>
+<li><p>Haz click en <span class="guimenu"><img alt="Men&uacute;
+ contextual de Discos" class="symbolic" height="16" src="../../../lib/system-run.png" width="16" /></span> y elige <span class="guilabel">Cambiar contrase&ntilde;a&hellip;</span>.</p></li>
+<li><p>Escribe tu contrase&ntilde;a actual y luego escribe dos veces la nueva.</p></li>
+<li><p>Finalmente confirma dando click en <span class="guilabel">Cambiar</span>.</p></li>
+<li><p>En el di&aacute;logo de confirmaci&oacute;n, entra tu contrase&ntilde;a de administrador y
+ haz click en <span class="guilabel">Autenticar</span>.</p></li>
+<li><p>You now can restart Tails and try to unlock the Persistent Storage with
+ its new passphrase.</p></li>
+</ol>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="../virtualization/virt-manager.es.html">virt-manager</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../../advanced_topics.index.es.html">advanced topics.index.es</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./check_file_system.es.html">Revisar el sistema de ficheros del Almacenamiento Persistente</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../advanced_topics.index.es.html">advanced topics.index.es</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/advanced_topics/persistence/change_passphrase.es">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

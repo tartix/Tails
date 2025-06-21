@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - System administrators</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../working_together.html">working together</a></li>
+
+
+
+
+
+<li><a href="../roles.html">roles</a></li>
+
+
+
+
+<li>System administrators</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+System administrators
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Goals</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Principles</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">Infrastructure as code</a>
+		</li>
+		<li class="L2"><a href="#index2h2">Free Software</a>
+		</li>
+		<li class="L2"><a href="#index3h2">Relationships with upstream</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index3h1">Duties</a>
+	<ol>
+		<li class="L2"><a href="#index4h2">In general</a>
+		</li>
+		<li class="L2"><a href="#index5h2">During sysadmin shifts</a>
+		</li>
+		<li class="L2"><a href="#index6h2">Outside of sysadmin shifts</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index4h1">Tools</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Communication</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Services</a>
+	<ol>
+		<li class="L2"><a href="#index7h2">APT repositories</a>
+		</li>
+		<li class="L2"><a href="#index8h2">Bitcoind</a>
+		</li>
+		<li class="L2"><a href="#index9h2">BitTorrent</a>
+		</li>
+		<li class="L2"><a href="#index10h2">DNS</a>
+		</li>
+		<li class="L2"><a href="#index11h2">GitLab</a>
+		</li>
+		<li class="L2"><a href="#index12h2">Gitolite</a>
+		</li>
+		<li class="L2"><a href="#index13h2">git-annex</a>
+		</li>
+		<li class="L2"><a href="#index14h2">Icinga2</a>
+		</li>
+		<li class="L2"><a href="#index15h2">Internal XMPP service</a>
+		</li>
+		<li class="L2"><a href="#index16h2">Jenkins</a>
+		</li>
+		<li class="L2"><a href="#index17h2">Mail</a>
+		</li>
+		<li class="L2"><a href="#index18h2">Meeting reminder</a>
+		</li>
+		<li class="L2"><a href="#index19h2">Mumble</a>
+		</li>
+		<li class="L2"><a href="#index20h2">rsync</a>
+		</li>
+		<li class="L2"><a href="#index21h2">Schleuder</a>
+		</li>
+		<li class="L2"><a href="#index22h2">Tor bridge</a>
+		</li>
+		<li class="L2"><a href="#index23h2">VPN</a>
+		</li>
+		<li class="L2"><a href="#index24h2">Web server</a>
+		</li>
+		<li class="L2"><a href="#index25h2">Weblate</a>
+		</li>
+		<li class="L2"><a href="#index26h2">WhisperBack relay</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index7h1">Other pages</a>
+	</li>
+</ol>
+</div>
+
+
+<p><a id="goals"></a></p>
+
+<h1><a name="index1h1"></a>Goals</h1>
+
+<p>The Tails system administrators set up and maintain the infrastructure
+that supports the development and operations of Tails. We aim at
+making the life of Tails contributors easier, and to improve the quality of
+the Tails releases.</p>
+
+<p><a id="principles"></a></p>
+
+<h1><a name="index2h1"></a>Principles</h1>
+
+<h2><a name="index1h2"></a>Infrastructure as code</h2>
+
+<p>We want to treat system administration like a (free) software
+development project:</p>
+
+<ul>
+<li>We want to enable people to participate without needing an account
+on the Tails servers.</li>
+<li>We want to review the changes that are applied to our systems.</li>
+<li>We want to be able to easily reproduce our systems via
+automatic deployment.</li>
+<li>We want to share knowledge with other people.</li>
+</ul>
+
+
+<p>This is why we try to publish as much as possible of our systems
+configuration, and to manage our whole infrastructure with
+configuration management tools. That is, without needing to log
+into hosts.</p>
+
+<h2><a name="index2h2"></a>Free Software</h2>
+
+<p>We use Free Software, as defined by the <a href="https://www.debian.org/social_contract#guidelines">Debian Free Software
+Guidelines</a>.<br />
+The firmware our systems might need are the only exception to
+this rule.</p>
+
+<h2><a name="index3h2"></a>Relationships with upstream</h2>
+
+<p>The <a href="../../relationship_with_upstream.html">principles used by the broader Tails
+project</a> also apply for
+system administration.</p>
+
+<p><a id="duties"></a></p>
+
+<h1><a name="index3h1"></a>Duties</h1>
+
+<h2><a name="index4h2"></a>In general</h2>
+
+<p>As said above, &quot;set up and maintain the infrastructure&quot;. This implies
+for example:</p>
+
+<ul>
+<li>dealing with hardware purchase, upgrades and failures;</li>
+<li>upgrading our systems to a new version of Debian.</li>
+</ul>
+
+
+<h2><a name="index5h2"></a>During sysadmin shifts</h2>
+
+<ul>
+<li>create Git repositories when requested</li>
+<li>update access control lists to resources we manage, as requested by
+the corresponding teams</li>
+<li>keep systems up-to-date, reboot them as needed</li>
+<li>keep Jenkins plugins up-to-date:
+<a href="./sysadmins/Jenkins.html#upgrade-policy">upgrade policy</a></li>
+<li>act as the de facto interface between Tails and the people hosting
+our services (Autistici, immerda.ch) for non-trivial requests</li>
+<li>when a sysadmin shift includes the beginning of a yearly quarter, ensure that
+sysadmin shifts are filled and agreed on for the next two quarters</li>
+<li>quarterly: self-evaluate our work and report to the -summit@ mailing list</li>
+<li>When the deadline for taking over a given maintenance task (see
+below) has passed, the sysadmin on duty must make it clear s&middot;he&#39;s
+handling the problem before starting to work on it, in order to
+avoid work duplication.</li>
+<li>Process GitLab abuse reports.</li>
+</ul>
+
+
+<h2><a name="index6h2"></a>Outside of sysadmin shifts</h2>
+
+<ul>
+<li><p>Read email at least twice a week to check if the sysadmin currently
+on duty needs help.</p></li>
+<li><p>Once 48 hours have passed after a problem was identified, the
+sysadmins not currently on duty can/should take over maintenance
+tasks if the on duty sysadmin is MIA; for critical problems this
+delay shall be reduced.</p></li>
+</ul>
+
+
+<p><a id="tools"></a></p>
+
+<h1><a name="index4h1"></a>Tools</h1>
+
+<p>The main tools used to manage the Tails infrastructure are:</p>
+
+<ul>
+<li><a href="https://www.debian.org/">Debian</a> GNU/Linux; in the vast majority of
+cases, we run the current stable release</li>
+<li><a href="http://projects.puppetlabs.com/projects/puppet">Puppet</a>,
+a configuration management system
+
+<ul>
+<li>our <a href="../../git.html#puppet">Puppet code</a></li>
+</ul>
+</li>
+<li><a href="http://git-scm.com/">Git</a> to host and deploy configuration,
+including our Puppet code</li>
+</ul>
+
+
+<p>Sysadmins can login to all hosts and have write access to the Puppet masters&#39;
+Git repositories.</p>
+
+<p><a id="communication"></a></p>
+
+<h1><a name="index5h1"></a>Communication</h1>
+
+<p>In order to get in touch with Tails sysadmins, you can:</p>
+
+<ul>
+<li>Create an issue in the <a href="https://gitlab.tails.boum.org/tails/sysadmin">tails/sysadmin</a> project</li>
+<li>Ping all sysadmins anywhere in our <a href="https://gitlab.tails.boum.org/">GitLab</a> by mentioning the <code>@sysadmin-team</code> group</li>
+<li>See if one of us is on shift in <a href="../../../about/contact.en.html#chat">one of our chat rooms</a></li>
+<li>Send an e-mail to <a href="../../../about/contact.en.html#tails-sysadmins">the sysadmin&#39;s mailing list</a></li>
+</ul>
+
+
+<p>The following lists of issues are also of interest to sysadmins:</p>
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/groups/tails/-/issues?label_name%5B%5D=Core+Work%3ASysadmin">issues that should be taken care of as part of sysadmin shifts
+or are on the sysadmin team&#39;s roadmap</a></li>
+<li><a href="https://gitlab.tails.boum.org/groups/tails/-/issues?label_name%5B%5D=C%3AInfrastructure">tasks that belong to the <em>Infrastructure</em> category</a></li>
+</ul>
+
+
+<p><a id="services"></a></p>
+
+<h1><a name="index6h1"></a>Services</h1>
+
+<p>Below, importance level is evaluated based on:</p>
+
+<ul>
+<li>users&#39; needs: e.g. if the APT repository is down, then the
+<em>Additional Software</em> feature is broken;</li>
+<li>developers&#39; needs: e.g. if the ISO build fails, then developers
+cannot work;</li>
+<li>the release process&#39; needs: we want to be able to do an emergency
+release at any time when critical security issues are published.
+Note that in order to release Tails, one needs to first build Tails,
+so any service that&#39;s needed to build Tails is also needed to release Tails.</li>
+</ul>
+
+
+<h2><a name="index7h2"></a>APT repositories</h2>
+
+<p><a id="custom-apt-repository"></a></p>
+
+<h3><a name="index1h3"></a>Custom APT repository</h3>
+
+<ul>
+<li>purpose: host Tails-specific Debian packages</li>
+<li><a href="../../APT_repository/custom.html">documentation</a></li>
+<li>access: anyone can read, Tails core developers can write</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/reprepro">reprepro</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/reprepro/custom.pp"><code>tails::reprepro::custom</code> class</a></li>
+<li>signing keys are managed with the <code>tails_secrets_apt</code> Puppet module</li>
+</ul>
+</li>
+<li>importance: critical (needed by users, and to build &amp; release Tails)</li>
+</ul>
+
+
+<h3><a name="index2h3"></a>Time-based snapshots of APT repositories</h3>
+
+<ul>
+<li>purpose: host full snapshots of the upstream APT repositories we
+need, which provides the freezable APT repositories feature needed
+by the Tails development and QA processes</li>
+<li><a href="../../APT_repository/time-based_snapshots.html">documentation</a></li>
+<li>access: anyone can read, release managers have write access</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/reprepro">reprepro</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/reprepro/snapshots/time_based.pp"><code>tails::reprepro::snapshots::time_based</code> class</a></li>
+<li>signing keys are managed with the <code>tails_secrets_apt</code> Puppet module</li>
+</ul>
+</li>
+<li>importance: critical (needed to build Tails)</li>
+</ul>
+
+
+<h3><a name="index3h3"></a>Tagged snapshots of APT repositories</h3>
+
+<ul>
+<li>purpose: host partial snapshots of the upstream APT repositories we
+need, for historical purposes and compliance with some licenses</li>
+<li><a href="../../APT_repository/tagged_snapshots.html">documentation</a></li>
+<li>access: anyone can read, release managers can create and publish new
+snapshots</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/reprepro">reprepro</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/reprepro/snapshots/tagged.pp"><code>tails::reprepro::snapshots::tagged</code> class</a></li>
+<li>signing keys are managed with the <code>tails_secrets_apt</code> Puppet module</li>
+</ul>
+</li>
+<li>importance: critical (needed by users and to release Tails)</li>
+</ul>
+
+
+<h2><a name="index8h2"></a>Bitcoind</h2>
+
+<ul>
+<li>purpose: handle the Tails Bitcoin wallet</li>
+<li>access: Tails core developers only</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/bitcoind">bitcoind</a></li>
+<li>configuration:
+<a href="https://gitlab.tails.boum.org/tails/puppet-bitcoind/-/blob/master/manifests/init.pp"><code>bitcoind</code> class</a></li>
+<li>Vcs-Git: <a href="https://gitlab.tails.boum.org/tails/bitcoin">bitcoin</a> and <a href="https://gitlab.tails.boum.org/tails/libunivalue">libunivalue</a></li>
+<li>importance: medium</li>
+<li>To save disk space: as the <code>bitcoin@bitcoin.lizard</code> user, run
+<code>bitcoin-cli getblockcount</code> to get the ID of the last block,
+then run <code>bitcoin-cli pruneblockchain XYZ</code>, with <code>XYZ</code> being
+a Unix timestamp that&#39;s at least 5 months in the past.</li>
+</ul>
+
+
+<h2><a name="index9h2"></a>BitTorrent</h2>
+
+<ul>
+<li>purpose: seed the new ISO image when preparing a release</li>
+<li><a href="../../release_process.html">documentation</a></li>
+<li>access: anyone can read, Tails core developers can write</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/transmission%2Ddaemon">transmission-daemon</a></li>
+<li>configuration: done by hand (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6926">#6926</a>)</li>
+<li>importance: low</li>
+</ul>
+
+
+<h2><a name="index10h2"></a>DNS</h2>
+
+<ul>
+<li>purpose: authoritative nameserver for the <code>tails.boum.org</code> and
+<code>amnesia.boum.org</code> zones</li>
+<li>access:
+
+<ul>
+<li>anyone can query this nameserver</li>
+<li>members of the mirrors team control some of the content of the
+<code>dl.amnesia.boum.org</code> sub-zone</li>
+<li>Tails sysadmins can edit the zones with <code>pdnsutil edit-zone</code></li>
+</ul>
+</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/pdns">pdns</a> with its MySQL backend</li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/pdns.pp"><code>tails::pdns</code> class</a>
+and <a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/tree/master/manifests/pdns"><code>tails::pdns::*</code> resources</a></li>
+<li><a href="https://github.com/sensson/puppet-powerdns"><code>powerdns</code> Puppet module</a></li>
+</ul>
+</li>
+<li>importance: critical (most of our other services are not available
+if this one is not working)</li>
+</ul>
+
+
+<p><a id="gitlab"></a></p>
+
+<h2><a name="index11h2"></a>GitLab</h2>
+
+<ul>
+<li>purpose:
+
+<ul>
+<li>host Tails issues</li>
+<li>host most Tails <a href="../../git.html">Git repositories</a></li>
+</ul>
+</li>
+<li>access: public + some data with more restricted access</li>
+<li>operations documentation: <a href="./sysadmins/GitLab.html">GitLab</a></li>
+<li>end-user documentation: <a href="../GitLab.html">GitLab</a></li>
+<li>configuration:
+
+<ul>
+<li>immerda hosts our GitLab instance using <a href="https://code.immerda.ch/immerda/ibox/puppet-modules/-/blob/master/ib_gitlab/manifests/instance.pp">this Puppet
+code</a>.</li>
+<li>We don&#39;t have shell access.</li>
+<li>Tails system administrators have administrator credentials inside GitLab.</li>
+<li>Groups, projects, and access control:
+
+<ul>
+<li><a href="../GitLab.html#access-control">high-level documentation</a></li>
+<li>configuration: <a href="https://gitlab.tails.boum.org/tails/gitlab-config">tails/gitlab-config</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>importance: critical (needed to release Tails)</li>
+<li>Tails system administrators administrate this GitLab instance.</li>
+<li>See our <a href="./sysadmins/GitLab.html">documentation about GitLab for Tails sysadmins</a>.</li>
+</ul>
+
+
+<h2><a name="index12h2"></a>Gitolite</h2>
+
+<ul>
+<li>purpose:
+
+<ul>
+<li>host Git repositories used by the puppetmaster and other services</li>
+<li>host mirrors of various Git repositories needed on lizard,
+and whose canonical copy lives on GitLab</li>
+</ul>
+</li>
+<li>access: Tails core developers only</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/gitolite3">gitolite3</a></li>
+<li>configuration:
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/gitolite.pp"><code>tails::gitolite</code> class</a></li>
+<li>importance: high (needed to release Tails)</li>
+</ul>
+
+
+<h2><a name="index13h2"></a>git-annex</h2>
+
+<ul>
+<li>purpose: host the full history of Tails released images and Tor
+Browser tarballs</li>
+<li>access: Tails core developers only</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/git%2Dannex">git-annex</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/git_annex.pp"><code>tails::git_annex</code> class</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/gitolite.pp"><code>tails::gitolite</code> class</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/git_annex/mirror.pp"><code>tails::git_annex::mirror</code> defined resource</a></li>
+</ul>
+</li>
+<li>importance: high (needed to release Tails)</li>
+</ul>
+
+
+<p><a id="icinga2"></a></p>
+
+<h2><a name="index14h2"></a>Icinga2</h2>
+
+<ul>
+<li>purpose: Monitor Tails online services and systems.</li>
+<li>access: only Tails core developers can read-only the Icingaweb2 interface,
+sysadmins are RW and receive notifications by email.</li>
+<li>setup: We have one Icinga2 instance installed on a dedicated system
+used as the master of all our Icinga2 zones. We use a VM on the other
+bare-metal host as the Icinga2 satellite of our master. Icinga2 agents are
+installed on every other VM and the host itself. They report back to
+the satellite, which transmits to the master. We spread the Icinga2
+configuration with Puppet. This way, we achieve a certain isolation
+where the master or the satellite have no right to configure agents or
+run arbitrary commands on them.</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/icinga2">Icinga2</a>, <a href="https://tracker.debian.org/pkg/icingaweb2">icingaweb2</a></li>
+<li>configuration:
+
+<ul>
+<li>master:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/monitoring/master.pp"><code>tails::monitoring::master</code> class</a>.</li>
+<li>some configuration in the ecours.tails.boum.org node manifest.</li>
+<li>See Vpn section.</li>
+</ul>
+</li>
+<li>web server:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/monitoring/icingaweb2.pp"><code>tails::monitoring::icingaweb2</code> class</a>,
+that wraps around <a href="https://git.icinga.org/puppet-icingaweb2.git">upstream <code>icingaweb2</code> module</a>.</li>
+<li>some configuration in the ecours.tails.boum.org node manifest.</li>
+</ul>
+</li>
+<li>satellite:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/monitoring/satellite.pp"><code>tails::monitoring::satellite</code> class</a></li>
+</ul>
+</li>
+<li>agents:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/monitoring/agent.pp"><code>tails::monitoring::agent</code> class</a></li>
+</ul>
+</li>
+<li>private keys are managed with the <code>tails_secrets_monitoring</code> Puppet module</li>
+</ul>
+</li>
+<li>documentation:
+
+<ul>
+<li><a href="./sysadmins/adding_icinga2_checks.html">How to add checks to our monitoring setup</a></li>
+</ul>
+</li>
+<li>importance: critical (needed to ensure that other, critical services are working)</li>
+</ul>
+
+
+<h2><a name="index15h2"></a>Internal XMPP service</h2>
+
+<ul>
+<li>purpose: an internal XMPP service that can be used by Tails developers and some contributors.</li>
+<li>access: at the moment everyone that is on the tails-summit mailinglist has and/or can
+request an account.</li>
+<li>tools: prosody</li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/prosody.pp"><code>tails::prosody</code> class</a></li>
+</ul>
+</li>
+<li>importance: low</li>
+</ul>
+
+
+<p><a id="Jenkins"></a></p>
+
+<h2><a name="index16h2"></a>Jenkins</h2>
+
+<ul>
+<li>purpose: continuous integration, e.g. build Tails ISO images from
+source and run test suites</li>
+<li>access: only Tails core developers can see the Jenkins web interface
+(<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/6270">#6270</a>); anyone can <a href="../../how/testing.html">download the built
+products</a></li>
+<li>tools: <a href="https://tracker.debian.org/pkg/jenkins">Jenkins</a>, <a href="https://tracker.debian.org/pkg/jenkins%2Djob%2Dbuilder">jenkins-job-builder</a></li>
+<li>design and implementation documentation: <a href="./sysadmins/Jenkins.html">Jenkins</a></li>
+<li>importance: critical (as a key component of our development process,
+needed to build IUKs during a Tails release)</li>
+</ul>
+
+
+<h2><a name="index17h2"></a>Mail</h2>
+
+<ul>
+<li>purpose: handle incoming and outgoing email for some of our
+<a href="./sysadmins.html#schleuder">Schleuder lists</a></li>
+<li>access: public MTA listening on <code>mail.tails.boum.org</code></li>
+<li>tools: <a href="https://tracker.debian.org/pkg/postfix">postfix</a>, <a href="https://tracker.debian.org/pkg/amavisd%2Dnew">amavisd-new</a>, <a href="https://tracker.debian.org/pkg/spamassassin">spamassassin</a></li>
+<li>configuration:
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/postfix.pp"><code>tails::postfix</code></a>,
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/amavisd_new.pp"><code>tails::amavisd_new</code></a>,
+and
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/spamassassin.pp"><code>tails::spamassassin</code></a>
+classes</li>
+<li>importance: high (at least because WhisperBack bug reports go through this MTA)</li>
+</ul>
+
+
+<p><a id="meeting-reminder"></a></p>
+
+<h2><a name="index18h2"></a>Meeting reminder</h2>
+
+<ul>
+<li>purpose: send email reminders, for example about upcoming meetings</li>
+<li>access: not applicable</li>
+<li>configuration:
+
+<ul>
+<li>to add a new reminder, or modify an existing one:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/meeting/reminders.pp"><code>tails::meeting::reminders</code></a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/tree/master/files/meeting">email templates</a></li>
+</ul>
+</li>
+<li>implementation:
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/meeting.pp"><code>tails::meeting</code></a>,
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/meeting/reminder.pp"><code>tails::meeting::reminder</code></a>,
+and
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/files/meeting/meeting.py"><code>meeting.py</code> script</a></li>
+</ul>
+</li>
+<li>importance: to be defined</li>
+</ul>
+
+
+<p><a id="mumble"></a></p>
+
+<h2><a name="index19h2"></a>Mumble</h2>
+
+<ul>
+<li>purpose: internal communication for some internal teams</li>
+<li>access: members of some internal teams</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/mumble%2Dserver">mumble-server</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://github.com/voxpupuli/puppet-mumble">https://github.com/voxpupuli/puppet-mumble</a></li>
+<li><code>mumble::*</code> parameters in Hiera</li>
+</ul>
+</li>
+<li>importance: low</li>
+</ul>
+
+
+<p><a id="rsync"></a></p>
+
+<h2><a name="index20h2"></a>rsync</h2>
+
+<ul>
+<li>purpose: provide content to the public rsync server, from which all
+HTTP mirrors in turn pull</li>
+<li>access: read-only for those who need it, read-write for Tails core
+developers</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/rsync">rsync</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/rsync.pp"><code>tails::rsync</code></a></li>
+<li>users and credentials are managed with the <code>tails_secrets_rsync</code>
+Puppet module</li>
+</ul>
+</li>
+<li>importance: critical (needed to release Tails)</li>
+</ul>
+
+
+<p><a id="schleuder"></a></p>
+
+<h2><a name="index21h2"></a>Schleuder</h2>
+
+<ul>
+<li>purpose: host some of our Schleuder mailing lists</li>
+<li>access: anyone can send email to these lists</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/schleuder">schleuder</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/schleuder.pp"><code>tails::schleuder</code> class</a></li>
+<li><code>tails::schleuder::lists</code> Hiera setting</li>
+</ul>
+</li>
+<li>importance: high (at least because WhisperBack bug reports go through this service)</li>
+</ul>
+
+
+<h2><a name="index22h2"></a>Tor bridge</h2>
+
+<ul>
+<li>purpose: provide a Tor bridge that Tails contributors can easily use
+for testing</li>
+<li>access: anyone who gets it from
+<a href="https://bridges.torproject.org/">BridgeDB</a></li>
+<li>tools: <a href="https://tracker.debian.org/pkg/tor">tor</a>, <a href="https://tracker.debian.org/pkg/obfs4proxy">obfs4proxy</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/apt/repository/torproject.pp"><code>tails::apt::repository::torproject</code></a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tor/-/blob/master/manifests/daemon/relay.pp"><code>tor::daemon::relay</code></a></li>
+</ul>
+</li>
+<li>importance: low</li>
+</ul>
+
+
+<h2><a name="index23h2"></a>VPN</h2>
+
+<ul>
+<li>purpose: flow through VPN traffic the connections between our
+different remote systems. Mainly used by the monitoring service.</li>
+<li>access: private network.</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/tinc">tinc</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/vpn/instance.pp"><code>tails::vpn::instance</code> class</a></li>
+</ul>
+</li>
+<li>importance: transitively critical (as a dependency of our monitoring system)</li>
+</ul>
+
+
+<h2><a name="index24h2"></a>Web server</h2>
+
+<ul>
+<li>purpose: serve web content for any other service that need it</li>
+<li>access: depending on the service</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/nginx">nginx</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-nginx/-/blob/master/manifests/init.pp"><code>nginx</code> class</a></li>
+</ul>
+</li>
+<li>importance: transitively critical (as a dependency of Jenkins
+and APT repositories)</li>
+</ul>
+
+
+<p><a id="weblate"></a></p>
+
+<h2><a name="index25h2"></a>Weblate</h2>
+
+<ul>
+<li>URL: <a href="https://translate.tails.boum.org/">https://translate.tails.boum.org/</a></li>
+<li>purpose: web interface for translators</li>
+<li><a href="../../design/translation_platform.html">design documentation</a></li>
+<li><a href="../../how/translate/with_translation_platform.html">usage documentation</a></li>
+<li>admins: to be defined (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/17050">#17050</a>)</li>
+<li>tools: <a href="https://weblate.org/">Weblate</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/weblate.pp"><code>tails::weblate</code> class</a></li>
+</ul>
+</li>
+<li>importance: to be defined</li>
+</ul>
+
+
+<h2><a name="index26h2"></a>WhisperBack relay</h2>
+
+<ul>
+<li>purpose: forward bug reports sent with WhisperBack to <a href="mailto:tails-bugs@boum.org">tails-bugs@boum.org</a></li>
+<li>access: public; WhisperBack (and hence, any bug reporter) uses it</li>
+<li>tools: <a href="https://tracker.debian.org/pkg/postfix">Postfix</a></li>
+<li>configuration:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/whisperback/relay.pp"><code>tails::whisperback::relay</code> class</a></li>
+<li>private keys are managed with the <code>tails_secrets_whisperback</code>
+Puppet module</li>
+</ul>
+</li>
+<li>importance: high</li>
+</ul>
+
+
+<h1><a name="index7h1"></a>Other pages</h1>
+
+<div class="map">
+<ul>
+<li>
+<a class="mapitem" href="./sysadmins/GitLab.html">GitLab</a>
+</li>
+<li>
+<a class="mapitem" href="./sysadmins/Jenkins.html">Jenkins</a>
+</li>
+<li>
+<a class="mapitem" href="./sysadmins/adding_icinga2_checks.html">adding icinga2 checks</a>
+</li>
+<li>
+<a class="mapitem" href="./sysadmins/automated_builds_in_Jenkins.html">automated builds in Jenkins</a>
+</li>
+<li>
+<a class="mapitem" href="./sysadmins/automated_tests_in_Jenkins.html">automated tests in Jenkins</a>
+</li>
+</ul>
+</div>
+
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../../APT_repository/custom.html">APT repository/custom</a>
+
+<a href="../GitLab.html">GitLab</a>
+
+<a href="../../../contribute.en.html">contribute</a>
+
+<a href="../../../contribute.de.html">contribute.de</a>
+
+<a href="../../../contribute.es.html">contribute.es</a>
+
+<a href="../../../contribute.fr.html">contribute.fr</a>
+
+<a href="../../../contribute.it.html">contribute.it</a>
+
+<a href="../../../contribute.pt.html">contribute.pt</a>
+
+<a href="../../../contribute.ru.html">contribute.ru</a>
+
+<a href="../../git.html">git</a>
+
+
+<span class="popup">...
+<span class="balloon">
+
+<a href="../../how/sysadmin.html">how/sysadmin</a>
+
+<a href="../../how/website/production.html">how/website/production</a>
+
+<a href="../../../news/improve_the_infrastructure_behind_Tails.en.html">news/improve the infrastructure behind Tails</a>
+
+<a href="../../../news/improve_the_infrastructure_behind_Tails.de.html">news/improve the infrastructure behind Tails.de</a>
+
+<a href="../../../news/improve_the_infrastructure_behind_Tails.es.html">news/improve the infrastructure behind Tails.es</a>
+
+<a href="../../../news/improve_the_infrastructure_behind_Tails.fr.html">news/improve the infrastructure behind Tails.fr</a>
+
+<a href="../../../news/improve_the_infrastructure_behind_Tails.it.html">news/improve the infrastructure behind Tails.it</a>
+
+<a href="../../../news/improve_the_infrastructure_behind_Tails.pt.html">news/improve the infrastructure behind Tails.pt</a>
+
+<a href="../../../news/improve_the_infrastructure_behind_Tails.ru.html">news/improve the infrastructure behind Tails.ru</a>
+
+<a href="../../../news/report_2016_07.html">news/report 2016 07</a>
+
+<a href="./sysadmins/GitLab.html">sysadmins/GitLab</a>
+
+<a href="./sysadmins/adding_icinga2_checks.html">sysadmins/adding icinga2 checks</a>
+
+</span>
+</span>
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/working_together/roles/sysadmins">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

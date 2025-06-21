@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Connecting to the Tor network</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+<link rel="prev" href="./unsafe_browser.en.html" title="Signing in to a network using a captive portal" />
+
+<link rel="up" href="../anonymous_internet.index.html" title="anonymous internet.index" />
+
+<link rel="next" href="./tor/why.en.html" title="Why does Tails use Tor?" />
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../index.html">Home</a></li>
+  <li><a href="../../about.en.html">How Tails works</a></li>
+  <li><a href="../../install.en.html">Get Tails</a></li>
+  <li><a href="../../doc.en.html">Documentation</a></li>
+  <li><a href="../../support.en.html">Support</a></li>
+  <li><a href="../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../news.en.html">News</a></li>
+  <li><a href="../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../index.html"><img alt="home" src="../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../doc.en.html">doc</a></li>
+
+
+
+
+
+<li><a href="../anonymous_internet.en.html">anonymous internet</a></li>
+
+
+
+
+<li>Connecting to the Tor network</li>
+
+</ul>
+</div>
+
+
+<div id="otherlanguages">
+<ul>
+   
+   <li class="current master">
+   <span >English
+   </span>
+   </li>
+
+   
+
+
+   
+
+   <li >
+
+   <span class="visible"><a href="./tor.de.html">de</a></span>
+   <span class="hidden"><a href="./tor.de.html">Deutsch</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./tor.es.html">es</a></span>
+   <span class="hidden"><a href="./tor.es.html">Español</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./tor.fr.html">fr</a></span>
+   <span class="hidden"><a href="./tor.fr.html">Français</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./tor.it.html">it</a></span>
+   <span class="hidden"><a href="./tor.it.html">Italiano</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./tor.pt.html">pt</a></span>
+   <span class="hidden"><a href="./tor.pt.html">Português</a></span>
+
+   </li>
+   
+
+   <li >
+
+   <span class="visible"><a href="./tor.ru.html">ru</a></span>
+   <span class="hidden"><a href="./tor.ru.html">Русский</a></span>
+
+   </li>
+   
+</ul>
+</div>
+
+
+<div class="header">
+<span class="title">
+Connecting to the Tor network
+</span>
+</div>
+
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./unsafe_browser.en.html">Signing in to a network using a captive portal</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./tor/why.en.html">Why does Tails use Tor?</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Tor relays and bridges</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Connecting to Tor automatically</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Hiding to your local network that you are connecting to Tor</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Troubleshooting Tor bridges</a>
+	<ol>
+		<li class="L2"><a href="#index1h2">The computer clock is set to an incorrect time zone</a>
+		</li>
+		<li class="L2"><a href="#index2h2">You did not enter the bridge correctly</a>
+		</li>
+		<li class="L2"><a href="#index3h2">The bridge is no longer operational</a>
+		</li>
+	</ol>
+	</li>
+	<li class="L1"><a href="#index5h1">Viewing the status of Tor</a>
+	</li>
+</ol>
+</div>
+
+
+<p>Everything you do on the Internet from Tails goes through the Tor network.</p>
+
+<p>Tor encrypts and anonymizes your connection by passing it through 3 relays. Tor
+relays are servers operated by different people and organizations around the
+world.</p>
+
+<p><img alt="A Tor connection goes through 3 relays with the last one establishing the actual connection to the final destination" class="img" src="./tor/tor.svg" /></p>
+
+<p>You cannot access the Internet from Tails until you are connected to Tor. For
+example, <em>Tor Browser</em> displays the error message <span class="code">Proxy
+server refusing connections</span> until you are connected to Tor.</p>
+
+<div class="note">
+
+<p>Because Tor routes your Internet traffic through 3 relays
+before reaching its destination, the
+connection is slower than when your are not using Tor.</p>
+
+<p>See our documentation on
+<a href="./tor/slow.en.html">why Tor is slow</a>.</p>
+
+</div>
+
+
+<p>To connect to the Tor network:</p>
+
+<ol>
+<li><p><a href="./networkmanager.en.html">Connect to a local network</a>, wired, Wi-Fi, or mobile.</p></li>
+<li><p>The <em>Tor Connection</em> assistant appears to help you connect to the Tor network.</p>
+
+<p><img class="img" height="421" src="./tor/tor-connection.png" width="648" /></p></li>
+<li><p>Choose whether you want to:</p>
+
+<ul>
+<li><p>Connect to Tor automatically</p></li>
+<li><p>Hide to your local network that you are connecting to Tor</p></li>
+</ul>
+
+
+<p>The implications of both methods are detailed below.</p></li>
+</ol>
+
+
+<h1><a name="index1h1"></a>Tor relays and bridges</h1>
+
+<ul>
+<li><p><strong>Public Tor relays</strong></p>
+
+<p>Most of the time, your local network does not block access to the Tor network
+and you can use a public relay as your first Tor relay.</p>
+
+<p>Using a public Tor relay as your first Tor relay makes it clear to your local
+network that you are connecting to Tor, while still keeping your online
+activity secure and anonymous.</p></li>
+<li><p><strong>Tor bridges</strong></p>
+
+<p>Tor bridges are secret Tor relays that keep your connection to the Tor
+network hidden.</p>
+
+<p>Use a bridge as your first Tor relay if connecting to Tor is blocked or if
+using Tor could look suspicious to someone who monitors your Internet
+connection.</p>
+
+<p>The technology used by Tor bridges is designed to circumvent censorship
+where connections to Tor are blocked, for example in some countries with heavy censorship,
+by some public networks, or by some parental controls.</p>
+
+<p>It does so by camouflaging your connection so it cannot be recognized as a
+connection to Tor. As a consequence, the same technology can be used to hide
+that you are using Tor if it could look suspicious to someone who monitors
+your Internet connection.</p>
+
+<p>Tor bridges are often less reliable and slower than public Tor relays.</p></li>
+</ul>
+
+
+<h1><a name="index2h1"></a>Connecting to Tor automatically</h1>
+
+<p>We recommend connecting to Tor automatically if you are on a public Wi-Fi
+network or if many people in your country use Tor to circumvent censorship.</p>
+
+<p>When you choose this option, Tails tries different ways of connecting to Tor
+until it succeeds:</p>
+
+<ol>
+<li><p>Tails tries to connect to Tor directly using <strong>public relays</strong>, without
+using bridges.</p></li>
+<li><p>Tails tries to connect to Tor using one of the <strong>default bridges</strong>, already
+included in Tails, if connecting using public relays fails.</p></li>
+<li><p>Tails asks you to configure a <strong>custom bridge</strong>, if connecting using the
+default bridges fails.</p></li>
+</ol>
+
+
+<p>Someone monitoring your Internet connection could identify these attempts as
+coming from a Tails user.</p>
+
+<p>If connecting to Tor automatically fails, the <em>Tor Connection</em> assistant helps
+you:</p>
+
+<ul>
+<li><a href="./unsafe_browser.en.html">Sign in to the network using a captive portal</a></li>
+<li>Configure a local proxy</li>
+</ul>
+
+
+<div class="note">
+
+<p>In the future, Tails will also automatically:</p>
+
+<ul>
+<li>Detect if you have to sign in to the local network using a captive portal (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/5785">#5785</a>)</li>
+</ul>
+
+</div>
+
+
+<h1><a name="index3h1"></a>Hiding to your local network that you are connecting to Tor</h1>
+
+<p>You might need to go unnoticed if using Tor could look suspicious to someone
+who monitors your Internet connection.</p>
+
+<p>When you choose this option, Tails will only connect to Tor after you configure a Tor bridge. Bridges are
+secret Tor relays that hide that you are connecting to Tor.</p>
+
+<div class="note">
+
+<p>It is impossible to hide to the websites that you visit that you are using
+Tor, because the <a href="https://metrics.torproject.org/exonerator.html">list
+of exit nodes of the Tor network is public</a>.</p>
+
+</div>
+
+
+<p>Our team is doing its best to help you connect to Tor using the most discrete
+types of Tor bridges. That is why, when you decide to hide that you are connecting to Tor:</p>
+
+
+
+
+<ul>
+<li><p>Default bridges are not available.</p>
+
+<p>You will have to know the address of a custom bridge.</p>
+
+<p>To request custom bridges, you can either:</p>
+
+<ol>
+<li><p>Request bridges on <a href="https://bridges.torproject.org/bridges?transport=obfs4">https://bridges.torproject.org/</a>.</p>
+
+<p>We recommend doing so before starting Tails and ideally from a different
+local network than the one on which you want to hide that you are using
+Tor.</p></li>
+<li><p>Send an empty email to
+<a href="mailto:bridges@torproject.org">bridges@torproject.org</a> from a
+Gmail or Riseup email address.</p>
+
+<p>Sending such an email, from your phone for example, does not reveal to
+your local network that you are trying to connect to Tor.</p></li>
+</ol>
+</li>
+<li><p>You can only use the types of bridges that our team considers discrete enough.</p>
+
+<p>Currently in Tails, only <strong>obfs4 bridges</strong> hide that you are using Tor.</p></li>
+<li><p>To save the last Tor bridge that connected to Tor successfully, turn on the
+<a href="../first_steps/persistence/configure.en.html#tor-bridge">Tor Bridge feature of the Persistent
+Storage</a>.</p></li>
+</ul>
+
+
+<div class="note">
+
+<p>In the future, we will make it easier to use custom bridges by:</p>
+
+<ul>
+<li>Allowing you to scan the QR code returned by <a href="mailto:bridges@torproject.org">bridges@torproject.org</a> (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/18219">#18219</a>)</li>
+<li>Allowing you to request bridges from Tails by solving a CAPTCHA (<a href="https://gitlab.tails.boum.org/tails/tails/-/issues/15331">#15331</a>)</li>
+</ul>
+
+</div>
+
+
+<h1><a name="index4h1"></a>Troubleshooting Tor bridges</h1>
+
+<p>If connecting to Tor using a custom bridge fails, the <em>Tor Connection</em> assistant
+helps you:</p>
+
+<ul>
+<li>Set the clock of your computer to the correct time zone</li>
+<li><a href="./unsafe_browser.en.html">Sign in to the network using a captive portal</a></li>
+<li>Configure a local proxy</li>
+<li>Enter a different bridge</li>
+</ul>
+
+
+<h2><a name="index1h2"></a>The computer clock is set to an incorrect time zone</h2>
+
+<p>For Tor bridges to work, the clock of your computer must be correct.</p>
+
+<p>Choose <strong>Fix Clock</strong> in the error screen of the <em>Tor Connection</em> assistant to
+set the time zone and time of your computer.</p>
+
+<h2><a name="index2h2"></a>You did not enter the bridge correctly</h2>
+
+<p>An obfs4 bridge looks like:</p>
+
+<pre><code>obfs4 1.2.3.4:1234 B0E566C9031657EA7ED3FC9D248E8AC4F37635A4 cert=OYWq67L7MDApdJCctUAF7rX8LHvMxvIBPHOoAp0+YXzlQdsxhw6EapaMNwbbGICkpY8CPQ iat-mode=0
+</code></pre>
+
+<p>You need to enter the entire line, not just the IP address and port
+combination.</p>
+
+<h2><a name="index3h2"></a>The bridge is no longer operational</h2>
+
+<p>It is possible that the bridge that you entered is no longer working.</p>
+
+<p>Try entering another bridge or requesting other bridges.</p>
+
+<h1><a name="index5h1"></a>Viewing the status of Tor</h1>
+
+<p>The status of Tor appears as an onion icon in the
+notification area:</p>
+
+<p><img class="img" height="94" src="../first_steps/introduction_to_gnome_and_the_tails_desktop/tor-status.png" width="246" /></p>
+
+<ul>
+<li><p><img alt="Onion icon" class="symbolic" height="16" src="../../lib/symbolic/tor-connected.png" width="14" />
+You are connected to Tor.</p></li>
+<li><p><img alt="Onion icon that is crossed out" class="symbolic" height="16" src="../../lib/symbolic/tor-disconnected.png" width="16" />
+You are not connected to Tor.</p></li>
+</ul>
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+<div class="trails">
+<div class="trail">
+
+<span class="trailprev">
+<span class="trailarrow">←</span>
+<a href="./unsafe_browser.en.html">Signing in to a network using a captive portal</a>
+<span class="trailsep">|</span>
+</span>
+
+<span class="trailup">
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+</span>
+
+<span class="trailnext">
+<span class="trailsep">|</span>
+<a href="./tor/why.en.html">Why does Tails use Tor?</a>
+<span class="trailarrow">→</span>
+</span>
+
+</div>
+</div>
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./Tor_Browser.en.html">Tor Browser</a>
+
+<a href="../../about.en.html">about</a>
+
+<a href="../anonymous_internet.index.html">anonymous internet.index</a>
+
+<a href="../first_steps/introduction_to_gnome_and_the_tails_desktop.en.html">first steps/introduction to gnome and the tails desktop</a>
+
+<a href="../first_steps/persistence/configure.en.html">first steps/persistence/configure</a>
+
+<a href="../first_steps/welcome_screen/mac_spoofing.en.html">first steps/welcome screen/mac spoofing</a>
+
+<a href="../../install/inc/steps/create_persistence.inline.en.html">install/inc/steps/create persistence.inline</a>
+
+<a href="./networkmanager.en.html">networkmanager</a>
+
+<a href="../../support/faq.en.html">support/faq</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=doc/anonymous_internet/tor">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

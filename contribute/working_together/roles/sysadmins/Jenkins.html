@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Automated ISO/IMG builds and tests on Jenkins</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+<meta name="robots" content="noindex" />
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../../index.html">Home</a></li>
+  <li><a href="../../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../../support.en.html">Support</a></li>
+  <li><a href="../../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../../news.en.html">News</a></li>
+  <li><a href="../../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../../index.html"><img alt="home" src="../../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../../working_together.html">working together</a></li>
+
+
+
+
+
+<li><a href="../../roles.html">roles</a></li>
+
+
+
+
+
+<li><a href="../sysadmins.html">sysadmins</a></li>
+
+
+
+
+<li>Automated ISO/IMG builds and tests on Jenkins</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Automated ISO/IMG builds and tests on Jenkins
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<div class="toc">
+<ol>
+	<li class="L1"><a href="#index1h1">Configuration</a>
+	</li>
+	<li class="L1"><a href="#index2h1">Upgrade policy</a>
+	</li>
+	<li class="L1"><a href="#index3h1">Generating jobs</a>
+	</li>
+	<li class="L1"><a href="#index4h1">Passing parameters through jobs</a>
+	</li>
+	<li class="L1"><a href="#index5h1">Builds</a>
+	</li>
+	<li class="L1"><a href="#index6h1">Tests</a>
+	</li>
+</ol>
+</div>
+
+
+<h1><a name="index1h1"></a>Configuration</h1>
+
+<ul>
+<li>master:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-jenkins/-/blob/master/manifests/init.pp"><code>jenkins</code> class</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/jenkins/master.pp"><code>tails::jenkins::master</code> class</a></li>
+<li>a few Jenkins plugins installed with <code>jenkins::plugin</code></li>
+<li>YAML jobs configuration lives in a
+<a href="https://gitlab.tails.boum.org/tails/jenkins-jobs">dedicated Git repository</a>;
+<a href="https://docs.openstack.org/infra/jenkins-job-builder/">Jenkins Job Builder</a>
+uses it to configure Jenkins</li>
+</ul>
+</li>
+<li>slaves:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/iso_builder.pp"><code>tails::iso_builder</code></a>,
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/jenkins/slave.pp"><code>tails::jenkins::slave</code></a>,
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/jenkins/slave/iso_builder.pp"><code>tails::jenkins::slave::iso_builder</code></a>,
+<a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/jenkins/slave/iso_tester.pp"><code>tails::jenkins::slave::iso_tester</code></a>,
+and <a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/tester.pp"><code>tails::tester</code></a>
+classes</li>
+<li>signing keys are managed with the <code>tails_secrets_jenkins</code> Puppet module</li>
+</ul>
+</li>
+<li>web server:
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/puppet-tails/-/blob/master/manifests/jenkins/reverse_proxy.pp"><code>tails::jenkins::reverse_proxy</code> class</a></li>
+</ul>
+</li>
+</ul>
+
+
+<p><a id="upgrade-policy"></a></p>
+
+<h1><a name="index2h1"></a>Upgrade policy</h1>
+
+<p>Here are some guidelines to triage security vulnerabilities in Jenkins
+and the plugins we have installed:</p>
+
+<ol>
+<li><p>Protecting our infra from folks who have access to Jenkins</p>
+
+<p>&rarr; Upgrading quarterly is sufficient.</p></li>
+<li><p>Protecting our infra from attacks against folks who have access to Jenkins</p>
+
+<p>For example, XSS that could lead a legitimate user to perform unintended
+actions with Jenkins credentials (i.e. root in practice).</p>
+
+<p>&rarr; We should stay on top of security advisories and react more quickly than
+&quot;in less than 3 months&quot;.</p></li>
+<li><p>Protecting our infra from other 3rd-parties that affect Jenkins&#39; security</p>
+
+<p>For example, say some Jenkins plugin, that connects to remote services, has
+a TLS certificate checking bug. This could potentially allow a MitM to run
+arbitrary code with Jenkins orchestrator or workers permissions, i.e. root.</p>
+
+<p>&rarr; We should stay on top of security advisories and react more quickly than
+&quot;in less than 3 months&quot;.</p></li>
+</ol>
+
+
+<h1><a name="index3h1"></a>Generating jobs</h1>
+
+<p>We generate automatically a set of Jenkins jobs for branches that are
+active in the Tails main Git repository.</p>
+
+<p>The first brick extracts the list of active branches and output the
+needed information:</p>
+
+<ul>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_local-includes/usr/lib/python3/dist-packages/tailslib/git.py">config/chroot local-includes/usr/lib/python3/dist-packages/tailslib/git.py</a></li>
+<li><a href="https://gitlab.tails.boum.org/tails/tails/-/blob/master/config/chroot_local-includes/usr/lib/python3/dist-packages/tailslib/jenkins.py">config/chroot local-includes/usr/lib/python3/dist-packages/tailslib/jenkins.py</a></li>
+</ul>
+
+
+<p>This list is parsed by the <code>generate_tails_iso_jobs</code> script run by
+a cronjob and deployed by our <a href="https://gitlab.tails.boum.org/tails/puppet-tails">puppet-tails</a>
+<code>tails::jenkins::iso_jobs_generator</code> manifest.</p>
+
+<p>This script output YAML files compatible with
+<a href="http://docs.openstack.org/infra/jenkins-job-builder">jenkins-job-builder</a>.
+It creates one <code>project</code> for each active branch, which in turn uses
+several JJB <code>job templates</code> to create jobs for each branch:</p>
+
+<ul>
+<li><code>build_Tails_ISO_*</code></li>
+<li><code>reproducibly_build_Tails_ISO_*</code></li>
+<li><code>test_Tails_ISO_*</code></li>
+</ul>
+
+
+<p>This changes are pushed to our <a href="https://gitlab.tails.boum.org/tails/jenkins-jobs">jenkins-jobs</a> git
+repo by the cronjob, and thanks to their automatic deployment in our
+<code>tails::jenkins::master</code> and <code>tails::gitolite::hooks::jenkins_jobs</code>
+manifests in our <a href="https://gitlab.tails.boum.org/tails/puppet-tails">puppet-tails</a> repo, these new
+changes are applied to our Jenkins instance.</p>
+
+<h1><a name="index4h1"></a>Passing parameters through jobs</h1>
+
+<p>We pass information from build job to follow-up jobs (reproducibility
+testing, test suite) via two means:</p>
+
+<ul>
+<li><p>the Parameterized Trigger plugin, whenever it&#39;s sufficient</p></li>
+<li><p>the EnvInject plugin, for more complex cases:</p>
+
+<ul>
+<li>In the build job, a script collects the needed information and
+writes it to a file that&#39;s saved as a build artifact.</li>
+<li>This file is used by the build job itself, to setup the variables it
+needs (currently only <code>$NOTIFY_TO</code>).</li>
+<li>Follow-up jobs imported this file in the workspace along with the
+build artifacts, then use an EnvInject pre-build step to load it
+and set up variables accordingly.</li>
+</ul>
+</li>
+</ul>
+
+
+<h1><a name="index5h1"></a>Builds</h1>
+
+<p>See <a href="./automated_builds_in_Jenkins.html">automated builds in Jenkins</a>.</p>
+
+<h1><a name="index6h1"></a>Tests</h1>
+
+<p>See <a href="./automated_tests_in_Jenkins.html">automated tests in Jenkins</a>.</p>
+
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="./GitLab.html">GitLab</a>
+
+<a href="../../../../contribute.en.html">contribute</a>
+
+<a href="../../../../contribute.de.html">contribute.de</a>
+
+<a href="../../../../contribute.es.html">contribute.es</a>
+
+<a href="../../../../contribute.fr.html">contribute.fr</a>
+
+<a href="../../../../contribute.it.html">contribute.it</a>
+
+<a href="../../../../contribute.pt.html">contribute.pt</a>
+
+<a href="../../../../contribute.ru.html">contribute.ru</a>
+
+<a href="../sysadmins.html">sysadmins</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/working_together/roles/sysadmins/Jenkins">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>

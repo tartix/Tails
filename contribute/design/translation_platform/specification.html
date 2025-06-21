@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+
+<html lang="en" dir="ltr" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Tails - Choosing a translation web platform</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="icon" href="../../../favicon.ico" type="image/x-icon" />
+
+<link rel="stylesheet" href="../../../style.css" type="text/css" />
+
+<link rel="stylesheet" href="../../../local.css?reload-2021-06-25" type="text/css" />
+
+
+<script src="../../../lib/js/mirror-dispatcher.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+
+</head>
+
+
+<body class="en">
+
+
+<div class="banner" role="banner">
+  <a class="tails" href="../../../index.html"><span>Tails</span></a>
+  <div id="search-and-donate">
+    
+    
+    
+    <div class="donate">
+      <a href="https://tails.boum.org/donate/?r=topbar" class="en"><span>Donate</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="de"><span>Spenden</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="es"><span>Donar</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fa"><span>اهدا کردن</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="fr"><span>Faire un don</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="it"><span>Dona</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="pt"><span>Faça uma doação</span></a>
+      <a href="https://tails.boum.org/donate/?r=topbar" class="ru"><span>Пожертвовать</span></a>
+    </div>
+  </div>
+</div>
+
+
+
+<div class="topbar" role="navigation">
+<ul>
+  <li><a href="../../../index.html">Home</a></li>
+  <li><a href="../../../about.en.html">How Tails works</a></li>
+  <li><a href="../../../install.en.html">Get Tails</a></li>
+  <li><a href="../../../doc.en.html">Documentation</a></li>
+  <li><a href="../../../support.en.html">Support</a></li>
+  <li><a href="../../../contribute.en.html">Contribute</a></li>
+  <li><a href="../../../news.en.html">News</a></li>
+  <li><a href="../../../jobs.html">Jobs</a></li>
+</ul>
+
+
+</div>
+
+
+
+<div class="page">
+
+<div class="pageheader">
+
+<div class="parentlinks">
+<ul id="crumbs">
+<li><a href="../../../index.html"><img alt="home" src="../../../lib/home.png"></a></li>
+
+
+
+
+
+
+
+<li><a href="../../../contribute.en.html">contribute</a></li>
+
+
+
+
+
+<li><a href="../../design.html">design</a></li>
+
+
+
+
+
+<li><a href="../translation_platform.html">translation platform</a></li>
+
+
+
+
+<li>Choosing a translation web platform</li>
+
+</ul>
+</div>
+
+
+
+<div class="header">
+<span class="title">
+Choosing a translation web platform
+</span>
+</div>
+
+
+
+
+
+
+</div>
+
+<div id="pagebody">
+
+<div id="content" role="main">
+<p>These are the requirements that we have defined for our translation web platform
+before we started working on it.</p>
+
+<h1>MUST</h1>
+
+<ul>
+<li>provide a usable easy web interface</li>
+<li>be usable from Tor Browser</li>
+<li>automatic pull from main Git repo</li>
+<li>provide a common glossary for each language, easy to use and improve</li>
+<li>allow translators to view, in the correct order, all strings that
+come from the entire page being translated, both in English and in
+the target language</li>
+<li>make it easy to view the translations in context i.e. when translating
+an entire page, all strings to be translated should only come from
+this page. translators should be able to view the page in context.</li>
+<li>provide user roles (admin, reviewer, translator)</li>
+</ul>
+
+
+<h1>SHOULD</h1>
+
+<ul>
+<li>be &quot;privacy sensitive&quot;, i.e. be operated by a non-profit</li>
+<li>allow translators to push translations through Git (so that core
+developers only have to fetch reviewed translations from there)</li>
+<li>provide support for Git standard development branches (devel, stable,
+and testing) but we could also agree upon translation only master
+through this interface</li>
+<li>provide checks for inconsistent translations</li>
+<li>provide feature to write/read comments between translators</li>
+</ul>
+
+
+<h1>MAY</h1>
+
+<ul>
+<li>allow translating topic branches without confusing translators,
+causing duplicate/premature work, fragmentation or merge conflicts
+-- e.g. present only new or updated strings in topic branches;
+see <a href="https://mailman.boum.org/pipermail/tails-l10n/2015-March/002102.html">https://mailman.boum.org/pipermail/tails-l10n/2015-March/002102.html</a>
+for details</li>
+<li>provide a feature to easily see what is new, what needs updating, what are translation priorities</li>
+<li>provide possibility to set up new languages easily</li>
+<li>send email notifications
+
+<ul>
+<li>to reviewers whenever new strings have been translated or updated</li>
+<li>to translators whenever a resource is updated</li>
+</ul>
+</li>
+<li>respect authorship (different committers?)</li>
+<li>provide statistics about the percentage of translated and fuzzy strings</li>
+<li>Letting translators report about problems in original strings, e.g.
+with a &quot;Report a problem in the original English text&quot; link, that
+e.g. results in an email being sent to -l10n@ or -support-private@.
+If we don&#39;t have that, then <a href="../../how/translate.html">translate</a> MUST
+document how to report issues in the original English text.</li>
+</ul>
+
+
+</div>
+
+
+
+
+
+
+
+</div>
+
+<div id="footer" class="pagefooter" role="contentinfo">
+
+<div id="pageinfo">
+
+
+
+
+
+
+
+<div id="backlinks">
+Pages linking to this one:
+
+<a href="../translation_platform.html">translation platform</a>
+
+
+</div>
+
+
+
+
+
+
+</div>
+<div id="mirrorlist">Mirror: <a href="https://tails.boum.org/ikiwiki.cgi?do=goto&page=contribute/design/translation_platform/specification">tails.boum.org</a></div>
+
+<!-- from The Amnesic Incognito Live System -->
+</div>
+
+</div>
+
+<script type="text/javascript">
+  var linkelements = document.querySelectorAll('.use-mirror-pool');
+  // Avoid a traceback if mirror-dispatcher.js is not available.
+  if (typeof replaceUrlPrefixWithRandomMirror !== "undefined" && linkelements.length > 0) {
+    replaceUrlPrefixWithRandomMirror(linkelements);
+  }
+</script>
+
+</body>
+</html>
